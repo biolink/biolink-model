@@ -10571,7 +10571,24 @@ classes:
   chemical or drug or treatment to disease or phenotypic feature association:
     description: >-
       This association defines a relationship between a chemical or treatment (or procedure) and a disease or phenotypic feature
-      where the disease or phenotypic feature is a secondary undesirable effect.
+      where the chemical or treatment is used to treat, or is being studied to treat, the disease or phenotypic feature.
+    is_a: association
+    defining_slots:
+      - subject
+      - predicate
+      - object
+    mixins:
+      - entity to disease or phenotypic feature association mixin
+      - entity to feature or disease qualifiers mixin
+    slot_usage:
+      predicate:
+        subproperty_of: treats or applied or studied to treat
+
+  chemical or drug or treatment adverse event association:
+    description: >-
+      This association defines a relationship between a chemical or treatment (or procedure) and a disease or phenotypic feature
+      where the disease or phenotypic feature is an untoward medical occurrence that happens during treatment,
+      whether or not considered related to the treatment.
     is_a: association
     defining_slots:
       - subject
@@ -10586,17 +10603,18 @@ classes:
       predicate:
         subproperty_of: has adverse event
 
-  chemical or drug or treatment side effect disease or phenotypic feature association:
+  chemical or drug or treatment side effect association:
     description: >-
       This association defines a relationship between a chemical or treatment (or procedure) and a disease or phenotypic feature
-      where the disesae or phenotypic feature is a secondary, typically (but not always) undesirable effect.
-    is_a: chemical or drug or treatment to disease or phenotypic feature association
+      where the disease or phenotypic feature is an unintended, but predictable, secondary effect of the treatment.
+    is_a: association
     defining_slots:
       - subject
       - predicate
       - object
     mixins:
       - entity to disease or phenotypic feature association mixin
+      - entity to feature or disease qualifiers mixin
     slot_usage:
       predicate:
         subproperty_of: has side effect
@@ -11556,6 +11574,7 @@ classes:
       - object direction qualifier
       - allelic requirement
       - qualified predicate
+      - diseases confidence score
     slot_usage:
       subject:
         range: gene or gene product
@@ -11604,6 +11623,7 @@ classes:
       - predicate
     slots:
       - z score
+      - diseases confidence score
       - subject form or variant qualifier
       - subject aspect qualifier
       - object direction qualifier
@@ -12315,14 +12335,42 @@ classes:
       object:
         range: anatomical entity
 
-  anatomical entity to anatomical entity part of association:
+  anatomical entity has part anatomical entity association:
      # schema: gocam
     is_a: anatomical entity to anatomical entity association
     description: >-
       A relationship between two anatomical entities where the relationship
-      is mereological, i.e the two entities are related by parthood. This
-      includes relationships between cellular components and cells, between
-      cells and tissues, tissues and whole organisms
+      is mereological, i.e the two entities are related by parthood, that is,
+      the subject is has the object entity as a part (the expected predicate is
+      "biolink:has_part" or suitable predicate slots inheriting from it, i.e., 
+      "biolink:has_plasma_membrane_part",  "biolink:has_variant_part", etc.).
+      This includes relationships between cells and cellular components,
+      between issues and cells, whole organisms and tissues.
+    defining_slots:
+      - predicate
+    slot_usage:
+      subject:
+        range: anatomical entity
+        description: >-
+          the whole
+      object:
+        range: anatomical entity
+        description: >-
+          the part
+      predicate:
+        subproperty_of: has part
+
+  anatomical entity part of anatomical entity association:
+     # schema: gocam
+    is_a: anatomical entity to anatomical entity association
+    description: >-
+      A relationship between two anatomical entities where the relationship
+      is mereological, i.e the two entities are related by parthood, that is,
+      the subject is a part of the object entity (the expected predicate is
+      "biolink:part_of" or suitable predicate slots inheriting from it, i.e., 
+      "biolink:plasma_membrane_part_of",  "biolink:variant_part_of", etc.).
+      This includes relationships between cellular components and cells,
+      between cells and tissues, tissues and whole organisms.
     defining_slots:
       - predicate
     slot_usage:

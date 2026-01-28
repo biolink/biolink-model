@@ -515,6 +515,110 @@ type AnatomicalEntity implements PhysicalEssence, OntologyClass
     hasAttribute: [Attribute]
   }
 
+type AnatomicalEntityHasPartAnatomicalEntityAssociation
+  {
+    id: String!
+    iri: IriType
+    name: LabelType
+    description: NarrativeText
+    hasAttribute: [Attribute]
+    deprecated: Boolean
+    negated: Boolean
+    qualifier: String
+    qualifiers: [OntologyClass]
+    publications: [Publication]
+    sources: [RetrievalSource]
+    hasEvidenceOfType: [EvidenceType]
+    hasEvidence: [InformationContentEntity]
+    knowledgeSource: String
+    primaryKnowledgeSource: String
+    aggregatorKnowledgeSource: [String]
+    knowledgeLevel: KnowledgeLevelEnum!
+    agentType: AgentTypeEnum!
+    timepoint: TimeType
+    originalSubject: String
+    originalPredicate: Uriorcurie
+    originalObject: String
+    subjectFeatureName: String
+    objectFeatureName: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
+    supportingText: [String]
+    hasSupportingStudies: [Study]
+    updateDate: Date
+    hasConfidenceScore: Float
+    elevateToPrediction: Boolean
+    evidenceCount: Integer
+    type: [String]
+    category: [Uriorcurie]
+    subject: AnatomicalEntity!
+    object: AnatomicalEntity!
+    predicate: Uriorcurie!
+  }
+
+type AnatomicalEntityPartOfAnatomicalEntityAssociation
+  {
+    id: String!
+    iri: IriType
+    name: LabelType
+    description: NarrativeText
+    hasAttribute: [Attribute]
+    deprecated: Boolean
+    negated: Boolean
+    qualifier: String
+    qualifiers: [OntologyClass]
+    publications: [Publication]
+    sources: [RetrievalSource]
+    hasEvidenceOfType: [EvidenceType]
+    hasEvidence: [InformationContentEntity]
+    knowledgeSource: String
+    primaryKnowledgeSource: String
+    aggregatorKnowledgeSource: [String]
+    knowledgeLevel: KnowledgeLevelEnum!
+    agentType: AgentTypeEnum!
+    timepoint: TimeType
+    originalSubject: String
+    originalPredicate: Uriorcurie
+    originalObject: String
+    subjectFeatureName: String
+    objectFeatureName: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
+    supportingText: [String]
+    hasSupportingStudies: [Study]
+    updateDate: Date
+    hasConfidenceScore: Float
+    elevateToPrediction: Boolean
+    evidenceCount: Integer
+    type: [String]
+    category: [Uriorcurie]
+    subject: AnatomicalEntity!
+    object: AnatomicalEntity!
+    predicate: Uriorcurie!
+  }
+
 interface AnatomicalEntityToAnatomicalEntityAssociation
   {
     id: String!
@@ -568,58 +672,6 @@ interface AnatomicalEntityToAnatomicalEntityAssociation
   }
 
 type AnatomicalEntityToAnatomicalEntityOntogenicAssociation
-  {
-    id: String!
-    iri: IriType
-    name: LabelType
-    description: NarrativeText
-    hasAttribute: [Attribute]
-    deprecated: Boolean
-    negated: Boolean
-    qualifier: String
-    qualifiers: [OntologyClass]
-    publications: [Publication]
-    sources: [RetrievalSource]
-    hasEvidenceOfType: [EvidenceType]
-    hasEvidence: [InformationContentEntity]
-    knowledgeSource: String
-    primaryKnowledgeSource: String
-    aggregatorKnowledgeSource: [String]
-    knowledgeLevel: KnowledgeLevelEnum!
-    agentType: AgentTypeEnum!
-    timepoint: TimeType
-    originalSubject: String
-    originalPredicate: Uriorcurie
-    originalObject: String
-    subjectFeatureName: String
-    objectFeatureName: String
-    subjectCategory: OntologyClass
-    objectCategory: OntologyClass
-    subjectClosure: [String]
-    objectClosure: [String]
-    subjectCategoryClosure: [OntologyClass]
-    objectCategoryClosure: [OntologyClass]
-    subjectNamespace: String
-    objectNamespace: String
-    subjectLabelClosure: [String]
-    objectLabelClosure: [String]
-    retrievalSourceIds: [RetrievalSource]
-    pValue: Float
-    adjustedPValue: Float
-    supportingText: [String]
-    hasSupportingStudies: [Study]
-    updateDate: Date
-    hasConfidenceScore: Float
-    elevateToPrediction: Boolean
-    evidenceCount: Integer
-    type: [String]
-    category: [Uriorcurie]
-    subject: AnatomicalEntity!
-    object: AnatomicalEntity!
-    predicate: Uriorcurie!
-  }
-
-type AnatomicalEntityToAnatomicalEntityPartOfAssociation
   {
     id: String!
     iri: IriType
@@ -2490,7 +2542,7 @@ interface ChemicalOrDrugOrTreatment
   {
   }
 
-type ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation implements EntityToDiseaseOrPhenotypicFeatureAssociationMixin
+type ChemicalOrDrugOrTreatmentAdverseEventAssociation implements EntityToDiseaseOrPhenotypicFeatureAssociationMixin, EntityToFeatureOrDiseaseQualifiersMixin
   {
     id: String!
     iri: IriType
@@ -2540,6 +2592,7 @@ type ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation im
     type: [String]
     category: [Uriorcurie]
     fDAAdverseEventLevel: FDAIDAAdverseEventEnum
+    predicate: Uriorcurie!
     diseaseContextQualifier: Disease
     subjectSpecializationQualifier: Uriorcurie
     objectSpecializationQualifier: Uriorcurie
@@ -2550,7 +2603,68 @@ type ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation im
     objectAspectQualifier: String
     objectDirectionQualifier: DirectionQualifierEnum
     qualifiedPredicate: Uriorcurie
+  }
+
+type ChemicalOrDrugOrTreatmentSideEffectAssociation implements EntityToDiseaseOrPhenotypicFeatureAssociationMixin, EntityToFeatureOrDiseaseQualifiersMixin
+  {
+    id: String!
+    iri: IriType
+    name: LabelType
+    description: NarrativeText
+    hasAttribute: [Attribute]
+    deprecated: Boolean
+    subject: NamedThing!
+    object: NamedThing!
+    negated: Boolean
+    qualifier: String
+    qualifiers: [OntologyClass]
+    publications: [Publication]
+    sources: [RetrievalSource]
+    hasEvidenceOfType: [EvidenceType]
+    hasEvidence: [InformationContentEntity]
+    knowledgeSource: String
+    primaryKnowledgeSource: String
+    aggregatorKnowledgeSource: [String]
+    knowledgeLevel: KnowledgeLevelEnum!
+    agentType: AgentTypeEnum!
+    timepoint: TimeType
+    originalSubject: String
+    originalPredicate: Uriorcurie
+    originalObject: String
+    subjectFeatureName: String
+    objectFeatureName: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
+    supportingText: [String]
+    hasSupportingStudies: [Study]
+    updateDate: Date
+    hasConfidenceScore: Float
+    elevateToPrediction: Boolean
+    evidenceCount: Integer
+    type: [String]
+    category: [Uriorcurie]
     predicate: Uriorcurie!
+    diseaseContextQualifier: Disease
+    subjectSpecializationQualifier: Uriorcurie
+    objectSpecializationQualifier: Uriorcurie
+    anatomicalContextQualifier: [String]
+    frequencyQualifier: FrequencyValue
+    subjectAspectQualifier: String
+    subjectDirectionQualifier: DirectionQualifierEnum
+    objectAspectQualifier: String
+    objectDirectionQualifier: DirectionQualifierEnum
+    qualifiedPredicate: Uriorcurie
   }
 
 type ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation implements EntityToDiseaseOrPhenotypicFeatureAssociationMixin, EntityToFeatureOrDiseaseQualifiersMixin
@@ -2602,7 +2716,6 @@ type ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation implements
     evidenceCount: Integer
     type: [String]
     category: [Uriorcurie]
-    fDAAdverseEventLevel: FDAIDAAdverseEventEnum
     predicate: Uriorcurie!
     diseaseContextQualifier: Disease
     subjectSpecializationQualifier: Uriorcurie
@@ -3124,6 +3237,7 @@ type CorrelatedGeneToDiseaseAssociation implements EntityToDiseaseAssociationMix
     type: [String]
     category: [Uriorcurie]
     zScore: Float
+    diseasesConfidenceScore: Float
     subjectFormOrVariantQualifier: String
     subjectAspectQualifier: String
     objectDirectionQualifier: DirectionQualifierEnum
@@ -3872,6 +3986,7 @@ type DruggableGeneToDiseaseAssociation implements EntityToDiseaseAssociationMixi
     objectDirectionQualifier: DirectionQualifierEnum
     allelicRequirement: String
     qualifiedPredicate: Uriorcurie
+    diseasesConfidenceScore: Float
     object: Disease!
     druggableGeneCategory: DruggableGeneCategoryEnum
     subject: GeneOrGeneProduct!
@@ -4802,6 +4917,7 @@ type GeneAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMixin,
     objectDirectionQualifier: DirectionQualifierEnum
     allelicRequirement: String
     qualifiedPredicate: Uriorcurie
+    diseasesConfidenceScore: Float
     object: Disease!
     predicate: GeneToDiseasePredicateEnum!
     subject: GeneOrGeneProduct!
@@ -4949,6 +5065,7 @@ type GeneHasVariantThatContributesToDiseaseAssociation
     objectDirectionQualifier: DirectionQualifierEnum
     allelicRequirement: String
     qualifiedPredicate: Uriorcurie
+    diseasesConfidenceScore: Float
     subjectFormOrVariantQualifier: String
     subject: GeneOrGeneProduct!
     object: Disease!
@@ -5190,6 +5307,7 @@ type GeneToDiseaseAssociation implements GeneToEntityAssociationMixin
     objectDirectionQualifier: DirectionQualifierEnum
     allelicRequirement: String
     qualifiedPredicate: Uriorcurie
+    diseasesConfidenceScore: Float
     subject: GeneOrGeneProduct!
     object: Disease!
     predicate: GeneToDiseasePredicateEnum!

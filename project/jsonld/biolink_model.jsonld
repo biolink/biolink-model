@@ -4918,9 +4918,9 @@
       "is_a": "association_slot",
       "domain": "Association",
       "slot_uri": "https://w3id.org/biolink/vocab/FDA_adverse_event_level",
-      "owner": "ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation",
+      "owner": "ChemicalOrDrugOrTreatmentAdverseEventAssociation",
       "domain_of": [
-        "ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation"
+        "ChemicalOrDrugOrTreatmentAdverseEventAssociation"
       ],
       "range": "FDAIDAAdverseEventEnum",
       "@type": "SlotDefinition"
@@ -14830,7 +14830,12 @@
       "description": "A score defined by Jensen Lab Diseases that reports confidence level in an association on a scale of 1-5 stars.  It is based on different inputs for curated knowledge associations vs text-mined associations vs experimental/GWAS based associations, but adjusts/caps scores for these types of knowledge such that they are comparable on a single scale.",
       "from_schema": "https://w3id.org/biolink/biolink-model/attributes",
       "slot_uri": "https://w3id.org/biolink/vocab/diseases_confidence_score",
-      "range": "integer",
+      "owner": "CorrelatedGeneToDiseaseAssociation",
+      "domain_of": [
+        "GeneToDiseaseAssociation",
+        "CorrelatedGeneToDiseaseAssociation"
+      ],
+      "range": "float",
       "@type": "SlotDefinition"
     },
     {
@@ -18307,7 +18312,7 @@
       "domain_of": [
         "ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation"
       ],
-      "subproperty_of": "has_adverse_event",
+      "subproperty_of": "treats_or_applied_or_studied_to_treat",
       "is_usage_slot": true,
       "usage_slot_name": "predicate",
       "range": "uriorcurie",
@@ -18315,7 +18320,7 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "chemical_or_drug_or_treatment_side_effect_disease_or_phenotypic_feature_association_predicate",
+      "name": "chemical_or_drug_or_treatment_adverse_event_association_predicate",
       "definition_uri": "https://w3id.org/biolink/vocab/predicate",
       "local_names": {
         "ga4gh": {
@@ -18336,13 +18341,50 @@
         "http://www.w3.org/2002/07/owl#annotatedProperty",
         "http://purl.org/oban/association_has_predicate"
       ],
-      "is_a": "chemical_or_drug_or_treatment_to_disease_or_phenotypic_feature_association_predicate",
-      "domain": "ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation",
+      "is_a": "predicate",
+      "domain": "ChemicalOrDrugOrTreatmentAdverseEventAssociation",
       "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate",
       "alias": "predicate",
-      "owner": "ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation",
+      "owner": "ChemicalOrDrugOrTreatmentAdverseEventAssociation",
       "domain_of": [
-        "ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation"
+        "ChemicalOrDrugOrTreatmentAdverseEventAssociation"
+      ],
+      "subproperty_of": "has_adverse_event",
+      "is_usage_slot": true,
+      "usage_slot_name": "predicate",
+      "range": "uriorcurie",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "chemical_or_drug_or_treatment_side_effect_association_predicate",
+      "definition_uri": "https://w3id.org/biolink/vocab/predicate",
+      "local_names": {
+        "ga4gh": {
+          "local_name_source": "ga4gh",
+          "local_name_value": "annotation predicate"
+        },
+        "translator": {
+          "local_name_source": "translator",
+          "local_name_value": "predicate"
+        }
+      },
+      "description": "Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats",
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "mappings": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate"
+      ],
+      "exact_mappings": [
+        "http://www.w3.org/2002/07/owl#annotatedProperty",
+        "http://purl.org/oban/association_has_predicate"
+      ],
+      "is_a": "predicate",
+      "domain": "ChemicalOrDrugOrTreatmentSideEffectAssociation",
+      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate",
+      "alias": "predicate",
+      "owner": "ChemicalOrDrugOrTreatmentSideEffectAssociation",
+      "domain_of": [
+        "ChemicalOrDrugOrTreatmentSideEffectAssociation"
       ],
       "subproperty_of": "has_side_effect",
       "is_usage_slot": true,
@@ -18707,7 +18749,7 @@
       "domain_of": [
         "ChemicalEntityToBiologicalProcessAssociation"
       ],
-      "subproperty_of": "affects",
+      "subproperty_of": "related_to_at_instance_level",
       "is_usage_slot": true,
       "usage_slot_name": "predicate",
       "range": "uriorcurie",
@@ -25215,7 +25257,7 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "anatomical_entity_to_anatomical_entity_part_of_association_subject",
+      "name": "anatomical_entity_has_part_anatomical_entity_association_subject",
       "definition_uri": "https://w3id.org/biolink/vocab/subject",
       "local_names": {
         "ga4gh": {
@@ -25227,7 +25269,7 @@
           "local_name_value": "node with outgoing relationship"
         }
       },
-      "description": "the part",
+      "description": "the whole",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "mappings": [
         "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject"
@@ -25237,12 +25279,12 @@
         "http://purl.org/oban/association_has_subject"
       ],
       "is_a": "anatomical_entity_to_anatomical_entity_association_subject",
-      "domain": "AnatomicalEntityToAnatomicalEntityPartOfAssociation",
+      "domain": "AnatomicalEntityHasPartAnatomicalEntityAssociation",
       "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
       "alias": "subject",
-      "owner": "AnatomicalEntityToAnatomicalEntityPartOfAssociation",
+      "owner": "AnatomicalEntityHasPartAnatomicalEntityAssociation",
       "domain_of": [
-        "AnatomicalEntityToAnatomicalEntityPartOfAssociation"
+        "AnatomicalEntityHasPartAnatomicalEntityAssociation"
       ],
       "is_usage_slot": true,
       "usage_slot_name": "subject",
@@ -25251,7 +25293,7 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "anatomical_entity_to_anatomical_entity_part_of_association_object",
+      "name": "anatomical_entity_has_part_anatomical_entity_association_object",
       "definition_uri": "https://w3id.org/biolink/vocab/object",
       "local_names": {
         "ga4gh": {
@@ -25263,7 +25305,7 @@
           "local_name_value": "node with incoming relationship"
         }
       },
-      "description": "the whole",
+      "description": "the part",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "mappings": [
         "http://www.w3.org/1999/02/22-rdf-syntax-ns#object"
@@ -25273,12 +25315,12 @@
         "http://purl.org/oban/association_has_object"
       ],
       "is_a": "anatomical_entity_to_anatomical_entity_association_object",
-      "domain": "AnatomicalEntityToAnatomicalEntityPartOfAssociation",
+      "domain": "AnatomicalEntityHasPartAnatomicalEntityAssociation",
       "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
       "alias": "object",
-      "owner": "AnatomicalEntityToAnatomicalEntityPartOfAssociation",
+      "owner": "AnatomicalEntityHasPartAnatomicalEntityAssociation",
       "domain_of": [
-        "AnatomicalEntityToAnatomicalEntityPartOfAssociation"
+        "AnatomicalEntityHasPartAnatomicalEntityAssociation"
       ],
       "is_usage_slot": true,
       "usage_slot_name": "object",
@@ -25287,7 +25329,7 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "anatomical_entity_to_anatomical_entity_part_of_association_predicate",
+      "name": "anatomical_entity_has_part_anatomical_entity_association_predicate",
       "definition_uri": "https://w3id.org/biolink/vocab/predicate",
       "local_names": {
         "ga4gh": {
@@ -25309,12 +25351,121 @@
         "http://purl.org/oban/association_has_predicate"
       ],
       "is_a": "predicate",
-      "domain": "AnatomicalEntityToAnatomicalEntityPartOfAssociation",
+      "domain": "AnatomicalEntityHasPartAnatomicalEntityAssociation",
       "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate",
       "alias": "predicate",
-      "owner": "AnatomicalEntityToAnatomicalEntityPartOfAssociation",
+      "owner": "AnatomicalEntityHasPartAnatomicalEntityAssociation",
       "domain_of": [
-        "AnatomicalEntityToAnatomicalEntityPartOfAssociation"
+        "AnatomicalEntityHasPartAnatomicalEntityAssociation"
+      ],
+      "subproperty_of": "has_part",
+      "is_usage_slot": true,
+      "usage_slot_name": "predicate",
+      "range": "uriorcurie",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "anatomical_entity_part_of_anatomical_entity_association_subject",
+      "definition_uri": "https://w3id.org/biolink/vocab/subject",
+      "local_names": {
+        "ga4gh": {
+          "local_name_source": "ga4gh",
+          "local_name_value": "annotation subject"
+        },
+        "neo4j": {
+          "local_name_source": "neo4j",
+          "local_name_value": "node with outgoing relationship"
+        }
+      },
+      "description": "the part",
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "mappings": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject"
+      ],
+      "exact_mappings": [
+        "http://www.w3.org/2002/07/owl#annotatedSource",
+        "http://purl.org/oban/association_has_subject"
+      ],
+      "is_a": "anatomical_entity_to_anatomical_entity_association_subject",
+      "domain": "AnatomicalEntityPartOfAnatomicalEntityAssociation",
+      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
+      "alias": "subject",
+      "owner": "AnatomicalEntityPartOfAnatomicalEntityAssociation",
+      "domain_of": [
+        "AnatomicalEntityPartOfAnatomicalEntityAssociation"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "subject",
+      "range": "AnatomicalEntity",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "anatomical_entity_part_of_anatomical_entity_association_object",
+      "definition_uri": "https://w3id.org/biolink/vocab/object",
+      "local_names": {
+        "ga4gh": {
+          "local_name_source": "ga4gh",
+          "local_name_value": "descriptor"
+        },
+        "neo4j": {
+          "local_name_source": "neo4j",
+          "local_name_value": "node with incoming relationship"
+        }
+      },
+      "description": "the whole",
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "mappings": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#object"
+      ],
+      "exact_mappings": [
+        "http://www.w3.org/2002/07/owl#annotatedTarget",
+        "http://purl.org/oban/association_has_object"
+      ],
+      "is_a": "anatomical_entity_to_anatomical_entity_association_object",
+      "domain": "AnatomicalEntityPartOfAnatomicalEntityAssociation",
+      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
+      "alias": "object",
+      "owner": "AnatomicalEntityPartOfAnatomicalEntityAssociation",
+      "domain_of": [
+        "AnatomicalEntityPartOfAnatomicalEntityAssociation"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "object",
+      "range": "AnatomicalEntity",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "anatomical_entity_part_of_anatomical_entity_association_predicate",
+      "definition_uri": "https://w3id.org/biolink/vocab/predicate",
+      "local_names": {
+        "ga4gh": {
+          "local_name_source": "ga4gh",
+          "local_name_value": "annotation predicate"
+        },
+        "translator": {
+          "local_name_source": "translator",
+          "local_name_value": "predicate"
+        }
+      },
+      "description": "Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats",
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "mappings": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate"
+      ],
+      "exact_mappings": [
+        "http://www.w3.org/2002/07/owl#annotatedProperty",
+        "http://purl.org/oban/association_has_predicate"
+      ],
+      "is_a": "predicate",
+      "domain": "AnatomicalEntityPartOfAnatomicalEntityAssociation",
+      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate",
+      "alias": "predicate",
+      "owner": "AnatomicalEntityPartOfAnatomicalEntityAssociation",
+      "domain_of": [
+        "AnatomicalEntityPartOfAnatomicalEntityAssociation"
       ],
       "subproperty_of": "part_of",
       "is_usage_slot": true,
@@ -35197,7 +35348,86 @@
     {
       "name": "ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation",
       "definition_uri": "https://w3id.org/biolink/vocab/ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation",
-      "description": "This association defines a relationship between a chemical or treatment (or procedure) and a disease or phenotypic feature where the disease or phenotypic feature is a secondary undesirable effect.",
+      "description": "This association defines a relationship between a chemical or treatment (or procedure) and a disease or phenotypic feature where the chemical or treatment is used to treat, or is being studied to treat, the disease or phenotypic feature.",
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "is_a": "Association",
+      "mixins": [
+        "EntityToDiseaseOrPhenotypicFeatureAssociationMixin",
+        "EntityToFeatureOrDiseaseQualifiersMixin"
+      ],
+      "slots": [
+        "id",
+        "iri",
+        "name",
+        "description",
+        "has_attribute",
+        "deprecated",
+        "subject",
+        "object",
+        "negated",
+        "qualifier",
+        "qualifiers",
+        "publications",
+        "association_sources",
+        "has_evidence_of_type",
+        "has_evidence",
+        "knowledge_source",
+        "primary_knowledge_source",
+        "aggregator_knowledge_source",
+        "knowledge_level",
+        "agent_type",
+        "timepoint",
+        "original_subject",
+        "original_predicate",
+        "original_object",
+        "subject_feature_name",
+        "object_feature_name",
+        "subject_category",
+        "object_category",
+        "subject_closure",
+        "object_closure",
+        "subject_category_closure",
+        "object_category_closure",
+        "subject_namespace",
+        "object_namespace",
+        "subject_label_closure",
+        "object_label_closure",
+        "retrieval_source_ids",
+        "p_value",
+        "adjusted_p_value",
+        "supporting_text",
+        "association_has_supporting_studies",
+        "update_date",
+        "has_confidence_score",
+        "elevate_to_prediction",
+        "evidence_count",
+        "association_type",
+        "association_category",
+        "chemical_or_drug_or_treatment_to_disease_or_phenotypic_feature_association_predicate",
+        "disease_context_qualifier",
+        "subject_specialization_qualifier",
+        "object_specialization_qualifier",
+        "anatomical_context_qualifier",
+        "frequency_qualifier",
+        "subject_aspect_qualifier",
+        "subject_direction_qualifier",
+        "object_aspect_qualifier",
+        "object_direction_qualifier",
+        "qualified_predicate"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/biolink/vocab/ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation",
+      "defining_slots": [
+        "subject",
+        "predicate",
+        "object"
+      ],
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "ChemicalOrDrugOrTreatmentAdverseEventAssociation",
+      "definition_uri": "https://w3id.org/biolink/vocab/ChemicalOrDrugOrTreatmentAdverseEventAssociation",
+      "description": "This association defines a relationship between a chemical or treatment (or procedure) and a disease or phenotypic feature where the disease or phenotypic feature is an untoward medical occurrence that happens during treatment, whether or not considered related to the treatment.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "Association",
       "mixins": [
@@ -35253,7 +35483,7 @@
         "association_type",
         "association_category",
         "FDA_adverse_event_level",
-        "chemical_or_drug_or_treatment_to_disease_or_phenotypic_feature_association_predicate",
+        "chemical_or_drug_or_treatment_adverse_event_association_predicate",
         "disease_context_qualifier",
         "subject_specialization_qualifier",
         "object_specialization_qualifier",
@@ -35266,7 +35496,7 @@
         "qualified_predicate"
       ],
       "slot_usage": {},
-      "class_uri": "https://w3id.org/biolink/vocab/ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation",
+      "class_uri": "https://w3id.org/biolink/vocab/ChemicalOrDrugOrTreatmentAdverseEventAssociation",
       "defining_slots": [
         "subject",
         "predicate",
@@ -35275,13 +35505,14 @@
       "@type": "ClassDefinition"
     },
     {
-      "name": "ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation",
-      "definition_uri": "https://w3id.org/biolink/vocab/ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation",
-      "description": "This association defines a relationship between a chemical or treatment (or procedure) and a disease or phenotypic feature where the disesae or phenotypic feature is a secondary, typically (but not always) undesirable effect.",
+      "name": "ChemicalOrDrugOrTreatmentSideEffectAssociation",
+      "definition_uri": "https://w3id.org/biolink/vocab/ChemicalOrDrugOrTreatmentSideEffectAssociation",
+      "description": "This association defines a relationship between a chemical or treatment (or procedure) and a disease or phenotypic feature where the disease or phenotypic feature is an unintended, but predictable, secondary effect of the treatment.",
       "from_schema": "https://w3id.org/biolink/vocab/",
-      "is_a": "ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation",
+      "is_a": "Association",
       "mixins": [
-        "EntityToDiseaseOrPhenotypicFeatureAssociationMixin"
+        "EntityToDiseaseOrPhenotypicFeatureAssociationMixin",
+        "EntityToFeatureOrDiseaseQualifiersMixin"
       ],
       "slots": [
         "id",
@@ -35331,7 +35562,7 @@
         "evidence_count",
         "association_type",
         "association_category",
-        "FDA_adverse_event_level",
+        "chemical_or_drug_or_treatment_side_effect_association_predicate",
         "disease_context_qualifier",
         "subject_specialization_qualifier",
         "object_specialization_qualifier",
@@ -35341,11 +35572,10 @@
         "subject_direction_qualifier",
         "object_aspect_qualifier",
         "object_direction_qualifier",
-        "qualified_predicate",
-        "chemical_or_drug_or_treatment_side_effect_disease_or_phenotypic_feature_association_predicate"
+        "qualified_predicate"
       ],
       "slot_usage": {},
-      "class_uri": "https://w3id.org/biolink/vocab/ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation",
+      "class_uri": "https://w3id.org/biolink/vocab/ChemicalOrDrugOrTreatmentSideEffectAssociation",
       "defining_slots": [
         "subject",
         "predicate",
@@ -37870,6 +38100,7 @@
         "gene_to_disease_association_object_direction_qualifier",
         "allelic_requirement",
         "qualified_predicate",
+        "diseases_confidence_score",
         "gene_to_disease_association_subject",
         "gene_to_disease_association_object",
         "gene_to_disease_association_predicate"
@@ -38009,6 +38240,7 @@
         "association_type",
         "association_category",
         "z_score",
+        "diseases_confidence_score",
         "subject_form_or_variant_qualifier",
         "subject_aspect_qualifier",
         "object_direction_qualifier",
@@ -38091,6 +38323,7 @@
         "gene_to_disease_association_object_direction_qualifier",
         "allelic_requirement",
         "qualified_predicate",
+        "diseases_confidence_score",
         "gene_to_disease_association_object",
         "druggable_gene_category",
         "druggable_gene_to_disease_association_subject",
@@ -38775,6 +39008,7 @@
         "gene_to_disease_association_object_direction_qualifier",
         "allelic_requirement",
         "qualified_predicate",
+        "diseases_confidence_score",
         "gene_to_disease_association_object",
         "gene_to_disease_association_predicate",
         "gene_as_a_model_of_disease_association_subject",
@@ -39278,6 +39512,7 @@
         "gene_to_disease_association_object_direction_qualifier",
         "allelic_requirement",
         "qualified_predicate",
+        "diseases_confidence_score",
         "subject_form_or_variant_qualifier",
         "gene_has_variant_that_contributes_to_disease_association_subject",
         "gene_has_variant_that_contributes_to_disease_association_object",
@@ -40541,9 +40776,9 @@
       "@type": "ClassDefinition"
     },
     {
-      "name": "AnatomicalEntityToAnatomicalEntityPartOfAssociation",
-      "definition_uri": "https://w3id.org/biolink/vocab/AnatomicalEntityToAnatomicalEntityPartOfAssociation",
-      "description": "A relationship between two anatomical entities where the relationship is mereological, i.e the two entities are related by parthood. This includes relationships between cellular components and cells, between cells and tissues, tissues and whole organisms",
+      "name": "AnatomicalEntityHasPartAnatomicalEntityAssociation",
+      "definition_uri": "https://w3id.org/biolink/vocab/AnatomicalEntityHasPartAnatomicalEntityAssociation",
+      "description": "A relationship between two anatomical entities where the relationship is mereological, i.e the two entities are related by parthood, that is, the subject is has the object entity as a part (the expected predicate is \"biolink:has_part\" or suitable predicate slots inheriting from it, i.e.,  \"biolink:has_plasma_membrane_part\",  \"biolink:has_variant_part\", etc.). This includes relationships between cells and cellular components, between issues and cells, whole organisms and tissues.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "AnatomicalEntityToAnatomicalEntityAssociation",
       "slots": [
@@ -40592,12 +40827,75 @@
         "evidence_count",
         "association_type",
         "association_category",
-        "anatomical_entity_to_anatomical_entity_part_of_association_subject",
-        "anatomical_entity_to_anatomical_entity_part_of_association_object",
-        "anatomical_entity_to_anatomical_entity_part_of_association_predicate"
+        "anatomical_entity_has_part_anatomical_entity_association_subject",
+        "anatomical_entity_has_part_anatomical_entity_association_object",
+        "anatomical_entity_has_part_anatomical_entity_association_predicate"
       ],
       "slot_usage": {},
-      "class_uri": "https://w3id.org/biolink/vocab/AnatomicalEntityToAnatomicalEntityPartOfAssociation",
+      "class_uri": "https://w3id.org/biolink/vocab/AnatomicalEntityHasPartAnatomicalEntityAssociation",
+      "defining_slots": [
+        "predicate"
+      ],
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "AnatomicalEntityPartOfAnatomicalEntityAssociation",
+      "definition_uri": "https://w3id.org/biolink/vocab/AnatomicalEntityPartOfAnatomicalEntityAssociation",
+      "description": "A relationship between two anatomical entities where the relationship is mereological, i.e the two entities are related by parthood, that is, the subject is a part of the object entity (the expected predicate is \"biolink:part_of\" or suitable predicate slots inheriting from it, i.e.,  \"biolink:plasma_membrane_part_of\",  \"biolink:variant_part_of\", etc.). This includes relationships between cellular components and cells, between cells and tissues, tissues and whole organisms.",
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "is_a": "AnatomicalEntityToAnatomicalEntityAssociation",
+      "slots": [
+        "id",
+        "iri",
+        "name",
+        "description",
+        "has_attribute",
+        "deprecated",
+        "negated",
+        "qualifier",
+        "qualifiers",
+        "publications",
+        "association_sources",
+        "has_evidence_of_type",
+        "has_evidence",
+        "knowledge_source",
+        "primary_knowledge_source",
+        "aggregator_knowledge_source",
+        "knowledge_level",
+        "agent_type",
+        "timepoint",
+        "original_subject",
+        "original_predicate",
+        "original_object",
+        "subject_feature_name",
+        "object_feature_name",
+        "subject_category",
+        "object_category",
+        "subject_closure",
+        "object_closure",
+        "subject_category_closure",
+        "object_category_closure",
+        "subject_namespace",
+        "object_namespace",
+        "subject_label_closure",
+        "object_label_closure",
+        "retrieval_source_ids",
+        "p_value",
+        "adjusted_p_value",
+        "supporting_text",
+        "association_has_supporting_studies",
+        "update_date",
+        "has_confidence_score",
+        "elevate_to_prediction",
+        "evidence_count",
+        "association_type",
+        "association_category",
+        "anatomical_entity_part_of_anatomical_entity_association_subject",
+        "anatomical_entity_part_of_anatomical_entity_association_object",
+        "anatomical_entity_part_of_anatomical_entity_association_predicate"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/biolink/vocab/AnatomicalEntityPartOfAnatomicalEntityAssociation",
       "defining_slots": [
         "predicate"
       ],
@@ -41073,9 +41371,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2026-01-23T18:27:17",
-  "source_file_size": 457661,
-  "generation_date": "2026-01-23T18:27:29",
+  "source_file_date": "2026-01-28T17:16:16",
+  "source_file_size": 459667,
+  "generation_date": "2026-01-28T17:16:23",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",
