@@ -283,6 +283,7 @@ linkml:Sparqlpath xsd:string
     @<ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation> OR @<ChemicalEntityToBiologicalProcessAssociation> OR
     @<ChemicalEntityToChemicalEntityAssociation> OR @<ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation> OR
     @<ChemicalEntityToPathwayAssociation> OR @<ChemicalGeneInteractionAssociation> OR
+    @<ChemicalOrDrugOrTreatmentAdverseEventAssociation> OR @<ChemicalOrDrugOrTreatmentSideEffectAssociation> OR
     @<ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation> OR @<ContributorAssociation> OR
     @<CorrelatedGeneToDiseaseAssociation> OR @<DiseaseAssociatedWithResponseToChemicalEntityAssociation> OR
     @<DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation> OR @<DiseaseOrPhenotypicFeatureToLocationAssociation> OR
@@ -1438,52 +1439,96 @@ linkml:Sparqlpath xsd:string
     )
 }
 
-<ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation> CLOSED {
-    (  $<ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation_tes> ( 
-          &<ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation_tes> ;
-          rdf:type [ <ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation> ] ? ;
+<ChemicalOrDrugOrTreatmentAdverseEventAssociation> CLOSED {
+    (  $<ChemicalOrDrugOrTreatmentAdverseEventAssociation_tes> (  &<Association_tes> ;
+          rdf:type [ <Association> ] ? ;
           &<EntityToDiseaseOrPhenotypicFeatureAssociationMixin_tes> ;
           rdf:type [ <EntityToDiseaseOrPhenotypicFeatureAssociationMixin> ] ? ;
-          rdf:predicate @linkml:Uriorcurie
+          &<EntityToFeatureOrDiseaseQualifiersMixin_tes> ;
+          rdf:type [ <EntityToFeatureOrDiseaseQualifiersMixin> ] ? ;
+          <FDA_adverse_event_level> [ <https://w3id.org/biolink/vocab/FDAIDAAdverseEventEnum#life_threatening_adverse_event>
+             <https://w3id.org/biolink/vocab/FDAIDAAdverseEventEnum#serious_adverse_event>
+             <https://w3id.org/biolink/vocab/FDAIDAAdverseEventEnum#suspected_adverse_reaction>
+             <https://w3id.org/biolink/vocab/FDAIDAAdverseEventEnum#unexpected_adverse_event> ] ? ;
+          rdf:predicate @linkml:Uriorcurie ;
+          <disease_context_qualifier> @<Disease> ? ;
+          <subject_specialization_qualifier> @linkml:Uriorcurie ? ;
+          <object_specialization_qualifier> @linkml:Uriorcurie ? ;
+          <anatomical_context_qualifier> @linkml:String * ;
+          <frequency_qualifier> @<FrequencyValue> ? ;
+          <subject_aspect_qualifier> @linkml:String ? ;
+          <subject_direction_qualifier> [ <https://w3id.org/biolink/vocab/DirectionQualifierEnum#increased>
+             <https://w3id.org/biolink/vocab/DirectionQualifierEnum#upregulated>
+             <https://w3id.org/biolink/vocab/DirectionQualifierEnum#decreased>
+             <https://w3id.org/biolink/vocab/DirectionQualifierEnum#downregulated> ] ? ;
+          <object_aspect_qualifier> @linkml:String ? ;
+          <object_direction_qualifier> [ <https://w3id.org/biolink/vocab/DirectionQualifierEnum#increased>
+             <https://w3id.org/biolink/vocab/DirectionQualifierEnum#upregulated>
+             <https://w3id.org/biolink/vocab/DirectionQualifierEnum#decreased>
+             <https://w3id.org/biolink/vocab/DirectionQualifierEnum#downregulated> ] ? ;
+          <qualified_predicate> @linkml:Uriorcurie ?
        ) ;
-       rdf:type [ <ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation> ]
+       rdf:type [ <ChemicalOrDrugOrTreatmentAdverseEventAssociation> ]
     )
 }
 
-<ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation>  (
-    CLOSED {
-       (  $<ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation_tes> (  &<Association_tes> ;
-             rdf:type [ <Association> ] ? ;
-             &<EntityToDiseaseOrPhenotypicFeatureAssociationMixin_tes> ;
-             rdf:type [ <EntityToDiseaseOrPhenotypicFeatureAssociationMixin> ] ? ;
-             &<EntityToFeatureOrDiseaseQualifiersMixin_tes> ;
-             rdf:type [ <EntityToFeatureOrDiseaseQualifiersMixin> ] ? ;
-             <FDA_adverse_event_level> [ <https://w3id.org/biolink/vocab/FDAIDAAdverseEventEnum#life_threatening_adverse_event>
-                <https://w3id.org/biolink/vocab/FDAIDAAdverseEventEnum#serious_adverse_event>
-                <https://w3id.org/biolink/vocab/FDAIDAAdverseEventEnum#suspected_adverse_reaction>
-                <https://w3id.org/biolink/vocab/FDAIDAAdverseEventEnum#unexpected_adverse_event> ] ? ;
-             rdf:predicate @linkml:Uriorcurie ;
-             <disease_context_qualifier> @<Disease> ? ;
-             <subject_specialization_qualifier> @linkml:Uriorcurie ? ;
-             <object_specialization_qualifier> @linkml:Uriorcurie ? ;
-             <anatomical_context_qualifier> @linkml:String * ;
-             <frequency_qualifier> @<FrequencyValue> ? ;
-             <subject_aspect_qualifier> @linkml:String ? ;
-             <subject_direction_qualifier> [ <https://w3id.org/biolink/vocab/DirectionQualifierEnum#increased>
-                <https://w3id.org/biolink/vocab/DirectionQualifierEnum#upregulated>
-                <https://w3id.org/biolink/vocab/DirectionQualifierEnum#decreased>
-                <https://w3id.org/biolink/vocab/DirectionQualifierEnum#downregulated> ] ? ;
-             <object_aspect_qualifier> @linkml:String ? ;
-             <object_direction_qualifier> [ <https://w3id.org/biolink/vocab/DirectionQualifierEnum#increased>
-                <https://w3id.org/biolink/vocab/DirectionQualifierEnum#upregulated>
-                <https://w3id.org/biolink/vocab/DirectionQualifierEnum#decreased>
-                <https://w3id.org/biolink/vocab/DirectionQualifierEnum#downregulated> ] ? ;
-             <qualified_predicate> @linkml:Uriorcurie ?
-          ) ;
-          rdf:type [ <ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation> ]
-       )
-    } OR @<ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation>
-)
+<ChemicalOrDrugOrTreatmentSideEffectAssociation> CLOSED {
+    (  $<ChemicalOrDrugOrTreatmentSideEffectAssociation_tes> (  &<Association_tes> ;
+          rdf:type [ <Association> ] ? ;
+          &<EntityToDiseaseOrPhenotypicFeatureAssociationMixin_tes> ;
+          rdf:type [ <EntityToDiseaseOrPhenotypicFeatureAssociationMixin> ] ? ;
+          &<EntityToFeatureOrDiseaseQualifiersMixin_tes> ;
+          rdf:type [ <EntityToFeatureOrDiseaseQualifiersMixin> ] ? ;
+          rdf:predicate @linkml:Uriorcurie ;
+          <disease_context_qualifier> @<Disease> ? ;
+          <subject_specialization_qualifier> @linkml:Uriorcurie ? ;
+          <object_specialization_qualifier> @linkml:Uriorcurie ? ;
+          <anatomical_context_qualifier> @linkml:String * ;
+          <frequency_qualifier> @<FrequencyValue> ? ;
+          <subject_aspect_qualifier> @linkml:String ? ;
+          <subject_direction_qualifier> [ <https://w3id.org/biolink/vocab/DirectionQualifierEnum#increased>
+             <https://w3id.org/biolink/vocab/DirectionQualifierEnum#upregulated>
+             <https://w3id.org/biolink/vocab/DirectionQualifierEnum#decreased>
+             <https://w3id.org/biolink/vocab/DirectionQualifierEnum#downregulated> ] ? ;
+          <object_aspect_qualifier> @linkml:String ? ;
+          <object_direction_qualifier> [ <https://w3id.org/biolink/vocab/DirectionQualifierEnum#increased>
+             <https://w3id.org/biolink/vocab/DirectionQualifierEnum#upregulated>
+             <https://w3id.org/biolink/vocab/DirectionQualifierEnum#decreased>
+             <https://w3id.org/biolink/vocab/DirectionQualifierEnum#downregulated> ] ? ;
+          <qualified_predicate> @linkml:Uriorcurie ?
+       ) ;
+       rdf:type [ <ChemicalOrDrugOrTreatmentSideEffectAssociation> ]
+    )
+}
+
+<ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation> CLOSED {
+    (  $<ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation_tes> (  &<Association_tes> ;
+          rdf:type [ <Association> ] ? ;
+          &<EntityToDiseaseOrPhenotypicFeatureAssociationMixin_tes> ;
+          rdf:type [ <EntityToDiseaseOrPhenotypicFeatureAssociationMixin> ] ? ;
+          &<EntityToFeatureOrDiseaseQualifiersMixin_tes> ;
+          rdf:type [ <EntityToFeatureOrDiseaseQualifiersMixin> ] ? ;
+          rdf:predicate @linkml:Uriorcurie ;
+          <disease_context_qualifier> @<Disease> ? ;
+          <subject_specialization_qualifier> @linkml:Uriorcurie ? ;
+          <object_specialization_qualifier> @linkml:Uriorcurie ? ;
+          <anatomical_context_qualifier> @linkml:String * ;
+          <frequency_qualifier> @<FrequencyValue> ? ;
+          <subject_aspect_qualifier> @linkml:String ? ;
+          <subject_direction_qualifier> [ <https://w3id.org/biolink/vocab/DirectionQualifierEnum#increased>
+             <https://w3id.org/biolink/vocab/DirectionQualifierEnum#upregulated>
+             <https://w3id.org/biolink/vocab/DirectionQualifierEnum#decreased>
+             <https://w3id.org/biolink/vocab/DirectionQualifierEnum#downregulated> ] ? ;
+          <object_aspect_qualifier> @linkml:String ? ;
+          <object_direction_qualifier> [ <https://w3id.org/biolink/vocab/DirectionQualifierEnum#increased>
+             <https://w3id.org/biolink/vocab/DirectionQualifierEnum#upregulated>
+             <https://w3id.org/biolink/vocab/DirectionQualifierEnum#decreased>
+             <https://w3id.org/biolink/vocab/DirectionQualifierEnum#downregulated> ] ? ;
+          <qualified_predicate> @linkml:Uriorcurie ?
+       ) ;
+       rdf:type [ <ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation> ]
+    )
+}
 
 <ChemicalRole> CLOSED {
     (  $<ChemicalRole_tes> (  &<Attribute_tes> ;

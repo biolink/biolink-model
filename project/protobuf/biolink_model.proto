@@ -1989,8 +1989,8 @@ message ChemicalMixture
   approvalStatusEnum drugRegulatoryStatusWorldWide = 0
  repeated  drugDeliveryEnum routesOfDelivery = 0
  }
-// This association defines a relationship between a chemical or treatment (or procedure) and a disease or phenotypic feature where the disesae or phenotypic feature is a secondary, typically (but not always) undesirable effect.
-message ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation
+// This association defines a relationship between a chemical or treatment (or procedure) and a disease or phenotypic feature where the disease or phenotypic feature is an untoward medical occurrence that happens during treatment, whether or not considered related to the treatment.
+message ChemicalOrDrugOrTreatmentAdverseEventAssociation
  {
   string id = 0
   iriType iri = 0
@@ -2040,6 +2040,7 @@ message ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation
  repeated  string type = 0
  repeated  uriorcurie category = 0
   fDAIDAAdverseEventEnum fDAAdverseEventLevel = 0
+  uriorcurie predicate = 0
   disease diseaseContextQualifier = 0
   uriorcurie subjectSpecializationQualifier = 0
   uriorcurie objectSpecializationQualifier = 0
@@ -2050,9 +2051,70 @@ message ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation
   string objectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
   uriorcurie qualifiedPredicate = 0
-  uriorcurie predicate = 0
  }
-// This association defines a relationship between a chemical or treatment (or procedure) and a disease or phenotypic feature where the disease or phenotypic feature is a secondary undesirable effect.
+// This association defines a relationship between a chemical or treatment (or procedure) and a disease or phenotypic feature where the disease or phenotypic feature is an unintended, but predictable, secondary effect of the treatment.
+message ChemicalOrDrugOrTreatmentSideEffectAssociation
+ {
+  string id = 0
+  iriType iri = 0
+  labelType name = 0
+  narrativeText description = 0
+ repeated  attribute hasAttribute = 0
+  boolean deprecated = 0
+  namedThing subject = 0
+  namedThing object = 0
+  boolean negated = 0
+  string qualifier = 0
+ repeated  ontologyClass qualifiers = 0
+ repeated  publication publications = 0
+ repeated  retrievalSource sources = 0
+ repeated  evidenceType hasEvidenceOfType = 0
+ repeated  informationContentEntity hasEvidence = 0
+  string knowledgeSource = 0
+  string primaryKnowledgeSource = 0
+ repeated  string aggregatorKnowledgeSource = 0
+  knowledgeLevelEnum knowledgeLevel = 0
+  agentTypeEnum agentType = 0
+  timeType timepoint = 0
+  string originalSubject = 0
+  uriorcurie originalPredicate = 0
+  string originalObject = 0
+  string subjectFeatureName = 0
+  string objectFeatureName = 0
+  ontologyClass subjectCategory = 0
+  ontologyClass objectCategory = 0
+ repeated  string subjectClosure = 0
+ repeated  string objectClosure = 0
+ repeated  ontologyClass subjectCategoryClosure = 0
+ repeated  ontologyClass objectCategoryClosure = 0
+  string subjectNamespace = 0
+  string objectNamespace = 0
+ repeated  string subjectLabelClosure = 0
+ repeated  string objectLabelClosure = 0
+ repeated  retrievalSource retrievalSourceIds = 0
+  float pValue = 0
+  float adjustedPValue = 0
+ repeated  string supportingText = 0
+ repeated  study hasSupportingStudies = 0
+  date updateDate = 0
+  float hasConfidenceScore = 0
+  boolean elevateToPrediction = 0
+  integer evidenceCount = 0
+ repeated  string type = 0
+ repeated  uriorcurie category = 0
+  uriorcurie predicate = 0
+  disease diseaseContextQualifier = 0
+  uriorcurie subjectSpecializationQualifier = 0
+  uriorcurie objectSpecializationQualifier = 0
+ repeated  string anatomicalContextQualifier = 0
+  frequencyValue frequencyQualifier = 0
+  string subjectAspectQualifier = 0
+  directionQualifierEnum subjectDirectionQualifier = 0
+  string objectAspectQualifier = 0
+  directionQualifierEnum objectDirectionQualifier = 0
+  uriorcurie qualifiedPredicate = 0
+ }
+// This association defines a relationship between a chemical or treatment (or procedure) and a disease or phenotypic feature where the chemical or treatment is used to treat, or is being studied to treat, the disease or phenotypic feature.
 message ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation
  {
   string id = 0
@@ -2102,7 +2164,6 @@ message ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation
   integer evidenceCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
-  fDAIDAAdverseEventEnum fDAAdverseEventLevel = 0
   uriorcurie predicate = 0
   disease diseaseContextQualifier = 0
   uriorcurie subjectSpecializationQualifier = 0

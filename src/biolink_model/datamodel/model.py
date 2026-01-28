@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-01-28T16:33:01
+# Generation date: 2026-01-28T17:16:39
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/vocab/
@@ -1155,7 +1155,11 @@ class ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociationId(Associa
     pass
 
 
-class ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociationId(ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociationId):
+class ChemicalOrDrugOrTreatmentAdverseEventAssociationId(AssociationId):
+    pass
+
+
+class ChemicalOrDrugOrTreatmentSideEffectAssociationId(AssociationId):
     pass
 
 
@@ -9218,7 +9222,8 @@ class ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation(Association):
 class ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation(Association):
     """
     This association defines a relationship between a chemical or treatment (or procedure) and a disease or phenotypic
-    feature where the disease or phenotypic feature is a secondary undesirable effect.
+    feature where the chemical or treatment is used to treat, or is being studied to treat, the disease or phenotypic
+    feature.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -9228,6 +9233,95 @@ class ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation(Associati
     class_model_uri: ClassVar[URIRef] = BIOLINK.ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation
 
     id: Union[str, ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociationId] = None
+    subject: Union[str, NamedThingId] = None
+    object: Union[str, NamedThingId] = None
+    knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
+    agent_type: Union[str, "AgentTypeEnum"] = None
+    predicate: Union[str, URIorCURIE] = None
+    disease_context_qualifier: Optional[Union[str, DiseaseId]] = None
+    subject_specialization_qualifier: Optional[Union[str, URIorCURIE]] = None
+    object_specialization_qualifier: Optional[Union[str, URIorCURIE]] = None
+    anatomical_context_qualifier: Optional[Union[str, list[str]]] = empty_list()
+    frequency_qualifier: Optional[Union[str, FrequencyValue]] = None
+    subject_aspect_qualifier: Optional[str] = None
+    subject_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
+    object_aspect_qualifier: Optional[str] = None
+    object_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
+    qualified_predicate: Optional[Union[str, URIorCURIE]] = None
+
+    def __post_init__(self, *_: str, **kwargs: Any):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociationId):
+            self.id = ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociationId(self.id)
+
+        if self._is_empty(self.subject):
+            self.MissingRequiredField("subject")
+        if not isinstance(self.subject, NamedThingId):
+            self.subject = NamedThingId(self.subject)
+
+        if self._is_empty(self.object):
+            self.MissingRequiredField("object")
+        if not isinstance(self.object, NamedThingId):
+            self.object = NamedThingId(self.object)
+
+        if self._is_empty(self.predicate):
+            self.MissingRequiredField("predicate")
+        if not isinstance(self.predicate, URIorCURIE):
+            self.predicate = URIorCURIE(self.predicate)
+
+        if self.disease_context_qualifier is not None and not isinstance(self.disease_context_qualifier, DiseaseId):
+            self.disease_context_qualifier = DiseaseId(self.disease_context_qualifier)
+
+        if self.subject_specialization_qualifier is not None and not isinstance(self.subject_specialization_qualifier, URIorCURIE):
+            self.subject_specialization_qualifier = URIorCURIE(self.subject_specialization_qualifier)
+
+        if self.object_specialization_qualifier is not None and not isinstance(self.object_specialization_qualifier, URIorCURIE):
+            self.object_specialization_qualifier = URIorCURIE(self.object_specialization_qualifier)
+
+        if not isinstance(self.anatomical_context_qualifier, list):
+            self.anatomical_context_qualifier = [self.anatomical_context_qualifier] if self.anatomical_context_qualifier is not None else []
+        self.anatomical_context_qualifier = [v if isinstance(v, str) else str(v) for v in self.anatomical_context_qualifier]
+
+        if self.frequency_qualifier is not None and not isinstance(self.frequency_qualifier, FrequencyValue):
+            self.frequency_qualifier = FrequencyValue(self.frequency_qualifier)
+
+        if self.subject_aspect_qualifier is not None and not isinstance(self.subject_aspect_qualifier, str):
+            self.subject_aspect_qualifier = str(self.subject_aspect_qualifier)
+
+        if self.subject_direction_qualifier is not None and not isinstance(self.subject_direction_qualifier, DirectionQualifierEnum):
+            self.subject_direction_qualifier = DirectionQualifierEnum(self.subject_direction_qualifier)
+
+        if self.object_aspect_qualifier is not None and not isinstance(self.object_aspect_qualifier, str):
+            self.object_aspect_qualifier = str(self.object_aspect_qualifier)
+
+        if self.object_direction_qualifier is not None and not isinstance(self.object_direction_qualifier, DirectionQualifierEnum):
+            self.object_direction_qualifier = DirectionQualifierEnum(self.object_direction_qualifier)
+
+        if self.qualified_predicate is not None and not isinstance(self.qualified_predicate, URIorCURIE):
+            self.qualified_predicate = URIorCURIE(self.qualified_predicate)
+
+        super().__post_init__(**kwargs)
+        if not isinstance(self.category, list):
+            self.category = [self.category] if self.category is not None else []
+        self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
+
+
+@dataclass(repr=False)
+class ChemicalOrDrugOrTreatmentAdverseEventAssociation(Association):
+    """
+    This association defines a relationship between a chemical or treatment (or procedure) and a disease or phenotypic
+    feature where the disease or phenotypic feature is an untoward medical occurrence that happens during treatment,
+    whether or not considered related to the treatment.
+    """
+    _inherited_slots: ClassVar[list[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK["ChemicalOrDrugOrTreatmentAdverseEventAssociation"]
+    class_class_curie: ClassVar[str] = "biolink:ChemicalOrDrugOrTreatmentAdverseEventAssociation"
+    class_name: ClassVar[str] = "chemical or drug or treatment adverse event association"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.ChemicalOrDrugOrTreatmentAdverseEventAssociation
+
+    id: Union[str, ChemicalOrDrugOrTreatmentAdverseEventAssociationId] = None
     subject: Union[str, NamedThingId] = None
     object: Union[str, NamedThingId] = None
     knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
@@ -9248,8 +9342,8 @@ class ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation(Associati
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
-        if not isinstance(self.id, ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociationId):
-            self.id = ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociationId(self.id)
+        if not isinstance(self.id, ChemicalOrDrugOrTreatmentAdverseEventAssociationId):
+            self.id = ChemicalOrDrugOrTreatmentAdverseEventAssociationId(self.id)
 
         if self._is_empty(self.subject):
             self.MissingRequiredField("subject")
@@ -9307,19 +9401,20 @@ class ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation(Associati
 
 
 @dataclass(repr=False)
-class ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation(ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation):
+class ChemicalOrDrugOrTreatmentSideEffectAssociation(Association):
     """
     This association defines a relationship between a chemical or treatment (or procedure) and a disease or phenotypic
-    feature where the disesae or phenotypic feature is a secondary, typically (but not always) undesirable effect.
+    feature where the disease or phenotypic feature is an unintended, but predictable, secondary effect of the
+    treatment.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK["ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation"]
-    class_class_curie: ClassVar[str] = "biolink:ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation"
-    class_name: ClassVar[str] = "chemical or drug or treatment side effect disease or phenotypic feature association"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation
+    class_class_uri: ClassVar[URIRef] = BIOLINK["ChemicalOrDrugOrTreatmentSideEffectAssociation"]
+    class_class_curie: ClassVar[str] = "biolink:ChemicalOrDrugOrTreatmentSideEffectAssociation"
+    class_name: ClassVar[str] = "chemical or drug or treatment side effect association"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.ChemicalOrDrugOrTreatmentSideEffectAssociation
 
-    id: Union[str, ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociationId] = None
+    id: Union[str, ChemicalOrDrugOrTreatmentSideEffectAssociationId] = None
     subject: Union[str, NamedThingId] = None
     object: Union[str, NamedThingId] = None
     knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
@@ -9329,12 +9424,18 @@ class ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation(C
     subject_specialization_qualifier: Optional[Union[str, URIorCURIE]] = None
     object_specialization_qualifier: Optional[Union[str, URIorCURIE]] = None
     anatomical_context_qualifier: Optional[Union[str, list[str]]] = empty_list()
+    frequency_qualifier: Optional[Union[str, FrequencyValue]] = None
+    subject_aspect_qualifier: Optional[str] = None
+    subject_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
+    object_aspect_qualifier: Optional[str] = None
+    object_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
+    qualified_predicate: Optional[Union[str, URIorCURIE]] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
-        if not isinstance(self.id, ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociationId):
-            self.id = ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociationId(self.id)
+        if not isinstance(self.id, ChemicalOrDrugOrTreatmentSideEffectAssociationId):
+            self.id = ChemicalOrDrugOrTreatmentSideEffectAssociationId(self.id)
 
         if self._is_empty(self.subject):
             self.MissingRequiredField("subject")
@@ -9363,6 +9464,24 @@ class ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation(C
         if not isinstance(self.anatomical_context_qualifier, list):
             self.anatomical_context_qualifier = [self.anatomical_context_qualifier] if self.anatomical_context_qualifier is not None else []
         self.anatomical_context_qualifier = [v if isinstance(v, str) else str(v) for v in self.anatomical_context_qualifier]
+
+        if self.frequency_qualifier is not None and not isinstance(self.frequency_qualifier, FrequencyValue):
+            self.frequency_qualifier = FrequencyValue(self.frequency_qualifier)
+
+        if self.subject_aspect_qualifier is not None and not isinstance(self.subject_aspect_qualifier, str):
+            self.subject_aspect_qualifier = str(self.subject_aspect_qualifier)
+
+        if self.subject_direction_qualifier is not None and not isinstance(self.subject_direction_qualifier, DirectionQualifierEnum):
+            self.subject_direction_qualifier = DirectionQualifierEnum(self.subject_direction_qualifier)
+
+        if self.object_aspect_qualifier is not None and not isinstance(self.object_aspect_qualifier, str):
+            self.object_aspect_qualifier = str(self.object_aspect_qualifier)
+
+        if self.object_direction_qualifier is not None and not isinstance(self.object_direction_qualifier, DirectionQualifierEnum):
+            self.object_direction_qualifier = DirectionQualifierEnum(self.object_direction_qualifier)
+
+        if self.qualified_predicate is not None and not isinstance(self.qualified_predicate, URIorCURIE):
+            self.qualified_predicate = URIorCURIE(self.qualified_predicate)
 
         super().__post_init__(**kwargs)
         if not isinstance(self.category, list):
@@ -17251,8 +17370,11 @@ slots.chemical_entity_to_disease_or_phenotypic_feature_association_object = Slot
 slots.chemical_or_drug_or_treatment_to_disease_or_phenotypic_feature_association_predicate = Slot(uri=RDF.predicate, name="chemical or drug or treatment to disease or phenotypic feature association_predicate", curie=RDF.curie('predicate'),
                    model_uri=BIOLINK.chemical_or_drug_or_treatment_to_disease_or_phenotypic_feature_association_predicate, domain=ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation, range=Union[str, URIorCURIE])
 
-slots.chemical_or_drug_or_treatment_side_effect_disease_or_phenotypic_feature_association_predicate = Slot(uri=RDF.predicate, name="chemical or drug or treatment side effect disease or phenotypic feature association_predicate", curie=RDF.curie('predicate'),
-                   model_uri=BIOLINK.chemical_or_drug_or_treatment_side_effect_disease_or_phenotypic_feature_association_predicate, domain=ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation, range=Union[str, URIorCURIE])
+slots.chemical_or_drug_or_treatment_adverse_event_association_predicate = Slot(uri=RDF.predicate, name="chemical or drug or treatment adverse event association_predicate", curie=RDF.curie('predicate'),
+                   model_uri=BIOLINK.chemical_or_drug_or_treatment_adverse_event_association_predicate, domain=ChemicalOrDrugOrTreatmentAdverseEventAssociation, range=Union[str, URIorCURIE])
+
+slots.chemical_or_drug_or_treatment_side_effect_association_predicate = Slot(uri=RDF.predicate, name="chemical or drug or treatment side effect association_predicate", curie=RDF.curie('predicate'),
+                   model_uri=BIOLINK.chemical_or_drug_or_treatment_side_effect_association_predicate, domain=ChemicalOrDrugOrTreatmentSideEffectAssociation, range=Union[str, URIorCURIE])
 
 slots.gene_to_pathway_association_subject = Slot(uri=RDF.subject, name="gene to pathway association_subject", curie=RDF.curie('subject'),
                    model_uri=BIOLINK.gene_to_pathway_association_subject, domain=GeneToPathwayAssociation, range=Union[dict, GeneOrGeneProduct])
