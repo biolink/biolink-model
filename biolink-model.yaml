@@ -10570,7 +10570,24 @@ classes:
   chemical or drug or treatment to disease or phenotypic feature association:
     description: >-
       This association defines a relationship between a chemical or treatment (or procedure) and a disease or phenotypic feature
-      where the disease or phenotypic feature is a secondary undesirable effect.
+      where the chemical or treatment is used to treat, or is being studied to treat, the disease or phenotypic feature.
+    is_a: association
+    defining_slots:
+      - subject
+      - predicate
+      - object
+    mixins:
+      - entity to disease or phenotypic feature association mixin
+      - entity to feature or disease qualifiers mixin
+    slot_usage:
+      predicate:
+        subproperty_of: treats or applied or studied to treat
+
+  chemical or drug or treatment adverse event association:
+    description: >-
+      This association defines a relationship between a chemical or treatment (or procedure) and a disease or phenotypic feature
+      where the disease or phenotypic feature is an untoward medical occurrence that happens during treatment,
+      whether or not considered related to the treatment.
     is_a: association
     defining_slots:
       - subject
@@ -10585,17 +10602,18 @@ classes:
       predicate:
         subproperty_of: has adverse event
 
-  chemical or drug or treatment side effect disease or phenotypic feature association:
+  chemical or drug or treatment side effect association:
     description: >-
       This association defines a relationship between a chemical or treatment (or procedure) and a disease or phenotypic feature
-      where the disesae or phenotypic feature is a secondary, typically (but not always) undesirable effect.
-    is_a: chemical or drug or treatment to disease or phenotypic feature association
+      where the disease or phenotypic feature is an unintended, but predictable, secondary effect of the treatment.
+    is_a: association
     defining_slots:
       - subject
       - predicate
       - object
     mixins:
       - entity to disease or phenotypic feature association mixin
+      - entity to feature or disease qualifiers mixin
     slot_usage:
       predicate:
         subproperty_of: has side effect
