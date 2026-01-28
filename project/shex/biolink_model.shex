@@ -1701,6 +1701,7 @@ linkml:Sparqlpath xsd:string
           &<GeneToEntityAssociationMixin_tes> ;
           rdf:type [ <GeneToEntityAssociationMixin> ] ? ;
           <z_score> @linkml:Float ? ;
+          <diseases_confidence_score> @linkml:Float ? ;
           <subject_form_or_variant_qualifier> @linkml:String ? ;
           <subject_aspect_qualifier> @linkml:String ? ;
           <object_direction_qualifier> [ <https://w3id.org/biolink/vocab/DirectionQualifierEnum#increased>
@@ -3027,6 +3028,7 @@ linkml:Sparqlpath xsd:string
                 <https://w3id.org/biolink/vocab/DirectionQualifierEnum#downregulated> ] ? ;
              <allelic_requirement> @linkml:String ? ;
              <qualified_predicate> @linkml:Uriorcurie ? ;
+             <diseases_confidence_score> @linkml:Float ? ;
              rdf:subject @<GeneOrGeneProduct> ;
              rdf:object @<Disease> ;
              rdf:predicate [ <https://w3id.org/biolink/vocab/GeneToDiseasePredicateEnum#biolink%3Acontributes_to>

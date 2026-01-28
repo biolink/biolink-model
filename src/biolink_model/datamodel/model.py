@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-01-27T16:56:54
+# Generation date: 2026-01-28T05:16:01
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/vocab/
@@ -11895,6 +11895,7 @@ class GeneToDiseaseAssociation(Association):
     object_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
     allelic_requirement: Optional[str] = None
     qualified_predicate: Optional[Union[str, URIorCURIE]] = None
+    diseases_confidence_score: Optional[float] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
@@ -11931,6 +11932,9 @@ class GeneToDiseaseAssociation(Association):
 
         if self.qualified_predicate is not None and not isinstance(self.qualified_predicate, URIorCURIE):
             self.qualified_predicate = URIorCURIE(self.qualified_predicate)
+
+        if self.diseases_confidence_score is not None and not isinstance(self.diseases_confidence_score, float):
+            self.diseases_confidence_score = float(self.diseases_confidence_score)
 
         super().__post_init__(**kwargs)
         if not isinstance(self.category, list):
@@ -12017,6 +12021,7 @@ class CorrelatedGeneToDiseaseAssociation(Association):
     object: Union[str, DiseaseId] = None
     predicate: Union[str, URIorCURIE] = None
     z_score: Optional[float] = None
+    diseases_confidence_score: Optional[float] = None
     subject_form_or_variant_qualifier: Optional[str] = None
     subject_aspect_qualifier: Optional[str] = None
     object_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
@@ -12050,6 +12055,9 @@ class CorrelatedGeneToDiseaseAssociation(Association):
 
         if self.z_score is not None and not isinstance(self.z_score, float):
             self.z_score = float(self.z_score)
+
+        if self.diseases_confidence_score is not None and not isinstance(self.diseases_confidence_score, float):
+            self.diseases_confidence_score = float(self.diseases_confidence_score)
 
         if self.subject_form_or_variant_qualifier is not None and not isinstance(self.subject_form_or_variant_qualifier, str):
             self.subject_form_or_variant_qualifier = str(self.subject_form_or_variant_qualifier)
