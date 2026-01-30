@@ -7768,6 +7768,7 @@ class ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation(EntityToDiseaseOrPhe
     An interaction between a chemical entity and a phenotype or disease, where the presence of the chemical gives rise to or exacerbates the phenotype.
     """
     clinical_approval_status: Optional[ClinicalApprovalStatusEnum] = Field(default=None)
+    max_research_phase: Optional[ResearchPhaseEnum] = Field(default=None)
     subject: str = Field(default=..., description="""connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     predicate: str = Field(default=..., description="""Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats""")
     object: str = Field(default=..., description="""the disease or phenotype that is affected by the chemical""")

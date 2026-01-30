@@ -2368,6 +2368,7 @@ type ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation implements EntityToDi
     type: [String]
     category: [Uriorcurie]
     clinicalApprovalStatus: ClinicalApprovalStatusEnum
+    maxResearchPhase: ResearchPhaseEnum
     object: DiseaseOrPhenotypicFeature!
     diseaseContextQualifier: Disease
     subjectSpecializationQualifier: Uriorcurie

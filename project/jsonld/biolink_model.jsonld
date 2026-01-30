@@ -14433,6 +14433,7 @@
       "slot_uri": "https://w3id.org/biolink/vocab/max_research_phase",
       "owner": "EntityToPhenotypicFeatureAssociation",
       "domain_of": [
+        "ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation",
         "EntityToDiseaseAssociation",
         "EntityToPhenotypicFeatureAssociation"
       ],
@@ -35361,6 +35362,7 @@
         "association_type",
         "association_category",
         "clinical_approval_status",
+        "max_research_phase",
         "chemical_entity_to_disease_or_phenotypic_feature_association_object",
         "disease_context_qualifier",
         "subject_specialization_qualifier",
@@ -41482,9 +41484,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2026-01-28T20:37:16",
-  "source_file_size": 459752,
-  "generation_date": "2026-01-28T20:37:22",
+  "source_file_date": "2026-01-30T07:20:57",
+  "source_file_size": 459779,
+  "generation_date": "2026-01-30T07:21:03",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",
