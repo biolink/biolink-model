@@ -1127,6 +1127,15 @@ linkml:Sparqlpath xsd:string
              <https://w3id.org/biolink/vocab/ClinicalApprovalStatusEnum#post_approval_withdrawal>
              <https://w3id.org/biolink/vocab/ClinicalApprovalStatusEnum#off_label_use>
              <https://w3id.org/biolink/vocab/ClinicalApprovalStatusEnum#not_provided> ] ? ;
+          <max_research_phase> [ <https://w3id.org/biolink/vocab/ResearchPhaseEnum#pre_clinical_research_phase>
+             <https://w3id.org/biolink/vocab/ResearchPhaseEnum#clinical_trial_phase>
+             <https://w3id.org/biolink/vocab/ResearchPhaseEnum#clinical_trial_phase_1>
+             <https://w3id.org/biolink/vocab/ResearchPhaseEnum#clinical_trial_phase_1_to_2>
+             <https://w3id.org/biolink/vocab/ResearchPhaseEnum#clinical_trial_phase_2>
+             <https://w3id.org/biolink/vocab/ResearchPhaseEnum#clinical_trial_phase_2_to_3>
+             <https://w3id.org/biolink/vocab/ResearchPhaseEnum#clinical_trial_phase_3>
+             <https://w3id.org/biolink/vocab/ResearchPhaseEnum#clinical_trial_phase_4>
+             <https://w3id.org/biolink/vocab/ResearchPhaseEnum#not_provided> ] ? ;
           rdf:object @<DiseaseOrPhenotypicFeature> ;
           <disease_context_qualifier> @<Disease> ? ;
           <subject_specialization_qualifier> @linkml:Uriorcurie ? ;

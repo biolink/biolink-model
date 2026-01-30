@@ -1826,6 +1826,7 @@ message ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation
  repeated  string type = 0
  repeated  uriorcurie category = 0
   clinicalApprovalStatusEnum clinicalApprovalStatus = 0
+  researchPhaseEnum maxResearchPhase = 0
   diseaseOrPhenotypicFeature object = 0
   disease diseaseContextQualifier = 0
   uriorcurie subjectSpecializationQualifier = 0

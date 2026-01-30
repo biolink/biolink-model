@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-01-28T20:37:38
+# Generation date: 2026-01-30T07:21:19
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/vocab/
@@ -9174,6 +9174,7 @@ class ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation(Association):
     agent_type: Union[str, "AgentTypeEnum"] = None
     object: Union[str, DiseaseOrPhenotypicFeatureId] = None
     clinical_approval_status: Optional[Union[str, "ClinicalApprovalStatusEnum"]] = None
+    max_research_phase: Optional[Union[str, "ResearchPhaseEnum"]] = None
     disease_context_qualifier: Optional[Union[str, DiseaseId]] = None
     subject_specialization_qualifier: Optional[Union[str, URIorCURIE]] = None
     object_specialization_qualifier: Optional[Union[str, URIorCURIE]] = None
@@ -9202,6 +9203,9 @@ class ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation(Association):
 
         if self.clinical_approval_status is not None and not isinstance(self.clinical_approval_status, ClinicalApprovalStatusEnum):
             self.clinical_approval_status = ClinicalApprovalStatusEnum(self.clinical_approval_status)
+
+        if self.max_research_phase is not None and not isinstance(self.max_research_phase, ResearchPhaseEnum):
+            self.max_research_phase = ResearchPhaseEnum(self.max_research_phase)
 
         if self.disease_context_qualifier is not None and not isinstance(self.disease_context_qualifier, DiseaseId):
             self.disease_context_qualifier = DiseaseId(self.disease_context_qualifier)
