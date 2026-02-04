@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-01-30T16:19:00
+# Generation date: 2026-02-04T06:39:54
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/vocab/
@@ -12032,6 +12032,7 @@ class GeneToDiseaseAssociation(Association):
     allelic_requirement: Optional[str] = None
     qualified_predicate: Optional[Union[str, URIorCURIE]] = None
     diseases_confidence_score: Optional[float] = None
+    gene2phenotype_confidence_category: Optional[str] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
@@ -12071,6 +12072,9 @@ class GeneToDiseaseAssociation(Association):
 
         if self.diseases_confidence_score is not None and not isinstance(self.diseases_confidence_score, float):
             self.diseases_confidence_score = float(self.diseases_confidence_score)
+
+        if self.gene2phenotype_confidence_category is not None and not isinstance(self.gene2phenotype_confidence_category, str):
+            self.gene2phenotype_confidence_category = str(self.gene2phenotype_confidence_category)
 
         super().__post_init__(**kwargs)
         if not isinstance(self.category, list):
@@ -17092,6 +17096,9 @@ slots.dgidb_evidence_score = Slot(uri=BIOLINK.dgidb_evidence_score, name="dgidb 
 
 slots.diseases_confidence_score = Slot(uri=BIOLINK.diseases_confidence_score, name="diseases confidence score", curie=BIOLINK.curie('diseases_confidence_score'),
                    model_uri=BIOLINK.diseases_confidence_score, domain=None, range=Optional[float])
+
+slots.gene2phenotype_confidence_category = Slot(uri=BIOLINK.gene2phenotype_confidence_category, name="gene2phenotype confidence category", curie=BIOLINK.curie('gene2phenotype_confidence_category'),
+                   model_uri=BIOLINK.gene2phenotype_confidence_category, domain=None, range=Optional[str])
 
 slots.attribute_name = Slot(uri=RDFS.label, name="attribute_name", curie=RDFS.curie('label'),
                    model_uri=BIOLINK.attribute_name, domain=Attribute, range=Optional[Union[str, LabelType]])

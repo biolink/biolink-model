@@ -3085,6 +3085,7 @@ linkml:Sparqlpath xsd:string
              <allelic_requirement> @linkml:String ? ;
              <qualified_predicate> @linkml:Uriorcurie ? ;
              <diseases_confidence_score> @linkml:Float ? ;
+             <gene2phenotype_confidence_category> @linkml:String ? ;
              rdf:subject @<GeneOrGeneProduct> ;
              rdf:object @<Disease> ;
              rdf:predicate [ <https://w3id.org/biolink/vocab/GeneToDiseasePredicateEnum#biolink%3Acontributes_to>
