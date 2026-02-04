@@ -4027,6 +4027,7 @@ type DruggableGeneToDiseaseAssociation implements EntityToDiseaseAssociationMixi
     allelicRequirement: String
     qualifiedPredicate: Uriorcurie
     diseasesConfidenceScore: Float
+    gene2phenotypeConfidenceCategory: String
     object: Disease!
     druggableGeneCategory: DruggableGeneCategoryEnum
     subject: GeneOrGeneProduct!
@@ -4966,6 +4967,7 @@ type GeneAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMixin,
     allelicRequirement: String
     qualifiedPredicate: Uriorcurie
     diseasesConfidenceScore: Float
+    gene2phenotypeConfidenceCategory: String
     object: Disease!
     predicate: GeneToDiseasePredicateEnum!
     subject: GeneOrGeneProduct!
@@ -5116,6 +5118,7 @@ type GeneHasVariantThatContributesToDiseaseAssociation
     allelicRequirement: String
     qualifiedPredicate: Uriorcurie
     diseasesConfidenceScore: Float
+    gene2phenotypeConfidenceCategory: String
     subjectFormOrVariantQualifier: String
     subject: GeneOrGeneProduct!
     object: Disease!
@@ -5362,6 +5365,7 @@ type GeneToDiseaseAssociation implements GeneToEntityAssociationMixin
     allelicRequirement: String
     qualifiedPredicate: Uriorcurie
     diseasesConfidenceScore: Float
+    gene2phenotypeConfidenceCategory: String
     subject: GeneOrGeneProduct!
     object: Disease!
     predicate: GeneToDiseasePredicateEnum!

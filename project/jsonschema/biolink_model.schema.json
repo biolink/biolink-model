@@ -26197,6 +26197,13 @@
                         "null"
                     ]
                 },
+                "gene2phenotype_confidence_category": {
+                    "description": "A term used by EBI Gene2Phenotype to describe the confidence that the association is real. GenCC confidence terms are used for different levels of confidence (enum).  See https://www.ebi.ac.uk/gene2phenotype/about/terminology#g2p-confidence-section.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
                     "items": {
@@ -32083,6 +32090,13 @@
                         "null"
                     ]
                 },
+                "gene2phenotype_confidence_category": {
+                    "description": "A term used by EBI Gene2Phenotype to describe the confidence that the association is real. GenCC confidence terms are used for different levels of confidence (enum).  See https://www.ebi.ac.uk/gene2phenotype/about/terminology#g2p-confidence-section.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
                     "items": {
@@ -33122,6 +33136,13 @@
                     "description": "The number of evidence instances that are connected to an association.",
                     "type": [
                         "integer",
+                        "null"
+                    ]
+                },
+                "gene2phenotype_confidence_category": {
+                    "description": "A term used by EBI Gene2Phenotype to describe the confidence that the association is real. GenCC confidence terms are used for different levels of confidence (enum).  See https://www.ebi.ac.uk/gene2phenotype/about/terminology#g2p-confidence-section.",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },
@@ -34928,6 +34949,13 @@
                     "description": "The number of evidence instances that are connected to an association.",
                     "type": [
                         "integer",
+                        "null"
+                    ]
+                },
+                "gene2phenotype_confidence_category": {
+                    "description": "A term used by EBI Gene2Phenotype to describe the confidence that the association is real. GenCC confidence terms are used for different levels of confidence (enum).  See https://www.ebi.ac.uk/gene2phenotype/about/terminology#g2p-confidence-section.",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },

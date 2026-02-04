@@ -251,3 +251,10 @@ slots:
       It is based on different inputs for curated knowledge associations vs text-mined associations vs experimental/GWAS based associations,
       but adjusts/caps scores for these types of knowledge such that they are comparable on a single scale.
     range: float
+  
+  gene2phenotype confidence category:
+    description: >-
+      A term used by EBI Gene2Phenotype to describe the confidence that the association is real.
+      GenCC confidence terms are used for different levels of confidence (enum). 
+      See https://www.ebi.ac.uk/gene2phenotype/about/terminology#g2p-confidence-section.
+    range: string

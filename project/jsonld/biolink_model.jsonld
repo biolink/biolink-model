@@ -14847,6 +14847,19 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "gene2phenotype_confidence_category",
+      "definition_uri": "https://w3id.org/biolink/biolink-model/attributes/gene2phenotype_confidence_category",
+      "description": "A term used by EBI Gene2Phenotype to describe the confidence that the association is real. GenCC confidence terms are used for different levels of confidence (enum).  See https://www.ebi.ac.uk/gene2phenotype/about/terminology#g2p-confidence-section.",
+      "from_schema": "https://w3id.org/biolink/biolink-model/attributes",
+      "slot_uri": "https://w3id.org/biolink/vocab/gene2phenotype_confidence_category",
+      "owner": "GeneToDiseaseAssociation",
+      "domain_of": [
+        "GeneToDiseaseAssociation"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "attribute_name",
       "definition_uri": "https://w3id.org/biolink/vocab/name",
       "description": "The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.",
@@ -38167,6 +38180,7 @@
         "allelic_requirement",
         "qualified_predicate",
         "diseases_confidence_score",
+        "gene2phenotype_confidence_category",
         "gene_to_disease_association_subject",
         "gene_to_disease_association_object",
         "gene_to_disease_association_predicate"
@@ -38393,6 +38407,7 @@
         "allelic_requirement",
         "qualified_predicate",
         "diseases_confidence_score",
+        "gene2phenotype_confidence_category",
         "gene_to_disease_association_object",
         "druggable_gene_category",
         "druggable_gene_to_disease_association_subject",
@@ -39087,6 +39102,7 @@
         "allelic_requirement",
         "qualified_predicate",
         "diseases_confidence_score",
+        "gene2phenotype_confidence_category",
         "gene_to_disease_association_object",
         "gene_to_disease_association_predicate",
         "gene_as_a_model_of_disease_association_subject",
@@ -39598,6 +39614,7 @@
         "allelic_requirement",
         "qualified_predicate",
         "diseases_confidence_score",
+        "gene2phenotype_confidence_category",
         "subject_form_or_variant_qualifier",
         "gene_has_variant_that_contributes_to_disease_association_subject",
         "gene_has_variant_that_contributes_to_disease_association_object",
@@ -41484,9 +41501,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2026-01-30T16:18:38",
-  "source_file_size": 459779,
-  "generation_date": "2026-01-30T16:18:45",
+  "source_file_date": "2026-02-04T06:39:32",
+  "source_file_size": 459822,
+  "generation_date": "2026-02-04T06:39:38",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",

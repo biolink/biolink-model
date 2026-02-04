@@ -3438,6 +3438,7 @@ message DruggableGeneToDiseaseAssociation
   string allelicRequirement = 0
   uriorcurie qualifiedPredicate = 0
   float diseasesConfidenceScore = 0
+  string gene2phenotypeConfidenceCategory = 0
   disease object = 0
   druggableGeneCategoryEnum druggableGeneCategory = 0
   geneOrGeneProduct subject = 0
@@ -4218,6 +4219,7 @@ message GeneAsAModelOfDiseaseAssociation
   string allelicRequirement = 0
   uriorcurie qualifiedPredicate = 0
   float diseasesConfidenceScore = 0
+  string gene2phenotypeConfidenceCategory = 0
   disease object = 0
   geneToDiseasePredicateEnum predicate = 0
   geneOrGeneProduct subject = 0
@@ -4354,6 +4356,7 @@ message GeneHasVariantThatContributesToDiseaseAssociation
   string allelicRequirement = 0
   uriorcurie qualifiedPredicate = 0
   float diseasesConfidenceScore = 0
+  string gene2phenotypeConfidenceCategory = 0
   string subjectFormOrVariantQualifier = 0
   geneOrGeneProduct subject = 0
   disease object = 0
@@ -4576,6 +4579,7 @@ message GeneToDiseaseAssociation
   string allelicRequirement = 0
   uriorcurie qualifiedPredicate = 0
   float diseasesConfidenceScore = 0
+  string gene2phenotypeConfidenceCategory = 0
   geneOrGeneProduct subject = 0
   disease object = 0
   geneToDiseasePredicateEnum predicate = 0
