@@ -6827,6 +6827,59 @@ type MacromolecularComplex implements MacromolecularMachineMixin
     inTaxonLabel: LabelType
   }
 
+type MacromolecularMachineHasSubstrateAssociation
+  {
+    id: String!
+    iri: IriType
+    name: LabelType
+    description: NarrativeText
+    hasAttribute: [Attribute]
+    deprecated: Boolean
+    negated: Boolean
+    qualifier: String
+    qualifiers: [OntologyClass]
+    publications: [Publication]
+    sources: [RetrievalSource]
+    hasEvidenceOfType: [EvidenceType]
+    hasEvidence: [InformationContentEntity]
+    knowledgeSource: String
+    primaryKnowledgeSource: String
+    aggregatorKnowledgeSource: [String]
+    knowledgeLevel: KnowledgeLevelEnum!
+    agentType: AgentTypeEnum!
+    timepoint: TimeType
+    originalSubject: String
+    originalPredicate: Uriorcurie
+    originalObject: String
+    subjectFeatureName: String
+    objectFeatureName: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
+    pValue: Float
+    adjustedPValue: Float
+    supportingText: [String]
+    hasSupportingStudies: [Study]
+    updateDate: Date
+    hasConfidenceScore: Float
+    elevateToPrediction: Boolean
+    evidenceCount: Integer
+    semmedAgreementCount: Integer
+    type: [String]
+    category: [Uriorcurie]
+    subject: MacromolecularMachineMixin!
+    predicate: Uriorcurie!
+    object: ChemicalEntityOrProteinOrPolypeptide!
+  }
+
 interface MacromolecularMachineMixin
   {
     name: SymbolType
