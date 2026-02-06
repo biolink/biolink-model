@@ -296,8 +296,9 @@ linkml:Sparqlpath xsd:string
     @<GeneToDiseaseAssociation> OR @<GeneToExpressionSiteAssociation> OR @<GeneToGeneAssociation> OR @<GeneToGeneFamilyAssociation>
     OR @<GeneToPathwayAssociation> OR @<GeneToPhenotypicFeatureAssociation> OR @<GenotypeToDiseaseAssociation> OR
     @<GenotypeToGeneAssociation> OR @<GenotypeToGenotypePartAssociation> OR @<GenotypeToPhenotypicFeatureAssociation> OR
-    @<GenotypeToVariantAssociation> OR @<InformationContentEntityToNamedThingAssociation> OR @<MaterialSampleDerivationAssociation>
-    OR @<MaterialSampleToDiseaseOrPhenotypicFeatureAssociation> OR @<MolecularActivityToChemicalEntityAssociation> OR
+    @<GenotypeToVariantAssociation> OR @<InformationContentEntityToNamedThingAssociation> OR
+    @<MacromolecularMachineHasSubstrateAssociation> OR @<MaterialSampleDerivationAssociation> OR
+    @<MaterialSampleToDiseaseOrPhenotypicFeatureAssociation> OR @<MolecularActivityToChemicalEntityAssociation> OR
     @<MolecularActivityToMolecularActivityAssociation> OR @<MolecularActivityToPathwayAssociation> OR
     @<NamedThingAssociatedWithLikelihoodOfNamedThingAssociation> OR @<OrganismTaxonToEnvironmentAssociation> OR
     @<OrganismTaxonToOrganismTaxonAssociation> OR @<OrganismToOrganismAssociation> OR
@@ -3711,6 +3712,17 @@ linkml:Sparqlpath xsd:string
           rdf:type [ <MacromolecularMachineMixin> ] ?
        ) ;
        rdf:type [ <MacromolecularComplex> ]
+    )
+}
+
+<MacromolecularMachineHasSubstrateAssociation> CLOSED {
+    (  $<MacromolecularMachineHasSubstrateAssociation_tes> (  &<Association_tes> ;
+          rdf:type [ <Association> ] ? ;
+          rdf:subject @<MacromolecularMachineMixin> ;
+          rdf:predicate @linkml:Uriorcurie ;
+          rdf:object @<ChemicalEntityOrProteinOrPolypeptide>
+       ) ;
+       rdf:type [ <MacromolecularMachineHasSubstrateAssociation> ]
     )
 }
 
