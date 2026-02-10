@@ -303,6 +303,10 @@ slots:
     domain: entity
     range: attribute
     multivalued: true
+    # biolink:Attributes are probably generally only useful
+    # if expressed as detailed fully inlined data
+    inlined_as_list: true
+
     in_subset:
       - samples
     close_mappings:
