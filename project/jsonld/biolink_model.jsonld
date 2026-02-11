@@ -19354,6 +19354,117 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "macromolecular_machine_has_substrate_association_subject",
+      "definition_uri": "https://w3id.org/biolink/vocab/subject",
+      "local_names": {
+        "ga4gh": {
+          "local_name_source": "ga4gh",
+          "local_name_value": "annotation subject"
+        },
+        "neo4j": {
+          "local_name_source": "neo4j",
+          "local_name_value": "node with outgoing relationship"
+        }
+      },
+      "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "mappings": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject"
+      ],
+      "exact_mappings": [
+        "http://www.w3.org/2002/07/owl#annotatedSource",
+        "http://purl.org/oban/association_has_subject"
+      ],
+      "is_a": "subject",
+      "domain": "MacromolecularMachineHasSubstrateAssociation",
+      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
+      "alias": "subject",
+      "owner": "MacromolecularMachineHasSubstrateAssociation",
+      "domain_of": [
+        "MacromolecularMachineHasSubstrateAssociation"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "subject",
+      "range": "MacromolecularMachineMixin",
+      "required": true,
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "macromolecular_machine_has_substrate_association_predicate",
+      "definition_uri": "https://w3id.org/biolink/vocab/predicate",
+      "local_names": {
+        "ga4gh": {
+          "local_name_source": "ga4gh",
+          "local_name_value": "annotation predicate"
+        },
+        "translator": {
+          "local_name_source": "translator",
+          "local_name_value": "predicate"
+        }
+      },
+      "description": "Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats",
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "mappings": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate"
+      ],
+      "exact_mappings": [
+        "http://www.w3.org/2002/07/owl#annotatedProperty",
+        "http://purl.org/oban/association_has_predicate"
+      ],
+      "is_a": "predicate",
+      "domain": "MacromolecularMachineHasSubstrateAssociation",
+      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate",
+      "alias": "predicate",
+      "owner": "MacromolecularMachineHasSubstrateAssociation",
+      "domain_of": [
+        "MacromolecularMachineHasSubstrateAssociation"
+      ],
+      "subproperty_of": "has_substrate",
+      "is_usage_slot": true,
+      "usage_slot_name": "predicate",
+      "range": "uriorcurie",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "macromolecular_machine_has_substrate_association_object",
+      "definition_uri": "https://w3id.org/biolink/vocab/object",
+      "local_names": {
+        "ga4gh": {
+          "local_name_source": "ga4gh",
+          "local_name_value": "descriptor"
+        },
+        "neo4j": {
+          "local_name_source": "neo4j",
+          "local_name_value": "node with incoming relationship"
+        }
+      },
+      "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "mappings": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#object"
+      ],
+      "exact_mappings": [
+        "http://www.w3.org/2002/07/owl#annotatedTarget",
+        "http://purl.org/oban/association_has_object"
+      ],
+      "is_a": "object",
+      "domain": "MacromolecularMachineHasSubstrateAssociation",
+      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
+      "alias": "object",
+      "owner": "MacromolecularMachineHasSubstrateAssociation",
+      "domain_of": [
+        "MacromolecularMachineHasSubstrateAssociation"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "object",
+      "range": "ChemicalEntityOrProteinOrPolypeptide",
+      "required": true,
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "gene_regulates_gene_association_subject",
       "definition_uri": "https://w3id.org/biolink/vocab/subject",
       "local_names": {
@@ -36048,6 +36159,70 @@
       "@type": "ClassDefinition"
     },
     {
+      "name": "MacromolecularMachineHasSubstrateAssociation",
+      "definition_uri": "https://w3id.org/biolink/vocab/MacromolecularMachineHasSubstrateAssociation",
+      "description": "Describes the relationship between an enzyme (usually a macromolecular complex or gene product) and the molecules it acts on (substrate).  The substrate can be a chemical, a polypeptide, or a protein.",
+      "notes": [
+        "Using macromolecular machine should cover cases of gene-protein conflation."
+      ],
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "is_a": "Association",
+      "slots": [
+        "id",
+        "iri",
+        "name",
+        "description",
+        "has_attribute",
+        "deprecated",
+        "negated",
+        "qualifier",
+        "qualifiers",
+        "publications",
+        "association_sources",
+        "has_evidence_of_type",
+        "has_evidence",
+        "knowledge_source",
+        "primary_knowledge_source",
+        "aggregator_knowledge_source",
+        "knowledge_level",
+        "agent_type",
+        "timepoint",
+        "original_subject",
+        "original_predicate",
+        "original_object",
+        "subject_feature_name",
+        "object_feature_name",
+        "subject_category",
+        "object_category",
+        "subject_closure",
+        "object_closure",
+        "subject_category_closure",
+        "object_category_closure",
+        "subject_namespace",
+        "object_namespace",
+        "subject_label_closure",
+        "object_label_closure",
+        "retrieval_source_ids",
+        "p_value",
+        "adjusted_p_value",
+        "supporting_text",
+        "association_has_supporting_studies",
+        "update_date",
+        "has_confidence_score",
+        "elevate_to_prediction",
+        "evidence_count",
+        "semmed_agreement_count",
+        "association_type",
+        "association_category",
+        "macromolecular_machine_has_substrate_association_subject",
+        "macromolecular_machine_has_substrate_association_predicate",
+        "macromolecular_machine_has_substrate_association_object"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/biolink/vocab/MacromolecularMachineHasSubstrateAssociation",
+      "@type": "ClassDefinition"
+    },
+    {
       "name": "GeneRegulatesGeneAssociation",
       "definition_uri": "https://w3id.org/biolink/vocab/GeneRegulatesGeneAssociation",
       "description": "Describes a regulatory relationship between two genes or gene products.",
@@ -41501,9 +41676,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2026-02-04T15:50:18",
-  "source_file_size": 459822,
-  "generation_date": "2026-02-04T15:50:25",
+  "source_file_date": "2026-02-06T20:42:06",
+  "source_file_size": 460433,
+  "generation_date": "2026-02-06T20:42:12",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",

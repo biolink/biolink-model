@@ -6538,10 +6538,16 @@ slots:
   clinical approval status:
     is_a: association slot
     description: >-
+      The clinical approval status of a chemical entity for treating a specific disease or condition,
+      as captured in the context of the association between the chemical and the disease.
     range: ClinicalApprovalStatusEnum
 
   max research phase:
     is_a: association slot
+    description: >-
+      The maximum research phase reached for a specific chemical-disease pair, indicating the highest
+      clinical trial phase achieved for the chemical entity's investigation as a treatment for the
+      associated disease or condition.
     range: ResearchPhaseEnum
 
   number of cases:
@@ -7843,6 +7849,7 @@ classes:
       - max tolerated dose
       - is toxic
       - has chemical role
+      - routes of delivery
       - chembl prodrug
       - chembl black box warning
       - chembl natural product
@@ -7952,7 +7959,6 @@ classes:
       - is supplement
       - highest FDA approval status
       - drug regulatory status world wide
-      - routes of delivery
     in_subset:
       - translator_minimal
     id_prefixes:
@@ -10773,6 +10779,22 @@ classes:
       causal mechanism qualifier:
         range: CausalMechanismQualifierEnum
 
+  macromolecular machine has substrate association:
+    is_a: association
+    description: >-
+      Describes the relationship between an enzyme (usually a macromolecular
+      complex or gene product) and the molecules it acts on (substrate).
+      The substrate can be a chemical, a polypeptide, or a protein.
+    notes: >-
+      Using macromolecular machine should cover cases of gene-protein conflation.
+    slot_usage:
+      subject:
+        range: macromolecular machine mixin
+      predicate:
+        subproperty_of: has substrate
+      object:
+        range: chemical entity or protein or polypeptide
+
   gene regulates gene association:
     is_a: association
     description: >-
@@ -12344,7 +12366,7 @@ classes:
       A relationship between two anatomical entities where the relationship
       is mereological, i.e the two entities are related by parthood, that is,
       the subject is has the object entity as a part (the expected predicate is
-      "biolink:has_part" or suitable predicate slots inheriting from it, i.e., 
+      "biolink:has_part" or suitable predicate slots inheriting from it, i.e.,
       "biolink:has_plasma_membrane_part",  "biolink:has_variant_part", etc.).
       This includes relationships between cells and cellular components,
       between issues and cells, whole organisms and tissues.
@@ -12369,7 +12391,7 @@ classes:
       A relationship between two anatomical entities where the relationship
       is mereological, i.e the two entities are related by parthood, that is,
       the subject is a part of the object entity (the expected predicate is
-      "biolink:part_of" or suitable predicate slots inheriting from it, i.e., 
+      "biolink:part_of" or suitable predicate slots inheriting from it, i.e.,
       "biolink:plasma_membrane_part_of",  "biolink:variant_part_of", etc.).
       This includes relationships between cellular components and cells,
       between cells and tissues, tissues and whole organisms.
@@ -13486,10 +13508,17 @@ enums:
 
   DrugDeliveryEnum:
     permissible_values:
-      "inhalation":
-      "oral":
-      "absorption_through_the_skin":
-      "intravenous_injection":
+      inhalation:
+      oral:
+      absorption_through_the_skin:
+      injection:
+      intravenous_injection:
+        is_a: injection
+      subcutaneous_injection:
+        is_a: injection
+      intramuscular_injection:
+        is_a: injection
+
 
   ResourceRoleEnum:
     description: >-

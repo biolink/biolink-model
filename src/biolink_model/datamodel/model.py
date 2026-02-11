@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-02-04T15:50:40
+# Generation date: 2026-02-06T20:42:28
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/vocab/
@@ -1184,6 +1184,10 @@ class NamedThingAssociatedWithLikelihoodOfNamedThingAssociationId(AssociationId)
 
 
 class ChemicalGeneInteractionAssociationId(AssociationId):
+    pass
+
+
+class MacromolecularMachineHasSubstrateAssociationId(AssociationId):
     pass
 
 
@@ -9863,6 +9867,53 @@ class ChemicalGeneInteractionAssociation(Association):
 
 
 @dataclass(repr=False)
+class MacromolecularMachineHasSubstrateAssociation(Association):
+    """
+    Describes the relationship between an enzyme (usually a macromolecular complex or gene product) and the molecules
+    it acts on (substrate). The substrate can be a chemical, a polypeptide, or a protein.
+    """
+    _inherited_slots: ClassVar[list[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK["MacromolecularMachineHasSubstrateAssociation"]
+    class_class_curie: ClassVar[str] = "biolink:MacromolecularMachineHasSubstrateAssociation"
+    class_name: ClassVar[str] = "macromolecular machine has substrate association"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.MacromolecularMachineHasSubstrateAssociation
+
+    id: Union[str, MacromolecularMachineHasSubstrateAssociationId] = None
+    knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
+    agent_type: Union[str, "AgentTypeEnum"] = None
+    subject: Union[dict, MacromolecularMachineMixin] = None
+    predicate: Union[str, URIorCURIE] = None
+    object: Union[dict, ChemicalEntityOrProteinOrPolypeptide] = None
+
+    def __post_init__(self, *_: str, **kwargs: Any):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, MacromolecularMachineHasSubstrateAssociationId):
+            self.id = MacromolecularMachineHasSubstrateAssociationId(self.id)
+
+        if self._is_empty(self.subject):
+            self.MissingRequiredField("subject")
+        if not isinstance(self.subject, MacromolecularMachineMixin):
+            self.subject = MacromolecularMachineMixin(**as_dict(self.subject))
+
+        if self._is_empty(self.predicate):
+            self.MissingRequiredField("predicate")
+        if not isinstance(self.predicate, URIorCURIE):
+            self.predicate = URIorCURIE(self.predicate)
+
+        if self._is_empty(self.object):
+            self.MissingRequiredField("object")
+        if not isinstance(self.object, ChemicalEntityOrProteinOrPolypeptide):
+            self.object = ChemicalEntityOrProteinOrPolypeptide()
+
+        super().__post_init__(**kwargs)
+        if not isinstance(self.category, list):
+            self.category = [self.category] if self.category is not None else []
+        self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
+
+
+@dataclass(repr=False)
 class GeneRegulatesGeneAssociation(Association):
     """
     Describes a regulatory relationship between two genes or gene products.
@@ -17486,6 +17537,15 @@ slots.chemical_gene_interaction_association_anatomical_context_qualifier = Slot(
 
 slots.chemical_gene_interaction_association_causal_mechanism_qualifier = Slot(uri=BIOLINK.causal_mechanism_qualifier, name="chemical gene interaction association_causal mechanism qualifier", curie=BIOLINK.curie('causal_mechanism_qualifier'),
                    model_uri=BIOLINK.chemical_gene_interaction_association_causal_mechanism_qualifier, domain=ChemicalGeneInteractionAssociation, range=Optional[Union[str, "CausalMechanismQualifierEnum"]])
+
+slots.macromolecular_machine_has_substrate_association_subject = Slot(uri=RDF.subject, name="macromolecular machine has substrate association_subject", curie=RDF.curie('subject'),
+                   model_uri=BIOLINK.macromolecular_machine_has_substrate_association_subject, domain=MacromolecularMachineHasSubstrateAssociation, range=Union[dict, MacromolecularMachineMixin])
+
+slots.macromolecular_machine_has_substrate_association_predicate = Slot(uri=RDF.predicate, name="macromolecular machine has substrate association_predicate", curie=RDF.curie('predicate'),
+                   model_uri=BIOLINK.macromolecular_machine_has_substrate_association_predicate, domain=MacromolecularMachineHasSubstrateAssociation, range=Union[str, URIorCURIE])
+
+slots.macromolecular_machine_has_substrate_association_object = Slot(uri=RDF.object, name="macromolecular machine has substrate association_object", curie=RDF.curie('object'),
+                   model_uri=BIOLINK.macromolecular_machine_has_substrate_association_object, domain=MacromolecularMachineHasSubstrateAssociation, range=Union[dict, ChemicalEntityOrProteinOrPolypeptide])
 
 slots.gene_regulates_gene_association_subject = Slot(uri=RDF.subject, name="gene regulates gene association_subject", curie=RDF.curie('subject'),
                    model_uri=BIOLINK.gene_regulates_gene_association_subject, domain=GeneRegulatesGeneAssociation, range=Union[dict, GeneOrGeneProduct])

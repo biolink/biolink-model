@@ -10773,6 +10773,22 @@ classes:
       causal mechanism qualifier:
         range: CausalMechanismQualifierEnum
 
+  macromolecular machine has substrate association:
+    is_a: association
+    description: >-
+      Describes the relationship between an enzyme (usually a macromolecular
+      complex or gene product) and the molecules it acts on (substrate). 
+      The substrate can be a chemical, a polypeptide, or a protein.
+    notes: >-
+      Using macromolecular machine should cover cases of gene-protein conflation.
+    slot_usage:
+      subject:
+        range: macromolecular machine mixin
+      predicate:
+        subproperty_of: has substrate
+      object:
+        range: chemical entity or protein or polypeptide
+
   gene regulates gene association:
     is_a: association
     description: >-
