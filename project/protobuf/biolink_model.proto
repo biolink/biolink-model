@@ -85,7 +85,7 @@ message AnatomicalEntity
   labelType inTaxonLabel = 0
  repeated  attribute hasAttribute = 0
  }
-// A relationship between two anatomical entities where the relationship is mereological, i.e the two entities are related by parthood, that is, the subject is has the object entity as a part (the expected predicate is "biolink:has_part" or suitable predicate slots inheriting from it, i.e.,  "biolink:has_plasma_membrane_part",  "biolink:has_variant_part", etc.). This includes relationships between cells and cellular components, between issues and cells, whole organisms and tissues.
+// A relationship between two anatomical entities where the relationship is mereological, i.e the two entities are related by parthood, that is, the subject is has the object entity as a part (the expected predicate is "biolink:has_part" or suitable predicate slots inheriting from it, i.e., "biolink:has_plasma_membrane_part",  "biolink:has_variant_part", etc.). This includes relationships between cells and cellular components, between issues and cells, whole organisms and tissues.
 message AnatomicalEntityHasPartAnatomicalEntityAssociation
  {
   string id = 0
@@ -138,7 +138,7 @@ message AnatomicalEntityHasPartAnatomicalEntityAssociation
   anatomicalEntity object = 0
   uriorcurie predicate = 0
  }
-// A relationship between two anatomical entities where the relationship is mereological, i.e the two entities are related by parthood, that is, the subject is a part of the object entity (the expected predicate is "biolink:part_of" or suitable predicate slots inheriting from it, i.e.,  "biolink:plasma_membrane_part_of",  "biolink:variant_part_of", etc.). This includes relationships between cellular components and cells, between cells and tissues, tissues and whole organisms.
+// A relationship between two anatomical entities where the relationship is mereological, i.e the two entities are related by parthood, that is, the subject is a part of the object entity (the expected predicate is "biolink:part_of" or suitable predicate slots inheriting from it, i.e., "biolink:plasma_membrane_part_of",  "biolink:variant_part_of", etc.). This includes relationships between cellular components and cells, between cells and tissues, tissues and whole organisms.
 message AnatomicalEntityPartOfAnatomicalEntityAssociation
  {
   string id = 0
@@ -1495,6 +1495,7 @@ message ChemicalEntity
   string maxToleratedDose = 0
   boolean isToxic = 0
  repeated  chemicalRole hasChemicalRole = 0
+ repeated  drugDeliveryEnum routesOfDelivery = 0
   boolean chemblProdrug = 0
   string chemblBlackBoxWarning = 0
   boolean chemblNaturalProduct = 0
@@ -2005,6 +2006,7 @@ message ChemicalMixture
   string maxToleratedDose = 0
   boolean isToxic = 0
  repeated  chemicalRole hasChemicalRole = 0
+ repeated  drugDeliveryEnum routesOfDelivery = 0
   boolean chemblProdrug = 0
   string chemblBlackBoxWarning = 0
   boolean chemblNaturalProduct = 0
@@ -2014,7 +2016,6 @@ message ChemicalMixture
   string isSupplement = 0
   approvalStatusEnum highestFDAApprovalStatus = 0
   approvalStatusEnum drugRegulatoryStatusWorldWide = 0
- repeated  drugDeliveryEnum routesOfDelivery = 0
  }
 // This association defines a relationship between a chemical or treatment (or procedure) and a disease or phenotypic feature where the disease or phenotypic feature is an untoward medical occurrence that happens during treatment, whether or not considered related to the treatment.
 message ChemicalOrDrugOrTreatmentAdverseEventAssociation
@@ -2548,6 +2549,7 @@ message ComplexMolecularMixture
   string maxToleratedDose = 0
   boolean isToxic = 0
  repeated  chemicalRole hasChemicalRole = 0
+ repeated  drugDeliveryEnum routesOfDelivery = 0
   boolean chemblProdrug = 0
   string chemblBlackBoxWarning = 0
   boolean chemblNaturalProduct = 0
@@ -2557,7 +2559,6 @@ message ComplexMolecularMixture
   string isSupplement = 0
   approvalStatusEnum highestFDAApprovalStatus = 0
   approvalStatusEnum drugRegulatoryStatusWorldWide = 0
- repeated  drugDeliveryEnum routesOfDelivery = 0
  }
 // A result of a concept count analysis.
 message ConceptCountAnalysisResult
@@ -3232,6 +3233,7 @@ message Drug
   string maxToleratedDose = 0
   boolean isToxic = 0
  repeated  chemicalRole hasChemicalRole = 0
+ repeated  drugDeliveryEnum routesOfDelivery = 0
   boolean chemblProdrug = 0
   string chemblBlackBoxWarning = 0
   boolean chemblNaturalProduct = 0
@@ -3241,7 +3243,6 @@ message Drug
   string isSupplement = 0
   approvalStatusEnum highestFDAApprovalStatus = 0
   approvalStatusEnum drugRegulatoryStatusWorldWide = 0
- repeated  drugDeliveryEnum routesOfDelivery = 0
  }
 // A drug exposure is an intake of a particular drug.
 message DrugExposure
@@ -3628,6 +3629,7 @@ message EnvironmentalFoodContaminant
   string maxToleratedDose = 0
   boolean isToxic = 0
  repeated  chemicalRole hasChemicalRole = 0
+ repeated  drugDeliveryEnum routesOfDelivery = 0
   boolean chemblProdrug = 0
   string chemblBlackBoxWarning = 0
   boolean chemblNaturalProduct = 0
@@ -3959,6 +3961,7 @@ message Food
   string maxToleratedDose = 0
   boolean isToxic = 0
  repeated  chemicalRole hasChemicalRole = 0
+ repeated  drugDeliveryEnum routesOfDelivery = 0
   boolean chemblProdrug = 0
   string chemblBlackBoxWarning = 0
   boolean chemblNaturalProduct = 0
@@ -3968,7 +3971,6 @@ message Food
   string isSupplement = 0
   approvalStatusEnum highestFDAApprovalStatus = 0
   approvalStatusEnum drugRegulatoryStatusWorldWide = 0
- repeated  drugDeliveryEnum routesOfDelivery = 0
  }
 message FoodAdditive
  {
@@ -3992,6 +3994,7 @@ message FoodAdditive
   string maxToleratedDose = 0
   boolean isToxic = 0
  repeated  chemicalRole hasChemicalRole = 0
+ repeated  drugDeliveryEnum routesOfDelivery = 0
   boolean chemblProdrug = 0
   string chemblBlackBoxWarning = 0
   boolean chemblNaturalProduct = 0
@@ -5929,7 +5932,7 @@ message MacromolecularComplex
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
  }
-// Describes the relationship between an enzyme (usually a macromolecular complex or gene product) and the molecules it acts on (substrate).  The substrate can be a chemical, a polypeptide, or a protein.
+// Describes the relationship between an enzyme (usually a macromolecular complex or gene product) and the molecules it acts on (substrate). The substrate can be a chemical, a polypeptide, or a protein.
 message MacromolecularMachineHasSubstrateAssociation
  {
   string id = 0
@@ -6520,6 +6523,7 @@ message MolecularEntity
   string maxToleratedDose = 0
   boolean isToxic = 0
  repeated  chemicalRole hasChemicalRole = 0
+ repeated  drugDeliveryEnum routesOfDelivery = 0
   boolean chemblProdrug = 0
   string chemblBlackBoxWarning = 0
   boolean chemblNaturalProduct = 0
@@ -6551,6 +6555,7 @@ message MolecularMixture
   string maxToleratedDose = 0
   boolean isToxic = 0
  repeated  chemicalRole hasChemicalRole = 0
+ repeated  drugDeliveryEnum routesOfDelivery = 0
   boolean chemblProdrug = 0
   string chemblBlackBoxWarning = 0
   boolean chemblNaturalProduct = 0
@@ -6560,7 +6565,6 @@ message MolecularMixture
   string isSupplement = 0
   approvalStatusEnum highestFDAApprovalStatus = 0
   approvalStatusEnum drugRegulatoryStatusWorldWide = 0
- repeated  drugDeliveryEnum routesOfDelivery = 0
  }
 // a databased entity or concept/class
 message NamedThing
@@ -6681,6 +6685,7 @@ message NucleicAcidEntity
   string maxToleratedDose = 0
   boolean isToxic = 0
  repeated  chemicalRole hasChemicalRole = 0
+ repeated  drugDeliveryEnum routesOfDelivery = 0
   boolean chemblProdrug = 0
   string chemblBlackBoxWarning = 0
   boolean chemblNaturalProduct = 0
@@ -7860,6 +7865,7 @@ message ProcessedMaterial
   string maxToleratedDose = 0
   boolean isToxic = 0
  repeated  chemicalRole hasChemicalRole = 0
+ repeated  drugDeliveryEnum routesOfDelivery = 0
   boolean chemblProdrug = 0
   string chemblBlackBoxWarning = 0
   boolean chemblNaturalProduct = 0
@@ -7869,7 +7875,6 @@ message ProcessedMaterial
   string isSupplement = 0
   approvalStatusEnum highestFDAApprovalStatus = 0
   approvalStatusEnum drugRegulatoryStatusWorldWide = 0
- repeated  drugDeliveryEnum routesOfDelivery = 0
  }
 // A gene product that is composed of a chain of amino acid sequences and is produced by ribosome-mediated translation of mRNA
 message Protein
@@ -8471,6 +8476,7 @@ message SmallMolecule
   string maxToleratedDose = 0
   boolean isToxic = 0
  repeated  chemicalRole hasChemicalRole = 0
+ repeated  drugDeliveryEnum routesOfDelivery = 0
   boolean chemblProdrug = 0
   string chemblBlackBoxWarning = 0
   boolean chemblNaturalProduct = 0

@@ -1025,6 +1025,13 @@ linkml:Sparqlpath xsd:string
              <max_tolerated_dose> @linkml:String ? ;
              <is_toxic> @linkml:Boolean ? ;
              <has_chemical_role> @<ChemicalRole> * ;
+             <routes_of_delivery> [ <https://w3id.org/biolink/vocab/DrugDeliveryEnum#inhalation>
+                <https://w3id.org/biolink/vocab/DrugDeliveryEnum#oral>
+                <https://w3id.org/biolink/vocab/DrugDeliveryEnum#absorption_through_the_skin>
+                <https://w3id.org/biolink/vocab/DrugDeliveryEnum#injection>
+                <https://w3id.org/biolink/vocab/DrugDeliveryEnum#intravenous_injection>
+                <https://w3id.org/biolink/vocab/DrugDeliveryEnum#subcutaneous_injection>
+                <https://w3id.org/biolink/vocab/DrugDeliveryEnum#intramuscular_injection> ] * ;
              <chembl_prodrug> @linkml:Boolean ? ;
              <chembl_black_box_warning> @linkml:String ? ;
              <chembl_natural_product> @linkml:Boolean ? ;
@@ -1434,11 +1441,7 @@ linkml:Sparqlpath xsd:string
                 <https://w3id.org/biolink/vocab/ApprovalStatusEnum#fda_accelerated_approval>
                 <https://w3id.org/biolink/vocab/ApprovalStatusEnum#fda_priority_review>
                 <https://w3id.org/biolink/vocab/ApprovalStatusEnum#regular_fda_approval>
-                <https://w3id.org/biolink/vocab/ApprovalStatusEnum#post_approval_withdrawal> ] ? ;
-             <routes_of_delivery> [ <https://w3id.org/biolink/vocab/DrugDeliveryEnum#inhalation>
-                <https://w3id.org/biolink/vocab/DrugDeliveryEnum#oral>
-                <https://w3id.org/biolink/vocab/DrugDeliveryEnum#absorption_through_the_skin>
-                <https://w3id.org/biolink/vocab/DrugDeliveryEnum#intravenous_injection> ] *
+                <https://w3id.org/biolink/vocab/ApprovalStatusEnum#post_approval_withdrawal> ] ?
           ) ;
           rdf:type [ <ChemicalMixture> ]
        )

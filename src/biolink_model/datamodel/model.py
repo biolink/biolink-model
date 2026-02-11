@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-02-06T20:42:28
+# Generation date: 2026-02-11T02:18:13
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/vocab/
@@ -4008,6 +4008,7 @@ class ChemicalEntity(NamedThing):
     max_tolerated_dose: Optional[str] = None
     is_toxic: Optional[Union[bool, Bool]] = None
     has_chemical_role: Optional[Union[Union[str, ChemicalRoleId], list[Union[str, ChemicalRoleId]]]] = empty_list()
+    routes_of_delivery: Optional[Union[Union[str, "DrugDeliveryEnum"], list[Union[str, "DrugDeliveryEnum"]]]] = empty_list()
     chembl_prodrug: Optional[Union[bool, Bool]] = None
     chembl_black_box_warning: Optional[str] = None
     chembl_natural_product: Optional[Union[bool, Bool]] = None
@@ -4037,6 +4038,10 @@ class ChemicalEntity(NamedThing):
         if not isinstance(self.has_chemical_role, list):
             self.has_chemical_role = [self.has_chemical_role] if self.has_chemical_role is not None else []
         self.has_chemical_role = [v if isinstance(v, ChemicalRoleId) else ChemicalRoleId(v) for v in self.has_chemical_role]
+
+        if not isinstance(self.routes_of_delivery, list):
+            self.routes_of_delivery = [self.routes_of_delivery] if self.routes_of_delivery is not None else []
+        self.routes_of_delivery = [v if isinstance(v, DrugDeliveryEnum) else DrugDeliveryEnum(v) for v in self.routes_of_delivery]
 
         if self.chembl_prodrug is not None and not isinstance(self.chembl_prodrug, Bool):
             self.chembl_prodrug = Bool(self.chembl_prodrug)
@@ -4146,7 +4151,6 @@ class ChemicalMixture(ChemicalEntity):
     is_supplement: Optional[str] = None
     highest_FDA_approval_status: Optional[Union[str, "ApprovalStatusEnum"]] = None
     drug_regulatory_status_world_wide: Optional[Union[str, "ApprovalStatusEnum"]] = None
-    routes_of_delivery: Optional[Union[Union[str, "DrugDeliveryEnum"], list[Union[str, "DrugDeliveryEnum"]]]] = empty_list()
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
@@ -4162,10 +4166,6 @@ class ChemicalMixture(ChemicalEntity):
 
         if self.drug_regulatory_status_world_wide is not None and not isinstance(self.drug_regulatory_status_world_wide, ApprovalStatusEnum):
             self.drug_regulatory_status_world_wide = ApprovalStatusEnum(self.drug_regulatory_status_world_wide)
-
-        if not isinstance(self.routes_of_delivery, list):
-            self.routes_of_delivery = [self.routes_of_delivery] if self.routes_of_delivery is not None else []
-        self.routes_of_delivery = [v if isinstance(v, DrugDeliveryEnum) else DrugDeliveryEnum(v) for v in self.routes_of_delivery]
 
         super().__post_init__(**kwargs)
         if self._is_empty(self.category):
@@ -15364,7 +15364,10 @@ class DrugDeliveryEnum(EnumDefinitionImpl):
     inhalation = PermissibleValue(text="inhalation")
     oral = PermissibleValue(text="oral")
     absorption_through_the_skin = PermissibleValue(text="absorption_through_the_skin")
+    injection = PermissibleValue(text="injection")
     intravenous_injection = PermissibleValue(text="intravenous_injection")
+    subcutaneous_injection = PermissibleValue(text="subcutaneous_injection")
+    intramuscular_injection = PermissibleValue(text="intramuscular_injection")
 
     _defn = EnumDefinition(
         name="DrugDeliveryEnum",

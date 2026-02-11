@@ -791,7 +791,10 @@ class DrugDeliveryEnum(str, Enum):
     inhalation = "inhalation"
     oral = "oral"
     absorption_through_the_skin = "absorption_through_the_skin"
+    injection = "injection"
     intravenous_injection = "intravenous_injection"
+    subcutaneous_injection = "subcutaneous_injection"
+    intramuscular_injection = "intramuscular_injection"
 
 
 class ResourceRoleEnum(str, Enum):
@@ -3305,6 +3308,7 @@ class ChemicalEntity(ChemicalEntityOrProteinOrPolypeptide, ChemicalEntityOrGeneO
     max_tolerated_dose: Optional[str] = Field(default=None, description="""The highest dose of a drug or treatment that does not cause unacceptable side effects. The maximum tolerated dose is determined in clinical trials by testing increasing doses on different groups of people until the highest dose with acceptable side effects is found. Also called MTD.""")
     is_toxic: Optional[bool] = Field(default=None)
     has_chemical_role: Optional[list[str]] = Field(default=None, description="""A role is particular behaviour which a chemical entity may exhibit.""")
+    routes_of_delivery: Optional[list[DrugDeliveryEnum]] = Field(default=None, description="""the method or process of administering a pharmaceutical compound to achieve a therapeutic effect in humans or animals.""")
     chembl_prodrug: Optional[bool] = Field(default=None, description="""Flag indicating if a drug is a prodrug that is active only after being metabolized by the body.""")
     chembl_black_box_warning: Optional[str] = Field(default=None, description="""Text describing black box warnings for use of chemicals as therapeutics.""")
     chembl_natural_product: Optional[bool] = Field(default=None, description="""Flag indicating if a chemical entity is a natural product.""")
@@ -3339,6 +3343,7 @@ class MolecularEntity(ChemicalEntity, OntologyClass):
     max_tolerated_dose: Optional[str] = Field(default=None, description="""The highest dose of a drug or treatment that does not cause unacceptable side effects. The maximum tolerated dose is determined in clinical trials by testing increasing doses on different groups of people until the highest dose with acceptable side effects is found. Also called MTD.""")
     is_toxic: Optional[bool] = Field(default=None)
     has_chemical_role: Optional[list[str]] = Field(default=None, description="""A role is particular behaviour which a chemical entity may exhibit.""")
+    routes_of_delivery: Optional[list[DrugDeliveryEnum]] = Field(default=None, description="""the method or process of administering a pharmaceutical compound to achieve a therapeutic effect in humans or animals.""")
     chembl_prodrug: Optional[bool] = Field(default=None, description="""Flag indicating if a drug is a prodrug that is active only after being metabolized by the body.""")
     chembl_black_box_warning: Optional[str] = Field(default=None, description="""Text describing black box warnings for use of chemicals as therapeutics.""")
     chembl_natural_product: Optional[bool] = Field(default=None, description="""Flag indicating if a chemical entity is a natural product.""")
@@ -3372,6 +3377,7 @@ class SmallMolecule(MolecularEntity):
     max_tolerated_dose: Optional[str] = Field(default=None, description="""The highest dose of a drug or treatment that does not cause unacceptable side effects. The maximum tolerated dose is determined in clinical trials by testing increasing doses on different groups of people until the highest dose with acceptable side effects is found. Also called MTD.""")
     is_toxic: Optional[bool] = Field(default=None)
     has_chemical_role: Optional[list[str]] = Field(default=None, description="""A role is particular behaviour which a chemical entity may exhibit.""")
+    routes_of_delivery: Optional[list[DrugDeliveryEnum]] = Field(default=None, description="""the method or process of administering a pharmaceutical compound to achieve a therapeutic effect in humans or animals.""")
     chembl_prodrug: Optional[bool] = Field(default=None, description="""Flag indicating if a drug is a prodrug that is active only after being metabolized by the body.""")
     chembl_black_box_warning: Optional[str] = Field(default=None, description="""Text describing black box warnings for use of chemicals as therapeutics.""")
     chembl_natural_product: Optional[bool] = Field(default=None, description="""Flag indicating if a chemical entity is a natural product.""")
@@ -3401,13 +3407,13 @@ class ChemicalMixture(ChemicalEntity, OntologyClass):
     is_supplement: Optional[str] = Field(default=None)
     highest_FDA_approval_status: Optional[ApprovalStatusEnum] = Field(default=None, description="""Should be the highest level of FDA approval this chemical entity or device has, regardless of which disease, condition or phenotype it is currently being reviewed to treat.  For specific levels of FDA approval for a specific condition, disease, phenotype, etc., see the association slot, 'clinical approval status.'""")
     drug_regulatory_status_world_wide: Optional[ApprovalStatusEnum] = Field(default=None, description="""An agglomeration of drug regulatory status worldwide. Not specific to FDA.""")
-    routes_of_delivery: Optional[list[DrugDeliveryEnum]] = Field(default=None, description="""the method or process of administering a pharmaceutical compound to achieve a therapeutic effect in humans or animals.""")
     id: str = Field(default=..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     trade_name: Optional[str] = Field(default=None)
     available_from: Optional[list[DrugAvailabilityEnum]] = Field(default=None)
     max_tolerated_dose: Optional[str] = Field(default=None, description="""The highest dose of a drug or treatment that does not cause unacceptable side effects. The maximum tolerated dose is determined in clinical trials by testing increasing doses on different groups of people until the highest dose with acceptable side effects is found. Also called MTD.""")
     is_toxic: Optional[bool] = Field(default=None)
     has_chemical_role: Optional[list[str]] = Field(default=None, description="""A role is particular behaviour which a chemical entity may exhibit.""")
+    routes_of_delivery: Optional[list[DrugDeliveryEnum]] = Field(default=None, description="""the method or process of administering a pharmaceutical compound to achieve a therapeutic effect in humans or animals.""")
     chembl_prodrug: Optional[bool] = Field(default=None, description="""Flag indicating if a drug is a prodrug that is active only after being metabolized by the body.""")
     chembl_black_box_warning: Optional[str] = Field(default=None, description="""Text describing black box warnings for use of chemicals as therapeutics.""")
     chembl_natural_product: Optional[bool] = Field(default=None, description="""Flag indicating if a chemical entity is a natural product.""")
@@ -3444,6 +3450,7 @@ class NucleicAcidEntity(MolecularEntity, GenomicEntity, ThingWithTaxon, Physical
     max_tolerated_dose: Optional[str] = Field(default=None, description="""The highest dose of a drug or treatment that does not cause unacceptable side effects. The maximum tolerated dose is determined in clinical trials by testing increasing doses on different groups of people until the highest dose with acceptable side effects is found. Also called MTD.""")
     is_toxic: Optional[bool] = Field(default=None)
     has_chemical_role: Optional[list[str]] = Field(default=None, description="""A role is particular behaviour which a chemical entity may exhibit.""")
+    routes_of_delivery: Optional[list[DrugDeliveryEnum]] = Field(default=None, description="""the method or process of administering a pharmaceutical compound to achieve a therapeutic effect in humans or animals.""")
     chembl_prodrug: Optional[bool] = Field(default=None, description="""Flag indicating if a drug is a prodrug that is active only after being metabolized by the body.""")
     chembl_black_box_warning: Optional[str] = Field(default=None, description="""Text describing black box warnings for use of chemicals as therapeutics.""")
     chembl_natural_product: Optional[bool] = Field(default=None, description="""Flag indicating if a chemical entity is a natural product.""")
@@ -3473,13 +3480,13 @@ class MolecularMixture(ChemicalMixture):
     is_supplement: Optional[str] = Field(default=None)
     highest_FDA_approval_status: Optional[ApprovalStatusEnum] = Field(default=None, description="""Should be the highest level of FDA approval this chemical entity or device has, regardless of which disease, condition or phenotype it is currently being reviewed to treat.  For specific levels of FDA approval for a specific condition, disease, phenotype, etc., see the association slot, 'clinical approval status.'""")
     drug_regulatory_status_world_wide: Optional[ApprovalStatusEnum] = Field(default=None, description="""An agglomeration of drug regulatory status worldwide. Not specific to FDA.""")
-    routes_of_delivery: Optional[list[DrugDeliveryEnum]] = Field(default=None, description="""the method or process of administering a pharmaceutical compound to achieve a therapeutic effect in humans or animals.""")
     id: str = Field(default=..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     trade_name: Optional[str] = Field(default=None)
     available_from: Optional[list[DrugAvailabilityEnum]] = Field(default=None)
     max_tolerated_dose: Optional[str] = Field(default=None, description="""The highest dose of a drug or treatment that does not cause unacceptable side effects. The maximum tolerated dose is determined in clinical trials by testing increasing doses on different groups of people until the highest dose with acceptable side effects is found. Also called MTD.""")
     is_toxic: Optional[bool] = Field(default=None)
     has_chemical_role: Optional[list[str]] = Field(default=None, description="""A role is particular behaviour which a chemical entity may exhibit.""")
+    routes_of_delivery: Optional[list[DrugDeliveryEnum]] = Field(default=None, description="""the method or process of administering a pharmaceutical compound to achieve a therapeutic effect in humans or animals.""")
     chembl_prodrug: Optional[bool] = Field(default=None, description="""Flag indicating if a drug is a prodrug that is active only after being metabolized by the body.""")
     chembl_black_box_warning: Optional[str] = Field(default=None, description="""Text describing black box warnings for use of chemicals as therapeutics.""")
     chembl_natural_product: Optional[bool] = Field(default=None, description="""Flag indicating if a chemical entity is a natural product.""")
@@ -3509,13 +3516,13 @@ class ComplexMolecularMixture(ChemicalMixture):
     is_supplement: Optional[str] = Field(default=None)
     highest_FDA_approval_status: Optional[ApprovalStatusEnum] = Field(default=None, description="""Should be the highest level of FDA approval this chemical entity or device has, regardless of which disease, condition or phenotype it is currently being reviewed to treat.  For specific levels of FDA approval for a specific condition, disease, phenotype, etc., see the association slot, 'clinical approval status.'""")
     drug_regulatory_status_world_wide: Optional[ApprovalStatusEnum] = Field(default=None, description="""An agglomeration of drug regulatory status worldwide. Not specific to FDA.""")
-    routes_of_delivery: Optional[list[DrugDeliveryEnum]] = Field(default=None, description="""the method or process of administering a pharmaceutical compound to achieve a therapeutic effect in humans or animals.""")
     id: str = Field(default=..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     trade_name: Optional[str] = Field(default=None)
     available_from: Optional[list[DrugAvailabilityEnum]] = Field(default=None)
     max_tolerated_dose: Optional[str] = Field(default=None, description="""The highest dose of a drug or treatment that does not cause unacceptable side effects. The maximum tolerated dose is determined in clinical trials by testing increasing doses on different groups of people until the highest dose with acceptable side effects is found. Also called MTD.""")
     is_toxic: Optional[bool] = Field(default=None)
     has_chemical_role: Optional[list[str]] = Field(default=None, description="""A role is particular behaviour which a chemical entity may exhibit.""")
+    routes_of_delivery: Optional[list[DrugDeliveryEnum]] = Field(default=None, description="""the method or process of administering a pharmaceutical compound to achieve a therapeutic effect in humans or animals.""")
     chembl_prodrug: Optional[bool] = Field(default=None, description="""Flag indicating if a drug is a prodrug that is active only after being metabolized by the body.""")
     chembl_black_box_warning: Optional[str] = Field(default=None, description="""Text describing black box warnings for use of chemicals as therapeutics.""")
     chembl_natural_product: Optional[bool] = Field(default=None, description="""Flag indicating if a chemical entity is a natural product.""")
@@ -3545,13 +3552,13 @@ class ProcessedMaterial(ChemicalMixture):
     is_supplement: Optional[str] = Field(default=None)
     highest_FDA_approval_status: Optional[ApprovalStatusEnum] = Field(default=None, description="""Should be the highest level of FDA approval this chemical entity or device has, regardless of which disease, condition or phenotype it is currently being reviewed to treat.  For specific levels of FDA approval for a specific condition, disease, phenotype, etc., see the association slot, 'clinical approval status.'""")
     drug_regulatory_status_world_wide: Optional[ApprovalStatusEnum] = Field(default=None, description="""An agglomeration of drug regulatory status worldwide. Not specific to FDA.""")
-    routes_of_delivery: Optional[list[DrugDeliveryEnum]] = Field(default=None, description="""the method or process of administering a pharmaceutical compound to achieve a therapeutic effect in humans or animals.""")
     id: str = Field(default=..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     trade_name: Optional[str] = Field(default=None)
     available_from: Optional[list[DrugAvailabilityEnum]] = Field(default=None)
     max_tolerated_dose: Optional[str] = Field(default=None, description="""The highest dose of a drug or treatment that does not cause unacceptable side effects. The maximum tolerated dose is determined in clinical trials by testing increasing doses on different groups of people until the highest dose with acceptable side effects is found. Also called MTD.""")
     is_toxic: Optional[bool] = Field(default=None)
     has_chemical_role: Optional[list[str]] = Field(default=None, description="""A role is particular behaviour which a chemical entity may exhibit.""")
+    routes_of_delivery: Optional[list[DrugDeliveryEnum]] = Field(default=None, description="""the method or process of administering a pharmaceutical compound to achieve a therapeutic effect in humans or animals.""")
     chembl_prodrug: Optional[bool] = Field(default=None, description="""Flag indicating if a drug is a prodrug that is active only after being metabolized by the body.""")
     chembl_black_box_warning: Optional[str] = Field(default=None, description="""Text describing black box warnings for use of chemicals as therapeutics.""")
     chembl_natural_product: Optional[bool] = Field(default=None, description="""Flag indicating if a chemical entity is a natural product.""")
@@ -3582,12 +3589,12 @@ class Drug(MolecularMixture, ChemicalOrDrugOrTreatment, OntologyClass):
     is_supplement: Optional[str] = Field(default=None)
     highest_FDA_approval_status: Optional[ApprovalStatusEnum] = Field(default=None, description="""Should be the highest level of FDA approval this chemical entity or device has, regardless of which disease, condition or phenotype it is currently being reviewed to treat.  For specific levels of FDA approval for a specific condition, disease, phenotype, etc., see the association slot, 'clinical approval status.'""")
     drug_regulatory_status_world_wide: Optional[ApprovalStatusEnum] = Field(default=None, description="""An agglomeration of drug regulatory status worldwide. Not specific to FDA.""")
-    routes_of_delivery: Optional[list[DrugDeliveryEnum]] = Field(default=None, description="""the method or process of administering a pharmaceutical compound to achieve a therapeutic effect in humans or animals.""")
     trade_name: Optional[str] = Field(default=None)
     available_from: Optional[list[DrugAvailabilityEnum]] = Field(default=None)
     max_tolerated_dose: Optional[str] = Field(default=None, description="""The highest dose of a drug or treatment that does not cause unacceptable side effects. The maximum tolerated dose is determined in clinical trials by testing increasing doses on different groups of people until the highest dose with acceptable side effects is found. Also called MTD.""")
     is_toxic: Optional[bool] = Field(default=None)
     has_chemical_role: Optional[list[str]] = Field(default=None, description="""A role is particular behaviour which a chemical entity may exhibit.""")
+    routes_of_delivery: Optional[list[DrugDeliveryEnum]] = Field(default=None, description="""the method or process of administering a pharmaceutical compound to achieve a therapeutic effect in humans or animals.""")
     chembl_prodrug: Optional[bool] = Field(default=None, description="""Flag indicating if a drug is a prodrug that is active only after being metabolized by the body.""")
     chembl_black_box_warning: Optional[str] = Field(default=None, description="""Text describing black box warnings for use of chemicals as therapeutics.""")
     chembl_natural_product: Optional[bool] = Field(default=None, description="""Flag indicating if a chemical entity is a natural product.""")
@@ -3616,6 +3623,7 @@ class EnvironmentalFoodContaminant(ChemicalEntity):
     max_tolerated_dose: Optional[str] = Field(default=None, description="""The highest dose of a drug or treatment that does not cause unacceptable side effects. The maximum tolerated dose is determined in clinical trials by testing increasing doses on different groups of people until the highest dose with acceptable side effects is found. Also called MTD.""")
     is_toxic: Optional[bool] = Field(default=None)
     has_chemical_role: Optional[list[str]] = Field(default=None, description="""A role is particular behaviour which a chemical entity may exhibit.""")
+    routes_of_delivery: Optional[list[DrugDeliveryEnum]] = Field(default=None, description="""the method or process of administering a pharmaceutical compound to achieve a therapeutic effect in humans or animals.""")
     chembl_prodrug: Optional[bool] = Field(default=None, description="""Flag indicating if a drug is a prodrug that is active only after being metabolized by the body.""")
     chembl_black_box_warning: Optional[str] = Field(default=None, description="""Text describing black box warnings for use of chemicals as therapeutics.""")
     chembl_natural_product: Optional[bool] = Field(default=None, description="""Flag indicating if a chemical entity is a natural product.""")
@@ -3645,6 +3653,7 @@ class FoodAdditive(ChemicalEntity):
     max_tolerated_dose: Optional[str] = Field(default=None, description="""The highest dose of a drug or treatment that does not cause unacceptable side effects. The maximum tolerated dose is determined in clinical trials by testing increasing doses on different groups of people until the highest dose with acceptable side effects is found. Also called MTD.""")
     is_toxic: Optional[bool] = Field(default=None)
     has_chemical_role: Optional[list[str]] = Field(default=None, description="""A role is particular behaviour which a chemical entity may exhibit.""")
+    routes_of_delivery: Optional[list[DrugDeliveryEnum]] = Field(default=None, description="""the method or process of administering a pharmaceutical compound to achieve a therapeutic effect in humans or animals.""")
     chembl_prodrug: Optional[bool] = Field(default=None, description="""Flag indicating if a drug is a prodrug that is active only after being metabolized by the body.""")
     chembl_black_box_warning: Optional[str] = Field(default=None, description="""Text describing black box warnings for use of chemicals as therapeutics.""")
     chembl_natural_product: Optional[bool] = Field(default=None, description="""Flag indicating if a chemical entity is a natural product.""")
@@ -3675,13 +3684,13 @@ class Food(ChemicalMixture):
     is_supplement: Optional[str] = Field(default=None)
     highest_FDA_approval_status: Optional[ApprovalStatusEnum] = Field(default=None, description="""Should be the highest level of FDA approval this chemical entity or device has, regardless of which disease, condition or phenotype it is currently being reviewed to treat.  For specific levels of FDA approval for a specific condition, disease, phenotype, etc., see the association slot, 'clinical approval status.'""")
     drug_regulatory_status_world_wide: Optional[ApprovalStatusEnum] = Field(default=None, description="""An agglomeration of drug regulatory status worldwide. Not specific to FDA.""")
-    routes_of_delivery: Optional[list[DrugDeliveryEnum]] = Field(default=None, description="""the method or process of administering a pharmaceutical compound to achieve a therapeutic effect in humans or animals.""")
     id: str = Field(default=..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     trade_name: Optional[str] = Field(default=None)
     available_from: Optional[list[DrugAvailabilityEnum]] = Field(default=None)
     max_tolerated_dose: Optional[str] = Field(default=None, description="""The highest dose of a drug or treatment that does not cause unacceptable side effects. The maximum tolerated dose is determined in clinical trials by testing increasing doses on different groups of people until the highest dose with acceptable side effects is found. Also called MTD.""")
     is_toxic: Optional[bool] = Field(default=None)
     has_chemical_role: Optional[list[str]] = Field(default=None, description="""A role is particular behaviour which a chemical entity may exhibit.""")
+    routes_of_delivery: Optional[list[DrugDeliveryEnum]] = Field(default=None, description="""the method or process of administering a pharmaceutical compound to achieve a therapeutic effect in humans or animals.""")
     chembl_prodrug: Optional[bool] = Field(default=None, description="""Flag indicating if a drug is a prodrug that is active only after being metabolized by the body.""")
     chembl_black_box_warning: Optional[str] = Field(default=None, description="""Text describing black box warnings for use of chemicals as therapeutics.""")
     chembl_natural_product: Optional[bool] = Field(default=None, description="""Flag indicating if a chemical entity is a natural product.""")
@@ -6753,7 +6762,7 @@ class ChemicalGeneInteractionAssociation(Association):
 
 class MacromolecularMachineHasSubstrateAssociation(Association):
     """
-    Describes the relationship between an enzyme (usually a macromolecular complex or gene product) and the molecules it acts on (substrate).  The substrate can be a chemical, a polypeptide, or a protein.
+    Describes the relationship between an enzyme (usually a macromolecular complex or gene product) and the molecules it acts on (substrate). The substrate can be a chemical, a polypeptide, or a protein.
     """
     subject: str = Field(default=..., description="""connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     predicate: str = Field(default=..., description="""Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats""")
@@ -7822,8 +7831,8 @@ class ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation(EntityToDiseaseOrPhe
     """
     An interaction between a chemical entity and a phenotype or disease, where the presence of the chemical gives rise to or exacerbates the phenotype.
     """
-    clinical_approval_status: Optional[ClinicalApprovalStatusEnum] = Field(default=None)
-    max_research_phase: Optional[ResearchPhaseEnum] = Field(default=None)
+    clinical_approval_status: Optional[ClinicalApprovalStatusEnum] = Field(default=None, description="""The clinical approval status of a chemical entity for treating a specific disease or condition, as captured in the context of the association between the chemical and the disease.""")
+    max_research_phase: Optional[ResearchPhaseEnum] = Field(default=None, description="""The maximum research phase reached for a specific chemical-disease pair, indicating the highest clinical trial phase achieved for the chemical entity's investigation as a treatment for the associated disease or condition.""")
     subject: str = Field(default=..., description="""connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     predicate: str = Field(default=..., description="""Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats""")
     object: str = Field(default=..., description="""the disease or phenotype that is affected by the chemical""")
@@ -10569,8 +10578,8 @@ class GeneToGoTermAssociation(FunctionalAssociation):
 
 
 class EntityToDiseaseAssociation(Association):
-    clinical_approval_status: Optional[ClinicalApprovalStatusEnum] = Field(default=None)
-    max_research_phase: Optional[ResearchPhaseEnum] = Field(default=None)
+    clinical_approval_status: Optional[ClinicalApprovalStatusEnum] = Field(default=None, description="""The clinical approval status of a chemical entity for treating a specific disease or condition, as captured in the context of the association between the chemical and the disease.""")
+    max_research_phase: Optional[ResearchPhaseEnum] = Field(default=None, description="""The maximum research phase reached for a specific chemical-disease pair, indicating the highest clinical trial phase achieved for the chemical entity's investigation as a treatment for the associated disease or condition.""")
     FDA_regulatory_approvals: Optional[list[str]] = Field(default=None, description="""Numbers that identify specific drug applications. Each drug can have multiple approval numbers (for example, as seen with ranitidine having both ANADA200536 and ANDA200536).""")
     number_of_cases: Optional[int] = Field(default=None, description="""The number of cases in a study or clinical trial, primarily used in conversion of drug approval data.""")
     subject: str = Field(default=..., description="""connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
@@ -10625,8 +10634,8 @@ class EntityToDiseaseAssociation(Association):
 
 
 class EntityToPhenotypicFeatureAssociation(Association):
-    clinical_approval_status: Optional[ClinicalApprovalStatusEnum] = Field(default=None)
-    max_research_phase: Optional[ResearchPhaseEnum] = Field(default=None)
+    clinical_approval_status: Optional[ClinicalApprovalStatusEnum] = Field(default=None, description="""The clinical approval status of a chemical entity for treating a specific disease or condition, as captured in the context of the association between the chemical and the disease.""")
+    max_research_phase: Optional[ResearchPhaseEnum] = Field(default=None, description="""The maximum research phase reached for a specific chemical-disease pair, indicating the highest clinical trial phase achieved for the chemical entity's investigation as a treatment for the associated disease or condition.""")
     FDA_regulatory_approvals: Optional[list[str]] = Field(default=None, description="""Numbers that identify specific drug applications. Each drug can have multiple approval numbers (for example, as seen with ranitidine having both ANADA200536 and ANDA200536).""")
     number_of_cases: Optional[int] = Field(default=None, description="""The number of cases in a study or clinical trial, primarily used in conversion of drug approval data.""")
     subject: str = Field(default=..., description="""connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
@@ -11125,7 +11134,7 @@ class AnatomicalEntityToAnatomicalEntityAssociation(Association):
 
 class AnatomicalEntityHasPartAnatomicalEntityAssociation(AnatomicalEntityToAnatomicalEntityAssociation):
     """
-    A relationship between two anatomical entities where the relationship is mereological, i.e the two entities are related by parthood, that is, the subject is has the object entity as a part (the expected predicate is \"biolink:has_part\" or suitable predicate slots inheriting from it, i.e.,  \"biolink:has_plasma_membrane_part\",  \"biolink:has_variant_part\", etc.). This includes relationships between cells and cellular components, between issues and cells, whole organisms and tissues.
+    A relationship between two anatomical entities where the relationship is mereological, i.e the two entities are related by parthood, that is, the subject is has the object entity as a part (the expected predicate is \"biolink:has_part\" or suitable predicate slots inheriting from it, i.e., \"biolink:has_plasma_membrane_part\",  \"biolink:has_variant_part\", etc.). This includes relationships between cells and cellular components, between issues and cells, whole organisms and tissues.
     """
     subject: str = Field(default=..., description="""the whole""")
     predicate: str = Field(default=..., description="""Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats""")
@@ -11180,7 +11189,7 @@ class AnatomicalEntityHasPartAnatomicalEntityAssociation(AnatomicalEntityToAnato
 
 class AnatomicalEntityPartOfAnatomicalEntityAssociation(AnatomicalEntityToAnatomicalEntityAssociation):
     """
-    A relationship between two anatomical entities where the relationship is mereological, i.e the two entities are related by parthood, that is, the subject is a part of the object entity (the expected predicate is \"biolink:part_of\" or suitable predicate slots inheriting from it, i.e.,  \"biolink:plasma_membrane_part_of\",  \"biolink:variant_part_of\", etc.). This includes relationships between cellular components and cells, between cells and tissues, tissues and whole organisms.
+    A relationship between two anatomical entities where the relationship is mereological, i.e the two entities are related by parthood, that is, the subject is a part of the object entity (the expected predicate is \"biolink:part_of\" or suitable predicate slots inheriting from it, i.e., \"biolink:plasma_membrane_part_of\",  \"biolink:variant_part_of\", etc.). This includes relationships between cellular components and cells, between cells and tissues, tissues and whole organisms.
     """
     subject: str = Field(default=..., description="""the part""")
     predicate: str = Field(default=..., description="""Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats""")

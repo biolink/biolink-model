@@ -2347,7 +2347,19 @@
           "text": "absorption_through_the_skin"
         },
         {
-          "text": "intravenous_injection"
+          "text": "injection"
+        },
+        {
+          "text": "intravenous_injection",
+          "is_a": "injection"
+        },
+        {
+          "text": "subcutaneous_injection",
+          "is_a": "injection"
+        },
+        {
+          "text": "intramuscular_injection",
+          "is_a": "injection"
         }
       ]
     },
@@ -5004,9 +5016,9 @@
       "description": "the method or process of administering a pharmaceutical compound to achieve a therapeutic effect in humans or animals.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "slot_uri": "https://w3id.org/biolink/vocab/routes_of_delivery",
-      "owner": "ChemicalMixture",
+      "owner": "ChemicalEntity",
       "domain_of": [
-        "ChemicalMixture"
+        "ChemicalEntity"
       ],
       "range": "DrugDeliveryEnum",
       "multivalued": true,
@@ -14410,7 +14422,7 @@
     {
       "name": "clinical_approval_status",
       "definition_uri": "https://w3id.org/biolink/vocab/clinical_approval_status",
-      "description": "",
+      "description": "The clinical approval status of a chemical entity for treating a specific disease or condition, as captured in the context of the association between the chemical and the disease.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "association_slot",
       "domain": "Association",
@@ -14427,6 +14439,7 @@
     {
       "name": "max_research_phase",
       "definition_uri": "https://w3id.org/biolink/vocab/max_research_phase",
+      "description": "The maximum research phase reached for a specific chemical-disease pair, indicating the highest clinical trial phase achieved for the chemical entity's investigation as a treatment for the associated disease or condition.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "association_slot",
       "domain": "Association",
@@ -28850,6 +28863,7 @@
         "max_tolerated_dose",
         "is_toxic",
         "has_chemical_role",
+        "routes_of_delivery",
         "chembl_prodrug",
         "chembl_black_box_warning",
         "chembl_natural_product",
@@ -28938,6 +28952,7 @@
         "max_tolerated_dose",
         "is_toxic",
         "has_chemical_role",
+        "routes_of_delivery",
         "chembl_prodrug",
         "chembl_black_box_warning",
         "chembl_natural_product",
@@ -29024,6 +29039,7 @@
         "max_tolerated_dose",
         "is_toxic",
         "has_chemical_role",
+        "routes_of_delivery",
         "chembl_prodrug",
         "chembl_black_box_warning",
         "chembl_natural_product",
@@ -29102,6 +29118,7 @@
         "max_tolerated_dose",
         "is_toxic",
         "has_chemical_role",
+        "routes_of_delivery",
         "chembl_prodrug",
         "chembl_black_box_warning",
         "chembl_natural_product",
@@ -29110,8 +29127,7 @@
         "chembl_drug_warning",
         "is_supplement",
         "highest_FDA_approval_status",
-        "drug_regulatory_status_world_wide",
-        "routes_of_delivery"
+        "drug_regulatory_status_world_wide"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/ChemicalMixture",
@@ -29188,6 +29204,7 @@
         "max_tolerated_dose",
         "is_toxic",
         "has_chemical_role",
+        "routes_of_delivery",
         "chembl_prodrug",
         "chembl_black_box_warning",
         "chembl_natural_product",
@@ -29389,6 +29406,7 @@
         "max_tolerated_dose",
         "is_toxic",
         "has_chemical_role",
+        "routes_of_delivery",
         "chembl_prodrug",
         "chembl_black_box_warning",
         "chembl_natural_product",
@@ -29397,8 +29415,7 @@
         "chembl_drug_warning",
         "is_supplement",
         "highest_FDA_approval_status",
-        "drug_regulatory_status_world_wide",
-        "routes_of_delivery"
+        "drug_regulatory_status_world_wide"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/MolecularMixture",
@@ -29457,6 +29474,7 @@
         "max_tolerated_dose",
         "is_toxic",
         "has_chemical_role",
+        "routes_of_delivery",
         "chembl_prodrug",
         "chembl_black_box_warning",
         "chembl_natural_product",
@@ -29465,8 +29483,7 @@
         "chembl_drug_warning",
         "is_supplement",
         "highest_FDA_approval_status",
-        "drug_regulatory_status_world_wide",
-        "routes_of_delivery"
+        "drug_regulatory_status_world_wide"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/ComplexMolecularMixture",
@@ -29834,6 +29851,7 @@
         "max_tolerated_dose",
         "is_toxic",
         "has_chemical_role",
+        "routes_of_delivery",
         "chembl_prodrug",
         "chembl_black_box_warning",
         "chembl_natural_product",
@@ -29842,8 +29860,7 @@
         "chembl_drug_warning",
         "is_supplement",
         "highest_FDA_approval_status",
-        "drug_regulatory_status_world_wide",
-        "routes_of_delivery"
+        "drug_regulatory_status_world_wide"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/ProcessedMaterial",
@@ -29924,6 +29941,7 @@
         "max_tolerated_dose",
         "is_toxic",
         "has_chemical_role",
+        "routes_of_delivery",
         "chembl_prodrug",
         "chembl_black_box_warning",
         "chembl_natural_product",
@@ -29932,8 +29950,7 @@
         "chembl_drug_warning",
         "is_supplement",
         "highest_FDA_approval_status",
-        "drug_regulatory_status_world_wide",
-        "routes_of_delivery"
+        "drug_regulatory_status_world_wide"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/Drug",
@@ -29995,6 +30012,7 @@
         "max_tolerated_dose",
         "is_toxic",
         "has_chemical_role",
+        "routes_of_delivery",
         "chembl_prodrug",
         "chembl_black_box_warning",
         "chembl_natural_product",
@@ -30062,6 +30080,7 @@
         "max_tolerated_dose",
         "is_toxic",
         "has_chemical_role",
+        "routes_of_delivery",
         "chembl_prodrug",
         "chembl_black_box_warning",
         "chembl_natural_product",
@@ -30128,6 +30147,7 @@
         "max_tolerated_dose",
         "is_toxic",
         "has_chemical_role",
+        "routes_of_delivery",
         "chembl_prodrug",
         "chembl_black_box_warning",
         "chembl_natural_product",
@@ -30136,8 +30156,7 @@
         "chembl_drug_warning",
         "is_supplement",
         "highest_FDA_approval_status",
-        "drug_regulatory_status_world_wide",
-        "routes_of_delivery"
+        "drug_regulatory_status_world_wide"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/Food",
@@ -36161,7 +36180,7 @@
     {
       "name": "MacromolecularMachineHasSubstrateAssociation",
       "definition_uri": "https://w3id.org/biolink/vocab/MacromolecularMachineHasSubstrateAssociation",
-      "description": "Describes the relationship between an enzyme (usually a macromolecular complex or gene product) and the molecules it acts on (substrate).  The substrate can be a chemical, a polypeptide, or a protein.",
+      "description": "Describes the relationship between an enzyme (usually a macromolecular complex or gene product) and the molecules it acts on (substrate). The substrate can be a chemical, a polypeptide, or a protein.",
       "notes": [
         "Using macromolecular machine should cover cases of gene-protein conflation."
       ],
@@ -41074,7 +41093,7 @@
     {
       "name": "AnatomicalEntityHasPartAnatomicalEntityAssociation",
       "definition_uri": "https://w3id.org/biolink/vocab/AnatomicalEntityHasPartAnatomicalEntityAssociation",
-      "description": "A relationship between two anatomical entities where the relationship is mereological, i.e the two entities are related by parthood, that is, the subject is has the object entity as a part (the expected predicate is \"biolink:has_part\" or suitable predicate slots inheriting from it, i.e.,  \"biolink:has_plasma_membrane_part\",  \"biolink:has_variant_part\", etc.). This includes relationships between cells and cellular components, between issues and cells, whole organisms and tissues.",
+      "description": "A relationship between two anatomical entities where the relationship is mereological, i.e the two entities are related by parthood, that is, the subject is has the object entity as a part (the expected predicate is \"biolink:has_part\" or suitable predicate slots inheriting from it, i.e., \"biolink:has_plasma_membrane_part\",  \"biolink:has_variant_part\", etc.). This includes relationships between cells and cellular components, between issues and cells, whole organisms and tissues.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "AnatomicalEntityToAnatomicalEntityAssociation",
       "slots": [
@@ -41138,7 +41157,7 @@
     {
       "name": "AnatomicalEntityPartOfAnatomicalEntityAssociation",
       "definition_uri": "https://w3id.org/biolink/vocab/AnatomicalEntityPartOfAnatomicalEntityAssociation",
-      "description": "A relationship between two anatomical entities where the relationship is mereological, i.e the two entities are related by parthood, that is, the subject is a part of the object entity (the expected predicate is \"biolink:part_of\" or suitable predicate slots inheriting from it, i.e.,  \"biolink:plasma_membrane_part_of\",  \"biolink:variant_part_of\", etc.). This includes relationships between cellular components and cells, between cells and tissues, tissues and whole organisms.",
+      "description": "A relationship between two anatomical entities where the relationship is mereological, i.e the two entities are related by parthood, that is, the subject is a part of the object entity (the expected predicate is \"biolink:part_of\" or suitable predicate slots inheriting from it, i.e., \"biolink:plasma_membrane_part_of\",  \"biolink:variant_part_of\", etc.). This includes relationships between cellular components and cells, between cells and tissues, tissues and whole organisms.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "AnatomicalEntityToAnatomicalEntityAssociation",
       "slots": [
@@ -41676,9 +41695,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2026-02-06T20:42:06",
-  "source_file_size": 460433,
-  "generation_date": "2026-02-06T20:42:12",
+  "source_file_date": "2026-02-11T02:17:51",
+  "source_file_size": 461025,
+  "generation_date": "2026-02-11T02:17:57",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",

@@ -624,7 +624,7 @@
         },
         "AnatomicalEntityHasPartAnatomicalEntityAssociation": {
             "additionalProperties": false,
-            "description": "A relationship between two anatomical entities where the relationship is mereological, i.e the two entities are related by parthood, that is, the subject is has the object entity as a part (the expected predicate is \"biolink:has_part\" or suitable predicate slots inheriting from it, i.e.,  \"biolink:has_plasma_membrane_part\",  \"biolink:has_variant_part\", etc.). This includes relationships between cells and cellular components, between issues and cells, whole organisms and tissues.",
+            "description": "A relationship between two anatomical entities where the relationship is mereological, i.e the two entities are related by parthood, that is, the subject is has the object entity as a part (the expected predicate is \"biolink:has_part\" or suitable predicate slots inheriting from it, i.e., \"biolink:has_plasma_membrane_part\",  \"biolink:has_variant_part\", etc.). This includes relationships between cells and cellular components, between issues and cells, whole organisms and tissues.",
             "properties": {
                 "adjusted_p_value": {
                     "description": "The adjusted p-value is the probability of obtaining test results at least as extreme as the results actually observed, under the assumption that the null hypothesis is correct, adjusted for multiple comparisons. P is always italicized and capitalized. The actual P value* should be expressed (P=. 04) rather than expressing a statement of inequality (P<. 05), unless P<.",
@@ -1042,7 +1042,7 @@
         },
         "AnatomicalEntityPartOfAnatomicalEntityAssociation": {
             "additionalProperties": false,
-            "description": "A relationship between two anatomical entities where the relationship is mereological, i.e the two entities are related by parthood, that is, the subject is a part of the object entity (the expected predicate is \"biolink:part_of\" or suitable predicate slots inheriting from it, i.e.,  \"biolink:plasma_membrane_part_of\",  \"biolink:variant_part_of\", etc.). This includes relationships between cellular components and cells, between cells and tissues, tissues and whole organisms.",
+            "description": "A relationship between two anatomical entities where the relationship is mereological, i.e the two entities are related by parthood, that is, the subject is a part of the object entity (the expected predicate is \"biolink:part_of\" or suitable predicate slots inheriting from it, i.e., \"biolink:plasma_membrane_part_of\",  \"biolink:variant_part_of\", etc.). This includes relationships between cellular components and cells, between cells and tissues, tissues and whole organisms.",
             "properties": {
                 "adjusted_p_value": {
                     "description": "The adjusted p-value is the probability of obtaining test results at least as extreme as the results actually observed, under the assumption that the null hypothesis is correct, adjusted for multiple comparisons. P is always italicized and capitalized. The actual P value* should be expressed (P=. 04) rather than expressing a statement of inequality (P<. 05), unless P<.",
@@ -11525,6 +11525,16 @@
                         "null"
                     ]
                 },
+                "routes_of_delivery": {
+                    "description": "the method or process of administering a pharmaceutical compound to achieve a therapeutic effect in humans or animals.",
+                    "items": {
+                        "$ref": "#/$defs/DrugDeliveryEnum"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "synonym": {
                     "description": "Alternate human-readable names for a thing",
                     "items": {
@@ -13780,7 +13790,7 @@
                 },
                 "clinical_approval_status": {
                     "$ref": "#/$defs/ClinicalApprovalStatusEnum",
-                    "description": ""
+                    "description": "The clinical approval status of a chemical entity for treating a specific disease or condition, as captured in the context of the association between the chemical and the disease."
                 },
                 "deprecated": {
                     "description": "A boolean flag indicating that an entity is no longer considered current or valid.",
@@ -13905,7 +13915,8 @@
                     ]
                 },
                 "max_research_phase": {
-                    "$ref": "#/$defs/ResearchPhaseEnum"
+                    "$ref": "#/$defs/ResearchPhaseEnum",
+                    "description": "The maximum research phase reached for a specific chemical-disease pair, indicating the highest clinical trial phase achieved for the chemical entity's investigation as a treatment for the associated disease or condition."
                 },
                 "name": {
                     "description": "A human-readable name for an attribute or entity.",
@@ -25021,7 +25032,10 @@
                 "inhalation",
                 "oral",
                 "absorption_through_the_skin",
-                "intravenous_injection"
+                "injection",
+                "intravenous_injection",
+                "subcutaneous_injection",
+                "intramuscular_injection"
             ],
             "title": "DrugDeliveryEnum",
             "type": "string"
@@ -26642,7 +26656,7 @@
                 },
                 "clinical_approval_status": {
                     "$ref": "#/$defs/ClinicalApprovalStatusEnum",
-                    "description": ""
+                    "description": "The clinical approval status of a chemical entity for treating a specific disease or condition, as captured in the context of the association between the chemical and the disease."
                 },
                 "deprecated": {
                     "description": "A boolean flag indicating that an entity is no longer considered current or valid.",
@@ -26760,7 +26774,8 @@
                     ]
                 },
                 "max_research_phase": {
-                    "$ref": "#/$defs/ResearchPhaseEnum"
+                    "$ref": "#/$defs/ResearchPhaseEnum",
+                    "description": "The maximum research phase reached for a specific chemical-disease pair, indicating the highest clinical trial phase achieved for the chemical entity's investigation as a treatment for the associated disease or condition."
                 },
                 "name": {
                     "description": "A human-readable name for an attribute or entity.",
@@ -27084,7 +27099,7 @@
                 },
                 "clinical_approval_status": {
                     "$ref": "#/$defs/ClinicalApprovalStatusEnum",
-                    "description": ""
+                    "description": "The clinical approval status of a chemical entity for treating a specific disease or condition, as captured in the context of the association between the chemical and the disease."
                 },
                 "deprecated": {
                     "description": "A boolean flag indicating that an entity is no longer considered current or valid.",
@@ -27202,7 +27217,8 @@
                     ]
                 },
                 "max_research_phase": {
-                    "$ref": "#/$defs/ResearchPhaseEnum"
+                    "$ref": "#/$defs/ResearchPhaseEnum",
+                    "description": "The maximum research phase reached for a specific chemical-disease pair, indicating the highest clinical trial phase achieved for the chemical entity's investigation as a treatment for the associated disease or condition."
                 },
                 "name": {
                     "description": "A human-readable name for an attribute or entity.",
@@ -27969,6 +27985,16 @@
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
                     "items": {
                         "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "routes_of_delivery": {
+                    "description": "the method or process of administering a pharmaceutical compound to achieve a therapeutic effect in humans or animals.",
+                    "items": {
+                        "$ref": "#/$defs/DrugDeliveryEnum"
                     },
                     "type": [
                         "array",
@@ -30703,6 +30729,16 @@
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
                     "items": {
                         "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "routes_of_delivery": {
+                    "description": "the method or process of administering a pharmaceutical compound to achieve a therapeutic effect in humans or animals.",
+                    "items": {
+                        "$ref": "#/$defs/DrugDeliveryEnum"
                     },
                     "type": [
                         "array",
@@ -46657,7 +46693,7 @@
         },
         "MacromolecularMachineHasSubstrateAssociation": {
             "additionalProperties": false,
-            "description": "Describes the relationship between an enzyme (usually a macromolecular complex or gene product) and the molecules it acts on (substrate).  The substrate can be a chemical, a polypeptide, or a protein.",
+            "description": "Describes the relationship between an enzyme (usually a macromolecular complex or gene product) and the molecules it acts on (substrate). The substrate can be a chemical, a polypeptide, or a protein.",
             "properties": {
                 "adjusted_p_value": {
                     "description": "The adjusted p-value is the probability of obtaining test results at least as extreme as the results actually observed, under the assumption that the null hypothesis is correct, adjusted for multiple comparisons. P is always italicized and capitalized. The actual P value* should be expressed (P=. 04) rather than expressing a statement of inequality (P<. 05), unless P<.",
@@ -51259,6 +51295,16 @@
                         "null"
                     ]
                 },
+                "routes_of_delivery": {
+                    "description": "the method or process of administering a pharmaceutical compound to achieve a therapeutic effect in humans or animals.",
+                    "items": {
+                        "$ref": "#/$defs/DrugDeliveryEnum"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "synonym": {
                     "description": "Alternate human-readable names for a thing",
                     "items": {
@@ -52491,6 +52537,16 @@
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
                     "items": {
                         "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "routes_of_delivery": {
+                    "description": "the method or process of administering a pharmaceutical compound to achieve a therapeutic effect in humans or animals.",
+                    "items": {
+                        "$ref": "#/$defs/DrugDeliveryEnum"
                     },
                     "type": [
                         "array",
@@ -65935,6 +65991,16 @@
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
                     "items": {
                         "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "routes_of_delivery": {
+                    "description": "the method or process of administering a pharmaceutical compound to achieve a therapeutic effect in humans or animals.",
+                    "items": {
+                        "$ref": "#/$defs/DrugDeliveryEnum"
                     },
                     "type": [
                         "array",
