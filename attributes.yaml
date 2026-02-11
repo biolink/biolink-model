@@ -211,6 +211,42 @@ slots:
     description: Text indicating the availability type of the chemical entity.
     range: string
 
+  chembl binding site name:
+    description: Text indicating the name of the binding site for a chemical entity.
+    range: string
+
+  chembl binding site comment:
+    description: Text describing the binding site for a chemical entity.
+    range: string
+
+  chembl mechanism of action description:
+    description: Text describing the mechanism of action for a chemical entity.
+    range: string
+
+  chembl mechanism of action comment:
+    description: Additional comments regarding the mechanism of action.
+    range: string
+
+  chembl mutation:
+    description: Text describing mutations associated with a chemical entity.
+    range: string
+
+  chembl mutation accession:
+    description: Accession identifier for a mutation associated with a chemical entity.
+    range: string
+
+  chembl selectivity comment:
+    description: Additional comments regarding the selectivity of the drug.
+    range: string
+
+  chembl assay description:
+    description: Text describing the assay associated with a chemical entity.
+    range: string
+
+  chembl confidence score:
+    description: A score defined by ChEMBL that represents the confidence level of a particular drug-target interaction, based on the type and quality of evidence supporting the interaction. The score ranges from 0 to 9, with higher scores indicating stronger evidence for the interaction. See here for details: https://www.ebi.ac.uk/chembl/documentation/data-access/assays#confidence_score.
+    range: integer
+
   dgidb relative drug specificity score:
     description: >-
       A score defined by DGIdb that quantifies the gene-interaction specificity of a given drug - representing the ratio of average
@@ -252,6 +288,11 @@ slots:
       but adjusts/caps scores for these types of knowledge such that they are comparable on a single scale.
     range: float
   
+  drug_rep_hub disease area:
+    description: >-
+      A term used by Drug Repurposing Hub to describe the disease area associated with a drug.
+    range: string
+
   gene2phenotype confidence category:
     description: >-
       A term used by EBI Gene2Phenotype to describe the confidence that the association is real.
