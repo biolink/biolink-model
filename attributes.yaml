@@ -244,7 +244,10 @@ slots:
     range: string
 
   chembl confidence score:
-    description: A score defined by ChEMBL that represents the confidence level of a particular drug-target interaction, based on the type and quality of evidence supporting the interaction. The score ranges from 0 to 9, with higher scores indicating stronger evidence for the interaction. See here for details: https://www.ebi.ac.uk/chembl/documentation/data-access/assays#confidence_score.
+    description: >-
+      A score defined by ChEMBL that represents the confidence level of a particular drug-target 
+      interaction, based on the type and quality of evidence supporting the interaction. The score 
+      ranges from 0 to 9, with higher scores indicating stronger evidence for the interaction.
     range: integer
 
   dgidb relative drug specificity score:
