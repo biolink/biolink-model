@@ -43,6 +43,27 @@ message Activity
   uriorcurie taxon = 0
  repeated  uriorcurie category = 0
  }
+// The type of measurement describing the strength of an affinity between two entities. For instance, if a chemical inhibits a protein with a pIC50 of 8.6, the affinity parameter is pIC50 and the affinity value is 8.6.
+message AffinityMeasurement
+ {
+  string id = 0
+  iriType iri = 0
+ repeated  string type = 0
+  labelType name = 0
+  narrativeText description = 0
+ repeated  attribute hasAttribute = 0
+  boolean deprecated = 0
+ repeated  string providedBy = 0
+ repeated  uriorcurie xref = 0
+  labelType fullName = 0
+ repeated  labelType synonym = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
+  float informationContent = 0
+  uriorcurie taxon = 0
+ repeated  uriorcurie category = 0
+  affinityParameterEnum affinityParameter = 0
+  float affinity = 0
+ }
 // person, group, organization or project that provides a piece of information (i.e. a knowledge association)
 message Agent
  {
@@ -1965,6 +1986,7 @@ message ChemicalGeneInteractionAssociation
   integer semmedAgreementCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
+ repeated  affinityMeasurement hasAffinity = 0
   chemicalOrGeneOrGeneProductFormOrVariantEnum subjectFormOrVariantQualifier = 0
   geneOrGeneProductOrChemicalPartQualifierEnum subjectPartQualifier = 0
   chemicalEntityDerivativeEnum subjectDerivativeQualifier = 0

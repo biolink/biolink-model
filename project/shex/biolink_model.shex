@@ -116,6 +116,21 @@ linkml:Sparqlpath xsd:string
     } OR @<Agent>
 )
 
+<AffinityMeasurement> CLOSED {
+    (  $<AffinityMeasurement_tes> (  &<NamedThing_tes> ;
+          rdf:type [ <NamedThing> ] ? ;
+          <affinity_parameter> [ <https://w3id.org/biolink/vocab/AffinityParameterEnum#pIC50>
+             <https://w3id.org/biolink/vocab/AffinityParameterEnum#pEC50>
+             <https://w3id.org/biolink/vocab/AffinityParameterEnum#pAC50>
+             <https://w3id.org/biolink/vocab/AffinityParameterEnum#pXC50>
+             <https://w3id.org/biolink/vocab/AffinityParameterEnum#pKi> <https://w3id.org/biolink/vocab/AffinityParameterEnum#pKd>
+             ] ? ;
+          <affinity> @linkml:Float ?
+       ) ;
+       rdf:type [ <AffinityMeasurement> ]
+    )
+}
+
 <Agent> CLOSED {
     (  $<Agent_tes> (  &<AdministrativeEntity_tes> ;
           rdf:type [ <AdministrativeEntity> ] ? ;
@@ -1191,6 +1206,7 @@ linkml:Sparqlpath xsd:string
 <ChemicalGeneInteractionAssociation> CLOSED {
     (  $<ChemicalGeneInteractionAssociation_tes> (  &<Association_tes> ;
           rdf:type [ <Association> ] ? ;
+          <has_affinity> @<AffinityMeasurement> * ;
           <subject_form_or_variant_qualifier> [
              <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#genetic_variant_form>
              <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#modified_form>
@@ -3956,9 +3972,9 @@ linkml:Sparqlpath xsd:string
           ) ;
           rdf:type [ <NamedThing> ]
        )
-    } OR @<Activity> OR @<AdministrativeEntity> OR @<Attribute> OR @<BiologicalEntity> OR @<ChemicalEntity> OR @<ClinicalEntity> OR
-    @<Device> OR @<DiagnosticAid> OR @<Event> OR @<EvidenceType> OR @<ExposureEvent> OR @<InformationContentEntity> OR
-    @<OrganismTaxon> OR @<Phenomenon> OR @<PhysicalEntity> OR @<PlanetaryEntity> OR @<Procedure>
+    } OR @<Activity> OR @<AdministrativeEntity> OR @<AffinityMeasurement> OR @<Attribute> OR @<BiologicalEntity> OR
+    @<ChemicalEntity> OR @<ClinicalEntity> OR @<Device> OR @<DiagnosticAid> OR @<Event> OR @<EvidenceType> OR @<ExposureEvent> OR
+    @<InformationContentEntity> OR @<OrganismTaxon> OR @<Phenomenon> OR @<PhysicalEntity> OR @<PlanetaryEntity> OR @<Procedure>
 )
 
 <NamedThingAssociatedWithLikelihoodOfNamedThingAssociation> CLOSED {

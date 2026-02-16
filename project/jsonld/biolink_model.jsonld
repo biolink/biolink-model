@@ -4906,23 +4906,47 @@
       "definition_uri": "https://w3id.org/biolink/vocab/affinity",
       "description": "The numerical value describing the strength of an affinity between two entities.  For instance, if a chemical inhibits a protein with a pIC50 of 8.6, the affinity is 8.6. Used in conjunction with the affinity parameter slot.",
       "from_schema": "https://w3id.org/biolink/vocab/",
-      "is_a": "association_slot",
-      "domain": "Association",
+      "is_a": "node_property",
+      "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/affinity",
-      "owner": "affinity",
+      "owner": "AffinityMeasurement",
+      "domain_of": [
+        "AffinityMeasurement"
+      ],
       "range": "float",
       "@type": "SlotDefinition"
     },
     {
       "name": "affinity_parameter",
       "definition_uri": "https://w3id.org/biolink/vocab/affinity_parameter",
-      "description": "The type of parameter describing the strength of an affinity between two entities.  For instance, if a chemical inhibits a protein with a pIC50 of 8.6, the affinity parameter is pIC50.  Used in conjunction with the affinity slot.",
+      "description": "The type of parameter describing the strength of an affinity between two entities.  For instance, if a chemical inhibits a protein with a pIC50 of 8.6, the 'affinity parameter' is pIC50. Used in conjunction with the 'affinity' slot, within an 'affinity measurement'.",
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "is_a": "node_property",
+      "domain": "NamedThing",
+      "slot_uri": "https://w3id.org/biolink/vocab/affinity_parameter",
+      "owner": "AffinityMeasurement",
+      "domain_of": [
+        "AffinityMeasurement"
+      ],
+      "range": "AffinityParameterEnum",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "has_affinity",
+      "definition_uri": "https://w3id.org/biolink/vocab/has_affinity",
+      "description": "Set of measurements documenting the strength of chemical entity to gene or gene product interactions.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "association_slot",
       "domain": "Association",
-      "slot_uri": "https://w3id.org/biolink/vocab/affinity_parameter",
-      "owner": "affinity_parameter",
-      "range": "AffinityParameterEnum",
+      "slot_uri": "https://w3id.org/biolink/vocab/has_affinity",
+      "owner": "ChemicalGeneInteractionAssociation",
+      "domain_of": [
+        "ChemicalGeneInteractionAssociation"
+      ],
+      "range": "AffinityMeasurement",
+      "multivalued": true,
+      "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -28965,6 +28989,35 @@
       "@type": "ClassDefinition"
     },
     {
+      "name": "AffinityMeasurement",
+      "definition_uri": "https://w3id.org/biolink/vocab/AffinityMeasurement",
+      "description": "The type of measurement describing the strength of an affinity between two entities. For instance, if a chemical inhibits a protein with a pIC50 of 8.6, the affinity parameter is pIC50 and the affinity value is 8.6.",
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "is_a": "NamedThing",
+      "slots": [
+        "id",
+        "iri",
+        "type",
+        "name",
+        "description",
+        "has_attribute",
+        "deprecated",
+        "provided_by",
+        "xref",
+        "full_name",
+        "synonym",
+        "equivalent_identifiers",
+        "information_content",
+        "taxon",
+        "named_thing_category",
+        "affinity_parameter",
+        "affinity"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/biolink/vocab/AffinityMeasurement",
+      "@type": "ClassDefinition"
+    },
+    {
       "name": "SmallMolecule",
       "id_prefixes": [
         "CHEBI",
@@ -36155,6 +36208,7 @@
         "semmed_agreement_count",
         "association_type",
         "association_category",
+        "has_affinity",
         "chemical_gene_interaction_association_subject_form_or_variant_qualifier",
         "chemical_gene_interaction_association_subject_part_qualifier",
         "chemical_gene_interaction_association_subject_derivative_qualifier",
@@ -41695,9 +41749,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2026-02-11T02:17:51",
-  "source_file_size": 461025,
-  "generation_date": "2026-02-11T02:17:57",
+  "source_file_date": "2026-02-16T17:56:23",
+  "source_file_size": 461694,
+  "generation_date": "2026-02-16T17:56:29",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",

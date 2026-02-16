@@ -476,6 +476,27 @@ interface AdministrativeEntity
     category: [Uriorcurie]!
   }
 
+type AffinityMeasurement
+  {
+    id: String!
+    iri: IriType
+    type: [String]
+    name: LabelType
+    description: NarrativeText
+    hasAttribute: [Attribute]
+    deprecated: Boolean
+    providedBy: [String]
+    xref: [Uriorcurie]
+    fullName: LabelType
+    synonym: [LabelType]
+    equivalentIdentifiers: [Uriorcurie]
+    informationContent: Float
+    taxon: Uriorcurie
+    category: [Uriorcurie]!
+    affinityParameter: AffinityParameterEnum
+    affinity: Float
+  }
+
 type Agent
   {
     iri: IriType
@@ -2517,6 +2538,7 @@ type ChemicalGeneInteractionAssociation
     semmedAgreementCount: Integer
     type: [String]
     category: [Uriorcurie]
+    hasAffinity: [AffinityMeasurement]
     subjectFormOrVariantQualifier: ChemicalOrGeneOrGeneProductFormOrVariantEnum
     subjectPartQualifier: GeneOrGeneProductOrChemicalPartQualifierEnum
     subjectDerivativeQualifier: ChemicalEntityDerivativeEnum

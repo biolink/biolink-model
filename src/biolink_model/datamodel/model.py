@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-02-11T02:18:13
+# Generation date: 2026-02-16T17:56:45
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/vocab/
@@ -652,6 +652,10 @@ class ChemicalEntityId(NamedThingId):
 
 
 class MolecularEntityId(ChemicalEntityId):
+    pass
+
+
+class AffinityMeasurementId(NamedThingId):
     pass
 
 
@@ -4093,6 +4097,44 @@ class MolecularEntity(ChemicalEntity):
 
         if self.is_metabolite is not None and not isinstance(self.is_metabolite, Bool):
             self.is_metabolite = Bool(self.is_metabolite)
+
+        super().__post_init__(**kwargs)
+        if self._is_empty(self.category):
+            self.MissingRequiredField("category")
+        if not isinstance(self.category, list):
+            self.category = [self.category] if self.category is not None else []
+        self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
+
+
+@dataclass(repr=False)
+class AffinityMeasurement(NamedThing):
+    """
+    The type of measurement describing the strength of an affinity between two entities. For instance, if a chemical
+    inhibits a protein with a pIC50 of 8.6, the affinity parameter is pIC50 and the affinity value is 8.6.
+    """
+    _inherited_slots: ClassVar[list[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK["AffinityMeasurement"]
+    class_class_curie: ClassVar[str] = "biolink:AffinityMeasurement"
+    class_name: ClassVar[str] = "affinity measurement"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.AffinityMeasurement
+
+    id: Union[str, AffinityMeasurementId] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
+    affinity_parameter: Optional[Union[str, "AffinityParameterEnum"]] = None
+    affinity: Optional[float] = None
+
+    def __post_init__(self, *_: str, **kwargs: Any):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, AffinityMeasurementId):
+            self.id = AffinityMeasurementId(self.id)
+
+        if self.affinity_parameter is not None and not isinstance(self.affinity_parameter, AffinityParameterEnum):
+            self.affinity_parameter = AffinityParameterEnum(self.affinity_parameter)
+
+        if self.affinity is not None and not isinstance(self.affinity, float):
+            self.affinity = float(self.affinity)
 
         super().__post_init__(**kwargs)
         if self._is_empty(self.category):
@@ -9781,6 +9823,7 @@ class ChemicalGeneInteractionAssociation(Association):
     subject: Union[str, ChemicalEntityId] = None
     object: Union[dict, GeneOrGeneProduct] = None
     predicate: Union[str, URIorCURIE] = None
+    has_affinity: Optional[Union[dict[Union[str, AffinityMeasurementId], Union[dict, AffinityMeasurement]], list[Union[dict, AffinityMeasurement]]]] = empty_dict()
     subject_form_or_variant_qualifier: Optional[Union[str, "ChemicalOrGeneOrGeneProductFormOrVariantEnum"]] = None
     subject_part_qualifier: Optional[Union[str, "GeneOrGeneProductOrChemicalPartQualifierEnum"]] = None
     subject_derivative_qualifier: Optional[Union[str, "ChemicalEntityDerivativeEnum"]] = None
@@ -9816,6 +9859,8 @@ class ChemicalGeneInteractionAssociation(Association):
             self.MissingRequiredField("predicate")
         if not isinstance(self.predicate, URIorCURIE):
             self.predicate = URIorCURIE(self.predicate)
+
+        self._normalize_inlined_as_list(slot_name="has_affinity", slot_type=AffinityMeasurement, key_name="id", keyed=True)
 
         if self.subject_form_or_variant_qualifier is not None and not isinstance(self.subject_form_or_variant_qualifier, ChemicalOrGeneOrGeneProductFormOrVariantEnum):
             self.subject_form_or_variant_qualifier = ChemicalOrGeneOrGeneProductFormOrVariantEnum(self.subject_form_or_variant_qualifier)
@@ -15921,10 +15966,13 @@ slots.animal_model_available_from = Slot(uri=BIOLINK.animal_model_available_from
                    model_uri=BIOLINK.animal_model_available_from, domain=NamedThing, range=Optional[Union[Union[str, DiseaseOrPhenotypicFeatureId], list[Union[str, DiseaseOrPhenotypicFeatureId]]]])
 
 slots.affinity = Slot(uri=BIOLINK.affinity, name="affinity", curie=BIOLINK.curie('affinity'),
-                   model_uri=BIOLINK.affinity, domain=Association, range=Optional[float])
+                   model_uri=BIOLINK.affinity, domain=NamedThing, range=Optional[float])
 
 slots.affinity_parameter = Slot(uri=BIOLINK.affinity_parameter, name="affinity parameter", curie=BIOLINK.curie('affinity_parameter'),
-                   model_uri=BIOLINK.affinity_parameter, domain=Association, range=Optional[Union[str, "AffinityParameterEnum"]])
+                   model_uri=BIOLINK.affinity_parameter, domain=NamedThing, range=Optional[Union[str, "AffinityParameterEnum"]])
+
+slots.has_affinity = Slot(uri=BIOLINK.has_affinity, name="has affinity", curie=BIOLINK.curie('has_affinity'),
+                   model_uri=BIOLINK.has_affinity, domain=Association, range=Optional[Union[dict[Union[str, AffinityMeasurementId], Union[dict, AffinityMeasurement]], list[Union[dict, AffinityMeasurement]]]])
 
 slots.FDA_adverse_event_level = Slot(uri=BIOLINK.FDA_adverse_event_level, name="FDA adverse event level", curie=BIOLINK.curie('FDA_adverse_event_level'),
                    model_uri=BIOLINK.FDA_adverse_event_level, domain=Association, range=Optional[Union[str, "FDAIDAAdverseEventEnum"]])
