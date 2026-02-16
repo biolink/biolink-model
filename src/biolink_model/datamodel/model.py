@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-02-16T17:56:45
+# Generation date: 2026-02-16T20:24:23
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/vocab/
@@ -4110,7 +4110,8 @@ class MolecularEntity(ChemicalEntity):
 class AffinityMeasurement(NamedThing):
     """
     The type of measurement describing the strength of an affinity between two entities. For instance, if a chemical
-    inhibits a protein with a pIC50 of 8.6, the affinity parameter is pIC50 and the affinity value is 8.6.
+    inhibits a protein with a pIC50 of 8.6, the affinity parameter is pIC50 and the affinity value is 8.6. The binary
+    relation, if given, qualifies the affinity as greater than, less than, or equal.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -4123,6 +4124,7 @@ class AffinityMeasurement(NamedThing):
     category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
     affinity_parameter: Optional[Union[str, "AffinityParameterEnum"]] = None
     affinity: Optional[float] = None
+    has_binary_relation: Optional[Union[str, "BinaryRelationEnum"]] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
@@ -4135,6 +4137,9 @@ class AffinityMeasurement(NamedThing):
 
         if self.affinity is not None and not isinstance(self.affinity, float):
             self.affinity = float(self.affinity)
+
+        if self.has_binary_relation is not None and not isinstance(self.has_binary_relation, BinaryRelationEnum):
+            self.has_binary_relation = BinaryRelationEnum(self.has_binary_relation)
 
         super().__post_init__(**kwargs)
         if self._is_empty(self.category):
@@ -14692,6 +14697,19 @@ class OrganismTaxonToEnvironmentAssociation(Association):
 
 
 # Enumerations
+class BinaryRelationEnum(EnumDefinitionImpl):
+    """
+    Mathematical binary relation qualifiers of a value in its context.
+    """
+    less_than = PermissibleValue(text="less_than")
+    equal_to = PermissibleValue(text="equal_to")
+    greater_than = PermissibleValue(text="greater_than")
+
+    _defn = EnumDefinition(
+        name="BinaryRelationEnum",
+        description="Mathematical binary relation qualifiers of a value in its context.",
+    )
+
 class ResponseEnum(EnumDefinitionImpl):
     """
     A response to a treatment or intervention
@@ -15601,6 +15619,9 @@ slots.has_quantitative_value = Slot(uri=BIOLINK.has_quantitative_value, name="ha
 
 slots.has_numeric_value = Slot(uri=BIOLINK.has_numeric_value, name="has numeric value", curie=BIOLINK.curie('has_numeric_value'),
                    model_uri=BIOLINK.has_numeric_value, domain=QuantityValue, range=Optional[float])
+
+slots.has_binary_relation = Slot(uri=BIOLINK.has_binary_relation, name="has binary relation", curie=BIOLINK.curie('has_binary_relation'),
+                   model_uri=BIOLINK.has_binary_relation, domain=None, range=Optional[Union[str, "BinaryRelationEnum"]])
 
 slots.has_unit = Slot(uri=BIOLINK.has_unit, name="has unit", curie=BIOLINK.curie('has_unit'),
                    model_uri=BIOLINK.has_unit, domain=QuantityValue, range=Optional[Union[str, Unit]])

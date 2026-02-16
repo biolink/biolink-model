@@ -294,7 +294,7 @@
         },
         "AffinityMeasurement": {
             "additionalProperties": false,
-            "description": "The type of measurement describing the strength of an affinity between two entities. For instance, if a chemical inhibits a protein with a pIC50 of 8.6, the affinity parameter is pIC50 and the affinity value is 8.6.",
+            "description": "The type of measurement describing the strength of an affinity between two entities. For instance, if a chemical inhibits a protein with a pIC50 of 8.6, the affinity parameter is pIC50 and the affinity value is 8.6. The binary relation, if given, qualifies the affinity as greater than, less than, or equal.",
             "properties": {
                 "affinity": {
                     "description": "The numerical value describing the strength of an affinity between two entities.  For instance, if a chemical inhibits a protein with a pIC50 of 8.6, the affinity is 8.6. Used in conjunction with the affinity parameter slot.",
@@ -357,6 +357,10 @@
                         "array",
                         "null"
                     ]
+                },
+                "has_binary_relation": {
+                    "$ref": "#/$defs/BinaryRelationEnum",
+                    "description": "Qualifies a value context with a mathematical binary relation."
                 },
                 "id": {
                     "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
@@ -4047,6 +4051,16 @@
             "description": "An outcome resulting from an exposure event which is the manifestation of human behavior.",
             "title": "BehavioralOutcome",
             "type": "object"
+        },
+        "BinaryRelationEnum": {
+            "description": "Mathematical binary relation qualifiers of a value in its context.",
+            "enum": [
+                "less_than",
+                "equal_to",
+                "greater_than"
+            ],
+            "title": "BinaryRelationEnum",
+            "type": "string"
         },
         "BiologicalProcess": {
             "additionalProperties": false,

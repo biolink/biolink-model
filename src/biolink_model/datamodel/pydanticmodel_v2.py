@@ -63,6 +63,15 @@ class LinkMLMeta(RootModel):
 
 linkml_meta = None
 
+class BinaryRelationEnum(str, Enum):
+    """
+    Mathematical binary relation qualifiers of a value in its context.
+    """
+    less_than = "less_than"
+    equal_to = "equal_to"
+    greater_than = "greater_than"
+
+
 class ResponseEnum(str, Enum):
     """
     A response to a treatment or intervention
@@ -2479,10 +2488,11 @@ class EpigenomicEntity(ConfiguredBaseModel):
 
 class AffinityMeasurement(NamedThing):
     """
-    The type of measurement describing the strength of an affinity between two entities. For instance, if a chemical inhibits a protein with a pIC50 of 8.6, the affinity parameter is pIC50 and the affinity value is 8.6.
+    The type of measurement describing the strength of an affinity between two entities. For instance, if a chemical inhibits a protein with a pIC50 of 8.6, the affinity parameter is pIC50 and the affinity value is 8.6. The binary relation, if given, qualifies the affinity as greater than, less than, or equal.
     """
     affinity_parameter: Optional[AffinityParameterEnum] = Field(default=None, description="""The type of parameter describing the strength of an affinity between two entities.  For instance, if a chemical inhibits a protein with a pIC50 of 8.6, the 'affinity parameter' is pIC50. Used in conjunction with the 'affinity' slot, within an 'affinity measurement'.""")
     affinity: Optional[float] = Field(default=None, description="""The numerical value describing the strength of an affinity between two entities.  For instance, if a chemical inhibits a protein with a pIC50 of 8.6, the affinity is 8.6. Used in conjunction with the affinity parameter slot.""")
+    has_binary_relation: Optional[BinaryRelationEnum] = Field(default=None, description="""Qualifies a value context with a mathematical binary relation.""")
     provided_by: Optional[list[str]] = Field(default=None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[list[str]] = Field(default=None, description="""A database cross reference or alternative identifier for a NamedThing or edge between two NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     full_name: Optional[str] = Field(default=None, description="""a long-form human readable name for a thing""")

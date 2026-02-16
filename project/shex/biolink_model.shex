@@ -125,7 +125,10 @@ linkml:Sparqlpath xsd:string
              <https://w3id.org/biolink/vocab/AffinityParameterEnum#pXC50>
              <https://w3id.org/biolink/vocab/AffinityParameterEnum#pKi> <https://w3id.org/biolink/vocab/AffinityParameterEnum#pKd>
              ] ? ;
-          <affinity> @linkml:Float ?
+          <affinity> @linkml:Float ? ;
+          <has_binary_relation> [ <https://w3id.org/biolink/vocab/BinaryRelationEnum#less_than>
+             <https://w3id.org/biolink/vocab/BinaryRelationEnum#equal_to>
+             <https://w3id.org/biolink/vocab/BinaryRelationEnum#greater_than> ] ?
        ) ;
        rdf:type [ <AffinityMeasurement> ]
     )

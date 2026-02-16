@@ -43,7 +43,7 @@ message Activity
   uriorcurie taxon = 0
  repeated  uriorcurie category = 0
  }
-// The type of measurement describing the strength of an affinity between two entities. For instance, if a chemical inhibits a protein with a pIC50 of 8.6, the affinity parameter is pIC50 and the affinity value is 8.6.
+// The type of measurement describing the strength of an affinity between two entities. For instance, if a chemical inhibits a protein with a pIC50 of 8.6, the affinity parameter is pIC50 and the affinity value is 8.6. The binary relation, if given, qualifies the affinity as greater than, less than, or equal.
 message AffinityMeasurement
  {
   string id = 0
@@ -63,6 +63,7 @@ message AffinityMeasurement
  repeated  uriorcurie category = 0
   affinityParameterEnum affinityParameter = 0
   float affinity = 0
+  binaryRelationEnum hasBinaryRelation = 0
  }
 // person, group, organization or project that provides a piece of information (i.e. a knowledge association)
 message Agent

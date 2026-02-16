@@ -1021,6 +1021,23 @@
   ],
   "enums": [
     {
+      "name": "BinaryRelationEnum",
+      "definition_uri": "https://w3id.org/biolink/vocab/BinaryRelationEnum",
+      "description": "Mathematical binary relation qualifiers of a value in its context.",
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "permissible_values": [
+        {
+          "text": "less_than"
+        },
+        {
+          "text": "equal_to"
+        },
+        {
+          "text": "greater_than"
+        }
+      ]
+    },
+    {
       "name": "ResponseEnum",
       "definition_uri": "https://w3id.org/biolink/vocab/ResponseEnum",
       "description": "A response to a treatment or intervention",
@@ -2830,6 +2847,19 @@
         "QuantityValue"
       ],
       "range": "double",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "has_binary_relation",
+      "definition_uri": "https://w3id.org/biolink/vocab/has_binary_relation",
+      "description": "Qualifies a value context with a mathematical binary relation.",
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "slot_uri": "https://w3id.org/biolink/vocab/has_binary_relation",
+      "owner": "AffinityMeasurement",
+      "domain_of": [
+        "AffinityMeasurement"
+      ],
+      "range": "BinaryRelationEnum",
       "@type": "SlotDefinition"
     },
     {
@@ -28991,7 +29021,7 @@
     {
       "name": "AffinityMeasurement",
       "definition_uri": "https://w3id.org/biolink/vocab/AffinityMeasurement",
-      "description": "The type of measurement describing the strength of an affinity between two entities. For instance, if a chemical inhibits a protein with a pIC50 of 8.6, the affinity parameter is pIC50 and the affinity value is 8.6.",
+      "description": "The type of measurement describing the strength of an affinity between two entities. For instance, if a chemical inhibits a protein with a pIC50 of 8.6, the affinity parameter is pIC50 and the affinity value is 8.6. The binary relation, if given, qualifies the affinity as greater than, less than, or equal.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "NamedThing",
       "slots": [
@@ -29011,7 +29041,8 @@
         "taxon",
         "named_thing_category",
         "affinity_parameter",
-        "affinity"
+        "affinity",
+        "has_binary_relation"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/AffinityMeasurement",
@@ -41749,9 +41780,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2026-02-16T17:56:23",
-  "source_file_size": 461694,
-  "generation_date": "2026-02-16T17:56:29",
+  "source_file_date": "2026-02-16T20:24:00",
+  "source_file_size": 462156,
+  "generation_date": "2026-02-16T20:24:07",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",

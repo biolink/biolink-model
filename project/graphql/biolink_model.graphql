@@ -41,6 +41,13 @@ enum ApprovalStatusEnum
     post_approval_withdrawal
   }
 
+enum BinaryRelationEnum
+  {
+    less_than
+    equal_to
+    greater_than
+  }
+
 enum CausalMechanismQualifierEnum
   {
     modulation
@@ -495,6 +502,7 @@ type AffinityMeasurement
     category: [Uriorcurie]!
     affinityParameter: AffinityParameterEnum
     affinity: Float
+    hasBinaryRelation: BinaryRelationEnum
   }
 
 type Agent
