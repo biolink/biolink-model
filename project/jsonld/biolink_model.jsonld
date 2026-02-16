@@ -2403,16 +2403,16 @@
     {
       "name": "AffinityParameterEnum",
       "definition_uri": "https://w3id.org/biolink/vocab/AffinityParameterEnum",
-      "description": "The types of parameters that can be used to describe the affinity between two entities, characteristically chemicals and proteins.",
+      "description": "The types of parameters that can be used to describe the affinity between two entities, characteristically chemicals and proteins. The values are generally  stated as the negative base 10 logarithm of the raw measurements.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "permissible_values": [
         {
           "text": "pIC50",
-          "description": "Negative logarithm of the molar concentration of a chemical that produces a 50% inhibition of a function"
+          "description": "Negative base 10 logarithm of the the inhibitory concentration 50% (IC50) measures the concentration needed to block or inhibit a biological response."
         },
         {
           "text": "pEC50",
-          "description": "Negative logarithm of the molar concentration of a chemical that produces a 50% excitation of a function"
+          "description": "Negative base 10 logarithm of the molar concentration of a chemical that produces a 50% excitation of a function"
         },
         {
           "text": "pAC50"
@@ -2421,10 +2421,20 @@
           "text": "pXC50"
         },
         {
-          "text": "pKi"
+          "text": "pKi",
+          "description": "Negative base 10 logarithm of the equilibrium binding affinity for a ligand that reduces the activity of its binding partner. Ki represents the concentration at which the inhibitor ligand occupies 50% of the receptor sites when no competing ligand is present"
         },
         {
-          "text": "pKd"
+          "text": "pKon",
+          "description": "Negative base 10 logarithm of the association rate constant (Kon) describes the rate at which molecules bind to each other."
+        },
+        {
+          "text": "pKoff",
+          "description": "Negative base 10 logarithm of the dissociation rate constant (koff) describes the rate at which they dissociate."
+        },
+        {
+          "text": "pKd",
+          "description": "Negative base 10 logarithm of the equilibrium dissociation constant (KD) which is a measure of the binding affinity and is defined as the ratio of koff to kon."
         }
       ]
     },
@@ -41780,9 +41790,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2026-02-16T20:24:00",
-  "source_file_size": 462156,
-  "generation_date": "2026-02-16T20:24:07",
+  "source_file_date": "2026-02-16T22:40:40",
+  "source_file_size": 463205,
+  "generation_date": "2026-02-16T22:40:46",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",

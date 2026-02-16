@@ -123,8 +123,9 @@ linkml:Sparqlpath xsd:string
              <https://w3id.org/biolink/vocab/AffinityParameterEnum#pEC50>
              <https://w3id.org/biolink/vocab/AffinityParameterEnum#pAC50>
              <https://w3id.org/biolink/vocab/AffinityParameterEnum#pXC50>
-             <https://w3id.org/biolink/vocab/AffinityParameterEnum#pKi> <https://w3id.org/biolink/vocab/AffinityParameterEnum#pKd>
-             ] ? ;
+             <https://w3id.org/biolink/vocab/AffinityParameterEnum#pKi> <https://w3id.org/biolink/vocab/AffinityParameterEnum#pKon>
+             <https://w3id.org/biolink/vocab/AffinityParameterEnum#pKoff>
+             <https://w3id.org/biolink/vocab/AffinityParameterEnum#pKd> ] ? ;
           <affinity> @linkml:Float ? ;
           <has_binary_relation> [ <https://w3id.org/biolink/vocab/BinaryRelationEnum#less_than>
              <https://w3id.org/biolink/vocab/BinaryRelationEnum#equal_to>

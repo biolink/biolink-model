@@ -442,13 +442,15 @@
             "type": "object"
         },
         "AffinityParameterEnum": {
-            "description": "The types of parameters that can be used to describe the affinity between two entities, characteristically chemicals and proteins.",
+            "description": "The types of parameters that can be used to describe the affinity between two entities, characteristically chemicals and proteins. The values are generally  stated as the negative base 10 logarithm of the raw measurements.",
             "enum": [
                 "pIC50",
                 "pEC50",
                 "pAC50",
                 "pXC50",
                 "pKi",
+                "pKon",
+                "pKoff",
                 "pKd"
             ],
             "title": "AffinityParameterEnum",

@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-02-16T20:24:23
+# Generation date: 2026-02-16T22:41:02
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/vocab/
@@ -15454,22 +15454,32 @@ class ResourceRoleEnum(EnumDefinitionImpl):
 class AffinityParameterEnum(EnumDefinitionImpl):
     """
     The types of parameters that can be used to describe the affinity between two entities, characteristically
-    chemicals and proteins.
+    chemicals and proteins. The values are generally stated as the negative base 10 logarithm of the raw measurements.
     """
     pIC50 = PermissibleValue(
         text="pIC50",
-        description="""Negative logarithm of the molar concentration of a chemical that produces a 50% inhibition of a function""")
+        description="""Negative base 10 logarithm of the the inhibitory concentration 50% (IC50) measures the concentration needed to block or inhibit a biological response.""")
     pEC50 = PermissibleValue(
         text="pEC50",
-        description="""Negative logarithm of the molar concentration of a chemical that produces a 50% excitation of a function""")
+        description="""Negative base 10 logarithm of the molar concentration of a chemical that produces a 50% excitation of a function""")
     pAC50 = PermissibleValue(text="pAC50")
     pXC50 = PermissibleValue(text="pXC50")
-    pKi = PermissibleValue(text="pKi")
-    pKd = PermissibleValue(text="pKd")
+    pKi = PermissibleValue(
+        text="pKi",
+        description="""Negative base 10 logarithm of the equilibrium binding affinity for a ligand that reduces the activity of its binding partner. Ki represents the concentration at which the inhibitor ligand occupies 50% of the receptor sites when no competing ligand is present""")
+    pKon = PermissibleValue(
+        text="pKon",
+        description="""Negative base 10 logarithm of the association rate constant (Kon) describes the rate at which molecules bind to each other.""")
+    pKoff = PermissibleValue(
+        text="pKoff",
+        description="""Negative base 10 logarithm of the dissociation rate constant (koff) describes the rate at which they dissociate.""")
+    pKd = PermissibleValue(
+        text="pKd",
+        description="""Negative base 10 logarithm of the equilibrium dissociation constant (KD) which is a measure of the binding affinity and is defined as the ratio of koff to kon.""")
 
     _defn = EnumDefinition(
         name="AffinityParameterEnum",
-        description="""The types of parameters that can be used to describe the affinity between two entities, characteristically chemicals and proteins.""",
+        description="""The types of parameters that can be used to describe the affinity between two entities, characteristically chemicals and proteins. The values are generally  stated as the negative base 10 logarithm of the raw measurements.""",
     )
 
 class FDAIDAAdverseEventEnum(EnumDefinitionImpl):
