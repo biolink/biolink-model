@@ -1489,15 +1489,25 @@ slots:
     description: >-
       The numerical value describing the strength of an affinity between two entities.  For instance, if a chemical inhibits a protein with a pIC50 of 8.6,
       the affinity is 8.6. Used in conjunction with the affinity parameter slot.
-    is_a: association slot
+    is_a: node property
     range: float
 
   affinity parameter:
     description: >-
-      The type of parameter describing the strength of an affinity between two entities.  For instance, if a chemical inhibits a protein with a pIC50 of 8.6,
-      the affinity parameter is pIC50.  Used in conjunction with the affinity slot.
-    is_a: association slot
+      The type of parameter describing the strength of an affinity
+      between two entities.  For instance, if a chemical inhibits
+      a protein with a pIC50 of 8.6, the 'affinity parameter' is pIC50.
+      Used in conjunction with the 'affinity' slot, within an 'affinity measurement'.
+    is_a: node property
     range: AffinityParameterEnum
+
+  has affinity:
+    is_a: association slot
+    description: >-
+      Set of measurements documenting the strength of chemical entity to gene or gene product interactions.
+    range: affinity measurement
+    multivalued: true
+    inlined_as_list: true
 
   FDA adverse event level:
     description: >-
@@ -7895,6 +7905,16 @@ classes:
       - KEGG
       - UMLS
 
+  affinity measurement:
+    is_a: named thing
+    description: >-
+      The type of measurement describing the strength of an affinity between two entities.
+      For instance, if a chemical inhibits a protein with a pIC50 of 8.6,
+      the affinity parameter is pIC50 and the affinity value is 8.6.
+    slots:
+      - affinity parameter
+      - affinity
+
   small molecule:
     is_a: molecular entity
     aliases: ['chemical substance']
@@ -7946,7 +7966,6 @@ classes:
     in_subset:
       - model_organism_database
       - translator_minimal
-
 
   chemical mixture:
     is_a: chemical entity
@@ -9620,7 +9639,6 @@ classes:
     id_prefixes:
       - CLINICALTRIALS
 
-
   clinical intervention:
     is_a: clinical entity
 
@@ -10735,6 +10753,7 @@ classes:
     broad_mappings:
       - SIO:001257    ## chemical-gene association
     slots:
+      - has affinity
       - subject form or variant qualifier
       - subject part qualifier
       - subject derivative qualifier
@@ -13518,7 +13537,6 @@ enums:
         is_a: injection
       intramuscular_injection:
         is_a: injection
-
 
   ResourceRoleEnum:
     description: >-
