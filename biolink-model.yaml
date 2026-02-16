@@ -446,6 +446,11 @@ slots:
     in_subset:
       - samples
 
+  has binary relation:
+    description: >-
+      Qualifies a value context with a mathematical binary relation.
+    range: BinaryRelationEnum
+
   has unit:
     description: >-
       connects a quantity value to a unit
@@ -7911,9 +7916,11 @@ classes:
       The type of measurement describing the strength of an affinity between two entities.
       For instance, if a chemical inhibits a protein with a pIC50 of 8.6,
       the affinity parameter is pIC50 and the affinity value is 8.6.
+      The binary relation, if given, qualifies the affinity as greater than, less than, or equal.
     slots:
       - affinity parameter
       - affinity
+      - has binary relation
 
   small molecule:
     is_a: molecular entity
@@ -12576,6 +12583,14 @@ classes:
 
 
 enums:
+
+  BinaryRelationEnum:
+    description: >-
+      Mathematical binary relation qualifiers of a value in its context.
+    permissible_values:
+      less_than:
+      equal_to:
+      greater_than:
 
   ResponseEnum:
     description: >-
