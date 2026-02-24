@@ -14851,6 +14851,87 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "chembl_binding_site_name",
+      "definition_uri": "https://w3id.org/biolink/biolink-model/attributes/chembl_binding_site_name",
+      "description": "Text indicating the name of the binding site for a chemical entity.",
+      "from_schema": "https://w3id.org/biolink/biolink-model/attributes",
+      "slot_uri": "https://w3id.org/biolink/vocab/chembl_binding_site_name",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "chembl_binding_site_comment",
+      "definition_uri": "https://w3id.org/biolink/biolink-model/attributes/chembl_binding_site_comment",
+      "description": "Text describing the binding site for a chemical entity.",
+      "from_schema": "https://w3id.org/biolink/biolink-model/attributes",
+      "slot_uri": "https://w3id.org/biolink/vocab/chembl_binding_site_comment",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "chembl_mechanism_of_action_description",
+      "definition_uri": "https://w3id.org/biolink/biolink-model/attributes/chembl_mechanism_of_action_description",
+      "description": "Text describing the mechanism of action for a chemical entity.",
+      "from_schema": "https://w3id.org/biolink/biolink-model/attributes",
+      "slot_uri": "https://w3id.org/biolink/vocab/chembl_mechanism_of_action_description",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "chembl_mechanism_of_action_comment",
+      "definition_uri": "https://w3id.org/biolink/biolink-model/attributes/chembl_mechanism_of_action_comment",
+      "description": "Additional comments regarding the mechanism of action.",
+      "from_schema": "https://w3id.org/biolink/biolink-model/attributes",
+      "slot_uri": "https://w3id.org/biolink/vocab/chembl_mechanism_of_action_comment",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "chembl_mutation",
+      "definition_uri": "https://w3id.org/biolink/biolink-model/attributes/chembl_mutation",
+      "description": "Text describing mutations associated with a chemical entity.",
+      "from_schema": "https://w3id.org/biolink/biolink-model/attributes",
+      "slot_uri": "https://w3id.org/biolink/vocab/chembl_mutation",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "chembl_mutation_accession",
+      "definition_uri": "https://w3id.org/biolink/biolink-model/attributes/chembl_mutation_accession",
+      "description": "Accession identifier for a mutation associated with a chemical entity.",
+      "from_schema": "https://w3id.org/biolink/biolink-model/attributes",
+      "slot_uri": "https://w3id.org/biolink/vocab/chembl_mutation_accession",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "chembl_selectivity_comment",
+      "definition_uri": "https://w3id.org/biolink/biolink-model/attributes/chembl_selectivity_comment",
+      "description": "Additional comments regarding the selectivity of the drug.",
+      "from_schema": "https://w3id.org/biolink/biolink-model/attributes",
+      "slot_uri": "https://w3id.org/biolink/vocab/chembl_selectivity_comment",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "chembl_assay_description",
+      "definition_uri": "https://w3id.org/biolink/biolink-model/attributes/chembl_assay_description",
+      "description": "Text describing the assay associated with a chemical entity.",
+      "from_schema": "https://w3id.org/biolink/biolink-model/attributes",
+      "slot_uri": "https://w3id.org/biolink/vocab/chembl_assay_description",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "chembl_confidence_score",
+      "definition_uri": "https://w3id.org/biolink/biolink-model/attributes/chembl_confidence_score",
+      "description": "A score defined by ChEMBL that represents the confidence level of a particular drug-target  interaction, based on the type and quality of evidence supporting the interaction. The score  ranges from 0 to 9, with higher scores indicating stronger evidence for the interaction.",
+      "from_schema": "https://w3id.org/biolink/biolink-model/attributes",
+      "slot_uri": "https://w3id.org/biolink/vocab/chembl_confidence_score",
+      "range": "integer",
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "dgidb_relative_drug_specificity_score",
       "definition_uri": "https://w3id.org/biolink/biolink-model/attributes/dgidb_relative_drug_specificity_score",
       "description": "A score defined by DGIdb that quantifies the gene-interaction specificity of a given drug - representing the ratio of average known gene partners for all drugs to the known partners for the given drug. See https://dgidb.org/about/overview/interaction-score.",
@@ -14921,6 +15002,15 @@
         "CorrelatedGeneToDiseaseAssociation"
       ],
       "range": "float",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "drug_rep_hub_disease_area",
+      "definition_uri": "https://w3id.org/biolink/biolink-model/attributes/drug_rep_hub_disease_area",
+      "description": "A term used by Drug Repurposing Hub to describe the disease area associated with a drug.",
+      "from_schema": "https://w3id.org/biolink/biolink-model/attributes",
+      "slot_uri": "https://w3id.org/biolink/vocab/drug_rep_hub_disease_area",
+      "range": "string",
       "@type": "SlotDefinition"
     },
     {
@@ -41790,9 +41880,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2026-02-16T22:40:40",
+  "source_file_date": "2026-02-24T16:19:14",
   "source_file_size": 463205,
-  "generation_date": "2026-02-16T22:40:46",
+  "generation_date": "2026-02-24T16:19:20",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",

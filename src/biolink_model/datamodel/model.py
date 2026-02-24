@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-02-16T22:41:02
+# Generation date: 2026-02-24T16:19:36
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/vocab/
@@ -17212,6 +17212,33 @@ slots.chembl_natural_product = Slot(uri=BIOLINK.chembl_natural_product, name="ch
 slots.chembl_availability_type = Slot(uri=BIOLINK.chembl_availability_type, name="chembl availability type", curie=BIOLINK.curie('chembl_availability_type'),
                    model_uri=BIOLINK.chembl_availability_type, domain=None, range=Optional[str])
 
+slots.chembl_binding_site_name = Slot(uri=BIOLINK.chembl_binding_site_name, name="chembl binding site name", curie=BIOLINK.curie('chembl_binding_site_name'),
+                   model_uri=BIOLINK.chembl_binding_site_name, domain=None, range=Optional[str])
+
+slots.chembl_binding_site_comment = Slot(uri=BIOLINK.chembl_binding_site_comment, name="chembl binding site comment", curie=BIOLINK.curie('chembl_binding_site_comment'),
+                   model_uri=BIOLINK.chembl_binding_site_comment, domain=None, range=Optional[str])
+
+slots.chembl_mechanism_of_action_description = Slot(uri=BIOLINK.chembl_mechanism_of_action_description, name="chembl mechanism of action description", curie=BIOLINK.curie('chembl_mechanism_of_action_description'),
+                   model_uri=BIOLINK.chembl_mechanism_of_action_description, domain=None, range=Optional[str])
+
+slots.chembl_mechanism_of_action_comment = Slot(uri=BIOLINK.chembl_mechanism_of_action_comment, name="chembl mechanism of action comment", curie=BIOLINK.curie('chembl_mechanism_of_action_comment'),
+                   model_uri=BIOLINK.chembl_mechanism_of_action_comment, domain=None, range=Optional[str])
+
+slots.chembl_mutation = Slot(uri=BIOLINK.chembl_mutation, name="chembl mutation", curie=BIOLINK.curie('chembl_mutation'),
+                   model_uri=BIOLINK.chembl_mutation, domain=None, range=Optional[str])
+
+slots.chembl_mutation_accession = Slot(uri=BIOLINK.chembl_mutation_accession, name="chembl mutation accession", curie=BIOLINK.curie('chembl_mutation_accession'),
+                   model_uri=BIOLINK.chembl_mutation_accession, domain=None, range=Optional[str])
+
+slots.chembl_selectivity_comment = Slot(uri=BIOLINK.chembl_selectivity_comment, name="chembl selectivity comment", curie=BIOLINK.curie('chembl_selectivity_comment'),
+                   model_uri=BIOLINK.chembl_selectivity_comment, domain=None, range=Optional[str])
+
+slots.chembl_assay_description = Slot(uri=BIOLINK.chembl_assay_description, name="chembl assay description", curie=BIOLINK.curie('chembl_assay_description'),
+                   model_uri=BIOLINK.chembl_assay_description, domain=None, range=Optional[str])
+
+slots.chembl_confidence_score = Slot(uri=BIOLINK.chembl_confidence_score, name="chembl confidence score", curie=BIOLINK.curie('chembl_confidence_score'),
+                   model_uri=BIOLINK.chembl_confidence_score, domain=None, range=Optional[int])
+
 slots.dgidb_relative_drug_specificity_score = Slot(uri=BIOLINK.dgidb_relative_drug_specificity_score, name="dgidb relative drug specificity score", curie=BIOLINK.curie('dgidb_relative_drug_specificity_score'),
                    model_uri=BIOLINK.dgidb_relative_drug_specificity_score, domain=None, range=Optional[float])
 
@@ -17229,6 +17256,9 @@ slots.dgidb_evidence_score = Slot(uri=BIOLINK.dgidb_evidence_score, name="dgidb 
 
 slots.diseases_confidence_score = Slot(uri=BIOLINK.diseases_confidence_score, name="diseases confidence score", curie=BIOLINK.curie('diseases_confidence_score'),
                    model_uri=BIOLINK.diseases_confidence_score, domain=None, range=Optional[float])
+
+slots.drug_rep_hub_disease_area = Slot(uri=BIOLINK.drug_rep_hub_disease_area, name="drug_rep_hub disease area", curie=BIOLINK.curie('drug_rep_hub_disease_area'),
+                   model_uri=BIOLINK.drug_rep_hub_disease_area, domain=None, range=Optional[str])
 
 slots.gene2phenotype_confidence_category = Slot(uri=BIOLINK.gene2phenotype_confidence_category, name="gene2phenotype confidence category", curie=BIOLINK.curie('gene2phenotype_confidence_category'),
                    model_uri=BIOLINK.gene2phenotype_confidence_category, domain=None, range=Optional[str])
