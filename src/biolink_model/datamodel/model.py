@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-02-25T00:34:34
+# Generation date: 2026-03-12T21:52:28
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/vocab/
@@ -17262,6 +17262,9 @@ slots.drug_rep_hub_disease_area = Slot(uri=BIOLINK.drug_rep_hub_disease_area, na
 
 slots.gene2phenotype_confidence_category = Slot(uri=BIOLINK.gene2phenotype_confidence_category, name="gene2phenotype confidence category", curie=BIOLINK.curie('gene2phenotype_confidence_category'),
                    model_uri=BIOLINK.gene2phenotype_confidence_category, domain=None, range=Optional[str])
+
+slots.signor_confidence_score = Slot(uri=BIOLINK.signor_confidence_score, name="signor confidence score", curie=BIOLINK.curie('signor_confidence_score'),
+                   model_uri=BIOLINK.signor_confidence_score, domain=None, range=Optional[float])
 
 slots.attribute_name = Slot(uri=RDFS.label, name="attribute_name", curie=RDFS.curie('label'),
                    model_uri=BIOLINK.attribute_name, domain=Attribute, range=Optional[Union[str, LabelType]])

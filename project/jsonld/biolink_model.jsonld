@@ -15027,6 +15027,15 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "signor_confidence_score",
+      "definition_uri": "https://w3id.org/biolink/biolink-model/attributes/signor_confidence_score",
+      "description": "A score defined by SIGNOR Lab Diseases that reports confidence level in a curated interaction. Scores are based on four factors: number of supporting publications, occurrence in curated SIGNOR pathways, support in Reactome interaction data, co-mentions in UniProt records. Scores range 0-1, and reflect a relative measure of evidence support, not an absolute probability or statistical confidence measure. ",
+      "from_schema": "https://w3id.org/biolink/biolink-model/attributes",
+      "slot_uri": "https://w3id.org/biolink/vocab/signor_confidence_score",
+      "range": "float",
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "attribute_name",
       "definition_uri": "https://w3id.org/biolink/vocab/name",
       "description": "The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.",
@@ -41880,9 +41889,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2026-02-25T00:34:12",
+  "source_file_date": "2026-03-12T21:52:10",
   "source_file_size": 463205,
-  "generation_date": "2026-02-25T00:34:18",
+  "generation_date": "2026-03-12T21:52:15",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",

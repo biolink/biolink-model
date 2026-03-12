@@ -302,3 +302,10 @@ slots:
       GenCC confidence terms are used for different levels of confidence (enum). 
       See https://www.ebi.ac.uk/gene2phenotype/about/terminology#g2p-confidence-section.
     range: string
+
+  signor confidence score:
+    description: >-
+      A score defined by SIGNOR Lab Diseases that reports confidence level in a curated interaction. Scores are based on four factors:
+      number of supporting publications, occurrence in curated SIGNOR pathways, support in Reactome interaction data, co-mentions in UniProt
+      records. Scores range 0-1, and reflect a relative measure of evidence support, not an absolute probability or statistical confidence measure. 
+    range: float    
