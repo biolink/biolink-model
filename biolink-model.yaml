@@ -1506,14 +1506,6 @@ slots:
     is_a: node property
     range: AffinityParameterEnum
 
-  has affinity:
-    is_a: association slot
-    description: >-
-      Set of measurements documenting the strength of chemical entity to gene or gene product interactions.
-    range: affinity measurement
-    multivalued: true
-    inlined_as_list: true
-
   FDA adverse event level:
     description: >-
     is_a: association slot
@@ -1525,7 +1517,6 @@ slots:
       disease, condition or phenotype it is currently being reviewed to treat.  For specific levels of FDA
       approval for a specific condition, disease, phenotype, etc., see the association slot, 'clinical approval status.'
     range: ApprovalStatusEnum
-
 
   FDA regulatory approvals:
     description: >-
@@ -7107,6 +7098,18 @@ classes:
       - log odds ratio
       - log odds ratio 95 ci
 
+  affinity measurement:
+    is_a: study result
+    description: >-
+      The type of study result measurement describing the strength of an affinity between two entities.
+      For instance (i.e., in a molecular interaction database like BindingDb, if a ligand inhibits a
+      target protein with a pIC50 of 8.6, then the affinity parameter is pIC50 and the affinity value is 8.6.
+      The binary relation, if given, qualifies the affinity as greater than, less than, or equal.
+    slots:
+      - affinity parameter
+      - affinity
+      - has binary relation
+
   study:
     is_a: activity
     description: a detailed investigation and/or analysis
@@ -7909,18 +7912,6 @@ classes:
       - KEGG.ENVIRON
       - KEGG
       - UMLS
-
-  affinity measurement:
-    is_a: named thing
-    description: >-
-      The type of measurement describing the strength of an affinity between two entities.
-      For instance, if a chemical inhibits a protein with a pIC50 of 8.6,
-      the affinity parameter is pIC50 and the affinity value is 8.6.
-      The binary relation, if given, qualifies the affinity as greater than, less than, or equal.
-    slots:
-      - affinity parameter
-      - affinity
-      - has binary relation
 
   small molecule:
     is_a: molecular entity
@@ -10760,7 +10751,6 @@ classes:
     broad_mappings:
       - SIO:001257    ## chemical-gene association
     slots:
-      - has affinity
       - subject form or variant qualifier
       - subject part qualifier
       - subject derivative qualifier
