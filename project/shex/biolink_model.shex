@@ -3652,7 +3652,7 @@ linkml:Sparqlpath xsd:string
 
 <InformationContentEntity>  (
     @<CommonDataElement> OR @<ConfidenceLevel> OR @<Dataset> OR @<DatasetDistribution> OR @<DatasetSummary> OR @<DatasetVersion> OR
-    @<Evidence> OR @<Publication> OR @<RetrievalSource> OR @<StudyResult> OR @<StudyVariable>
+    @<Evidence> OR @<Publication> OR @<RetrievalSource> OR @<StudyVariable>
 )
 
 <InformationContentEntity_struct> {
@@ -3978,7 +3978,8 @@ linkml:Sparqlpath xsd:string
        )
     } OR @<Activity> OR @<AdministrativeEntity> OR @<AffinityMeasurement> OR @<Attribute> OR @<BiologicalEntity> OR
     @<ChemicalEntity> OR @<ClinicalEntity> OR @<Device> OR @<DiagnosticAid> OR @<Event> OR @<EvidenceType> OR @<ExposureEvent> OR
-    @<InformationContentEntity> OR @<OrganismTaxon> OR @<Phenomenon> OR @<PhysicalEntity> OR @<PlanetaryEntity> OR @<Procedure>
+    @<InformationContentEntity> OR @<OrganismTaxon> OR @<Phenomenon> OR @<PhysicalEntity> OR @<PlanetaryEntity> OR @<Procedure> OR
+    @<StudyResult>
 )
 
 <NamedThingAssociatedWithLikelihoodOfNamedThingAssociation> CLOSED {
@@ -5084,8 +5085,8 @@ linkml:Sparqlpath xsd:string
 )
 
 <StudyResult_struct> {
-    (  $<StudyResult_tes> (  &<InformationContentEntity_tes> ;
-          rdf:type [ <InformationContentEntity> ] ?
+    (  $<StudyResult_tes> (  &<NamedThing_tes> ;
+          rdf:type [ <NamedThing> ] ?
        ) ;
        rdf:type [ <StudyResult> ]
     )

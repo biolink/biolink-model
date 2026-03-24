@@ -2270,10 +2270,6 @@ message ChiSquaredAnalysisResult
   float informationContent = 0
   uriorcurie taxon = 0
  repeated  uriorcurie category = 0
-  string license = 0
-  string rights = 0
-  string format = 0
-  date creationDate = 0
  }
 // Attributes relating to a clinical manifestation
 message ClinicalAttribute
@@ -2601,10 +2597,6 @@ message ConceptCountAnalysisResult
   float informationContent = 0
   uriorcurie taxon = 0
  repeated  uriorcurie category = 0
-  string license = 0
-  string rights = 0
-  string format = 0
-  date creationDate = 0
  }
 // Level of confidence in a statement
 message ConfidenceLevel
@@ -5743,10 +5735,6 @@ message IceesStudyResult
   float informationContent = 0
   uriorcurie taxon = 0
  repeated  uriorcurie category = 0
-  string license = 0
-  string rights = 0
-  string format = 0
-  date creationDate = 0
   float chiSquaredStatistic = 0
   integer chiSquaredDof = 0
   float chiSquaredP = 0
@@ -5929,10 +5917,6 @@ message LogOddsAnalysisResult
   float informationContent = 0
   uriorcurie taxon = 0
  repeated  uriorcurie category = 0
-  string license = 0
-  string rights = 0
-  string format = 0
-  date creationDate = 0
  }
 // A stable assembly of two or more macromolecules, i.e. proteins, nucleic acids, carbohydrates or lipids, in which at least one component is a protein and the constituent parts function together.
 message MacromolecularComplex
@@ -6781,10 +6765,6 @@ message ObservedExpectedFrequencyAnalysisResult
   float informationContent = 0
   uriorcurie taxon = 0
  repeated  uriorcurie category = 0
-  string license = 0
-  string rights = 0
-  string format = 0
-  date creationDate = 0
  }
 // The age group in which (disease) symptom manifestations appear.
 message Onset
@@ -8198,10 +8178,6 @@ message RelativeFrequencyAnalysisResult
   float informationContent = 0
   uriorcurie taxon = 0
  repeated  uriorcurie category = 0
-  string license = 0
-  string rights = 0
-  string format = 0
-  date creationDate = 0
  }
 // Provides information about how a particular InformationResource served as a source from which knowledge expressed in an Edge, or data used to generate this knowledge, was retrieved.
 message RetrievalSource
@@ -8721,10 +8697,6 @@ message TextMiningStudyResult
   float informationContent = 0
   uriorcurie taxon = 0
  repeated  uriorcurie category = 0
-  string license = 0
-  string rights = 0
-  string format = 0
-  date creationDate = 0
  repeated  string supportingText = 0
  repeated  integer subjectLocationInText = 0
  repeated  integer objectLocationInText = 0

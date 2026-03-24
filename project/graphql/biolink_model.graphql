@@ -2842,10 +2842,6 @@ type ChiSquaredAnalysisResult
     informationContent: Float
     taxon: Uriorcurie
     category: [Uriorcurie]!
-    license: String
-    rights: String
-    format: String
-    creationDate: Date
   }
 
 type ClinicalAttribute
@@ -3175,10 +3171,6 @@ type ConceptCountAnalysisResult
     informationContent: Float
     taxon: Uriorcurie
     category: [Uriorcurie]!
-    license: String
-    rights: String
-    format: String
-    creationDate: Date
   }
 
 type ConfidenceLevel
@@ -6623,10 +6615,6 @@ type IceesStudyResult
     informationContent: Float
     taxon: Uriorcurie
     category: [Uriorcurie]!
-    license: String
-    rights: String
-    format: String
-    creationDate: Date
     chiSquaredStatistic: Float
     chiSquaredDof: Integer
     chiSquaredP: Float
@@ -6838,10 +6826,6 @@ type LogOddsAnalysisResult
     informationContent: Float
     taxon: Uriorcurie
     category: [Uriorcurie]!
-    license: String
-    rights: String
-    format: String
-    creationDate: Date
   }
 
 type MacromolecularComplex implements MacromolecularMachineMixin
@@ -7733,10 +7717,6 @@ type ObservedExpectedFrequencyAnalysisResult
     informationContent: Float
     taxon: Uriorcurie
     category: [Uriorcurie]!
-    license: String
-    rights: String
-    format: String
-    creationDate: Date
   }
 
 interface Occurrent
@@ -9352,10 +9332,6 @@ type RelativeFrequencyAnalysisResult
     informationContent: Float
     taxon: Uriorcurie
     category: [Uriorcurie]!
-    license: String
-    rights: String
-    format: String
-    creationDate: Date
   }
 
 type RetrievalSource
@@ -9861,10 +9837,6 @@ interface StudyResult
     informationContent: Float
     taxon: Uriorcurie
     category: [Uriorcurie]!
-    license: String
-    rights: String
-    format: String
-    creationDate: Date
   }
 
 type StudyVariable
@@ -9969,10 +9941,6 @@ type TextMiningStudyResult
     informationContent: Float
     taxon: Uriorcurie
     category: [Uriorcurie]!
-    license: String
-    rights: String
-    format: String
-    creationDate: Date
     supportingText: [String]
     subjectLocationInText: [Integer]
     objectLocationInText: [Integer]

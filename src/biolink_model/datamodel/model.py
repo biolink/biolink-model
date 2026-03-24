@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-03-12T21:52:28
+# Generation date: 2026-03-24T22:59:30
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/vocab/
@@ -471,15 +471,7 @@ class AdministrativeEntityId(NamedThingId):
     pass
 
 
-class AgentId(AdministrativeEntityId):
-    pass
-
-
-class InformationContentEntityId(NamedThingId):
-    pass
-
-
-class StudyResultId(InformationContentEntityId):
+class StudyResultId(NamedThingId):
     pass
 
 
@@ -508,6 +500,14 @@ class TextMiningStudyResultId(StudyResultId):
 
 
 class IceesStudyResultId(StudyResultId):
+    pass
+
+
+class AgentId(AdministrativeEntityId):
+    pass
+
+
+class InformationContentEntityId(NamedThingId):
     pass
 
 
@@ -2329,89 +2329,7 @@ class AdministrativeEntity(NamedThing):
 
 
 @dataclass(repr=False)
-class Agent(AdministrativeEntity):
-    """
-    person, group, organization or project that provides a piece of information (i.e. a knowledge association)
-    """
-    _inherited_slots: ClassVar[list[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = BIOLINK["Agent"]
-    class_class_curie: ClassVar[str] = "biolink:Agent"
-    class_name: ClassVar[str] = "agent"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.Agent
-
-    id: Union[str, AgentId] = None
-    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
-    affiliation: Optional[Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]]] = empty_list()
-    address: Optional[str] = None
-    name: Optional[Union[str, LabelType]] = None
-
-    def __post_init__(self, *_: str, **kwargs: Any):
-        if self._is_empty(self.id):
-            self.MissingRequiredField("id")
-        if not isinstance(self.id, AgentId):
-            self.id = AgentId(self.id)
-
-        if not isinstance(self.affiliation, list):
-            self.affiliation = [self.affiliation] if self.affiliation is not None else []
-        self.affiliation = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.affiliation]
-
-        if self.address is not None and not isinstance(self.address, str):
-            self.address = str(self.address)
-
-        if self.name is not None and not isinstance(self.name, LabelType):
-            self.name = LabelType(self.name)
-
-        super().__post_init__(**kwargs)
-        if self._is_empty(self.category):
-            self.MissingRequiredField("category")
-        if not isinstance(self.category, list):
-            self.category = [self.category] if self.category is not None else []
-        self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
-
-
-@dataclass(repr=False)
-class InformationContentEntity(NamedThing):
-    """
-    a piece of information that typically describes some topic of discourse or is used as support.
-    """
-    _inherited_slots: ClassVar[list[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = BIOLINK["InformationContentEntity"]
-    class_class_curie: ClassVar[str] = "biolink:InformationContentEntity"
-    class_name: ClassVar[str] = "information content entity"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.InformationContentEntity
-
-    id: Union[str, InformationContentEntityId] = None
-    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
-    license: Optional[str] = None
-    rights: Optional[str] = None
-    format: Optional[str] = None
-    creation_date: Optional[Union[str, XSDDate]] = None
-
-    def __post_init__(self, *_: str, **kwargs: Any):
-        if self.license is not None and not isinstance(self.license, str):
-            self.license = str(self.license)
-
-        if self.rights is not None and not isinstance(self.rights, str):
-            self.rights = str(self.rights)
-
-        if self.format is not None and not isinstance(self.format, str):
-            self.format = str(self.format)
-
-        if self.creation_date is not None and not isinstance(self.creation_date, XSDDate):
-            self.creation_date = XSDDate(self.creation_date)
-
-        super().__post_init__(**kwargs)
-        if self._is_empty(self.category):
-            self.MissingRequiredField("category")
-        if not isinstance(self.category, list):
-            self.category = [self.category] if self.category is not None else []
-        self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
-
-
-@dataclass(repr=False)
-class StudyResult(InformationContentEntity):
+class StudyResult(NamedThing):
     """
     A collection of data items from a study that are about a particular study subject or experimental unit (the
     'focus' of the Result) - optionally with context/provenance metadata that may be relevant to the interpretation of
@@ -2698,6 +2616,88 @@ class IceesStudyResult(StudyResult):
         if not isinstance(self.log_odds_ratio_95_ci, list):
             self.log_odds_ratio_95_ci = [self.log_odds_ratio_95_ci] if self.log_odds_ratio_95_ci is not None else []
         self.log_odds_ratio_95_ci = [v if isinstance(v, float) else float(v) for v in self.log_odds_ratio_95_ci]
+
+        super().__post_init__(**kwargs)
+        if self._is_empty(self.category):
+            self.MissingRequiredField("category")
+        if not isinstance(self.category, list):
+            self.category = [self.category] if self.category is not None else []
+        self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
+
+
+@dataclass(repr=False)
+class Agent(AdministrativeEntity):
+    """
+    person, group, organization or project that provides a piece of information (i.e. a knowledge association)
+    """
+    _inherited_slots: ClassVar[list[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK["Agent"]
+    class_class_curie: ClassVar[str] = "biolink:Agent"
+    class_name: ClassVar[str] = "agent"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.Agent
+
+    id: Union[str, AgentId] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
+    affiliation: Optional[Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]]] = empty_list()
+    address: Optional[str] = None
+    name: Optional[Union[str, LabelType]] = None
+
+    def __post_init__(self, *_: str, **kwargs: Any):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, AgentId):
+            self.id = AgentId(self.id)
+
+        if not isinstance(self.affiliation, list):
+            self.affiliation = [self.affiliation] if self.affiliation is not None else []
+        self.affiliation = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.affiliation]
+
+        if self.address is not None and not isinstance(self.address, str):
+            self.address = str(self.address)
+
+        if self.name is not None and not isinstance(self.name, LabelType):
+            self.name = LabelType(self.name)
+
+        super().__post_init__(**kwargs)
+        if self._is_empty(self.category):
+            self.MissingRequiredField("category")
+        if not isinstance(self.category, list):
+            self.category = [self.category] if self.category is not None else []
+        self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
+
+
+@dataclass(repr=False)
+class InformationContentEntity(NamedThing):
+    """
+    a piece of information that typically describes some topic of discourse or is used as support.
+    """
+    _inherited_slots: ClassVar[list[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK["InformationContentEntity"]
+    class_class_curie: ClassVar[str] = "biolink:InformationContentEntity"
+    class_name: ClassVar[str] = "information content entity"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.InformationContentEntity
+
+    id: Union[str, InformationContentEntityId] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
+    license: Optional[str] = None
+    rights: Optional[str] = None
+    format: Optional[str] = None
+    creation_date: Optional[Union[str, XSDDate]] = None
+
+    def __post_init__(self, *_: str, **kwargs: Any):
+        if self.license is not None and not isinstance(self.license, str):
+            self.license = str(self.license)
+
+        if self.rights is not None and not isinstance(self.rights, str):
+            self.rights = str(self.rights)
+
+        if self.format is not None and not isinstance(self.format, str):
+            self.format = str(self.format)
+
+        if self.creation_date is not None and not isinstance(self.creation_date, XSDDate):
+            self.creation_date = XSDDate(self.creation_date)
 
         super().__post_init__(**kwargs)
         if self._is_empty(self.category):

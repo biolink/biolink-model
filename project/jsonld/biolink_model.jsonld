@@ -27138,7 +27138,7 @@
         "The data/metadata included in a Study Result object are typically a subset of data from a larger study data set, that are selected by a curator because they may be useful as evidence for deriving knowledge about a specific focus of the study. The notion of a 'study' here is defined broadly to include any research activity at any scale that is aimed at generating knowledge or hypotheses. This may include a single assay or computational analyses, or a larger scale clinical trial or experimental research investigation."
       ],
       "from_schema": "https://w3id.org/biolink/vocab/",
-      "is_a": "InformationContentEntity",
+      "is_a": "NamedThing",
       "abstract": true,
       "slots": [
         "id",
@@ -27155,11 +27155,7 @@
         "equivalent_identifiers",
         "information_content",
         "taxon",
-        "named_thing_category",
-        "license",
-        "rights",
-        "format",
-        "creation_date"
+        "named_thing_category"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/StudyResult",
@@ -27186,11 +27182,7 @@
         "equivalent_identifiers",
         "information_content",
         "taxon",
-        "named_thing_category",
-        "license",
-        "rights",
-        "format",
-        "creation_date"
+        "named_thing_category"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/ConceptCountAnalysisResult",
@@ -27217,11 +27209,7 @@
         "equivalent_identifiers",
         "information_content",
         "taxon",
-        "named_thing_category",
-        "license",
-        "rights",
-        "format",
-        "creation_date"
+        "named_thing_category"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/ObservedExpectedFrequencyAnalysisResult",
@@ -27248,11 +27236,7 @@
         "equivalent_identifiers",
         "information_content",
         "taxon",
-        "named_thing_category",
-        "license",
-        "rights",
-        "format",
-        "creation_date"
+        "named_thing_category"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/RelativeFrequencyAnalysisResult",
@@ -27279,11 +27263,7 @@
         "equivalent_identifiers",
         "information_content",
         "taxon",
-        "named_thing_category",
-        "license",
-        "rights",
-        "format",
-        "creation_date"
+        "named_thing_category"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/ChiSquaredAnalysisResult",
@@ -27310,11 +27290,7 @@
         "equivalent_identifiers",
         "information_content",
         "taxon",
-        "named_thing_category",
-        "license",
-        "rights",
-        "format",
-        "creation_date"
+        "named_thing_category"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/LogOddsAnalysisResult",
@@ -27342,10 +27318,6 @@
         "information_content",
         "taxon",
         "named_thing_category",
-        "license",
-        "rights",
-        "format",
-        "creation_date",
         "supporting_text",
         "subject_location_in_text",
         "object_location_in_text",
@@ -27380,10 +27352,6 @@
         "information_content",
         "taxon",
         "named_thing_category",
-        "license",
-        "rights",
-        "format",
-        "creation_date",
         "chi_squared_statistic",
         "chi_squared_dof",
         "chi_squared_p",
@@ -41889,9 +41857,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2026-03-12T21:52:10",
-  "source_file_size": 463205,
-  "generation_date": "2026-03-12T21:52:15",
+  "source_file_date": "2026-03-24T22:59:08",
+  "source_file_size": 463190,
+  "generation_date": "2026-03-24T22:59:14",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",
