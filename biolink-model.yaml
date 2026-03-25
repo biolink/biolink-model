@@ -5986,6 +5986,7 @@ slots:
     domain: study
     range: study result
     multivalued: true
+    inlined_as_list: true
     description: >-
       Connects an study to instances of its study result
 
@@ -7112,9 +7113,6 @@ classes:
     description: a detailed investigation and/or analysis
     slots:
       - has study results
-    slot_usage:
-      has study results:
-        inlined_as_list: true
     exact_mappings:
       - NCIT:C63536
     close_mappings:
