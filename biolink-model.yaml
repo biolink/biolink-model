@@ -1490,22 +1490,6 @@ slots:
     multivalued: true
     range: disease or phenotypic feature
 
-  affinity:
-    description: >-
-      The numerical value describing the strength of an affinity between two entities.  For instance, if a chemical inhibits a protein with a pIC50 of 8.6,
-      the affinity is 8.6. Used in conjunction with the affinity parameter slot.
-    is_a: node property
-    range: float
-
-  affinity parameter:
-    description: >-
-      The type of parameter describing the strength of an affinity
-      between two entities.  For instance, if a chemical inhibits
-      a protein with a pIC50 of 8.6, the 'affinity parameter' is pIC50.
-      Used in conjunction with the 'affinity' slot, within an 'affinity measurement'.
-    is_a: node property
-    range: AffinityParameterEnum
-
   FDA adverse event level:
     description: >-
     is_a: association slot
@@ -6411,6 +6395,73 @@ slots:
       inheritance pattern (how it is typically transmitted from one generation to the next,
       regardless of the specific genetic variant that is present in an individual or instance).
 
+  # Affinity Study Result slot definitions
+
+  pIC50:
+    description: >-
+      Negative base 10 logarithm of the the inhibitory concentration 50% (IC50)
+      measures the concentration needed to block or inhibit a biological response.
+    is_a: node property
+    range: quantity value
+
+  pEC50:
+    description: >-
+      Negative base 10 logarithm of the molar concentration of
+      a chemical that produces a 50% excitation of a function
+    is_a: node property
+    range: quantity value
+
+  pAC50:
+    description: >-
+      pAC50 is a base 10 negative logarithmic measure of potency for an activating (agonist) interaction
+      between a molecule (such as a drug or ligand) and a biological target (such as a receptor or enzyme),
+      where AC50 is the concentration (in molar units) of a compound that produces 50% of its
+      maximal activation in a functional assay.
+    is_a: node property
+    range: quantity value
+
+  pXC50:
+    description: >-
+      In the context of molecular interactions and drug discovery, pXC50 is a generic, 
+      base 10 negative logarithmic measure of compound potency that unifies different types of
+      half‑maximal concentration values into a single notation, where XC50 means 
+      “the concentration at which 50% of the maximal effect is observed”, and X is a placeholder
+      for the type of effect being measured (e.g., inhibition or activation). The X in pXC50 is
+      intentionally generic and can represent different assay endpoints.
+    is_a: node property
+    range: quantity value
+
+  pKi:
+    description: >-
+      Negative base 10 logarithm of the equilibrium binding affinity for a ligand that reduces
+      the activity of its binding partner. Ki represents the concentration at which the
+      inhibitor ligand occupies 50% of the receptor sites when no competing ligand is present
+    is_a: node property
+    range: quantity value
+
+  pKon:
+    description: >-
+      Negative base 10 logarithm of the association rate constant (Kon) describes
+      the rate at which molecules bind to each other.
+    is_a: node property
+    range: quantity value
+
+  pKoff:
+    description: >-
+      Negative base 10 logarithm of the dissociation rate constant (koff) describes
+      the rate at which they dissociate.
+    is_a: node property
+    range: quantity value
+
+  pKd:
+    description: >-
+      Negative base 10 logarithm of the equilibrium dissociation constant (KD) which
+      is a measure of the binding affinity and is defined as the ratio of koff to kon.
+    is_a: node property
+    range: quantity value
+
+  # End of Affinity Study Result slot definitions
+
   publications:
     aliases: ['supporting publications', 'supporting documents']
     description: >-
@@ -7099,17 +7150,23 @@ classes:
       - log odds ratio
       - log odds ratio 95 ci
 
-  affinity measurement:
+  affinity study result:
     is_a: study result
     description: >-
-      The type of study result measurement describing the strength of an affinity between two entities.
-      For instance (i.e., in a molecular interaction database like BindingDb, if a ligand inhibits a
-      target protein with a pIC50 of 8.6, then the affinity parameter is pIC50 and the affinity value is 8.6.
-      The binary relation, if given, qualifies the affinity as greater than, less than, or equal.
+      The type of study result describing the strength of interaction affinity between two entities,
+      typically, a chemical ligand and a target protein. The values are generally stated as the
+      negative base 10 logarithm of the raw measurements. For instance (i.e., in a molecular interaction
+      database like BindingDb) if a ligand inhibits a target protein with a pIC50 of 8.6, then the
+      affinity parameter is pIC50 and the affinity value is 8.6.
     slots:
-      - affinity parameter
-      - affinity
-      - has binary relation
+      - pKd
+      - pKi
+      - pIC50
+      - pEC50
+      - pAC50
+      - pXC50
+      - pKon
+      - pKoff
 
   study:
     is_a: activity
@@ -13557,40 +13614,6 @@ enums:
       "supporting_data_source":
     in_subset:
       - translator_minimal
-
-  AffinityParameterEnum:
-    description: >-
-      The types of parameters that can be used to describe the affinity between two entities,
-      characteristically chemicals and proteins. The values are generally 
-      stated as the negative base 10 logarithm of the raw measurements.
-    permissible_values:
-      "pIC50":
-        description: >-
-          Negative base 10 logarithm of the the inhibitory concentration 50% (IC50)
-          measures the concentration needed to block or inhibit a biological response.
-      "pEC50":
-        description: >-
-          Negative base 10 logarithm of the molar concentration of
-          a chemical that produces a 50% excitation of a function
-      "pAC50":
-      "pXC50":
-      "pKi":
-        description: >-
-          Negative base 10 logarithm of the equilibrium binding affinity for a ligand that reduces
-          the activity of its binding partner. Ki represents the concentration at which the
-          inhibitor ligand occupies 50% of the receptor sites when no competing ligand is present
-      "pKon":
-        description: >-
-          Negative base 10 logarithm of the association rate constant (Kon) describes
-          the rate at which molecules bind to each other.
-      "pKoff":
-        description: >-
-          Negative base 10 logarithm of the dissociation rate constant (koff) describes
-          the rate at which they dissociate.
-      "pKd":
-        description: >-
-          Negative base 10 logarithm of the equilibrium dissociation constant (KD) which
-          is a measure of the binding affinity and is defined as the ratio of koff to kon.
 
   FDAIDAAdverseEventEnum:
     description: >-
