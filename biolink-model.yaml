@@ -6854,7 +6854,9 @@ classes:
     is_a: annotation
     description: >-
       A value of an attribute that is quantitative and measurable,
-      expressed as a combination of a unit and a numeric value
+      expressed as a combination of a unit and a numeric value. 
+      An optional binary relation qualifier may also be given,
+      to allow capture of relative values, e.g., <1000.0 meaning "less than 1000"
     slots:
       - has unit
       - has numeric value
