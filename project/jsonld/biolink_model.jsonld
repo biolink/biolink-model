@@ -13443,6 +13443,8 @@
       ],
       "range": "StudyResult",
       "multivalued": true,
+      "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -15116,27 +15118,6 @@
       "is_usage_slot": true,
       "usage_slot_name": "has taxonomic rank",
       "range": "TaxonomicRank",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "study_has_study_results",
-      "definition_uri": "https://w3id.org/biolink/vocab/has_study_results",
-      "description": "Connects an study to instances of its study result",
-      "from_schema": "https://w3id.org/biolink/vocab/",
-      "is_a": "has_study_results",
-      "domain": "Study",
-      "slot_uri": "https://w3id.org/biolink/vocab/has_study_results",
-      "alias": "has study results",
-      "owner": "Study",
-      "domain_of": [
-        "Study"
-      ],
-      "is_usage_slot": true,
-      "usage_slot_name": "has study results",
-      "range": "StudyResult",
-      "multivalued": true,
-      "inlined": true,
-      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -27397,7 +27378,7 @@
         "information_content",
         "taxon",
         "named_thing_category",
-        "study_has_study_results"
+        "has_study_results"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/Study",
@@ -32968,7 +32949,7 @@
         "information_content",
         "taxon",
         "named_thing_category",
-        "study_has_study_results",
+        "has_study_results",
         "clinical_trial_phase",
         "clinical_trial_primary_purpose",
         "clinical_trial_intervention_model",
@@ -41857,9 +41838,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2026-03-24T22:59:08",
-  "source_file_size": 463190,
-  "generation_date": "2026-03-24T22:59:14",
+  "source_file_date": "2026-03-26T23:25:41",
+  "source_file_size": 463145,
+  "generation_date": "2026-03-26T23:25:48",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",

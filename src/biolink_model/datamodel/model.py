@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-03-24T22:59:30
+# Generation date: 2026-03-26T23:26:04
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/vocab/
@@ -16975,7 +16975,7 @@ slots.has_evidence = Slot(uri=BIOLINK.has_evidence, name="has evidence", curie=B
                    model_uri=BIOLINK.has_evidence, domain=Association, range=Optional[Union[Union[str, InformationContentEntityId], list[Union[str, InformationContentEntityId]]]])
 
 slots.has_study_results = Slot(uri=BIOLINK.has_study_results, name="has study results", curie=BIOLINK.curie('has_study_results'),
-                   model_uri=BIOLINK.has_study_results, domain=Study, range=Optional[Union[Union[str, StudyResultId], list[Union[str, StudyResultId]]]])
+                   model_uri=BIOLINK.has_study_results, domain=Study, range=Optional[Union[dict[Union[str, StudyResultId], Union[dict, StudyResult]], list[Union[dict, StudyResult]]]])
 
 slots.log_odds_ratio = Slot(uri=BIOLINK.log_odds_ratio, name="log odds ratio", curie=BIOLINK.curie('log_odds_ratio'),
                    model_uri=BIOLINK.log_odds_ratio, domain=Association, range=Optional[float])
@@ -17274,9 +17274,6 @@ slots.named_thing_category = Slot(uri=BIOLINK.category, name="named thing_catego
 
 slots.organism_taxon_has_taxonomic_rank = Slot(uri=BIOLINK.has_taxonomic_rank, name="organism taxon_has taxonomic rank", curie=BIOLINK.curie('has_taxonomic_rank'),
                    model_uri=BIOLINK.organism_taxon_has_taxonomic_rank, domain=OrganismTaxon, range=Optional[Union[str, TaxonomicRankId]], mappings = [WIKIDATA["P105"]])
-
-slots.study_has_study_results = Slot(uri=BIOLINK.has_study_results, name="study_has study results", curie=BIOLINK.curie('has_study_results'),
-                   model_uri=BIOLINK.study_has_study_results, domain=Study, range=Optional[Union[dict[Union[str, StudyResultId], Union[dict, StudyResult]], list[Union[dict, StudyResult]]]])
 
 slots.agent_id = Slot(uri=BIOLINK.id, name="agent_id", curie=BIOLINK.curie('id'),
                    model_uri=BIOLINK.agent_id, domain=Agent, range=Union[str, AgentId])
