@@ -6571,6 +6571,15 @@ slots:
     description: >-
       The number of cases in a study or clinical trial, primarily used in conversion of drug approval data.
 
+  has studies:
+    is_a: node property
+    range: study
+    description: >-
+      Studies which are components of a given node entity (e.g. a publication)
+    multivalued: true
+    close_mappings:
+      - OBAN:has_study_id
+
   has supporting studies:
     is_a: association slot
     range: study
@@ -7330,6 +7339,7 @@ classes:
       - mesh terms
       - xref
       - publication type
+      - has studies
      # In addition to embedded slots, instances of 'contributor association'
      # may be used to more extensively document publisher, editor and author details
     slot_usage:
