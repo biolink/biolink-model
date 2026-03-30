@@ -1,12 +1,12 @@
 ---
-id: https://w3id.org/biolink/biolink-model
+id: https://w3id.org/biolink/vocab/
 name: Biolink-Model
 description: Entity and association taxonomy and datamodel for life-sciences data
 license: https://creativecommons.org/publicdomain/zero/1.0/
 
 # Version should be kept in sync with primary Git repository release tag
 
-version: 4.2.6-rc5
+version: 4.3.7
 
 ## ------------
 ##
@@ -96,6 +96,7 @@ prefixes:
   medgen: 'https://www.ncbi.nlm.nih.gov/medgen/'
   metacyc.reaction: 'http://identifiers.org/metacyc.reaction:'
   METANETX.REACTION: 'https://www.metanetx.org/equa_info/'
+  METPO: 'https://w3id.org/metpo/'
   MESH: 'http://id.nlm.nih.gov/mesh/'
   MI: 'http://purl.obolibrary.org/obo/MI_'
   mirbase: 'http://identifiers.org/mirbase'
@@ -144,6 +145,7 @@ prefixes:
   UMLSSG: 'https://lhncbc.nlm.nih.gov/semanticnetwork/download/sg_archive/SemGroups-v04.txt'
   UniProtKB: 'http://purl.uniprot.org/uniprot/'
   UNIPROT.ISOFORM: 'http://purl.uniprot.org/isoforms/'
+  uspto-patent: "http://www.uspto.gov/patent/grant/v1/"
   VANDF: 'https://www.nlm.nih.gov/research/umls/sourcereleasedocs/current/VANDF/'
   UO-PROPERTY: 'http://purl.obolibrary.org/obo/uo#'
   VMC: 'https://github.com/ga4gh/vr-spec/'
@@ -205,6 +207,7 @@ subsets:
 
 imports:
   - linkml:types
+  - attributes
 
 types:
 
@@ -226,13 +229,6 @@ types:
     typeof: string
     description: >-
       A string that provides a human-readable name for an entity
-
-  predicate type:
-    uri: xsd:string
-    typeof: uriorcurie
-    description: >-
-      A CURIE from the biolink related_to hierarchy.
-      For example, biolink:related_to, biolink:causes, biolink:treats.
 
   narrative text:
     uri: xsd:string
@@ -278,6 +274,28 @@ types:
 ## ------------
 
 slots:
+
+  node property:
+    abstract: true
+    description: >-
+      A grouping for any property that holds between a node and a value
+    domain: named thing
+
+  nodes:
+    multivalued: true
+    range: entity
+    description: >-
+      A list of entities that can be a subject or object of an association
+    inlined: true
+    inlined_as_list: true
+
+  edges:
+    multivalued: true
+    range: association
+    description: >-
+      A list of associations between two entities.
+    inlined: true
+    inlined_as_list: true
 
   has attribute:
     description: >-
@@ -332,7 +350,6 @@ slots:
       - NCIT:role_has_range
       - INO:0000154
       - HANCESTRO:0308
-      - OMIM:has_inheritance_type
       - orphanet:C016
       - orphanet:C017
       - RO:0000053
@@ -429,6 +446,11 @@ slots:
     in_subset:
       - samples
 
+  has binary relation:
+    description: >-
+      Qualifies a value context with a mathematical binary relation.
+    range: BinaryRelationEnum
+
   has unit:
     description: >-
       connects a quantity value to a unit
@@ -461,11 +483,6 @@ slots:
    ## --------------------
    ## NODE PROPERTY SLOTS
    ## --------------------
-
-  node property:
-    description: >-
-      A grouping for any property that holds between a node and a value
-    domain: named thing
 
   id:
     identifier: true
@@ -562,13 +579,13 @@ slots:
     domain: sequence variant
     multivalued: true
     description: >-
-      HGVS syntax refers to the specific rules and conventions used by the Human Variant Nomenclature Committee 
-      to describe the location and change in DNA, RNA, and protein sequence variants.  This slot is used to capture all the 
+      HGVS syntax refers to the specific rules and conventions used by the Human Variant Nomenclature Committee
+      to describe the location and change in DNA, RNA, and protein sequence variants.  This slot is used to capture all the
       different forms of HGVS nomenclature that may be used to describe a sequence variant, including genomic, transcript,
       and protein HGVS expressions/nomenclatures and is thus multivalued.
     comments: >-
       For more information, please see: https://hgvs-nomenclature.org/stable/background/simple/ and examples:
-      https://hgvs-nomenclature.org/stable/recommendations/summary/.  
+      https://hgvs-nomenclature.org/stable/recommendations/summary/.
 
   stoichiometry:
     description: >-
@@ -683,10 +700,10 @@ slots:
   url:
     is_a: node property
     description: >-
-      This slot holds a string representation of a URL for an external resource about the node it is 
-      present on. Unlike an 'xref' that is primarily represented by a CURIE, this slot is intended to hold a full 
-      URL that can be used to directly access a resource. When linking to an external resource that cannot be 
-      represented by a unique CURIE, this slot should be used.  However, when the intent is to link to the 
+      This slot holds a string representation of a URL for an external resource about the node it is
+      present on. Unlike an 'xref' that is primarily represented by a CURIE, this slot is intended to hold a full
+      URL that can be used to directly access a resource. When linking to an external resource that cannot be
+      represented by a unique CURIE, this slot should be used.  However, when the intent is to link to the
       default URI expansion of a CURIE related to the node it is present on, the xref slot should be used instead.
     domain: entity
     range: string
@@ -1089,19 +1106,88 @@ slots:
     exact_mappings:
       - dcid:MeSHTerm
 
-   ## Clinical Trials
+  ## Exposure Events
+
+  exposure type:
+    is_a: node property
+    description: >-
+      Type of exposure
+    domain: exposure event
+    range: string
+#    range: not sure how standardized this can be made, i.e., into a Biolink Enum.
+#           To some extent, the subclassing of Exposure Events provides some typing?
+
+  exposure vehicle:
+    is_a: node property
+    description: >-
+      Type of an exposure event.
+    domain: exposure event
+    range: string
+#    range: not sure how standardized this can be made, i.e., into a Biolink Enum
+
+  exposure route:
+    is_a: node property
+    description: >-
+      Route of exposure.
+    domain: exposure event
+    range: string
+#    range: not sure how standardized this can be made, i.e., into a Biolink Enum
+
+  exposure start age:
+    is_a: node property
+    description: >-
+      Starting age of an exposure event.
+    domain: exposure event
+    range: integer
+
+  exposure end age:
+    is_a: node property
+    description: >-
+      Ending stage of an exposure event.
+    domain: exposure event
+    range: integer
+
+  exposure duration:
+    is_a: node property
+    description: >-
+      Duration of an exposure event.
+    domain: exposure event
+    range: time
+
+  exposure magnitude:
+    is_a: node property
+    description: >-
+      Magnitude of an exposure event, e.g, parts per million of a toxic chemical.
+    domain: exposure event
+    range: string   # might want to be a more constrained data type here?
+
+  exposure additional condition:
+    is_a: node property
+    description: >-
+      Additional conditions impacting an exposure event.
+    domain: exposure event
+    range: string
+
+  ## Clinical Trials
+
+  elevate to prediction:
+    is_a: node property
+    description: >-
+      A boolean flag indicating whether a clinical trial finding should be elevated to a prediction.
+    range: boolean
+
   clinical trial phase:
     is_a: node property
     description: >-
       The phase that a clinical trials study represents
     range: ResearchPhaseEnum
-  
+
   clinical trial primary purpose:
     aliases: ['primary purpose']
     is_a: node property
     description: >-
-      The primary purpose of a clinical trial as determined by clinicaltrials.gov.  The most common values are 
-      TREATMENT and PREVENTION. Other possible values include BASIC_SCIENCE, SUPPORTIVE_CARE, 
+      The primary purpose of a clinical trial as determined by clinicaltrials.gov.  The most common values are
+      TREATMENT and PREVENTION. Other possible values include BASIC_SCIENCE, SUPPORTIVE_CARE,
       DIAGNOSTIC, HEALTH_SERVICES_RESEARCH, SCREENING, DEVICE_FEASIBILITY, OTHER, and (null).
     range: string
     domain: clinical trial
@@ -1109,7 +1195,7 @@ slots:
   clinical trial intervention model:
     is_a: node property
     description: >-
-      The intervention model of a clinical trial as determined by clinicaltrials.gov.  The most common values are 
+      The intervention model of a clinical trial as determined by clinicaltrials.gov.  The most common values are
       SINGLE_GROUP, PARALLEL, CROSSOVER, FACTORIAL, and (null).
     range: string
     domain: clinical trial
@@ -1117,7 +1203,7 @@ slots:
   clinical trial time perspective:
     is_a: node property
     description: >-
-      The time perspective of a clinical trial as determined by clinicaltrials.gov.  The most common values are 
+      The time perspective of a clinical trial as determined by clinicaltrials.gov.  The most common values are
       PROSPECTIVE, RETROSPECTIVE, CROSS_SECTIONAL, or OTHER (most common)..
     range: string
     domain: clinical trial
@@ -1142,9 +1228,69 @@ slots:
     is_a: node property
     description: >-
       Records whether the clinical trials are testing the intervention.
-    domain: association
+    domain: clinical trial
     range: string
 
+  clinical trial brief title:
+    is_a: node property
+    description: >-
+      The brief title of a clinical trial as determined by clinicaltrials.gov
+    range: string
+    domain: clinical trial
+
+  clinical trial enrollment type:
+    is_a: node property
+    description: >-
+      The enrollment type of a clinical trial as determined by clinicaltrials.gov (actual,
+      anticipated, or estimated)
+    range: string
+    domain: clinical trial
+
+  clinical trial start date:
+    is_a: node property
+    description: >-
+      The start date of a clinical trial as determined by clinicaltrials.gov
+    range: string
+    domain: clinical trial
+  clinical trial enrollment:
+    is_a: node property
+    description: >-
+      The enrollment number of a clinical trial as determined by clinicaltrials.gov
+    range: integer
+    domain: clinical trial
+
+  clinical trial age stage:
+    is_a: node property
+    description: >-
+      The age stage of a clinical trial as determined by clinicaltrials.gov (adult, child, older adult)
+    range: ClinicalTrialAgeStageEnum
+    domain: clinical trial
+    multivalued: true
+
+  clinical trial age range:
+    is_a: node property
+    description: >-
+      The age range of a clinical trial as determined by clinicaltrials.gov
+    range: string
+    domain: clinical trial
+
+  clinical trial interventions:
+    is_a: node property
+    description: >-
+        connects a clinical trial to one or more interventions being tested in the trial
+    range: clinical intervention
+    multivalued: true
+    domain: clinical trial
+
+  clinical trial conditions:
+    is_a: node property
+    description: >-
+        connects a clinical trial to one or more conditions being studied in the trial
+    range: disease or phenotypic feature
+    multivalued: true
+    domain: clinical trial
+
+    ## Biological Entity properties
 
   has biological sequence:
     is_a: node property
@@ -1165,6 +1311,15 @@ slots:
       connects an entity associated with one or more genes
     range: gene
     multivalued: true
+
+  inheritance:
+    is_a: node property
+    description: >-
+      Connects genetic inheritance to a disease or phenotypic feature, as a node property.
+    domain: disease or phenotypic feature
+    range: genetic inheritance
+    exact_mappings:
+      - OMIM:has_inheritance_type
 
   has zygosity:
     is_a: node property
@@ -1253,14 +1408,14 @@ slots:
 
   response context qualifier:
     description: >-
-      a biological response (general, study, cohort, etc.) with a specific set of characteristics to constrain 
+      a biological response (general, study, cohort, etc.) with a specific set of characteristics to constrain
       an association.
     is_a: context qualifier
     range: ResponseEnum
 
   response target context qualifier:
     description: >-
-      a biological response target (a patient, a cohort, a model system, a cell line, a sample of biological material, 
+      a biological response target (a patient, a cohort, a model system, a cell line, a sample of biological material,
       etc.)
     is_a: context qualifier
     range: ResponseTargetEnum
@@ -1270,7 +1425,7 @@ slots:
       a biological population (general, study, cohort, etc.) with a specific
       set of characteristics to constrain an association.
     is_a: qualifier
-    range: population of individual organisms # TODO: harmonize with 'response target context qualifier'
+    range: population of individual organisms  # TODO: harmonize with 'response target context qualifier'
 
   temporal context qualifier:
     description: >-
@@ -1339,15 +1494,25 @@ slots:
     description: >-
       The numerical value describing the strength of an affinity between two entities.  For instance, if a chemical inhibits a protein with a pIC50 of 8.6,
       the affinity is 8.6. Used in conjunction with the affinity parameter slot.
-    is_a: association slot
+    is_a: node property
     range: float
 
   affinity parameter:
     description: >-
-      The type of parameter describing the strength of an affinity between two entities.  For instance, if a chemical inhibits a protein with a pIC50 of 8.6,
-      the affinity parameter is pIC50.  Used in conjunction with the affinity slot.
-    is_a: association slot
+      The type of parameter describing the strength of an affinity
+      between two entities.  For instance, if a chemical inhibits
+      a protein with a pIC50 of 8.6, the 'affinity parameter' is pIC50.
+      Used in conjunction with the 'affinity' slot, within an 'affinity measurement'.
+    is_a: node property
     range: AffinityParameterEnum
+
+  has affinity:
+    is_a: association slot
+    description: >-
+      Set of measurements documenting the strength of chemical entity to gene or gene product interactions.
+    range: affinity measurement
+    multivalued: true
+    inlined_as_list: true
 
   FDA adverse event level:
     description: >-
@@ -1360,6 +1525,14 @@ slots:
       disease, condition or phenotype it is currently being reviewed to treat.  For specific levels of FDA
       approval for a specific condition, disease, phenotype, etc., see the association slot, 'clinical approval status.'
     range: ApprovalStatusEnum
+
+
+  FDA regulatory approvals:
+    description: >-
+      Numbers that identify specific drug applications. Each drug can have multiple approval numbers
+      (for example, as seen with ranitidine having both ANADA200536 and ANDA200536).
+    range: string
+    multivalued: true
 
   drug regulatory status world wide:
     aliases: ['max phase']
@@ -1431,15 +1604,15 @@ slots:
     is_a: qualifier
     abstract: true
     description: >-
-      A qualifier that composes with a core subject/object concept to define a more specific version of the 
-      subject concept, specifically using an ontology term that is not a subclass or descendant of the core concept 
+      A qualifier that composes with a core subject/object concept to define a more specific version of the
+      subject concept, specifically using an ontology term that is not a subclass or descendant of the core concept
       and in the vast majority of cases, is of a different ontological namespace than the category or namespace of the
       subject identifier.
     examples:
       - value: CHEBI:5118  # fluoxetine
         description: >-
-          In a MAXO annotation this would be a specialization in treatment of a disease. For example, 
-          fluoxetine would be a specialization of the MAXO term 'serotonin-norepinephrine reuptake inhibitor agent 
+          In a MAXO annotation this would be a specialization in treatment of a disease. For example,
+          fluoxetine would be a specialization of the MAXO term 'serotonin-norepinephrine reuptake inhibitor agent
           therapy' as a treatment for the HP term 'Fatigable muscle weakness' in the context of the MONDO term
           'congenital myasthenic syndrome '4A.'
       - value: GO:0005634  # nucleus
@@ -1574,8 +1747,8 @@ slots:
   subject specialization qualifier:
     is_a: specialization qualifier
     description: >-
-      A qualifier that composes with a core subject/object concept to define a more specific version of the 
-      subject concept, specifically using an ontology term that is not a subclass or descendant of the core concept 
+      A qualifier that composes with a core subject/object concept to define a more specific version of the
+      subject concept, specifically using an ontology term that is not a subclass or descendant of the core concept
       and in the vast majority of cases, is of a different ontological namespace than the category or namespace of the
       subject identifier.
     in_subset:
@@ -1601,7 +1774,7 @@ slots:
   subject part qualifier:
     description: >-
       defines a specific part/component of the core concept (used in cases there this specific part has no IRI we can
-      use to directly represent it, e.g. 'ESR1 transcript' q: polyA tail).  This qualifier is for the 
+      use to directly represent it, e.g. 'ESR1 transcript' q: polyA tail).  This qualifier is for the
       subject of an association (or statement).
     is_a: part qualifier
     in_subset:
@@ -1611,7 +1784,7 @@ slots:
     description: >-
       A qualifier that composes with a core subject/object  concept to describe something that is derived from the
       core concept.  For example, the qualifier ‘metabolite’ combines with a ‘Chemical X’ core concept to express
-      the composed concept ‘a metabolite of Chemical X’.  This qualifier is for the subject of an association 
+      the composed concept ‘a metabolite of Chemical X’.  This qualifier is for the subject of an association
       (or statement).
     examples:
       - value: metabolite
@@ -1651,8 +1824,8 @@ slots:
   object specialization qualifier:
     is_a: specialization qualifier
     description: >-
-      A qualifier that composes with a core subject/object concept to define a more specific version of the 
-      subject concept, specifically using an ontology term that is not a subclass or descendant of the core concept 
+      A qualifier that composes with a core subject/object concept to define a more specific version of the
+      subject concept, specifically using an ontology term that is not a subclass or descendant of the core concept
       and in the vast majority of cases, is of a different ontological namespace than the category or namespace of the
       subject identifier.
     in_subset:
@@ -1678,7 +1851,7 @@ slots:
   object part qualifier:
     description: >-
       defines a specific part/component of the core concept (used in cases there this specific part has no IRI we can
-      use to directly represent it, e.g. 'ESR1 transcript' q: polyA tail).  This qualifier is for the 
+      use to directly represent it, e.g. 'ESR1 transcript' q: polyA tail).  This qualifier is for the
       object of an association (or statement).
     is_a: part qualifier
     in_subset:
@@ -1688,7 +1861,7 @@ slots:
     description: >-
       A qualifier that composes with a core subject/object  concept to describe something that is derived from the
       core concept.  For example, the qualifier ‘metabolite’ combines with a ‘Chemical X’ core concept to express
-      the composed concept ‘a metabolite of Chemical X’.  This qualifier is for the object of an association 
+      the composed concept ‘a metabolite of Chemical X’.  This qualifier is for the object of an association
       (or statement).
     examples:
       - value: metabolite
@@ -1715,10 +1888,12 @@ slots:
     description: >-
       Predicate to be used in an association when subject and object qualifiers are present and the full
       reading of the statement requires a qualification to the predicate in use in order to refine or
-      increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that
-      expressed by the primary predicate, in a ‘full statement’ reading of the association, where qualifier-based
-      semantics are included.  This is necessary only in cases where the primary predicate does not work in a
-      full statement reading.
+      increase the specificity of the full statement reading.  Has a value from the Biolink
+      'related_to' hierarchy, for example, biolink:related_to, biolink:causes, biolink:treats
+      This qualifier holds a relationship to be used instead of that expressed by the primary predicate,
+      in a ‘full statement’ reading of the association, where qualifier-based semantics are included.
+      This is necessary only in cases where the primary predicate does not work in a full statement reading.
+    range: uriorcurie
     notes: >-
       to express the statement that “Chemical X causes increased expression of Gene Y”, the core triple is read
       using the fields subject:ChemX, predicate:affects, object:GeneY . . . and the full statement is read using
@@ -1762,6 +1937,7 @@ slots:
       - value: cerebral cortext  # UBERON:0000956
     in_subset:
       - translator_minimal
+    multivalued: true
 
   species context qualifier:
     is_a: statement qualifier
@@ -1831,9 +2007,9 @@ slots:
       a qualifier used in a phenotypic association to state
       when the phenotype appears is in the subject.
     notes: >-
-      This  is in Biolink to support HP ontology annotations which use "onset" (with terms from HP) 
+      This  is in Biolink to support HP ontology annotations which use "onset" (with terms from HP)
       as an annotation on a disease to phenotypic feature association.  Please only use it for this
-      purpose.  If the intent is to describe the onset of a disease in the context of a treatment, 
+      purpose.  If the intent is to describe the onset of a disease in the context of a treatment,
       use object_aspect_qualifier and object_direction_qualifier to capture "delayed onset" or "exacerbated onset"
       slot.
     is_a: qualifier
@@ -2262,8 +2438,8 @@ slots:
     description: >-
       Holds between two entities where the presence or application of one alters the chance that the other will come
       to be.
-    notes: >- 
-      - This predicate implies causation, where the 'affected' entity is something that does not yet exist, and the 
+    notes: >-
+      - This predicate implies causation, where the 'affected' entity is something that does not yet exist, and the
       actions/execution of effector impact the likelihood that this entity may come to be. It is NOT to be used
       for a statistical associations that describe correlations between two feature variables (use predicates
       in the 'associated with likelihood of' hierarchy here.)
@@ -2543,11 +2719,12 @@ slots:
 
    ## end of Publication related predicates
 
-  assesses:
+  was tested for effect on:
+    deprecated: true
     is_a: related to at instance level
-    aliases: ['was assayed against']
+    aliases: ['was assayed against', 'was experimentally tested against']
     description: >-
-      The effect of a thing on a target was interrogated in some assay.
+      Reports that the subject was interrogated in an experiment to determine how it may affect the object.
       A relationship between some perturbing agent (usually a chemical compound) and some target entity,
       where the affect of the perturbing agent on the target entity was interrogated in a particular assay.
       The target might be a particular protein, tissue, phenotype, whole organism, cell line, or other type
@@ -2557,9 +2734,10 @@ slots:
     annotations:
       canonical_predicate: true
 
-  is assessed by:
+  was tested for effect of:
+    deprecated: true
     is_a: related to at instance level
-    inverse: assesses
+    inverse: was tested for effect on
     domain: named thing
     range: named thing
 
@@ -2591,14 +2769,6 @@ slots:
       canonical_predicate: true
     broad_mappings:
       - WIKIDATA_PROPERTY:P129
-    close_mappings:
-      - CHEMBL.MECHANISM:binding_agent
-      - CHEMBL.MECHANISM:chelating_agent
-      - CHEMBL.MECHANISM:cross-linking_agent
-      - CHEMBL.MECHANISM:oxidative_enzyme
-      - CHEMBL.MECHANISM:sequestering_agent
-      - CHEMBL.MECHANISM:substrate
-      - DRUGBANK:target
     narrow_mappings:
        # Defined more narrowly as "substance interaction", thus specific applies to a subclass entities
       - DRUGBANK:drug-interaction
@@ -2753,8 +2923,8 @@ slots:
     description: >-
       A statistical association used to indicate that the object of a statement using this predicate
       induces a response of some kind in the subject entity.  Intentionally broad in definition, this predicate
-      should be used with qualifiers to narrow the type of response (E.g. whether the response is therapeutic, 
-      phenotypic, detrimental, resistant, etc. is captured in context, direction, and 
+      should be used with qualifiers to narrow the type of response (E.g. whether the response is therapeutic,
+      phenotypic, detrimental, resistant, etc. is captured in context, direction, and
       aspect qualifiers).
     annotations:
       canonical_predicate: true
@@ -2767,7 +2937,7 @@ slots:
         response_direction_qualifer: increased
         response_target_qualifier: human patient
         disease_context_qualifier: MONDO:0007254  # breast cancer
-      
+
         subject: MONDO:0007254
         predicate: associated with response to
         qualified_predicate: associated with
@@ -2880,8 +3050,12 @@ slots:
     narrow_mappings:
       - CHEBI:24432
 
-  affects response to:
-    is_a: affects
+  affects sensitivity to:
+    is_a: related to at instance level
+    description: >-
+      holds between two chemical entities or genes or gene products where the action of one affects
+      the susceptibility/sensitivity of a biological entity or system (e.g. an organism, cell, cellular component,
+      macromolecular machine mixin, biological or pathological process) to the other.
     in_subset:
       - translator_minimal
     domain: chemical entity or gene or gene product
@@ -2891,69 +3065,63 @@ slots:
     exact_mappings:
       - CTD:affects_response_to
 
-  response affected by:
-    description: >-
-      holds between two chemical entities where the susceptibility of a biological entity or system
-      (e.g. an organism, cell, cellular component, macromolecular machine mixin,
-      biological or pathological process) of one is affected by the action of the other.
-    is_a: affected by
+  sensitivity affected by:
+    is_a: related to at instance level
     in_subset:
       - translator_minimal
     domain: chemical entity or gene or gene product
     range: chemical entity or gene or gene product
-    inverse: affects response to
+    inverse: affects sensitivity to
 
-  increases response to:
+  increases sensitivity to:
     description: >-
-      holds between two chemical entities where the action or effect of one
-      increases the susceptibility of a biological entity or system (e.g. an
-      organism, cell, cellular component, macromolecular machine mixin, biological
-      or pathological process) to the other
-    is_a: affects response to
+      holds between two chemical entities or genes or gene products where the action or effect of one
+      increases the susceptibility/sensitivity of a biological entity or system (e.g. an organism, cell, cellular
+      component, macromolecular machine mixin, biological or pathological process) to the other
+    is_a: affects sensitivity to
     in_subset:
       - translator_minimal
     domain: chemical entity or gene or gene product
     range: chemical entity or gene or gene product
     annotations:
       canonical_predicate: true
-      opposite_of: decreases response to
+      opposite_of: decreases sensitivity to
     exact_mappings:
       - CTD:increases_response_to
 
-  response increased by:
-    is_a: response affected by
+  sensitivity increased by:
+    is_a: related to at instance level
     in_subset:
       - translator_minimal
     domain: chemical entity or gene or gene product
     range: chemical entity or gene or gene product
-    inverse: increases response to
+    inverse: increases sensitivity to
 
-  decreases response to:
+  decreases sensitivity to:
     description: >-
-      holds between two chemical entities where the action or effect of one
-      decreases the susceptibility of a biological entity or system (e.g. an
-      organism, cell, cellular component, macromolecular machine mixin, biological
-      or pathological process) to the other
-    is_a: affects response to
+      holds between two chemical entities or genes or gene products where the action or effect of one
+      decreases the susceptibility/sensitivity of a biological entity or system (e.g. an organism, cell, cellular
+      component, macromolecular machine mixin, biological or pathological process) to the other
+    is_a: affects sensitivity to
     in_subset:
       - translator_minimal
     domain: chemical entity or gene or gene product
     range: chemical entity or gene or gene product
     annotations:
       canonical_predicate: true
-      opposite_of: increases response to
+      opposite_of: increases sensitivity to
     exact_mappings:
       - CTD:decreases_response_to
     narrow_mappings:
       - CTD:decreases_response_to_substance
 
-  response decreased by:
-    is_a: response affected by
+  sensitivity decreased by:
+    is_a: sensitivity affected by
     in_subset:
       - translator_minimal
     domain: chemical entity or gene or gene product
     range: chemical entity or gene or gene product
-    inverse: decreases response to
+    inverse: decreases sensitivity to
 
   regulates:
     is_a: affects
@@ -3677,17 +3845,17 @@ slots:
     aliases: ['is substance that treats', 'indicated for', 'ameliorates or prevents condition']
     description: >-
       Holds between an intervention (substance, procedure, or activity) and a medical condition
-      (disease or phenotypic feature), and states that the intervention is, in some population(s), 
-      able to ameliorate, stabilize, or cure the condition or delay, prevent, or reduce the risk 
+      (disease or phenotypic feature), and states that the intervention is, in some population(s),
+      able to ameliorate, stabilize, or cure the condition or delay, prevent, or reduce the risk
       of it manifesting in the first place.
       ‘Treats’ edges should be asserted (knowledge_level: assertion) only in cases where there
       is strong supporting evidence - i.e. in some population(s) the intervention is approved for
-      the condition, passed phase 3 or in phase 4 trials for the condition, or is an otherwise 
-      established treatment in the medical community (e.g. a widely-accepted or formally recommended 
-      off-label use). In the absence of such evidence, weaker predicates should be used in 
+      the condition, passed phase 3 or in phase 4 trials for the condition, or is an otherwise
+      established treatment in the medical community (e.g. a widely-accepted or formally recommended
+      off-label use). In the absence of such evidence, weaker predicates should be used in
       asserted edges (e.g. ‘in clinical trials for’ or ‘beneficial in models of’). ‘Treats’ edges
-      based on weaker or indirect forms of evidence can however be created as predictions 
-      (knowledge_level: prediction) and should point to the more foundational asserted edges that 
+      based on weaker or indirect forms of evidence can however be created as predictions
+      (knowledge_level: prediction) and should point to the more foundational asserted edges that
       support them.
     domain: chemical or drug or treatment
     range: disease or phenotypic feature
@@ -3924,11 +4092,13 @@ slots:
   correlated with:
     is_a: associated with
     description: >-
-      A relationship that holds between two concepts represented by variables for which a statistical dependence is
-      demonstrated using a correlation analysis method.
+      A relationship that holds between two concepts represented by variables for which a statistical correlation is
+      believed to exist, as demonstrated using a correlation analysis method.
     notes: >-
       These concepts may map exactly to the statistical variables, or represent related entities for which the
-      variables serve as proxies in an Association (e.g. diseases, chemical entities or processes).
+      variables serve as proxies in an Association (e.g. diseases, chemical entities or processes). Note also that this
+      predicate can be used in the absence of a direct statistical analysis, if there is other evidence suggesting that
+      a correlation is likely to exist.
     domain: named thing
     range: named thing
     in_subset:
@@ -5414,6 +5584,20 @@ slots:
     is_a: related to at instance level
     inverse: develops from
 
+  taxon:
+    is_a: node property
+    description: >-
+      A property that indicates the taxonomic classification of an entity.
+      Values for this slot should be from the NCBITaxon ontology.
+    comments: >-
+      Note there is also a predicate 'in taxon'
+      that can be used to instantiate an edge between a taxon entity and a thing with taxon entity.  This is
+      an acceptable practice for KG construction, but for many applications it is more convenient to
+      use this property slot to directly annotate the taxon on the entity itself.
+    in_subset:
+      - translator_minimal
+    range: uriorcurie
+
   in taxon:
     aliases: ['instance of', 'is organism source of gene product', 'organism has gene', 'gene found in organism', 'gene product has organism source']
     is_a: related to at instance level
@@ -5510,6 +5694,18 @@ slots:
       - SIO
     domain: association
     range: uriorcurie
+
+  subject feature name:
+    is_a: association slot
+    description: >-
+      Used to describe a subordinate feature of the associated subject
+      for example, a particular sequence variant of a gene
+
+  object feature name:
+    is_a: association slot
+    description: >-
+      Used to describe a subordinate feature of the associated object
+      for example, a symptom diagnosis of a disease
 
   subject closure:
     is_a: association slot
@@ -5621,7 +5817,7 @@ slots:
     domain: association
     range: string
     examples:
-      - value: ["BRACA1"]
+      - value: ["BRCA1"]
         description: >-
           The subject label closure of the association between the gene
           'BRCA1' and the disease 'breast cancer' is the set of all
@@ -5718,15 +5914,11 @@ slots:
   predicate:
     is_a: association slot
     description: >-
-      A high-level grouping for the relationship type. AKA minimal predicate.
-      This is analogous to category for nodes.
-    domain: association
-    notes: >-
-      Has a value from the Biolink related_to hierarchy. In RDF,  this
+      Has a value from the Biolink 'related_to' hierarchy. In RDF,  this
       corresponds to rdf:predicate and in Neo4j this corresponds to the
       relationship type. The convention is for an edge label in snake_case
       form. For example, biolink:related_to, biolink:causes, biolink:treats
-    range: predicate type
+    range: uriorcurie
     required: true
     local_names:
       ga4gh: annotation predicate
@@ -5771,39 +5963,58 @@ slots:
       - SEPIO:0000187
       - SEPIO:0000167
 
-  has evidence:
+  has evidence of type:
     is_a: association slot
     range: evidence type
     description: >-
-      connects an association to an instance of supporting evidence
+      Connects an association to an evidence type ontology term.
+      Generally represents terms from the ECO ontology.
+    multivalued: true
+
+  has evidence:
+    is_a: association slot
+    range: information content entity
+    description: >-
+      Connects an association to detailed information providing supporting evidence.
     exact_mappings:
       - RO:0002558
     multivalued: true
+    inlined: false
 
-  has supporting study result:
+  has study results:
     is_a: association slot
+    domain: study
+    range: study result
+    multivalued: true
+    inlined_as_list: true
     description: >-
-      connects an association to an instance of supporting study result
+      Connects an study to instances of its study result
 
   log odds ratio:
     is_a: association slot
     description: >-
-      The logarithm of the odds ratio, or the ratio of the odds of event Y occurring in an exposed group versus the
-      odds of event Y occurring in a non-exposed group has 
+      The natural logarithm of the odds ratio (OR), or the ratio of
+      the odds of an event Y occurring in an exposed group versus
+      the odds of an event Y occurring in a non-exposed group.
     range: float
 
   log odds ratio 95 ci:
     is_a: association slot
     description: >-
       The ninety-five percent confidence range in which the true log odds ratio for the sample population falls.
+      To calculate the 95% confidence interval (CI) for a log odds ratio (a pair of numbers),
+      you need the standard error (SE) of the log odds ratio.  This interval helps you understand
+      the precision of your estimate and whether the association is statistically significant.
     range: float
+    multivalued: true
+    examples:
+      - value: [0.6996904681742875, 1.6429124024089072]
 
   total sample size:
     is_a: dataset count
     description: >-
       The total number of patients or participants within a sample population.
     range: integer
-
 
   mechanism of action:
     is_a: association slot
@@ -5896,9 +6107,55 @@ slots:
     is_a: association slot
     range: float
     description: >-
-      represents the chi-squared statistic computed from observations
+      The chi-squared statistic measures how much observed
+      data deviate from expected values under the null hypothesis.
     exact_mappings:
       - STATO:0000030
+    examples:
+      - value: 26.38523077566414
+
+  chi squared dof:
+    is_a: association slot
+    description: >-
+       Degrees of freedom (dof) in a chi-squared test referring to the
+       number of values in the final calculation of a statistic that are free to vary
+    range: integer
+    examples:
+      - value: 1
+
+  chi squared p:
+    is_a: association slot
+    description: >-
+       The chi-square p-value tells you the probability that the observed differences
+       (or associations) in your data occurred by random chance, assuming the null hypothesis is true.
+    range: float
+    examples:
+      - value: 2.7967079822744063e-07
+
+  fisher exact odds ratio:
+    is_a: association slot
+    description: >-
+       The Fisher Exact Test is used to determine whether there is a non-random association between
+       two categorical variables in a 2×2 contingency table, especially when sample sizes are small.
+       The odds ratio (OR) quantifies the strength of that association.
+          OR = 1 implies No association
+          OR > 1 implies Positive association (Group A more likely to have Outcome 1)
+          OR < 1 implies Negative association (Group A less likely to have Outcome 1)
+    range: float
+    examples:
+      - value: 3.226188583240579
+
+  fisher exact p:
+    is_a: association slot
+    description: >-
+      The Fisher exact p-value tells you the probability of observing a table
+      as extreme as (or more extreme than) your actual data, assuming that
+      the null hypothesis of independence is true. It's most commonly used
+      for 2×2 contingency tables, especially when sample sizes
+      are small or expected counts are low.
+    range: float
+    examples:
+      - value: 2.8581244515361156e-06
 
   z score:
     aliases: ['z-score', 'z-value', 'standard score', 'normal score']
@@ -6070,9 +6327,9 @@ slots:
       A quantitative confidence value that represents the probability of
       obtaining a result at least as extreme as that actually obtained,
       assuming that the actual value was the result of chance alone.
-    range: integer
+    range: float
     examples:
-      - value: 15
+      - value: "15.0"
 
   supporting document type:
     is_a: association slot
@@ -6147,6 +6404,22 @@ slots:
     is_a: association slot
     range: disease or phenotypic feature
 
+  allelic requirement:
+    description: >-
+      The allele configuration of a particular gene or variant required for the
+      expression of a disease or phenotype in a specific patient or instance.
+    is_a: association slot
+    range: string
+    pattern: "^HP:\\d{7}$"
+    comments: >-
+      This edge property may be used by associations between Genes or
+      SequenceVariants and DiseaseOrPhenotypicFeatures to provide the inheritance
+      pattern and genetic context of the relationship.
+      Terms from the HP mode of inheritance sub-ontology (HP:0000005) should be used
+      in the value of this slot. This slot differs from the predicate "has_mode_of_inheritance",
+      in that the predicate is used to link a disease or phenotype with its general
+      inheritance pattern (how it is typically transmitted from one generation to the next,
+      regardless of the specific genetic variant that is present in an individual or instance).
 
   publications:
     aliases: ['supporting publications', 'supporting documents']
@@ -6281,17 +6554,32 @@ slots:
   clinical approval status:
     is_a: association slot
     description: >-
+      The clinical approval status of a chemical entity for treating a specific disease or condition,
+      as captured in the context of the association between the chemical and the disease.
     range: ClinicalApprovalStatusEnum
 
   max research phase:
     is_a: association slot
+    description: >-
+      The maximum research phase reached for a specific chemical-disease pair, indicating the highest
+      clinical trial phase achieved for the chemical entity's investigation as a treatment for the
+      associated disease or condition.
     range: ResearchPhaseEnum
+
+  number of cases:
+    is_a: has count
+    description: >-
+      The number of cases in a study or clinical trial, primarily used in conversion of drug approval data.
 
   has supporting studies:
     is_a: association slot
     range: study
-    description: A study that produced information used as evidence to generate the knowledge expressed in an Association.
+    description: >-
+      Studies that produced information used as evidence
+      to generate the knowledge expressed in an Association.
     multivalued: true
+    close_mappings:
+      - OBAN:has_study_id
 
   supporting study metadata:
     is_a: association slot
@@ -6300,18 +6588,19 @@ slots:
       Association. In practice, data creators should use one of the more specific subtypes of this property.
     comments:
       - This is an abstract slot that groups a set of concrete slots used to directly attach to an association information
-        about a study that produced evidence used to generate the knowledge expressed in the edge. 
+        about a study that produced evidence used to generate the knowledge expressed in the edge.
       - Note that these concrete 'supporting study metadata' slots are used only when a more normalized model that leverages
-        the 'supporting studdies' slot and 'Study' class to link to and describe the Study itself are not possible or preferred, 
-        such that this study metadata must be captured directly on the edge.       
+        the 'supporting studdies' slot and 'Study' class to link to and describe the Study itself are not possible or preferred,
+        such that this study metadata must be captured directly on the edge.
     abstract: true
 
-  supporting study method type:
+  supporting study method types:
     is_a: supporting study metadata
     description: >-
-      A type of method that was applied in a study used to generate the information used as evidence (e.g. a type of
+      Type(s) of methods that were applied in a study used to generate the information used as evidence (e.g. a type of
       experimental assay, or statistical calculation, or computational analysis).
     range: uriorcurie
+    multivalued: true
 
   supporting study method description:
     is_a: supporting study metadata
@@ -6355,15 +6644,15 @@ slots:
       reasoning or analysis methods used to generate the statement, or the
       scope or specificity of what the statement expresses to be true.
     notes: >-
-      The notion of a 'level' of knowledge can in one sense relate to the strength 
+      The notion of a 'level' of knowledge can in one sense relate to the strength
       of a statement - i.e. how confident we are that it says something true about
-      our domain of discourse. Here, we can generally consider Assertions to be 
-      stronger than Entailments to be stronger than Predictions. 
+      our domain of discourse. Here, we can generally consider Assertions to be
+      stronger than Entailments to be stronger than Predictions.
       But in another sense, 'level' of knowledge can refer to the scope or specificity of
       what a statement expresses - on a spectrum from context-specific results of a data
-      analysis, to generalized assertions of knowledge or fact. Here, Statistical 
-      Associations and  Observations represent more foundational statements that are only 
-      slightly removed from the data on which they are based (the former reporting the 
+      analysis, to generalized assertions of knowledge or fact. Here, Statistical
+      Associations and  Observations represent more foundational statements that are only
+      slightly removed from the data on which they are based (the former reporting the
       direct results of  an analysis in terms of correlations between variables in the data,
       and the latter describing phenomena that were observed/reported to have occurred).
     domain: association
@@ -6378,20 +6667,20 @@ slots:
   agent type:
     is_a: association slot
     description: >-
-        Describes the high-level category of agent who originally generated a 
+        Describes the high-level category of agent who originally generated a
         statement of knowledge or other type of information.
     notes: >-
-        Note that this property indicates the type of agent who produced a 
-        final statement of knowledge, which is often different from the 
-        agent oragents who produced information used as evidence to 
+        Note that this property indicates the type of agent who produced a
+        final statement of knowledge, which is often different from the
+        agent oragents who produced information used as evidence to
         support generation of this knowledge. For example, if a human curator
         concludes that a particular gene variant causes a medical condition -
-        based on their interpretation of information produced by computational 
+        based on their interpretation of information produced by computational
         modeling tools, automated data analysis pipelines, and robotic laboratory
-        assay systems - the agent_type for this statement is 'manual agent' - 
+        assay systems - the agent_type for this statement is 'manual agent' -
         despite all of the evidence being created by automated agents. But if any
-        of these systems is programmed to generate knowledge statements 
-        directly and without human assistance, the statement would be attributed 
+        of these systems is programmed to generate knowledge statements
+        directly and without human assistance, the statement would be attributed
         to an 'automated_agent'.
     domain: association
     range: AgentTypeEnum
@@ -6408,7 +6697,36 @@ slots:
     required: false
     range: biological sex
 
+  druggable gene category:
+    description: Classification of druggable genes based on knowledge about drug or small molecule activities.
+    range: DruggableGeneCategoryEnum
+
 classes:
+  # Add the KGX-specific classes without modifying biolink classes
+  KnowledgeGraph:
+    description: A knowledge graph represented in KGX format
+    slots:
+      - nodes
+      - edges
+
+  Node:
+    description: A node in a KGX graph, will be superclass for named thing
+
+  Edge:
+    description: An edge in a KGX graph, will be superclass for association
+
+
+  knowledge graph:
+    description: >-
+      A knowledge graph is a structured representation of knowledge in the form of a graph,
+      where nodes represent entities or concepts, and edges represent relationships between them.
+      Knowledge graphs are used to organize and connect information from various sources,
+      enabling better understanding, analysis, and reasoning about complex domains.
+    slots:
+      - nodes
+      - edges
+    tree_root: true
+    abstract: true
 
   mapping collection:
     description: >-
@@ -6643,6 +6961,9 @@ classes:
       - xref
       - full name
       - synonym
+      - equivalent identifiers
+      - information content
+      - taxon
     slot_usage:
       category:
         required: true
@@ -6718,22 +7039,80 @@ classes:
     abstract: true
 
   study result:
-    abstract: true
+    is_a: named thing
     description: >-
       A collection of data items from a study that are about a particular study subject or experimental unit (the
       'focus' of the Result) - optionally with context/provenance metadata that may be relevant to the interpretation
       of this data as evidence.
+    abstract: true
     notes:
       The data/metadata included in a Study Result object are typically a subset of data from a larger study data set,
       that are selected by a curator because they may be useful as evidence for deriving knowledge about a specific
       focus of the study. The notion of a 'study' here is defined broadly to include any research activity at any
       scale that is aimed at generating knowledge or hypotheses. This may include a single assay or computational
       analyses, or a larger scale clinical trial or experimental research investigation.
-    is_a: information content entity
+
+   ## epc result sets
+  concept count analysis result:
+    is_a: study result
+    description: >-
+      A result of a concept count analysis.
+
+  observed expected frequency analysis result:
+    is_a: study result
+    description: >-
+      A result of a observed expected frequency analysis.
+
+  relative frequency analysis result:
+    is_a: study result
+    description: >-
+      A result of a relative frequency analysis.
+
+  chi squared analysis result:
+    is_a: study result
+    description: >-
+      A result of a chi squared analysis.
+
+  log odds analysis result:
+    is_a: study result
+    description: >-
+      A result of a log odds ratio analysis.
+
+  text mining study result:
+    is_a: study result
+    description: >-
+      A study result that represents information extracted from text using natural language processing techniques.
+      This includes the extracted text, location offsets within the source document, confidence scores, and other
+      metadata related to the text mining process.
+    slots:
+      - supporting text
+      - subject location in text
+      - object location in text
+      - extraction confidence score
+      - supporting document type
+      - supporting document year
+      - supporting text section type
+
+  icees study result:
+    is_a: study result
+    description: >-
+      A study result that represents a result, from a supporting Study, which is specifically associated
+      with an Integrated Clinical and Environmental Exposures Service (ICEES) knowledge assertion.
+    slots:
+      - chi squared statistic
+      - chi squared dof
+      - chi squared p
+      - total sample size
+      - fisher exact odds ratio
+      - fisher exact p
+      - log odds ratio
+      - log odds ratio 95 ci
 
   study:
-    description: a detailed investigation and/or analysis
     is_a: activity
+    description: a detailed investigation and/or analysis
+    slots:
+      - has study results
     exact_mappings:
       - NCIT:C63536
     close_mappings:
@@ -6760,37 +7139,6 @@ classes:
       (https://cde.nlm.nih.gov/home)
     close_mappings:
       - NCIT:C19984
-
-   ## epc result sets
-  concept count analysis result:
-    is_a: study result
-    description: >-
-      A result of a concept count analysis.
-
-  observed expected frequency analysis result:
-    is_a: study result
-    description: >-
-      A result of a observed expected frequency analysis.
-
-  relative frequency analysis result:
-    is_a: study result
-    description: >-
-      A result of a relative frequency analysis.
-
-  text mining result:
-    is_a: study result
-    description: >-
-      A result of text mining.
-
-  chi squared analysis result:
-    is_a: study result
-    description: >-
-      A result of a chi squared analysis.
-
-  log odds analysis result:
-    is_a: study result
-    description: >-
-      A result of a log odds ratio analysis.
 
   agent:
     is_a: administrative entity
@@ -6945,7 +7293,9 @@ classes:
       - SEPIO:0000167
 
   evidence type:
-    is_a: information content entity
+    is_a: named thing
+    mixins:
+      - ontology class
     aliases: ['evidence code']
     description: >-
       Class of evidence that supports an association
@@ -6954,7 +7304,12 @@ classes:
     exact_mappings:
       - ECO:0000000
 
-   ## Publications
+  evidence:
+    is_a: information content entity
+    description: >-
+      Dereferences detailed evidence that supports an association
+
+    ## Publications
 
    # TODO: to review additional ontology relating to Publications, such as http://www.sparontologies.net/ontologies
   publication:
@@ -7507,6 +7862,13 @@ classes:
       - max tolerated dose
       - is toxic
       - has chemical role
+      - routes of delivery
+      - chembl prodrug
+      - chembl black box warning
+      - chembl natural product
+      - chembl availability type
+      - chembl chirality
+      - chembl drug warning
     exact_mappings:
       - CHEBI:24431
       - SIO:010004  # Chemical entity
@@ -7545,6 +7907,18 @@ classes:
       - KEGG.ENVIRON
       - KEGG
       - UMLS
+
+  affinity measurement:
+    is_a: named thing
+    description: >-
+      The type of measurement describing the strength of an affinity between two entities.
+      For instance, if a chemical inhibits a protein with a pIC50 of 8.6,
+      the affinity parameter is pIC50 and the affinity value is 8.6.
+      The binary relation, if given, qualifies the affinity as greater than, less than, or equal.
+    slots:
+      - affinity parameter
+      - affinity
+      - has binary relation
 
   small molecule:
     is_a: molecular entity
@@ -7598,7 +7972,6 @@ classes:
       - model_organism_database
       - translator_minimal
 
-
   chemical mixture:
     is_a: chemical entity
     mixins:
@@ -7610,7 +7983,6 @@ classes:
       - is supplement
       - highest FDA approval status
       - drug regulatory status world wide
-      - routes of delivery
     in_subset:
       - translator_minimal
     id_prefixes:
@@ -8361,15 +8733,14 @@ classes:
     is_a: biological entity
     mixins:
       - ontology class
+    slots:
+      - inheritance
     description: >-
       Either one of a disease or an individual phenotypic feature.
       Some knowledge resources such as Monarch treat these as
       distinct, others such as MESH conflate.  Please see definitions of phenotypic feature and disease in this model
       for their independent descriptions.  This class is helpful to enforce domains and ranges
       that may involve either a disease or a phenotypic feature.
-    union_of:
-      - disease
-      - phenotypic feature
     narrow_mappings:
       # UMLS Semantic Type "Finding" - more specialized use of 'disease or phenotypic feature'
       - STY:T033
@@ -8609,7 +8980,7 @@ classes:
       - FAO
 
 
-   ## entity mixins
+  ## entity mixins
 
   chemical entity or gene or gene product:
     description: >-
@@ -8650,6 +9021,15 @@ classes:
     id_prefixes:
       - CHEMBL.TARGET
       - IUPHAR.FAMILY
+    close_mappings:
+      - DRUGBANK:target
+
+  gene or gene product or gene family:
+    description: >-
+      A union of gene family or gene loci or gene products, useful to define
+      the association between a gene or gene product or gene family and
+      some other general class of entity (e.g. biological process or anatomical entity)
+    mixin: true
 
   gene:
     description: >-
@@ -8745,6 +9125,7 @@ classes:
       - GO
       - PR
       - REACT
+      - CHEMBL.TARGET
       - ComplexPortal
     in_subset:
       - model_organism_database
@@ -9225,7 +9606,7 @@ classes:
     description: >-
       The age group in which (disease) symptom manifestations appear.
     notes: >-
-      This class is in Biolink to support HP ontology annotations which use "onset" (with terms from HP) 
+      This class is in Biolink to support HP ontology annotations which use "onset" (with terms from HP)
       as an annotation on a disease to phenotypic feature association.  This should be the primary use
       case for this class.
     exact_mappings:
@@ -9248,10 +9629,20 @@ classes:
     slots:
       - clinical trial phase
       - clinical trial primary purpose
-      - creation date # maybe? 
+      - clinical trial intervention model
+      - clinical trial overall status
+      - clinical trial brief title
+      - clinical trial enrollment type
+      - clinical trial start date
+      - clinical trial enrollment
+      - clinical trial age stage
+      - clinical trial age range
+      - clinical trial tested intervention
+      - clinical trial interventions
+      - clinical trial conditions
+      - creation date
     id_prefixes:
       - CLINICALTRIALS
-
 
   clinical intervention:
     is_a: clinical entity
@@ -9316,14 +9707,27 @@ classes:
    ## Exposures
 
   exposure event:
-    is_a: ontology class
+    is_a: named thing
+    mixins:
+      - ontology class
     aliases: ['exposure', 'experimental condition']
-    mixin: true
     slots:
       - timepoint
+      - exposure type
+      - exposure vehicle
+      - exposure route
+      - exposure start age
+      - exposure end age
+      - exposure duration
+      - exposure magnitude
+      - exposure additional condition
     description: >-
       A (possibly time bounded) incidence of a feature of the environment of an organism that
       influences one or more phenotypic features of that organism, potentially mediated by genes
+    slot_usage:
+      id:
+        description: >-
+          Could generally be a CURIE from a suitable exposure ontology like ECTO.
     exact_mappings:
       - XCO:0000000
     in_subset:
@@ -9331,9 +9735,8 @@ classes:
 
    # TODO - confirm that genomic backgrounds are exposures
   genomic background exposure:
-    is_a: attribute
+    is_a: exposure event
     mixins:
-      - exposure event
       - gene grouping mixin
       - physical essence
       - genomic entity
@@ -9372,9 +9775,7 @@ classes:
       - STY:T037
 
   pathological process exposure:
-    is_a: attribute
-    mixins:
-      - exposure event
+    is_a: exposure event
     description: >-
       A pathological process, when viewed as an exposure, representing
       a precondition, leading to or influencing an outcome,
@@ -9391,18 +9792,15 @@ classes:
       - MPATH:603
 
   pathological anatomical exposure:
-    is_a: attribute
-    mixins:
-      - exposure event
+    is_a: exposure event
     description: >-
       An abnormal anatomical structure, when viewed as an exposure,
       representing an precondition, leading to or influencing an outcome,
       e.g. thrombosis leading to an ischemic disease outcome.
 
   disease or phenotypic feature exposure:
-    is_a: attribute
+    is_a: exposure event
     mixins:
-      - exposure event
       - pathological entity mixin
     description: >-
       A disease or phenotypic feature state, when viewed as an exposure,
@@ -9411,9 +9809,7 @@ classes:
       of skin pigmentation predisposing an individual to skin cancer.
 
   chemical exposure:
-    is_a: attribute
-    mixins:
-      - exposure event
+    is_a: exposure event
     slots:
       - has quantitative value
     description: >-
@@ -9427,7 +9823,7 @@ classes:
       - SIO:001399
 
   complex chemical exposure:
-    is_a: attribute
+    is_a: exposure event
     description: >-
       A complex chemical exposure is an intake of a chemical
       mixture (e.g. gasoline), other than a drug.
@@ -9437,8 +9833,6 @@ classes:
     aliases: ['drug intake', 'drug dose', 'medication intake']
     description: >-
       A drug exposure is an intake of a particular drug.
-    mixins:
-      - exposure event
     broad_mappings:
        # slightly broader than just drug effects on a biological system
       - SIO:001005
@@ -9458,9 +9852,8 @@ classes:
   treatment:
     aliases: ['medical action', 'medical intervention']
      # 'named thing' seems too generic here but not sure what applies better here
-    is_a: named thing
+    is_a: exposure event
     mixins:
-      - exposure event
       - chemical or drug or treatment
     description: >-
       A treatment is targeted at a disease or phenotype and may involve
@@ -9476,18 +9869,14 @@ classes:
       - MAXO:0000058
 
   biotic exposure:
-    is_a: attribute
+    is_a: exposure event
     aliases: ['viral exposure', 'bacterial exposure']
-    mixins:
-      - exposure event
     description: >-
       An external biotic exposure is an intake of (sometimes pathological)
       biological organisms (including viruses).
 
   geographic exposure:
     is_a: environmental exposure
-    mixins:
-      - exposure event
     description: >-
       A geographic exposure is a factor relating to geographic
       proximity to some impactful entity.
@@ -9510,25 +9899,19 @@ classes:
       - dcid:WinterStoremEvent
 
   environmental exposure:
-    is_a: attribute
-    mixins:
-      - exposure event
+    is_a: exposure event
     description: >-
       A environmental exposure is a factor relating to abiotic processes
       in the environment including sunlight (UV-B), atmospheric (heat,
       cold, general pollution) and water-born contaminants.
 
   behavioral exposure:
-    is_a: attribute
-    mixins:
-      - exposure event
+    is_a: exposure event
     description: >-
       A behavioral exposure is a factor relating to behavior impacting an individual.
 
   socioeconomic exposure:
-    is_a: attribute
-    mixins:
-      - exposure event
+    is_a: exposure event
     description: >-
       A socioeconomic exposure is a factor relating to social and
       financial status of an affected individual (e.g. poverty).
@@ -9623,6 +10006,7 @@ classes:
       - qualifiers  # deprecated
       - publications
       - sources
+      - has evidence of type
       - has evidence
       - knowledge source
       - primary knowledge source
@@ -9633,6 +10017,8 @@ classes:
       - original subject
       - original predicate
       - original object
+      - subject feature name
+      - object feature name
        # denormalized fields
       - subject category
       - object category
@@ -9647,18 +10033,27 @@ classes:
       - retrieval source ids
       - p value
       - adjusted p value
+      - supporting text
       - has supporting studies
+      - update date
+      - has confidence score
+      - elevate to prediction
+      - evidence count
+      - semmed agreement count
     slot_usage:
       type:
         description: rdf:type of biolink:Association should be fixed at rdf:Statement
       category:
         range: uriorcurie
         required: false
+      sources:
+        inlined_as_list: true
+      has supporting studies:
+        inlined: true
     exact_mappings:
       - OBAN:association
       - rdf:Statement
       - owl:Axiom
-
 
   disease associated with response to chemical entity association:
     description: >-
@@ -9685,6 +10080,7 @@ classes:
 
 
   chemical entity assesses named thing association:
+    deprecated: true
     is_a: association
     slot_usage:
       subject:
@@ -9692,8 +10088,7 @@ classes:
       object:
         range: named thing
       predicate:
-        subproperty_of: assesses
-
+        subproperty_of: was tested for effect on
 
   contributor association:
     is_a: association
@@ -9851,6 +10246,96 @@ classes:
         description: >-
           membership of the gene in the given gene family.
 
+  gene family to gene or gene product or gene family association:
+    description: >-
+      Relationship between a gene family and
+      a contained gene or gene product or gene family.
+    is_a: association
+    defining_slots:
+      - subject
+      - predicate
+      - object
+    slot_usage:
+      subject:
+        range: gene
+      object:
+        range: gene family
+      predicate:
+        subproperty_of: has part
+        symmetric: false
+        description: >-
+          membership of a gene or gene product,
+          or strict subset relationship gene family,
+          in the given gene family.
+
+  gene or gene product or gene family to biological process or activity association:
+    description: >-
+      Relationship between a gene or gene product or gene family to a
+      specified biological process or activity (e.g. molecular activity,
+      biological process or pathway).
+    is_a: association
+    defining_slots:
+      - subject
+      - predicate
+      - object
+    slot_usage:
+      subject:
+        range: gene or gene product or gene family
+      object:
+        range: biological process or activity
+      predicate:
+        subproperty_of: participates in
+        symmetric: false
+        description: >-
+          participation of a gene or gene product or gene family in
+          a given biological process or activity (e.g., gene product
+          participates in biological process; gene catalyzes molecular
+          activity; gene family is actively involved in a pathway).
+
+  biological process or activity to gene or gene product or gene family association:
+    description: >-
+      Relationship between a biological processor activity
+      (e.g. molecular activity, biological process or pathway)
+      to gene or gene product or gene family.
+    is_a: association
+    defining_slots:
+      - subject
+      - predicate
+      - object
+    slot_usage:
+      subject:
+        range: biological process or activity
+      object:
+        range: gene or gene product or gene family
+      predicate:
+        subproperty_of: has participant
+        symmetric: false
+        description: >-
+          Relationship in which a biological process has the
+          participation of a gene or gene product or gene family in
+          a  (e.g., pathway has participant gene product).
+
+  biological process or activity to biological process or activity association:
+    description: >-
+      Classification relationship between biological processes or activities
+      (e.g. coupling of two molecular activities;  assignment of molecular
+      activity to a pathway; implicating a pathway in a biological process; etc.)
+    is_a: association
+    defining_slots:
+      - subject
+      - predicate
+      - object
+    slot_usage:
+      subject:
+        range: biological process or activity
+      object:
+        range: biological process or activity
+      predicate:
+        subproperty_of: subclass of
+        symmetric: false
+        description: >-
+          One biological processes or activities is a subclass of another.
+
   gene expression mixin:
     description: >-
       Observed gene expression intensity, context (site, stage) and
@@ -9991,6 +10476,7 @@ classes:
         description: "the drug that is an interactor"
 
   chemical to entity association mixin:
+    deprecated: true
     description: >-
       An interaction between a chemical entity and another entity
     is_a: chemical entity to entity association mixin
@@ -10021,7 +10507,7 @@ classes:
         range: case
         description: "the case (e.g. patient) that has the property"
 
-  chemical to chemical association:
+  chemical entity to chemical entity association:
     description: >-
       A relationship between two chemical entities. This can encompass actual
       interactions as well as temporal causal edges, e.g. one chemical converted to another.
@@ -10030,11 +10516,10 @@ classes:
       - subject
       - predicate
       - object
+      - species context qualifier
     defining_slots:
       - subject
       - object
-    mixins:
-      - chemical to entity association mixin
     slot_usage:
       object:
         range: chemical entity
@@ -10042,7 +10527,7 @@ classes:
 
   reaction to participant association:
     description:
-    is_a: chemical to chemical association
+    is_a: chemical entity to chemical entity association
     slots:
       - stoichiometry
       - reaction direction
@@ -10062,14 +10547,14 @@ classes:
       object:
         range: gene or gene product
 
-  chemical to chemical derivation association:
+  chemical entity to chemical derivation association:
     description: >-
       A causal relationship between two chemical entities, where the subject
       represents the upstream entity and the object represents the downstream.
       For any such association there is an implicit reaction: IF R has-input C1 AND
       R has-output C2 AND R enabled-by P AND
       R type Reaction THEN C1 derives-into C2 catalyst qualifier P
-    is_a: chemical to chemical association
+    is_a: chemical entity to chemical entity association
     defining_slots:
       - subject
       - predicate
@@ -10093,7 +10578,7 @@ classes:
           catalyzes the reaction that causes the subject chemical to
           transform into the object chemical.
 
-  chemical to disease or phenotypic feature association:
+  chemical entity to disease or phenotypic feature association:
     description: >-
       An interaction between a chemical entity and a phenotype or disease,
       where the presence of the chemical gives rise to or exacerbates the phenotype.
@@ -10104,8 +10589,10 @@ classes:
       - subject
       - object
     mixins:
-      - chemical to entity association mixin
       - entity to disease or phenotypic feature association mixin
+    slots:
+      - clinical approval status
+      - max research phase
     slot_usage:
       object:
         range: disease or phenotypic feature
@@ -10114,14 +10601,30 @@ classes:
   chemical or drug or treatment to disease or phenotypic feature association:
     description: >-
       This association defines a relationship between a chemical or treatment (or procedure) and a disease or phenotypic feature
-      where the disease or phenotypic feature is a secondary undesirable effect.
+      where the chemical or treatment is used to treat, or is being studied to treat, the disease or phenotypic feature.
     is_a: association
     defining_slots:
       - subject
       - predicate
       - object
     mixins:
-      - chemical to entity association mixin
+      - entity to disease or phenotypic feature association mixin
+      - entity to feature or disease qualifiers mixin
+    slot_usage:
+      predicate:
+        subproperty_of: treats or applied or studied to treat
+
+  chemical or drug or treatment adverse event association:
+    description: >-
+      This association defines a relationship between a chemical or treatment (or procedure) and a disease or phenotypic feature
+      where the disease or phenotypic feature is an untoward medical occurrence that happens during treatment,
+      whether or not considered related to the treatment.
+    is_a: association
+    defining_slots:
+      - subject
+      - predicate
+      - object
+    mixins:
       - entity to disease or phenotypic feature association mixin
       - entity to feature or disease qualifiers mixin
     slots:
@@ -10130,18 +10633,18 @@ classes:
       predicate:
         subproperty_of: has adverse event
 
-  chemical or drug or treatment side effect disease or phenotypic feature association:
+  chemical or drug or treatment side effect association:
     description: >-
       This association defines a relationship between a chemical or treatment (or procedure) and a disease or phenotypic feature
-      where the disesae or phenotypic feature is a secondary, typically (but not always) undesirable effect.
-    is_a: chemical or drug or treatment to disease or phenotypic feature association
+      where the disease or phenotypic feature is an unintended, but predictable, secondary effect of the treatment.
+    is_a: association
     defining_slots:
       - subject
       - predicate
       - object
     mixins:
-      - chemical to entity association mixin
       - entity to disease or phenotypic feature association mixin
+      - entity to feature or disease qualifiers mixin
     slot_usage:
       predicate:
         subproperty_of: has side effect
@@ -10175,7 +10678,7 @@ classes:
       predicate:
         subproperty_of: part of
 
-  chemical to pathway association:
+  chemical entity to pathway association:
     description: >-
       An interaction between a chemical entity and a biological process or pathway.
     is_a: association
@@ -10184,8 +10687,6 @@ classes:
     defining_slots:
       - subject
       - object
-    mixins:
-      - chemical to entity association mixin
     slot_usage:
       subject:
         range: chemical entity
@@ -10193,6 +10694,26 @@ classes:
       object:
         range: pathway
         description: "the pathway that is affected by the chemical"
+
+  chemical entity to biological process association:
+    description: >-
+      An association between a chemical entity and a biological process,
+      where the chemical entity has some effect on the biological process.
+    is_a: association
+    slots:
+      - species context qualifier
+      - anatomical context qualifier
+      - qualified predicate
+      - object direction qualifier
+    slot_usage:
+      subject:
+        range: chemical entity
+        description: "the chemical entity that affects the biological process"
+      object:
+        range: biological process
+        description: "the biological process that is affected by the chemical entity"
+      predicate:
+        subproperty_of: related to at instance level
 
   named thing associated with likelihood of named thing association:
      # TODO: better name
@@ -10230,30 +10751,35 @@ classes:
 
   chemical gene interaction association:
     description: >-
-      describes a physical interaction between a chemical entity and a gene or gene product. Any biological or chemical
+      describes an interaction between a chemical entity and a gene or gene product. Any biological or chemical
       effect resulting from such an interaction are out of scope, and covered by the ChemicalAffectsGeneAssociation type
       (e.g. impact of a chemical on the abundance, activity, structure, etc, of either participant in the interaction)
     is_a: association
-    exact_mappings:
-      - SIO:001257
-    mixins:
-      - chemical to entity association mixin
+    broad_mappings:
+      - SIO:001257    ## chemical-gene association
     slots:
+      - has affinity
       - subject form or variant qualifier
       - subject part qualifier
       - subject derivative qualifier
       - subject context qualifier
+      - qualified predicate
+      - object direction qualifier
+      - object aspect qualifier
       - object form or variant qualifier
       - object part qualifier
       - object context qualifier
       - anatomical context qualifier
+      - causal mechanism qualifier
+      - dgidb interaction score
+      - dgidb evidence score
     slot_usage:
       subject:
         range: chemical entity
       object:
         range: gene or gene product
       predicate:
-        subproperty_of: physically interacts with
+        subproperty_of: interacts with
       subject form or variant qualifier:
         range: ChemicalOrGeneOrGeneProductFormOrVariantEnum
       subject part qualifier:
@@ -10262,6 +10788,10 @@ classes:
         range: ChemicalEntityDerivativeEnum
       subject context qualifier:
         range: anatomical entity
+      object direction qualifier:
+        range: DirectionQualifierEnum
+      object aspect qualifier:
+        range: GeneOrGeneProductOrChemicalEntityAspectEnum
       object form or variant qualifier:
         range: ChemicalOrGeneOrGeneProductFormOrVariantEnum
       object part qualifier:
@@ -10270,6 +10800,24 @@ classes:
         range: anatomical entity
       anatomical context qualifier:
         range: anatomical entity
+      causal mechanism qualifier:
+        range: CausalMechanismQualifierEnum
+
+  macromolecular machine has substrate association:
+    is_a: association
+    description: >-
+      Describes the relationship between an enzyme (usually a macromolecular
+      complex or gene product) and the molecules it acts on (substrate).
+      The substrate can be a chemical, a polypeptide, or a protein.
+    notes: >-
+      Using macromolecular machine should cover cases of gene-protein conflation.
+    slot_usage:
+      subject:
+        range: macromolecular machine mixin
+      predicate:
+        subproperty_of: has substrate
+      object:
+        range: chemical entity or protein or polypeptide
 
   gene regulates gene association:
     is_a: association
@@ -10290,7 +10838,7 @@ classes:
         range: GeneOrGeneProductOrChemicalEntityAspectEnum
         required: true
         description: >-
-          the aspect of the object gene or gene product that is being regulated, must be a descendant of 
+          the aspect of the object gene or gene product that is being regulated, must be a descendant of
           "activity_or_abundance""
       object direction qualifier:
         range: DirectionQualifierEnum
@@ -10302,7 +10850,7 @@ classes:
       value:
         subject: "NCBIGene:551"
         predicate: regulates
-        qualified_predicte: causes
+        qualified_predicate: causes
         object: "NCBIGene:1636"
         object_aspect_qualifier: activity_or_abundance
         object_direction_qualifier: downregulated
@@ -10319,9 +10867,9 @@ classes:
       object:
         range: biological process
 
-  chemical affects gene association:
+  chemical affects biological entity association:
     description: >-
-      Describes an effect that a chemical has on a gene or gene product (e.g. an impact
+      Describes an effect that a chemical has on a biological entity (e.g. an impact
       of on its abundance, activity,localization, processing, expression, etc.)
     is_a: association
     slots:
@@ -10360,7 +10908,7 @@ classes:
       qualified predicate:
         subproperty_of: causes
       object:
-        range: gene or gene product
+        range: biological entity
       object form or variant qualifier:
         range: ChemicalOrGeneOrGeneProductFormOrVariantEnum
       object part qualifier:
@@ -10378,6 +10926,17 @@ classes:
       species context qualifier:
         range: organism taxon
 
+  chemical affects gene association:
+    description: >-
+      Describes an effect that a chemical has on a gene or gene product (e.g. an impact
+      of on its abundance, activity,localization, processing, expression, etc.)
+    is_a: chemical affects biological entity association
+    slots:
+      - dgidb interaction score
+      - dgidb evidence score
+      - evidence count
+      - supporting documents
+
   gene affects chemical association:
     description: >-
       Describes an effect that a gene or gene product has on a chemical entity (e.g. an impact
@@ -10386,7 +10945,7 @@ classes:
       value:
         subject: TRPC4
         predicate: affects
-        qualified_predicte: causes
+        qualified_predicate: causes
         object: Barium
         object_aspect_qualifier: transport
         object_direction_qualifier: increased
@@ -11005,40 +11564,16 @@ classes:
           - value: ClinGen:CA024716
             description: "chr13:g.32921033G>C (hg19) in ClinGen"
 
-  gene to disease or phenotypic feature association:
+  gene to phenotypic feature association:
     is_a: association
-    mixins:
-      - entity to phenotypic feature association mixin
-      - gene to entity association mixin
-    narrow_mappings:
-      - WBVocab:Gene-Phenotype-Association
-      - dcid:DiseaseGeneAssociation
-      - SIO:000983
     slots:
+      - subject form or variant qualifier
       - subject aspect qualifier
       - object direction qualifier
-    slot_usage:
-      subject:
-        range: gene or gene product
-        description: "gene in which variation is correlated with the phenotypic feature"
-        examples:
-          - value: HGNC:2197
-            description: "COL1A1 (Human)"
-      subject aspect qualifier:
-        range: GeneOrGeneProductOrChemicalEntityAspectEnum
-      object:
-        range: disease or phenotypic feature
-      object direction qualifier:
-        range: DirectionQualifierEnum
-      predicate:
-        subproperty_of: affects
-    comments:
-      - NCIT:R176 refers to the inverse relationship
-      - for use in describing the affect that the loss of function of a gene can have on exacerbating or ameliorating a symptom/phenotype
-      - if the relationship of the statement using this predicate is statistical in nature, please use `associated with likelihood` or one of its children.
-
-  gene to phenotypic feature association:
-    is_a: gene to disease or phenotypic feature association
+      - allelic requirement
+    narrow_mappings:
+      - dcid:DiseaseGeneAssociation
+      - SIO:000983
     exact_mappings:
       - WBVocab:Gene-Phenotype-Association
     defining_slots:
@@ -11054,13 +11589,23 @@ classes:
         examples:
           - value: HGNC:2197
             description: "COL1A1 (Human)"
+      subject form or variant qualifier:
+        range: ChemicalOrGeneOrGeneProductFormOrVariantEnum
+      subject aspect qualifier:
+        range: GeneOrGeneProductOrChemicalEntityAspectEnum
       object:
         range: phenotypic feature
-
-  gene to disease association:
-    is_a: gene to disease or phenotypic feature association
+      object direction qualifier:
+        range: DirectionQualifierEnum
+      predicate:
+        range: GeneToPhenotypicFeaturePredicateEnum
     comments:
       - NCIT:R176 refers to the inverse relationship
+      - for use in describing the affect that the loss of function of a gene can have on exacerbating or ameliorating a symptom/phenotype
+      - if the relationship of the statement using this predicate is statistical in nature, please use `associated with likelihood` or one of its children.
+
+  gene to disease association:
+    is_a: association
     exact_mappings:
       - SIO:000983
     close_mappings:
@@ -11070,20 +11615,44 @@ classes:
       - object
     mixins:
       - gene to entity association mixin
+    slots:
+      - subject form or variant qualifier
+      - subject aspect qualifier
+      - object direction qualifier
+      - allelic requirement
+      - qualified predicate
+      - diseases confidence score
+      - gene2phenotype confidence category
     slot_usage:
       subject:
         range: gene or gene product
-        description: >-
-          gene in which variation is correlated with the disease,
-          may be protective or causative or associative, or as a model
+        description: "gene in which variation is correlated with the disease"
+      subject form or variant qualifier:
+        range: ChemicalOrGeneOrGeneProductFormOrVariantEnum
+      subject aspect qualifier:
+        range: GeneOrGeneProductOrChemicalEntityAspectEnum
+      object direction qualifier:
+        range: DirectionQualifierEnum
       object:
         range: disease
+      predicate:
+        range: GeneToDiseasePredicateEnum
+    comments:
+      - NCIT:R176 refers to the inverse relationship
+      - for use in describing the affect that the loss of function of a gene can have on exacerbating or ameliorating a disease
+      - if the relationship of the statement using this predicate is statistical in nature, please use `associated with likelihood` or one of its children.
 
   causal gene to disease association:
-    is_a: gene to disease association
+    is_a: association
     defining_slots:
       - subject
       - object
+    slots:
+      - subject form or variant qualifier
+      - subject aspect qualifier
+      - object direction qualifier
+      - allelic requirement
+      - qualified predicate
     mixins:
       - gene to entity association mixin
     slot_usage:
@@ -11095,10 +11664,19 @@ classes:
         range: disease
 
   correlated gene to disease association:
-    is_a: gene to disease association
+    is_a: association
     defining_slots:
       - subject
       - object
+      - predicate
+    slots:
+      - z score
+      - diseases confidence score
+      - subject form or variant qualifier
+      - subject aspect qualifier
+      - object direction qualifier
+      - allelic requirement
+      - qualified predicate
     mixins:
       - entity to disease association mixin
       - gene to entity association mixin
@@ -11109,9 +11687,13 @@ classes:
           gene in which variation is shown to correlate with the disease.
       object:
         range: disease
+      predicate:
+        subproperty_of: correlated with
 
   druggable gene to disease association:
     is_a: gene to disease association
+    slots:
+      - druggable gene category
     slot_usage:
       subject:
         range: gene or gene product
@@ -11121,8 +11703,6 @@ classes:
           this leads to a protective or improving disease state.
       predicate:
         subproperty_of: target for
-      has evidence:
-        range: DruggableGeneCategoryEnum
     defining_slots:
       - subject
       - object
@@ -11661,6 +12241,8 @@ classes:
     slots:
       - clinical approval status
       - max research phase
+      - FDA regulatory approvals
+      - number of cases
     defining_slots:
       - subject
       - object
@@ -11671,6 +12253,8 @@ classes:
     slots:
       - clinical approval status
       - max research phase
+      - FDA regulatory approvals
+      - number of cases
     defining_slots:
       - subject
       - object
@@ -11786,7 +12370,8 @@ classes:
       object direction qualifier:
         range: DirectionQualifierEnum
 
-  anatomical entity to anatomical entity association:   # schema: gocam
+  anatomical entity to anatomical entity association:
+    # schema: gocam
     is_a: association
     abstract: true
     defining_slots:
@@ -11798,14 +12383,42 @@ classes:
       object:
         range: anatomical entity
 
-  anatomical entity to anatomical entity part of association:
-     #      schema: gocam
+  anatomical entity has part anatomical entity association:
+     # schema: gocam
     is_a: anatomical entity to anatomical entity association
     description: >-
       A relationship between two anatomical entities where the relationship
-      is mereological, i.e the two entities are related by parthood. This
-      includes relationships between cellular components and cells, between
-      cells and tissues, tissues and whole organisms
+      is mereological, i.e the two entities are related by parthood, that is,
+      the subject is has the object entity as a part (the expected predicate is
+      "biolink:has_part" or suitable predicate slots inheriting from it, i.e.,
+      "biolink:has_plasma_membrane_part",  "biolink:has_variant_part", etc.).
+      This includes relationships between cells and cellular components,
+      between issues and cells, whole organisms and tissues.
+    defining_slots:
+      - predicate
+    slot_usage:
+      subject:
+        range: anatomical entity
+        description: >-
+          the whole
+      object:
+        range: anatomical entity
+        description: >-
+          the part
+      predicate:
+        subproperty_of: has part
+
+  anatomical entity part of anatomical entity association:
+     # schema: gocam
+    is_a: anatomical entity to anatomical entity association
+    description: >-
+      A relationship between two anatomical entities where the relationship
+      is mereological, i.e the two entities are related by parthood, that is,
+      the subject is a part of the object entity (the expected predicate is
+      "biolink:part_of" or suitable predicate slots inheriting from it, i.e.,
+      "biolink:plasma_membrane_part_of",  "biolink:variant_part_of", etc.).
+      This includes relationships between cellular components and cells,
+      between cells and tissues, tissues and whole organisms.
     defining_slots:
       - predicate
     slot_usage:
@@ -11840,6 +12453,32 @@ classes:
           the structure at an earlier time
       predicate:
         subproperty_of: develops from
+
+  gene or gene product or gene family to anatomical entity association:
+    is_a: association
+    description: >-
+      An association between a gene or gene product or gene family and an anatomical entity.
+    defining_slots:
+      - subject
+      - object
+    slot_usage:
+      subject:
+        range: gene or gene product or gene family
+      object:
+        range: anatomical entity
+
+  biological process or activity to anatomical entity association:
+    is_a: association
+    description: >-
+      An association between a biological process or activity and an anatomical entity.
+    defining_slots:
+      - subject
+      - object
+    slot_usage:
+      subject:
+        range: biological process or activity
+      object:
+        range: anatomical entity
 
   organism taxon to entity association:
     mixin: true
@@ -11943,6 +12582,14 @@ classes:
 
 enums:
 
+  BinaryRelationEnum:
+    description: >-
+      Mathematical binary relation qualifiers of a value in its context.
+    permissible_values:
+      less_than:
+      equal_to:
+      greater_than:
+
   ResponseEnum:
     description: >-
       A response to a treatment or intervention
@@ -12002,6 +12649,15 @@ enums:
         description: The recruitment or availability status is unknown.
       WITHDRAWN:
         description: The study was halted before enrolling its first participant.
+
+  ClinicalTrialAgeStageEnum:
+    description: >-
+      Enumeration of age stages or populations commonly used in clinical trials
+      to categorize participant demographics and target populations.
+    permissible_values:
+      adult:
+      child:
+      older_adult:
 
   ApprovalStatusEnum:
     description: >-
@@ -12133,6 +12789,17 @@ enums:
           In the FDA Clinical Trial Phase, the Clinical Trial Phase 1 involves 20 – 100 study participants and
           lasts several months. This phase is used to determine the safety and dosage of the drug,
           and about 70% of these drugs move on to the next clinical research phase.
+      clinical_trial_phase_1_to_2:
+        is_a: clinical_trial_phase
+        description: >-
+          A study that tests the safety, side effects, and best dose of a new treatment. Phase I/II
+          clinical trials also test how well a certain type of cancer or other disease responds to a
+          new treatment. In the phase II part of the clinical trial, patients usually receive the
+          highest dose of treatment that did not cause harmful side effects in the phase I part of
+          the clinical trial. Combining phases I and II may allow research questions to be answered
+          more quickly or with fewer patients. Also called phase 1/phase 2 clinical trial.
+        see_also:
+          - https://www.cancer.gov/publications/dictionaries/cancer-terms/def/phase-i-ii-clinical-trial
       clinical_trial_phase_2:
         is_a: clinical_trial_phase
         description: >-
@@ -12140,6 +12807,16 @@ enums:
           who must have the disease or condition the drug supposes to treat. This phase can last
           from a few months to two years, and its purpose is to monitor the efficacy of the drug,
           as well as note side effects that may occur.
+      clinical_trial_phase_2_to_3:
+        is_a: clinical_trial_phase
+        description: >-
+          A study that tests how well a new treatment works for a certain type of cancer or other
+          disease and compares the new treatment with a standard treatment. Phase II/III clinical
+          trials may also provide more information about the safety and side effects of the new
+          treatment. Combining phases II and III may allow research questions to be answered more
+          quickly or with fewer patients. Also called phase 2/phase 3 clinical trial.
+        see_also:
+          - https://www.cancer.gov/publications/dictionaries/cancer-terms/def/phase-ii-iii-clinical-trial
       clinical_trial_phase_3:
         is_a: clinical_trial_phase
         description: >-
@@ -12199,6 +12876,8 @@ enums:
         is_a: genetic_variant_form
       snp_form:
         is_a: polymorphic_form
+      mutant_form:
+        is_a: genetic_variant_form
       analog_form:
         is_a: modified_form
 
@@ -12228,9 +12907,8 @@ enums:
         is_a: abundance
       degradation:
       cleavage:
-        is_a: degradation
       hydrolysis:
-        is_a: degradation
+        is_a: cleavage
       metabolic_processing:
       mutation_rate:
       stability:
@@ -12241,6 +12919,7 @@ enums:
       aggregation:
       interaction:
       release:
+      isomerization:
       secretion:
         is_a: transport
       uptake:
@@ -12317,14 +12996,172 @@ enums:
 
   CausalMechanismQualifierEnum:
     permissible_values:
-      binding:
+      modulation:
         description: >-
-          A causal mechanism mediated by the direct contact between effector and target chemical or
-          biomolecular entity, which form a stable physical interaction.
+          A causal mechanism that effects the normal functioning of a protein in some way e.g., mixed agonist/antagonist or
+          unclear whether action is positive or negative
+      allosteric_modulation:
+        is_a: modulation
+        description: >-
+          A modulation mechanism that occurs when a chemical exerts an effect on a protein targets via a different
+          binding site than the natural ('orthosteric') ligand site.
+      mixed_allosteric_modulation:
+        is_a: allosteric_modulation
+        description: >-
+          An allosteric modulation mechanism that occurs when a chemical may exert an activating effect or an inhibitory effect
+          in different conditions / contexts (e.g. concentration, receptor conformational state, signaling pathway context,
+          receptor subtype, cellular environment).
+      biphasic_allosteric_modulation:
+        is_a: mixed_allosteric_modulation
+        description: >-
+          A mixed allosteric modulation mechanism that occurs when a chemical exerts an activating effect at lower concentrations,
+          and an inhibitory effect at higher concentrations.
+      mixed_agonism:
+        is_a: modulation
+        description: >-
+          An modulation mechanism in which the effector acts as both an agonist (activating a receptor) and an antagonist
+          (blocking a receptor) at different receptor sites.
+      positive_modulation:
+        is_a: modulation
+        description: >-
+          A modulation mechanism that positively effects the normal functioning of a target by increasing or enhancing
+          its activity or abundance, or its sensitivity to other factors that do so.
+      potentiation:
+        is_a: positive_modulation
+        description: >-
+          A positive modulation mechanism in which the effector binds to and enhances or intensifies the effect of some
+          other chemical or drug on its target.
+      induction:
+        is_a: positive_modulation
+        description: >-
+          A positive modulation mechanism in which the effector binds to and increases the activity/rate of an enzyme that
+          processes drugs in the body.
+        close_mappings:
+          - DGIdb:inducer
+      cofactor:
+        is_a: positive_modulation
+        description: >-
+          A positive modulation mechanism in which the effector (usually some non-protein chemical compound or metallic ion)
+          is required for a target enzyme's biological/catalytic activity.
+      activation:
+        is_a: positive_modulation
+        description: >-
+          A positive modulation mechanism in which the effector binds to and positively affects the normal functioning of its target.
+        close_mappings:
+          - CHEMBL.MECHANISM:activator
+          - DGIdb:activator
+      positive_allosteric_modulation:
+        is_a: activation
+        description: >-
+          A positive modulation mechanism in which the effector enhances the action of the endogenous ligand of a receptor by
+          binding to a site distinct from that ligand (i.e. non-competitive inhibition)
+        close_mappings:
+          - CHEMBL.MECHANISM:positive_allosteric_modulator
+          - CHEMBL.MECHANISM:positive_modulator
+          - DGIdb:positive_allosteric_modulator
+        broad_mappings:
+          - DGIdb:modulator
+          - DGIdb:allosteric_modulator
+      agonism:
+        is_a: activation
+        description: >-
+          An activation mechanism in which the effector binds and activates a receptor to mimic the effect of an
+          endogenous ligand.
+        close_mappings:
+          - CHEMBL.MECHANISM:agonist
+          - DGIdb:agonist
+        narrow_mappings:
+          - CHEMBL.MECHANISM:partial_agonist
+          - DGIdb:partial_agonist
+      partial_agonism:
+        is_a: agonism
+        description: >-
+          An agonism mechanism in which the effector binds to and only partially activates a receptor
+          (relative to the response to a full agonist)
+      biased_agonism:
+        is_a: agonism
+        description: >-
+          An agonism mechanism in which the effector  binds to a receptor and activates certain signaling
+          pathways while ignoring others, allowing it to produce a desired effect without unwanted side effects.
+      antibody_agonism:
+        is_a: agonism
+        description: >-
+          An agonism mechanism in which the effector is an antobody that binds and activates a receptor to mimic
+          the effect of an endogenous ligand.
+      molecular_channel_opening:
+        is_a: activation
+        description: >-
+          An activation mechanism in which the effector binds to a molecular channel and facilitates transport of
+          ions through it.
+        close_mappings:
+          - CHEMBL.MECHANISM:opener
+      stimulation:
+        is_a: activation
+        description: >-
+          An activation mechanism in which the effector directly or indirectly affects its target, stimulating a
+          physiological response.
+        close_mappings:
+          - DGIdb:stimulator
+          - SEMMEDDB:STIMULATES
+          - DGIdb:stimulator
+      guanyl_nucleotide_exchange:
+        is_a: activation
+        description: >-
+          An activation mechanism in which the effector catalyzes the exchange of guanosine diphosphate (GDP) for
+          guanosine triphosphate (GTP) in a guanine nucleotide-binding protein (G-protein).
+      negative_modulation:
+        is_a: modulation
+        description: >-
+          A modulation mechanism that negatively effects the normal functioning of a target by decreasing or impeding
+          its activity or abundance, or its sensitivity to other factors that do so.
+        narrow_mappings:
+          - DGIdb:negative_modulator
+      negative_gene_editing_modulation:
+        is_a: negative_modulation
+        description: >-
+          A negative modulation mechanism in which the effector elicits the negative modulation of its target through
+          a gene editing activity.
+      gtpase_activation:
+        is_a: negative_modulation
+        description: >-
+          An activation mechanism in which the effector accelerates the intrinsic GTPase activity of a G-protein,
+          promoting the conversion of the active, GTP-bound form to the inactive, GDP-bound form, thereby terminating
+          a signaling event. Note that this is a negative modulation mechanism because the target is the G-protein whose
+          activity is attenuated through gtpase activation.
+      atpase_activation:
+        is_a: negative_modulation
+        description: >-
+          An activation mechanism in which the effector accelerates the intrinsic ATPase activity of a target protein,
+          promoting the conversion of the active, ATP-bound form to the inactive, ADP-bound form, thereby terminating
+          a signaling event. Note that this is a negative modulation mechanism because the target is the protein whose
+          activity is attenuated through atpase activation.
+      antisense_oligonucleotide_inhibition:
+        is_a: negative_modulation
+        description: >-
+          A negative modulation mechanism in which an antisense oligonucleotide effector prevents translation of a complementary
+          mRNA sequence through binding and targeting it for degradation. Note that while this is called "inhibition', it is not
+          inhibition in the classic biochemical sense that requires a direct interaction between effector and target.
+      rna_interference_inhibition:
+        is_a: negative_modulation
+        description: >-
+          A negative modulation mechanism in which an effector small interfering RNA (siRNA) molecule finds and destroys
+          messenger RNA (mRNA) with a complementary sequence, preventing a specific gene from being translated into a protein.
+          Note that while this is called "inhibition', it is not inhibition in the classic biochemical sense that requires a direct
+          interaction between effector and target.
+      suppression:
+        is_a: negative_modulation
+        description: >-
+          A negative modulation mechanism in which the effector directly or indirectly affects its target, suppressing a
+          physiological process.
+      feedback_inhibition:
+        is_a: negative_modulation
+        description: >-
+          An negative modulation mechanism in which the end product of a metabolic pathway inhibits an enzyme early in that same pathway,
+          which stops the production of the final product when it's no longer needed.
       inhibition:
-        is_a: binding
+        is_a: negative_modulation
         description: >-
-          A causal mechanism in which the effector binds to the target and negatively effects its normal function,
+          A negative modulation mechanism in which the effector binds to the target and negatively effects its normal function,
           e.g. prevention of enzymatic reaction or activation of downstream pathway.
         close_mappings:
           - DGIdb:inhibitor
@@ -12342,111 +13179,280 @@ enums:
       antibody_inhibition:
         is_a: inhibition
         description: >-
-          A causal mechanism in which an antibody specifically binds to and interferes with the target.
+          An inhibition mechanism in which an antibody effector specifically binds to and interferes with the target.
       antagonism:
         is_a: inhibition
         description: >-
-          A causal mechanism in which the effector binds to a receptor and prevents activation by an agonist
+          An inhibition mechanism in which the effector binds to a receptor and prevents activation by an agonist
           through competing for the binding site.
         close_mappings:
           - DGIdb:antagonist
           - CHEMBL.MECHANISM:antagonist
         narrow_mappings:
           - CHEMBL.MECHANISM:allosteric_antagonist
+      allosteric_antagonism:
+        is_a: antagonism
+        description: >-
+          An inhibition mechanism in which the effector binds to a receptor at an allosteric site and prevents activation
+          by a positive allosteric modulator at that site.
+      non_competitive_antagonism:
+        is_a: antagonism
+        description: >-
+          An inhibition mechanism in which the effector binds a site distinct from the agonist's binding site (non-orthosteric),
+          or irreversibly/insurmountably inactivates the receptor - reduces the receptor’s maximal response (Emax) in a way that
+          cannot be overcome by adding more agonist.
+      competitive_inhibition:
+        is_a: inhibition
+        description: >-
+          An inhibition mechanism in which the effector binds to a target molecule (such as an enzyme) and prevents the binding
+          of a substrate (or another binding partner) and vice versa.
+      noncompetitive_inhibition:
+        is_a: inhibition
+        description: >-
+          An inhibition mechanism in which the effector binds to a target molecule (such as an enzyme) at a site other than the active
+          site, in a way that reduces the activity of the target.
+      negative_allosteric_modulation:
+        is_a: noncompetitive_inhibition
+        description: >-
+          A noncompetitive inhibition mechanism in which the effector reduces or prevents the action of the endogenous ligand of a
+          receptor by binding to a site distinct from that ligand, and causing a conformational change that affects ligand binding.
+        close_mappings:
+          - CHEMBL.MECHANISM:negative_allosteric_modulator
+          - DGIdb:inhibitory_allosteric_modulator
+      gating_inhibition:
+        is_a: inhibition
+        description: >-
+          An inhibition mechanism mediated by the transition of ion channels between their open (conducting) and closed
+          (non-conducting) conformational states.
+      irreversible_inhibition:
+        is_a: inhibition
+        description: >-
+          An inhibition mechanism in which an effector permanently binds to a target, permanently disrupting its activity.
       molecular_channel_blockage:
         is_a: inhibition
         description: >-
-          A causal mechanism in which the effector binds to a molecular channel and prevents or reduces
+          An inhibition mechanism in which the effector binds to a molecular channel and prevents or reduces
           transport of ions through it.
       inverse_agonism:
         is_a: inhibition
         description: >-
-          A causal mechanism in which the effector binds to the same receptor-binding site as an agonist and antagonizes
+          An inhibition mechanism in which the effector binds to the same receptor-binding site as an agonist and antagonizes
           its effects, often exerting the opposite effect of the agonist by suppressing spontaneous receptor signaling.
         close_mappings:
           - CHEMBL.MECHANISM:inverse_agonist
           - DGIdb:inverse_agonist
-      negative_allosteric_modulation:
-        is_a: inhibition
+      binding:
+        is_a: modulation
         description: >-
-          A causal mechanism in which the effector reduces or prevents the action of the endogenous ligand of a
-          receptor by binding to a site distinct from that ligand (i.e. non-competitive inhibition)
-        close_mappings:
-          - CHEMBL.MECHANISM:negative_allosteric_modulator
-          - DGIdb:inhibitory_allosteric_modulator
-        narrow_mappings:
-          - DGIdb:negative_modulator
-      agonism:
-        is_a: activation
+          A modulation mechanism mediated by the direct contact between effector and target chemical or
+          biomolecular entity, which form a stable physical interaction (typically non-covalent).
+      covalent_binding:
+        is_a: modulation
         description: >-
-          A causal mechanism in which the effector binds and activates a receptor to mimic the effect of an
-          endogenous ligand.
-        close_mappings:
-          - CHEMBL.MECHANISM:agonist
-          - DGIdb:agonist
-        narrow_mappings:
-          - CHEMBL.MECHANISM:partial_agonist
-          - DGIdb:partial_agonist
-      molecular_channel_opening:
-        is_a: activation
+          A modulation mechanism mediated by a direct covalent binding interaction between effector and target chemical or
+          biomolecular entity.
+      adduction:
+        is_a: covalent_binding
         description: >-
-          A causal mechanism in which the effector binds to a molecular channel and facilitates transport of
-          ions through it.
-        close_mappings:
-          - CHEMBL.MECHANISM:opener
-      positive_allosteric_modulation:
-        is_a: activation
+          A covalent binding mechanism in which a drug-protein adduct forms by the covalent binding of electrophilic drugs or their
+          reactive metabolite(s) to a target protein.
+      crosslinking:
+        is_a: covalent_binding
         description: >-
-          A causal mechanism in which the effector enhances the action of the endogenous ligand of a receptor by
-          binding to a site distinct from that ligand (i.e. non-competitive inhibition)
-        close_mappings:
-          - CHEMBL.MECHANISM:positive_allosteric_modulator
-          - CHEMBL.MECHANISM:positive_modulator
-          - DGIdb:positive_allosteric_modulator
-        broad_mappings:
-          - DGIdb:modulator
-          - DGIdb:allosteric_modulator
-      potentiation:
-        is_a: binding
+          A covalent binding mechanism in which an effector induces cross-linking of target proteins or nucleic acids - covalently joining them
+          into a rigid structure.
+      transglutamination:
+        is_a: covalent_binding
         description: >-
-          A causal mechanism in which the effector  binds to and enhances or intensifies the effect of some
-          other chemical or drug on its target.
-        close_mappings:
-      activation:
-        is_a: binding
+          A covalent binding mechanism involving formation of a covalent bond between a glutamine residue and an amine as catalyzed by a transglutaminase.
+      disuphide_binding:
+        is_a: covalent_binding
         description: >-
-          A causal mechanism in which the effector binds to and positively affects the normal functioning of its target.
-        close_mappings:
-          - CHEMBL.MECHANISM:activator
-          - DGIdb:activator
-      inducer:
-        is_a: binding
-        description: >-
-          A causal mechanism in which the effector binds to and increases the activity/rate of an enzyme that
-          processes drugs in the body.
-        close_mappings:
-          - DGIdb:inducer
-      transcriptional_regulation:
-        description: >-
-          A causal mechanism mediated by through the control of target gene transcription
-      signaling_mediated_control:
-        description: >-
-          A causal mechanism mediated by the activation or control of signaling events that influence the some aspect
-          of the target entity (e.g. its activity, processing, transport, etc)
+          A covalent binding mechanism involving a covalent bond formed between two cysteine residues in or between proteins.
       stabilization:
-        is_a: activation
+        is_a: modulation
+        description: >-
+          A modulation mechanism in which the effector increases the conformational stability of a protein or complex.
         close_mappings:
           - CHEMBL.MECHANISM:stabiliser
-      stimulation:
-        is_a: activation
-        close_mappings:
-          - DGIdb:stimulator
-          - SEMMEDDB:STIMULATES
-          - DGIdb:stimulator
-      releasing_activity:
-        is_a: activation
+      chaperone_mediated_stabilization:
+        is_a: stabilization
+        description: >-
+      destabilization:
+        is_a: modulation
+        description: >-
+          A modulation mechanism in which a chaperone molecule directly binds to a partially folded biosynthetic intermediate to stabilize
+          the protein and allow it to complete the folding process to yield a functional protein.
+      degradation:
+        is_a: modulation
+        description: >-
+          A modulation mechanism that controls protein and cellular component levels through the regulated breakdown and recycling of molecules.
+      cleavage:
+        is_a: modulation
+        description: >-
+          A modulation mechanism in which an effector promotes degeneration of the target protein through cleaving of the peptide bonds.
+      hydrolysis:
+        is_a: modulation
+        description: >-
+          A modulation mechanism in which an effector cleaves its target through a chemical reaction where a molecule of water is used to
+          break a bond.
+      disruption:
+        is_a: modulation
+        description: >-
+          A modulation mechanism in which an effector destabilizes or disrupts a protein complex, macromolecular assembly, cell membrane etc.
+      opening:
+        is_a: modulation
+        description: >-
+          A modulation mechanism in which an effector positively effects the normal functioning of an ion channel e.g., facilitates transport
+          of ions through the channel.
+      multitarget_modulation:
+        is_a: modulation
+        description: >-
+          A modulation mechanism in which an effector achieves a physiological effect through simultaneous interaction with multiple gene targets.
+      chelation:
+        is_a: modulation
+        description: >-
+          A modulation mechanism in which an effector binds to a metal ion target, reducing its availability/reactivity for further interactions.
+      release:
+        is_a: modulation
+        description: >-
+          A modulation mechanism in which an effector reverses the normal functioning of a transporter, causing release of the substrate, rather than uptake
         close_mappings:
           - CHEMBL:MECHANISM:releasing_agent
+      sequestration:
+        is_a: modulation
+        description: >-
+          A modulation mechanism in which an effector binds to a substance such as a drug, toxin or metabolite and reduces its availability for
+          further interactions.
+      oxidoreduction:
+        is_a: modulation
+        description: >-
+          A modulation mechanism in which in which electrons are transferred between molecules catalyzed by an oxidoreductase enzyme.
+      exogenous_protein:
+        is_a: modulation
+        description: >-
+          A modulation mechanism in which a protein from an exogenous source acts as a substitute or supplement for a specific protein which is
+          absent or has reduced function in an affected target/subject.
+      exogenous_gene:
+        is_a: modulation
+        description: >-
+          A modulation mechanism in which a nucleic acid from an exogenous source acts as a substitute or supplement for a specific gene which
+          is absent or has reduced function in an affected target/subject.
+      transcriptional_regulation:
+        is_a: modulation
+        description: >-
+          A modulation mechanism mediated by through the control of target gene transcription.
+      translational_regulation:
+        is_a: modulation
+        description: >-
+          A modulation mechanism mediated by through the control of target gene translation.
+      catalytic_activity:
+        is_a: modulation
+        description: >-
+          A modulation mechanism mediated by through the catalytic activity of the effector on the target.
+      chemical_modification:
+        is_a: modulation
+        description: >-
+          A modulation mechanism mediated by a protein/complex effector altering a small molecule by modifying it or
+          converting it to something else.
+      relocalization:
+        is_a: modulation
+        description: >-
+          A modulation mechanism mediated by an effector that alters the localization of a target in the cell or body.
+      isomerization:
+        is_a: modulation
+        description: >-
+          A modulation mechanism mediated by an effector that alters the isomeric conformation of a target.
+      signaling_mediated_control:
+        is_a: modulation
+        description: >-
+          A modulation mechanism mediated by the activation or control of signaling events that influence the some aspect
+          of the target entity (e.g. its activity, processing, transport, etc.).
+      immune_system_modulation:
+        is_a: modulation
+        description: >-
+          A modulation mechanism in which the actions of the effector on the immune system ultimately mediate the affects a target.
+      vaccine_antigen:
+        is_a: immune_system_modulation
+        description: >-
+          An immune system modulation mechanism in which a vaccine mediates its effect through the activation of the immune
+          system against the target.
+      post_transcriptional_regulation:
+        is_a: modulation
+        description: >-
+          A modulation mechanism which controls expression of a target gene at the RNA level after a gene has been transcribed
+          into messenger RNA (mRNA).
+      molecular_modification:
+        is_a: modulation
+        description: >-
+          A modulation mechanism through which an effect is mediated by the modification of a target, through addition
+          of chemical moieties such phosphate groups, ubiquitin, lipids, etc., which alter its activity or cellular behavior.
+      phosphorylation:
+        is_a: molecular_modification
+      dephosphorylation:
+        is_a: molecular_modification
+      neddylation:
+        is_a: molecular_modification
+      deneddylation:
+        is_a: molecular_modification
+      lipidation:
+        is_a: molecular_modification
+      palmitoylation:
+        is_a: lipidation
+      myristoylation:
+        is_a: lipidation
+      tyrosination:
+        is_a: molecular_modification
+      carboxylation:
+        is_a: molecular_modification
+      ubiquitination:
+        is_a: molecular_modification
+      monoubiquitination:
+        is_a: ubiquitination
+      polyubiquitination:
+        is_a: ubiquitination
+      deubiquitination:
+        is_a: molecular_modification
+      sulfation:
+        is_a: molecular_modification
+      reduction:
+        is_a: molecular_modification
+        description: >-
+          A molecular modification mechanism in which an effector modifies a target substrate via a reduction reaction.
+      oxidation:
+        is_a: molecular_modification
+        description: >-
+          A molecular modification mechanism in which an effector modifies a target substrate via an oxidation reaction.
+      acetylation:
+        is_a: molecular_modification
+      deacetylation:
+        is_a: molecular_modification
+      glycosylation:
+        is_a: molecular_modification
+      deglycosylation:
+        is_a: molecular_modification
+      methylation:
+        is_a: molecular_modification
+      trimethylation:
+        is_a: methylation
+      demethylation:
+        is_a: molecular_modification
+      sumoylation:
+        is_a: molecular_modification
+      desumoylation:
+        is_a: molecular_modification
+      ADP-ribosylation:
+        is_a: molecular_modification
+      de-ADP-ribosylation:
+        is_a: molecular_modification
+      ampylation:
+        is_a: molecular_modification
+        description: >-
+          A molecular modification involving the addition of an adenylyl (AMP) moiety to a substrate protein residue.
+      hydroxylation:
+        is_a: molecular_modification
+      s_nitrosylation:
+        is_a: molecular_modification
 
   LogicalInterpretationEnum:
     permissible_values:
@@ -12512,9 +13518,8 @@ enums:
         description: >-
           These targets do not have known drug or small molecule activities that satisfy the activity
           thresholds detailed below AND satisfy one or more of the following criteria:
-          target is above the cutoff criteria for Tdark
-          target is annotated with a Gene Ontology Molecular Function or Biological Process leaf term(s)
-          with an Experimental Evidence code
+          target is above the cutoff criteria for the target is annotated with a
+          Gene Ontology Molecular Function or Biological Process leaf term(s) with an Experimental Evidence code
       "tdark":
         description: >-
           These are targets about which virtually nothing is known. They do not have known drug or small
@@ -12535,10 +13540,16 @@ enums:
 
   DrugDeliveryEnum:
     permissible_values:
-      "inhalation":
-      "oral":
-      "absorption_through_the_skin":
-      "intravenous_injection":
+      inhalation:
+      oral:
+      absorption_through_the_skin:
+      injection:
+      intravenous_injection:
+        is_a: injection
+      subcutaneous_injection:
+        is_a: injection
+      intramuscular_injection:
+        is_a: injection
 
   ResourceRoleEnum:
     description: >-
@@ -12555,19 +13566,38 @@ enums:
       - translator_minimal
 
   AffinityParameterEnum:
-    description: >- 
-      The types of parameters that can be used to describe the affinity between two entities, characteristically chemicals and proteins.
+    description: >-
+      The types of parameters that can be used to describe the affinity between two entities,
+      characteristically chemicals and proteins. The values are generally 
+      stated as the negative base 10 logarithm of the raw measurements.
     permissible_values:
       "pIC50":
         description: >-
-          Negative logarithm of the molar concentration of a chemical that produces a 50% inhibition of a function
+          Negative base 10 logarithm of the the inhibitory concentration 50% (IC50)
+          measures the concentration needed to block or inhibit a biological response.
       "pEC50":
         description: >-
-          Negative logarithm of the molar concentration of a chemical that produces a 50% excitation of a function
+          Negative base 10 logarithm of the molar concentration of
+          a chemical that produces a 50% excitation of a function
       "pAC50":
       "pXC50":
       "pKi":
+        description: >-
+          Negative base 10 logarithm of the equilibrium binding affinity for a ligand that reduces
+          the activity of its binding partner. Ki represents the concentration at which the
+          inhibitor ligand occupies 50% of the receptor sites when no competing ligand is present
+      "pKon":
+        description: >-
+          Negative base 10 logarithm of the association rate constant (Kon) describes
+          the rate at which molecules bind to each other.
+      "pKoff":
+        description: >-
+          Negative base 10 logarithm of the dissociation rate constant (koff) describes
+          the rate at which they dissociate.
       "pKd":
+        description: >-
+          Negative base 10 logarithm of the equilibrium dissociation constant (KD) which
+          is a measure of the binding affinity and is defined as the ratio of koff to kon.
 
   FDAIDAAdverseEventEnum:
     description: >-
@@ -12620,29 +13650,29 @@ enums:
         description: >-
           A human agent who is responsible for generating a statement of
           knowledge. The human may utilize computationally generated
-          information as evidence for the resulting knowledge, 
-          but the human is the one who ultimately interprets/reasons with 
+          information as evidence for the resulting knowledge,
+          but the human is the one who ultimately interprets/reasons with
           this evidence to produce a statement of knowledge.
       automated_agent:
         description: >-
-          An automated agent, typically a software program or tool, that is 
-          responsible for generating a statement of knowledge. Human contribution 
+          An automated agent, typically a software program or tool, that is
+          responsible for generating a statement of knowledge. Human contribution
           to the knowledge creation process ends with the definition and coding
           of algorithms or analysis pipelines that get executed by the automated
           agent.
       data_analysis_pipeline:
         is_a: automated_agent
         description: >-
-          An automated agent that executes an analysis workflow over data and 
-          reports the direct results of the analysis. These typically report 
+          An automated agent that executes an analysis workflow over data and
+          reports the direct results of the analysis. These typically report
           statistical associations/correlations between variables in the input
           dataset, and do not interpret/infer broader conclusions from associations
           the analysis reveals in the data.
         notes: >-
-          If an analysis pipeline includes any rules for generating broader 
+          If an analysis pipeline includes any rules for generating broader
           conclusions based on the dataset-specific statistical correlations
-          it calculates (e.g. create a 'treats' edge when the analysis reveals a 
-          drug-disease correlation in the data with statistical scores that meet a 
+          it calculates (e.g. create a 'treats' edge when the analysis reveals a
+          drug-disease correlation in the data with statistical scores that meet a
           certain threshold) - we would consider this agent to be a Computational Model
           rather than just a Data Analysis Pipeline.
       computational_model:
@@ -12650,23 +13680,23 @@ enums:
         description: >-
           An automated agent that generates knowledge statements (typically
           predictions) based on rules/logic explicitly encoded in an algorithm
-          (e.g. heuristic models, supervised classifiers), or learned from patterns 
+          (e.g. heuristic models, supervised classifiers), or learned from patterns
           observed in data (e.g. ML models, unsupervised classifiers).
         notes: >-
-          The bar is quite low relatively for what is considered to be a 
-          ‘computational model’ by our definition. Even agents/tools that apply 
+          The bar is quite low relatively for what is considered to be a
+          ‘computational model’ by our definition. Even agents/tools that apply
           simple rules or logic to the output of an ingest or analysis pipeline
-          to allow for a stronger or more general conclusion to be stated can 
-          qualify an agent as a model. For example, an ingest pipeline that applies rules to its ingest of 
-          clinical trials data to create a 'treats' prediction edge when the 
+          to allow for a stronger or more general conclusion to be stated can
+          qualify an agent as a model. For example, an ingest pipeline that applies rules to its ingest of
+          clinical trials data to create a 'treats' prediction edge when the
           source reports a drug to be in phase 2 or 3 trials represents a
           computational model because it is automatically drawing a stronger
           conclusion than the source reports, based on logic encoded in the ingest
-          pipeline. Similarly, a data analysis pipeline that is extended with rules to 
+          pipeline. Similarly, a data analysis pipeline that is extended with rules to
           automatically generate broader conclusions based on dataset-specific
           statistical correlations (e.g. create a 'treats' edge when the analysis
-          reveals a drug-disease correlation in the data with statistical scores 
-          that meet a certain threshold), would also qualify as a computational 
+          reveals a drug-disease correlation in the data with statistical scores
+          that meet a certain threshold), would also qualify as a computational
           model by our definition.
       text_mining_agent:
         is_a: automated_agent
@@ -12675,34 +13705,34 @@ enums:
           concepts and/or relationships in text, and report them using formally
           encoded semantics (e.g. as an edge in a knowledge graph).
         notes: >-
-          The original statement in the source text is typically made by a human / 
+          The original statement in the source text is typically made by a human /
           manual agent, but if a specific encoding of this knowledge is produced
           by a text-mining tool, it has an agent_type of 'text_mining_agent'.
           Examples of text mining agents include SemmedDB, and the Translator
-          Text-Mining Knowledge Provider. Note that text-mining tools are prone to erroneous interpretation of 
-          concepts and relationships, and can fail to provide important details 
+          Text-Mining Knowledge Provider. Note that text-mining tools are prone to erroneous interpretation of
+          concepts and relationships, and can fail to provide important details
           about the context in which the original knowledge was reported - so
           users should always consult the source text for a text-mined statement
           to assess its veracity and relevance.
       image_processing_agent:
         is_a: automated_agent
         description: >-
-          An automated agent that processes images to generate textual statements of 
-          knowledge derived from the image and/or expressed in text the image 
+          An automated agent that processes images to generate textual statements of
+          knowledge derived from the image and/or expressed in text the image
           depicts (e.g. via OCR).
       manual_validation_of_automated_agent:
         description: >-
-          A human agent reviews and validates/approves the veracity of knowledge 
+          A human agent reviews and validates/approves the veracity of knowledge
           that is initially generated by an automated agent.
         notes: >-
           This term applies when a human was only involved in evaluating the veracity
-          of a knowledge statement that was generated by an automated agent. It is 
+          of a knowledge statement that was generated by an automated agent. It is
           important to indicate when such manual review has occurred, because it can
           give a user more confidence in an automated statement.
       not_provided:
         description: >-
           The agent type is not provided, typically because it cannot be determined
-          from available information if the agent that generated the knowledge is 
+          from available information if the agent that generated the knowledge is
           manual or automated.
     in_subset:
       - translator_minimal
@@ -12713,11 +13743,11 @@ enums:
         aliases: ['assertion']
         description: >-
           A statement of purported fact that is put forth by an agent as true,
-          based on assessment of direct evidence. Assertions are likely but not 
+          based on assessment of direct evidence. Assertions are likely but not
           definitively true.
         notes: >-
           Knowledge Assertions are supported by direct evidence deemed sufficient
-          by some agent to support a confidence assertion of truth. Our certainty 
+          by some agent to support a confidence assertion of truth. Our certainty
           in this truth is not absolute, but is typically higher than for Predictions.
       logical_entailment:
         aliases: ['deductive_inference']
@@ -12727,11 +13757,11 @@ enums:
           part of finger, finger part of hand --> fingernail part of hand).
         notes: >-
           These statements report entailed conclusions derived through dedictive inference.
-          They are not directly asserted by a source, but logically follow from statement(s) 
-          a source does make - and are necessarily true if their supporting premises are true. 
-          In practice, these will primarily be entailments based on logic encoded in ontologies. 
+          They are not directly asserted by a source, but logically follow from statement(s)
+          a source does make - and are necessarily true if their supporting premises are true.
+          In practice, these will primarily be entailments based on logic encoded in ontologies.
           Examples include propagation of annotated knowledge to hierarchically-related concepts,
-          across paths through a graph constructed from transitive relationships, or sets of 
+          across paths through a graph constructed from transitive relationships, or sets of
           relationships that support property chain inference.
       prediction:
         aliases: ['hypothesis']
@@ -12743,9 +13773,9 @@ enums:
           inductive and deductive inference, or statistical inference where conclusions
           are drawn about a broader/global population based on data from a representative
           cohort. For example, a prediction that a drug may treat a particular disease based on its chemical
-          similarity to known drugs that treat the disease, and the fact that it can inhibit proteins 
+          similarity to known drugs that treat the disease, and the fact that it can inhibit proteins
           in a pathway that is associated with the disease
-          As Predictions are based on weaker forms of inference and evidence, they are typically 
+          As Predictions are based on weaker forms of inference and evidence, they are typically
           considered lower confidence statements as compared to Knowledge Assertions and Logical
           Entailments.
       statistical_association:
@@ -12755,26 +13785,35 @@ enums:
           is correlated with Diabetes Diagnosis (variable 2) in EHR dataset X').
         notes: >-
           Such statements report the direct results of some statistical analysis. Their scope is limited
-          tp the cohort/dataset interrogated in the analysis, and they do not make broader claims or draw 
-          more meaningful conclusions about the domain of discourse. Note however that such Statistical 
-          Associations can be used as evidence to support a more pointed/precise Prediction or Assertion 
+          tp the cohort/dataset interrogated in the analysis, and they do not make broader claims or draw
+          more meaningful conclusions about the domain of discourse. Note however that such Statistical
+          Associations can be used as evidence to support a more pointed/precise Prediction or Assertion
           of knowledge. For example, e.g. a Statistical Association between 'Metformin Prescription' and
-          'Diabetes Diagnosis' in EHR records could support a Prediction that 'Metformin treats Diabetes', 
-          or 'Metformin causes Diabetes'. This 'treats' edge may have a knowledge_level of 'Prediction', 
-          but the provider could use the 'evidence_type' edge property to indicate that this prediction is 
-          based on a 'Statistical Association'. Because Statistical Associations directly report analysis-specific 
-          results, we can consider them to be inherently true statements, whose broader utility is dependent on 
-          subsequent generalization of the reported result to a broader population, and/or interpretation of the 
+          'Diabetes Diagnosis' in EHR records could support a Prediction that 'Metformin treats Diabetes',
+          or 'Metformin causes Diabetes'. This 'treats' edge may have a knowledge_level of 'Prediction',
+          but the provider could use the 'evidence_type' edge property to indicate that this prediction is
+          based on a 'Statistical Association'. Because Statistical Associations directly report analysis-specific
+          results, we can consider them to be inherently true statements, whose broader utility is dependent on
+          subsequent generalization of the reported result to a broader population, and/or interpretation of the
           result as support for a more meaningful statements about the domain of discourse.
+      text_co_occurrence:
+        description: >-
+          A statement reporting that mentions of two concepts in some corpus of text (e.g. the biomedical literature)
+          occur together at a statistically significant frequency - suggesting that a real-world biological or clinical
+          relationship may exist between the concepts.
+        notes: >-
+          Such statements often utilize NLP/text-mining to identify concept mentions in text, but the reported statement is
+          generated by a data analysis pipeline that performs calculations on mention counts and determines the strength
+          of their correlation.
       observation:
         description: >-
-          A statement reporting (and possibly quantifying) a phenomenon that was observed to occur - 
+          A statement reporting (and possibly quantifying) a phenomenon that was observed to occur -
           absent any analysis or interpretation that generates a statistical association or supports
           a broader conclusion or inference.
         notes: >-
           An observation that "56362 people self-reported taking melatonin to treat migraines"
           is agnostic to whether melatonin is an effective or approved treatment - it only claims that it was
-          taken for this purpose. Such observations, however, may be used as the basis for predicting that a 
+          taken for this purpose. Such observations, however, may be used as the basis for predicting that a
           drug may be efficacious against a disease.
       not_provided:
         description: >-
@@ -12782,7 +13821,25 @@ enums:
           information.
         notes: >-
           This term is most often applied for text-mined edges, as NLP tools are typically not able to detect
-          a specific knowledge level for the concept relationships they extract (e.g. whether the author 
+          a specific knowledge level for the concept relationships they extract (e.g. whether the author
           was predicting or asserting a relationship, or merely observed it to occur).
     in_subset:
       - translator_minimal
+
+  GeneToPhenotypicFeaturePredicateEnum:
+    description: >-
+      Enumeration of predicates permissible for use in gene to phenotypic feature associations.
+      This constrains the relationship types that can be used between genes and phenotypic features.
+    permissible_values:
+      "biolink:causes":
+      "biolink:contributes_to":
+      "biolink:associated_with":
+      "biolink:has_phenotype":
+
+  GeneToDiseasePredicateEnum:
+    description: >-
+      Enumeration of predicates permissible for use in gene to disease associations.
+      This constrains the relationship types that can be used between genes and diseases.
+    permissible_values:
+      "biolink:contributes_to":
+      "biolink:associated_with":

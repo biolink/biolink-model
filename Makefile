@@ -7,6 +7,7 @@ SHELL := bash
 .SECONDARY:
 
 RUN = poetry run
+export PYTHONWARNINGS=ignore::UserWarning:linkml.utils.generator,ignore::UserWarning:linkml_runtime.Namespaces,ignore::UserWarning
 # get values from about.yaml file
 SCHEMA_NAME = $(shell ${SHELL} ./utils/get-value.sh name)
 SOURCE_SCHEMA_PATH = $(shell ${SHELL} ./utils/get-value.sh source_schema_path)
@@ -105,6 +106,7 @@ spell:
 
 gen-project: $(PYMODEL)
 	cp biolink-model.yaml src/biolink_model/schema/biolink_model.yaml
+	cp attributes.yaml src/biolink_model/schema/attributes.yaml
 	# keep these in sync between PROJECT_FOLDERS and the includes/excludes for gen-project and test-schema
 	$(RUN) gen-project \
 		--exclude excel \
@@ -127,11 +129,12 @@ gen-project: $(PYMODEL)
 	$(RUN) gen-pydantic --meta None src/biolink_model/schema/biolink_model.yaml > $(PYMODEL)/pydanticmodel_v2.py
 	$(RUN) gen-owl --mergeimports --no-metaclasses --no-type-objects --add-root-classes --mixins-as-expressions src/biolink_model/schema/biolink_model.yaml > $(DEST)/owl/biolink_model.owl.ttl
 	cp biolink-model.yaml src/biolink_model/schema/biolink_model.yaml
+	cp attributes.yaml src/biolink_model/schema/attributes.yaml
 	cp project/prefixmap/*.json src/biolink_model/prefixmaps/
 	$(MAKE) id-prefixes
 
 tests:
-	cp biolink-model.yaml src/biolink_model/schema/biolink_model.yaml
+	cp biolink-model.yaml src/biolink_model/schema/biolink_model.yamlO
 	$(RUN) python -m unittest discover -p 'test_*.py'
 	$(RUN) codespell
 	$(RUN) yamllint -c .yamllint-config biolink-model.yaml
@@ -190,6 +193,7 @@ gen-viz:
 gendoc: $(DOCDIR)
 	# put the model where it needs to go in order to generate the doc correctly
 	cp biolink-model.yaml src/biolink_model/schema/biolink_model.yaml ; \
+	cp attributes.yaml src/biolink_model/schema/attributes.yaml ; \
 	# this generates the data structure required for the d3 visualizations
 	$(RUN) generate_viz_json ; \
 	# DO NOT REMOVE: these cp statements are crucial to maintain the w3 ids for the model artifacts
@@ -205,7 +209,9 @@ gendoc: $(DOCDIR)
 	cp semmed-exclude-list.yaml $(DOCDIR) ; \
 	cp semmed-exclude-list-model.yaml $(DOCDIR) ; \
 	cp predicate_mapping.yaml $(DOCDIR) ; \
-	cp biolink-model.yaml $(DOCDIR) ; \
+	# Copy biolink-model.yaml and replace local imports with remote URLs for deployment
+	sed 's|^  - attributes$$|  - https://w3id.org/biolink/biolink-model/attributes|' biolink-model.yaml > $(DOCDIR)/biolink-model.yaml ; \
+	cp attributes.yaml $(DOCDIR) ; \
 	cp $(SRC)/docs/*md $(DOCDIR) ; \
 	cp -r $(SRC)/docs/images $(DOCDIR)/images ; \
 	# the .json cp here is the data required for the d3 visualizations

@@ -1,5 +1,63 @@
 CHANGES
 =======
+4.3.7
+----
+## What's Changed
+
+**Full Changelog**: https://github.com/biolink/biolink-model/compare/v4.3.6...v4.3.7
+
+4.3.6
+----
+## What's Changed
+* Fix Claude action authentication to use github_token instead of OAuth app by @Copilot in https://github.com/biolink/biolink-model/pull/1651
+* Ctkp additions by @sierra-moxon in https://github.com/biolink/biolink-model/pull/1652
+* add chembl specific terms to chemicalentity by @sierra-moxon in https://github.com/biolink/biolink-model/pull/1653
+* fix date to string because input data isn't a date by @sierra-moxon in https://github.com/biolink/biolink-model/pull/1654
+* add missing edge properties for DAKP by @sierra-moxon in https://github.com/biolink/biolink-model/pull/1655
+* Dgidb updates by @colleenXu in https://github.com/biolink/biolink-model/pull/1656
+* Ctd round 2 additions by @sierra-moxon in https://github.com/biolink/biolink-model/pull/1658
+
+**Full Changelog**: https://github.com/biolink/biolink-model/compare/v4.3.5...v4.3.6
+
+4.3.5
+----
+## What's Changed
+* Add species context qualifier to ChemicalToChemicalAssociation species context qualifier by @mbrush in https://github.com/biolink/biolink-model/pull/1637
+* added feature names to Association slots by @RichardBruskiewich in https://github.com/biolink/biolink-model/pull/1638
+* Extend attributes.yaml with DGIdb properties by @mbrush in https://github.com/biolink/biolink-model/pull/1640
+* Add intact confidence value attribute by @mbrush in https://github.com/biolink/biolink-model/pull/1641
+* make supporting study method type multivalued by @mbrush in https://github.com/biolink/biolink-model/pull/1642
+* add clinical trial properties needed for CTKP by @sierra-moxon in https://github.com/biolink/biolink-model/pull/1643
+* adjust ChemicalGeneInteractionAssociation by @colleenXu in https://github.com/biolink/biolink-model/pull/1639
+* add 'taxon' node property by @sierra-moxon in https://github.com/biolink/biolink-model/pull/1644
+* revised-exposures-class-models by @RichardBruskiewich in https://github.com/biolink/biolink-model/pull/1646
+* Chembl ingest by @sierra-moxon in https://github.com/biolink/biolink-model/pull/1648
+
+
+4.3.4
+----
+## What's Changed
+* has supporting study result should be plural for model semantic consistency by @RichardBruskiewich in https://github.com/biolink/biolink-model/pull/1632
+* study-result-model by @RichardBruskiewich in https://github.com/biolink/biolink-model/pull/1636
+* affects response to fixes by @sierra-moxon in https://github.com/biolink/biolink-model/pull/1628
+**Full Changelog**: https://github.com/biolink/biolink-model/compare/v4.3.3...v4.3.4
+
+4.3.3
+----
+## What's Changed
+* Added one slightly broader mixin (gene or gene product or gene family) plus an additional set of Association definitions to support extra broad stroke biological relationships for the Panther ingest (from gene classifications parsed in by automat-panther) by @RichardBruskiewich in https://github.com/biolink/biolink-model/pull/1610
+* Added missing biolink association "biological process or activity to gene or gene product or gene family association" by @RichardBruskiewich in https://github.com/biolink/biolink-model/pull/1611
+* add chemical affects biological entity association and refactor chemi… by @sierra-moxon in https://github.com/biolink/biolink-model/pull/1614
+* Clinical trials 1 2 by @sierra-moxon in https://github.com/biolink/biolink-model/pull/1615
+* Slots for automat by @sierra-moxon in https://github.com/biolink/biolink-model/pull/1616
+* Update attributes.yaml by @mbrush in https://github.com/biolink/biolink-model/pull/1617
+* Add mutant_form tform  or variant enum by @mbrush in https://github.com/biolink/biolink-model/pull/1620
+* deprecate 'assesses' / 'was tested for effect on' by @mbrush in https://github.com/biolink/biolink-model/pull/1622
+* Curies version bump by @sierra-moxon in https://github.com/biolink/biolink-model/pull/1626
+* Fixing issues with `affects_response_to` predicates by @mbrush in https://github.com/biolink/biolink-model/pull/1625
+* Added ICEES related Study Result class and slots, with some rearrangement in definition ordering for readability by @RichardBruskiewich in https://github.com/biolink/biolink-model/pull/1629
+**Full Changelog**: https://github.com/biolink/biolink-model/compare/v4.3.2...v4.3.3
+
 4.2.6-rc5
 ----
 * Add FMA by @cbizon in https://github.com/biolink/biolink-model/pull/1554
@@ -467,7 +525,7 @@ Update actions to use github user
 2.2.10
 ------
 mapping fixes - remove obsolete mappings, swap text based mappings with ids where applicable
-add associated with predicate along with associated with sensitivity to predicates. 
+add associated with predicate along with associated with sensitivity to predicates.
 
 2.2.9
 -----
@@ -592,7 +650,7 @@ Added predicates for increase/decrease expression predicates, opposite of predic
 domain for treats and transcription/translation predicates
 Domain/range changes for 'interacts with' predicate
 Add owlstart enumerations for logical interpretations
-Fixed part of the documentation bug for 'types' (linkml changes in progress), added environmental context 
+Fixed part of the documentation bug for 'types' (linkml changes in progress), added environmental context
 as another doc fix
 Bump urllib to 1.26.3
 Added last broad mappings from wikidata to the model
