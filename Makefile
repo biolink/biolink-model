@@ -252,4 +252,20 @@ clean:
 	rm -fr docs/*
 	rm -fr $(PYMODEL)/*
 
+# ── Entity matrix and coverage heatmap ──
+TRANSLATOR_INGESTS_DATA ?= ../translator-ingests/data
+
+entity-matrix: biolink_entity_matrix.xlsx ## Generate entity matrix spreadsheet with ingest coverage and edge example comments
+biolink_entity_matrix.xlsx: biolink-model.yaml scripts/generate_entity_matrix.py
+	uv run python scripts/generate_entity_matrix.py \
+		--schema $< \
+		--output $@ \
+		--local-data $(TRANSLATOR_INGESTS_DATA)
+
+coverage-heatmap: src/docs/coverage_heatmap.html ## Generate interactive ingest coverage heatmap
+src/docs/coverage_heatmap.html: biolink_entity_matrix.xlsx scripts/generate_coverage_heatmap.py
+	uv run python scripts/generate_coverage_heatmap.py \
+		--input $< \
+		--output $@
+
 include project.Makefile
