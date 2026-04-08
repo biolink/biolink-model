@@ -2755,7 +2755,7 @@ slots:
       - SEMMEDDB:INTERACTS_WITH
     notes: >-
       please use a more specific child predicate of interacts with, either physically interacts with
-      or genetically interacts with.
+      or .
 
   physically interacts with:
     is_a: interacts with
@@ -2833,6 +2833,21 @@ slots:
     symmetric: true
     exact_mappings:
       - RO:0002435
+
+  pharmacologically interacts with:
+    is_a: interacts with
+    description: >-
+      holds between two pharmacologically active chemicals (typcially drugs), where one alters
+      the availability, efficacy, or toxicity of the other in the body when taken simultaneously 
+      - typically by altering how the body processes the chemical (pharmacokinetics) or how the
+      chemical acts on the body (pharmacodynamics).
+    domain: chemical entity
+    range: chemical entity
+    in_subset:
+      - translator_minimal
+    annotations:
+      canonical_predicate: true
+    symmetric: true
 
   gene_fusion_with:
     is_a: genetically interacts with
