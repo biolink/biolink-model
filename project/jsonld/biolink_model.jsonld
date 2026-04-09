@@ -7371,7 +7371,7 @@
       "definition_uri": "https://w3id.org/biolink/vocab/interacts_with",
       "description": "holds between any two entities that directly or indirectly interact with each other",
       "notes": [
-        "please use a more specific child predicate of interacts with, either physically interacts with or genetically interacts with."
+        "Please use a more specific child predicate of interacts with, either physically interacts with  or genetically interacts with or pharmacologically interacts with."
       ],
       "in_subset": [
         "translator_minimal"
@@ -7535,6 +7535,34 @@
       "owner": "genetically_interacts_with",
       "symmetric": true,
       "range": "Gene",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "pharmacologically_interacts_with",
+      "definition_uri": "https://w3id.org/biolink/vocab/pharmacologically_interacts_with",
+      "annotations": [
+        {
+          "tag": "canonical_predicate",
+          "value": true,
+          "@type": "Annotation"
+        }
+      ],
+      "description": "holds between two pharmacologically active chemicals (typically drugs), where one alters the availability, efficacy, or toxicity of the other in the body when taken simultaneously  - typically by altering how the body processes the chemical (pharmacokinetics) or how the chemical acts on the body (pharmacodynamics).",
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "aliases": [
+        "drug drug interaction"
+      ],
+      "is_a": "interacts_with",
+      "domain": "ChemicalEntity",
+      "slot_uri": "https://w3id.org/biolink/vocab/pharmacologically_interacts_with",
+      "inherited": true,
+      "owner": "pharmacologically_interacts_with",
+      "symmetric": true,
+      "range": "ChemicalEntity",
       "multivalued": true,
       "@type": "SlotDefinition"
     },
@@ -41838,9 +41866,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2026-03-26T23:25:41",
-  "source_file_size": 463145,
-  "generation_date": "2026-03-26T23:25:48",
+  "source_file_date": "2026-04-09T18:41:19",
+  "source_file_size": 463810,
+  "generation_date": "2026-04-09T18:41:25",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",

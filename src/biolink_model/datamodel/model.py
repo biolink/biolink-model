@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-03-26T23:26:04
+# Generation date: 2026-04-09T18:41:39
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/vocab/
@@ -16319,6 +16319,9 @@ slots.indirectly_physically_interacts_with = Slot(uri=BIOLINK.indirectly_physica
 
 slots.genetically_interacts_with = Slot(uri=BIOLINK.genetically_interacts_with, name="genetically interacts with", curie=BIOLINK.curie('genetically_interacts_with'),
                    model_uri=BIOLINK.genetically_interacts_with, domain=Gene, range=Optional[Union[Union[str, GeneId], list[Union[str, GeneId]]]])
+
+slots.pharmacologically_interacts_with = Slot(uri=BIOLINK.pharmacologically_interacts_with, name="pharmacologically interacts with", curie=BIOLINK.curie('pharmacologically_interacts_with'),
+                   model_uri=BIOLINK.pharmacologically_interacts_with, domain=ChemicalEntity, range=Optional[Union[Union[str, ChemicalEntityId], list[Union[str, ChemicalEntityId]]]])
 
 slots.gene_fusion_with = Slot(uri=BIOLINK.gene_fusion_with, name="gene_fusion_with", curie=BIOLINK.curie('gene_fusion_with'),
                    model_uri=BIOLINK.gene_fusion_with, domain=Gene, range=Optional[Union[Union[str, GeneId], list[Union[str, GeneId]]]])
