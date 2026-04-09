@@ -2754,8 +2754,8 @@ slots:
     exact_mappings:
       - SEMMEDDB:INTERACTS_WITH
     notes: >-
-      Please use a more specific child predicate of interacts with, either physically interacts with 
-      or genetically interacts with or pharmacologically interacts with.
+      Please use a more specific child predicate of 'interacts with', either 'physically interacts with' 
+      or 'genetically interacts with' or 'pharmacologically interacts with'.
 
   physically interacts with:
     is_a: interacts with
@@ -2835,7 +2835,7 @@ slots:
       - RO:0002435
 
   pharmacologically interacts with:
-    aliases: ['drug drug interaction']
+    aliases: ['has drug drug interaction with']
     is_a: interacts with
     description: >-
       holds between two pharmacologically active chemicals (typically drugs), where one alters
