@@ -9,26 +9,24 @@ on:
 
 jobs:
   build-n-publish:
-    name: Build and publish Python 🐍 distributions 📦 to PyPI
+    name: Build and publish Python distributions to PyPI
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
-          python-version: 3.9
+          python-version: "3.10"
 
-      - name: Install Poetry
-        run: |
-          pip install poetry
-          poetry self add "poetry-dynamic-versioning[plugin]"
+      - name: Install uv
+        uses: astral-sh/setup-uv@v3
 
       - name: Build source and wheel archives
-        run: poetry build
+        run: uv build
 
-      - name: Publish distribution 📦 to PyPI
+      - name: Publish distribution to PyPI
         uses: pypa/gh-action-pypi-publish@v1.13.0
         with:
           user: __token__
