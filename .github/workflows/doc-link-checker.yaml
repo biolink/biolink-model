@@ -26,13 +26,13 @@ jobs:
         # Reference: https://github.com/actions/checkout
         uses: actions/checkout@v4
       - name: Set up Python
-        uses: actions/setup-python@v3
-        with: { python-version: 3.9 }
-      - name: Install Poetry
-        uses: snok/install-poetry@v1.3
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+      - name: Install uv
+        uses: astral-sh/setup-uv@v3
       - name: Install Python dependencies (including "docs" extras)
-        # Reference: https://python-poetry.org/docs/pyproject/#extras
-        run: poetry install --extras docs
+        run: uv sync --extra docs
       - name: Build docs
         run: make gendoc
       - name: Use Lychee to check for broken links
