@@ -8,11 +8,15 @@
                 "parent": "Association",
                 "children": [
                     {
-                        "name": "anatomical_entity_to_anatomical_entity_ontogenic_association",
+                        "name": "anatomical_entity_has_part_anatomical_entity_association",
                         "parent": "anatomical_entity_to_anatomical_entity_association"
                     },
                     {
-                        "name": "anatomical_entity_to_anatomical_entity_part_of_association",
+                        "name": "anatomical_entity_part_of_anatomical_entity_association",
+                        "parent": "anatomical_entity_to_anatomical_entity_association"
+                    },
+                    {
+                        "name": "anatomical_entity_to_anatomical_entity_ontogenic_association",
                         "parent": "anatomical_entity_to_anatomical_entity_association"
                     }
                 ]
@@ -47,6 +51,10 @@
             },
             {
                 "name": "case_to_variant_association",
+                "parent": "Association"
+            },
+            {
+                "name": "causal_gene_to_disease_association",
                 "parent": "Association"
             },
             {
@@ -110,17 +118,23 @@
                 "parent": "Association"
             },
             {
+                "name": "chemical_or_drug_or_treatment_adverse_event_association",
+                "parent": "Association"
+            },
+            {
+                "name": "chemical_or_drug_or_treatment_side_effect_association",
+                "parent": "Association"
+            },
+            {
                 "name": "chemical_or_drug_or_treatment_to_disease_or_phenotypic_feature_association",
-                "parent": "Association",
-                "children": [
-                    {
-                        "name": "chemical_or_drug_or_treatment_side_effect_disease_or_phenotypic_feature_association",
-                        "parent": "chemical_or_drug_or_treatment_to_disease_or_phenotypic_feature_association"
-                    }
-                ]
+                "parent": "Association"
             },
             {
                 "name": "contributor_association",
+                "parent": "Association"
+            },
+            {
+                "name": "correlated_gene_to_disease_association",
                 "parent": "Association"
             },
             {
@@ -206,38 +220,20 @@
                 "parent": "Association"
             },
             {
-                "name": "gene_to_disease_or_phenotypic_feature_association",
+                "name": "gene_to_disease_association",
                 "parent": "Association",
                 "children": [
                     {
-                        "name": "gene_to_disease_association",
-                        "parent": "gene_to_disease_or_phenotypic_feature_association",
-                        "children": [
-                            {
-                                "name": "causal_gene_to_disease_association",
-                                "parent": "gene_to_disease_association"
-                            },
-                            {
-                                "name": "correlated_gene_to_disease_association",
-                                "parent": "gene_to_disease_association"
-                            },
-                            {
-                                "name": "druggable_gene_to_disease_association",
-                                "parent": "gene_to_disease_association"
-                            },
-                            {
-                                "name": "gene_as_a_model_of_disease_association",
-                                "parent": "gene_to_disease_association"
-                            },
-                            {
-                                "name": "gene_has_variant_that_contributes_to_disease_association",
-                                "parent": "gene_to_disease_association"
-                            }
-                        ]
+                        "name": "druggable_gene_to_disease_association",
+                        "parent": "gene_to_disease_association"
                     },
                     {
-                        "name": "gene_to_phenotypic_feature_association",
-                        "parent": "gene_to_disease_or_phenotypic_feature_association"
+                        "name": "gene_as_a_model_of_disease_association",
+                        "parent": "gene_to_disease_association"
+                    },
+                    {
+                        "name": "gene_has_variant_that_contributes_to_disease_association",
+                        "parent": "gene_to_disease_association"
                     }
                 ]
             },
@@ -278,6 +274,10 @@
                 "parent": "Association"
             },
             {
+                "name": "gene_to_phenotypic_feature_association",
+                "parent": "Association"
+            },
+            {
                 "name": "genotype_to_disease_association",
                 "parent": "Association",
                 "children": [
@@ -305,6 +305,10 @@
             },
             {
                 "name": "information_content_entity_to_named_thing_association",
+                "parent": "Association"
+            },
+            {
+                "name": "macromolecular_machine_has_substrate_association",
                 "parent": "Association"
             },
             {

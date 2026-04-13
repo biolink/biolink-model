@@ -6,7 +6,7 @@ license: https://creativecommons.org/publicdomain/zero/1.0/
 
 # Version should be kept in sync with primary Git repository release tag
 
-version: 4.3.6
+version: 4.3.9
 
 ## ------------
 ##
@@ -96,6 +96,7 @@ prefixes:
   medgen: 'https://www.ncbi.nlm.nih.gov/medgen/'
   metacyc.reaction: 'http://identifiers.org/metacyc.reaction:'
   METANETX.REACTION: 'https://www.metanetx.org/equa_info/'
+  METPO: 'https://w3id.org/metpo/'
   MESH: 'http://id.nlm.nih.gov/mesh/'
   MI: 'http://purl.obolibrary.org/obo/MI_'
   mirbase: 'http://identifiers.org/mirbase'
@@ -228,13 +229,6 @@ types:
     typeof: string
     description: >-
       A string that provides a human-readable name for an entity
-
-  predicate type:
-    uri: xsd:string
-    typeof: uriorcurie
-    description: >-
-      A CURIE from the biolink related_to hierarchy.
-      For example, biolink:related_to, biolink:causes, biolink:treats.
 
   narrative text:
     uri: xsd:string
@@ -451,6 +445,11 @@ slots:
       - qud:quantityValue
     in_subset:
       - samples
+
+  has binary relation:
+    description: >-
+      Qualifies a value context with a mathematical binary relation.
+    range: BinaryRelationEnum
 
   has unit:
     description: >-
@@ -1495,15 +1494,25 @@ slots:
     description: >-
       The numerical value describing the strength of an affinity between two entities.  For instance, if a chemical inhibits a protein with a pIC50 of 8.6,
       the affinity is 8.6. Used in conjunction with the affinity parameter slot.
-    is_a: association slot
+    is_a: node property
     range: float
 
   affinity parameter:
     description: >-
-      The type of parameter describing the strength of an affinity between two entities.  For instance, if a chemical inhibits a protein with a pIC50 of 8.6,
-      the affinity parameter is pIC50.  Used in conjunction with the affinity slot.
-    is_a: association slot
+      The type of parameter describing the strength of an affinity
+      between two entities.  For instance, if a chemical inhibits
+      a protein with a pIC50 of 8.6, the 'affinity parameter' is pIC50.
+      Used in conjunction with the 'affinity' slot, within an 'affinity measurement'.
+    is_a: node property
     range: AffinityParameterEnum
+
+  has affinity:
+    is_a: association slot
+    description: >-
+      Set of measurements documenting the strength of chemical entity to gene or gene product interactions.
+    range: affinity measurement
+    multivalued: true
+    inlined_as_list: true
 
   FDA adverse event level:
     description: >-
@@ -1879,10 +1888,12 @@ slots:
     description: >-
       Predicate to be used in an association when subject and object qualifiers are present and the full
       reading of the statement requires a qualification to the predicate in use in order to refine or
-      increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that
-      expressed by the primary predicate, in a ‘full statement’ reading of the association, where qualifier-based
-      semantics are included.  This is necessary only in cases where the primary predicate does not work in a
-      full statement reading.
+      increase the specificity of the full statement reading.  Has a value from the Biolink
+      'related_to' hierarchy, for example, biolink:related_to, biolink:causes, biolink:treats
+      This qualifier holds a relationship to be used instead of that expressed by the primary predicate,
+      in a ‘full statement’ reading of the association, where qualifier-based semantics are included.
+      This is necessary only in cases where the primary predicate does not work in a full statement reading.
+    range: uriorcurie
     notes: >-
       to express the statement that “Chemical X causes increased expression of Gene Y”, the core triple is read
       using the fields subject:ChemX, predicate:affects, object:GeneY . . . and the full statement is read using
@@ -2743,8 +2754,8 @@ slots:
     exact_mappings:
       - SEMMEDDB:INTERACTS_WITH
     notes: >-
-      please use a more specific child predicate of interacts with, either physically interacts with
-      or genetically interacts with.
+      Please use a more specific child predicate of interacts with, either physically interacts with
+      or genetically interacts with or pharmacologically interacts with.
 
   physically interacts with:
     is_a: interacts with
@@ -2822,6 +2833,22 @@ slots:
     symmetric: true
     exact_mappings:
       - RO:0002435
+
+  pharmacologically interacts with:
+    aliases: ['drug drug interaction']
+    is_a: interacts with
+    description: >-
+      holds between two pharmacologically active chemicals (typically drugs), where one alters
+      the availability, efficacy, or toxicity of the other in the body when taken simultaneously
+      - typically by altering how the body processes the chemical (pharmacokinetics) or how the
+      chemical acts on the body (pharmacodynamics).
+    domain: chemical entity
+    range: chemical entity
+    in_subset:
+      - translator_minimal
+    annotations:
+      canonical_predicate: true
+    symmetric: true
 
   gene_fusion_with:
     is_a: genetically interacts with
@@ -5903,15 +5930,11 @@ slots:
   predicate:
     is_a: association slot
     description: >-
-      A high-level grouping for the relationship type. AKA minimal predicate.
-      This is analogous to category for nodes.
-    domain: association
-    notes: >-
-      Has a value from the Biolink related_to hierarchy. In RDF,  this
+      Has a value from the Biolink 'related_to' hierarchy. In RDF,  this
       corresponds to rdf:predicate and in Neo4j this corresponds to the
       relationship type. The convention is for an edge label in snake_case
       form. For example, biolink:related_to, biolink:causes, biolink:treats
-    range: predicate type
+    range: uriorcurie
     required: true
     local_names:
       ga4gh: annotation predicate
@@ -5956,20 +5979,30 @@ slots:
       - SEPIO:0000187
       - SEPIO:0000167
 
-  has evidence:
+  has evidence of type:
     is_a: association slot
     range: evidence type
     description: >-
-      connects an association to an instance of supporting evidence
+      Connects an association to an evidence type ontology term.
+      Generally represents terms from the ECO ontology.
+    multivalued: true
+
+  has evidence:
+    is_a: association slot
+    range: information content entity
+    description: >-
+      Connects an association to detailed information providing supporting evidence.
     exact_mappings:
       - RO:0002558
     multivalued: true
+    inlined: false
 
   has study results:
     is_a: association slot
     domain: study
     range: study result
     multivalued: true
+    inlined_as_list: true
     description: >-
       Connects an study to instances of its study result
 
@@ -6310,9 +6343,9 @@ slots:
       A quantitative confidence value that represents the probability of
       obtaining a result at least as extreme as that actually obtained,
       assuming that the actual value was the result of chance alone.
-    range: integer
+    range: float
     examples:
-      - value: 15
+      - value: "15.0"
 
   supporting document type:
     is_a: association slot
@@ -6537,10 +6570,16 @@ slots:
   clinical approval status:
     is_a: association slot
     description: >-
+      The clinical approval status of a chemical entity for treating a specific disease or condition,
+      as captured in the context of the association between the chemical and the disease.
     range: ClinicalApprovalStatusEnum
 
   max research phase:
     is_a: association slot
+    description: >-
+      The maximum research phase reached for a specific chemical-disease pair, indicating the highest
+      clinical trial phase achieved for the chemical entity's investigation as a treatment for the
+      associated disease or condition.
     range: ResearchPhaseEnum
 
   number of cases:
@@ -6673,6 +6712,10 @@ slots:
     description: The biological sex of the entity (e.g., male or female) regarding a case description from a phenopacket
     required: false
     range: biological sex
+
+  druggable gene category:
+    description: Classification of druggable genes based on knowledge about drug or small molecule activities.
+    range: DruggableGeneCategoryEnum
 
 classes:
   # Add the KGX-specific classes without modifying biolink classes
@@ -7012,7 +7055,7 @@ classes:
     abstract: true
 
   study result:
-    is_a: information content entity
+    is_a: named thing
     description: >-
       A collection of data items from a study that are about a particular study subject or experimental unit (the
       'focus' of the Result) - optionally with context/provenance metadata that may be relevant to the interpretation
@@ -7086,9 +7129,6 @@ classes:
     description: a detailed investigation and/or analysis
     slots:
       - has study results
-    slot_usage:
-      has study results:
-        inlined_as_list: true
     exact_mappings:
       - NCIT:C63536
     close_mappings:
@@ -7269,7 +7309,9 @@ classes:
       - SEPIO:0000167
 
   evidence type:
-    is_a: information content entity
+    is_a: named thing
+    mixins:
+      - ontology class
     aliases: ['evidence code']
     description: >-
       Class of evidence that supports an association
@@ -7278,7 +7320,12 @@ classes:
     exact_mappings:
       - ECO:0000000
 
-   ## Publications
+  evidence:
+    is_a: information content entity
+    description: >-
+      Dereferences detailed evidence that supports an association
+
+    ## Publications
 
    # TODO: to review additional ontology relating to Publications, such as http://www.sparontologies.net/ontologies
   publication:
@@ -7831,6 +7878,7 @@ classes:
       - max tolerated dose
       - is toxic
       - has chemical role
+      - routes of delivery
       - chembl prodrug
       - chembl black box warning
       - chembl natural product
@@ -7875,6 +7923,18 @@ classes:
       - KEGG.ENVIRON
       - KEGG
       - UMLS
+
+  affinity measurement:
+    is_a: named thing
+    description: >-
+      The type of measurement describing the strength of an affinity between two entities.
+      For instance, if a chemical inhibits a protein with a pIC50 of 8.6,
+      the affinity parameter is pIC50 and the affinity value is 8.6.
+      The binary relation, if given, qualifies the affinity as greater than, less than, or equal.
+    slots:
+      - affinity parameter
+      - affinity
+      - has binary relation
 
   small molecule:
     is_a: molecular entity
@@ -7928,7 +7988,6 @@ classes:
       - model_organism_database
       - translator_minimal
 
-
   chemical mixture:
     is_a: chemical entity
     mixins:
@@ -7940,7 +7999,6 @@ classes:
       - is supplement
       - highest FDA approval status
       - drug regulatory status world wide
-      - routes of delivery
     in_subset:
       - translator_minimal
     id_prefixes:
@@ -8699,9 +8757,6 @@ classes:
       distinct, others such as MESH conflate.  Please see definitions of phenotypic feature and disease in this model
       for their independent descriptions.  This class is helpful to enforce domains and ranges
       that may involve either a disease or a phenotypic feature.
-    union_of:
-      - disease
-      - phenotypic feature
     narrow_mappings:
       # UMLS Semantic Type "Finding" - more specialized use of 'disease or phenotypic feature'
       - STY:T033
@@ -8941,7 +8996,7 @@ classes:
       - FAO
 
 
-   ## entity mixins
+  ## entity mixins
 
   chemical entity or gene or gene product:
     description: >-
@@ -9086,6 +9141,7 @@ classes:
       - GO
       - PR
       - REACT
+      - CHEMBL.TARGET
       - ComplexPortal
     in_subset:
       - model_organism_database
@@ -9604,7 +9660,6 @@ classes:
     id_prefixes:
       - CLINICALTRIALS
 
-
   clinical intervention:
     is_a: clinical entity
 
@@ -9967,6 +10022,7 @@ classes:
       - qualifiers  # deprecated
       - publications
       - sources
+      - has evidence of type
       - has evidence
       - knowledge source
       - primary knowledge source
@@ -9993,10 +10049,13 @@ classes:
       - retrieval source ids
       - p value
       - adjusted p value
+      - supporting text
       - has supporting studies
       - update date
       - has confidence score
       - elevate to prediction
+      - evidence count
+      - semmed agreement count
     slot_usage:
       type:
         description: rdf:type of biolink:Association should be fixed at rdf:Statement
@@ -10547,6 +10606,9 @@ classes:
       - object
     mixins:
       - entity to disease or phenotypic feature association mixin
+    slots:
+      - clinical approval status
+      - max research phase
     slot_usage:
       object:
         range: disease or phenotypic feature
@@ -10555,7 +10617,24 @@ classes:
   chemical or drug or treatment to disease or phenotypic feature association:
     description: >-
       This association defines a relationship between a chemical or treatment (or procedure) and a disease or phenotypic feature
-      where the disease or phenotypic feature is a secondary undesirable effect.
+      where the chemical or treatment is used to treat, or is being studied to treat, the disease or phenotypic feature.
+    is_a: association
+    defining_slots:
+      - subject
+      - predicate
+      - object
+    mixins:
+      - entity to disease or phenotypic feature association mixin
+      - entity to feature or disease qualifiers mixin
+    slot_usage:
+      predicate:
+        subproperty_of: treats or applied or studied to treat
+
+  chemical or drug or treatment adverse event association:
+    description: >-
+      This association defines a relationship between a chemical or treatment (or procedure) and a disease or phenotypic feature
+      where the disease or phenotypic feature is an untoward medical occurrence that happens during treatment,
+      whether or not considered related to the treatment.
     is_a: association
     defining_slots:
       - subject
@@ -10570,17 +10649,18 @@ classes:
       predicate:
         subproperty_of: has adverse event
 
-  chemical or drug or treatment side effect disease or phenotypic feature association:
+  chemical or drug or treatment side effect association:
     description: >-
       This association defines a relationship between a chemical or treatment (or procedure) and a disease or phenotypic feature
-      where the disesae or phenotypic feature is a secondary, typically (but not always) undesirable effect.
-    is_a: chemical or drug or treatment to disease or phenotypic feature association
+      where the disease or phenotypic feature is an unintended, but predictable, secondary effect of the treatment.
+    is_a: association
     defining_slots:
       - subject
       - predicate
       - object
     mixins:
       - entity to disease or phenotypic feature association mixin
+      - entity to feature or disease qualifiers mixin
     slot_usage:
       predicate:
         subproperty_of: has side effect
@@ -10640,6 +10720,7 @@ classes:
       - species context qualifier
       - anatomical context qualifier
       - qualified predicate
+      - object direction qualifier
     slot_usage:
       subject:
         range: chemical entity
@@ -10648,7 +10729,7 @@ classes:
         range: biological process
         description: "the biological process that is affected by the chemical entity"
       predicate:
-        subproperty_of: affects
+        subproperty_of: related to at instance level
 
   named thing associated with likelihood of named thing association:
      # TODO: better name
@@ -10693,6 +10774,7 @@ classes:
     broad_mappings:
       - SIO:001257    ## chemical-gene association
     slots:
+      - has affinity
       - subject form or variant qualifier
       - subject part qualifier
       - subject derivative qualifier
@@ -10736,6 +10818,22 @@ classes:
         range: anatomical entity
       causal mechanism qualifier:
         range: CausalMechanismQualifierEnum
+
+  macromolecular machine has substrate association:
+    is_a: association
+    description: >-
+      Describes the relationship between an enzyme (usually a macromolecular
+      complex or gene product) and the molecules it acts on (substrate).
+      The substrate can be a chemical, a polypeptide, or a protein.
+    notes: >-
+      Using macromolecular machine should cover cases of gene-protein conflation.
+    slot_usage:
+      subject:
+        range: macromolecular machine mixin
+      predicate:
+        subproperty_of: has substrate
+      object:
+        range: chemical entity or protein or polypeptide
 
   gene regulates gene association:
     is_a: association
@@ -10852,6 +10950,8 @@ classes:
     slots:
       - dgidb interaction score
       - dgidb evidence score
+      - evidence count
+      - supporting documents
 
   gene affects chemical association:
     description: >-
@@ -11480,20 +11580,24 @@ classes:
           - value: ClinGen:CA024716
             description: "chr13:g.32921033G>C (hg19) in ClinGen"
 
-  gene to disease or phenotypic feature association:
+  gene to phenotypic feature association:
     is_a: association
-    mixins:
-      - entity to phenotypic feature association mixin
-      - gene to entity association mixin
-    narrow_mappings:
-      - WBVocab:Gene-Phenotype-Association
-      - dcid:DiseaseGeneAssociation
-      - SIO:000983
     slots:
       - subject form or variant qualifier
       - subject aspect qualifier
       - object direction qualifier
       - allelic requirement
+    narrow_mappings:
+      - dcid:DiseaseGeneAssociation
+      - SIO:000983
+    exact_mappings:
+      - WBVocab:Gene-Phenotype-Association
+    defining_slots:
+      - subject
+      - object
+    mixins:
+      - entity to phenotypic feature association mixin
+      - gene to entity association mixin
     slot_usage:
       subject:
         range: gene or gene product
@@ -11506,40 +11610,18 @@ classes:
       subject aspect qualifier:
         range: GeneOrGeneProductOrChemicalEntityAspectEnum
       object:
-        range: disease or phenotypic feature
+        range: phenotypic feature
       object direction qualifier:
         range: DirectionQualifierEnum
       predicate:
-        subproperty_of: affects
+        range: GeneToPhenotypicFeaturePredicateEnum
     comments:
       - NCIT:R176 refers to the inverse relationship
       - for use in describing the affect that the loss of function of a gene can have on exacerbating or ameliorating a symptom/phenotype
       - if the relationship of the statement using this predicate is statistical in nature, please use `associated with likelihood` or one of its children.
 
-  gene to phenotypic feature association:
-    is_a: gene to disease or phenotypic feature association
-    exact_mappings:
-      - WBVocab:Gene-Phenotype-Association
-    defining_slots:
-      - subject
-      - object
-    mixins:
-      - entity to phenotypic feature association mixin
-      - gene to entity association mixin
-    slot_usage:
-      subject:
-        range: gene or gene product
-        description: "gene in which variation is correlated with the phenotypic feature"
-        examples:
-          - value: HGNC:2197
-            description: "COL1A1 (Human)"
-      object:
-        range: phenotypic feature
-
   gene to disease association:
-    is_a: gene to disease or phenotypic feature association
-    comments:
-      - NCIT:R176 refers to the inverse relationship
+    is_a: association
     exact_mappings:
       - SIO:000983
     close_mappings:
@@ -11549,20 +11631,44 @@ classes:
       - object
     mixins:
       - gene to entity association mixin
+    slots:
+      - subject form or variant qualifier
+      - subject aspect qualifier
+      - object direction qualifier
+      - allelic requirement
+      - qualified predicate
+      - diseases confidence score
+      - gene2phenotype confidence category
     slot_usage:
       subject:
         range: gene or gene product
-        description: >-
-          gene in which variation is correlated with the disease,
-          may be protective or causative or associative, or as a model
+        description: "gene in which variation is correlated with the disease"
+      subject form or variant qualifier:
+        range: ChemicalOrGeneOrGeneProductFormOrVariantEnum
+      subject aspect qualifier:
+        range: GeneOrGeneProductOrChemicalEntityAspectEnum
+      object direction qualifier:
+        range: DirectionQualifierEnum
       object:
         range: disease
+      predicate:
+        range: GeneToDiseasePredicateEnum
+    comments:
+      - NCIT:R176 refers to the inverse relationship
+      - for use in describing the affect that the loss of function of a gene can have on exacerbating or ameliorating a disease
+      - if the relationship of the statement using this predicate is statistical in nature, please use `associated with likelihood` or one of its children.
 
   causal gene to disease association:
-    is_a: gene to disease association
+    is_a: association
     defining_slots:
       - subject
       - object
+    slots:
+      - subject form or variant qualifier
+      - subject aspect qualifier
+      - object direction qualifier
+      - allelic requirement
+      - qualified predicate
     mixins:
       - gene to entity association mixin
     slot_usage:
@@ -11574,13 +11680,19 @@ classes:
         range: disease
 
   correlated gene to disease association:
-    is_a: gene to disease association
+    is_a: association
     defining_slots:
       - subject
       - object
       - predicate
     slots:
       - z score
+      - diseases confidence score
+      - subject form or variant qualifier
+      - subject aspect qualifier
+      - object direction qualifier
+      - allelic requirement
+      - qualified predicate
     mixins:
       - entity to disease association mixin
       - gene to entity association mixin
@@ -11596,6 +11708,8 @@ classes:
 
   druggable gene to disease association:
     is_a: gene to disease association
+    slots:
+      - druggable gene category
     slot_usage:
       subject:
         range: gene or gene product
@@ -11605,8 +11719,6 @@ classes:
           this leads to a protective or improving disease state.
       predicate:
         subproperty_of: target for
-      has evidence:
-        range: DruggableGeneCategoryEnum
     defining_slots:
       - subject
       - object
@@ -12287,14 +12399,42 @@ classes:
       object:
         range: anatomical entity
 
-  anatomical entity to anatomical entity part of association:
+  anatomical entity has part anatomical entity association:
      # schema: gocam
     is_a: anatomical entity to anatomical entity association
     description: >-
       A relationship between two anatomical entities where the relationship
-      is mereological, i.e the two entities are related by parthood. This
-      includes relationships between cellular components and cells, between
-      cells and tissues, tissues and whole organisms
+      is mereological, i.e the two entities are related by parthood, that is,
+      the subject is has the object entity as a part (the expected predicate is
+      "biolink:has_part" or suitable predicate slots inheriting from it, i.e.,
+      "biolink:has_plasma_membrane_part",  "biolink:has_variant_part", etc.).
+      This includes relationships between cells and cellular components,
+      between issues and cells, whole organisms and tissues.
+    defining_slots:
+      - predicate
+    slot_usage:
+      subject:
+        range: anatomical entity
+        description: >-
+          the whole
+      object:
+        range: anatomical entity
+        description: >-
+          the part
+      predicate:
+        subproperty_of: has part
+
+  anatomical entity part of anatomical entity association:
+     # schema: gocam
+    is_a: anatomical entity to anatomical entity association
+    description: >-
+      A relationship between two anatomical entities where the relationship
+      is mereological, i.e the two entities are related by parthood, that is,
+      the subject is a part of the object entity (the expected predicate is
+      "biolink:part_of" or suitable predicate slots inheriting from it, i.e.,
+      "biolink:plasma_membrane_part_of",  "biolink:variant_part_of", etc.).
+      This includes relationships between cellular components and cells,
+      between cells and tissues, tissues and whole organisms.
     defining_slots:
       - predicate
     slot_usage:
@@ -12457,6 +12597,14 @@ classes:
 
 
 enums:
+
+  BinaryRelationEnum:
+    description: >-
+      Mathematical binary relation qualifiers of a value in its context.
+    permissible_values:
+      less_than:
+      equal_to:
+      greater_than:
 
   ResponseEnum:
     description: >-
@@ -13386,9 +13534,8 @@ enums:
         description: >-
           These targets do not have known drug or small molecule activities that satisfy the activity
           thresholds detailed below AND satisfy one or more of the following criteria:
-          target is above the cutoff criteria for Tdark
-          target is annotated with a Gene Ontology Molecular Function or Biological Process leaf term(s)
-          with an Experimental Evidence code
+          target is above the cutoff criteria for the target is annotated with a
+          Gene Ontology Molecular Function or Biological Process leaf term(s) with an Experimental Evidence code
       "tdark":
         description: >-
           These are targets about which virtually nothing is known. They do not have known drug or small
@@ -13409,10 +13556,16 @@ enums:
 
   DrugDeliveryEnum:
     permissible_values:
-      "inhalation":
-      "oral":
-      "absorption_through_the_skin":
-      "intravenous_injection":
+      inhalation:
+      oral:
+      absorption_through_the_skin:
+      injection:
+      intravenous_injection:
+        is_a: injection
+      subcutaneous_injection:
+        is_a: injection
+      intramuscular_injection:
+        is_a: injection
 
   ResourceRoleEnum:
     description: >-
@@ -13430,18 +13583,37 @@ enums:
 
   AffinityParameterEnum:
     description: >-
-      The types of parameters that can be used to describe the affinity between two entities, characteristically chemicals and proteins.
+      The types of parameters that can be used to describe the affinity between two entities,
+      characteristically chemicals and proteins. The values are generally
+      stated as the negative base 10 logarithm of the raw measurements.
     permissible_values:
       "pIC50":
         description: >-
-          Negative logarithm of the molar concentration of a chemical that produces a 50% inhibition of a function
+          Negative base 10 logarithm of the the inhibitory concentration 50% (IC50)
+          measures the concentration needed to block or inhibit a biological response.
       "pEC50":
         description: >-
-          Negative logarithm of the molar concentration of a chemical that produces a 50% excitation of a function
+          Negative base 10 logarithm of the molar concentration of
+          a chemical that produces a 50% excitation of a function
       "pAC50":
       "pXC50":
       "pKi":
+        description: >-
+          Negative base 10 logarithm of the equilibrium binding affinity for a ligand that reduces
+          the activity of its binding partner. Ki represents the concentration at which the
+          inhibitor ligand occupies 50% of the receptor sites when no competing ligand is present
+      "pKon":
+        description: >-
+          Negative base 10 logarithm of the association rate constant (Kon) describes
+          the rate at which molecules bind to each other.
+      "pKoff":
+        description: >-
+          Negative base 10 logarithm of the dissociation rate constant (koff) describes
+          the rate at which they dissociate.
       "pKd":
+        description: >-
+          Negative base 10 logarithm of the equilibrium dissociation constant (KD) which
+          is a measure of the binding affinity and is defined as the ratio of koff to kon.
 
   FDAIDAAdverseEventEnum:
     description: >-
@@ -13640,6 +13812,15 @@ enums:
           results, we can consider them to be inherently true statements, whose broader utility is dependent on
           subsequent generalization of the reported result to a broader population, and/or interpretation of the
           result as support for a more meaningful statements about the domain of discourse.
+      text_co_occurrence:
+        description: >-
+          A statement reporting that mentions of two concepts in some corpus of text (e.g. the biomedical literature)
+          occur together at a statistically significant frequency - suggesting that a real-world biological or clinical
+          relationship may exist between the concepts.
+        notes: >-
+          Such statements often utilize NLP/text-mining to identify concept mentions in text, but the reported statement is
+          generated by a data analysis pipeline that performs calculations on mention counts and determines the strength
+          of their correlation.
       observation:
         description: >-
           A statement reporting (and possibly quantifying) a phenomenon that was observed to occur -
@@ -13660,3 +13841,21 @@ enums:
           was predicting or asserting a relationship, or merely observed it to occur).
     in_subset:
       - translator_minimal
+
+  GeneToPhenotypicFeaturePredicateEnum:
+    description: >-
+      Enumeration of predicates permissible for use in gene to phenotypic feature associations.
+      This constrains the relationship types that can be used between genes and phenotypic features.
+    permissible_values:
+      "biolink:causes":
+      "biolink:contributes_to":
+      "biolink:associated_with":
+      "biolink:has_phenotype":
+
+  GeneToDiseasePredicateEnum:
+    description: >-
+      Enumeration of predicates permissible for use in gene to disease associations.
+      This constrains the relationship types that can be used between genes and diseases.
+    permissible_values:
+      "biolink:contributes_to":
+      "biolink:associated_with":

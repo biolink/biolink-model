@@ -211,6 +211,45 @@ slots:
     description: Text indicating the availability type of the chemical entity.
     range: string
 
+  chembl binding site name:
+    description: Text indicating the name of the binding site for a chemical entity.
+    range: string
+
+  chembl binding site comment:
+    description: Text describing the binding site for a chemical entity.
+    range: string
+
+  chembl mechanism of action description:
+    description: Text describing the mechanism of action for a chemical entity.
+    range: string
+
+  chembl mechanism of action comment:
+    description: Additional comments regarding the mechanism of action.
+    range: string
+
+  chembl mutation:
+    description: Text describing mutations associated with a chemical entity.
+    range: string
+
+  chembl mutation accession:
+    description: Accession identifier for a mutation associated with a chemical entity.
+    range: string
+
+  chembl selectivity comment:
+    description: Additional comments regarding the selectivity of the drug.
+    range: string
+
+  chembl assay description:
+    description: Text describing the assay associated with a chemical entity.
+    range: string
+
+  chembl confidence score:
+    description: >-
+      A score defined by ChEMBL that represents the confidence level of a particular drug-target 
+      interaction, based on the type and quality of evidence supporting the interaction. The score 
+      ranges from 0 to 9, with higher scores indicating stronger evidence for the interaction.
+    range: integer
+
   dgidb relative drug specificity score:
     description: >-
       A score defined by DGIdb that quantifies the gene-interaction specificity of a given drug - representing the ratio of average
@@ -245,3 +284,28 @@ slots:
       simply the sum of all supporting sources and publications. See https://dgidb.org/about/overview/interaction-score.
     range: integer
 
+  diseases confidence score:
+    description: >-
+      A score defined by Jensen Lab Diseases that reports confidence level in an association on a scale of 1-5 stars. 
+      It is based on different inputs for curated knowledge associations vs text-mined associations vs experimental/GWAS based associations,
+      but adjusts/caps scores for these types of knowledge such that they are comparable on a single scale.
+    range: float
+  
+  drug_rep_hub disease area:
+    description: >-
+      A term used by Drug Repurposing Hub to describe the disease area associated with a drug.
+    range: string
+
+  gene2phenotype confidence category:
+    description: >-
+      A term used by EBI Gene2Phenotype to describe the confidence that the association is real.
+      GenCC confidence terms are used for different levels of confidence (enum). 
+      See https://www.ebi.ac.uk/gene2phenotype/about/terminology#g2p-confidence-section.
+    range: string
+
+  signor confidence score:
+    description: >-
+      A score defined by SIGNOR Lab Diseases that reports confidence level in a curated interaction. Scores are based on four factors:
+      number of supporting publications, occurrence in curated SIGNOR pathways, support in Reactome interaction data, co-mentions in UniProt
+      records. Scores range 0-1, and reflect a relative measure of evidence support, not an absolute probability or statistical confidence measure. 
+    range: float    

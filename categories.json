@@ -30,6 +30,10 @@
                 ]
             },
             {
+                "name": "affinity_measurement",
+                "parent": "NamedThing"
+            },
+            {
                 "name": "attribute",
                 "parent": "NamedThing",
                 "children": [
@@ -474,6 +478,10 @@
                 "parent": "NamedThing"
             },
             {
+                "name": "evidence_type",
+                "parent": "NamedThing"
+            },
+            {
                 "name": "exposure_event",
                 "parent": "NamedThing",
                 "children": [
@@ -570,7 +578,7 @@
                         "parent": "information_content_entity"
                     },
                     {
-                        "name": "evidence_type",
+                        "name": "evidence",
                         "parent": "information_content_entity"
                     },
                     {
@@ -620,40 +628,6 @@
                     {
                         "name": "retrieval_source",
                         "parent": "information_content_entity"
-                    },
-                    {
-                        "name": "study_result",
-                        "parent": "information_content_entity",
-                        "children": [
-                            {
-                                "name": "chi_squared_analysis_result",
-                                "parent": "study_result"
-                            },
-                            {
-                                "name": "concept_count_analysis_result",
-                                "parent": "study_result"
-                            },
-                            {
-                                "name": "icees_study_result",
-                                "parent": "study_result"
-                            },
-                            {
-                                "name": "log_odds_analysis_result",
-                                "parent": "study_result"
-                            },
-                            {
-                                "name": "observed_expected_frequency_analysis_result",
-                                "parent": "study_result"
-                            },
-                            {
-                                "name": "relative_frequency_analysis_result",
-                                "parent": "study_result"
-                            },
-                            {
-                                "name": "text_mining_study_result",
-                                "parent": "study_result"
-                            }
-                        ]
                     },
                     {
                         "name": "study_variable",
@@ -706,6 +680,40 @@
             {
                 "name": "procedure",
                 "parent": "NamedThing"
+            },
+            {
+                "name": "study_result",
+                "parent": "NamedThing",
+                "children": [
+                    {
+                        "name": "chi_squared_analysis_result",
+                        "parent": "study_result"
+                    },
+                    {
+                        "name": "concept_count_analysis_result",
+                        "parent": "study_result"
+                    },
+                    {
+                        "name": "icees_study_result",
+                        "parent": "study_result"
+                    },
+                    {
+                        "name": "log_odds_analysis_result",
+                        "parent": "study_result"
+                    },
+                    {
+                        "name": "observed_expected_frequency_analysis_result",
+                        "parent": "study_result"
+                    },
+                    {
+                        "name": "relative_frequency_analysis_result",
+                        "parent": "study_result"
+                    },
+                    {
+                        "name": "text_mining_study_result",
+                        "parent": "study_result"
+                    }
+                ]
             }
         ]
     }
