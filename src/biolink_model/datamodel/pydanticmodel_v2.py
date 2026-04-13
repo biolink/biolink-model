@@ -27,7 +27,7 @@ from pydantic import (
 
 
 metamodel_version = "None"
-version = "4.3.7"
+version = "4.3.8"
 
 
 class ConfiguredBaseModel(BaseModel):
@@ -817,7 +817,7 @@ class ResourceRoleEnum(str, Enum):
 
 class AffinityParameterEnum(str, Enum):
     """
-    The types of parameters that can be used to describe the affinity between two entities, characteristically chemicals and proteins. The values are generally  stated as the negative base 10 logarithm of the raw measurements.
+    The types of parameters that can be used to describe the affinity between two entities, characteristically chemicals and proteins. The values are generally stated as the negative base 10 logarithm of the raw measurements.
     """
     pIC50 = "pIC50"
     """

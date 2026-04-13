@@ -6,7 +6,7 @@ license: https://creativecommons.org/publicdomain/zero/1.0/
 
 # Version should be kept in sync with primary Git repository release tag
 
-version: 4.3.7
+version: 4.3.8
 
 ## ------------
 ##
@@ -2754,7 +2754,7 @@ slots:
     exact_mappings:
       - SEMMEDDB:INTERACTS_WITH
     notes: >-
-      Please use a more specific child predicate of interacts with, either physically interacts with 
+      Please use a more specific child predicate of interacts with, either physically interacts with
       or genetically interacts with or pharmacologically interacts with.
 
   physically interacts with:
@@ -2839,7 +2839,7 @@ slots:
     is_a: interacts with
     description: >-
       holds between two pharmacologically active chemicals (typically drugs), where one alters
-      the availability, efficacy, or toxicity of the other in the body when taken simultaneously 
+      the availability, efficacy, or toxicity of the other in the body when taken simultaneously
       - typically by altering how the body processes the chemical (pharmacokinetics) or how the
       chemical acts on the body (pharmacodynamics).
     domain: chemical entity
@@ -13584,7 +13584,7 @@ enums:
   AffinityParameterEnum:
     description: >-
       The types of parameters that can be used to describe the affinity between two entities,
-      characteristically chemicals and proteins. The values are generally 
+      characteristically chemicals and proteins. The values are generally
       stated as the negative base 10 logarithm of the raw measurements.
     permissible_values:
       "pIC50":

@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-04-13T20:51:21
+# Generation date: 2026-04-13T14:44:47
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/vocab/
@@ -60,7 +60,7 @@ from linkml_runtime.linkml_model.types import Boolean, Date, Double, Float, Inte
 from linkml_runtime.utils.metamodelcore import Bool, URIorCURIE, XSDDate, XSDTime
 
 metamodel_version = "1.7.0"
-version = "4.3.7"
+version = "4.3.8"
 
 # Namespaces
 AGRKB = CurieNamespace('AGRKB', 'https://www.alliancegenome.org/')
@@ -15479,7 +15479,7 @@ class AffinityParameterEnum(EnumDefinitionImpl):
 
     _defn = EnumDefinition(
         name="AffinityParameterEnum",
-        description="""The types of parameters that can be used to describe the affinity between two entities, characteristically chemicals and proteins. The values are generally  stated as the negative base 10 logarithm of the raw measurements.""",
+        description="""The types of parameters that can be used to describe the affinity between two entities, characteristically chemicals and proteins. The values are generally stated as the negative base 10 logarithm of the raw measurements.""",
     )
 
 class FDAIDAAdverseEventEnum(EnumDefinitionImpl):

@@ -2,7 +2,7 @@
   "name": "Biolink-Model",
   "description": "Entity and association taxonomy and datamodel for life-sciences data",
   "id": "https://w3id.org/biolink/vocab/",
-  "version": "4.3.7",
+  "version": "4.3.8",
   "imports": [
     "linkml:types",
     "attributes"
@@ -2403,7 +2403,7 @@
     {
       "name": "AffinityParameterEnum",
       "definition_uri": "https://w3id.org/biolink/vocab/AffinityParameterEnum",
-      "description": "The types of parameters that can be used to describe the affinity between two entities, characteristically chemicals and proteins. The values are generally  stated as the negative base 10 logarithm of the raw measurements.",
+      "description": "The types of parameters that can be used to describe the affinity between two entities, characteristically chemicals and proteins. The values are generally stated as the negative base 10 logarithm of the raw measurements.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "permissible_values": [
         {
@@ -7371,7 +7371,7 @@
       "definition_uri": "https://w3id.org/biolink/vocab/interacts_with",
       "description": "holds between any two entities that directly or indirectly interact with each other",
       "notes": [
-        "Please use a more specific child predicate of interacts with, either physically interacts with  or genetically interacts with or pharmacologically interacts with."
+        "Please use a more specific child predicate of interacts with, either physically interacts with or genetically interacts with or pharmacologically interacts with."
       ],
       "in_subset": [
         "translator_minimal"
@@ -7548,7 +7548,7 @@
           "@type": "Annotation"
         }
       ],
-      "description": "holds between two pharmacologically active chemicals (typically drugs), where one alters the availability, efficacy, or toxicity of the other in the body when taken simultaneously  - typically by altering how the body processes the chemical (pharmacokinetics) or how the chemical acts on the body (pharmacodynamics).",
+      "description": "holds between two pharmacologically active chemicals (typically drugs), where one alters the availability, efficacy, or toxicity of the other in the body when taken simultaneously - typically by altering how the body processes the chemical (pharmacokinetics) or how the chemical acts on the body (pharmacodynamics).",
       "in_subset": [
         "translator_minimal"
       ],
@@ -41866,9 +41866,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2026-04-13T20:50:59",
-  "source_file_size": 463810,
-  "generation_date": "2026-04-13T20:51:05",
+  "source_file_date": "2026-04-13T14:44:09",
+  "source_file_size": 463807,
+  "generation_date": "2026-04-13T14:44:21",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",

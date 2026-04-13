@@ -1,5 +1,18 @@
 CHANGES
 =======
+4.3.8
+----
+## What's Changed
+* Add signor confidence score details to attributes.yaml by @mbrush in https://github.com/biolink/biolink-model/pull/1711
+* Simplification: moved inlined_as_list: true directly into StudyResult, as moved from Study..slot_usage by @RichardBruskiewich in https://github.com/biolink/biolink-model/pull/1717
+* Add pharmacologically interacts with predicate by @mbrush in https://github.com/biolink/biolink-model/pull/1721
+* Bump protobuf from 6.33.4 to 6.33.5 by @dependabot[bot] in https://github.com/biolink/biolink-model/pull/1696
+* Bump pyasn1 from 0.6.2 to 0.6.3 by @dependabot[bot] in https://github.com/biolink/biolink-model/pull/1712
+* Bump pygments from 2.19.2 to 2.20.0 by @dependabot[bot] in https://github.com/biolink/biolink-model/pull/1720
+* Bump urllib3 from 2.5.0 to 2.6.3 by @dependabot[bot] in https://github.com/biolink/biolink-model/pull/1722
+
+**Full Changelog**: https://github.com/biolink/biolink-model/compare/v4.3.7...v4.3.8
+
 4.3.7
 ----
 ## What's Changed
