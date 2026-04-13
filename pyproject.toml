@@ -31,7 +31,7 @@ dependencies = [
 ]
 
 [project.scripts]
-generate_viz_json = "src.biolink_model.scripts.generate_json:generate_viz_json"
+generate_viz_json = "biolink_model.scripts.generate_json:generate_viz_json"
 
 [project.optional-dependencies]
 docs = ["mkdocs-material"]
