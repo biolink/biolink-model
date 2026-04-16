@@ -26747,6 +26747,7 @@
     {
       "name": "BiologicalSex",
       "definition_uri": "https://w3id.org/biolink/vocab/BiologicalSex",
+      "description": "An organismal quality inhering in a bearer by virtue of the bearer's ability to undergo sexual reproduction in order to differentiate the individuals or types involved.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "exact_mappings": [
         "PATO:0000047"
@@ -26876,6 +26877,7 @@
     {
       "name": "RelationshipQuantifier",
       "definition_uri": "https://w3id.org/biolink/vocab/RelationshipQuantifier",
+      "description": "A mixin for quantifying aspects of the strength, frequency, or specificity of a relationship between two entities.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "mixin": true,
       "slot_usage": {},
@@ -26885,6 +26887,7 @@
     {
       "name": "SensitivityQuantifier",
       "definition_uri": "https://w3id.org/biolink/vocab/SensitivityQuantifier",
+      "description": "A relationship quantifier that measures the sensitivity of a relationship, such as the proportion of true positives correctly identified in a diagnostic or association context.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "RelationshipQuantifier",
       "mixin": true,
@@ -26895,6 +26898,7 @@
     {
       "name": "SpecificityQuantifier",
       "definition_uri": "https://w3id.org/biolink/vocab/SpecificityQuantifier",
+      "description": "A relationship quantifier that measures the specificity of a relationship, such as the proportion of true negatives correctly identified in a diagnostic or association context.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "RelationshipQuantifier",
       "mixin": true,
@@ -26916,6 +26920,7 @@
     {
       "name": "FrequencyQuantifier",
       "definition_uri": "https://w3id.org/biolink/vocab/FrequencyQuantifier",
+      "description": "A relationship quantifier that expresses how often a relationship holds, using count, total, quotient, or percentage measures.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "RelationshipQuantifier",
       "mixin": true,
@@ -26938,6 +26943,7 @@
         "MAXO"
       ],
       "definition_uri": "https://w3id.org/biolink/vocab/ChemicalOrDrugOrTreatment",
+      "description": "A mixin for entities that represent chemical substances, pharmacological agents, or therapeutic interventions.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "mixin": true,
       "slot_usage": {},
@@ -27115,6 +27121,7 @@
     {
       "name": "AdministrativeEntity",
       "definition_uri": "https://w3id.org/biolink/vocab/AdministrativeEntity",
+      "description": "An entity that is the byproduct of an administrative process.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "NamedThing",
       "abstract": true,
@@ -27943,6 +27950,7 @@
     {
       "name": "BookChapter",
       "definition_uri": "https://w3id.org/biolink/vocab/BookChapter",
+      "description": "A section of a book that forms a discrete unit of a larger published work and may be independently authored or cited.",
       "in_subset": [
         "model_organism_database"
       ],
@@ -28728,6 +28736,7 @@
     {
       "name": "EnvironmentalProcess",
       "definition_uri": "https://w3id.org/biolink/vocab/EnvironmentalProcess",
+      "description": "A process that occurs within or involves the components of an environmental system.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "exact_mappings": [
         "ENVO:02500000"
@@ -28760,6 +28769,7 @@
     {
       "name": "EnvironmentalFeature",
       "definition_uri": "https://w3id.org/biolink/vocab/EnvironmentalFeature",
+      "description": "A system or entity in the natural environment that has the disposition to environ one or more material entities.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "exact_mappings": [
         "ENVO:01000254"
@@ -28866,6 +28876,7 @@
     {
       "name": "BiologicalEntity",
       "definition_uri": "https://w3id.org/biolink/vocab/BiologicalEntity",
+      "description": "A heterogeneous substance that contains genomic material or is the product of a biological process.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "aliases": [
         "bioentity"
@@ -28907,6 +28918,7 @@
     {
       "name": "GenomicEntity",
       "definition_uri": "https://w3id.org/biolink/vocab/GenomicEntity",
+      "description": "A generically dependent continuant that carries biological sequence that is part of or derived from a genome.",
       "in_subset": [
         "translator_minimal"
       ],
@@ -28926,6 +28938,7 @@
     {
       "name": "EpigenomicEntity",
       "definition_uri": "https://w3id.org/biolink/vocab/EpigenomicEntity",
+      "description": "A mixin for entities that represent epigenomic modifications or features associated with heritable changes in gene expression that do not involve changes to the DNA sequence itself.",
       "in_subset": [
         "translator_minimal"
       ],
@@ -29830,6 +29843,7 @@
         "ncats.bioplanet"
       ],
       "definition_uri": "https://w3id.org/biolink/vocab/Pathway",
+      "description": "A hierarchical ordering of connected molecular reactions (steps) that represent a specific biological process, such as signaling or metabolism.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "exact_mappings": [
         "PW:0000001",
@@ -29876,6 +29890,7 @@
         "REACT"
       ],
       "definition_uri": "https://w3id.org/biolink/vocab/PhysiologicalProcess",
+      "description": "A biological or chemical function within a living organism (cells, tissues, or organs).",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "aliases": [
         "physiology"
@@ -29923,6 +29938,7 @@
     {
       "name": "Behavior",
       "definition_uri": "https://w3id.org/biolink/vocab/Behavior",
+      "description": "The internally coordinated responses (actions or inactions) of organisms (individuals or groups) to internal or external stimuli, via a mechanism that involves nervous system activity.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "exact_mappings": [
         "GO:0007610",
@@ -30156,6 +30172,7 @@
         "UMLS"
       ],
       "definition_uri": "https://w3id.org/biolink/vocab/EnvironmentalFoodContaminant",
+      "description": "Any unwanted chemical in food, including agrochemicals and industrial chemicals that may contaminate foodstuffs during their production, transportation, or storage.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "related_mappings": [
         "CHEBI:78299"
@@ -30224,6 +30241,7 @@
         "UMLS"
       ],
       "definition_uri": "https://w3id.org/biolink/vocab/FoodAdditive",
+      "description": "Any substance which is added to food to preserve or enhance its flavour and/or appearance.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "related_mappings": [
         "CHEBI:64047"
@@ -30565,7 +30583,7 @@
     {
       "name": "CellularOrganism",
       "definition_uri": "https://w3id.org/biolink/vocab/CellularOrganism",
-      "description": "",
+      "description": "An organism that contains one or more cells.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "exact_mappings": [
         "NCBITaxon:131567"
@@ -30676,7 +30694,7 @@
     {
       "name": "Plant",
       "definition_uri": "https://w3id.org/biolink/vocab/Plant",
-      "description": "",
+      "description": "Any living organism that typically synthesizes its food from inorganic substances, possesses cellulose cell walls, responds slowly and often permanently to a stimulus, lacks specialized sense organs and nervous system, and has no powers of locomotion.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "exact_mappings": [
         "NCIT:C14258",
@@ -31349,6 +31367,7 @@
         "MESH"
       ],
       "definition_uri": "https://w3id.org/biolink/vocab/Cell",
+      "description": "The basic structural and functional unit of all organisms. Includes the plasma membrane and any external encapsulating structures such as the cell wall and cell envelope.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "exact_mappings": [
         "GO:0005623",
@@ -31388,6 +31407,7 @@
         "CLO"
       ],
       "definition_uri": "https://w3id.org/biolink/vocab/CellLine",
+      "description": "A cultured cell population that is genetically stable and homogeneous, sharing a common propagation history through successive passages in culture.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "exact_mappings": [
         "CLO:0000031"
@@ -31430,6 +31450,7 @@
         "FAO"
       ],
       "definition_uri": "https://w3id.org/biolink/vocab/GrossAnatomicalStructure",
+      "description": "An anatomical structure that has more than one cell as a part.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "aliases": [
         "tissue",
@@ -31855,6 +31876,7 @@
     {
       "name": "CodingSequence",
       "definition_uri": "https://w3id.org/biolink/vocab/CodingSequence",
+      "description": "A contiguous sequence which begins with, and includes, a start codon and ends with, and includes, a stop codon.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "exact_mappings": [
         "SO:0000316",
@@ -32107,6 +32129,7 @@
     {
       "name": "ProteinFamily",
       "definition_uri": "https://w3id.org/biolink/vocab/ProteinFamily",
+      "description": "A set of proteins coding for diverse functions which, by virtue of their high degree of sequence similarity, are believed to have evolved from a single ancestral gene.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "exact_mappings": [
         "NCIT:C26004",
@@ -32259,6 +32282,7 @@
         "ENSEMBL"
       ],
       "definition_uri": "https://w3id.org/biolink/vocab/NoncodingRNAProduct",
+      "description": "An RNA transcript that does not encode for a protein rather the RNA molecule is the functional gene product.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "exact_mappings": [
         "SO:0000655",
@@ -32296,6 +32320,7 @@
         "WormBase"
       ],
       "definition_uri": "https://w3id.org/biolink/vocab/MicroRNA",
+      "description": "A small (~22 nucleotide) RNA molecule that is the endogenous transcript of a miRNA gene. Produced from precursor molecules that form hairpin structures, which are processed (typically via the Dicer pathway) to yield a single miRNA molecule. miRNAs function by triggering cleavage of target molecules or acting as translational repressors.",
       "in_subset": [
         "model_organism_database"
       ],
@@ -32462,6 +32487,7 @@
     {
       "name": "Zygosity",
       "definition_uri": "https://w3id.org/biolink/vocab/Zygosity",
+      "description": "An allelic state describing the degree of similarity between features at a single locus, specifically whether alleles at the same location on paired chromosomes are identical or different.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "exact_mappings": [
         "GENO:0000133"
@@ -33000,6 +33026,7 @@
     {
       "name": "ClinicalIntervention",
       "definition_uri": "https://w3id.org/biolink/vocab/ClinicalIntervention",
+      "description": "A medical procedure, treatment, or action taken by healthcare professionals to modify the course of a disease or condition.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "ClinicalEntity",
       "slots": [
@@ -33061,6 +33088,7 @@
     {
       "name": "Hospitalization",
       "definition_uri": "https://w3id.org/biolink/vocab/Hospitalization",
+      "description": "The admission and care of a patient in a hospital for observation, diagnosis, or treatment.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "exact_mappings": [
         "SNOMEDCT:32485007",
@@ -35617,6 +35645,28 @@
       "name": "ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation",
       "definition_uri": "https://w3id.org/biolink/vocab/ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation",
       "description": "An interaction between a chemical entity and a phenotype or disease, where the presence of the chemical gives rise to or exacerbates the phenotype.",
+      "examples": [
+        {
+          "object": {
+            "subject": "DrugCentral:559",
+            "predicate": "biolink:treats",
+            "object": "UMLS:C0153225",
+            "knowledge_level": "knowledge_assertion",
+            "agent_type": "manual_validation_of_automated_agent"
+          },
+          "@type": "Example"
+        },
+        {
+          "object": {
+            "subject": "DrugCentral:1572",
+            "predicate": "biolink:contraindicated_in",
+            "object": "UMLS:C0018824",
+            "knowledge_level": "knowledge_assertion",
+            "agent_type": "manual_validation_of_automated_agent"
+          },
+          "@type": "Example"
+        }
+      ],
       "from_schema": "https://w3id.org/biolink/vocab/",
       "narrow_mappings": [
         "SIO:000993"
@@ -35694,6 +35744,28 @@
       "name": "ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation",
       "definition_uri": "https://w3id.org/biolink/vocab/ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation",
       "description": "This association defines a relationship between a chemical or treatment (or procedure) and a disease or phenotypic feature where the chemical or treatment is used to treat, or is being studied to treat, the disease or phenotypic feature.",
+      "examples": [
+        {
+          "object": {
+            "subject": "CHEBI:31236",
+            "predicate": "biolink:treats",
+            "object": "MONDO:0002046",
+            "knowledge_level": "knowledge_assertion",
+            "agent_type": "manual_agent"
+          },
+          "@type": "Example"
+        },
+        {
+          "object": {
+            "subject": "UMLS:C0887621",
+            "predicate": "biolink:in_clinical_trials_for",
+            "object": "NCIT:C34887",
+            "knowledge_level": "knowledge_assertion",
+            "agent_type": "manual_agent"
+          },
+          "@type": "Example"
+        }
+      ],
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "Association",
       "mixins": [
@@ -36273,6 +36345,18 @@
       "name": "ChemicalGeneInteractionAssociation",
       "definition_uri": "https://w3id.org/biolink/vocab/ChemicalGeneInteractionAssociation",
       "description": "describes an interaction between a chemical entity and a gene or gene product. Any biological or chemical effect resulting from such an interaction are out of scope, and covered by the ChemicalAffectsGeneAssociation type (e.g. impact of a chemical on the abundance, activity, structure, etc, of either participant in the interaction)",
+      "examples": [
+        {
+          "object": {
+            "subject": "DrugCentral:279",
+            "predicate": "biolink:directly_physically_interacts_with",
+            "object": "UniProtKB:P0AD68",
+            "knowledge_level": "knowledge_assertion",
+            "agent_type": "manual_agent"
+          },
+          "@type": "Example"
+        }
+      ],
       "from_schema": "https://w3id.org/biolink/vocab/",
       "broad_mappings": [
         "SIO:001257"
@@ -36354,6 +36438,18 @@
       "description": "Describes the relationship between an enzyme (usually a macromolecular complex or gene product) and the molecules it acts on (substrate). The substrate can be a chemical, a polypeptide, or a protein.",
       "notes": [
         "Using macromolecular machine should cover cases of gene-protein conflation."
+      ],
+      "examples": [
+        {
+          "object": {
+            "subject": "UniProtKB:P31645",
+            "predicate": "biolink:has_substrate",
+            "object": "DrugCentral:618",
+            "knowledge_level": "knowledge_assertion",
+            "agent_type": "manual_agent"
+          },
+          "@type": "Example"
+        }
       ],
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "Association",
@@ -36624,6 +36720,22 @@
       "name": "ChemicalAffectsGeneAssociation",
       "definition_uri": "https://w3id.org/biolink/vocab/ChemicalAffectsGeneAssociation",
       "description": "Describes an effect that a chemical has on a gene or gene product (e.g. an impact of on its abundance, activity,localization, processing, expression, etc.)",
+      "examples": [
+        {
+          "object": {
+            "subject": "DrugCentral:279",
+            "predicate": "biolink:affects",
+            "object": "UniProtKB:P0AD68",
+            "qualified_predicate": "biolink:causes",
+            "object_aspect_qualifier": "activity",
+            "object_direction_qualifier": "decreased",
+            "causal_mechanism_qualifier": "inhibition",
+            "knowledge_level": "knowledge_assertion",
+            "agent_type": "manual_agent"
+          },
+          "@type": "Example"
+        }
+      ],
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "ChemicalAffectsBiologicalEntityAssociation",
       "slots": [
@@ -36786,6 +36898,18 @@
       "name": "DrugToGeneAssociation",
       "definition_uri": "https://w3id.org/biolink/vocab/DrugToGeneAssociation",
       "description": "An interaction between a drug and a gene or gene product.",
+      "examples": [
+        {
+          "object": {
+            "subject": "DrugCentral:5476",
+            "predicate": "biolink:interacts_with",
+            "object": "UniProtKB:P10912",
+            "knowledge_level": "knowledge_assertion",
+            "agent_type": "manual_agent"
+          },
+          "@type": "Example"
+        }
+      ],
       "from_schema": "https://w3id.org/biolink/vocab/",
       "related_mappings": [
         "SIO:001257"
@@ -37012,6 +37136,7 @@
     {
       "name": "DiseaseToEntityAssociationMixin",
       "definition_uri": "https://w3id.org/biolink/vocab/DiseaseToEntityAssociationMixin",
+      "description": "A mixin applied to any association whose subject (source node) is a disease.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "mixin": true,
       "slots": [
@@ -37309,6 +37434,7 @@
     {
       "name": "EntityToPhenotypicFeatureAssociationMixin",
       "definition_uri": "https://w3id.org/biolink/vocab/EntityToPhenotypicFeatureAssociationMixin",
+      "description": "A mixin applied to any association whose object (target node) is a phenotypic feature.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "EntityToFeatureOrDiseaseQualifiersMixin",
       "mixin": true,
@@ -37344,6 +37470,7 @@
     {
       "name": "PhenotypicFeatureToEntityAssociationMixin",
       "definition_uri": "https://w3id.org/biolink/vocab/PhenotypicFeatureToEntityAssociationMixin",
+      "description": "A mixin applied to any association whose subject (source node) is a phenotypic feature.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "FeatureOrDiseaseQualifiersToEntityMixin",
       "mixin": true,
@@ -38382,6 +38509,7 @@
     {
       "name": "GeneToPhenotypicFeatureAssociation",
       "definition_uri": "https://w3id.org/biolink/vocab/GeneToPhenotypicFeatureAssociation",
+      "description": "An association between a gene or gene product and a phenotypic feature, where variation in the gene is correlated with the phenotypic feature.",
       "comments": [
         "NCIT:R176 refers to the inverse relationship",
         "for use in describing the affect that the loss of function of a gene can have on exacerbating or ameliorating a symptom/phenotype",
@@ -38476,10 +38604,24 @@
     {
       "name": "GeneToDiseaseAssociation",
       "definition_uri": "https://w3id.org/biolink/vocab/GeneToDiseaseAssociation",
+      "description": "An association between a gene or gene product and a disease, where variation in the gene is correlated with the disease.",
       "comments": [
         "NCIT:R176 refers to the inverse relationship",
         "for use in describing the affect that the loss of function of a gene can have on exacerbating or ameliorating a disease",
         "if the relationship of the statement using this predicate is statistical in nature, please use `associated with likelihood` or one of its children."
+      ],
+      "examples": [
+        {
+          "description": "ACTA1 gene associated with nemaline myopathy, curated from MedlinePlus via the DISEASES database.",
+          "object": {
+            "subject": "NCBIGene:60",
+            "predicate": "biolink:associated_with",
+            "object": "MONDO:0017579",
+            "knowledge_level": "knowledge_assertion",
+            "agent_type": "manual_agent"
+          },
+          "@type": "Example"
+        }
       ],
       "from_schema": "https://w3id.org/biolink/vocab/",
       "exact_mappings": [
@@ -38561,6 +38703,7 @@
     {
       "name": "CausalGeneToDiseaseAssociation",
       "definition_uri": "https://w3id.org/biolink/vocab/CausalGeneToDiseaseAssociation",
+      "description": "An association between a gene and a disease where variation in the gene has been shown to have a causal role in the disease.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "Association",
       "mixins": [
@@ -38633,6 +38776,28 @@
     {
       "name": "CorrelatedGeneToDiseaseAssociation",
       "definition_uri": "https://w3id.org/biolink/vocab/CorrelatedGeneToDiseaseAssociation",
+      "examples": [
+        {
+          "object": {
+            "subject": "ENSEMBL:ENSP00000000233",
+            "predicate": "biolink:occurs_together_in_literature_with",
+            "object": "DOID:0111266",
+            "knowledge_level": "text_co_occurrence",
+            "agent_type": "data_analysis_pipeline"
+          },
+          "@type": "Example"
+        },
+        {
+          "object": {
+            "subject": "ENSEMBL:ENSP00000003084",
+            "predicate": "biolink:associated_with",
+            "object": "DOID:0111862",
+            "knowledge_level": "knowledge_assertion",
+            "agent_type": "manual_agent"
+          },
+          "@type": "Example"
+        }
+      ],
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "Association",
       "mixins": [
@@ -38794,6 +38959,7 @@
     {
       "name": "PhenotypicFeatureToDiseaseAssociation",
       "definition_uri": "https://w3id.org/biolink/vocab/PhenotypicFeatureToDiseaseAssociation",
+      "description": "An association between a phenotypic feature (sign or symptom) and a disease, where the phenotypic feature is a manifestation or clinical indicator of the disease.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "Association",
       "mixins": [
@@ -40142,6 +40308,28 @@
       "name": "FunctionalAssociation",
       "definition_uri": "https://w3id.org/biolink/vocab/FunctionalAssociation",
       "description": "An association between a macromolecular machine mixin (gene, gene product or complex of gene products) and either a molecular activity, a biological process or a cellular location in which a function is executed.",
+      "examples": [
+        {
+          "object": {
+            "subject": "UniProtKB:A0A024RBG1",
+            "predicate": "biolink:enables",
+            "object": "GO:0003723",
+            "knowledge_level": "prediction",
+            "agent_type": "automated_agent"
+          },
+          "@type": "Example"
+        },
+        {
+          "object": {
+            "subject": "UniProtKB:A0A024RBG1",
+            "predicate": "biolink:enables",
+            "object": "GO:0005515",
+            "knowledge_level": "knowledge_assertion",
+            "agent_type": "manual_agent"
+          },
+          "@type": "Example"
+        }
+      ],
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "Association",
       "slots": [
@@ -40219,6 +40407,18 @@
       "name": "MacromolecularMachineToMolecularActivityAssociation",
       "definition_uri": "https://w3id.org/biolink/vocab/MacromolecularMachineToMolecularActivityAssociation",
       "description": "A functional association between a macromolecular machine (gene, gene product or complex) and a molecular activity (as represented in the GO molecular function branch), where the entity carries out the activity, or contributes to its execution.",
+      "examples": [
+        {
+          "object": {
+            "subject": "UniProtKB:A0A024RBG1",
+            "predicate": "biolink:enables",
+            "object": "GO:0003723",
+            "knowledge_level": "prediction",
+            "agent_type": "automated_agent"
+          },
+          "@type": "Example"
+        }
+      ],
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "FunctionalAssociation",
       "mixins": [
@@ -40284,6 +40484,18 @@
       "name": "MacromolecularMachineToBiologicalProcessAssociation",
       "definition_uri": "https://w3id.org/biolink/vocab/MacromolecularMachineToBiologicalProcessAssociation",
       "description": "A functional association between a macromolecular machine (gene, gene product or complex) and a biological process or pathway (as represented in the GO biological process branch), where the entity carries out some part of the process, regulates it, or acts upstream of it.",
+      "examples": [
+        {
+          "object": {
+            "subject": "UniProtKB:A0A075B6H5",
+            "predicate": "biolink:involved_in",
+            "object": "GO:0002376",
+            "knowledge_level": "prediction",
+            "agent_type": "automated_agent"
+          },
+          "@type": "Example"
+        }
+      ],
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "FunctionalAssociation",
       "mixins": [
@@ -40349,6 +40561,18 @@
       "name": "MacromolecularMachineToCellularComponentAssociation",
       "definition_uri": "https://w3id.org/biolink/vocab/MacromolecularMachineToCellularComponentAssociation",
       "description": "A functional association between a macromolecular machine (gene, gene product or complex) and a cellular component (as represented in the GO cellular component branch), where the entity carries out its function in the cellular component.",
+      "examples": [
+        {
+          "object": {
+            "subject": "UniProtKB:A0A024RBG1",
+            "predicate": "biolink:located_in",
+            "object": "GO:0005737",
+            "knowledge_level": "prediction",
+            "agent_type": "automated_agent"
+          },
+          "@type": "Example"
+        }
+      ],
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "FunctionalAssociation",
       "mixins": [
@@ -40535,6 +40759,18 @@
     {
       "name": "GeneToGoTermAssociation",
       "definition_uri": "https://w3id.org/biolink/vocab/GeneToGoTermAssociation",
+      "examples": [
+        {
+          "object": {
+            "subject": "UniProtKB:A0A024RBG1",
+            "predicate": "biolink:enables",
+            "object": "GO:0005515",
+            "knowledge_level": "knowledge_assertion",
+            "agent_type": "manual_agent"
+          },
+          "@type": "Example"
+        }
+      ],
       "from_schema": "https://w3id.org/biolink/vocab/",
       "aliases": [
         "functional association"
@@ -40605,6 +40841,19 @@
     {
       "name": "EntityToDiseaseAssociation",
       "definition_uri": "https://w3id.org/biolink/vocab/EntityToDiseaseAssociation",
+      "description": "An association between any entity and a disease, capturing clinical context such as approval status, research phase, FDA regulatory approvals, and number of cases.",
+      "examples": [
+        {
+          "object": {
+            "subject": "UNII:9TD681796G",
+            "predicate": "biolink:in_clinical_trials_for",
+            "object": "MONDO:0006052",
+            "knowledge_level": "knowledge_assertion",
+            "agent_type": "manual_agent"
+          },
+          "@type": "Example"
+        }
+      ],
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "Association",
       "slots": [
@@ -40673,6 +40922,19 @@
     {
       "name": "EntityToPhenotypicFeatureAssociation",
       "definition_uri": "https://w3id.org/biolink/vocab/EntityToPhenotypicFeatureAssociation",
+      "description": "An association between any entity and a phenotypic feature, capturing clinical context such as approval status, research phase, FDA regulatory approvals, and number of cases.",
+      "examples": [
+        {
+          "object": {
+            "subject": "UMLS:C0887621",
+            "predicate": "biolink:in_clinical_trials_for",
+            "object": "NCIT:C34887",
+            "knowledge_level": "knowledge_assertion",
+            "agent_type": "manual_agent"
+          },
+          "@type": "Example"
+        }
+      ],
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "Association",
       "slots": [
@@ -41199,6 +41461,7 @@
     {
       "name": "AnatomicalEntityToAnatomicalEntityAssociation",
       "definition_uri": "https://w3id.org/biolink/vocab/AnatomicalEntityToAnatomicalEntityAssociation",
+      "description": "An abstract parent class for associations between two anatomical entities, such as part-of, develops-from, or other mereological and ontogenic relationships.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "Association",
       "abstract": true,
@@ -41866,9 +42129,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2026-04-13T23:45:15",
-  "source_file_size": 463807,
-  "generation_date": "2026-04-13T23:45:21",
+  "source_file_date": "2026-04-16T11:52:11",
+  "source_file_size": 475158,
+  "generation_date": "2026-04-16T11:52:22",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",

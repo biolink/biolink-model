@@ -395,6 +395,7 @@ message Bacterium
   labelType inTaxonLabel = 0
  repeated  attribute hasAttribute = 0
  }
+// The internally coordinated responses (actions or inactions) of organisms (individuals or groups) to internal or external stimuli, via a mechanism that involves nervous system activity.
 message Behavior
  {
   string id = 0
@@ -740,6 +741,7 @@ message BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation
   geneOrGeneProductOrGeneFamily object = 0
   uriorcurie predicate = 0
  }
+// An organismal quality inhering in a bearer by virtue of the bearer's ability to undergo sexual reproduction in order to differentiate the individuals or types involved.
 message BiologicalSex
  {
   string id = 0
@@ -818,6 +820,7 @@ message Book
   string id = 0
  repeated  string type = 0
  }
+// A section of a book that forms a discrete unit of a larger published work and may be independently authored or cited.
 message BookChapter
  {
   iriType iri = 0
@@ -1098,6 +1101,7 @@ message CaseToVariantAssociation
   sequenceVariant object = 0
   zygosity hasZygosity = 0
  }
+// An association between a gene and a disease where variation in the gene has been shown to have a causal role in the disease.
 message CausalGeneToDiseaseAssociation
  {
   string id = 0
@@ -1155,6 +1159,7 @@ message CausalGeneToDiseaseAssociation
   geneOrGeneProduct subject = 0
   disease object = 0
  }
+// The basic structural and functional unit of all organisms. Includes the plasma membrane and any external encapsulating structures such as the cell wall and cell envelope.
 message Cell
  {
   string id = 0
@@ -1175,6 +1180,7 @@ message Cell
   labelType inTaxonLabel = 0
  repeated  attribute hasAttribute = 0
  }
+// A cultured cell population that is genetically stable and homogeneous, sharing a common propagation history through successive passages in culture.
 message CellLine
  {
   string id = 0
@@ -1335,6 +1341,7 @@ message CellularComponent
   labelType inTaxonLabel = 0
  repeated  attribute hasAttribute = 0
  }
+// An organism that contains one or more cells.
 message CellularOrganism
  {
   string id = 0
@@ -2356,6 +2363,7 @@ message ClinicalFinding
   geneticInheritance inheritance = 0
  repeated  clinicalAttribute hasAttribute = 0
  }
+// A medical procedure, treatment, or action taken by healthcare professionals to modify the course of a disease or condition.
 message ClinicalIntervention
  {
   string id = 0
@@ -2452,6 +2460,7 @@ message ClinicalTrial
  repeated  diseaseOrPhenotypicFeature clinicalTrialConditions = 0
   date creationDate = 0
  }
+// A contiguous sequence which begins with, and includes, a start codon and ends with, and includes, a stop codon.
 message CodingSequence
  {
   string id = 0
@@ -3464,6 +3473,7 @@ message DruggableGeneToDiseaseAssociation
   string objectAspectQualifier = 0
   disease diseaseContextQualifier = 0
  }
+// An association between any entity and a disease, capturing clinical context such as approval status, research phase, FDA regulatory approvals, and number of cases.
 message EntityToDiseaseAssociation
  {
   string id = 0
@@ -3520,6 +3530,7 @@ message EntityToDiseaseAssociation
  repeated  string fDARegulatoryApprovals = 0
   integer numberOfCases = 0
  }
+// An association between any entity and a phenotypic feature, capturing clinical context such as approval status, research phase, FDA regulatory approvals, and number of cases.
 message EntityToPhenotypicFeatureAssociation
  {
   string id = 0
@@ -3604,6 +3615,7 @@ message EnvironmentalExposure
   string exposureAdditionalCondition = 0
   string id = 0
  }
+// A system or entity in the natural environment that has the disposition to environ one or more material entities.
 message EnvironmentalFeature
  {
   string id = 0
@@ -3622,6 +3634,7 @@ message EnvironmentalFeature
   uriorcurie taxon = 0
  repeated  uriorcurie category = 0
  }
+// Any unwanted chemical in food, including agrochemicals and industrial chemicals that may contaminate foodstuffs during their production, transportation, or storage.
 message EnvironmentalFoodContaminant
  {
   string id = 0
@@ -3652,6 +3665,7 @@ message EnvironmentalFoodContaminant
   string chemblChirality = 0
   string chemblDrugWarning = 0
  }
+// A process that occurs within or involves the components of an environmental system.
 message EnvironmentalProcess
  {
   string id = 0
@@ -3987,6 +4001,7 @@ message Food
   approvalStatusEnum highestFDAApprovalStatus = 0
   approvalStatusEnum drugRegulatoryStatusWorldWide = 0
  }
+// Any substance which is added to food to preserve or enhance its flavour and/or appearance.
 message FoodAdditive
  {
   string id = 0
@@ -4543,6 +4558,7 @@ message GeneRegulatesGeneAssociation
   uriorcurie predicate = 0
   geneOrGeneProduct object = 0
  }
+// An association between a gene or gene product and a disease, where variation in the gene is correlated with the disease.
 message GeneToDiseaseAssociation
  {
   string id = 0
@@ -4979,6 +4995,7 @@ message GeneToPathwayAssociation
   geneOrGeneProduct subject = 0
   pathway object = 0
  }
+// An association between a gene or gene product and a phenotypic feature, where variation in the gene is correlated with the phenotypic feature.
 message GeneToPhenotypicFeatureAssociation
  {
   string id = 0
@@ -5636,6 +5653,7 @@ message GeographicLocationAtTime
   float longitude = 0
   timeType timepoint = 0
  }
+// An anatomical structure that has more than one cell as a part.
 message GrossAnatomicalStructure
  {
   string id = 0
@@ -5678,6 +5696,7 @@ message Haplotype
   labelType inTaxonLabel = 0
   biologicalSequence hasBiologicalSequence = 0
  }
+// The admission and care of a patient in a hospital for observation, diagnosis, or treatment.
 message Hospitalization
  {
   string id = 0
@@ -6304,6 +6323,7 @@ message MaterialSampleToDiseaseOrPhenotypicFeatureAssociation
   uriorcurie objectSpecializationQualifier = 0
  repeated  string anatomicalContextQualifier = 0
  }
+// A small (~22 nucleotide) RNA molecule that is the endogenous transcript of a miRNA gene. Produced from precursor molecules that form hairpin structures, which are processed (typically via the Dicer pathway) to yield a single miRNA molecule. miRNAs function by triggering cleavage of target molecules or acting as translational repressors.
 message MicroRNA
  {
   string id = 0
@@ -6649,6 +6669,7 @@ message NamedThingAssociatedWithLikelihoodOfNamedThingAssociation
   ontologyClass objectContextQualifier = 0
   populationOfIndividualOrganisms populationContextQualifier = 0
  }
+// An RNA transcript that does not encode for a protein rather the RNA molecule is the functional gene product.
 message NoncodingRNAProduct
  {
   string id = 0
@@ -7285,6 +7306,7 @@ message PathologicalProcessExposure
   string exposureAdditionalCondition = 0
   string id = 0
  }
+// A hierarchical ordering of connected molecular reactions (steps) that represent a specific biological process, such as signaling or metabolism.
 message Pathway
  {
   string id = 0
@@ -7349,6 +7371,7 @@ message PhenotypicFeature
   labelType inTaxonLabel = 0
   geneticInheritance inheritance = 0
  }
+// An association between a phenotypic feature (sign or symptom) and a disease, where the phenotypic feature is a manifestation or clinical indicator of the disease.
 message PhenotypicFeatureToDiseaseAssociation
  {
   string id = 0
@@ -7541,6 +7564,7 @@ message PhysicalEntity
   uriorcurie taxon = 0
  repeated  uriorcurie category = 0
  }
+// A biological or chemical function within a living organism (cells, tissues, or organs).
 message PhysiologicalProcess
  {
   string id = 0
@@ -7583,6 +7607,7 @@ message PlanetaryEntity
   uriorcurie taxon = 0
  repeated  uriorcurie category = 0
  }
+// Any living organism that typically synthesizes its food from inorganic substances, possesses cellulose cell walls, responds slowly and often permanently to a stimulus, lacks specialized sense organs and nervous system, and has no powers of locomotion.
 message Plant
  {
   string id = 0
@@ -7922,6 +7947,7 @@ message ProteinDomain
   labelType inTaxonLabel = 0
  repeated  gene hasGeneOrGeneProduct = 0
  }
+// A set of proteins coding for diverse functions which, by virtue of their high degree of sequence similarity, are believed to have evolved from a single ancestral gene.
 message ProteinFamily
  {
   string id = 0
@@ -9253,6 +9279,7 @@ message WebPage
   string id = 0
   labelType name = 0
  }
+// An allelic state describing the degree of similarity between features at a single locus, specifically whether alleles at the same location on paired chromosomes are identical or different.
 message Zygosity
  {
   string id = 0

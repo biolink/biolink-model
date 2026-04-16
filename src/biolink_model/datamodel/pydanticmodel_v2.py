@@ -1033,14 +1033,23 @@ class QuantityValue(Annotation):
 
 
 class RelationshipQuantifier(ConfiguredBaseModel):
+    """
+    A mixin for quantifying aspects of the strength, frequency, or specificity of a relationship between two entities.
+    """
     pass
 
 
 class SensitivityQuantifier(RelationshipQuantifier):
+    """
+    A relationship quantifier that measures the sensitivity of a relationship, such as the proportion of true positives correctly identified in a diagnostic or association context.
+    """
     pass
 
 
 class SpecificityQuantifier(RelationshipQuantifier):
+    """
+    A relationship quantifier that measures the specificity of a relationship, such as the proportion of true negatives correctly identified in a diagnostic or association context.
+    """
     pass
 
 
@@ -1052,6 +1061,9 @@ class PathognomonicityQuantifier(SpecificityQuantifier):
 
 
 class FrequencyQuantifier(RelationshipQuantifier):
+    """
+    A relationship quantifier that expresses how often a relationship holds, using count, total, quotient, or percentage measures.
+    """
     has_count: Optional[int] = Field(default=None, description="""number of things with a particular property""")
     has_total: Optional[int] = Field(default=None, description="""total number of things in a particular reference set""")
     has_quotient: Optional[float] = Field(default=None)
@@ -1059,6 +1071,9 @@ class FrequencyQuantifier(RelationshipQuantifier):
 
 
 class ChemicalOrDrugOrTreatment(ConfiguredBaseModel):
+    """
+    A mixin for entities that represent chemical substances, pharmacological agents, or therapeutic interventions.
+    """
     pass
 
 
@@ -1146,6 +1161,9 @@ class ChemicalRole(Attribute):
 
 
 class BiologicalSex(Attribute):
+    """
+    An organismal quality inhering in a bearer by virtue of the bearer's ability to undergo sexual reproduction in order to differentiate the individuals or types involved.
+    """
     name: Optional[str] = Field(default=None, description="""The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.""")
     has_attribute_type: str = Field(default=..., description="""connects an attribute to a class that describes it""")
     has_quantitative_value: Optional[list[QuantityValue]] = Field(default=None, description="""connects an attribute to a value""")
@@ -1296,6 +1314,9 @@ class Event(NamedThing):
 
 
 class AdministrativeEntity(NamedThing):
+    """
+    An entity that is the byproduct of an administrative process.
+    """
     provided_by: Optional[list[str]] = Field(default=None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[list[str]] = Field(default=None, description="""A database cross reference or alternative identifier for a NamedThing or edge between two NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     full_name: Optional[str] = Field(default=None, description="""a long-form human readable name for a thing""")
@@ -1837,6 +1858,9 @@ class Book(Publication):
 
 
 class BookChapter(Publication):
+    """
+    A section of a book that forms a discrete unit of a larger published work and may be independently authored or cited.
+    """
     published_in: str = Field(default=..., description="""The enclosing parent book containing the chapter should have industry-standard identifier from ISBN.""")
     volume: Optional[str] = Field(default=None, description="""volume of a book or music release in a collection/series or a published collection of journal issues in a serial publication""")
     chapter: Optional[str] = Field(default=None, description="""chapter of a book""")
@@ -2350,6 +2374,9 @@ class PlanetaryEntity(NamedThing):
 
 
 class EnvironmentalProcess(PlanetaryEntity, Occurrent):
+    """
+    A process that occurs within or involves the components of an environmental system.
+    """
     provided_by: Optional[list[str]] = Field(default=None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[list[str]] = Field(default=None, description="""A database cross reference or alternative identifier for a NamedThing or edge between two NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     full_name: Optional[str] = Field(default=None, description="""a long-form human readable name for a thing""")
@@ -2368,6 +2395,9 @@ class EnvironmentalProcess(PlanetaryEntity, Occurrent):
 
 
 class EnvironmentalFeature(PlanetaryEntity):
+    """
+    A system or entity in the natural environment that has the disposition to environ one or more material entities.
+    """
     provided_by: Optional[list[str]] = Field(default=None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[list[str]] = Field(default=None, description="""A database cross reference or alternative identifier for a NamedThing or edge between two NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     full_name: Optional[str] = Field(default=None, description="""a long-form human readable name for a thing""")
@@ -2441,6 +2471,9 @@ class ThingWithTaxon(ConfiguredBaseModel):
 
 
 class BiologicalEntity(ThingWithTaxon, NamedThing):
+    """
+    A heterogeneous substance that contains genomic material or is the product of a biological process.
+    """
     in_taxon: Optional[list[str]] = Field(default=None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     in_taxon_label: Optional[str] = Field(default=None, description="""The human readable scientific name for the taxon of the entity.""")
     provided_by: Optional[list[str]] = Field(default=None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
@@ -2461,10 +2494,16 @@ class BiologicalEntity(ThingWithTaxon, NamedThing):
 
 
 class GenomicEntity(ConfiguredBaseModel):
+    """
+    A generically dependent continuant that carries biological sequence that is part of or derived from a genome.
+    """
     has_biological_sequence: Optional[str] = Field(default=None, description="""connects a genomic feature to its sequence""")
 
 
 class EpigenomicEntity(ConfiguredBaseModel):
+    """
+    A mixin for entities that represent epigenomic modifications or features associated with heritable changes in gene expression that do not involve changes to the DNA sequence itself.
+    """
     has_biological_sequence: Optional[str] = Field(default=None, description="""connects a genomic feature to its sequence""")
 
 
@@ -2571,6 +2610,9 @@ class BiologicalProcess(BiologicalProcessOrActivity, Occurrent, OntologyClass):
 
 
 class Pathway(BiologicalProcess, OntologyClass):
+    """
+    A hierarchical ordering of connected molecular reactions (steps) that represent a specific biological process, such as signaling or metabolism.
+    """
     id: str = Field(default=..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     has_input: Optional[list[str]] = Field(default=None, description="""holds between a process and a continuant, where the continuant is an input into the process""")
     has_output: Optional[list[str]] = Field(default=None, description="""holds between a process and a continuant, where the continuant is an output of the process""")
@@ -2594,6 +2636,9 @@ class Pathway(BiologicalProcess, OntologyClass):
 
 
 class PhysiologicalProcess(BiologicalProcess, OntologyClass):
+    """
+    A biological or chemical function within a living organism (cells, tissues, or organs).
+    """
     id: str = Field(default=..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     has_input: Optional[list[str]] = Field(default=None, description="""holds between a process and a continuant, where the continuant is an input into the process""")
     has_output: Optional[list[str]] = Field(default=None, description="""holds between a process and a continuant, where the continuant is an output of the process""")
@@ -2617,6 +2662,9 @@ class PhysiologicalProcess(BiologicalProcess, OntologyClass):
 
 
 class Behavior(BiologicalProcess, ActivityAndBehavior, OntologyClass):
+    """
+    The internally coordinated responses (actions or inactions) of organisms (individuals or groups) to internal or external stimuli, via a mechanism that involves nervous system activity.
+    """
     id: str = Field(default=..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     has_input: Optional[list[str]] = Field(default=None, description="""holds between a process and a continuant, where the continuant is an input into the process""")
     has_output: Optional[list[str]] = Field(default=None, description="""holds between a process and a continuant, where the continuant is an output of the process""")
@@ -2780,6 +2828,9 @@ class Virus(OrganismalEntity, SubjectOfInvestigation):
 
 
 class CellularOrganism(OrganismalEntity, SubjectOfInvestigation):
+    """
+    An organism that contains one or more cells.
+    """
     in_taxon: Optional[list[str]] = Field(default=None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     in_taxon_label: Optional[str] = Field(default=None, description="""The human readable scientific name for the taxon of the entity.""")
     provided_by: Optional[list[str]] = Field(default=None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
@@ -2846,6 +2897,9 @@ class Human(Mammal, SubjectOfInvestigation):
 
 
 class Plant(CellularOrganism):
+    """
+    Any living organism that typically synthesizes its food from inorganic substances, possesses cellulose cell walls, responds slowly and often permanently to a stimulus, lacks specialized sense organs and nervous system, and has no powers of locomotion.
+    """
     in_taxon: Optional[list[str]] = Field(default=None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     in_taxon_label: Optional[str] = Field(default=None, description="""The human readable scientific name for the taxon of the entity.""")
     provided_by: Optional[list[str]] = Field(default=None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
@@ -3169,6 +3223,9 @@ class CellularComponent(AnatomicalEntity):
 
 
 class Cell(AnatomicalEntity):
+    """
+    The basic structural and functional unit of all organisms. Includes the plasma membrane and any external encapsulating structures such as the cell wall and cell envelope.
+    """
     id: str = Field(default=..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     in_taxon: Optional[list[str]] = Field(default=None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     in_taxon_label: Optional[str] = Field(default=None, description="""The human readable scientific name for the taxon of the entity.""")
@@ -3189,6 +3246,9 @@ class Cell(AnatomicalEntity):
 
 
 class CellLine(OrganismalEntity, SubjectOfInvestigation):
+    """
+    A cultured cell population that is genetically stable and homogeneous, sharing a common propagation history through successive passages in culture.
+    """
     in_taxon: Optional[list[str]] = Field(default=None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     in_taxon_label: Optional[str] = Field(default=None, description="""The human readable scientific name for the taxon of the entity.""")
     provided_by: Optional[list[str]] = Field(default=None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
@@ -3209,6 +3269,9 @@ class CellLine(OrganismalEntity, SubjectOfInvestigation):
 
 
 class GrossAnatomicalStructure(AnatomicalEntity):
+    """
+    An anatomical structure that has more than one cell as a part.
+    """
     id: str = Field(default=..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     in_taxon: Optional[list[str]] = Field(default=None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     in_taxon_label: Optional[str] = Field(default=None, description="""The human readable scientific name for the taxon of the entity.""")
@@ -3633,6 +3696,9 @@ class Drug(MolecularMixture, ChemicalOrDrugOrTreatment, OntologyClass):
 
 
 class EnvironmentalFoodContaminant(ChemicalEntity):
+    """
+    Any unwanted chemical in food, including agrochemicals and industrial chemicals that may contaminate foodstuffs during their production, transportation, or storage.
+    """
     trade_name: Optional[str] = Field(default=None)
     available_from: Optional[list[DrugAvailabilityEnum]] = Field(default=None)
     max_tolerated_dose: Optional[str] = Field(default=None, description="""The highest dose of a drug or treatment that does not cause unacceptable side effects. The maximum tolerated dose is determined in clinical trials by testing increasing doses on different groups of people until the highest dose with acceptable side effects is found. Also called MTD.""")
@@ -3663,6 +3729,9 @@ class EnvironmentalFoodContaminant(ChemicalEntity):
 
 
 class FoodAdditive(ChemicalEntity):
+    """
+    Any substance which is added to food to preserve or enhance its flavour and/or appearance.
+    """
     trade_name: Optional[str] = Field(default=None)
     available_from: Optional[list[DrugAvailabilityEnum]] = Field(default=None)
     max_tolerated_dose: Optional[str] = Field(default=None, description="""The highest dose of a drug or treatment that does not cause unacceptable side effects. The maximum tolerated dose is determined in clinical trials by testing increasing doses on different groups of people until the highest dose with acceptable side effects is found. Also called MTD.""")
@@ -3910,6 +3979,9 @@ class Transcript(BiologicalEntity):
 
 
 class CodingSequence(GenomicEntity, BiologicalEntity):
+    """
+    A contiguous sequence which begins with, and includes, a start codon and ends with, and includes, a stop codon.
+    """
     has_biological_sequence: Optional[str] = Field(default=None, description="""connects a genomic feature to its sequence""")
     in_taxon: Optional[list[str]] = Field(default=None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     in_taxon_label: Optional[str] = Field(default=None, description="""The human readable scientific name for the taxon of the entity.""")
@@ -4089,6 +4161,9 @@ class RNAProductIsoform(RNAProduct, GeneProductIsoformMixin):
 
 
 class NoncodingRNAProduct(RNAProduct):
+    """
+    An RNA transcript that does not encode for a protein rather the RNA molecule is the functional gene product.
+    """
     synonym: Optional[list[str]] = Field(default=None, description="""Alternate human-readable names for a thing""")
     xref: Optional[list[str]] = Field(default=None, description="""A database cross reference or alternative identifier for a NamedThing or edge between two NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     in_taxon: Optional[list[str]] = Field(default=None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
@@ -4109,6 +4184,9 @@ class NoncodingRNAProduct(RNAProduct):
 
 
 class MicroRNA(NoncodingRNAProduct):
+    """
+    A small (~22 nucleotide) RNA molecule that is the endogenous transcript of a miRNA gene. Produced from precursor molecules that form hairpin structures, which are processed (typically via the Dicer pathway) to yield a single miRNA molecule. miRNAs function by triggering cleavage of target molecules or acting as translational repressors.
+    """
     synonym: Optional[list[str]] = Field(default=None, description="""Alternate human-readable names for a thing""")
     xref: Optional[list[str]] = Field(default=None, description="""A database cross reference or alternative identifier for a NamedThing or edge between two NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     in_taxon: Optional[list[str]] = Field(default=None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
@@ -4183,6 +4261,9 @@ class ProteinDomain(GeneGroupingMixin, ChemicalEntityOrGeneOrGeneProduct, Biolog
 
 
 class ProteinFamily(GeneGroupingMixin, ChemicalEntityOrGeneOrGeneProduct, BiologicalEntity):
+    """
+    A set of proteins coding for diverse functions which, by virtue of their high degree of sequence similarity, are believed to have evolved from a single ancestral gene.
+    """
     has_gene_or_gene_product: Optional[list[str]] = Field(default=None, description="""connects an entity with one or more gene or gene products""")
     in_taxon: Optional[list[str]] = Field(default=None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     in_taxon_label: Optional[str] = Field(default=None, description="""The human readable scientific name for the taxon of the entity.""")
@@ -4228,6 +4309,9 @@ class GeneFamily(GeneGroupingMixin, ChemicalEntityOrGeneOrGeneProduct, Biologica
 
 
 class Zygosity(Attribute):
+    """
+    An allelic state describing the degree of similarity between features at a single locus, specifically whether alleles at the same location on paired chromosomes are identical or different.
+    """
     name: Optional[str] = Field(default=None, description="""The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.""")
     has_attribute_type: str = Field(default=..., description="""connects an attribute to a class that describes it""")
     has_quantitative_value: Optional[list[QuantityValue]] = Field(default=None, description="""connects an attribute to a value""")
@@ -4551,6 +4635,9 @@ class ClinicalTrial(Study):
 
 
 class ClinicalIntervention(ClinicalEntity):
+    """
+    A medical procedure, treatment, or action taken by healthcare professionals to modify the course of a disease or condition.
+    """
     provided_by: Optional[list[str]] = Field(default=None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[list[str]] = Field(default=None, description="""A database cross reference or alternative identifier for a NamedThing or edge between two NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     full_name: Optional[str] = Field(default=None, description="""a long-form human readable name for a thing""")
@@ -4593,6 +4680,9 @@ class ClinicalFinding(PhenotypicFeature):
 
 
 class Hospitalization(ClinicalIntervention):
+    """
+    The admission and care of a patient in a hospital for observation, diagnosis, or treatment.
+    """
     provided_by: Optional[list[str]] = Field(default=None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[list[str]] = Field(default=None, description="""A database cross reference or alternative identifier for a NamedThing or edge between two NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     full_name: Optional[str] = Field(default=None, description="""a long-form human readable name for a thing""")
@@ -7279,6 +7369,9 @@ class MaterialSampleDerivationAssociation(Association):
 
 
 class DiseaseToEntityAssociationMixin(ConfiguredBaseModel):
+    """
+    A mixin applied to any association whose subject (source node) is a disease.
+    """
     subject: str = Field(default=..., description="""disease class""")
     predicate: str = Field(default=..., description="""Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats""")
     object: str = Field(default=..., description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
@@ -7486,6 +7579,9 @@ class FeatureOrDiseaseQualifiersToEntityMixin(FrequencyQualifierMixin):
 
 
 class EntityToPhenotypicFeatureAssociationMixin(EntityToFeatureOrDiseaseQualifiersMixin, FrequencyQuantifier):
+    """
+    A mixin applied to any association whose object (target node) is a phenotypic feature.
+    """
     subject: str = Field(default=..., description="""connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     predicate: str = Field(default=..., description="""Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats""")
     object: str = Field(default=..., description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
@@ -7504,6 +7600,9 @@ class EntityToPhenotypicFeatureAssociationMixin(EntityToFeatureOrDiseaseQualifie
 
 
 class PhenotypicFeatureToEntityAssociationMixin(FeatureOrDiseaseQualifiersToEntityMixin, FrequencyQuantifier):
+    """
+    A mixin applied to any association whose subject (source node) is a phenotypic feature.
+    """
     sex_qualifier: Optional[str] = Field(default=None, description="""a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.""")
     has_count: Optional[int] = Field(default=None, description="""number of things with a particular property""")
     has_total: Optional[int] = Field(default=None, description="""total number of things in a particular reference set""")
@@ -8737,6 +8836,9 @@ class VariantToEntityAssociationMixin(ConfiguredBaseModel):
 
 
 class GeneToPhenotypicFeatureAssociation(GeneToEntityAssociationMixin, EntityToPhenotypicFeatureAssociationMixin, Association):
+    """
+    An association between a gene or gene product and a phenotypic feature, where variation in the gene is correlated with the phenotypic feature.
+    """
     subject_form_or_variant_qualifier: Optional[ChemicalOrGeneOrGeneProductFormOrVariantEnum] = Field(default=None, description="""A qualifier that composes with a core subject/object concept to define a specific type, variant, alternative version of this concept. The composed concept remains a subtype or instance of the core concept. For example, the qualifier ‘mutation’ combines with the core concept ‘Gene X’ to express the compose concept ‘a mutation of Gene X’.  This qualifier specifies a change in the subject of an association (aka: statement).""")
     subject_aspect_qualifier: Optional[GeneOrGeneProductOrChemicalEntityAspectEnum] = Field(default=None, description="""Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the subject of an association (aka: statement).""")
     object_direction_qualifier: Optional[DirectionQualifierEnum] = Field(default=None, description="""Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement).""")
@@ -8816,6 +8918,9 @@ class GeneToPhenotypicFeatureAssociation(GeneToEntityAssociationMixin, EntityToP
 
 
 class GeneToDiseaseAssociation(GeneToEntityAssociationMixin, Association):
+    """
+    An association between a gene or gene product and a disease, where variation in the gene is correlated with the disease.
+    """
     subject_form_or_variant_qualifier: Optional[ChemicalOrGeneOrGeneProductFormOrVariantEnum] = Field(default=None, description="""A qualifier that composes with a core subject/object concept to define a specific type, variant, alternative version of this concept. The composed concept remains a subtype or instance of the core concept. For example, the qualifier ‘mutation’ combines with the core concept ‘Gene X’ to express the compose concept ‘a mutation of Gene X’.  This qualifier specifies a change in the subject of an association (aka: statement).""")
     subject_aspect_qualifier: Optional[GeneOrGeneProductOrChemicalEntityAspectEnum] = Field(default=None, description="""Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the subject of an association (aka: statement).""")
     object_direction_qualifier: Optional[DirectionQualifierEnum] = Field(default=None, description="""Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement).""")
@@ -8888,6 +8993,9 @@ class GeneToDiseaseAssociation(GeneToEntityAssociationMixin, Association):
 
 
 class CausalGeneToDiseaseAssociation(GeneToEntityAssociationMixin, Association):
+    """
+    An association between a gene and a disease where variation in the gene has been shown to have a causal role in the disease.
+    """
     subject_form_or_variant_qualifier: Optional[str] = Field(default=None, description="""A qualifier that composes with a core subject/object concept to define a specific type, variant, alternative version of this concept. The composed concept remains a subtype or instance of the core concept. For example, the qualifier ‘mutation’ combines with the core concept ‘Gene X’ to express the compose concept ‘a mutation of Gene X’.  This qualifier specifies a change in the subject of an association (aka: statement).""")
     subject_aspect_qualifier: Optional[str] = Field(default=None, description="""Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the subject of an association (aka: statement).""")
     object_direction_qualifier: Optional[DirectionQualifierEnum] = Field(default=None, description="""Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement).""")
@@ -9111,6 +9219,9 @@ class DruggableGeneToDiseaseAssociation(GeneToDiseaseAssociation, GeneToEntityAs
 
 
 class PhenotypicFeatureToDiseaseAssociation(EntityToDiseaseAssociationMixin, PhenotypicFeatureToEntityAssociationMixin, Association):
+    """
+    An association between a phenotypic feature (sign or symptom) and a disease, where the phenotypic feature is a manifestation or clinical indicator of the disease.
+    """
     sex_qualifier: Optional[str] = Field(default=None, description="""a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.""")
     subject: str = Field(default=..., description="""connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     predicate: str = Field(default=..., description="""Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats""")
@@ -10594,6 +10705,9 @@ class GeneToGoTermAssociation(FunctionalAssociation):
 
 
 class EntityToDiseaseAssociation(Association):
+    """
+    An association between any entity and a disease, capturing clinical context such as approval status, research phase, FDA regulatory approvals, and number of cases.
+    """
     clinical_approval_status: Optional[ClinicalApprovalStatusEnum] = Field(default=None, description="""The clinical approval status of a chemical entity for treating a specific disease or condition, as captured in the context of the association between the chemical and the disease.""")
     max_research_phase: Optional[ResearchPhaseEnum] = Field(default=None, description="""The maximum research phase reached for a specific chemical-disease pair, indicating the highest clinical trial phase achieved for the chemical entity's investigation as a treatment for the associated disease or condition.""")
     FDA_regulatory_approvals: Optional[list[str]] = Field(default=None, description="""Numbers that identify specific drug applications. Each drug can have multiple approval numbers (for example, as seen with ranitidine having both ANADA200536 and ANDA200536).""")
@@ -10650,6 +10764,9 @@ class EntityToDiseaseAssociation(Association):
 
 
 class EntityToPhenotypicFeatureAssociation(Association):
+    """
+    An association between any entity and a phenotypic feature, capturing clinical context such as approval status, research phase, FDA regulatory approvals, and number of cases.
+    """
     clinical_approval_status: Optional[ClinicalApprovalStatusEnum] = Field(default=None, description="""The clinical approval status of a chemical entity for treating a specific disease or condition, as captured in the context of the association between the chemical and the disease.""")
     max_research_phase: Optional[ResearchPhaseEnum] = Field(default=None, description="""The maximum research phase reached for a specific chemical-disease pair, indicating the highest clinical trial phase achieved for the chemical entity's investigation as a treatment for the associated disease or condition.""")
     FDA_regulatory_approvals: Optional[list[str]] = Field(default=None, description="""Numbers that identify specific drug applications. Each drug can have multiple approval numbers (for example, as seen with ranitidine having both ANADA200536 and ANDA200536).""")
@@ -11097,6 +11214,9 @@ class ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation(Association):
 
 
 class AnatomicalEntityToAnatomicalEntityAssociation(Association):
+    """
+    An abstract parent class for associations between two anatomical entities, such as part-of, develops-from, or other mereological and ontogenic relationships.
+    """
     subject: str = Field(default=..., description="""connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     predicate: str = Field(default=..., description="""Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats""")
     object: str = Field(default=..., description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")

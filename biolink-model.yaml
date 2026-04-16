@@ -6889,6 +6889,10 @@ classes:
       - value: CHEBI:35469  # antidepressant role
 
   biological sex:
+    description: >-
+      An organismal quality inhering in a bearer by virtue of the bearer's
+      ability to undergo sexual reproduction in order to differentiate
+      the individuals or types involved.
     is_a: attribute
     exact_mappings:
       - PATO:0000047
@@ -6916,13 +6920,24 @@ classes:
       describes the severity of a phenotypic feature or disease
 
   relationship quantifier:
+    description: >-
+      A mixin for quantifying aspects of the strength, frequency, or
+      specificity of a relationship between two entities.
     mixin: true
 
   sensitivity quantifier:
+    description: >-
+      A relationship quantifier that measures the sensitivity of a
+      relationship, such as the proportion of true positives correctly
+      identified in a diagnostic or association context.
     is_a: relationship quantifier
     mixin: true
 
   specificity quantifier:
+    description: >-
+      A relationship quantifier that measures the specificity of a
+      relationship, such as the proportion of true negatives correctly
+      identified in a diagnostic or association context.
     is_a: relationship quantifier
     mixin: true
 
@@ -6934,6 +6949,9 @@ classes:
     mixin: true
 
   frequency quantifier:
+    description: >-
+      A relationship quantifier that expresses how often a relationship
+      holds, using count, total, quotient, or percentage measures.
     is_a: relationship quantifier
     mixin: true
     slots:
@@ -6943,6 +6961,9 @@ classes:
       - has percentage
 
   chemical or drug or treatment:
+    description: >-
+      A mixin for entities that represent chemical substances,
+      pharmacological agents, or therapeutic interventions.
     mixin: true
     id_prefixes:
       - PUBCHEM.COMPOUND
@@ -7051,6 +7072,8 @@ classes:
    ## Administrative Entities
 
   administrative entity:
+    description: >-
+      An entity that is the byproduct of an administrative process.
     is_a: named thing
     abstract: true
 
@@ -7404,6 +7427,9 @@ classes:
       - model_organism_database
 
   book chapter:
+    description: >-
+      A section of a book that forms a discrete unit of a larger
+      published work and may be independently authored or cited.
     is_a: publication
     slots:
       - published in
@@ -7744,6 +7770,9 @@ classes:
       Any entity or process that exists at the level of the whole planet
 
   environmental process:
+    description: >-
+      A process that occurs within or involves the components of an
+      environmental system.
     is_a: planetary entity
     mixins:
       - occurrent
@@ -7751,6 +7780,9 @@ classes:
       - ENVO:02500000
 
   environmental feature:
+    description: >-
+      A system or entity in the natural environment that has the
+      disposition to environ one or more material entities.
     is_a: planetary entity
     exact_mappings:
       - ENVO:01000254
@@ -7788,6 +7820,9 @@ classes:
       - in taxon label
 
   biological entity:
+    description: >-
+      A heterogeneous substance that contains genomic material or is the
+      product of a biological process.
     is_a: named thing
     aliases: ['bioentity']
     abstract: true
@@ -7802,6 +7837,9 @@ classes:
       - STY:T129  # (imft, full name: Immunologic Factor
 
   genomic entity:
+    description: >-
+      A generically dependent continuant that carries biological
+      sequence that is part of or derived from a genome.
     mixin: true
     slots:
       - has biological sequence
@@ -7812,6 +7850,10 @@ classes:
       - GENO:0000897   # Genomic Entity
 
   epigenomic entity:
+    description: >-
+      A mixin for entities that represent epigenomic modifications
+      or features associated with heritable changes in gene expression
+      that do not involve changes to the DNA sequence itself.
     mixin: true
     slots:
       - has biological sequence
@@ -8268,6 +8310,10 @@ classes:
       - UMLS
 
   pathway:
+    description: >-
+      A hierarchical ordering of connected molecular reactions (steps)
+      that represent a specific biological process, such as signaling
+      or metabolism.
     is_a: biological process
     mixins:
       - ontology class
@@ -8291,6 +8337,9 @@ classes:
       - ncats.bioplanet
 
   physiological process:
+    description: >-
+      A biological or chemical function within a living organism
+      (cells, tissues, or organs).
     aliases: ['physiology']
     is_a: biological process
     mixins:
@@ -8314,6 +8363,10 @@ classes:
       - REACT
 
   behavior:
+    description: >-
+      The internally coordinated responses (actions or inactions) of
+      organisms (individuals or groups) to internal or external stimuli,
+      via a mechanism that involves nervous system activity.
     is_a: biological process
     mixins:
       - ontology class
@@ -8422,6 +8475,10 @@ classes:
    ## Food
 
   environmental food contaminant:
+    description: >-
+      Any unwanted chemical in food, including agrochemicals and
+      industrial chemicals that may contaminate foodstuffs during
+      their production, transportation, or storage.
     is_a: chemical entity
     related_mappings:
        # substance role
@@ -8454,6 +8511,9 @@ classes:
       - UMLS
 
   food additive:
+    description: >-
+      Any substance which is added to food to preserve or enhance
+      its flavour and/or appearance.
     is_a: chemical entity
     related_mappings:
        # substance role
@@ -8605,6 +8665,7 @@ classes:
     mixins:
       - subject of investigation
     description: >-
+      An organism that contains one or more cells.
     exact_mappings:
       - NCBITaxon:131567
 
@@ -8637,6 +8698,10 @@ classes:
   plant:
     is_a: cellular organism
     description: >-
+      Any living organism that typically synthesizes its food from
+      inorganic substances, possesses cellulose cell walls, responds
+      slowly and often permanently to a stimulus, lacks specialized
+      sense organs and nervous system, and has no powers of locomotion.
     exact_mappings:
       - NCIT:C14258  # plant
       - STY:T002  # plant
@@ -8946,6 +9011,10 @@ classes:
       - UBERON
 
   cell:
+    description: >-
+      The basic structural and functional unit of all organisms.
+      Includes the plasma membrane and any external encapsulating
+      structures such as the cell wall and cell envelope.
     is_a: anatomical entity
     exact_mappings:
       - GO:0005623
@@ -8966,6 +9035,10 @@ classes:
       - MESH
 
   cell line:
+    description: >-
+      A cultured cell population that is genetically stable and
+      homogeneous, sharing a common propagation history through
+      successive passages in culture.
     is_a: organismal entity
     mixins:
       - subject of investigation
@@ -8975,6 +9048,8 @@ classes:
       - CLO
 
   gross anatomical structure:
+    description: >-
+      An anatomical structure that has more than one cell as a part.
     aliases: ['tissue', 'organ']
     is_a: anatomical entity
     exact_mappings:
@@ -9200,6 +9275,9 @@ classes:
       - model_organism_database
 
   coding sequence:
+    description: >-
+      A contiguous sequence which begins with, and includes, a start
+      codon and ends with, and includes, a stop codon.
     is_a: biological entity
     mixins:
       - genomic entity
@@ -9300,6 +9378,10 @@ classes:
       - gene product isoform mixin
 
   protein family:
+    description: >-
+      A set of proteins coding for diverse functions which, by virtue
+      of their high degree of sequence similarity, are believed to have
+      evolved from a single ancestral gene.
     is_a: biological entity
     exact_mappings:
       - NCIT:C26004
@@ -9344,6 +9426,9 @@ classes:
       - RNACENTRAL
 
   noncoding RNA product:
+    description: >-
+      An RNA transcript that does not encode for a protein rather the
+      RNA molecule is the functional gene product.
     is_a: RNA product
     id_prefixes:
       - RNACENTRAL
@@ -9354,6 +9439,13 @@ classes:
       - SIO:001235
 
   microRNA:
+    description: >-
+      A small (~22 nucleotide) RNA molecule that is the endogenous
+      transcript of a miRNA gene. Produced from precursor molecules
+      that form hairpin structures, which are processed (typically
+      via the Dicer pathway) to yield a single miRNA molecule.
+      miRNAs function by triggering cleavage of target molecules
+      or acting as translational repressors.
     is_a: noncoding RNA product
     exact_mappings:
       - SO:0000276
@@ -9435,6 +9527,10 @@ classes:
       - model_organism_database
 
   zygosity:
+    description: >-
+      An allelic state describing the degree of similarity between
+      features at a single locus, specifically whether alleles at the
+      same location on paired chromosomes are identical or different.
     is_a: attribute
     exact_mappings:
       - GENO:0000133
@@ -9661,6 +9757,9 @@ classes:
       - CLINICALTRIALS
 
   clinical intervention:
+    description: >-
+      A medical procedure, treatment, or action taken by healthcare
+      professionals to modify the course of a disease or condition.
     is_a: clinical entity
 
   clinical finding:
@@ -9678,6 +9777,9 @@ classes:
       - EFO
 
   hospitalization:
+    description: >-
+      The admission and care of a patient in a hospital for
+      observation, diagnosis, or treatment.
     is_a: clinical intervention
     exact_mappings:
       - SNOMEDCT:32485007
@@ -10599,6 +10701,19 @@ classes:
       An interaction between a chemical entity and a phenotype or disease,
       where the presence of the chemical gives rise to or exacerbates the phenotype.
     is_a: association
+    examples:
+      - object:
+          subject: DrugCentral:559
+          predicate: biolink:treats
+          object: UMLS:C0153225
+          knowledge_level: knowledge_assertion
+          agent_type: manual_validation_of_automated_agent
+      - object:
+          subject: DrugCentral:1572
+          predicate: biolink:contraindicated_in
+          object: UMLS:C0018824
+          knowledge_level: knowledge_assertion
+          agent_type: manual_validation_of_automated_agent
     narrow_mappings:
       - SIO:000993
     defining_slots:
@@ -10619,6 +10734,19 @@ classes:
       This association defines a relationship between a chemical or treatment (or procedure) and a disease or phenotypic feature
       where the chemical or treatment is used to treat, or is being studied to treat, the disease or phenotypic feature.
     is_a: association
+    examples:
+      - object:
+          subject: CHEBI:31236
+          predicate: biolink:treats
+          object: MONDO:0002046
+          knowledge_level: knowledge_assertion
+          agent_type: manual_agent
+      - object:
+          subject: UMLS:C0887621
+          predicate: biolink:in_clinical_trials_for
+          object: NCIT:C34887
+          knowledge_level: knowledge_assertion
+          agent_type: manual_agent
     defining_slots:
       - subject
       - predicate
@@ -10771,6 +10899,13 @@ classes:
       effect resulting from such an interaction are out of scope, and covered by the ChemicalAffectsGeneAssociation type
       (e.g. impact of a chemical on the abundance, activity, structure, etc, of either participant in the interaction)
     is_a: association
+    examples:
+      - object:
+          subject: DrugCentral:279
+          predicate: biolink:directly_physically_interacts_with
+          object: UniProtKB:P0AD68
+          knowledge_level: knowledge_assertion
+          agent_type: manual_agent
     broad_mappings:
       - SIO:001257    ## chemical-gene association
     slots:
@@ -10825,6 +10960,13 @@ classes:
       Describes the relationship between an enzyme (usually a macromolecular
       complex or gene product) and the molecules it acts on (substrate).
       The substrate can be a chemical, a polypeptide, or a protein.
+    examples:
+      - object:
+          subject: UniProtKB:P31645
+          predicate: biolink:has_substrate
+          object: DrugCentral:618
+          knowledge_level: knowledge_assertion
+          agent_type: manual_agent
     notes: >-
       Using macromolecular machine should cover cases of gene-protein conflation.
     slot_usage:
@@ -10947,6 +11089,17 @@ classes:
       Describes an effect that a chemical has on a gene or gene product (e.g. an impact
       of on its abundance, activity,localization, processing, expression, etc.)
     is_a: chemical affects biological entity association
+    examples:
+      - object:
+          subject: DrugCentral:279
+          predicate: biolink:affects
+          object: UniProtKB:P0AD68
+          qualified_predicate: biolink:causes
+          object_aspect_qualifier: activity
+          object_direction_qualifier: decreased
+          causal_mechanism_qualifier: inhibition
+          knowledge_level: knowledge_assertion
+          agent_type: manual_agent
     slots:
       - dgidb interaction score
       - dgidb evidence score
@@ -11025,6 +11178,13 @@ classes:
     description: >-
       An interaction between a drug and a gene or gene product.
     is_a: association
+    examples:
+      - object:
+          subject: DrugCentral:5476
+          predicate: biolink:interacts_with
+          object: UniProtKB:P10912
+          knowledge_level: knowledge_assertion
+          agent_type: manual_agent
     related_mappings:
       - SIO:001257
     defining_slots:
@@ -11092,6 +11252,9 @@ classes:
       - object
 
   disease to entity association mixin:
+    description: >-
+      A mixin applied to any association whose subject (source node)
+      is a disease.
     mixin: true
     slots:
       - subject
@@ -11221,6 +11384,9 @@ classes:
       - qualified predicate
 
   entity to phenotypic feature association mixin:
+    description: >-
+      A mixin applied to any association whose object (target node)
+      is a phenotypic feature.
     mixin: true
     is_a: entity to feature or disease qualifiers mixin
     mixins:
@@ -11247,6 +11413,9 @@ classes:
             description: abnormal circulating bilirubin level
 
   phenotypic feature to entity association mixin:
+    description: >-
+      A mixin applied to any association whose subject (source node)
+      is a phenotypic feature.
     mixin: true
     is_a: feature or disease qualifiers to entity mixin
     mixins:
@@ -11581,6 +11750,10 @@ classes:
             description: "chr13:g.32921033G>C (hg19) in ClinGen"
 
   gene to phenotypic feature association:
+    description: >-
+      An association between a gene or gene product and a phenotypic
+      feature, where variation in the gene is correlated with the
+      phenotypic feature.
     is_a: association
     slots:
       - subject form or variant qualifier
@@ -11621,6 +11794,19 @@ classes:
       - if the relationship of the statement using this predicate is statistical in nature, please use `associated with likelihood` or one of its children.
 
   gene to disease association:
+    description: >-
+      An association between a gene or gene product and a disease,
+      where variation in the gene is correlated with the disease.
+    examples:
+      - object:
+          subject: NCBIGene:60
+          predicate: biolink:associated_with
+          object: MONDO:0017579
+          knowledge_level: knowledge_assertion
+          agent_type: manual_agent
+        description: >-
+          ACTA1 gene associated with nemaline myopathy, curated
+          from MedlinePlus via the DISEASES database.
     is_a: association
     exact_mappings:
       - SIO:000983
@@ -11659,6 +11845,9 @@ classes:
       - if the relationship of the statement using this predicate is statistical in nature, please use `associated with likelihood` or one of its children.
 
   causal gene to disease association:
+    description: >-
+      An association between a gene and a disease where variation
+      in the gene has been shown to have a causal role in the disease.
     is_a: association
     defining_slots:
       - subject
@@ -11681,6 +11870,19 @@ classes:
 
   correlated gene to disease association:
     is_a: association
+    examples:
+      - object:
+          subject: ENSEMBL:ENSP00000000233
+          predicate: biolink:occurs_together_in_literature_with
+          object: DOID:0111266
+          knowledge_level: text_co_occurrence
+          agent_type: data_analysis_pipeline
+      - object:
+          subject: ENSEMBL:ENSP00000003084
+          predicate: biolink:associated_with
+          object: DOID:0111862
+          knowledge_level: knowledge_assertion
+          agent_type: manual_agent
     defining_slots:
       - subject
       - object
@@ -11728,6 +11930,9 @@ classes:
       - gene to entity association mixin
 
   phenotypic feature to disease association:
+    description: >-
+      An association between a phenotypic feature (sign or symptom) and a disease,
+      where the phenotypic feature is a manifestation or clinical indicator of the disease.
     is_a: association
     slot_usage:
       predicate:
@@ -12126,6 +12331,19 @@ classes:
       An association between a macromolecular machine mixin (gene, gene product or
       complex of gene products) and either a molecular activity, a biological
       process or a cellular location in which a function is executed.
+    examples:
+      - object:
+          subject: UniProtKB:A0A024RBG1
+          predicate: biolink:enables
+          object: GO:0003723
+          knowledge_level: prediction
+          agent_type: automated_agent
+      - object:
+          subject: UniProtKB:A0A024RBG1
+          predicate: biolink:enables
+          object: GO:0005515
+          knowledge_level: knowledge_assertion
+          agent_type: manual_agent
     slot_usage:
       subject:
         range: macromolecular machine mixin
@@ -12168,6 +12386,13 @@ classes:
       in the GO molecular function branch), where the entity
       carries out the activity, or contributes to its execution.
     is_a: functional association
+    examples:
+      - object:
+          subject: UniProtKB:A0A024RBG1
+          predicate: biolink:enables
+          object: GO:0003723
+          knowledge_level: prediction
+          agent_type: automated_agent
     mixins:
       - macromolecular machine to entity association mixin
     slot_usage:
@@ -12181,6 +12406,13 @@ classes:
       (as represented in the GO biological process branch), where the entity
       carries out some part of the process, regulates it, or acts upstream of it.
     is_a: functional association
+    examples:
+      - object:
+          subject: UniProtKB:A0A075B6H5
+          predicate: biolink:involved_in
+          object: GO:0002376
+          knowledge_level: prediction
+          agent_type: automated_agent
     mixins:
       - macromolecular machine to entity association mixin
     slot_usage:
@@ -12194,6 +12426,13 @@ classes:
       in the GO cellular component branch), where the entity
       carries out its function in the cellular component.
     is_a: functional association
+    examples:
+      - object:
+          subject: UniProtKB:A0A024RBG1
+          predicate: biolink:located_in
+          object: GO:0005737
+          knowledge_level: prediction
+          agent_type: automated_agent
     mixins:
       - macromolecular machine to entity association mixin
     slot_usage:
@@ -12226,6 +12465,13 @@ classes:
   gene to go term association:
     aliases: ['functional association']
     is_a: functional association
+    examples:
+      - object:
+          subject: UniProtKB:A0A024RBG1
+          predicate: biolink:enables
+          object: GO:0005515
+          knowledge_level: knowledge_assertion
+          agent_type: manual_agent
     exact_mappings:
       - WBVocab:Gene-GO-Association
     defining_slots:
@@ -12252,7 +12498,18 @@ classes:
             description: kinase activity
 
   entity to disease association:
+    description: >-
+      An association between any entity and a disease, capturing
+      clinical context such as approval status, research phase,
+      FDA regulatory approvals, and number of cases.
     is_a: association
+    examples:
+      - object:
+          subject: UNII:9TD681796G
+          predicate: biolink:in_clinical_trials_for
+          object: MONDO:0006052
+          knowledge_level: knowledge_assertion
+          agent_type: manual_agent
     exact_mappings:
     slots:
       - clinical approval status
@@ -12264,7 +12521,18 @@ classes:
       - object
 
   entity to phenotypic feature association:
+    description: >-
+      An association between any entity and a phenotypic feature,
+      capturing clinical context such as approval status, research phase,
+      FDA regulatory approvals, and number of cases.
     is_a: association
+    examples:
+      - object:
+          subject: UMLS:C0887621
+          predicate: biolink:in_clinical_trials_for
+          object: NCIT:C34887
+          knowledge_level: knowledge_assertion
+          agent_type: manual_agent
     exact_mappings:
     slots:
       - clinical approval status
@@ -12388,6 +12656,9 @@ classes:
 
   anatomical entity to anatomical entity association:
     # schema: gocam
+    description: >-
+      An abstract parent class for associations between two anatomical entities,
+      such as part-of, develops-from, or other mereological and ontogenic relationships.
     is_a: association
     abstract: true
     defining_slots:

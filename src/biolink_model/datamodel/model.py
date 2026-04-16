@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-04-13T23:45:36
+# Generation date: 2026-04-16T11:52:49
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/vocab/
@@ -1747,6 +1747,9 @@ class QuantityValue(Annotation):
 
 
 class RelationshipQuantifier(YAMLRoot):
+    """
+    A mixin for quantifying aspects of the strength, frequency, or specificity of a relationship between two entities.
+    """
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["RelationshipQuantifier"]
@@ -1756,6 +1759,10 @@ class RelationshipQuantifier(YAMLRoot):
 
 
 class SensitivityQuantifier(RelationshipQuantifier):
+    """
+    A relationship quantifier that measures the sensitivity of a relationship, such as the proportion of true
+    positives correctly identified in a diagnostic or association context.
+    """
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["SensitivityQuantifier"]
@@ -1765,6 +1772,10 @@ class SensitivityQuantifier(RelationshipQuantifier):
 
 
 class SpecificityQuantifier(RelationshipQuantifier):
+    """
+    A relationship quantifier that measures the specificity of a relationship, such as the proportion of true
+    negatives correctly identified in a diagnostic or association context.
+    """
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["SpecificityQuantifier"]
@@ -1788,6 +1799,10 @@ class PathognomonicityQuantifier(SpecificityQuantifier):
 
 @dataclass(repr=False)
 class FrequencyQuantifier(RelationshipQuantifier):
+    """
+    A relationship quantifier that expresses how often a relationship holds, using count, total, quotient, or
+    percentage measures.
+    """
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["FrequencyQuantifier"]
@@ -1817,6 +1832,9 @@ class FrequencyQuantifier(RelationshipQuantifier):
 
 
 class ChemicalOrDrugOrTreatment(YAMLRoot):
+    """
+    A mixin for entities that represent chemical substances, pharmacological agents, or therapeutic interventions.
+    """
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["ChemicalOrDrugOrTreatment"]
@@ -2081,6 +2099,10 @@ class ChemicalRole(Attribute):
 
 @dataclass(repr=False)
 class BiologicalSex(Attribute):
+    """
+    An organismal quality inhering in a bearer by virtue of the bearer's ability to undergo sexual reproduction in
+    order to differentiate the individuals or types involved.
+    """
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["BiologicalSex"]
@@ -2308,6 +2330,9 @@ class Event(NamedThing):
 
 @dataclass(repr=False)
 class AdministrativeEntity(NamedThing):
+    """
+    An entity that is the byproduct of an administrative process.
+    """
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["AdministrativeEntity"]
@@ -3104,6 +3129,10 @@ class Book(Publication):
 
 @dataclass(repr=False)
 class BookChapter(Publication):
+    """
+    A section of a book that forms a discrete unit of a larger published work and may be independently authored or
+    cited.
+    """
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["BookChapter"]
@@ -3780,6 +3809,9 @@ class PlanetaryEntity(NamedThing):
 
 @dataclass(repr=False)
 class EnvironmentalProcess(PlanetaryEntity):
+    """
+    A process that occurs within or involves the components of an environmental system.
+    """
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["EnvironmentalProcess"]
@@ -3806,6 +3838,9 @@ class EnvironmentalProcess(PlanetaryEntity):
 
 @dataclass(repr=False)
 class EnvironmentalFeature(PlanetaryEntity):
+    """
+    A system or entity in the natural environment that has the disposition to environ one or more material entities.
+    """
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["EnvironmentalFeature"]
@@ -3929,6 +3964,9 @@ class ThingWithTaxon(YAMLRoot):
 
 @dataclass(repr=False)
 class BiologicalEntity(NamedThing):
+    """
+    A heterogeneous substance that contains genomic material or is the product of a biological process.
+    """
     _inherited_slots: ClassVar[list[str]] = ["in_taxon"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["BiologicalEntity"]
@@ -3959,6 +3997,9 @@ class BiologicalEntity(NamedThing):
 
 @dataclass(repr=False)
 class GenomicEntity(YAMLRoot):
+    """
+    A generically dependent continuant that carries biological sequence that is part of or derived from a genome.
+    """
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["GenomicEntity"]
@@ -3977,6 +4018,10 @@ class GenomicEntity(YAMLRoot):
 
 @dataclass(repr=False)
 class EpigenomicEntity(YAMLRoot):
+    """
+    A mixin for entities that represent epigenomic modifications or features associated with heritable changes in gene
+    expression that do not involve changes to the DNA sequence itself.
+    """
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["EpigenomicEntity"]
@@ -4548,6 +4593,10 @@ class BiologicalProcess(BiologicalProcessOrActivity):
 
 @dataclass(repr=False)
 class Pathway(BiologicalProcess):
+    """
+    A hierarchical ordering of connected molecular reactions (steps) that represent a specific biological process,
+    such as signaling or metabolism.
+    """
     _inherited_slots: ClassVar[list[str]] = ["in_taxon", "has_input", "has_output", "enabled_by"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["Pathway"]
@@ -4574,6 +4623,9 @@ class Pathway(BiologicalProcess):
 
 @dataclass(repr=False)
 class PhysiologicalProcess(BiologicalProcess):
+    """
+    A biological or chemical function within a living organism (cells, tissues, or organs).
+    """
     _inherited_slots: ClassVar[list[str]] = ["in_taxon", "has_input", "has_output", "enabled_by"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["PhysiologicalProcess"]
@@ -4600,6 +4652,10 @@ class PhysiologicalProcess(BiologicalProcess):
 
 @dataclass(repr=False)
 class Behavior(BiologicalProcess):
+    """
+    The internally coordinated responses (actions or inactions) of organisms (individuals or groups) to internal or
+    external stimuli, via a mechanism that involves nervous system activity.
+    """
     _inherited_slots: ClassVar[list[str]] = ["in_taxon", "has_input", "has_output", "enabled_by"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["Behavior"]
@@ -4685,6 +4741,10 @@ class Drug(MolecularMixture):
 
 @dataclass(repr=False)
 class EnvironmentalFoodContaminant(ChemicalEntity):
+    """
+    Any unwanted chemical in food, including agrochemicals and industrial chemicals that may contaminate foodstuffs
+    during their production, transportation, or storage.
+    """
     _inherited_slots: ClassVar[list[str]] = ["has_chemical_role"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["EnvironmentalFoodContaminant"]
@@ -4711,6 +4771,9 @@ class EnvironmentalFoodContaminant(ChemicalEntity):
 
 @dataclass(repr=False)
 class FoodAdditive(ChemicalEntity):
+    """
+    Any substance which is added to food to preserve or enhance its flavour and/or appearance.
+    """
     _inherited_slots: ClassVar[list[str]] = ["has_chemical_role"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["FoodAdditive"]
@@ -4945,6 +5008,9 @@ class Virus(OrganismalEntity):
 
 @dataclass(repr=False)
 class CellularOrganism(OrganismalEntity):
+    """
+    An organism that contains one or more cells.
+    """
     _inherited_slots: ClassVar[list[str]] = ["in_taxon"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["CellularOrganism"]
@@ -5030,6 +5096,11 @@ class Human(Mammal):
 
 @dataclass(repr=False)
 class Plant(CellularOrganism):
+    """
+    Any living organism that typically synthesizes its food from inorganic substances, possesses cellulose cell walls,
+    responds slowly and often permanently to a stimulus, lacks specialized sense organs and nervous system, and has no
+    powers of locomotion.
+    """
     _inherited_slots: ClassVar[list[str]] = ["in_taxon"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["Plant"]
@@ -5447,6 +5518,10 @@ class CellularComponent(AnatomicalEntity):
 
 @dataclass(repr=False)
 class Cell(AnatomicalEntity):
+    """
+    The basic structural and functional unit of all organisms. Includes the plasma membrane and any external
+    encapsulating structures such as the cell wall and cell envelope.
+    """
     _inherited_slots: ClassVar[list[str]] = ["in_taxon"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["Cell"]
@@ -5473,6 +5548,10 @@ class Cell(AnatomicalEntity):
 
 @dataclass(repr=False)
 class CellLine(OrganismalEntity):
+    """
+    A cultured cell population that is genetically stable and homogeneous, sharing a common propagation history
+    through successive passages in culture.
+    """
     _inherited_slots: ClassVar[list[str]] = ["in_taxon"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["CellLine"]
@@ -5499,6 +5578,9 @@ class CellLine(OrganismalEntity):
 
 @dataclass(repr=False)
 class GrossAnatomicalStructure(AnatomicalEntity):
+    """
+    An anatomical structure that has more than one cell as a part.
+    """
     _inherited_slots: ClassVar[list[str]] = ["in_taxon"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["GrossAnatomicalStructure"]
@@ -5861,6 +5943,9 @@ class Transcript(BiologicalEntity):
 
 @dataclass(repr=False)
 class CodingSequence(BiologicalEntity):
+    """
+    A contiguous sequence which begins with, and includes, a start codon and ends with, and includes, a stop codon.
+    """
     _inherited_slots: ClassVar[list[str]] = ["in_taxon"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["CodingSequence"]
@@ -6090,6 +6175,10 @@ class PosttranslationalModification(BiologicalEntity):
 
 @dataclass(repr=False)
 class ProteinFamily(BiologicalEntity):
+    """
+    A set of proteins coding for diverse functions which, by virtue of their high degree of sequence similarity, are
+    believed to have evolved from a single ancestral gene.
+    """
     _inherited_slots: ClassVar[list[str]] = ["in_taxon"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["ProteinFamily"]
@@ -6234,6 +6323,9 @@ class RNAProductIsoform(RNAProduct):
 
 @dataclass(repr=False)
 class NoncodingRNAProduct(RNAProduct):
+    """
+    An RNA transcript that does not encode for a protein rather the RNA molecule is the functional gene product.
+    """
     _inherited_slots: ClassVar[list[str]] = ["in_taxon"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["NoncodingRNAProduct"]
@@ -6260,6 +6352,11 @@ class NoncodingRNAProduct(RNAProduct):
 
 @dataclass(repr=False)
 class MicroRNA(NoncodingRNAProduct):
+    """
+    A small (~22 nucleotide) RNA molecule that is the endogenous transcript of a miRNA gene. Produced from precursor
+    molecules that form hairpin structures, which are processed (typically via the Dicer pathway) to yield a single
+    miRNA molecule. miRNAs function by triggering cleavage of target molecules or acting as translational repressors.
+    """
     _inherited_slots: ClassVar[list[str]] = ["in_taxon"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["MicroRNA"]
@@ -6373,6 +6470,10 @@ class GeneFamily(BiologicalEntity):
 
 @dataclass(repr=False)
 class Zygosity(Attribute):
+    """
+    An allelic state describing the degree of similarity between features at a single locus, specifically whether
+    alleles at the same location on paired chromosomes are identical or different.
+    """
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["Zygosity"]
@@ -6854,6 +6955,10 @@ class ClinicalTrial(Study):
 
 @dataclass(repr=False)
 class ClinicalIntervention(ClinicalEntity):
+    """
+    A medical procedure, treatment, or action taken by healthcare professionals to modify the course of a disease or
+    condition.
+    """
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["ClinicalIntervention"]
@@ -6915,6 +7020,9 @@ class ClinicalFinding(PhenotypicFeature):
 
 @dataclass(repr=False)
 class Hospitalization(ClinicalIntervention):
+    """
+    The admission and care of a patient in a hospital for observation, diagnosis, or treatment.
+    """
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["Hospitalization"]
@@ -10538,6 +10646,9 @@ class MaterialSampleToDiseaseOrPhenotypicFeatureAssociation(Association):
 
 @dataclass(repr=False)
 class DiseaseToEntityAssociationMixin(YAMLRoot):
+    """
+    A mixin applied to any association whose subject (source node) is a disease.
+    """
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["DiseaseToEntityAssociationMixin"]
@@ -10943,6 +11054,9 @@ class FeatureOrDiseaseQualifiersToEntityMixin(FrequencyQualifierMixin):
 
 @dataclass(repr=False)
 class EntityToPhenotypicFeatureAssociationMixin(EntityToFeatureOrDiseaseQualifiersMixin):
+    """
+    A mixin applied to any association whose object (target node) is a phenotypic feature.
+    """
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["EntityToPhenotypicFeatureAssociationMixin"]
@@ -10995,6 +11109,9 @@ class EntityToPhenotypicFeatureAssociationMixin(EntityToFeatureOrDiseaseQualifie
 
 @dataclass(repr=False)
 class PhenotypicFeatureToEntityAssociationMixin(FeatureOrDiseaseQualifiersToEntityMixin):
+    """
+    A mixin applied to any association whose subject (source node) is a phenotypic feature.
+    """
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["PhenotypicFeatureToEntityAssociationMixin"]
@@ -12031,6 +12148,10 @@ class VariantToEntityAssociationMixin(YAMLRoot):
 
 @dataclass(repr=False)
 class GeneToPhenotypicFeatureAssociation(Association):
+    """
+    An association between a gene or gene product and a phenotypic feature, where variation in the gene is correlated
+    with the phenotypic feature.
+    """
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["GeneToPhenotypicFeatureAssociation"]
@@ -12114,6 +12235,10 @@ class GeneToPhenotypicFeatureAssociation(Association):
 
 @dataclass(repr=False)
 class GeneToDiseaseAssociation(Association):
+    """
+    An association between a gene or gene product and a disease, where variation in the gene is correlated with the
+    disease.
+    """
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["GeneToDiseaseAssociation"]
@@ -12185,6 +12310,10 @@ class GeneToDiseaseAssociation(Association):
 
 @dataclass(repr=False)
 class CausalGeneToDiseaseAssociation(Association):
+    """
+    An association between a gene and a disease where variation in the gene has been shown to have a causal role in
+    the disease.
+    """
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["CausalGeneToDiseaseAssociation"]
@@ -12397,6 +12526,10 @@ class DruggableGeneToDiseaseAssociation(GeneToDiseaseAssociation):
 
 @dataclass(repr=False)
 class PhenotypicFeatureToDiseaseAssociation(Association):
+    """
+    An association between a phenotypic feature (sign or symptom) and a disease, where the phenotypic feature is a
+    manifestation or clinical indicator of the disease.
+    """
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["PhenotypicFeatureToDiseaseAssociation"]
@@ -13816,6 +13949,10 @@ class GeneToGoTermAssociation(FunctionalAssociation):
 
 @dataclass(repr=False)
 class EntityToDiseaseAssociation(Association):
+    """
+    An association between any entity and a disease, capturing clinical context such as approval status, research
+    phase, FDA regulatory approvals, and number of cases.
+    """
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["EntityToDiseaseAssociation"]
@@ -13861,6 +13998,10 @@ class EntityToDiseaseAssociation(Association):
 
 @dataclass(repr=False)
 class EntityToPhenotypicFeatureAssociation(Association):
+    """
+    An association between any entity and a phenotypic feature, capturing clinical context such as approval status,
+    research phase, FDA regulatory approvals, and number of cases.
+    """
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["EntityToPhenotypicFeatureAssociation"]
@@ -14223,6 +14364,10 @@ class ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation(Association):
 
 @dataclass(repr=False)
 class AnatomicalEntityToAnatomicalEntityAssociation(Association):
+    """
+    An abstract parent class for associations between two anatomical entities, such as part-of, develops-from, or
+    other mereological and ontogenic relationships.
+    """
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["AnatomicalEntityToAnatomicalEntityAssociation"]
