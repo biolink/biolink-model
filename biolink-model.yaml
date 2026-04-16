@@ -10172,6 +10172,30 @@ classes:
       - OBAN:association
       - rdf:Statement
       - owl:Axiom
+    examples:
+      - object:
+          subject: NCBIGene:6910
+          predicate: biolink:acts_upstream_of
+          object: GO:1901846
+          category: biolink:Association
+          knowledge_level: knowledge_assertion
+          agent_type: manual_agent
+          publications: ["PMID:15289437"]
+      - object:
+          subject: NCBIGene:4357
+          predicate: biolink:enables
+          object: GO:0005515
+          category: biolink:Association
+          knowledge_level: knowledge_assertion
+          agent_type: manual_agent
+          publications: ["PMID:32296183"]
+      - object:
+          subject: CHEBI:114566
+          predicate: biolink:subclass_of
+          object: CHEBI:38166
+          category: biolink:Association
+          knowledge_level: knowledge_assertion
+          agent_type: manual_agent
 
   disease associated with response to chemical entity association:
     description: >-
@@ -10642,6 +10666,25 @@ classes:
       object:
         range: chemical entity
         description: "the chemical element that is the target of the statement"
+    examples:
+      - object:
+          subject: CHEBI:85990
+          predicate: biolink:has_metabolite
+          object: PUBCHEM.COMPOUND:155543741
+          category: biolink:ChemicalEntityToChemicalEntityAssociation
+          knowledge_level: knowledge_assertion
+          agent_type: manual_agent
+          publications: ["PMID:22344701"]
+          species_context_qualifier: NCBITaxon:9606
+      - object:
+          subject: CHEBI:85973
+          predicate: biolink:has_metabolite
+          object: UNII:9O1PTP64VA
+          category: biolink:ChemicalEntityToChemicalEntityAssociation
+          knowledge_level: knowledge_assertion
+          agent_type: manual_agent
+          publications: ["PMID:22936313"]
+          species_context_qualifier: NCBITaxon:9606
 
   reaction to participant association:
     description:
@@ -10701,19 +10744,6 @@ classes:
       An interaction between a chemical entity and a phenotype or disease,
       where the presence of the chemical gives rise to or exacerbates the phenotype.
     is_a: association
-    examples:
-      - object:
-          subject: DrugCentral:559
-          predicate: biolink:treats
-          object: UMLS:C0153225
-          knowledge_level: knowledge_assertion
-          agent_type: manual_validation_of_automated_agent
-      - object:
-          subject: DrugCentral:1572
-          predicate: biolink:contraindicated_in
-          object: UMLS:C0018824
-          knowledge_level: knowledge_assertion
-          agent_type: manual_validation_of_automated_agent
     narrow_mappings:
       - SIO:000993
     defining_slots:
@@ -10728,25 +10758,55 @@ classes:
       object:
         range: disease or phenotypic feature
         description: "the disease or phenotype that is affected by the chemical"
+    examples:
+      - object:
+          subject: CHEBI:167638
+          predicate: biolink:contraindicated_in
+          object: UMLS:C0271149
+          category: biolink:ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation
+          knowledge_level: knowledge_assertion
+          agent_type: manual_validation_of_automated_agent
+      - object:
+          subject: CHEBI:25879
+          predicate: biolink:contraindicated_in
+          object: UMLS:C0234976
+          category: biolink:ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation
+          knowledge_level: knowledge_assertion
+          agent_type: manual_validation_of_automated_agent
+      - object:
+          subject: PUBCHEM.COMPOUND:134612761
+          predicate: biolink:diagnoses
+          object: UMLS:C1720505
+          category: biolink:ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation
+          knowledge_level: knowledge_assertion
+          agent_type: manual_validation_of_automated_agent
+      - object:
+          subject: CHEBI:82720
+          predicate: biolink:preventative_for_condition
+          object: UMLS:C1320716
+          category: biolink:ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation
+          knowledge_level: knowledge_assertion
+          agent_type: manual_validation_of_automated_agent
+      - object:
+          subject: CHEBI:6919
+          predicate: biolink:treats
+          object: EFO:1001421
+          category: biolink:ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation
+          knowledge_level: knowledge_assertion
+          agent_type: manual_validation_of_automated_agent
+      - object:
+          subject: CHEBI:135361
+          predicate: biolink:treats
+          object: MONDO:0005324
+          category: biolink:ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation
+          knowledge_level: knowledge_assertion
+          agent_type: manual_validation_of_automated_agent
 
   chemical or drug or treatment to disease or phenotypic feature association:
     description: >-
       This association defines a relationship between a chemical or treatment (or procedure) and a disease or phenotypic feature
       where the chemical or treatment is used to treat, or is being studied to treat, the disease or phenotypic feature.
     is_a: association
-    examples:
-      - object:
-          subject: CHEBI:31236
-          predicate: biolink:treats
-          object: MONDO:0002046
-          knowledge_level: knowledge_assertion
-          agent_type: manual_agent
-      - object:
-          subject: UMLS:C0887621
-          predicate: biolink:in_clinical_trials_for
-          object: NCIT:C34887
-          knowledge_level: knowledge_assertion
-          agent_type: manual_agent
     defining_slots:
       - subject
       - predicate
@@ -10899,13 +10959,6 @@ classes:
       effect resulting from such an interaction are out of scope, and covered by the ChemicalAffectsGeneAssociation type
       (e.g. impact of a chemical on the abundance, activity, structure, etc, of either participant in the interaction)
     is_a: association
-    examples:
-      - object:
-          subject: DrugCentral:279
-          predicate: biolink:directly_physically_interacts_with
-          object: UniProtKB:P0AD68
-          knowledge_level: knowledge_assertion
-          agent_type: manual_agent
     broad_mappings:
       - SIO:001257    ## chemical-gene association
     slots:
@@ -10953,6 +11006,30 @@ classes:
         range: anatomical entity
       causal mechanism qualifier:
         range: CausalMechanismQualifierEnum
+    examples:
+      - object:
+          subject: CHEBI:135370
+          predicate: biolink:directly_physically_interacts_with
+          object: UniProtKB:P0DP23
+          category: biolink:ChemicalGeneInteractionAssociation
+          knowledge_level: knowledge_assertion
+          agent_type: manual_agent
+      - object:
+          subject: CHEBI:4779
+          predicate: biolink:directly_physically_interacts_with
+          object: NCBIGene:3269
+          category: biolink:ChemicalGeneInteractionAssociation
+          knowledge_level: knowledge_assertion
+          agent_type: manual_agent
+          publications: ["http://www.accessdata.fda.gov/drugsatfda_docs/label/2003/20706slr011_emadine_lbl.pdf"]
+      - object:
+          subject: UNII:OP35X9610Y
+          predicate: biolink:interacts_with
+          object: NCBIGene:2690
+          category: biolink:ChemicalGeneInteractionAssociation
+          knowledge_level: knowledge_assertion
+          agent_type: manual_agent
+          publications: ["https://www.accessdata.fda.gov/drugsatfda_docs/label/2021/761177Orig1s000lbl.pdf"]
 
   macromolecular machine has substrate association:
     is_a: association
@@ -10960,13 +11037,6 @@ classes:
       Describes the relationship between an enzyme (usually a macromolecular
       complex or gene product) and the molecules it acts on (substrate).
       The substrate can be a chemical, a polypeptide, or a protein.
-    examples:
-      - object:
-          subject: UniProtKB:P31645
-          predicate: biolink:has_substrate
-          object: DrugCentral:618
-          knowledge_level: knowledge_assertion
-          agent_type: manual_agent
     notes: >-
       Using macromolecular machine should cover cases of gene-protein conflation.
     slot_usage:
@@ -10976,6 +11046,21 @@ classes:
         subproperty_of: has substrate
       object:
         range: chemical entity or protein or polypeptide
+    examples:
+      - object:
+          subject: NCBIGene:6530
+          predicate: biolink:has_substrate
+          object: CHEBI:5557
+          category: biolink:MacromolecularMachineHasSubstrateAssociation
+          knowledge_level: knowledge_assertion
+          agent_type: manual_agent
+      - object:
+          subject: NCBIGene:50719
+          predicate: biolink:has_substrate
+          object: UNII:UID84303EL
+          category: biolink:MacromolecularMachineHasSubstrateAssociation
+          knowledge_level: knowledge_assertion
+          agent_type: manual_agent
 
   gene regulates gene association:
     is_a: association
@@ -11089,35 +11174,172 @@ classes:
       Describes an effect that a chemical has on a gene or gene product (e.g. an impact
       of on its abundance, activity,localization, processing, expression, etc.)
     is_a: chemical affects biological entity association
-    examples:
-      - object:
-          subject: DrugCentral:279
-          predicate: biolink:affects
-          object: UniProtKB:P0AD68
-          qualified_predicate: biolink:causes
-          object_aspect_qualifier: activity
-          object_direction_qualifier: decreased
-          causal_mechanism_qualifier: inhibition
-          knowledge_level: knowledge_assertion
-          agent_type: manual_agent
     slots:
       - dgidb interaction score
       - dgidb evidence score
       - evidence count
       - supporting documents
+    examples:
+      - object:
+          subject: PUBCHEM.COMPOUND:168290237
+          predicate: biolink:affects
+          object: NCBIGene:200424
+          category: biolink:ChemicalAffectsGeneAssociation
+          knowledge_level: knowledge_assertion
+          agent_type: automated_agent
+          publications: ["PMID:35978680"]
+          object_aspect_qualifier: activity
+          object_direction_qualifier: decreased
+          causal_mechanism_qualifier: inhibition
+          qualified_predicate: biolink:causes
+          species_context_qualifier: NCBITaxon:9606
+      - object:
+          subject: PUBCHEM.COMPOUND:155414240
+          predicate: biolink:affects
+          object: NCBIGene:144233
+          category: biolink:ChemicalAffectsGeneAssociation
+          knowledge_level: knowledge_assertion
+          agent_type: automated_agent
+          publications: ["CHEMBL.DOCUMENT:CHEMBL5393441"]
+          object_aspect_qualifier: activity
+          object_direction_qualifier: decreased
+          causal_mechanism_qualifier: inhibition
+          qualified_predicate: biolink:causes
+          species_context_qualifier: NCBITaxon:9606
+      - object:
+          subject: CHEBI:188651
+          predicate: biolink:directly_physically_interacts_with
+          object: NCBIGene:5021
+          category: biolink:ChemicalAffectsGeneAssociation
+          knowledge_level: knowledge_assertion
+          agent_type: manual_agent
+          publications: ["CHEMBL.DOCUMENT:CHEMBL2107839", "PMID:20027670"]
+          causal_mechanism_qualifier: binding
+          species_context_qualifier: NCBITaxon:9606
+      - object:
+          subject: CHEBI:91447
+          predicate: biolink:directly_physically_interacts_with
+          object: NCBIGene:3313
+          category: biolink:ChemicalAffectsGeneAssociation
+          knowledge_level: knowledge_assertion
+          agent_type: automated_agent
+          publications: ["PMID:29928781"]
+          causal_mechanism_qualifier: binding
+          species_context_qualifier: NCBITaxon:9606
+      - object:
+          subject: UNII:5V9KLZ54CY
+          predicate: biolink:has_substrate
+          object: NCBIGene:5244
+          category: biolink:ChemicalAffectsGeneAssociation
+          knowledge_level: knowledge_assertion
+          agent_type: manual_agent
+          publications: ["PMID:20190787"]
+          species_context_qualifier: NCBITaxon:9606
+      - object:
+          subject: CHEBI:94758
+          predicate: biolink:has_substrate
+          object: NCBIGene:60925271
+          category: biolink:ChemicalAffectsGeneAssociation
+          knowledge_level: knowledge_assertion
+          agent_type: automated_agent
+          publications: ["PMID:31158845"]
+          species_context_qualifier: NCBITaxon:818
+      - object:
+          subject: CHEMBL.COMPOUND:CHEMBL2108341
+          predicate: biolink:interacts_with
+          object: NCBIGene:4582
+          category: biolink:ChemicalAffectsGeneAssociation
+          knowledge_level: knowledge_assertion
+          agent_type: manual_agent
+          publications: ["CHEMBL.DOCUMENT:CHEMBL2107839", "PMID:19811637", "PMID:21878535"]
+          species_context_qualifier: NCBITaxon:9606
+      - object:
+          subject: CHEMBL.COMPOUND:CHEMBL1743027
+          predicate: biolink:interacts_with
+          object: NCBIGene:768
+          category: biolink:ChemicalAffectsGeneAssociation
+          knowledge_level: knowledge_assertion
+          agent_type: manual_agent
+          publications: ["http://www.wilex.de/portfolio-english/rencarex/therapeutic-target/", "PMID:11941456"]
+          species_context_qualifier: NCBITaxon:9606
+      - object:
+          subject: UNII:1OQF7TT3PF
+          predicate: biolink:affects
+          object: UniProtKB:Q93DC4
+          category: biolink:ChemicalAffectsGeneAssociation
+          knowledge_level: knowledge_assertion
+          agent_type: manual_agent
+          publications: ["PMID:31383664"]
+          object_aspect_qualifier: activity
+          object_direction_qualifier: decreased
+          causal_mechanism_qualifier: inhibition
+          qualified_predicate: biolink:causes
+      - object:
+          subject: CHEBI:3546
+          predicate: biolink:affects
+          object: NCBIGene:4790
+          category: biolink:ChemicalAffectsGeneAssociation
+          knowledge_level: knowledge_assertion
+          agent_type: manual_agent
+          object_aspect_qualifier: activity
+          object_direction_qualifier: decreased
+          causal_mechanism_qualifier: inhibition
+          qualified_predicate: biolink:causes
 
   gene affects chemical association:
     description: >-
       Describes an effect that a gene or gene product has on a chemical entity (e.g. an impact
       of on its abundance, activity, localization, processing, transport, etc.)
     examples:
-      value:
-        subject: TRPC4
-        predicate: affects
-        qualified_predicate: causes
-        object: Barium
-        object_aspect_qualifier: transport
-        object_direction_qualifier: increased
+      - object:
+          subject: TRPC4
+          predicate: affects
+          qualified_predicate: causes
+          object: Barium
+          object_aspect_qualifier: transport
+          object_direction_qualifier: increased
+      - object:
+          subject: NCBIGene:6616
+          predicate: biolink:affects
+          object: CHEMBL.COMPOUND:CHEMBL3707322
+          category: biolink:GeneAffectsChemicalAssociation
+          knowledge_level: knowledge_assertion
+          agent_type: manual_agent
+          publications: ["CHEMBL.DOCUMENT:CHEMBL2107839", "https://www.accessdata.fda.gov/drugsatfda_docs/label/2024/761225s000lbl.pdf"]
+          subject_aspect_qualifier: hydrolysis
+          subject_direction_qualifier: increased
+          qualified_predicate: biolink:causes
+          species_context_qualifier: NCBITaxon:9606
+      - object:
+          subject: NCBIGene:6616
+          predicate: biolink:affects
+          object: CHEMBL.COMPOUND:CHEMBL4594539
+          category: biolink:GeneAffectsChemicalAssociation
+          knowledge_level: knowledge_assertion
+          agent_type: manual_agent
+          publications: ["PMID:12760419"]
+          subject_aspect_qualifier: hydrolysis
+          subject_direction_qualifier: increased
+          qualified_predicate: biolink:causes
+          species_context_qualifier: NCBITaxon:9606
+      - object:
+          subject: CHEBI:5556
+          predicate: biolink:has_substrate
+          object: NCBIGene:6530
+          category: biolink:GeneAffectsChemicalAssociation
+          knowledge_level: knowledge_assertion
+          agent_type: manual_agent
+          publications: ["ISBN:0443-059748 PP. 157", "PMID:3896742"]
+          species_context_qualifier: NCBITaxon:9606
+      - object:
+          subject: CHEBI:3172
+          predicate: biolink:has_substrate
+          object: NCBIGene:6530
+          category: biolink:GeneAffectsChemicalAssociation
+          knowledge_level: knowledge_assertion
+          agent_type: manual_agent
+          publications: ["ISBN:9780702034718 PP. 190-191", "PMID:18071295", "PMID:9142404"]
+          species_context_qualifier: NCBITaxon:9606
     is_a: association
     slots:
       - subject form or variant qualifier
@@ -11178,13 +11400,6 @@ classes:
     description: >-
       An interaction between a drug and a gene or gene product.
     is_a: association
-    examples:
-      - object:
-          subject: DrugCentral:5476
-          predicate: biolink:interacts_with
-          object: UniProtKB:P10912
-          knowledge_level: knowledge_assertion
-          agent_type: manual_agent
     related_mappings:
       - SIO:001257
     defining_slots:
@@ -11802,6 +12017,14 @@ classes:
           subject: NCBIGene:60
           predicate: biolink:associated_with
           object: MONDO:0017579
+          category: biolink:GeneToDiseaseAssociation
+          knowledge_level: knowledge_assertion
+          agent_type: manual_agent
+      - object:
+          subject: UniProtKB:P11274-1
+          predicate: biolink:associated_with
+          object: MONDO:0011996
+          category: biolink:GeneToDiseaseAssociation
           knowledge_level: knowledge_assertion
           agent_type: manual_agent
     is_a: association
@@ -11867,19 +12090,6 @@ classes:
 
   correlated gene to disease association:
     is_a: association
-    examples:
-      - object:
-          subject: ENSEMBL:ENSP00000000233
-          predicate: biolink:occurs_together_in_literature_with
-          object: DOID:0111266
-          knowledge_level: text_co_occurrence
-          agent_type: data_analysis_pipeline
-      - object:
-          subject: ENSEMBL:ENSP00000003084
-          predicate: biolink:associated_with
-          object: DOID:0111862
-          knowledge_level: knowledge_assertion
-          agent_type: manual_agent
     defining_slots:
       - subject
       - object
@@ -11904,6 +12114,21 @@ classes:
         range: disease
       predicate:
         subproperty_of: correlated with
+    examples:
+      - object:
+          subject: NCBIGene:8506
+          predicate: biolink:occurs_together_in_literature_with
+          object: MONDO:0004585
+          category: biolink:CorrelatedGeneToDiseaseAssociation
+          knowledge_level: text_co_occurrence
+          agent_type: data_analysis_pipeline
+      - object:
+          subject: UniProtKB:Q2KHT3-1
+          predicate: biolink:occurs_together_in_literature_with
+          object: MONDO:0005578
+          category: biolink:CorrelatedGeneToDiseaseAssociation
+          knowledge_level: text_co_occurrence
+          agent_type: data_analysis_pipeline
 
   druggable gene to disease association:
     is_a: gene to disease association
@@ -12328,19 +12553,6 @@ classes:
       An association between a macromolecular machine mixin (gene, gene product or
       complex of gene products) and either a molecular activity, a biological
       process or a cellular location in which a function is executed.
-    examples:
-      - object:
-          subject: UniProtKB:A0A024RBG1
-          predicate: biolink:enables
-          object: GO:0003723
-          knowledge_level: prediction
-          agent_type: automated_agent
-      - object:
-          subject: UniProtKB:A0A024RBG1
-          predicate: biolink:enables
-          object: GO:0005515
-          knowledge_level: knowledge_assertion
-          agent_type: manual_agent
     slot_usage:
       subject:
         range: macromolecular machine mixin
@@ -12383,13 +12595,6 @@ classes:
       in the GO molecular function branch), where the entity
       carries out the activity, or contributes to its execution.
     is_a: functional association
-    examples:
-      - object:
-          subject: UniProtKB:A0A024RBG1
-          predicate: biolink:enables
-          object: GO:0003723
-          knowledge_level: prediction
-          agent_type: automated_agent
     mixins:
       - macromolecular machine to entity association mixin
     slot_usage:
@@ -12403,13 +12608,6 @@ classes:
       (as represented in the GO biological process branch), where the entity
       carries out some part of the process, regulates it, or acts upstream of it.
     is_a: functional association
-    examples:
-      - object:
-          subject: UniProtKB:A0A075B6H5
-          predicate: biolink:involved_in
-          object: GO:0002376
-          knowledge_level: prediction
-          agent_type: automated_agent
     mixins:
       - macromolecular machine to entity association mixin
     slot_usage:
@@ -12423,13 +12621,6 @@ classes:
       in the GO cellular component branch), where the entity
       carries out its function in the cellular component.
     is_a: functional association
-    examples:
-      - object:
-          subject: UniProtKB:A0A024RBG1
-          predicate: biolink:located_in
-          object: GO:0005737
-          knowledge_level: prediction
-          agent_type: automated_agent
     mixins:
       - macromolecular machine to entity association mixin
     slot_usage:
@@ -12462,13 +12653,6 @@ classes:
   gene to go term association:
     aliases: ['functional association']
     is_a: functional association
-    examples:
-      - object:
-          subject: UniProtKB:A0A024RBG1
-          predicate: biolink:enables
-          object: GO:0005515
-          knowledge_level: knowledge_assertion
-          agent_type: manual_agent
     exact_mappings:
       - WBVocab:Gene-GO-Association
     defining_slots:
@@ -12493,6 +12677,101 @@ classes:
         examples:
           - value: GO:0016301
             description: kinase activity
+    examples:
+      - object:
+          subject: NCBIGene:25595
+          predicate: biolink:active_in
+          object: GO:0015630
+          category: biolink:GeneToGoTermAssociation
+          knowledge_level: prediction
+          agent_type: manual_validation_of_automated_agent
+      - object:
+          subject: NCBIGene:20502
+          predicate: biolink:acts_upstream_of
+          object: GO:0042403
+          category: biolink:GeneToGoTermAssociation
+          knowledge_level: prediction
+          agent_type: manual_validation_of_automated_agent
+      - object:
+          subject: NCBIGene:308911
+          predicate: biolink:acts_upstream_of_negative_effect
+          object: GO:1903450
+          category: biolink:GeneToGoTermAssociation
+          knowledge_level: prediction
+          agent_type: manual_validation_of_automated_agent
+      - object:
+          subject: NCBIGene:101148
+          predicate: biolink:acts_upstream_of_or_within
+          object: GO:0031669
+          category: biolink:GeneToGoTermAssociation
+          knowledge_level: prediction
+          agent_type: manual_validation_of_automated_agent
+      - object:
+          subject: NCBIGene:65106
+          predicate: biolink:acts_upstream_of_or_within_negative_effect
+          object: GO:0072659
+          category: biolink:GeneToGoTermAssociation
+          knowledge_level: knowledge_assertion
+          agent_type: manual_agent
+          publications: ["PMID:22210510"]
+      - object:
+          subject: NCBIGene:18072
+          predicate: biolink:acts_upstream_of_or_within_positive_effect
+          object: GO:0006915
+          category: biolink:GeneToGoTermAssociation
+          knowledge_level: knowledge_assertion
+          agent_type: manual_agent
+          publications: ["PMID:17573818"]
+      - object:
+          subject: NCBIGene:20375
+          predicate: biolink:acts_upstream_of_positive_effect
+          object: GO:0036462
+          category: biolink:GeneToGoTermAssociation
+          knowledge_level: prediction
+          agent_type: manual_validation_of_automated_agent
+      - object:
+          subject: NCBIGene:12168
+          predicate: biolink:colocalizes_with
+          object: GO:0005901
+          category: biolink:GeneToGoTermAssociation
+          knowledge_level: prediction
+          agent_type: automated_agent
+      - object:
+          subject: NCBIGene:303888
+          predicate: biolink:contributes_to
+          object: GO:0160270
+          category: biolink:GeneToGoTermAssociation
+          knowledge_level: prediction
+          agent_type: manual_validation_of_automated_agent
+      - object:
+          subject: NCBIGene:12193
+          predicate: biolink:enables
+          object: GO:0046872
+          category: biolink:GeneToGoTermAssociation
+          knowledge_level: prediction
+          agent_type: automated_agent
+      - object:
+          subject: GO:0005688
+          predicate: biolink:has_part
+          object: NCBIGene:120103204
+          category: biolink:GeneToGoTermAssociation
+          knowledge_level: prediction
+          agent_type: automated_agent
+      - object:
+          subject: NCBIGene:258177
+          predicate: biolink:located_in
+          object: GO:0016020
+          category: biolink:GeneToGoTermAssociation
+          knowledge_level: prediction
+          agent_type: automated_agent
+          publications: ["PMID:14611657"]
+      - object:
+          subject: NCBIGene:499342
+          predicate: biolink:related_to
+          object: GO:1905399
+          category: biolink:GeneToGoTermAssociation
+          knowledge_level: prediction
+          agent_type: manual_validation_of_automated_agent
 
   entity to disease association:
     description: >-
@@ -12500,13 +12779,6 @@ classes:
       clinical context such as approval status, research phase,
       FDA regulatory approvals, and number of cases.
     is_a: association
-    examples:
-      - object:
-          subject: UNII:9TD681796G
-          predicate: biolink:in_clinical_trials_for
-          object: MONDO:0006052
-          knowledge_level: knowledge_assertion
-          agent_type: manual_agent
     exact_mappings:
     slots:
       - clinical approval status
@@ -12516,6 +12788,81 @@ classes:
     defining_slots:
       - subject
       - object
+    examples:
+      - object:
+          subject: CHEBI:50681
+          predicate: biolink:in_clinical_trials_for
+          object: MONDO:0971091
+          category: biolink:EntityToDiseaseAssociation
+          knowledge_level: knowledge_assertion
+          agent_type: manual_agent
+      - object:
+          subject: UNII:DPT0O3T46P
+          predicate: biolink:in_clinical_trials_for
+          object: UMLS:C4527184
+          category: biolink:EntityToDiseaseAssociation
+          knowledge_level: knowledge_assertion
+          agent_type: manual_agent
+      - object:
+          subject: CHEBI:9150
+          predicate: biolink:treats
+          object: UMLS:C0520863
+          category: biolink:EntityToDiseaseAssociation
+          knowledge_level: knowledge_assertion
+          agent_type: manual_agent
+      - object:
+          subject: CHEBI:66880
+          predicate: biolink:treats
+          object: MONDO:0004975
+          category: biolink:EntityToDiseaseAssociation
+          knowledge_level: knowledge_assertion
+          agent_type: manual_agent
+      - object:
+          subject: CHEBI:28077
+          predicate: biolink:applied_to_treat
+          object: MONDO:0005011
+          category: biolink:EntityToDiseaseAssociation
+          knowledge_level: observation
+          agent_type: manual_validation_of_automated_agent
+      - object:
+          subject: CHEBI:70735
+          predicate: biolink:applied_to_treat
+          object: MONDO:0005180
+          category: biolink:EntityToDiseaseAssociation
+          knowledge_level: observation
+          agent_type: manual_validation_of_automated_agent
+      - object:
+          subject: RXCUI:1367436
+          predicate: biolink:contraindicated_in
+          object: MONDO:0004981
+          category: biolink:EntityToDiseaseAssociation
+          knowledge_level: knowledge_assertion
+          agent_type: manual_validation_of_automated_agent
+          publications: ["a280f164-2833-4f37-96e3-a857c91f77f2"]
+      - object:
+          subject: RXCUI:1165206
+          predicate: biolink:contraindicated_in
+          object: MONDO:0001106
+          category: biolink:EntityToDiseaseAssociation
+          knowledge_level: knowledge_assertion
+          agent_type: manual_validation_of_automated_agent
+          publications: ["13be49d2-0ce9-a78a-e557-ded85ddc808f", "43fb007c-19bb-4a04-b47b-288a4f464c81", "59909d47-da42-411c-8e79-fc867974a283"]
+      - object:
+          subject: CHEBI:74947
+          predicate: biolink:treats
+          object: HP:0010783
+          category: biolink:EntityToDiseaseAssociation
+          knowledge_level: knowledge_assertion
+          agent_type: manual_validation_of_automated_agent
+          publications: ["2eda833b-1357-4ed4-a093-194524fcb061"]
+      - object:
+          subject: CHEBI:4712
+          predicate: biolink:treats
+          object: MONDO:0005240
+          category: biolink:EntityToDiseaseAssociation
+          knowledge_level: knowledge_assertion
+          agent_type: manual_validation_of_automated_agent
+          publications: ["2ed2f592-27a7-4c10-a18a-21a3f221d3b1", "3376536b-043d-478a-b129-7ce11ec94e3e", "356fb38a-791c-48f0-9312-6203ae57d80c", "e99a1d29-3989-4437-999e-4e9cab8b9b1e"]
 
   entity to phenotypic feature association:
     description: >-
@@ -12523,13 +12870,6 @@ classes:
       capturing clinical context such as approval status, research phase,
       FDA regulatory approvals, and number of cases.
     is_a: association
-    examples:
-      - object:
-          subject: UMLS:C0887621
-          predicate: biolink:in_clinical_trials_for
-          object: NCIT:C34887
-          knowledge_level: knowledge_assertion
-          agent_type: manual_agent
     exact_mappings:
     slots:
       - clinical approval status
@@ -12539,6 +12879,73 @@ classes:
     defining_slots:
       - subject
       - object
+    examples:
+      - object:
+          subject: GTOPDB:13663
+          predicate: biolink:in_clinical_trials_for
+          object: NCIT:C146753
+          category: biolink:EntityToPhenotypicFeatureAssociation
+          knowledge_level: knowledge_assertion
+          agent_type: manual_agent
+      - object:
+          subject: UNII:3U02EL437C
+          predicate: biolink:in_clinical_trials_for
+          object: NCIT:C143951
+          category: biolink:EntityToPhenotypicFeatureAssociation
+          knowledge_level: knowledge_assertion
+          agent_type: manual_agent
+      - object:
+          subject: CHEBI:6339
+          predicate: biolink:treats
+          object: HP:0001822
+          category: biolink:EntityToPhenotypicFeatureAssociation
+          knowledge_level: knowledge_assertion
+          agent_type: manual_agent
+      - object:
+          subject: UMLS:C4766174
+          predicate: biolink:treats
+          object: NCIT:C57896
+          category: biolink:EntityToPhenotypicFeatureAssociation
+          knowledge_level: knowledge_assertion
+          agent_type: manual_agent
+      - object:
+          subject: CHEBI:78538
+          predicate: biolink:applied_to_treat
+          object: MONDO:0005294
+          category: biolink:EntityToPhenotypicFeatureAssociation
+          knowledge_level: observation
+          agent_type: manual_validation_of_automated_agent
+      - object:
+          subject: CHEBI:4031
+          predicate: biolink:applied_to_treat
+          object: MONDO:0011996
+          category: biolink:EntityToPhenotypicFeatureAssociation
+          knowledge_level: observation
+          agent_type: manual_validation_of_automated_agent
+      - object:
+          subject: RXCUI:617430
+          predicate: biolink:contraindicated_in
+          object: HP:0001410
+          category: biolink:EntityToPhenotypicFeatureAssociation
+          knowledge_level: knowledge_assertion
+          agent_type: manual_validation_of_automated_agent
+          publications: ["2970fe7e-9e1f-47aa-85ad-663ee15c7e06", "a5fa252a-d39e-4099-a230-b665fbb97a80", "b897c800-24a2-4e76-8668-498c5515c3d0", "babf3b8d-f2ce-407d-9407-728c45eb19ee", "d74e93e5-11c9-434e-a60c-4a4f911dd0f8"]
+      - object:
+          subject: CHEBI:135530
+          predicate: biolink:contraindicated_in
+          object: HP:0000016
+          category: biolink:EntityToPhenotypicFeatureAssociation
+          knowledge_level: knowledge_assertion
+          agent_type: manual_validation_of_automated_agent
+          publications: ["100678f1-313a-4e99-ae77-319c610a830f", "e433dc68-6b2a-4c48-beae-4ec946f1ff1e"]
+      - object:
+          subject: CHEBI:143117
+          predicate: biolink:treats
+          object: MONDO:0008903
+          category: biolink:EntityToPhenotypicFeatureAssociation
+          knowledge_level: knowledge_assertion
+          agent_type: manual_validation_of_automated_agent
+          publications: ["004f93d7-a1cd-4b67-9207-31cdcb5c5976", "2b34d62d-e02a-4af3-bc0d-1571dd4ee76d"]
 
    ## -----------------
    ## SEQUENCE FEATURES

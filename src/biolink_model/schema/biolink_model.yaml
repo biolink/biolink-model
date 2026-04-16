@@ -10701,19 +10701,6 @@ classes:
       An interaction between a chemical entity and a phenotype or disease,
       where the presence of the chemical gives rise to or exacerbates the phenotype.
     is_a: association
-    examples:
-      - object:
-          subject: DrugCentral:559
-          predicate: biolink:treats
-          object: UMLS:C0153225
-          knowledge_level: knowledge_assertion
-          agent_type: manual_validation_of_automated_agent
-      - object:
-          subject: DrugCentral:1572
-          predicate: biolink:contraindicated_in
-          object: UMLS:C0018824
-          knowledge_level: knowledge_assertion
-          agent_type: manual_validation_of_automated_agent
     narrow_mappings:
       - SIO:000993
     defining_slots:
@@ -10734,19 +10721,6 @@ classes:
       This association defines a relationship between a chemical or treatment (or procedure) and a disease or phenotypic feature
       where the chemical or treatment is used to treat, or is being studied to treat, the disease or phenotypic feature.
     is_a: association
-    examples:
-      - object:
-          subject: CHEBI:31236
-          predicate: biolink:treats
-          object: MONDO:0002046
-          knowledge_level: knowledge_assertion
-          agent_type: manual_agent
-      - object:
-          subject: UMLS:C0887621
-          predicate: biolink:in_clinical_trials_for
-          object: NCIT:C34887
-          knowledge_level: knowledge_assertion
-          agent_type: manual_agent
     defining_slots:
       - subject
       - predicate
@@ -10899,13 +10873,6 @@ classes:
       effect resulting from such an interaction are out of scope, and covered by the ChemicalAffectsGeneAssociation type
       (e.g. impact of a chemical on the abundance, activity, structure, etc, of either participant in the interaction)
     is_a: association
-    examples:
-      - object:
-          subject: DrugCentral:279
-          predicate: biolink:directly_physically_interacts_with
-          object: UniProtKB:P0AD68
-          knowledge_level: knowledge_assertion
-          agent_type: manual_agent
     broad_mappings:
       - SIO:001257    ## chemical-gene association
     slots:
@@ -10960,13 +10927,6 @@ classes:
       Describes the relationship between an enzyme (usually a macromolecular
       complex or gene product) and the molecules it acts on (substrate).
       The substrate can be a chemical, a polypeptide, or a protein.
-    examples:
-      - object:
-          subject: UniProtKB:P31645
-          predicate: biolink:has_substrate
-          object: DrugCentral:618
-          knowledge_level: knowledge_assertion
-          agent_type: manual_agent
     notes: >-
       Using macromolecular machine should cover cases of gene-protein conflation.
     slot_usage:
@@ -11089,17 +11049,6 @@ classes:
       Describes an effect that a chemical has on a gene or gene product (e.g. an impact
       of on its abundance, activity,localization, processing, expression, etc.)
     is_a: chemical affects biological entity association
-    examples:
-      - object:
-          subject: DrugCentral:279
-          predicate: biolink:affects
-          object: UniProtKB:P0AD68
-          qualified_predicate: biolink:causes
-          object_aspect_qualifier: activity
-          object_direction_qualifier: decreased
-          causal_mechanism_qualifier: inhibition
-          knowledge_level: knowledge_assertion
-          agent_type: manual_agent
     slots:
       - dgidb interaction score
       - dgidb evidence score
@@ -11178,13 +11127,6 @@ classes:
     description: >-
       An interaction between a drug and a gene or gene product.
     is_a: association
-    examples:
-      - object:
-          subject: DrugCentral:5476
-          predicate: biolink:interacts_with
-          object: UniProtKB:P10912
-          knowledge_level: knowledge_assertion
-          agent_type: manual_agent
     related_mappings:
       - SIO:001257
     defining_slots:
@@ -11804,9 +11746,6 @@ classes:
           object: MONDO:0017579
           knowledge_level: knowledge_assertion
           agent_type: manual_agent
-        description: >-
-          ACTA1 gene associated with nemaline myopathy, curated
-          from MedlinePlus via the DISEASES database.
     is_a: association
     exact_mappings:
       - SIO:000983
@@ -11870,19 +11809,6 @@ classes:
 
   correlated gene to disease association:
     is_a: association
-    examples:
-      - object:
-          subject: ENSEMBL:ENSP00000000233
-          predicate: biolink:occurs_together_in_literature_with
-          object: DOID:0111266
-          knowledge_level: text_co_occurrence
-          agent_type: data_analysis_pipeline
-      - object:
-          subject: ENSEMBL:ENSP00000003084
-          predicate: biolink:associated_with
-          object: DOID:0111862
-          knowledge_level: knowledge_assertion
-          agent_type: manual_agent
     defining_slots:
       - subject
       - object
@@ -12331,19 +12257,6 @@ classes:
       An association between a macromolecular machine mixin (gene, gene product or
       complex of gene products) and either a molecular activity, a biological
       process or a cellular location in which a function is executed.
-    examples:
-      - object:
-          subject: UniProtKB:A0A024RBG1
-          predicate: biolink:enables
-          object: GO:0003723
-          knowledge_level: prediction
-          agent_type: automated_agent
-      - object:
-          subject: UniProtKB:A0A024RBG1
-          predicate: biolink:enables
-          object: GO:0005515
-          knowledge_level: knowledge_assertion
-          agent_type: manual_agent
     slot_usage:
       subject:
         range: macromolecular machine mixin
@@ -12386,13 +12299,6 @@ classes:
       in the GO molecular function branch), where the entity
       carries out the activity, or contributes to its execution.
     is_a: functional association
-    examples:
-      - object:
-          subject: UniProtKB:A0A024RBG1
-          predicate: biolink:enables
-          object: GO:0003723
-          knowledge_level: prediction
-          agent_type: automated_agent
     mixins:
       - macromolecular machine to entity association mixin
     slot_usage:
@@ -12406,13 +12312,6 @@ classes:
       (as represented in the GO biological process branch), where the entity
       carries out some part of the process, regulates it, or acts upstream of it.
     is_a: functional association
-    examples:
-      - object:
-          subject: UniProtKB:A0A075B6H5
-          predicate: biolink:involved_in
-          object: GO:0002376
-          knowledge_level: prediction
-          agent_type: automated_agent
     mixins:
       - macromolecular machine to entity association mixin
     slot_usage:
@@ -12426,13 +12325,6 @@ classes:
       in the GO cellular component branch), where the entity
       carries out its function in the cellular component.
     is_a: functional association
-    examples:
-      - object:
-          subject: UniProtKB:A0A024RBG1
-          predicate: biolink:located_in
-          object: GO:0005737
-          knowledge_level: prediction
-          agent_type: automated_agent
     mixins:
       - macromolecular machine to entity association mixin
     slot_usage:
@@ -12465,13 +12357,6 @@ classes:
   gene to go term association:
     aliases: ['functional association']
     is_a: functional association
-    examples:
-      - object:
-          subject: UniProtKB:A0A024RBG1
-          predicate: biolink:enables
-          object: GO:0005515
-          knowledge_level: knowledge_assertion
-          agent_type: manual_agent
     exact_mappings:
       - WBVocab:Gene-GO-Association
     defining_slots:
@@ -12503,13 +12388,6 @@ classes:
       clinical context such as approval status, research phase,
       FDA regulatory approvals, and number of cases.
     is_a: association
-    examples:
-      - object:
-          subject: UNII:9TD681796G
-          predicate: biolink:in_clinical_trials_for
-          object: MONDO:0006052
-          knowledge_level: knowledge_assertion
-          agent_type: manual_agent
     exact_mappings:
     slots:
       - clinical approval status
@@ -12526,13 +12404,6 @@ classes:
       capturing clinical context such as approval status, research phase,
       FDA regulatory approvals, and number of cases.
     is_a: association
-    examples:
-      - object:
-          subject: UMLS:C0887621
-          predicate: biolink:in_clinical_trials_for
-          object: NCIT:C34887
-          knowledge_level: knowledge_assertion
-          agent_type: manual_agent
     exact_mappings:
     slots:
       - clinical approval status
