@@ -4909,7 +4909,23 @@
       "domain_of": [
         "ChemicalEntity"
       ],
+      "inverse": "is_chemical_role_of",
       "range": "ChemicalRole",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "is_chemical_role_of",
+      "definition_uri": "https://w3id.org/biolink/vocab/is_chemical_role_of",
+      "description": "Holds between a chemical role and a chemical entity that exhibits that role.",
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "is_a": "related_to_at_concept_level",
+      "domain": "NamedThing",
+      "slot_uri": "https://w3id.org/biolink/vocab/is_chemical_role_of",
+      "inherited": true,
+      "owner": "is_chemical_role_of",
+      "inverse": "has_chemical_role",
+      "range": "NamedThing",
       "multivalued": true,
       "@type": "SlotDefinition"
     },
@@ -41866,9 +41882,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2026-04-13T23:45:15",
-  "source_file_size": 463807,
-  "generation_date": "2026-04-13T23:45:21",
+  "source_file_date": "2026-04-17T22:07:28",
+  "source_file_size": 464036,
+  "generation_date": "2026-04-17T22:07:34",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",

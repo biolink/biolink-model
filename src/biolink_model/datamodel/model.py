@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-04-13T23:45:36
+# Generation date: 2026-04-17T22:07:50
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/vocab/
@@ -15989,6 +15989,9 @@ slots.is_toxic = Slot(uri=BIOLINK.is_toxic, name="is toxic", curie=BIOLINK.curie
 
 slots.has_chemical_role = Slot(uri=BIOLINK.has_chemical_role, name="has chemical role", curie=BIOLINK.curie('has_chemical_role'),
                    model_uri=BIOLINK.has_chemical_role, domain=NamedThing, range=Optional[Union[Union[str, ChemicalRoleId], list[Union[str, ChemicalRoleId]]]])
+
+slots.is_chemical_role_of = Slot(uri=BIOLINK.is_chemical_role_of, name="is chemical role of", curie=BIOLINK.curie('is_chemical_role_of'),
+                   model_uri=BIOLINK.is_chemical_role_of, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.max_tolerated_dose = Slot(uri=BIOLINK.max_tolerated_dose, name="max tolerated dose", curie=BIOLINK.curie('max_tolerated_dose'),
                    model_uri=BIOLINK.max_tolerated_dose, domain=NamedThing, range=Optional[str])
