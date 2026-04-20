@@ -1,0 +1,21 @@
+nodes:
+  - id: NCBIGene:7157
+    name: TP53
+    category:
+      - biolink:Gene
+  - id: MONDO:0019009
+    name: Li-Fraumeni syndrome
+    category:
+      - biolink:Disease
+
+edges:
+  - subject: NCBIGene:7157
+    predicate: biolink:causes
+    object: MONDO:0019009
+    category:
+      - biolink:CausalGeneToDiseaseAssociation
+    knowledge_level: knowledge_assertion
+    agent_type: manual_agent
+    publications:
+      - PMID:2259385
+      - PMID:1978757

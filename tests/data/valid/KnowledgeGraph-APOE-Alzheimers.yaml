@@ -1,0 +1,21 @@
+nodes:
+  - id: NCBIGene:348
+    name: APOE
+    category:
+      - biolink:Gene
+  - id: MONDO:0004975
+    name: Alzheimer disease
+    category:
+      - biolink:Disease
+
+edges:
+  - subject: NCBIGene:348
+    predicate: biolink:gene_associated_with_condition
+    object: MONDO:0004975
+    category:
+      - biolink:GeneToDiseaseAssociation
+    knowledge_level: knowledge_assertion
+    agent_type: manual_agent
+    publications:
+      - PMID:8346443
+      - PMID:8100999

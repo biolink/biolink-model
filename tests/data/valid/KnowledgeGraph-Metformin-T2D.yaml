@@ -1,0 +1,20 @@
+nodes:
+  - id: CHEBI:6801
+    name: metformin
+    category:
+      - biolink:SmallMolecule
+  - id: MONDO:0005148
+    name: type 2 diabetes mellitus
+    category:
+      - biolink:Disease
+
+edges:
+  - subject: CHEBI:6801
+    predicate: biolink:treats
+    object: MONDO:0005148
+    category:
+      - biolink:ChemicalToDiseaseOrPhenotypicFeatureAssociation
+    knowledge_level: knowledge_assertion
+    agent_type: manual_agent
+    publications:
+      - PMID:28776086
