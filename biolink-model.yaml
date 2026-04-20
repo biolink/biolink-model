@@ -10655,7 +10655,7 @@ classes:
       - object:
           subject: CHEBI:85990  # panobinostat
           predicate: biolink:has_metabolite
-          object: PUBCHEM.COMPOUND:155543741
+          object: PUBCHEM.COMPOUND:155543741  # (E)-3-[4-[[2-(1a-methyl-2H-oxireno[2,3-b]indol-6b-yl)ethylamino]methyl]phenyl]-N-hydroxyprop-2-enamide
           category: biolink:ChemicalEntityToChemicalEntityAssociation
           knowledge_level: knowledge_assertion
           agent_type: manual_agent
@@ -11166,7 +11166,7 @@ classes:
       - supporting documents
     examples:
       - object:
-          subject: PUBCHEM.COMPOUND:168290237
+          subject: PUBCHEM.COMPOUND:168290237  # 1-[4-(4-ethoxyphenyl)-4-(2H-tetrazol-5-yl)piperidin-1-yl]prop-2-en-1-one
           predicate: biolink:affects
           object: NCBIGene:200424  # TET3
           category: biolink:ChemicalAffectsGeneAssociation
@@ -11179,7 +11179,7 @@ classes:
           qualified_predicate: biolink:causes
           species_context_qualifier: NCBITaxon:9606
       - object:
-          subject: PUBCHEM.COMPOUND:155414240
+          subject: PUBCHEM.COMPOUND:155414240  # N'-(1-methyl-4-propan-2-yloxypyrazolo[5,4-d]pyrimidin-6-yl)-1-phenylethane-1,2-diamine
           predicate: biolink:affects
           object: NCBIGene:144233  # BCDIN3D
           category: biolink:ChemicalAffectsGeneAssociation
