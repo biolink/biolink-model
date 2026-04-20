@@ -964,22 +964,19 @@ class KnowledgeGraph(ConfiguredBaseModel):
 
 class Node(ConfiguredBaseModel):
     """
-    A node in a KGX graph, will be superclass for named thing
+    A generic node in a KGX-formatted knowledge graph, representing a single entity or concept with a unique identifier. This class serves as the structural superclass for `named thing` in Biolink, providing the minimal KGX-compliant contract (identifier, category, etc.) that any biolink entity participating in a knowledge graph must satisfy.
     """
     pass
 
 
 class Edge(ConfiguredBaseModel):
     """
-    An edge in a KGX graph, will be superclass for association
+    A generic edge in a KGX-formatted knowledge graph, representing a directed relationship between a subject node and an object node qualified by a predicate. This class serves as the structural superclass for `association` in Biolink, providing the minimal KGX-compliant contract (subject, predicate, object, and associated metadata) that any biolink relationship participating in a knowledge graph must satisfy.
     """
     pass
 
 
 class MappingCollection(ConfiguredBaseModel):
-    """
-    A collection of deprecated mappings.
-    """
     predicate_mappings: Optional[list[PredicateMapping]] = Field(default=None, description="""A collection of relationships that are not used in biolink, but have biolink patterns that can be used to replace them.  This is a temporary slot to help with the transition to the fully qualified predicate model in Biolink3.""")
 
 
@@ -2637,7 +2634,7 @@ class Pathway(BiologicalProcess, OntologyClass):
 
 class PhysiologicalProcess(BiologicalProcess, OntologyClass):
     """
-    A biological or chemical function within a living organism (cells, tissues, or organs).
+    A biological or chemical function within a living organism.
     """
     id: str = Field(default=..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     has_input: Optional[list[str]] = Field(default=None, description="""holds between a process and a continuant, where the continuant is an input into the process""")
@@ -2713,7 +2710,7 @@ class OrganismAttribute(Attribute):
 
 class PhenotypicQuality(OrganismAttribute):
     """
-    A property of a phenotype
+    A characteristic of a phenotype (e.g., weight, size, shape, color) that can be observed, measured, or compared across organisms or conditions.
     """
     name: Optional[str] = Field(default=None, description="""The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.""")
     has_attribute_type: str = Field(default=..., description="""connects an attribute to a class that describes it""")
@@ -2829,7 +2826,7 @@ class Virus(OrganismalEntity, SubjectOfInvestigation):
 
 class CellularOrganism(OrganismalEntity, SubjectOfInvestigation):
     """
-    An organism that contains one or more cells.
+    An organism that contains one or more cells belonging to the cellular lineages of life (Archaea, Bacteria, or Eukaryota), whose body consists of one or more cells. Distinguished from acellular biological entities such as viruses and viroids.
     """
     in_taxon: Optional[list[str]] = Field(default=None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     in_taxon_label: Optional[str] = Field(default=None, description="""The human readable scientific name for the taxon of the entity.""")
@@ -2851,9 +2848,6 @@ class CellularOrganism(OrganismalEntity, SubjectOfInvestigation):
 
 
 class Mammal(CellularOrganism, SubjectOfInvestigation):
-    """
-    A member of the class Mammalia, a clade of endothermic amniotes distinguished from reptiles and birds by the possession of hair, three middle ear bones, mammary glands, and a neocortex
-    """
     in_taxon: Optional[list[str]] = Field(default=None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     in_taxon_label: Optional[str] = Field(default=None, description="""The human readable scientific name for the taxon of the entity.""")
     provided_by: Optional[list[str]] = Field(default=None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
@@ -2874,9 +2868,6 @@ class Mammal(CellularOrganism, SubjectOfInvestigation):
 
 
 class Human(Mammal, SubjectOfInvestigation):
-    """
-    A member of the the species Homo sapiens.
-    """
     in_taxon: Optional[list[str]] = Field(default=None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     in_taxon_label: Optional[str] = Field(default=None, description="""The human readable scientific name for the taxon of the entity.""")
     provided_by: Optional[list[str]] = Field(default=None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
@@ -2897,9 +2888,6 @@ class Human(Mammal, SubjectOfInvestigation):
 
 
 class Plant(CellularOrganism):
-    """
-    Any living organism that typically synthesizes its food from inorganic substances, possesses cellulose cell walls, responds slowly and often permanently to a stimulus, lacks specialized sense organs and nervous system, and has no powers of locomotion.
-    """
     in_taxon: Optional[list[str]] = Field(default=None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     in_taxon_label: Optional[str] = Field(default=None, description="""The human readable scientific name for the taxon of the entity.""")
     provided_by: Optional[list[str]] = Field(default=None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
@@ -2920,9 +2908,6 @@ class Plant(CellularOrganism):
 
 
 class Invertebrate(CellularOrganism):
-    """
-    An animal lacking a vertebral column. This group consists of 98% of all animal species.
-    """
     in_taxon: Optional[list[str]] = Field(default=None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     in_taxon_label: Optional[str] = Field(default=None, description="""The human readable scientific name for the taxon of the entity.""")
     provided_by: Optional[list[str]] = Field(default=None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
@@ -2943,9 +2928,6 @@ class Invertebrate(CellularOrganism):
 
 
 class Vertebrate(CellularOrganism):
-    """
-    A sub-phylum of animals consisting of those having a bony or cartilaginous vertebral column.
-    """
     in_taxon: Optional[list[str]] = Field(default=None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     in_taxon_label: Optional[str] = Field(default=None, description="""The human readable scientific name for the taxon of the entity.""")
     provided_by: Optional[list[str]] = Field(default=None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
@@ -2966,9 +2948,6 @@ class Vertebrate(CellularOrganism):
 
 
 class Fungus(CellularOrganism):
-    """
-    A kingdom of eukaryotic, heterotrophic organisms that live as saprobes or parasites, including mushrooms, yeasts, smuts, molds, etc. They reproduce either sexually or asexually, and have life cycles that range from simple to complex. Filamentous fungi refer to those that grow as multicellular colonies (mushrooms and molds).
-    """
     in_taxon: Optional[list[str]] = Field(default=None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     in_taxon_label: Optional[str] = Field(default=None, description="""The human readable scientific name for the taxon of the entity.""")
     provided_by: Optional[list[str]] = Field(default=None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
@@ -3013,7 +2992,7 @@ class LifeStage(OrganismalEntity, OntologyClass):
 
 class IndividualOrganism(OrganismalEntity, SubjectOfInvestigation):
     """
-    An instance of an organism. For example, Richard Nixon, Charles Darwin, my pet cat. Example ID: ORCID:0000-0002-5355-2576
+    An instance of an organism. For example, Charles Darwin, my pet cat.
     """
     in_taxon: Optional[list[str]] = Field(default=None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     in_taxon_label: Optional[str] = Field(default=None, description="""The human readable scientific name for the taxon of the entity.""")
@@ -3082,7 +3061,7 @@ class StudyPopulation(PopulationOfIndividualOrganisms):
 
 class DiseaseOrPhenotypicFeature(BiologicalEntity, OntologyClass):
     """
-    Either one of a disease or an individual phenotypic feature. Some knowledge resources such as Monarch treat these as distinct, others such as MESH conflate.  Please see definitions of phenotypic feature and disease in this model for their independent descriptions.  This class is helpful to enforce domains and ranges that may involve either a disease or a phenotypic feature.
+    A disease or an individual phenotypic feature, grouped as a single class to accommodate source vocabularies and assertions that do not distinguish the two. Prefer the more specific subclasses disease or phenotypic feature when the distinction is known.
     """
     inheritance: Optional[str] = Field(default=None, description="""Connects genetic inheritance to a disease or phenotypic feature, as a node property.""")
     id: str = Field(default=..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
@@ -3106,7 +3085,7 @@ class DiseaseOrPhenotypicFeature(BiologicalEntity, OntologyClass):
 
 class Disease(DiseaseOrPhenotypicFeature):
     """
-    A disorder of structure or function, especially one that produces specific signs, phenotypes or symptoms or that affects a specific location and is not simply a direct result of physical injury.  A disposition to undergo pathological processes that exists in an organism because of one or more disorders in that organism.
+    A disease is a disposition to undergo pathological processes that exists in an organism because of one or more disorders in that organism.
     """
     inheritance: Optional[str] = Field(default=None, description="""Connects genetic inheritance to a disease or phenotypic feature, as a node property.""")
     id: str = Field(default=..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
@@ -3130,7 +3109,7 @@ class Disease(DiseaseOrPhenotypicFeature):
 
 class PhenotypicFeature(DiseaseOrPhenotypicFeature):
     """
-    A combination of entity and quality that makes up a phenotyping statement. An observable characteristic of an individual resulting from the interaction of its genotype with its molecular and physical environment.
+    A combination of entity and quality that makes up a phenotyping statement. An observable characteristic of an individual often resulting from the interaction of its genotype with its molecular and physical environment.
     """
     inheritance: Optional[str] = Field(default=None, description="""Connects genetic inheritance to a disease or phenotypic feature, as a node property.""")
     id: str = Field(default=..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
@@ -3178,7 +3157,7 @@ class BehavioralFeature(PhenotypicFeature):
 
 class AnatomicalEntity(OrganismalEntity, PhysicalEssence, OntologyClass):
     """
-    A subcellular location, cell type or gross anatomical part
+    A part of a cellular organism at or above the granularity of a protein complex. This is a grouping class with three concrete subclasses that should be preferred when applicable: \"biolink:Cell\" for whole cells, \"biolink:CellularComponent\" for subcellular and intracellular structures (organelles, membranes, bacterial flagella, etc.), and \"biolink:GrossAnatomcialStructure\" for multicellular parts (tissues, organs, body parts). Excludes viral and other acellular biological entities.
     """
     id: str = Field(default=..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     in_taxon: Optional[list[str]] = Field(default=None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
@@ -3697,7 +3676,7 @@ class Drug(MolecularMixture, ChemicalOrDrugOrTreatment, OntologyClass):
 
 class EnvironmentalFoodContaminant(ChemicalEntity):
     """
-    Any unwanted chemical in food, including agrochemicals and industrial chemicals that may contaminate foodstuffs during their production, transportation, or storage.
+    Any unwanted chemical in food. The term includes agrochemicals and industrial chemicals that may contaminate foodstuffs during their production, transportation or storage.
     """
     trade_name: Optional[str] = Field(default=None)
     available_from: Optional[list[DrugAvailabilityEnum]] = Field(default=None)
@@ -3763,7 +3742,7 @@ class FoodAdditive(ChemicalEntity):
 
 class Food(ChemicalMixture):
     """
-    A substance consumed by a living organism as a source of nutrition
+    A substance of plant, animal, or artificial origin consumed by a living organism to provide essential nutrients, energy, and support growth and the processes of life, or to satisfy other health needs or provide a social or organoleptic experience. experience.
     """
     is_supplement: Optional[str] = Field(default=None)
     highest_FDA_approval_status: Optional[ApprovalStatusEnum] = Field(default=None, description="""Should be the highest level of FDA approval this chemical entity or device has, regardless of which disease, condition or phenotype it is currently being reviewed to treat.  For specific levels of FDA approval for a specific condition, disease, phenotype, etc., see the association slot, 'clinical approval status.'""")
@@ -3804,21 +3783,21 @@ class MacromolecularMachineMixin(ConfiguredBaseModel):
     name: Optional[str] = Field(default=None, description="""genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name""")
 
 
-class GeneOrGeneProduct(MacromolecularMachineMixin):
+class GeneOrGeneProductOrGeneFamily(MacromolecularMachineMixin):
+    """
+    A union of gene family or gene loci or gene products, useful to define the association between a gene or gene product or gene family and some other general class of entity (e.g. biological process or anatomical entity)
+    """
+    name: Optional[str] = Field(default=None, description="""genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name""")
+
+
+class GeneOrGeneProduct(GeneOrGeneProductOrGeneFamily):
     """
     A union of gene loci or gene products. Frequently an identifier for one will be used as proxy for another
     """
     name: Optional[str] = Field(default=None, description="""genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name""")
 
 
-class GeneOrGeneProductOrGeneFamily(ConfiguredBaseModel):
-    """
-    A union of gene family or gene loci or gene products, useful to define the association between a gene or gene product or gene family and some other general class of entity (e.g. biological process or anatomical entity)
-    """
-    pass
-
-
-class Gene(GeneOrGeneProduct, ChemicalEntityOrGeneOrGeneProduct, GenomicEntity, BiologicalEntity, PhysicalEssence, OntologyClass):
+class Gene(GeneOrGeneProduct, GeneOrGeneProductOrGeneFamily, ChemicalEntityOrGeneOrGeneProduct, GenomicEntity, BiologicalEntity, PhysicalEssence, OntologyClass):
     """
     A region (or regions) that includes all of the sequence elements necessary to encode a functional transcript. A gene locus may include regulatory regions, transcribed regions and/or other functional sequence regions.
     """
@@ -4050,7 +4029,7 @@ class Protein(Polypeptide, GeneProductMixin):
 
 class ProteinIsoform(Protein, GeneProductIsoformMixin):
     """
-    Represents a protein that is a specific isoform of the canonical or reference protein. See https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4114032/
+    Represents a protein that is a specific isoform of the canonical or reference protein.
     """
     synonym: Optional[list[str]] = Field(default=None, description="""Alternate human-readable names for a thing""")
     xref: Optional[list[str]] = Field(default=None, description="""A database cross reference or alternative identifier for a NamedThing or edge between two NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
@@ -4073,7 +4052,7 @@ class ProteinIsoform(Protein, GeneProductIsoformMixin):
 
 class PosttranslationalModification(GeneProductIsoformMixin, BiologicalEntity):
     """
-    A chemical modification of a polypeptide or protein that occurs after translation. e.g. polypeptide cleavage to form separate proteins, methylation or acetylation of histone tail amino acids, protein ubiquitination.
+    A chemical modification of a polypeptide or protein that occurs after translation, altering its structure, activity, localization, or interactions.
     """
     in_taxon: Optional[list[str]] = Field(default=None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     in_taxon_label: Optional[str] = Field(default=None, description="""The human readable scientific name for the taxon of the entity.""")
@@ -4118,6 +4097,9 @@ class NucleicAcidSequenceMotif(BiologicalEntity):
 
 
 class RNAProduct(Transcript, GeneProductMixin):
+    """
+    High molecular weight, linear polymers, composed of nucleotides containing ribose and linked by phosphodiester bonds typically synthesized by a DNA- or RNA-dependent RNA polymerase that constitutes the product of a gene. Distinct in emphasis from `biolink:Transcript`, which denotes the informational output of transcription at the gene-model level rather than the chemical species itself.
+    """
     synonym: Optional[list[str]] = Field(default=None, description="""Alternate human-readable names for a thing""")
     xref: Optional[list[str]] = Field(default=None, description="""A database cross reference or alternative identifier for a NamedThing or edge between two NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     in_taxon: Optional[list[str]] = Field(default=None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
@@ -4284,7 +4266,7 @@ class ProteinFamily(GeneGroupingMixin, ChemicalEntityOrGeneOrGeneProduct, Biolog
     deprecated: Optional[bool] = Field(default=None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
 
 
-class GeneFamily(GeneGroupingMixin, ChemicalEntityOrGeneOrGeneProduct, BiologicalEntity):
+class GeneFamily(GeneGroupingMixin, GeneOrGeneProductOrGeneFamily, ChemicalEntityOrGeneOrGeneProduct, BiologicalEntity):
     """
     any grouping of multiple genes or gene products related by common descent
     """
@@ -4302,7 +4284,7 @@ class GeneFamily(GeneGroupingMixin, ChemicalEntityOrGeneOrGeneProduct, Biologica
     iri: Optional[str] = Field(default=None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: list[Literal["https://w3id.org/biolink/vocab/GeneFamily","biolink:GeneFamily"]] = Field(default=["biolink:GeneFamily"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
     type: Optional[list[str]] = Field(default=None)
-    name: Optional[str] = Field(default=None, description="""A human-readable name for an attribute or entity.""")
+    name: Optional[str] = Field(default=None, description="""genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name""")
     description: Optional[str] = Field(default=None, description="""a human-readable description of an entity""")
     has_attribute: Optional[list[str]] = Field(default=None, description="""connects any entity to an attribute""")
     deprecated: Optional[bool] = Field(default=None, description="""A boolean flag indicating that an entity is no longer considered current or valid.""")
@@ -11902,8 +11884,8 @@ EnvironmentalFoodContaminant.model_rebuild()
 FoodAdditive.model_rebuild()
 Food.model_rebuild()
 MacromolecularMachineMixin.model_rebuild()
-GeneOrGeneProduct.model_rebuild()
 GeneOrGeneProductOrGeneFamily.model_rebuild()
+GeneOrGeneProduct.model_rebuild()
 Gene.model_rebuild()
 GeneProductMixin.model_rebuild()
 GeneProductIsoformMixin.model_rebuild()

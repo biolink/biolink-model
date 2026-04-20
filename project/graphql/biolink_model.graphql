@@ -4851,7 +4851,7 @@ type Fungus
     hasAttribute: [Attribute]
   }
 
-type Gene implements GeneOrGeneProduct, GenomicEntity, ChemicalEntityOrGeneOrGeneProduct, PhysicalEssence, OntologyClass
+type Gene implements GeneOrGeneProduct, GeneOrGeneProductOrGeneFamily, GenomicEntity, ChemicalEntityOrGeneOrGeneProduct, PhysicalEssence, OntologyClass
   {
     id: String!
     iri: IriType
@@ -5015,7 +5015,7 @@ interface GeneExpressionMixin
     phenotypicState: DiseaseOrPhenotypicFeature
   }
 
-type GeneFamily implements GeneGroupingMixin, ChemicalEntityOrGeneOrGeneProduct
+type GeneFamily implements GeneGroupingMixin, GeneOrGeneProductOrGeneFamily, ChemicalEntityOrGeneOrGeneProduct
   {
     id: String!
     iri: IriType
@@ -5162,6 +5162,7 @@ interface GeneOrGeneProduct
 
 interface GeneOrGeneProductOrGeneFamily
   {
+    name: SymbolType
   }
 
 type GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation

@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-04-20T09:04:22
+# Generation date: 2026-04-20T15:50:44
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/vocab/
@@ -177,6 +177,7 @@ METPO = CurieNamespace('METPO', 'https://w3id.org/metpo/')
 MGI = CurieNamespace('MGI', 'http://identifiers.org/mgi/')
 MI = CurieNamespace('MI', 'http://purl.obolibrary.org/obo/MI_')
 MIR = CurieNamespace('MIR', 'http://identifiers.org/mir/')
+MOD = CurieNamespace('MOD', 'http://purl.obolibrary.org/obo/MOD_')
 MONDO = CurieNamespace('MONDO', 'http://purl.obolibrary.org/obo/MONDO_')
 MP = CurieNamespace('MP', 'http://purl.obolibrary.org/obo/MP_')
 MPATH = CurieNamespace('MPATH', 'http://purl.obolibrary.org/obo/MPATH_')
@@ -260,6 +261,7 @@ UBERON_NONAMESPACE = CurieNamespace('UBERON_NONAMESPACE', 'http://purl.obolibrar
 UMLS = CurieNamespace('UMLS', 'http://identifiers.org/umls/')
 UMLSSG = CurieNamespace('UMLSSG', 'https://lhncbc.nlm.nih.gov/semanticnetwork/download/sg_archive/SemGroups-v04.txt')
 UNII = CurieNamespace('UNII', 'http://identifiers.org/unii/')
+UNIMOD = CurieNamespace('UNIMOD', 'http://identifiers.org/unimod/')
 UNIPROT_ISOFORM = CurieNamespace('UNIPROT_ISOFORM', 'http://purl.uniprot.org/isoforms/')
 UO = CurieNamespace('UO', 'http://purl.obolibrary.org/obo/UO_')
 UO_PROPERTY = CurieNamespace('UO-PROPERTY', 'http://purl.obolibrary.org/obo/uo#')
@@ -323,7 +325,6 @@ PROV = CurieNamespace('prov', 'http://www.w3.org/ns/prov#')
 QUD = CurieNamespace('qud', 'http://qudt.org/1.1/schema/qudt#')
 RDF = CurieNamespace('rdf', 'http://www.w3.org/1999/02/22-rdf-syntax-ns#')
 RDFS = CurieNamespace('rdfs', 'http://www.w3.org/2000/01/rdf-schema#')
-REGULATES = CurieNamespace('regulates', 'http://example.org/UNKNOWN/regulates/')
 SCHEMA = CurieNamespace('schema', 'http://schema.org/')
 SKOS = CurieNamespace('skos', 'http://www.w3.org/2004/02/skos/core#')
 USPTO_PATENT = CurieNamespace('uspto-patent', 'http://www.uspto.gov/patent/grant/v1/')
@@ -1482,7 +1483,10 @@ class OrganismTaxonToEnvironmentAssociationId(AssociationId):
 @dataclass(repr=False)
 class KnowledgeGraph(YAMLRoot):
     """
-    A knowledge graph represented in KGX format
+    A container representing a knowledge graph serialized in KGX (Knowledge Graph Exchange) format. A KnowledgeGraph
+    aggregates a collection of nodes (entities) and edges (relationships between entities) conforming to the KGX
+    specification, enabling interoperable exchange of biomedical knowledge graphs across tools and systems in the
+    Biolink ecosystem.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -1504,7 +1508,10 @@ class KnowledgeGraph(YAMLRoot):
 
 class Node(YAMLRoot):
     """
-    A node in a KGX graph, will be superclass for named thing
+    A generic node in a KGX-formatted knowledge graph, representing a single entity or concept with a unique
+    identifier. This class serves as the structural superclass for `named thing` in Biolink, providing the minimal
+    KGX-compliant contract (identifier, category, etc.) that any biolink entity participating in a knowledge graph
+    must satisfy.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -1516,7 +1523,10 @@ class Node(YAMLRoot):
 
 class Edge(YAMLRoot):
     """
-    An edge in a KGX graph, will be superclass for association
+    A generic edge in a KGX-formatted knowledge graph, representing a directed relationship between a subject node and
+    an object node qualified by a predicate. This class serves as the structural superclass for `association` in
+    Biolink, providing the minimal KGX-compliant contract (subject, predicate, object, and associated metadata) that
+    any biolink relationship participating in a knowledge graph must satisfy.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -1554,9 +1564,6 @@ class KnowledgeGraph(YAMLRoot):
 
 @dataclass(repr=False)
 class MappingCollection(YAMLRoot):
-    """
-    A collection of deprecated mappings.
-    """
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["MappingCollection"]
@@ -4624,7 +4631,7 @@ class Pathway(BiologicalProcess):
 @dataclass(repr=False)
 class PhysiologicalProcess(BiologicalProcess):
     """
-    A biological or chemical function within a living organism (cells, tissues, or organs).
+    A biological or chemical function within a living organism.
     """
     _inherited_slots: ClassVar[list[str]] = ["in_taxon", "has_input", "has_output", "enabled_by"]
 
@@ -4742,8 +4749,8 @@ class Drug(MolecularMixture):
 @dataclass(repr=False)
 class EnvironmentalFoodContaminant(ChemicalEntity):
     """
-    Any unwanted chemical in food, including agrochemicals and industrial chemicals that may contaminate foodstuffs
-    during their production, transportation, or storage.
+    Any unwanted chemical in food. The term includes agrochemicals and industrial chemicals that may contaminate
+    foodstuffs during their production, transportation or storage.
     """
     _inherited_slots: ClassVar[list[str]] = ["has_chemical_role"]
 
@@ -4801,7 +4808,9 @@ class FoodAdditive(ChemicalEntity):
 @dataclass(repr=False)
 class Food(ChemicalMixture):
     """
-    A substance consumed by a living organism as a source of nutrition
+    A substance of plant, animal, or artificial origin consumed by a living organism to provide essential nutrients,
+    energy, and support growth and the processes of life, or to satisfy other health needs or provide a social or
+    organoleptic experience. experience.
     """
     _inherited_slots: ClassVar[list[str]] = ["has_chemical_role"]
 
@@ -4860,7 +4869,8 @@ class OrganismAttribute(Attribute):
 @dataclass(repr=False)
 class PhenotypicQuality(OrganismAttribute):
     """
-    A property of a phenotype
+    A characteristic of a phenotype (e.g., weight, size, shape, color) that can be observed, measured, or compared
+    across organisms or conditions.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -5009,7 +5019,9 @@ class Virus(OrganismalEntity):
 @dataclass(repr=False)
 class CellularOrganism(OrganismalEntity):
     """
-    An organism that contains one or more cells.
+    An organism that contains one or more cells belonging to the cellular lineages of life (Archaea, Bacteria, or
+    Eukaryota), whose body consists of one or more cells. Distinguished from acellular biological entities such as
+    viruses and viroids.
     """
     _inherited_slots: ClassVar[list[str]] = ["in_taxon"]
 
@@ -5037,10 +5049,6 @@ class CellularOrganism(OrganismalEntity):
 
 @dataclass(repr=False)
 class Mammal(CellularOrganism):
-    """
-    A member of the class Mammalia, a clade of endothermic amniotes distinguished from reptiles and birds by the
-    possession of hair, three middle ear bones, mammary glands, and a neocortex
-    """
     _inherited_slots: ClassVar[list[str]] = ["in_taxon"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["Mammal"]
@@ -5067,9 +5075,6 @@ class Mammal(CellularOrganism):
 
 @dataclass(repr=False)
 class Human(Mammal):
-    """
-    A member of the the species Homo sapiens.
-    """
     _inherited_slots: ClassVar[list[str]] = ["in_taxon"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["Human"]
@@ -5096,11 +5101,6 @@ class Human(Mammal):
 
 @dataclass(repr=False)
 class Plant(CellularOrganism):
-    """
-    Any living organism that typically synthesizes its food from inorganic substances, possesses cellulose cell walls,
-    responds slowly and often permanently to a stimulus, lacks specialized sense organs and nervous system, and has no
-    powers of locomotion.
-    """
     _inherited_slots: ClassVar[list[str]] = ["in_taxon"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["Plant"]
@@ -5127,9 +5127,6 @@ class Plant(CellularOrganism):
 
 @dataclass(repr=False)
 class Invertebrate(CellularOrganism):
-    """
-    An animal lacking a vertebral column. This group consists of 98% of all animal species.
-    """
     _inherited_slots: ClassVar[list[str]] = ["in_taxon"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["Invertebrate"]
@@ -5156,9 +5153,6 @@ class Invertebrate(CellularOrganism):
 
 @dataclass(repr=False)
 class Vertebrate(CellularOrganism):
-    """
-    A sub-phylum of animals consisting of those having a bony or cartilaginous vertebral column.
-    """
     _inherited_slots: ClassVar[list[str]] = ["in_taxon"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["Vertebrate"]
@@ -5185,11 +5179,6 @@ class Vertebrate(CellularOrganism):
 
 @dataclass(repr=False)
 class Fungus(CellularOrganism):
-    """
-    A kingdom of eukaryotic, heterotrophic organisms that live as saprobes or parasites, including mushrooms, yeasts,
-    smuts, molds, etc. They reproduce either sexually or asexually, and have life cycles that range from simple to
-    complex. Filamentous fungi refer to those that grow as multicellular colonies (mushrooms and molds).
-    """
     _inherited_slots: ClassVar[list[str]] = ["in_taxon"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["Fungus"]
@@ -5246,8 +5235,7 @@ class LifeStage(OrganismalEntity):
 @dataclass(repr=False)
 class IndividualOrganism(OrganismalEntity):
     """
-    An instance of an organism. For example, Richard Nixon, Charles Darwin, my pet cat. Example ID:
-    ORCID:0000-0002-5355-2576
+    An instance of an organism. For example, Charles Darwin, my pet cat.
     """
     _inherited_slots: ClassVar[list[str]] = ["in_taxon"]
 
@@ -5335,10 +5323,9 @@ class StudyPopulation(PopulationOfIndividualOrganisms):
 @dataclass(repr=False)
 class DiseaseOrPhenotypicFeature(BiologicalEntity):
     """
-    Either one of a disease or an individual phenotypic feature. Some knowledge resources such as Monarch treat these
-    as distinct, others such as MESH conflate. Please see definitions of phenotypic feature and disease in this model
-    for their independent descriptions. This class is helpful to enforce domains and ranges that may involve either a
-    disease or a phenotypic feature.
+    A disease or an individual phenotypic feature, grouped as a single class to accommodate source vocabularies and
+    assertions that do not distinguish the two. Prefer the more specific subclasses disease or phenotypic feature when
+    the distinction is known.
     """
     _inherited_slots: ClassVar[list[str]] = ["in_taxon"]
 
@@ -5371,9 +5358,8 @@ class DiseaseOrPhenotypicFeature(BiologicalEntity):
 @dataclass(repr=False)
 class Disease(DiseaseOrPhenotypicFeature):
     """
-    A disorder of structure or function, especially one that produces specific signs, phenotypes or symptoms or that
-    affects a specific location and is not simply a direct result of physical injury. A disposition to undergo
-    pathological processes that exists in an organism because of one or more disorders in that organism.
+    A disease is a disposition to undergo pathological processes that exists in an organism because of one or more
+    disorders in that organism.
     """
     _inherited_slots: ClassVar[list[str]] = ["in_taxon"]
 
@@ -5403,7 +5389,7 @@ class Disease(DiseaseOrPhenotypicFeature):
 class PhenotypicFeature(DiseaseOrPhenotypicFeature):
     """
     A combination of entity and quality that makes up a phenotyping statement. An observable characteristic of an
-    individual resulting from the interaction of its genotype with its molecular and physical environment.
+    individual often resulting from the interaction of its genotype with its molecular and physical environment.
     """
     _inherited_slots: ClassVar[list[str]] = ["in_taxon"]
 
@@ -5461,7 +5447,11 @@ class BehavioralFeature(PhenotypicFeature):
 @dataclass(repr=False)
 class AnatomicalEntity(OrganismalEntity):
     """
-    A subcellular location, cell type or gross anatomical part
+    A part of a cellular organism at or above the granularity of a protein complex. This is a grouping class with
+    three concrete subclasses that should be preferred when applicable: "biolink:Cell" for whole cells,
+    "biolink:CellularComponent" for subcellular and intracellular structures (organelles, membranes, bacterial
+    flagella, etc.), and "biolink:GrossAnatomcialStructure" for multicellular parts (tissues, organs, body parts).
+    Excludes viral and other acellular biological entities.
     """
     _inherited_slots: ClassVar[list[str]] = ["in_taxon"]
 
@@ -5653,19 +5643,7 @@ class MacromolecularMachineMixin(YAMLRoot):
         super().__post_init__(**kwargs)
 
 
-class GeneOrGeneProduct(MacromolecularMachineMixin):
-    """
-    A union of gene loci or gene products. Frequently an identifier for one will be used as proxy for another
-    """
-    _inherited_slots: ClassVar[list[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = BIOLINK["GeneOrGeneProduct"]
-    class_class_curie: ClassVar[str] = "biolink:GeneOrGeneProduct"
-    class_name: ClassVar[str] = "gene or gene product"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.GeneOrGeneProduct
-
-
-class GeneOrGeneProductOrGeneFamily(YAMLRoot):
+class GeneOrGeneProductOrGeneFamily(MacromolecularMachineMixin):
     """
     A union of gene family or gene loci or gene products, useful to define the association between a gene or gene
     product or gene family and some other general class of entity (e.g. biological process or anatomical entity)
@@ -5676,6 +5654,18 @@ class GeneOrGeneProductOrGeneFamily(YAMLRoot):
     class_class_curie: ClassVar[str] = "biolink:GeneOrGeneProductOrGeneFamily"
     class_name: ClassVar[str] = "gene or gene product or gene family"
     class_model_uri: ClassVar[URIRef] = BIOLINK.GeneOrGeneProductOrGeneFamily
+
+
+class GeneOrGeneProduct(GeneOrGeneProductOrGeneFamily):
+    """
+    A union of gene loci or gene products. Frequently an identifier for one will be used as proxy for another
+    """
+    _inherited_slots: ClassVar[list[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK["GeneOrGeneProduct"]
+    class_class_curie: ClassVar[str] = "biolink:GeneOrGeneProduct"
+    class_name: ClassVar[str] = "gene or gene product"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.GeneOrGeneProduct
 
 
 @dataclass(repr=False)
@@ -6052,8 +6042,7 @@ class Protein(Polypeptide):
 @dataclass(repr=False)
 class ProteinIsoform(Protein):
     """
-    Represents a protein that is a specific isoform of the canonical or reference protein. See
-    https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4114032/
+    Represents a protein that is a specific isoform of the canonical or reference protein.
     """
     _inherited_slots: ClassVar[list[str]] = ["in_taxon"]
 
@@ -6132,8 +6121,8 @@ class ProteinDomain(BiologicalEntity):
 @dataclass(repr=False)
 class PosttranslationalModification(BiologicalEntity):
     """
-    A chemical modification of a polypeptide or protein that occurs after translation. e.g. polypeptide cleavage to
-    form separate proteins, methylation or acetylation of histone tail amino acids, protein ubiquitination.
+    A chemical modification of a polypeptide or protein that occurs after translation, altering its structure,
+    activity, localization, or interactions.
     """
     _inherited_slots: ClassVar[list[str]] = ["in_taxon"]
 
@@ -6240,6 +6229,12 @@ class NucleicAcidSequenceMotif(BiologicalEntity):
 
 @dataclass(repr=False)
 class RNAProduct(Transcript):
+    """
+    High molecular weight, linear polymers, composed of nucleotides containing ribose and linked by phosphodiester
+    bonds typically synthesized by a DNA- or RNA-dependent RNA polymerase that constitutes the product of a gene.
+    Distinct in emphasis from `biolink:Transcript`, which denotes the informational output of transcription at the
+    gene-model level rather than the chemical species itself.
+    """
     _inherited_slots: ClassVar[list[str]] = ["in_taxon"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["RNAProduct"]
@@ -6448,6 +6443,7 @@ class GeneFamily(BiologicalEntity):
 
     id: Union[str, GeneFamilyId] = None
     category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
+    name: Optional[Union[str, LabelType]] = None
     has_gene_or_gene_product: Optional[Union[Union[str, GeneId], list[Union[str, GeneId]]]] = empty_list()
 
     def __post_init__(self, *_: str, **kwargs: Any):
@@ -6455,6 +6451,9 @@ class GeneFamily(BiologicalEntity):
             self.MissingRequiredField("id")
         if not isinstance(self.id, GeneFamilyId):
             self.id = GeneFamilyId(self.id)
+
+        if self.name is not None and not isinstance(self.name, LabelType):
+            self.name = LabelType(self.name)
 
         if not isinstance(self.has_gene_or_gene_product, list):
             self.has_gene_or_gene_product = [self.has_gene_or_gene_product] if self.has_gene_or_gene_product is not None else []
@@ -8597,7 +8596,7 @@ class GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation(Asso
         if self._is_empty(self.subject):
             self.MissingRequiredField("subject")
         if not isinstance(self.subject, GeneOrGeneProductOrGeneFamily):
-            self.subject = GeneOrGeneProductOrGeneFamily()
+            self.subject = GeneOrGeneProductOrGeneFamily(**as_dict(self.subject))
 
         if self._is_empty(self.object):
             self.MissingRequiredField("object")
@@ -8649,7 +8648,7 @@ class BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation(Asso
         if self._is_empty(self.object):
             self.MissingRequiredField("object")
         if not isinstance(self.object, GeneOrGeneProductOrGeneFamily):
-            self.object = GeneOrGeneProductOrGeneFamily()
+            self.object = GeneOrGeneProductOrGeneFamily(**as_dict(self.object))
 
         if self._is_empty(self.predicate):
             self.MissingRequiredField("predicate")
@@ -14575,7 +14574,7 @@ class GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation(Association):
         if self._is_empty(self.subject):
             self.MissingRequiredField("subject")
         if not isinstance(self.subject, GeneOrGeneProductOrGeneFamily):
-            self.subject = GeneOrGeneProductOrGeneFamily()
+            self.subject = GeneOrGeneProductOrGeneFamily(**as_dict(self.subject))
 
         if self._is_empty(self.object):
             self.MissingRequiredField("object")
@@ -16133,10 +16132,10 @@ slots.is_toxic = Slot(uri=BIOLINK.is_toxic, name="is toxic", curie=BIOLINK.curie
                    model_uri=BIOLINK.is_toxic, domain=NamedThing, range=Optional[Union[bool, Bool]])
 
 slots.has_chemical_role = Slot(uri=BIOLINK.has_chemical_role, name="has chemical role", curie=BIOLINK.curie('has_chemical_role'),
-                   model_uri=BIOLINK.has_chemical_role, domain=NamedThing, range=Optional[Union[Union[str, ChemicalRoleId], list[Union[str, ChemicalRoleId]]]])
+                   model_uri=BIOLINK.has_chemical_role, domain=ChemicalEntity, range=Optional[Union[Union[str, ChemicalRoleId], list[Union[str, ChemicalRoleId]]]])
 
 slots.is_chemical_role_of = Slot(uri=BIOLINK.is_chemical_role_of, name="is chemical role of", curie=BIOLINK.curie('is_chemical_role_of'),
-                   model_uri=BIOLINK.is_chemical_role_of, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
+                   model_uri=BIOLINK.is_chemical_role_of, domain=ChemicalRole, range=Optional[Union[Union[str, ChemicalEntityId], list[Union[str, ChemicalEntityId]]]])
 
 slots.max_tolerated_dose = Slot(uri=BIOLINK.max_tolerated_dose, name="max tolerated dose", curie=BIOLINK.curie('max_tolerated_dose'),
                    model_uri=BIOLINK.max_tolerated_dose, domain=NamedThing, range=Optional[str])

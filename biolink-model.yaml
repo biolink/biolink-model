@@ -771,10 +771,7 @@ slots:
       being described directly retrieved a record of the knowledge
       expressed in the Edge, or data used to generate this knowledge.
       This is an array because there are cases where a merged Edge
-      holds knowledge that was retrieved from multiple sources. e.g.
-      an Edge provided by the ARAGORN ARA can expressing knowledge it
-      retrieved from both the automat-mychem-info and molepro KPs,
-      which both provided it with records of this single fact.
+      holds knowledge that was retrieved from multiple sources.
     multivalued: true
     domain: retrieval source
     range: uriorcurie
@@ -1114,8 +1111,6 @@ slots:
       Type of exposure
     domain: exposure event
     range: string
-#    range: not sure how standardized this can be made, i.e., into a Biolink Enum.
-#           To some extent, the subclassing of Exposure Events provides some typing?
 
   exposure vehicle:
     is_a: node property
@@ -1123,7 +1118,6 @@ slots:
       Type of an exposure event.
     domain: exposure event
     range: string
-#    range: not sure how standardized this can be made, i.e., into a Biolink Enum
 
   exposure route:
     is_a: node property
@@ -1131,7 +1125,6 @@ slots:
       Route of exposure.
     domain: exposure event
     range: string
-#    range: not sure how standardized this can be made, i.e., into a Biolink Enum
 
   exposure start age:
     is_a: node property
@@ -1159,7 +1152,7 @@ slots:
     description: >-
       Magnitude of an exposure event, e.g, parts per million of a toxic chemical.
     domain: exposure event
-    range: string   # might want to be a more constrained data type here?
+    range: string
 
   exposure additional condition:
     is_a: node property
@@ -1380,7 +1373,8 @@ slots:
     domain: exposure event
     range: organismal entity
     description: >-
-      the organism or organism part being exposed
+      An entity (e.g., a human, human population, or a human organ) that interacts with an exposure stimulus
+      during an exposure event.
     exact_mappings:
       - ExO:0000001
 
@@ -1389,9 +1383,12 @@ slots:
     domain: exposure event
     aliases: ['has stimulus']
     description: >-
-      the process or entity that the receptor is being exposed to
+      An agent, stimulus, activity, or event that causes stress or tension on an organism and interacts with an
+      exposure_receptor during an exposure event.
     exact_mappings:
       - ExO:0000000
+    id_prefixes:
+      - ExO
 
   has route:
     is_a: node property
@@ -1466,6 +1463,7 @@ slots:
     is_a: related to at concept level
     description: >-
       A role is particular behaviour which a chemical entity may exhibit.
+    domain: chemical entity
     range: chemical role
     multivalued: true
     inverse: is chemical role of
@@ -1479,6 +1477,9 @@ slots:
     is_a: related to at concept level
     description: >-
       Holds between a chemical role and a chemical entity that exhibits that role.
+    domain: chemical role
+    range: chemical entity
+    multivalued: true
     inverse: has chemical role
 
   max tolerated dose:
@@ -1616,15 +1617,15 @@ slots:
       and in the vast majority of cases, is of a different ontological namespace than the category or namespace of the
       subject identifier.
     examples:
-      - value: CHEBI:5118  # fluoxetine
+      - value: CHEBI:5118
         description: >-
-          In a MAXO annotation this would be a specialization in treatment of a disease. For example,
+          fluoxetine. In a MAXO annotation this would be a specialization in treatment of a disease. For example,
           fluoxetine would be a specialization of the MAXO term 'serotonin-norepinephrine reuptake inhibitor agent
           therapy' as a treatment for the HP term 'Fatigable muscle weakness' in the context of the MONDO term
           'congenital myasthenic syndrome '4A.'
-      - value: GO:0005634  # nucleus
+      - value: GO:0005634
         description: >-
-          In an expression annotation this would be a specialization in location of an anatomical entity. For example,
+          nucleus. In an expression annotation this would be a specialization in location of an anatomical entity. For example,
           "expression in the nucleus of hepatic cells" would be a specialization of "expression in hepatic cells"
 
   aspect qualifier:
@@ -1685,7 +1686,8 @@ slots:
       Restricts the setting/context/location where the core concept (or qualified core concept) resides or occurs.
     examples:
       - value: cohort x (e.g. a specific population, referenced by an identifier)
-      - value: gut microbiome  # OHMI:0000020
+      - value: OHMI:0000020
+        description: gut microbiome
     in_subset:
       - translator_minimal
 
@@ -1783,6 +1785,9 @@ slots:
       defines a specific part/component of the core concept (used in cases there this specific part has no IRI we can
       use to directly represent it, e.g. 'ESR1 transcript' q: polyA tail).  This qualifier is for the
       subject of an association (or statement).
+    examples:
+      - value: polyA tail
+      - value: upstream control region
     is_a: part qualifier
     in_subset:
       - translator_minimal
@@ -1808,6 +1813,9 @@ slots:
     description: >-
       Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree.
       This qualifier qualifies the subject of an association (aka: statement).
+    examples:
+      - value: increased
+      - value: decreased
     is_a: direction qualifier
     range: DirectionQualifierEnum
     in_subset:
@@ -1860,6 +1868,9 @@ slots:
       defines a specific part/component of the core concept (used in cases there this specific part has no IRI we can
       use to directly represent it, e.g. 'ESR1 transcript' q: polyA tail).  This qualifier is for the
       object of an association (or statement).
+    examples:
+      - value: polyA tail
+      - value: upstream control region
     is_a: part qualifier
     in_subset:
       - translator_minimal
@@ -1885,6 +1896,9 @@ slots:
     description: >-
       Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree.
       This qualifier qualifies the object of an association (aka: statement).
+    examples:
+      - value: increased
+      - value: decreased
     is_a: direction qualifier
     range: DirectionQualifierEnum
     in_subset:
@@ -1900,6 +1914,9 @@ slots:
       This qualifier holds a relationship to be used instead of that expressed by the primary predicate,
       in a ‘full statement’ reading of the association, where qualifier-based semantics are included.
       This is necessary only in cases where the primary predicate does not work in a full statement reading.
+    examples:
+      - value: biolink:causes
+        description: used with `affects` predicate to express causal statements
     range: uriorcurie
     notes: >-
       to express the statement that “Chemical X causes increased expression of Gene Y”, the core triple is read
@@ -1924,6 +1941,9 @@ slots:
       A statement qualifier representing a type of molecular control mechanism through which an
       effect of a chemical on a gene or gene product is mediated (e.g. 'agonism', 'inhibition',
       'allosteric modulation', 'channel blocker')
+    examples:
+      - value: agonism
+      - value: inhibition
     range: CausalMechanismQualifierEnum
     in_subset:
       - translator_minimal
@@ -1940,8 +1960,10 @@ slots:
       taxonomic context, e.g. species-specific molecular activity.  Ontology CURIEs are expected as values
       here, the examples below are intended to help clarify the content of the CURIEs.
     examples:
-      - value: blood  # UBERON:0000178
-      - value: cerebral cortext  # UBERON:0000956
+      - value: UBERON:0000178
+        description: blood
+      - value: UBERON:0000956
+        description: cerebral cortex
     in_subset:
       - translator_minimal
     multivalued: true
@@ -1953,8 +1975,10 @@ slots:
       expressed in an association took place.
     range: organism taxon
     examples:
-      - value: zebrafish  # NCBITaxon:7955
-      - value: human  # NCBITaxon:9606
+      - value: NCBITaxon:7955
+        description: zebrafish
+      - value: NCBITaxon:9606
+        description: human
     notes:
       - Ontology CURIEs are expected as values here, the examples below are intended to help clarify the content of the CURIEs.
     in_subset:
@@ -1966,8 +1990,10 @@ slots:
         A context qualifier representing a disease or condition in which a relationship expressed in an association took place.
     range: disease
     examples:
-      - value: MONDO:0004979  # asthma
-      - value: MONDO:0005148  # type 2 diabetes mellitus
+      - value: MONDO:0004979
+        description: asthma
+      - value: MONDO:0005148
+        description: type 2 diabetes mellitus
     in_subset:
       - translator_minimal
 
@@ -6296,7 +6322,7 @@ slots:
     multivalued: true
     range: string
     examples:
-      - value: The administration of 50g/ml bupivacaine promoted maximum breast cancer.
+      - value: "Here, we report two new cases of rivaroxaban-induced hepatitis."
 
   supporting documents:
     deprecated: true
@@ -6316,7 +6342,7 @@ slots:
       to the subject concept of the extracted assertion.
     range: integer
     examples:
-      - value: 15
+      - value: 33
     multivalued: true
 
   object location in text:
@@ -6326,7 +6352,7 @@ slots:
       to the object concept of the extracted assertion
     range: integer
     examples:
-      - value: 15
+      - value: 53
     multivalued: true
 
   extraction confidence score:
@@ -6337,7 +6363,7 @@ slots:
       assuming that the actual value was the result of chance alone.
     range: float
     examples:
-      - value: "15.0"
+      - value: "0.6188385904738642"
 
   supporting document type:
     is_a: association slot
@@ -6355,7 +6381,7 @@ slots:
       document used in a Text Mining Result.
     range: integer
     examples:
-      - value: 1999
+      - value: 2018
 
   supporting text section type:
     is_a: association slot
@@ -6365,7 +6391,7 @@ slots:
       (e.g., Abstract, Introduction) that contains the supporting text.
     range: string
     examples:
-      - value: Introduction
+      - value: abstract
 
   ln ratio:
     is_a: association slot
@@ -6701,7 +6727,8 @@ slots:
       - value: text_mining_agent
 
   has biological sex:
-    description: The biological sex of the entity (e.g., male or female) regarding a case description from a phenopacket
+    description: >-
+      The biological sex of the entity (e.g., male or female) regarding a case description from a phenopacket
     required: false
     range: biological sex
 
@@ -6712,17 +6739,27 @@ slots:
 classes:
   # Add the KGX-specific classes without modifying biolink classes
   KnowledgeGraph:
-    description: A knowledge graph represented in KGX format
+    description: >-
+      A container representing a knowledge graph serialized in KGX (Knowledge Graph Exchange) format.
+      A KnowledgeGraph aggregates a collection of nodes (entities) and edges (relationships between
+      entities) conforming to the KGX specification, enabling interoperable exchange of biomedical
+      knowledge graphs across tools and systems in the Biolink ecosystem.
     slots:
       - nodes
       - edges
-
   Node:
-    description: A node in a KGX graph, will be superclass for named thing
-
+    description: >-
+      A generic node in a KGX-formatted knowledge graph, representing a single entity or concept
+      with a unique identifier. This class serves as the structural superclass for `named thing`
+      in Biolink, providing the minimal KGX-compliant contract (identifier, category, etc.) that
+      any biolink entity participating in a knowledge graph must satisfy.
   Edge:
-    description: An edge in a KGX graph, will be superclass for association
-
+    description: >-
+      A generic edge in a KGX-formatted knowledge graph, representing a directed relationship
+      between a subject node and an object node qualified by a predicate. This class serves as
+      the structural superclass for `association` in Biolink, providing the minimal KGX-compliant
+      contract (subject, predicate, object, and associated metadata) that any biolink relationship
+      participating in a knowledge graph must satisfy.
 
   knowledge graph:
     description: >-
@@ -6737,8 +6774,6 @@ classes:
     abstract: true
 
   mapping collection:
-    description: >-
-      A collection of deprecated mappings.
     abstract: true
     slots:
       - predicate mappings
@@ -6826,17 +6861,6 @@ classes:
       - has unit
       - has numeric value
 
-   # Alignment attempted of the biolink:Attribute model
-   # to the proposed TRAPI Release 1.1 Attribute schema, i.e.
-   #
-   # attribute_name: "assertionAuthoredBy",
-   # attribute_type: SEPIO:0000130,
-   # value: "ORCID:12345",
-   # value_type: "wd:Q51044",
-   # value_type_name: "ORCID ID"
-   # url: https://orcid.org/12345
-   # source: ORCID
-
   attribute:
     is_a: named thing
     mixins:
@@ -6878,7 +6902,8 @@ classes:
     exact_mappings:
       - CHEBI:51086
     examples:
-      - value: CHEBI:35469  # antidepressant
+      - value: CHEBI:35469
+        description: antidepressant
 
   biological sex:
     description: >-
@@ -6951,6 +6976,12 @@ classes:
       - has total
       - has quotient
       - has percentage
+    examples:
+      - object:
+          has_count: 42
+          has_total: 100
+          has_quotient: 0.42
+          has_percentage: 42.0
 
   chemical or drug or treatment:
     description: >-
@@ -7123,6 +7154,23 @@ classes:
       - supporting document type
       - supporting document year
       - supporting text section type
+    examples:
+      - object:
+          id: tmkp:4959a77a71d2801a37b2cacac3571be61a231f9f0a7c0e42a6242cd387dd96b4
+          category: biolink:TextMiningStudyResult
+          xref:
+            - PMID:29120909
+          supporting_text:
+            - "Here, we report two new cases of rivaroxaban-induced hepatitis."
+          subject_location_in_text:
+            - 33
+            - 44
+          object_location_in_text:
+            - 53
+            - 62
+          extraction_confidence_score: 0.6188385904738642
+          supporting_document_year: 2018
+          supporting_text_section_type: abstract
 
   icees study result:
     is_a: study result
@@ -7575,6 +7623,14 @@ classes:
           One or more URLs that link to a specific web page or document provided by
           the InformationResource, that contains a record of the knowledge expressed
           in the Edge.
+    examples:
+      - object:
+          id: urn:uuid:9e8cce70-d34a-4f24-b969-1f3885faacde
+          category: biolink:RetrievalSource
+          resource_id: infores:text-mining-provider-targeted
+          resource_role: primary_knowledge_source
+          upstream_resource_ids:
+            - infores:pubmed
 
    ## Top Level Abstractions of Material & Process Entities
 
@@ -7671,8 +7727,10 @@ classes:
       - STY:T061
        # Molecular Biology Research Technique
       - STY:T063
+      - MAXO:0000001
     id_prefixes:
       - CPT
+      - MAXO
 
   phenomenon:
     is_a: named thing
@@ -8667,7 +8725,9 @@ classes:
     mixins:
       - subject of investigation
     description: >-
-      An organism that contains one or more cells.
+      An organism that contains one or more cells belonging to the cellular lineages of life (Archaea, Bacteria, or
+      Eukaryota), whose body consists of one or more cells. Distinguished from acellular biological entities such as
+      viruses and viroids.
     comments: >-
       see: https://github.com/OBOFoundry/COB/pull/211
     exact_mappings:
@@ -8678,10 +8738,6 @@ classes:
     is_a: cellular organism
     mixins:
       - subject of investigation
-    description: >-
-      A member of the class Mammalia, a clade of endothermic amniotes
-      distinguished from reptiles and birds by the possession of hair,
-      three middle ear bones, mammary glands, and a neocortex
     exact_mappings:
       - NCBITaxon:40674  # mammal
       - STY:T015  # mammal
@@ -8693,8 +8749,6 @@ classes:
     is_a: mammal
     mixins:
       - subject of investigation
-    description: >-
-      A member of the the species Homo sapiens.
     exact_mappings:
       - STY:T016
       - NCBITaxon:9606
@@ -8702,12 +8756,8 @@ classes:
       - NCIT:C14225
 
   plant:
+    deprecated: true
     is_a: cellular organism
-    description: >-
-      Any living organism that typically synthesizes its food from
-      inorganic substances, possesses cellulose cell walls, responds
-      slowly and often permanently to a stimulus, lacks specialized
-      sense organs and nervous system, and has no powers of locomotion.
     exact_mappings:
       - NCIT:C14258  # plant
       - STY:T002  # plant
@@ -8717,8 +8767,6 @@ classes:
   invertebrate:
     deprecated: true
     is_a: cellular organism
-    description: >-
-      An animal lacking a vertebral column. This group consists of 98% of all animal species.
     exact_mappings:
       - NCIT:C14228  # invertebrate
       - OMIT:0008565  # invertebrates
@@ -8730,8 +8778,6 @@ classes:
   vertebrate:
     deprecated: true
     is_a: cellular organism
-    description: >-
-      A sub-phylum of animals consisting of those having a bony or cartilaginous vertebral column.
     exact_mappings:
       - STY:T010
       - NCBITaxon:7742  # vertebrata
@@ -8742,11 +8788,6 @@ classes:
   fungus:
     deprecated: true
     is_a: cellular organism
-    description: >-
-      A kingdom of eukaryotic, heterotrophic organisms that live as saprobes or parasites,
-      including mushrooms, yeasts, smuts, molds, etc. They reproduce either sexually or
-      asexually, and have life cycles that range from simple to complex. Filamentous
-      fungi refer to those that grow as multicellular colonies (mushrooms and molds).
     exact_mappings:
       - STY:T004
       - NCIT:C14209
@@ -8780,8 +8821,9 @@ classes:
   individual organism:
     aliases: ['organism']
     description: >-
-      An instance of an organism. For example, Richard Nixon,
-      Charles Darwin, my pet cat. Example ID: ORCID:0000-0002-5355-2576
+      An instance of an organism. For example, Charles Darwin, my pet cat.
+    examples:
+      - value: ORCID:0000-0002-5355-2576
     is_a: organismal entity
     mixins:
       - subject of investigation
@@ -8826,22 +8868,18 @@ classes:
     slots:
       - inheritance
     description: >-
-      Either one of a disease or an individual phenotypic feature.
-      Some knowledge resources such as Monarch treat these as
-      distinct, others such as MESH conflate.  Please see definitions of phenotypic feature and disease in this model
-      for their independent descriptions.  This class is helpful to enforce domains and ranges
-      that may involve either a disease or a phenotypic feature.
-    narrow_mappings:
+      A disease or an individual phenotypic feature, grouped as a single class to accommodate source vocabularies
+      and assertions that do not distinguish the two. Prefer the more specific subclasses disease or phenotypic
+      feature when the distinction is known.
+    related_mappings:
       # UMLS Semantic Type "Finding" - more specialized use of 'disease or phenotypic feature'
       - STY:T033
 
   disease:
     aliases: ['condition', 'disorder', 'medical condition']
     description: >-
-      A disorder of structure or function, especially one that produces specific
-      signs, phenotypes or symptoms or that affects a specific location and is not simply a
-      direct result of physical injury.  A disposition to undergo pathological processes that exists in an
-      organism because of one or more disorders in that organism.
+      A disease is a disposition to undergo pathological processes that exists in an organism because of one or
+      more disorders in that organism.
     is_a: disease or phenotypic feature
     exact_mappings:
       - MONDO:0000001
@@ -8894,7 +8932,7 @@ classes:
     is_a: disease or phenotypic feature
     description: >-
       A combination of entity and quality that makes up a phenotyping statement. An observable characteristic of an
-      individual resulting from the interaction of its genotype with its molecular and physical environment.
+      individual often resulting from the interaction of its genotype with its molecular and physical environment.
     examples:
       - value: MP:0001262
         description: decreased body weight
@@ -8957,7 +8995,16 @@ classes:
       - physical essence
       - ontology class
     description: >-
-      A subcellular location, cell type or gross anatomical part
+      A part of a cellular organism at or above the granularity of a protein complex. This is a grouping class
+      with three concrete subclasses that should be preferred when applicable: "biolink:Cell" for whole cells,
+      "biolink:CellularComponent" for subcellular and intracellular structures (organelles, membranes, bacterial
+      flagella, etc.), and "biolink:GrossAnatomcialStructure" for multicellular parts (tissues, organs, body parts).
+      Excludes viral and other acellular biological entities.
+    examples:
+      - value: UBERON:0000178
+        description: blood
+      - value: UBERON:0002553
+        description: anatomical cavity
     exact_mappings:
       - UBERON:0001062
       - WIKIDATA:Q4936952
@@ -9002,6 +9049,17 @@ classes:
     is_a: anatomical entity
     description: >-
       A location in or around a cell
+    examples:
+      - value: GO:0005739
+        description: mitochondrion
+      - value: GO:0005634
+        description: nucleus
+      - value: GO:0005886
+        description: plasma membrane
+      - value: GO:0009288
+        description: bacterial-type flagellum
+      - value: GO:0031012
+        description: extracellular matrix
     exact_mappings:
       - GO:0005575
       - SIO:001400
@@ -9025,6 +9083,11 @@ classes:
       Includes the plasma membrane and any external encapsulating
       structures such as the cell wall and cell envelope.
     is_a: anatomical entity
+    examples:
+      - value: CL:0000540
+        description: neuron
+      - value: CL:0000236
+        description: B cell
     exact_mappings:
       - GO:0005623
       - CL:0000000
@@ -9061,6 +9124,19 @@ classes:
       An anatomical structure that has more than one cell as a part.
     aliases: ['tissue', 'organ']
     is_a: anatomical entity
+    examples:
+      - value: UBERON:0000955
+        description: brain
+      - value: UBERON:0002107
+        description: liver
+      - value: UBERON:0000479
+        description: tissue
+      - value: PO:0009046
+        description: flower
+      - value: PO:0009025
+        description: leaf
+      - value: FAO:0001001
+        description: hypha
     exact_mappings:
       - UBERON:0010000
       - WIKIDATA:Q4936952
@@ -9116,7 +9192,7 @@ classes:
     description: >-
       A union of gene loci or gene products.
       Frequently an identifier for one will be used as proxy for another
-    is_a: macromolecular machine mixin
+    is_a: gene or gene product or gene family
     mixin: true
     id_prefixes:
       - CHEMBL.TARGET
@@ -9125,6 +9201,7 @@ classes:
       - DRUGBANK:target
 
   gene or gene product or gene family:
+    is_a: macromolecular machine mixin
     description: >-
       A union of gene family or gene loci or gene products, useful to define
       the association between a gene or gene product or gene family and
@@ -9140,6 +9217,7 @@ classes:
     is_a: biological entity
     mixins:
       - gene or gene product
+      - gene or gene product or gene family
       - genomic entity
       - chemical entity or gene or gene product
       - physical essence
@@ -9234,8 +9312,8 @@ classes:
   nucleosome modification:
     is_a: biological entity
     description: >-
-      A chemical modification of a histone protein within a nucleosome octomer or a substitution of a histone with a variant histone isoform.
-      e.g. Histone 4 Lysine 20 methylation (H4K20me), histone variant H2AZ substituting H2A.
+      A chemical modification of a histone protein within a nucleosome octomer or a substitution of a histone with a
+      variant histone isoform. e.g. Histone 4 Lysine 20 methylation (H4K20me), histone variant H2AZ substituting H2A.
     mixins:
       - gene product isoform mixin
       - genomic entity
@@ -9353,7 +9431,9 @@ classes:
     is_a: protein
     description: >-
       Represents a protein that is a specific isoform of the canonical or
-      reference protein. See https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4114032/
+      reference protein.
+    comments: >-
+      See https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4114032/
     mixins:
       - gene product isoform mixin
     id_prefixes:
@@ -9380,11 +9460,20 @@ classes:
   posttranslational modification:
     is_a: biological entity
     description: >-
-      A chemical modification of a polypeptide or protein that occurs after translation.
-      e.g. polypeptide cleavage to form separate proteins, methylation or acetylation of histone tail amino acids,
-      protein ubiquitination.
+      A chemical modification of a polypeptide or protein that occurs after translation,
+      altering its structure, activity, localization, or interactions.
     mixins:
       - gene product isoform mixin
+    id_prefixes:
+      - MOD
+      - UNIMOD
+    exact_mappings:
+      - MOD:00000          # protein modification (PSI-MOD root)
+    examples:
+      - value: MOD:00696
+        description: phosphorylated residue
+      - value: MOD:01148
+        description: ubiquitinylated lysine
 
   protein family:
     description: >-
@@ -9413,17 +9502,22 @@ classes:
 
   RNA product:
     is_a: transcript
+    description: >-
+      High molecular weight, linear polymers, composed of nucleotides containing ribose and
+      linked by phosphodiester bonds typically synthesized by a DNA- or RNA-dependent RNA polymerase that constitutes
+      the product of a gene. Distinct in emphasis from `biolink:Transcript`, which denotes the informational output of
+      transcription at the gene-model level rather than the chemical species itself.
+    examples:
+      - value: RNACENTRAL:URS00005EB5B7_9606
+      - value: mirbase:MI0000060
     mixins:
       - gene product mixin
     exact_mappings:
-      - CHEBI:33697
-       # This SIO term here also mapped to 'biolink:Transcript'; however,
-       # since this 'biolink:RNAProduct' relates more to the biochemical
-       # essence of RNA, then map the SIO term instead to 'biolink:Transcript'
-       # - SIO:010450
-      - WIKIDATA:Q11053
+      - CHEBI:33697        # ribonucleic acid
+      - WIKIDATA:Q11053    # RNA
     id_prefixes:
       - RNACENTRAL
+      - mirbase
 
   RNA product isoform:
     is_a: RNA product
@@ -9508,6 +9602,7 @@ classes:
       - WIKIDATA:Q417841
     mixins:
       - gene grouping mixin
+      - gene or gene product or gene family
       - chemical entity or gene or gene product
     description: >-
       any grouping of multiple genes or gene products related by common descent
@@ -11083,7 +11178,8 @@ classes:
     slot_usage:
       subject:
         range: gene or gene product
-      predicate: regulates
+      predicate:
+        subproperty_of: regulates
       object:
         range: gene or gene product
       object aspect qualifier:

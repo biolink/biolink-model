@@ -2529,6 +2529,8 @@ linkml:Sparqlpath xsd:string
           rdf:type [ <BiologicalEntity> ] ? ;
           &<GeneOrGeneProduct_tes> ;
           rdf:type [ <GeneOrGeneProduct> ] ? ;
+          &<GeneOrGeneProductOrGeneFamily_tes> ;
+          rdf:type [ <GeneOrGeneProductOrGeneFamily> ] ? ;
           &<GenomicEntity_tes> ;
           rdf:type [ <GenomicEntity> ] ? ;
           &<ChemicalEntityOrGeneOrGeneProduct_tes> ;
@@ -2857,6 +2859,8 @@ linkml:Sparqlpath xsd:string
           rdf:type [ <BiologicalEntity> ] ? ;
           &<GeneGroupingMixin_tes> ;
           rdf:type [ <GeneGroupingMixin> ] ? ;
+          &<GeneOrGeneProductOrGeneFamily_tes> ;
+          rdf:type [ <GeneOrGeneProductOrGeneFamily> ] ? ;
           &<ChemicalEntityOrGeneOrGeneProduct_tes> ;
           rdf:type [ <ChemicalEntityOrGeneOrGeneProduct> ] ? ;
           <has_gene_or_gene_product> @<Gene> *
@@ -2897,19 +2901,23 @@ linkml:Sparqlpath xsd:string
 
 <GeneOrGeneProduct>  (
     {
-       (  $<GeneOrGeneProduct_tes> (  &<MacromolecularMachineMixin_tes> ;
-             rdf:type [ <MacromolecularMachineMixin> ] ?
+       (  $<GeneOrGeneProduct_tes> (  &<GeneOrGeneProductOrGeneFamily_tes> ;
+             rdf:type [ <GeneOrGeneProductOrGeneFamily> ] ?
           ) ;
           rdf:type [ <GeneOrGeneProduct> ] ?
        )
     } OR @<GeneProductMixin>
 )
 
-<GeneOrGeneProductOrGeneFamily> {
-    (  $<GeneOrGeneProductOrGeneFamily_tes> rdf:type . * ;
-       rdf:type [ <GeneOrGeneProductOrGeneFamily> ] ?
-    )
-}
+<GeneOrGeneProductOrGeneFamily>  (
+    {
+       (  $<GeneOrGeneProductOrGeneFamily_tes> (  &<MacromolecularMachineMixin_tes> ;
+             rdf:type [ <MacromolecularMachineMixin> ] ?
+          ) ;
+          rdf:type [ <GeneOrGeneProductOrGeneFamily> ] ?
+       )
+    } OR @<GeneOrGeneProduct>
+)
 
 <GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation> CLOSED {
     (  $<GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation_tes> (  &<Association_tes> ;
@@ -3754,7 +3762,7 @@ linkml:Sparqlpath xsd:string
        (  $<MacromolecularMachineMixin_tes> rdfs:label @<SymbolType> ? ;
           rdf:type [ <MacromolecularMachineMixin> ] ?
        )
-    } OR @<GeneOrGeneProduct>
+    } OR @<GeneOrGeneProductOrGeneFamily>
 )
 
 <MacromolecularMachineToBiologicalProcessAssociation> CLOSED {

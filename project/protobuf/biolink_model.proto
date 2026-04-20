@@ -86,7 +86,7 @@ message Agent
   string id = 0
   labelType name = 0
  }
-// A subcellular location, cell type or gross anatomical part
+// A part of a cellular organism at or above the granularity of a protein complex. This is a grouping class with three concrete subclasses that should be preferred when applicable: "biolink:Cell" for whole cells, "biolink:CellularComponent" for subcellular and intracellular structures (organelles, membranes, bacterial flagella, etc.), and "biolink:GrossAnatomcialStructure" for multicellular parts (tissues, organs, body parts). Excludes viral and other acellular biological entities.
 message AnatomicalEntity
  {
   string id = 0
@@ -1341,7 +1341,7 @@ message CellularComponent
   labelType inTaxonLabel = 0
  repeated  attribute hasAttribute = 0
  }
-// An organism that contains one or more cells.
+// An organism that contains one or more cells belonging to the cellular lineages of life (Archaea, Bacteria, or Eukaryota), whose body consists of one or more cells. Distinguished from acellular biological entities such as viruses and viroids.
 message CellularOrganism
  {
   string id = 0
@@ -2882,7 +2882,7 @@ message DiagnosticAid
   uriorcurie taxon = 0
  repeated  uriorcurie category = 0
  }
-// A disorder of structure or function, especially one that produces specific signs, phenotypes or symptoms or that affects a specific location and is not simply a direct result of physical injury.  A disposition to undergo pathological processes that exists in an organism because of one or more disorders in that organism.
+// A disease is a disposition to undergo pathological processes that exists in an organism because of one or more disorders in that organism.
 message Disease
  {
   string id = 0
@@ -2959,7 +2959,7 @@ message DiseaseAssociatedWithResponseToChemicalEntityAssociation
   chemicalEntity object = 0
   uriorcurie predicate = 0
  }
-// Either one of a disease or an individual phenotypic feature. Some knowledge resources such as Monarch treat these as distinct, others such as MESH conflate.  Please see definitions of phenotypic feature and disease in this model for their independent descriptions.  This class is helpful to enforce domains and ranges that may involve either a disease or a phenotypic feature.
+// A disease or an individual phenotypic feature, grouped as a single class to accommodate source vocabularies and assertions that do not distinguish the two. Prefer the more specific subclasses disease or phenotypic feature when the distinction is known.
 message DiseaseOrPhenotypicFeature
  {
   string id = 0
@@ -3634,7 +3634,7 @@ message EnvironmentalFeature
   uriorcurie taxon = 0
  repeated  uriorcurie category = 0
  }
-// Any unwanted chemical in food, including agrochemicals and industrial chemicals that may contaminate foodstuffs during their production, transportation, or storage.
+// Any unwanted chemical in food. The term includes agrochemicals and industrial chemicals that may contaminate foodstuffs during their production, transportation or storage.
 message EnvironmentalFoodContaminant
  {
   string id = 0
@@ -3967,7 +3967,7 @@ message ExposureEventToPhenotypicFeatureAssociation
   double hasQuotient = 0
   double hasPercentage = 0
  }
-// A substance consumed by a living organism as a source of nutrition
+// A substance of plant, animal, or artificial origin consumed by a living organism to provide essential nutrients, energy, and support growth and the processes of life, or to satisfy other health needs or provide a social or organoleptic experience. experience.
 message Food
  {
   string id = 0
@@ -4085,7 +4085,6 @@ message FunctionalAssociation
   macromolecularMachineMixin subject = 0
   ontologyClass object = 0
  }
-// A kingdom of eukaryotic, heterotrophic organisms that live as saprobes or parasites, including mushrooms, yeasts, smuts, molds, etc. They reproduce either sexually or asexually, and have life cycles that range from simple to complex. Filamentous fungi refer to those that grow as multicellular colonies (mushrooms and molds).
 message Fungus
  {
   string id = 0
@@ -5715,7 +5714,6 @@ message Hospitalization
   uriorcurie taxon = 0
  repeated  uriorcurie category = 0
  }
-// A member of the the species Homo sapiens.
 message Human
  {
   string id = 0
@@ -5763,7 +5761,7 @@ message IceesStudyResult
   float logOddsRatio = 0
  repeated  float logOddsRatio95Ci = 0
  }
-// An instance of an organism. For example, Richard Nixon, Charles Darwin, my pet cat. Example ID: ORCID:0000-0002-5355-2576
+// An instance of an organism. For example, Charles Darwin, my pet cat.
 message IndividualOrganism
  {
   string id = 0
@@ -5837,7 +5835,6 @@ message InformationContentEntityToNamedThingAssociation
   namedThing object = 0
   uriorcurie predicate = 0
  }
-// An animal lacking a vertebral column. This group consists of 98% of all animal species.
 message Invertebrate
  {
   string id = 0
@@ -5891,7 +5888,7 @@ message JournalArticle
   string volume = 0
   string issue = 0
  }
-// A knowledge graph represented in KGX format
+// A container representing a knowledge graph serialized in KGX (Knowledge Graph Exchange) format. A KnowledgeGraph aggregates a collection of nodes (entities) and edges (relationships between entities) conforming to the KGX specification, enabling interoperable exchange of biomedical knowledge graphs across tools and systems in the Biolink ecosystem.
 message KnowledgeGraph
  {
  repeated  entity nodes = 0
@@ -6173,7 +6170,6 @@ message MacromolecularMachineToMolecularActivityAssociation
   molecularActivity object = 0
   organismTaxon speciesContextQualifier = 0
  }
-// A member of the class Mammalia, a clade of endothermic amniotes distinguished from reptiles and birds by the possession of hair, three middle ear bones, mammary glands, and a neocortex
 message Mammal
  {
   string id = 0
@@ -7349,7 +7345,7 @@ message Phenomenon
   uriorcurie taxon = 0
  repeated  uriorcurie category = 0
  }
-// A combination of entity and quality that makes up a phenotyping statement. An observable characteristic of an individual resulting from the interaction of its genotype with its molecular and physical environment.
+// A combination of entity and quality that makes up a phenotyping statement. An observable characteristic of an individual often resulting from the interaction of its genotype with its molecular and physical environment.
 message PhenotypicFeature
  {
   string id = 0
@@ -7501,7 +7497,7 @@ message PhenotypicFeatureToPhenotypicFeatureAssociation
   double hasPercentage = 0
   disease diseaseContextQualifier = 0
  }
-// A property of a phenotype
+// A characteristic of a phenotype (e.g., weight, size, shape, color) that can be observed, measured, or compared across organisms or conditions.
 message PhenotypicQuality
  {
   string id = 0
@@ -7564,7 +7560,7 @@ message PhysicalEntity
   uriorcurie taxon = 0
  repeated  uriorcurie category = 0
  }
-// A biological or chemical function within a living organism (cells, tissues, or organs).
+// A biological or chemical function within a living organism.
 message PhysiologicalProcess
  {
   string id = 0
@@ -7607,7 +7603,6 @@ message PlanetaryEntity
   uriorcurie taxon = 0
  repeated  uriorcurie category = 0
  }
-// Any living organism that typically synthesizes its food from inorganic substances, possesses cellulose cell walls, responds slowly and often permanently to a stimulus, lacks specialized sense organs and nervous system, and has no powers of locomotion.
 message Plant
  {
   string id = 0
@@ -7723,7 +7718,7 @@ message PopulationToPopulationAssociation
   populationOfIndividualOrganisms object = 0
   uriorcurie predicate = 0
  }
-// A chemical modification of a polypeptide or protein that occurs after translation. e.g. polypeptide cleavage to form separate proteins, methylation or acetylation of histone tail amino acids, protein ubiquitination.
+// A chemical modification of a polypeptide or protein that occurs after translation, altering its structure, activity, localization, or interactions.
 message PosttranslationalModification
  {
   string id = 0
@@ -7969,7 +7964,7 @@ message ProteinFamily
   labelType inTaxonLabel = 0
  repeated  gene hasGeneOrGeneProduct = 0
  }
-// Represents a protein that is a specific isoform of the canonical or reference protein. See https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4114032/
+// Represents a protein that is a specific isoform of the canonical or reference protein.
 message ProteinIsoform
  {
   string id = 0
@@ -8232,6 +8227,7 @@ message RetrievalSource
  repeated  uriorcurie sourceRecordUrls = 0
  repeated  uriorcurie xref = 0
  }
+// High molecular weight, linear polymers, composed of nucleotides containing ribose and linked by phosphodiester bonds typically synthesized by a DNA- or RNA-dependent RNA polymerase that constitutes the product of a gene. Distinct in emphasis from `biolink:Transcript`, which denotes the informational output of transcription at the gene-model level rather than the chemical species itself.
 message RNAProduct
  {
   string id = 0
@@ -9208,7 +9204,6 @@ message VariantToPopulationAssociation
   double hasPercentage = 0
   frequencyValue frequencyQualifier = 0
  }
-// A sub-phylum of animals consisting of those having a bony or cartilaginous vertebral column.
 message Vertebrate
  {
   string id = 0
