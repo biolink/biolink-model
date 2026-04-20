@@ -1468,11 +1468,18 @@ slots:
       A role is particular behaviour which a chemical entity may exhibit.
     range: chemical role
     multivalued: true
+    inverse: is chemical role of
     id_prefixes:
       - CHEBI
     comments: >-
       We expect primarily to use CHEBI chemical roles here; however, we are looking for a mapping between
       CHEBI And ATC codes to support this slot.
+
+  is chemical role of:
+    is_a: related to at concept level
+    description: >-
+      Holds between a chemical role and a chemical entity that exhibits that role.
+    inverse: has chemical role
 
   max tolerated dose:
     description: >-
@@ -8323,8 +8330,7 @@ classes:
 
   physiological process:
     description: >-
-      A biological or chemical function within a living organism
-      (cells, tissues, or organs).
+      A biological or chemical function within a living organism.
     aliases: ['physiology']
     is_a: biological process
     mixins:
@@ -8461,10 +8467,11 @@ classes:
 
   environmental food contaminant:
     description: >-
-      Any unwanted chemical in food, including agrochemicals and
-      industrial chemicals that may contaminate foodstuffs during
-      their production, transportation, or storage.
+      Any unwanted chemical in food. The term includes agrochemicals and industrial chemicals that may contaminate
+      foodstuffs during their production, transportation or storage.
     is_a: chemical entity
+    exact_mappings:
+      - CHEBI:78299
     related_mappings:
        # substance role
       - CHEBI:78299
@@ -8497,9 +8504,10 @@ classes:
 
   food additive:
     description: >-
-      Any substance which is added to food to preserve or enhance
-      its flavour and/or appearance.
+      Any substance which is added to food to preserve or enhance its flavour and/or appearance.
     is_a: chemical entity
+    exact_mappings:
+      - CHEBI:64047
     related_mappings:
        # substance role
       - CHEBI:64047
@@ -8533,7 +8541,13 @@ classes:
   food:
     is_a: chemical mixture
     description: >-
-      A substance consumed by a living organism as a source of nutrition
+      A substance of plant, animal, or artificial origin consumed by a living organism to provide essential
+      nutrients, energy, and support growth and the processes of life, or to satisfy other health needs or
+      provide a social or organoleptic experience.
+      experience.
+    exact_mappings:
+      - CHEBI:33290
+      - FOODON:00002403
     id_prefixes:
       - foodb.food
       - foodb.compound
@@ -8578,11 +8592,12 @@ classes:
     aliases: ['phenotypic properties']
     is_a: organism attribute
     description: >-
-      A property of a phenotype
+      A characteristic of a phenotype (e.g., weight, size, shape, color) that can be observed, measured, or
+      compared across organisms or conditions.
     examples:
-      - value: weight
-    mappings:
-      - PATO:0000001
+      - value: "PATO:0000128"
+    broad_mappings:
+      - PATO:0001995
 
   genetic inheritance:
     aliases: ['inheritance']
@@ -8641,6 +8656,8 @@ classes:
     description: >-
       A virus is a microorganism that replicates itself as a microRNA
       and infects the host cell.
+    comments: >-
+      see: https://github.com/OBOFoundry/COB/pull/211
     exact_mappings:
       - NCBITaxon:10239
       - STY:T005  # Virus
@@ -8651,10 +8668,13 @@ classes:
       - subject of investigation
     description: >-
       An organism that contains one or more cells.
+    comments: >-
+      see: https://github.com/OBOFoundry/COB/pull/211
     exact_mappings:
       - NCBITaxon:131567
 
   mammal:
+    deprecated: true
     is_a: cellular organism
     mixins:
       - subject of investigation
@@ -8669,6 +8689,7 @@ classes:
       - FOODON:03411134  # mammal
 
   human:
+    deprecated: true
     is_a: mammal
     mixins:
       - subject of investigation
@@ -8694,6 +8715,7 @@ classes:
       - NCIT:C79659  # plant, whole
 
   invertebrate:
+    deprecated: true
     is_a: cellular organism
     description: >-
       An animal lacking a vertebral column. This group consists of 98% of all animal species.
@@ -8706,6 +8728,7 @@ classes:
       - NCBITaxon:1767184  # unidentified invertebrate
 
   vertebrate:
+    deprecated: true
     is_a: cellular organism
     description: >-
       A sub-phylum of animals consisting of those having a bony or cartilaginous vertebral column.
@@ -8717,6 +8740,7 @@ classes:
       - NCBITaxon:2662825  # unclassified vertebrata (in:vertebrates)
 
   fungus:
+    deprecated: true
     is_a: cellular organism
     description: >-
       A kingdom of eukaryotic, heterotrophic organisms that live as saprobes or parasites,
