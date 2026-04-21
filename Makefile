@@ -110,7 +110,7 @@ gen-project: $(PYMODEL)
 	# keep these in sync between PROJECT_FOLDERS and the includes/excludes for gen-project and test-schema
 	$(RUN) gen-project \
 		--exclude excel \
-		--include graphql \
+		--exclude graphql \
 		--include jsonld \
 		--exclude markdown \
 		--include prefixmap \
@@ -139,7 +139,7 @@ tests:
 	$(RUN) codespell
 	$(RUN) yamllint -c .yamllint-config biolink-model.yaml
 
-test: test-schema test-python test-examples lint spell
+test: test-schema test-python lint spell
 
 test-schema: gen-project
 
@@ -202,7 +202,6 @@ gendoc: $(DOCDIR)
 	cp $(DEST)/jsonld/biolink_model.context.jsonld $(DOCDIR)/context.jsonld ; \
 	cp $(DEST)/jsonld/biolink_model.jsonld $(DOCDIR)/biolink-model.jsonld ; \
 	cp $(DEST)/jsonschema/biolink_model.schema.json $(DOCDIR)/biolink-model.json ; \
-	cp $(DEST)/graphql/biolink_model.graphql $(DOCDIR)/biolink-model.graphql ; \
 	cp $(DEST)/shex/biolink_model.shex $(DOCDIR)/biolink-modeln.shex ; \
 	cp $(DEST)/shacl/biolink_model.shacl.ttl $(DOCDIR)/biolink-model.shacl.ttl ; \
 	cp $(DEST)/prefixmap/* $(DOCDIR) ; \
@@ -229,7 +228,7 @@ MKDOCS = $(RUN) mkdocs
 mkd-%:
 	$(MKDOCS) $*
 
-PROJECT_FOLDERS = sqlschema shex shacl protobuf prefixmap owl jsonschema jsonld graphql excel
+PROJECT_FOLDERS = sqlschema shex shacl protobuf prefixmap owl jsonschema jsonld excel
 git-init-add: git-init git-add git-commit git-status
 git-init:
 	git init

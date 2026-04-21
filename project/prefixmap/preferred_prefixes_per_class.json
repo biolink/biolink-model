@@ -202,6 +202,11 @@
           "prefix": "CPT",
           "base_uri": "https://www.ama-assn.org/practice-management/cpt/",
           "order": 1
+        },
+        {
+          "prefix": "MAXO",
+          "base_uri": "http://purl.obolibrary.org/obo/MAXO_",
+          "order": 2
         }
       ]
     },
@@ -2621,12 +2626,32 @@
       ]
     },
     {
+      "class_name": "biolink:PosttranslationalModification",
+      "prefix_map": [
+        {
+          "prefix": "MOD",
+          "base_uri": "http://purl.obolibrary.org/obo/MOD_",
+          "order": 1
+        },
+        {
+          "prefix": "UNIMOD",
+          "base_uri": "http://identifiers.org/unimod/",
+          "order": 2
+        }
+      ]
+    },
+    {
       "class_name": "biolink:RNAProduct",
       "prefix_map": [
         {
           "prefix": "RNACENTRAL",
           "base_uri": "http://identifiers.org/rnacentral/",
           "order": 1
+        },
+        {
+          "prefix": "mirbase",
+          "base_uri": "http://identifiers.org/mirbase",
+          "order": 2
         }
       ]
     },
@@ -2677,6 +2702,11 @@
           "prefix": "WormBase",
           "base_uri": "https://www.wormbase.org/get?name=",
           "order": 3
+        },
+        {
+          "prefix": "mirbase",
+          "base_uri": "http://identifiers.org/mirbase",
+          "order": 4
         }
       ]
     },
