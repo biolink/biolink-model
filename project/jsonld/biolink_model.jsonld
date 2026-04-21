@@ -6972,22 +6972,10 @@
       "inherited": true,
       "owner": "has_active_component",
       "inverse": "active_in",
-      "range": "NamedThing",
+      "range": "GeneOrGeneProduct",
       "multivalued": true,
-      "any_of": [
-        {
-          "range": "Gene",
-          "@type": "AnonymousSlotExpression"
-        },
-        {
-          "range": "Protein",
-          "@type": "AnonymousSlotExpression"
-        },
-        {
-          "range": "RNAProduct",
-          "@type": "AnonymousSlotExpression"
-        }
-      ],
+      "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -7024,22 +7012,10 @@
       "inherited": true,
       "owner": "has_upstream_actor",
       "inverse": "acts_upstream_of",
-      "range": "NamedThing",
+      "range": "GeneOrGeneProduct",
       "multivalued": true,
-      "any_of": [
-        {
-          "range": "Gene",
-          "@type": "AnonymousSlotExpression"
-        },
-        {
-          "range": "Protein",
-          "@type": "AnonymousSlotExpression"
-        },
-        {
-          "range": "RNAProduct",
-          "@type": "AnonymousSlotExpression"
-        }
-      ],
+      "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -7076,22 +7052,10 @@
       "inherited": true,
       "owner": "has_positive_upstream_actor",
       "inverse": "acts_upstream_of_positive_effect",
-      "range": "NamedThing",
+      "range": "GeneOrGeneProduct",
       "multivalued": true,
-      "any_of": [
-        {
-          "range": "Gene",
-          "@type": "AnonymousSlotExpression"
-        },
-        {
-          "range": "Protein",
-          "@type": "AnonymousSlotExpression"
-        },
-        {
-          "range": "RNAProduct",
-          "@type": "AnonymousSlotExpression"
-        }
-      ],
+      "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -7128,22 +7092,10 @@
       "inherited": true,
       "owner": "has_negative_upstream_actor",
       "inverse": "acts_upstream_of_negative_effect",
-      "range": "NamedThing",
+      "range": "GeneOrGeneProduct",
       "multivalued": true,
-      "any_of": [
-        {
-          "range": "Gene",
-          "@type": "AnonymousSlotExpression"
-        },
-        {
-          "range": "Protein",
-          "@type": "AnonymousSlotExpression"
-        },
-        {
-          "range": "RNAProduct",
-          "@type": "AnonymousSlotExpression"
-        }
-      ],
+      "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -7180,22 +7132,10 @@
       "inherited": true,
       "owner": "has_upstream_or_within_actor",
       "inverse": "acts_upstream_of_or_within",
-      "range": "NamedThing",
+      "range": "GeneOrGeneProduct",
       "multivalued": true,
-      "any_of": [
-        {
-          "range": "Gene",
-          "@type": "AnonymousSlotExpression"
-        },
-        {
-          "range": "Protein",
-          "@type": "AnonymousSlotExpression"
-        },
-        {
-          "range": "RNAProduct",
-          "@type": "AnonymousSlotExpression"
-        }
-      ],
+      "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -7232,22 +7172,10 @@
       "inherited": true,
       "owner": "has_positive_upstream_or_within_actor",
       "inverse": "acts_upstream_of_or_within_positive_effect",
-      "range": "NamedThing",
+      "range": "GeneOrGeneProduct",
       "multivalued": true,
-      "any_of": [
-        {
-          "range": "Gene",
-          "@type": "AnonymousSlotExpression"
-        },
-        {
-          "range": "Protein",
-          "@type": "AnonymousSlotExpression"
-        },
-        {
-          "range": "RNAProduct",
-          "@type": "AnonymousSlotExpression"
-        }
-      ],
+      "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -7284,22 +7212,10 @@
       "inherited": true,
       "owner": "has_negative_upstream_or_within_actor",
       "inverse": "acts_upstream_of_or_within_negative_effect",
-      "range": "NamedThing",
+      "range": "GeneOrGeneProduct",
       "multivalued": true,
-      "any_of": [
-        {
-          "range": "Gene",
-          "@type": "AnonymousSlotExpression"
-        },
-        {
-          "range": "Protein",
-          "@type": "AnonymousSlotExpression"
-        },
-        {
-          "range": "RNAProduct",
-          "@type": "AnonymousSlotExpression"
-        }
-      ],
+      "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -8146,22 +8062,10 @@
       "inherited": true,
       "owner": "affects_sensitivity_to",
       "inverse": "sensitivity_affected_by",
-      "range": "NamedThing",
+      "range": "ChemicalEntityOrGeneOrGeneProduct",
       "multivalued": true,
-      "any_of": [
-        {
-          "range": "ChemicalEntity",
-          "@type": "AnonymousSlotExpression"
-        },
-        {
-          "range": "Gene",
-          "@type": "AnonymousSlotExpression"
-        },
-        {
-          "range": "gene product",
-          "@type": "AnonymousSlotExpression"
-        }
-      ],
+      "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -8177,22 +8081,10 @@
       "inherited": true,
       "owner": "sensitivity_affected_by",
       "inverse": "affects_sensitivity_to",
-      "range": "NamedThing",
+      "range": "ChemicalEntityOrGeneOrGeneProduct",
       "multivalued": true,
-      "any_of": [
-        {
-          "range": "ChemicalEntity",
-          "@type": "AnonymousSlotExpression"
-        },
-        {
-          "range": "Gene",
-          "@type": "AnonymousSlotExpression"
-        },
-        {
-          "range": "gene product",
-          "@type": "AnonymousSlotExpression"
-        }
-      ],
+      "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -8224,22 +8116,10 @@
       "inherited": true,
       "owner": "increases_sensitivity_to",
       "inverse": "sensitivity_increased_by",
-      "range": "NamedThing",
+      "range": "ChemicalEntityOrGeneOrGeneProduct",
       "multivalued": true,
-      "any_of": [
-        {
-          "range": "ChemicalEntity",
-          "@type": "AnonymousSlotExpression"
-        },
-        {
-          "range": "Gene",
-          "@type": "AnonymousSlotExpression"
-        },
-        {
-          "range": "gene product",
-          "@type": "AnonymousSlotExpression"
-        }
-      ],
+      "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -8255,22 +8135,10 @@
       "inherited": true,
       "owner": "sensitivity_increased_by",
       "inverse": "increases_sensitivity_to",
-      "range": "NamedThing",
+      "range": "ChemicalEntityOrGeneOrGeneProduct",
       "multivalued": true,
-      "any_of": [
-        {
-          "range": "ChemicalEntity",
-          "@type": "AnonymousSlotExpression"
-        },
-        {
-          "range": "Gene",
-          "@type": "AnonymousSlotExpression"
-        },
-        {
-          "range": "gene product",
-          "@type": "AnonymousSlotExpression"
-        }
-      ],
+      "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -8305,22 +8173,10 @@
       "inherited": true,
       "owner": "decreases_sensitivity_to",
       "inverse": "sensitivity_decreased_by",
-      "range": "NamedThing",
+      "range": "ChemicalEntityOrGeneOrGeneProduct",
       "multivalued": true,
-      "any_of": [
-        {
-          "range": "ChemicalEntity",
-          "@type": "AnonymousSlotExpression"
-        },
-        {
-          "range": "Gene",
-          "@type": "AnonymousSlotExpression"
-        },
-        {
-          "range": "gene product",
-          "@type": "AnonymousSlotExpression"
-        }
-      ],
+      "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -8336,22 +8192,10 @@
       "inherited": true,
       "owner": "sensitivity_decreased_by",
       "inverse": "decreases_sensitivity_to",
-      "range": "NamedThing",
+      "range": "ChemicalEntityOrGeneOrGeneProduct",
       "multivalued": true,
-      "any_of": [
-        {
-          "range": "ChemicalEntity",
-          "@type": "AnonymousSlotExpression"
-        },
-        {
-          "range": "Gene",
-          "@type": "AnonymousSlotExpression"
-        },
-        {
-          "range": "gene product",
-          "@type": "AnonymousSlotExpression"
-        }
-      ],
+      "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -8953,27 +8797,15 @@
         "http://semanticscience.org/resource/SIO_010532"
       ],
       "is_a": "coexists_with",
-      "domain": "GeneOrGeneProduct",
+      "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/in_pathway_with",
       "inherited": true,
       "owner": "in_pathway_with",
       "symmetric": true,
-      "range": "NamedThing",
+      "range": "GeneOrGeneProduct",
       "multivalued": true,
-      "any_of": [
-        {
-          "range": "Gene",
-          "@type": "AnonymousSlotExpression"
-        },
-        {
-          "range": "Protein",
-          "@type": "AnonymousSlotExpression"
-        },
-        {
-          "range": "RNAProduct",
-          "@type": "AnonymousSlotExpression"
-        }
-      ],
+      "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -9003,22 +8835,10 @@
       "inherited": true,
       "owner": "in_complex_with",
       "symmetric": true,
-      "range": "NamedThing",
+      "range": "GeneOrGeneProduct",
       "multivalued": true,
-      "any_of": [
-        {
-          "range": "Gene",
-          "@type": "AnonymousSlotExpression"
-        },
-        {
-          "range": "Protein",
-          "@type": "AnonymousSlotExpression"
-        },
-        {
-          "range": "RNAProduct",
-          "@type": "AnonymousSlotExpression"
-        }
-      ],
+      "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -9042,22 +8862,10 @@
       "inherited": true,
       "owner": "in_cell_population_with",
       "symmetric": true,
-      "range": "NamedThing",
+      "range": "GeneOrGeneProduct",
       "multivalued": true,
-      "any_of": [
-        {
-          "range": "Gene",
-          "@type": "AnonymousSlotExpression"
-        },
-        {
-          "range": "Protein",
-          "@type": "AnonymousSlotExpression"
-        },
-        {
-          "range": "RNAProduct",
-          "@type": "AnonymousSlotExpression"
-        }
-      ],
+      "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -10150,22 +9958,10 @@
       "inherited": true,
       "owner": "coexpressed_with",
       "symmetric": true,
-      "range": "NamedThing",
+      "range": "GeneOrGeneProduct",
       "multivalued": true,
-      "any_of": [
-        {
-          "range": "Gene",
-          "@type": "AnonymousSlotExpression"
-        },
-        {
-          "range": "Protein",
-          "@type": "AnonymousSlotExpression"
-        },
-        {
-          "range": "RNAProduct",
-          "@type": "AnonymousSlotExpression"
-        }
-      ],
+      "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -10186,22 +9982,10 @@
       "inherited": true,
       "owner": "has_biomarker",
       "inverse": "biomarker_for",
-      "range": "NamedThing",
+      "range": "ChemicalEntityOrGeneOrGeneProduct",
       "multivalued": true,
-      "any_of": [
-        {
-          "range": "ChemicalEntity",
-          "@type": "AnonymousSlotExpression"
-        },
-        {
-          "range": "Gene",
-          "@type": "AnonymousSlotExpression"
-        },
-        {
-          "range": "gene product",
-          "@type": "AnonymousSlotExpression"
-        }
-      ],
+      "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -10232,7 +10016,7 @@
         "http://purl.obolibrary.org/obo/RO_0002607"
       ],
       "is_a": "correlated_with",
-      "domain": "GeneOrGeneProduct",
+      "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/biomarker_for",
       "inherited": true,
       "owner": "biomarker_for",
@@ -10293,22 +10077,10 @@
       "inherited": true,
       "owner": "expresses",
       "inverse": "expressed_in",
-      "range": "NamedThing",
+      "range": "GeneOrGeneProduct",
       "multivalued": true,
-      "any_of": [
-        {
-          "range": "Gene",
-          "@type": "AnonymousSlotExpression"
-        },
-        {
-          "range": "Protein",
-          "@type": "AnonymousSlotExpression"
-        },
-        {
-          "range": "RNAProduct",
-          "@type": "AnonymousSlotExpression"
-        }
-      ],
+      "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -11237,24 +11009,10 @@
       "inherited": true,
       "owner": "has_substrate",
       "inverse": "is_substrate_of",
-      "range": "Occurrent",
+      "range": "ChemicalEntityOrGeneOrGeneProduct",
       "multivalued": true,
       "inlined": true,
       "inlined_as_list": true,
-      "any_of": [
-        {
-          "range": "ChemicalEntity",
-          "@type": "AnonymousSlotExpression"
-        },
-        {
-          "range": "Gene",
-          "@type": "AnonymousSlotExpression"
-        },
-        {
-          "range": "gene product",
-          "@type": "AnonymousSlotExpression"
-        }
-      ],
       "@type": "SlotDefinition"
     },
     {
@@ -11267,22 +11025,10 @@
       "inherited": true,
       "owner": "is_substrate_of",
       "inverse": "has_substrate",
-      "range": "BiologicalProcessOrActivity",
+      "range": "ChemicalEntityOrGeneOrGeneProduct",
       "multivalued": true,
-      "any_of": [
-        {
-          "range": "ChemicalEntity",
-          "@type": "AnonymousSlotExpression"
-        },
-        {
-          "range": "Gene",
-          "@type": "AnonymousSlotExpression"
-        },
-        {
-          "range": "gene product",
-          "@type": "AnonymousSlotExpression"
-        }
-      ],
+      "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -17431,22 +17177,10 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "subject",
-      "range": "NamedThing",
+      "range": "GeneOrGeneProduct",
       "required": true,
-      "any_of": [
-        {
-          "range": "Gene",
-          "@type": "AnonymousSlotExpression"
-        },
-        {
-          "range": "Protein",
-          "@type": "AnonymousSlotExpression"
-        },
-        {
-          "range": "RNAProduct",
-          "@type": "AnonymousSlotExpression"
-        }
-      ],
+      "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -17481,22 +17215,10 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "object",
-      "range": "NamedThing",
+      "range": "GeneOrGeneProduct",
       "required": true,
-      "any_of": [
-        {
-          "range": "Gene",
-          "@type": "AnonymousSlotExpression"
-        },
-        {
-          "range": "Protein",
-          "@type": "AnonymousSlotExpression"
-        },
-        {
-          "range": "RNAProduct",
-          "@type": "AnonymousSlotExpression"
-        }
-      ],
+      "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -17531,22 +17253,10 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "subject",
-      "range": "NamedThing",
+      "range": "GeneOrGeneProduct",
       "required": true,
-      "any_of": [
-        {
-          "range": "Gene",
-          "@type": "AnonymousSlotExpression"
-        },
-        {
-          "range": "Protein",
-          "@type": "AnonymousSlotExpression"
-        },
-        {
-          "range": "RNAProduct",
-          "@type": "AnonymousSlotExpression"
-        }
-      ],
+      "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -17619,22 +17329,10 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "object",
-      "range": "NamedThing",
+      "range": "GeneOrGeneProduct",
       "required": true,
-      "any_of": [
-        {
-          "range": "Gene",
-          "@type": "AnonymousSlotExpression"
-        },
-        {
-          "range": "Protein",
-          "@type": "AnonymousSlotExpression"
-        },
-        {
-          "range": "RNAProduct",
-          "@type": "AnonymousSlotExpression"
-        }
-      ],
+      "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -17814,22 +17512,10 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "object",
-      "range": "NamedThing",
+      "range": "GeneOrGeneProduct",
       "required": true,
-      "any_of": [
-        {
-          "range": "Gene",
-          "@type": "AnonymousSlotExpression"
-        },
-        {
-          "range": "gene product",
-          "@type": "AnonymousSlotExpression"
-        },
-        {
-          "range": "GeneFamily",
-          "@type": "AnonymousSlotExpression"
-        }
-      ],
+      "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -17901,26 +17587,10 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "subject",
-      "range": "NamedThing",
+      "range": "GeneOrGeneProductOrGeneFamily",
       "required": true,
-      "any_of": [
-        {
-          "range": "Gene",
-          "@type": "AnonymousSlotExpression"
-        },
-        {
-          "range": "GeneFamily",
-          "@type": "AnonymousSlotExpression"
-        },
-        {
-          "range": "Protein",
-          "@type": "AnonymousSlotExpression"
-        },
-        {
-          "range": "RNAProduct",
-          "@type": "AnonymousSlotExpression"
-        }
-      ],
+      "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -18064,26 +17734,10 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "object",
-      "range": "NamedThing",
+      "range": "GeneOrGeneProductOrGeneFamily",
       "required": true,
-      "any_of": [
-        {
-          "range": "Gene",
-          "@type": "AnonymousSlotExpression"
-        },
-        {
-          "range": "GeneFamily",
-          "@type": "AnonymousSlotExpression"
-        },
-        {
-          "range": "Protein",
-          "@type": "AnonymousSlotExpression"
-        },
-        {
-          "range": "RNAProduct",
-          "@type": "AnonymousSlotExpression"
-        }
-      ],
+      "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -18591,22 +18245,10 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "subject",
-      "range": "NamedThing",
+      "range": "ChemicalEntityOrGeneOrGeneProduct",
       "required": true,
-      "any_of": [
-        {
-          "range": "ChemicalEntity",
-          "@type": "AnonymousSlotExpression"
-        },
-        {
-          "range": "Gene",
-          "@type": "AnonymousSlotExpression"
-        },
-        {
-          "range": "gene product",
-          "@type": "AnonymousSlotExpression"
-        }
-      ],
+      "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -18677,22 +18319,10 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "subject",
-      "range": "NamedThing",
+      "range": "ChemicalEntityOrGeneOrGeneProduct",
       "required": true,
-      "any_of": [
-        {
-          "range": "ChemicalEntity",
-          "@type": "AnonymousSlotExpression"
-        },
-        {
-          "range": "Gene",
-          "@type": "AnonymousSlotExpression"
-        },
-        {
-          "range": "gene product",
-          "@type": "AnonymousSlotExpression"
-        }
-      ],
+      "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -18835,22 +18465,10 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "object",
-      "range": "ChemicalEntity",
+      "range": "GeneOrGeneProduct",
       "required": true,
-      "any_of": [
-        {
-          "range": "Gene",
-          "@type": "AnonymousSlotExpression"
-        },
-        {
-          "range": "Protein",
-          "@type": "AnonymousSlotExpression"
-        },
-        {
-          "range": "RNAProduct",
-          "@type": "AnonymousSlotExpression"
-        }
-      ],
+      "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -19162,22 +18780,10 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "subject",
-      "range": "NamedThing",
+      "range": "GeneOrGeneProduct",
       "required": true,
-      "any_of": [
-        {
-          "range": "Gene",
-          "@type": "AnonymousSlotExpression"
-        },
-        {
-          "range": "Protein",
-          "@type": "AnonymousSlotExpression"
-        },
-        {
-          "range": "RNAProduct",
-          "@type": "AnonymousSlotExpression"
-        }
-      ],
+      "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -19729,22 +19335,10 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "object",
-      "range": "NamedThing",
+      "range": "GeneOrGeneProduct",
       "required": true,
-      "any_of": [
-        {
-          "range": "Gene",
-          "@type": "AnonymousSlotExpression"
-        },
-        {
-          "range": "Protein",
-          "@type": "AnonymousSlotExpression"
-        },
-        {
-          "range": "RNAProduct",
-          "@type": "AnonymousSlotExpression"
-        }
-      ],
+      "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -20282,22 +19876,10 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "subject",
-      "range": "NamedThing",
+      "range": "ChemicalEntityOrGeneOrGeneProduct",
       "required": true,
-      "any_of": [
-        {
-          "range": "Gene",
-          "@type": "AnonymousSlotExpression"
-        },
-        {
-          "range": "Protein",
-          "@type": "AnonymousSlotExpression"
-        },
-        {
-          "range": "RNAProduct",
-          "@type": "AnonymousSlotExpression"
-        }
-      ],
+      "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -20369,22 +19951,10 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "object",
-      "range": "NamedThing",
+      "range": "ChemicalEntityOrGeneOrGeneProduct",
       "required": true,
-      "any_of": [
-        {
-          "range": "Gene",
-          "@type": "AnonymousSlotExpression"
-        },
-        {
-          "range": "Protein",
-          "@type": "AnonymousSlotExpression"
-        },
-        {
-          "range": "RNAProduct",
-          "@type": "AnonymousSlotExpression"
-        }
-      ],
+      "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -21227,22 +20797,10 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "subject",
-      "range": "NamedThing",
+      "range": "ChemicalEntityOrGeneOrGeneProduct",
       "required": true,
-      "any_of": [
-        {
-          "range": "Gene",
-          "@type": "AnonymousSlotExpression"
-        },
-        {
-          "range": "Protein",
-          "@type": "AnonymousSlotExpression"
-        },
-        {
-          "range": "RNAProduct",
-          "@type": "AnonymousSlotExpression"
-        }
-      ],
+      "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -21838,22 +21396,10 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "object",
-      "range": "NamedThing",
+      "range": "GeneOrGeneProduct",
       "required": true,
-      "any_of": [
-        {
-          "range": "Gene",
-          "@type": "AnonymousSlotExpression"
-        },
-        {
-          "range": "Protein",
-          "@type": "AnonymousSlotExpression"
-        },
-        {
-          "range": "RNAProduct",
-          "@type": "AnonymousSlotExpression"
-        }
-      ],
+      "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -22952,22 +22498,10 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "object",
-      "range": "NamedThing",
+      "range": "GeneOrGeneProduct",
       "required": true,
-      "any_of": [
-        {
-          "range": "Gene",
-          "@type": "AnonymousSlotExpression"
-        },
-        {
-          "range": "Protein",
-          "@type": "AnonymousSlotExpression"
-        },
-        {
-          "range": "RNAProduct",
-          "@type": "AnonymousSlotExpression"
-        }
-      ],
+      "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -23074,22 +22608,10 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "subject",
-      "range": "NamedThing",
+      "range": "GeneOrGeneProduct",
       "required": true,
-      "any_of": [
-        {
-          "range": "Gene",
-          "@type": "AnonymousSlotExpression"
-        },
-        {
-          "range": "Protein",
-          "@type": "AnonymousSlotExpression"
-        },
-        {
-          "range": "RNAProduct",
-          "@type": "AnonymousSlotExpression"
-        }
-      ],
+      "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -23179,22 +22701,10 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "subject",
-      "range": "NamedThing",
+      "range": "GeneOrGeneProduct",
       "required": true,
-      "any_of": [
-        {
-          "range": "Gene",
-          "@type": "AnonymousSlotExpression"
-        },
-        {
-          "range": "Protein",
-          "@type": "AnonymousSlotExpression"
-        },
-        {
-          "range": "RNAProduct",
-          "@type": "AnonymousSlotExpression"
-        }
-      ],
+      "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -23414,22 +22924,10 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "subject",
-      "range": "NamedThing",
+      "range": "GeneOrGeneProduct",
       "required": true,
-      "any_of": [
-        {
-          "range": "Gene",
-          "@type": "AnonymousSlotExpression"
-        },
-        {
-          "range": "Protein",
-          "@type": "AnonymousSlotExpression"
-        },
-        {
-          "range": "RNAProduct",
-          "@type": "AnonymousSlotExpression"
-        }
-      ],
+      "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -23649,22 +23147,10 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "subject",
-      "range": "NamedThing",
+      "range": "GeneOrGeneProduct",
       "required": true,
-      "any_of": [
-        {
-          "range": "Gene",
-          "@type": "AnonymousSlotExpression"
-        },
-        {
-          "range": "Protein",
-          "@type": "AnonymousSlotExpression"
-        },
-        {
-          "range": "RNAProduct",
-          "@type": "AnonymousSlotExpression"
-        }
-      ],
+      "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -23735,22 +23221,10 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "subject",
-      "range": "NamedThing",
+      "range": "GeneOrGeneProduct",
       "required": true,
-      "any_of": [
-        {
-          "range": "Gene",
-          "@type": "AnonymousSlotExpression"
-        },
-        {
-          "range": "Protein",
-          "@type": "AnonymousSlotExpression"
-        },
-        {
-          "range": "RNAProduct",
-          "@type": "AnonymousSlotExpression"
-        }
-      ],
+      "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -23858,22 +23332,10 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "subject",
-      "range": "NamedThing",
+      "range": "GeneOrGeneProduct",
       "required": true,
-      "any_of": [
-        {
-          "range": "Gene",
-          "@type": "AnonymousSlotExpression"
-        },
-        {
-          "range": "Protein",
-          "@type": "AnonymousSlotExpression"
-        },
-        {
-          "range": "RNAProduct",
-          "@type": "AnonymousSlotExpression"
-        }
-      ],
+      "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -24711,22 +24173,10 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "subject",
-      "range": "NamedThing",
+      "range": "GeneOrGeneProduct",
       "required": true,
-      "any_of": [
-        {
-          "range": "Gene",
-          "@type": "AnonymousSlotExpression"
-        },
-        {
-          "range": "Protein",
-          "@type": "AnonymousSlotExpression"
-        },
-        {
-          "range": "RNAProduct",
-          "@type": "AnonymousSlotExpression"
-        }
-      ],
+      "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -25049,22 +24499,10 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "subject",
-      "range": "NamedThing",
+      "range": "GeneOrGeneProduct",
       "required": true,
-      "any_of": [
-        {
-          "range": "Gene",
-          "@type": "AnonymousSlotExpression"
-        },
-        {
-          "range": "Protein",
-          "@type": "AnonymousSlotExpression"
-        },
-        {
-          "range": "RNAProduct",
-          "@type": "AnonymousSlotExpression"
-        }
-      ],
+      "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -25172,22 +24610,10 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "subject",
-      "range": "NamedThing",
+      "range": "GeneOrGeneProduct",
       "required": true,
-      "any_of": [
-        {
-          "range": "Gene",
-          "@type": "AnonymousSlotExpression"
-        },
-        {
-          "range": "Protein",
-          "@type": "AnonymousSlotExpression"
-        },
-        {
-          "range": "RNAProduct",
-          "@type": "AnonymousSlotExpression"
-        }
-      ],
+      "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -26380,22 +25806,10 @@
       "role": "regulatory gene",
       "is_usage_slot": true,
       "usage_slot_name": "subject",
-      "range": "NamedThing",
+      "range": "ChemicalEntityOrGeneOrGeneProduct",
       "required": true,
-      "any_of": [
-        {
-          "range": "ChemicalEntity",
-          "@type": "AnonymousSlotExpression"
-        },
-        {
-          "range": "Gene",
-          "@type": "AnonymousSlotExpression"
-        },
-        {
-          "range": "gene product",
-          "@type": "AnonymousSlotExpression"
-        }
-      ],
+      "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -26431,22 +25845,10 @@
       "role": "regulated gene",
       "is_usage_slot": true,
       "usage_slot_name": "object",
-      "range": "NamedThing",
+      "range": "GeneOrGeneProduct",
       "required": true,
-      "any_of": [
-        {
-          "range": "Gene",
-          "@type": "AnonymousSlotExpression"
-        },
-        {
-          "range": "Protein",
-          "@type": "AnonymousSlotExpression"
-        },
-        {
-          "range": "RNAProduct",
-          "@type": "AnonymousSlotExpression"
-        }
-      ],
+      "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -26911,26 +26313,10 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "subject",
-      "range": "NamedThing",
+      "range": "GeneOrGeneProduct",
       "required": true,
-      "any_of": [
-        {
-          "range": "Gene",
-          "@type": "AnonymousSlotExpression"
-        },
-        {
-          "range": "GeneFamily",
-          "@type": "AnonymousSlotExpression"
-        },
-        {
-          "range": "Protein",
-          "@type": "AnonymousSlotExpression"
-        },
-        {
-          "range": "RNAProduct",
-          "@type": "AnonymousSlotExpression"
-        }
-      ],
+      "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -43986,9 +43372,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2026-04-20T17:10:50",
-  "source_file_size": 502263,
-  "generation_date": "2026-04-20T17:11:00",
+  "source_file_date": "2026-04-20T17:22:05",
+  "source_file_size": 499458,
+  "generation_date": "2026-04-20T17:22:13",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",

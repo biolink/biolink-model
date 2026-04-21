@@ -5454,22 +5454,8 @@
                     ]
                 },
                 "object": {
-                    "anyOf": [
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "string"
-                        }
-                    ],
-                    "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
-                    "type": "string"
+                    "$ref": "#/$defs/GeneOrGeneProductOrGeneFamily",
+                    "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object."
                 },
                 "object_category": {
                     "description": "Used to hold the biolink class/category of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
@@ -7285,19 +7271,8 @@
                     ]
                 },
                 "object": {
-                    "anyOf": [
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "string"
-                        }
-                    ],
-                    "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
-                    "type": "string"
+                    "$ref": "#/$defs/GeneOrGeneProduct",
+                    "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object."
                 },
                 "object_category": {
                     "description": "Used to hold the biolink class/category of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
@@ -8807,19 +8782,8 @@
                     ]
                 },
                 "subject": {
-                    "anyOf": [
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "string"
-                        }
-                    ],
-                    "description": "gene in which variation is shown to cause the disease.",
-                    "type": "string"
+                    "$ref": "#/$defs/GeneOrGeneProduct",
+                    "description": "gene in which variation is shown to cause the disease."
                 },
                 "subject_aspect_qualifier": {
                     "description": "Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the subject of an association (aka: statement).",
@@ -12442,19 +12406,8 @@
                     ]
                 },
                 "object": {
-                    "anyOf": [
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "string"
-                        }
-                    ],
-                    "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
-                    "type": "string"
+                    "$ref": "#/$defs/GeneOrGeneProduct",
+                    "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object."
                 },
                 "object_category": {
                     "description": "Used to hold the biolink class/category of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
@@ -12608,17 +12561,8 @@
                     ]
                 },
                 "subject": {
-                    "anyOf": [
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "string"
-                        },
-                        {}
-                    ],
-                    "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
-                    "type": "string"
+                    "$ref": "#/$defs/ChemicalEntityOrGeneOrGeneProduct",
+                    "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object."
                 },
                 "subject_category": {
                     "description": "Used to hold the biolink class/category of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
@@ -15551,19 +15495,8 @@
                     ]
                 },
                 "object": {
-                    "anyOf": [
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "string"
-                        }
-                    ],
-                    "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
-                    "type": "string"
+                    "$ref": "#/$defs/GeneOrGeneProduct",
+                    "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object."
                 },
                 "object_aspect_qualifier": {
                     "$ref": "#/$defs/GeneOrGeneProductOrChemicalEntityAspectEnum",
@@ -21525,19 +21458,8 @@
                     ]
                 },
                 "subject": {
-                    "anyOf": [
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "string"
-                        }
-                    ],
-                    "description": "gene in which variation is shown to correlate with the disease.",
-                    "type": "string"
+                    "$ref": "#/$defs/GeneOrGeneProduct",
+                    "description": "gene in which variation is shown to correlate with the disease."
                 },
                 "subject_aspect_qualifier": {
                     "description": "Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the subject of an association (aka: statement).",
@@ -26186,19 +26108,8 @@
                     ]
                 },
                 "object": {
-                    "anyOf": [
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "string"
-                        }
-                    ],
-                    "description": "the gene or gene product that is affected by the drug",
-                    "type": "string"
+                    "$ref": "#/$defs/GeneOrGeneProduct",
+                    "description": "the gene or gene product that is affected by the drug"
                 },
                 "object_category": {
                     "description": "Used to hold the biolink class/category of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
@@ -26345,15 +26256,6 @@
                     ]
                 },
                 "subject": {
-                    "anyOf": [
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "string"
-                        },
-                        {}
-                    ],
                     "description": "the drug that is an interactor",
                     "type": "string"
                 },
@@ -27063,19 +26965,8 @@
                     ]
                 },
                 "subject": {
-                    "anyOf": [
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "string"
-                        }
-                    ],
-                    "description": "gene in which variation is correlated with the disease in a protective manner, or if the product produced by the gene can be targeted by a small molecule and this leads to a protective or improving disease state.",
-                    "type": "string"
+                    "$ref": "#/$defs/GeneOrGeneProduct",
+                    "description": "gene in which variation is correlated with the disease in a protective manner, or if the product produced by the gene can be targeted by a small molecule and this leads to a protective or improving disease state."
                 },
                 "subject_aspect_qualifier": {
                     "$ref": "#/$defs/GeneOrGeneProductOrChemicalEntityAspectEnum",
@@ -32500,19 +32391,8 @@
                     ]
                 },
                 "subject": {
-                    "anyOf": [
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "string"
-                        }
-                    ],
-                    "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
-                    "type": "string"
+                    "$ref": "#/$defs/ChemicalEntityOrGeneOrGeneProduct",
+                    "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object."
                 },
                 "subject_aspect_qualifier": {
                     "$ref": "#/$defs/GeneOrGeneProductOrChemicalEntityAspectEnum",
@@ -33015,19 +32895,8 @@
                     ]
                 },
                 "subject": {
-                    "anyOf": [
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "string"
-                        }
-                    ],
-                    "description": "A gene that has a role in modeling the disease. This may be a model organism ortholog of a known disease gene, or it may be a gene whose mutants recapitulate core features of the disease.",
-                    "type": "string"
+                    "$ref": "#/$defs/GeneOrGeneProduct",
+                    "description": "A gene that has a role in modeling the disease. This may be a model organism ortholog of a known disease gene, or it may be a gene whose mutants recapitulate core features of the disease."
                 },
                 "subject_aspect_qualifier": {
                     "$ref": "#/$defs/GeneOrGeneProductOrChemicalEntityAspectEnum",
@@ -33469,17 +33338,8 @@
                     ]
                 },
                 "object": {
-                    "anyOf": [
-                        {
-                            "type": "string"
-                        },
-                        {},
-                        {
-                            "type": "string"
-                        }
-                    ],
-                    "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
-                    "type": "string"
+                    "$ref": "#/$defs/GeneOrGeneProduct",
+                    "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object."
                 },
                 "object_category": {
                     "description": "Used to hold the biolink class/category of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
@@ -34090,19 +33950,8 @@
                     ]
                 },
                 "subject": {
-                    "anyOf": [
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "string"
-                        }
-                    ],
-                    "description": "A gene that has a role in modeling the disease. This may be a model organism ortholog of a known disease gene, or it may be a gene whose mutants recapitulate core features of the disease.",
-                    "type": "string"
+                    "$ref": "#/$defs/GeneOrGeneProduct",
+                    "description": "A gene that has a role in modeling the disease. This may be a model organism ortholog of a known disease gene, or it may be a gene whose mutants recapitulate core features of the disease."
                 },
                 "subject_aspect_qualifier": {
                     "$ref": "#/$defs/GeneOrGeneProductOrChemicalEntityAspectEnum",
@@ -34605,22 +34454,8 @@
                     ]
                 },
                 "subject": {
-                    "anyOf": [
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "string"
-                        }
-                    ],
-                    "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
-                    "type": "string"
+                    "$ref": "#/$defs/GeneOrGeneProduct",
+                    "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object."
                 },
                 "subject_category": {
                     "description": "Used to hold the biolink class/category of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
@@ -35048,22 +34883,8 @@
                     ]
                 },
                 "subject": {
-                    "anyOf": [
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "string"
-                        }
-                    ],
-                    "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
-                    "type": "string"
+                    "$ref": "#/$defs/GeneOrGeneProductOrGeneFamily",
+                    "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object."
                 },
                 "subject_category": {
                     "description": "Used to hold the biolink class/category of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
@@ -35332,19 +35153,8 @@
                     ]
                 },
                 "object": {
-                    "anyOf": [
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "string"
-                        }
-                    ],
-                    "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
-                    "type": "string"
+                    "$ref": "#/$defs/ChemicalEntityOrGeneOrGeneProduct",
+                    "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object."
                 },
                 "object_aspect_qualifier": {
                     "$ref": "#/$defs/GeneOrGeneProductOrChemicalEntityAspectEnum",
@@ -35516,19 +35326,8 @@
                     ]
                 },
                 "subject": {
-                    "anyOf": [
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "string"
-                        }
-                    ],
-                    "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
-                    "type": "string"
+                    "$ref": "#/$defs/ChemicalEntityOrGeneOrGeneProduct",
+                    "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object."
                 },
                 "subject_category": {
                     "description": "Used to hold the biolink class/category of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
@@ -35981,19 +35780,8 @@
                     ]
                 },
                 "subject": {
-                    "anyOf": [
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "string"
-                        }
-                    ],
-                    "description": "gene in which variation is correlated with the disease",
-                    "type": "string"
+                    "$ref": "#/$defs/GeneOrGeneProduct",
+                    "description": "gene in which variation is correlated with the disease"
                 },
                 "subject_aspect_qualifier": {
                     "$ref": "#/$defs/GeneOrGeneProductOrChemicalEntityAspectEnum",
@@ -36451,19 +36239,8 @@
                     ]
                 },
                 "subject": {
-                    "anyOf": [
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "string"
-                        }
-                    ],
-                    "description": "Gene or gene product positively within the specified anatomical entity (or subclass, i.e. cellular component) location.",
-                    "type": "string"
+                    "$ref": "#/$defs/GeneOrGeneProduct",
+                    "description": "Gene or gene product positively within the specified anatomical entity (or subclass, i.e. cellular component) location."
                 },
                 "subject_category": {
                     "description": "Used to hold the biolink class/category of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
@@ -36739,19 +36516,8 @@
                     ]
                 },
                 "object": {
-                    "anyOf": [
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "string"
-                        }
-                    ],
-                    "description": "the object gene in the association. If the relation is symmetric, subject vs object is arbitrary. We allow a gene product to stand as a proxy for the gene or vice versa.",
-                    "type": "string"
+                    "$ref": "#/$defs/GeneOrGeneProduct",
+                    "description": "the object gene in the association. If the relation is symmetric, subject vs object is arbitrary. We allow a gene product to stand as a proxy for the gene or vice versa."
                 },
                 "object_category": {
                     "description": "Used to hold the biolink class/category of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
@@ -36922,19 +36688,8 @@
                     ]
                 },
                 "subject": {
-                    "anyOf": [
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "string"
-                        }
-                    ],
-                    "description": "the subject gene in the association. If the relation is symmetric, subject vs object is arbitrary. We allow a gene product to stand as a proxy for the gene or vice versa.",
-                    "type": "string"
+                    "$ref": "#/$defs/GeneOrGeneProduct",
+                    "description": "the subject gene in the association. If the relation is symmetric, subject vs object is arbitrary. We allow a gene product to stand as a proxy for the gene or vice versa."
                 },
                 "subject_category": {
                     "description": "Used to hold the biolink class/category of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
@@ -37624,19 +37379,8 @@
                     ]
                 },
                 "object": {
-                    "anyOf": [
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "string"
-                        }
-                    ],
-                    "description": "the object gene in the association. If the relation is symmetric, subject vs object is arbitrary. We allow a gene product to stand as a proxy for the gene or vice versa.",
-                    "type": "string"
+                    "$ref": "#/$defs/GeneOrGeneProduct",
+                    "description": "the object gene in the association. If the relation is symmetric, subject vs object is arbitrary. We allow a gene product to stand as a proxy for the gene or vice versa."
                 },
                 "object_category": {
                     "description": "Used to hold the biolink class/category of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
@@ -37789,19 +37533,8 @@
                     ]
                 },
                 "subject": {
-                    "anyOf": [
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "string"
-                        }
-                    ],
-                    "description": "the subject gene in the association. If the relation is symmetric, subject vs object is arbitrary. We allow a gene product to stand as a proxy for the gene or vice versa.",
-                    "type": "string"
+                    "$ref": "#/$defs/GeneOrGeneProduct",
+                    "description": "the subject gene in the association. If the relation is symmetric, subject vs object is arbitrary. We allow a gene product to stand as a proxy for the gene or vice versa."
                 },
                 "subject_category": {
                     "description": "Used to hold the biolink class/category of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
@@ -39057,19 +38790,8 @@
                     ]
                 },
                 "subject": {
-                    "anyOf": [
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "string"
-                        }
-                    ],
-                    "description": "the gene or gene product entity that participates or influences the pathway",
-                    "type": "string"
+                    "$ref": "#/$defs/GeneOrGeneProduct",
+                    "description": "the gene or gene product entity that participates or influences the pathway"
                 },
                 "subject_category": {
                     "description": "Used to hold the biolink class/category of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
@@ -39560,19 +39282,8 @@
                     ]
                 },
                 "subject": {
-                    "anyOf": [
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "string"
-                        }
-                    ],
-                    "description": "gene in which variation is correlated with the phenotypic feature",
-                    "type": "string"
+                    "$ref": "#/$defs/GeneOrGeneProduct",
+                    "description": "gene in which variation is correlated with the phenotypic feature"
                 },
                 "subject_aspect_qualifier": {
                     "$ref": "#/$defs/GeneOrGeneProductOrChemicalEntityAspectEnum",
@@ -56249,19 +55960,8 @@
                     ]
                 },
                 "object": {
-                    "anyOf": [
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "string"
-                        }
-                    ],
-                    "description": "the object gene in the association. If the relation is symmetric, subject vs object is arbitrary. We allow a gene product to stand as a proxy for the gene or vice versa.",
-                    "type": "string"
+                    "$ref": "#/$defs/GeneOrGeneProduct",
+                    "description": "the object gene in the association. If the relation is symmetric, subject vs object is arbitrary. We allow a gene product to stand as a proxy for the gene or vice versa."
                 },
                 "object_category": {
                     "description": "Used to hold the biolink class/category of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
@@ -56420,19 +56120,8 @@
                     ]
                 },
                 "subject": {
-                    "anyOf": [
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "string"
-                        }
-                    ],
-                    "description": "the subject gene in the association. If the relation is symmetric, subject vs object is arbitrary. We allow a gene product to stand as a proxy for the gene or vice versa.",
-                    "type": "string"
+                    "$ref": "#/$defs/GeneOrGeneProduct",
+                    "description": "the subject gene in the association. If the relation is symmetric, subject vs object is arbitrary. We allow a gene product to stand as a proxy for the gene or vice versa."
                 },
                 "subject_category": {
                     "description": "Used to hold the biolink class/category of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
@@ -56707,17 +56396,6 @@
                     ]
                 },
                 "object": {
-                    "anyOf": [
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "string"
-                        }
-                    ],
                     "description": "the object gene in the association. If the relation is symmetric, subject vs object is arbitrary. We allow a gene product to stand as a proxy for the gene or vice versa.",
                     "type": "string"
                 },
@@ -56878,17 +56556,6 @@
                     ]
                 },
                 "subject": {
-                    "anyOf": [
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "string"
-                        }
-                    ],
                     "description": "the subject gene in the association. If the relation is symmetric, subject vs object is arbitrary. We allow a gene product to stand as a proxy for the gene or vice versa.",
                     "type": "string"
                 },
@@ -63749,19 +63416,8 @@
                     ]
                 },
                 "object": {
-                    "anyOf": [
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "string"
-                        }
-                    ],
-                    "description": "the chemical element that is the target of the statement",
-                    "type": "string"
+                    "$ref": "#/$defs/GeneOrGeneProduct",
+                    "description": "the chemical element that is the target of the statement"
                 },
                 "object_category": {
                     "description": "Used to hold the biolink class/category of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",

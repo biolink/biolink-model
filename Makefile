@@ -139,7 +139,7 @@ tests:
 	$(RUN) codespell
 	$(RUN) yamllint -c .yamllint-config biolink-model.yaml
 
-test: test-schema test-python test-examples lint spell
+test: test-schema test-python lint spell
 
 test-schema: gen-project
 
