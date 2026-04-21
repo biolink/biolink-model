@@ -706,6 +706,11 @@
          "@id": "applied_to_treat"
       },
       "aspect_qualifier": {
+         "@context": {
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
          "@id": "aspect_qualifier"
       },
       "associated_environmental_context": {
@@ -2073,6 +2078,11 @@
          "@id": "rdf:object"
       },
       "object_aspect_qualifier": {
+         "@context": {
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
          "@id": "object_aspect_qualifier"
       },
       "object_category": {
@@ -2529,6 +2539,11 @@
          "@id": "rdf:subject"
       },
       "subject_aspect_qualifier": {
+         "@context": {
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
          "@id": "subject_aspect_qualifier"
       },
       "subject_category": {

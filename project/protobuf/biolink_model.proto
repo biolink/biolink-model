@@ -472,9 +472,9 @@ message BehaviorToBehavioralFeatureAssociation
   behavior subject = 0
   behavioralFeature object = 0
   frequencyValue frequencyQualifier = 0
-  string subjectAspectQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
   directionQualifierEnum subjectDirectionQualifier = 0
-  string objectAspectQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum objectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
   uriorcurie qualifiedPredicate = 0
   disease diseaseContextQualifier = 0
@@ -1035,9 +1035,9 @@ message CaseToPhenotypicFeatureAssociation
   boolean negated = 0
   onset onsetQualifier = 0
   frequencyValue frequencyQualifier = 0
-  string subjectAspectQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
   directionQualifierEnum subjectDirectionQualifier = 0
-  string objectAspectQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum objectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
   uriorcurie qualifiedPredicate = 0
   disease diseaseContextQualifier = 0
@@ -1152,7 +1152,7 @@ message CausalGeneToDiseaseAssociation
  repeated  string type = 0
  repeated  uriorcurie category = 0
   string subjectFormOrVariantQualifier = 0
-  string subjectAspectQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
   string allelicRequirement = 0
   uriorcurie qualifiedPredicate = 0
@@ -1258,9 +1258,9 @@ message CellLineAsAModelOfDiseaseAssociation
  repeated  string anatomicalContextQualifier = 0
   cellLine subject = 0
   frequencyValue frequencyQualifier = 0
-  string subjectAspectQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
   directionQualifierEnum subjectDirectionQualifier = 0
-  string objectAspectQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum objectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
   uriorcurie qualifiedPredicate = 0
  }
@@ -2106,9 +2106,9 @@ message ChemicalOrDrugOrTreatmentAdverseEventAssociation
   uriorcurie objectSpecializationQualifier = 0
  repeated  string anatomicalContextQualifier = 0
   frequencyValue frequencyQualifier = 0
-  string subjectAspectQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
   directionQualifierEnum subjectDirectionQualifier = 0
-  string objectAspectQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum objectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
   uriorcurie qualifiedPredicate = 0
  }
@@ -2169,9 +2169,9 @@ message ChemicalOrDrugOrTreatmentSideEffectAssociation
   uriorcurie objectSpecializationQualifier = 0
  repeated  string anatomicalContextQualifier = 0
   frequencyValue frequencyQualifier = 0
-  string subjectAspectQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
   directionQualifierEnum subjectDirectionQualifier = 0
-  string objectAspectQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum objectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
   uriorcurie qualifiedPredicate = 0
  }
@@ -2232,9 +2232,9 @@ message ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation
   uriorcurie objectSpecializationQualifier = 0
  repeated  string anatomicalContextQualifier = 0
   frequencyValue frequencyQualifier = 0
-  string subjectAspectQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
   directionQualifierEnum subjectDirectionQualifier = 0
-  string objectAspectQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum objectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
   uriorcurie qualifiedPredicate = 0
  }
@@ -2527,7 +2527,7 @@ message CommonDataElement
   string format = 0
   date creationDate = 0
  }
-// A complex chemical exposure is an intake of a chemical mixture (e.g. gasoline), other than a drug.
+// A complex chemical exposure is an intake of a chemical mixture, other than a drug.
 message ComplexChemicalExposure
  {
   iriType iri = 0
@@ -2736,7 +2736,7 @@ message CorrelatedGeneToDiseaseAssociation
   float zScore = 0
   float diseasesConfidenceScore = 0
   string subjectFormOrVariantQualifier = 0
-  string subjectAspectQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
   string allelicRequirement = 0
   uriorcurie qualifiedPredicate = 0
@@ -2745,7 +2745,7 @@ message CorrelatedGeneToDiseaseAssociation
   uriorcurie predicate = 0
   frequencyValue frequencyQualifier = 0
   directionQualifierEnum subjectDirectionQualifier = 0
-  string objectAspectQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum objectAspectQualifier = 0
   disease diseaseContextQualifier = 0
  }
 // an item that refers to a collection of data from a data source.
@@ -2884,7 +2884,7 @@ message DiagnosticAid
   uriorcurie taxon = 0
  repeated  uriorcurie category = 0
  }
-// A disease is a disposition to undergo pathological processes that exists in an organism because of one or more disorders in that organism.
+// A disease is a disposition to undergo pathological processes that exists in an organism because of one or more disorders in that organism. A disorder of structure or function, especially one that produces specific signs, phenotypes or symptoms or that affects a specific location and is not simply a direct result of physical injury.
 message Disease
  {
   string id = 0
@@ -2983,7 +2983,7 @@ message DiseaseOrPhenotypicFeature
   labelType inTaxonLabel = 0
   geneticInheritance inheritance = 0
  }
-// A disease or phenotypic feature state, when viewed as an exposure, represents an precondition, leading to or influencing an outcome, e.g. HIV predisposing an individual to infections; a relative deficiency of skin pigmentation predisposing an individual to skin cancer.
+// A disease or phenotypic feature state, when viewed as an exposure, represented as a precondition, leading to or influencing an outcome,.
 message DiseaseOrPhenotypicFeatureExposure
  {
   iriType iri = 0
@@ -3228,9 +3228,9 @@ message DiseaseToPhenotypicFeatureAssociation
   double hasQuotient = 0
   double hasPercentage = 0
   frequencyValue frequencyQualifier = 0
-  string subjectAspectQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
   directionQualifierEnum subjectDirectionQualifier = 0
-  string objectAspectQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum objectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
   uriorcurie qualifiedPredicate = 0
   disease diseaseContextQualifier = 0
@@ -3411,7 +3411,7 @@ message DrugToGeneInteractionExposure
  repeated  quantityValue hasQuantitativeValue = 0
  repeated  gene hasGeneOrGeneProduct = 0
  }
-// An association between a gene (or gene product) and a disease in which the gene is classified by its druggability (e.g., via the IDG/Pharos target development-level tiers). Used to represent gene-disease links whose therapeutic tractability is of interest.
+// An association between a gene (or gene product) and a disease in which the gene is classified by its druggability (e.g., via the IDG/Pharos target development-level tiers).
 message DruggableGeneToDiseaseAssociation
  {
   string id = 0
@@ -3473,7 +3473,7 @@ message DruggableGeneToDiseaseAssociation
   geneToDiseasePredicateEnum predicate = 0
   frequencyValue frequencyQualifier = 0
   directionQualifierEnum subjectDirectionQualifier = 0
-  string objectAspectQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum objectAspectQualifier = 0
   disease diseaseContextQualifier = 0
  }
 // An association between any entity and a disease, capturing clinical context such as approval status, research phase, FDA regulatory approvals, and number of cases.
@@ -3958,9 +3958,9 @@ message ExposureEventToPhenotypicFeatureAssociation
  repeated  uriorcurie category = 0
   exposureEvent subject = 0
   frequencyValue frequencyQualifier = 0
-  string subjectAspectQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
   directionQualifierEnum subjectDirectionQualifier = 0
-  string objectAspectQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum objectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
   uriorcurie qualifiedPredicate = 0
   disease diseaseContextQualifier = 0
@@ -3970,7 +3970,7 @@ message ExposureEventToPhenotypicFeatureAssociation
   double hasQuotient = 0
   double hasPercentage = 0
  }
-// A substance of plant, animal, or artificial origin consumed by a living organism to provide essential nutrients, energy, and support growth and the processes of life, or to satisfy other health needs or provide a social or organoleptic experience. experience.
+// A substance of plant, animal, or artificial origin consumed by a living organism to provide essential nutrients, energy, and support growth and the processes of life, or to satisfy other health needs or provide a social or organoleptic experience.
 message Food
  {
   string id = 0
@@ -4261,7 +4261,7 @@ message GeneAsAModelOfDiseaseAssociation
   geneOrGeneProduct subject = 0
   frequencyValue frequencyQualifier = 0
   directionQualifierEnum subjectDirectionQualifier = 0
-  string objectAspectQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum objectAspectQualifier = 0
   disease diseaseContextQualifier = 0
  }
 // any grouping of multiple genes or gene products related by common descent
@@ -4449,7 +4449,7 @@ message GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation
   integer semmedAgreementCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
-  geneOrGeneProduct subject = 0
+  geneOrGeneProductOrGeneFamily subject = 0
   anatomicalEntity object = 0
  }
 // Relationship between a gene or gene product or gene family to a specified biological process or activity (e.g. molecular activity, biological process or pathway).
@@ -5058,7 +5058,7 @@ message GeneToPhenotypicFeatureAssociation
   geneToPhenotypicFeaturePredicateEnum predicate = 0
   frequencyValue frequencyQualifier = 0
   directionQualifierEnum subjectDirectionQualifier = 0
-  string objectAspectQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum objectAspectQualifier = 0
   uriorcurie qualifiedPredicate = 0
   disease diseaseContextQualifier = 0
   biologicalSex sexQualifier = 0
@@ -5067,7 +5067,7 @@ message GeneToPhenotypicFeatureAssociation
   double hasQuotient = 0
   double hasPercentage = 0
  }
-// The pattern or 'mode' in which a particular genetic trait or disorder is passed from one generation to the next, e.g. autosomal dominant, autosomal recessive, etc.
+// The pattern or 'mode' in which a particular genetic trait or disorder is passed from one generation to the next.
 message GeneticInheritance
  {
   string id = 0
@@ -5275,9 +5275,9 @@ message GenotypeAsAModelOfDiseaseAssociation
   uriorcurie predicate = 0
   namedThing object = 0
   frequencyValue frequencyQualifier = 0
-  string subjectAspectQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
   directionQualifierEnum subjectDirectionQualifier = 0
-  string objectAspectQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum objectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
   uriorcurie qualifiedPredicate = 0
   disease diseaseContextQualifier = 0
@@ -5336,9 +5336,9 @@ message GenotypeToDiseaseAssociation
   uriorcurie predicate = 0
   namedThing object = 0
   frequencyValue frequencyQualifier = 0
-  string subjectAspectQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
   directionQualifierEnum subjectDirectionQualifier = 0
-  string objectAspectQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum objectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
   uriorcurie qualifiedPredicate = 0
   disease diseaseContextQualifier = 0
@@ -5502,9 +5502,9 @@ message GenotypeToPhenotypicFeatureAssociation
   uriorcurie predicate = 0
   genotype subject = 0
   frequencyValue frequencyQualifier = 0
-  string subjectAspectQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
   directionQualifierEnum subjectDirectionQualifier = 0
-  string objectAspectQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum objectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
   uriorcurie qualifiedPredicate = 0
   disease diseaseContextQualifier = 0
@@ -6616,7 +6616,7 @@ message NamedThing
   uriorcurie taxon = 0
  repeated  uriorcurie category = 0
  }
-// An association in which the subject entity is linked to the likelihood of the object entity occurring, manifesting, or being observed. Subject and object may each be qualified by aspect and context, and the association may be further qualified by a population context (e.g., a cohort or demographic group in which the likelihood applies).
+// An association in which the subject entity is linked to the likelihood of the object entity occurring, manifesting, or being observed. Subject and object may each be qualified by aspect and context, and the association may be further qualified by a population context.
 message NamedThingAssociatedWithLikelihoodOfNamedThingAssociation
  {
   string id = 0
@@ -6666,11 +6666,11 @@ message NamedThingAssociatedWithLikelihoodOfNamedThingAssociation
  repeated  string type = 0
  repeated  uriorcurie category = 0
   namedThing subject = 0
-  string subjectAspectQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
   ontologyClass subjectContextQualifier = 0
   uriorcurie predicate = 0
   namedThing object = 0
-  string objectAspectQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum objectAspectQualifier = 0
   ontologyClass objectContextQualifier = 0
   populationOfIndividualOrganisms populationContextQualifier = 0
  }
@@ -6730,7 +6730,7 @@ message NucleicAcidEntity
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
  }
-// A linear nucleotide sequence pattern that is widespread and has, or is conjectured to have, a biological significance. e.g. the TATA box promoter motif, transcription factor binding consensus sequences.
+// A linear nucleotide sequence pattern that is widespread and has, or is conjectured to have, a biological significance. consensus sequences.
 message NucleicAcidSequenceMotif
  {
   string id = 0
@@ -6751,7 +6751,7 @@ message NucleicAcidSequenceMotif
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
  }
-// A chemical modification of a histone protein within a nucleosome octomer or a substitution of a histone with a variant histone isoform. e.g. Histone 4 Lysine 20 methylation (H4K20me), histone variant H2AZ substituting H2A.
+// A chemical modification of a histone protein within a nucleosome octomer or a substitution of a histone with a variant histone isoform.
 message NucleosomeModification
  {
   string id = 0
@@ -7069,9 +7069,9 @@ message OrganismalEntityAsAModelOfDiseaseAssociation
  repeated  uriorcurie category = 0
   organismalEntity subject = 0
   frequencyValue frequencyQualifier = 0
-  string subjectAspectQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
   directionQualifierEnum subjectDirectionQualifier = 0
-  string objectAspectQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum objectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
   uriorcurie qualifiedPredicate = 0
   disease diseaseContextQualifier = 0
@@ -7212,7 +7212,7 @@ message Patent
   string id = 0
   labelType name = 0
  }
-// An abnormal anatomical structure, when viewed as an exposure, representing an precondition, leading to or influencing an outcome, e.g. thrombosis leading to an ischemic disease outcome.
+// An abnormal anatomical structure, when viewed as an exposure, represented as a precondition, leading to or influencing an outcome.
 message PathologicalAnatomicalExposure
  {
   iriType iri = 0
@@ -7285,7 +7285,7 @@ message PathologicalProcess
  repeated  namedThing hasOutput = 0
  repeated  physicalEntity enabledBy = 0
  }
-// A pathological process, when viewed as an exposure, representing a precondition, leading to or influencing an outcome, e.g. autoimmunity leading to disease.
+// A pathological process, when viewed as an exposure, representing a precondition, leading to or influencing an outcome.
 message PathologicalProcessExposure
  {
   iriType iri = 0
@@ -7431,9 +7431,9 @@ message PhenotypicFeatureToDiseaseAssociation
  repeated  uriorcurie category = 0
   uriorcurie predicate = 0
   frequencyValue frequencyQualifier = 0
-  string subjectAspectQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
   directionQualifierEnum subjectDirectionQualifier = 0
-  string objectAspectQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum objectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
   uriorcurie qualifiedPredicate = 0
   disease diseaseContextQualifier = 0
@@ -7496,9 +7496,9 @@ message PhenotypicFeatureToPhenotypicFeatureAssociation
  repeated  string type = 0
  repeated  uriorcurie category = 0
   frequencyValue frequencyQualifier = 0
-  string subjectAspectQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
   directionQualifierEnum subjectDirectionQualifier = 0
-  string objectAspectQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum objectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
   uriorcurie qualifiedPredicate = 0
   biologicalSex sexQualifier = 0
@@ -7754,7 +7754,7 @@ message PosttranslationalModification
 message PredicateMapping
  {
   string mappedPredicate = 0
-  string subjectAspectQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
   directionQualifierEnum subjectDirectionQualifier = 0
   string subjectFormOrVariantQualifier = 0
   string subjectPartQualifier = 0
@@ -7762,7 +7762,7 @@ message PredicateMapping
   string subjectContextQualifier = 0
   uriorcurie predicate = 0
   uriorcurie qualifiedPredicate = 0
-  string objectAspectQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum objectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
   string objectFormOrVariantQualifier = 0
   string objectPartQualifier = 0
@@ -7931,7 +7931,7 @@ message Protein
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
  }
-// A conserved part of protein sequence and (tertiary) structure that can evolve, function, and exist independently of the rest of the protein chain. Protein domains maintain their structure and function independently of the proteins in which they are found. e.g. an SH3 domain.
+// A conserved part of protein sequence and (tertiary) structure that can evolve, function, and exist independently of the rest of the protein chain. Protein domains maintain their structure and function independently of the proteins in which they are found.
 message ProteinDomain
  {
   string id = 0
@@ -7996,7 +7996,7 @@ message ProteinIsoform
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
  }
-// Any ‘published’ piece of information. Publications are considered broadly to include any document or document part made available in print or on the web - which may include scientific journal issues, individual articles, and books - as well as things like pre-prints, white papers, patents, drug labels, web pages, protocol documents,  and even a part of a publication if of significant knowledge scope (e.g. a figure, figure legend, or section highlighted by NLP).
+// Any ‘published’ piece of information. Publications are considered broadly to include any document or document part made available in print or on the web - which may include scientific journal issues, individual articles, and books - as well as things like pre-prints, white papers, patents, drug labels, web pages, protocol documents,  and even a part of a publication if of significant knowledge scope.
 message Publication
  {
   iriType iri = 0
@@ -8565,7 +8565,7 @@ message SocioeconomicAttribute
   namedThing hasQualitativeValue = 0
   iriType iri = 0
  }
-// A socioeconomic exposure is a factor relating to social and financial status of an affected individual (e.g. poverty).
+// A socioeconomic exposure is a factor relating to social and financial status of an affected individual.
 message SocioeconomicExposure
  {
   iriType iri = 0
@@ -8920,15 +8920,15 @@ message VariantAsAModelOfDiseaseAssociation
   uriorcurie predicate = 0
   namedThing object = 0
   frequencyValue frequencyQualifier = 0
-  string subjectAspectQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
   directionQualifierEnum subjectDirectionQualifier = 0
-  string objectAspectQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum objectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
   uriorcurie qualifiedPredicate = 0
   disease diseaseContextQualifier = 0
   sequenceVariant subject = 0
  }
-// An association between a sequence variant and a disease, in which the allele state of the variant is linked to the disease state (e.g., as a pathogenic, likely-pathogenic, or risk-conferring variant).
+// An association between a sequence variant and a disease, in which the allele state of the variant is linked to the disease state.
 message VariantToDiseaseAssociation
  {
   string id = 0
@@ -8981,9 +8981,9 @@ message VariantToDiseaseAssociation
   uriorcurie predicate = 0
   namedThing object = 0
   frequencyValue frequencyQualifier = 0
-  string subjectAspectQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
   directionQualifierEnum subjectDirectionQualifier = 0
-  string objectAspectQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum objectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
   uriorcurie qualifiedPredicate = 0
   disease diseaseContextQualifier = 0
@@ -9151,9 +9151,9 @@ message VariantToPhenotypicFeatureAssociation
  repeated  uriorcurie category = 0
   sequenceVariant subject = 0
   frequencyValue frequencyQualifier = 0
-  string subjectAspectQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
   directionQualifierEnum subjectDirectionQualifier = 0
-  string objectAspectQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum objectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
   uriorcurie qualifiedPredicate = 0
   disease diseaseContextQualifier = 0
