@@ -3687,6 +3687,7 @@ slots:
     description: >-
       holds between two genes or gene products that are part of in the same biological pathway
     is_a: coexists with
+    domain: gene or gene product
     range: gene or gene product
     in_subset:
       - translator_minimal
@@ -7076,7 +7077,7 @@ classes:
       - CHEBI:51086
     examples:
       - value: CHEBI:35469
-        description: antidepressant
+        description: antidepressant role
 
   biological sex:
     description: >-
@@ -7329,10 +7330,8 @@ classes:
       - supporting text section type
     examples:
       - object:
-          id: tmkp:4959a77a71d2801a37b2cacac3571be61a231f9f0a7c0e42a6242cd387dd96b4
+          id: tmkp:id
           category: biolink:TextMiningStudyResult
-          xref:
-            - PMID:29120909
           supporting_text:
             - "Here, we report two new cases of rivaroxaban-induced hepatitis."
           subject_location_in_text:
@@ -7797,7 +7796,7 @@ classes:
           in the Edge.
     examples:
       - object:
-          id: urn:uuid:9e8cce70-d34a-4f24-b969-1f3885faacde
+          id: urn:uuid:id
           category: biolink:RetrievalSource
           resource_id: infores:text-mining-provider-targeted
           resource_role: primary_knowledge_source
@@ -8774,7 +8773,6 @@ classes:
       A substance of plant, animal, or artificial origin consumed by a living organism to provide essential
       nutrients, energy, and support growth and the processes of life, or to satisfy other health needs or
       provide a social or organoleptic experience.
-      experience.
     exact_mappings:
       - CHEBI:33290
       - FOODON:00002403
@@ -9051,7 +9049,9 @@ classes:
     aliases: ['condition', 'disorder', 'medical condition']
     description: >-
       A disease is a disposition to undergo pathological processes that exists in an organism because of one or
-      more disorders in that organism.
+      more disorders in that organism. A disorder of structure or function, especially one that produces specific
+      signs, phenotypes or symptoms or that affects a specific location and is not simply a
+      direct result of physical injury.
     is_a: disease or phenotypic feature
     exact_mappings:
       - MONDO:0000001
@@ -9364,7 +9364,7 @@ classes:
     description: >-
       A union of gene loci or gene products.
       Frequently an identifier for one will be used as proxy for another
-    is_a: gene or gene product or gene family
+    is_a: macromolecular machine mixin
     mixin: true
     id_prefixes:
       - CHEMBL.TARGET
@@ -9729,6 +9729,7 @@ classes:
       - MIR
       - HGNC
       - WormBase
+      - mirbase
     in_subset:
       - model_organism_database
 
@@ -11203,8 +11204,7 @@ classes:
       An association in which the subject entity is linked to the likelihood
       of the object entity occurring, manifesting, or being observed.
       Subject and object may each be qualified by aspect and context, and
-      the association may be further qualified by a population context
-      (e.g., a cohort or demographic group in which the likelihood applies).
+      the association may be further qualified by a population context.
     is_a: association
     slots:
       - subject
@@ -11478,29 +11478,6 @@ classes:
           qualified_predicate: biolink:causes
           species_context_qualifier: NCBITaxon:9606
       - object:
-          subject: PUBCHEM.COMPOUND:155414240  # N'-(1-methyl-4-propan-2-yloxypyrazolo[5,4-d]pyrimidin-6-yl)-1-phenylethane-1,2-diamine
-          predicate: biolink:affects
-          object: NCBIGene:144233  # BCDIN3D
-          category: biolink:ChemicalAffectsGeneAssociation
-          knowledge_level: knowledge_assertion
-          agent_type: automated_agent
-          publications: ["CHEMBL.DOCUMENT:CHEMBL5393441"]
-          object_aspect_qualifier: activity
-          object_direction_qualifier: decreased
-          causal_mechanism_qualifier: inhibition
-          qualified_predicate: biolink:causes
-          species_context_qualifier: NCBITaxon:9606
-      - object:
-          subject: CHEBI:188651  # Retosiban
-          predicate: biolink:directly_physically_interacts_with
-          object: NCBIGene:5021  # OXTR
-          category: biolink:ChemicalAffectsGeneAssociation
-          knowledge_level: knowledge_assertion
-          agent_type: manual_agent
-          publications: ["CHEMBL.DOCUMENT:CHEMBL2107839", "PMID:20027670"]
-          causal_mechanism_qualifier: binding
-          species_context_qualifier: NCBITaxon:9606
-      - object:
           subject: CHEBI:91447  # 4-methyl-3-[[1-methyl-6-(3-pyridinyl)-4-pyrazolo[3,4-d]pyrimidinyl]amino]-N-[3-(trifluoromethyl)phenyl]benzamide
           predicate: biolink:directly_physically_interacts_with
           object: NCBIGene:3313  # HSPA9
@@ -11520,24 +11497,6 @@ classes:
           publications: ["PMID:20190787"]
           species_context_qualifier: NCBITaxon:9606
       - object:
-          subject: CHEBI:94758  # Roxane
-          predicate: biolink:has_substrate
-          object: NCBIGene:60925271 # FE838_RS09985
-          category: biolink:ChemicalAffectsGeneAssociation
-          knowledge_level: knowledge_assertion
-          agent_type: automated_agent
-          publications: ["PMID:31158845"]
-          species_context_qualifier: NCBITaxon:818
-      - object:
-          subject: CHEMBL.COMPOUND:CHEMBL2108341  # SONTUZUMAB
-          predicate: biolink:interacts_with
-          object: NCBIGene:4582  # MUC1
-          category: biolink:ChemicalAffectsGeneAssociation
-          knowledge_level: knowledge_assertion
-          agent_type: manual_agent
-          publications: ["CHEMBL.DOCUMENT:CHEMBL2107839", "PMID:19811637", "PMID:21878535"]
-          species_context_qualifier: NCBITaxon:9606
-      - object:
           subject: CHEMBL.COMPOUND:CHEMBL1743027  # GIRENTUXIMAB
           predicate: biolink:interacts_with
           object: NCBIGene:768  # CA9
@@ -11546,18 +11505,6 @@ classes:
           agent_type: manual_agent
           publications: ["http://www.wilex.de/portfolio-english/rencarex/therapeutic-target/", "PMID:11941456"]
           species_context_qualifier: NCBITaxon:9606
-      - object:
-          subject: UNII:1OQF7TT3PF  # Relebactam
-          predicate: biolink:affects
-          object: UniProtKB:Q93DC4  # Q93DC4_KLEPN beta-lactamase (trembl)
-          category: biolink:ChemicalAffectsGeneAssociation
-          knowledge_level: knowledge_assertion
-          agent_type: manual_agent
-          publications: ["PMID:31383664"]
-          object_aspect_qualifier: activity
-          object_direction_qualifier: decreased
-          causal_mechanism_qualifier: inhibition
-          qualified_predicate: biolink:causes
       - object:
           subject: CHEBI:3546  # cepharanthine
           predicate: biolink:affects
@@ -11586,27 +11533,6 @@ classes:
           subject_aspect_qualifier: hydrolysis
           subject_direction_qualifier: increased
           qualified_predicate: biolink:causes
-          species_context_qualifier: NCBITaxon:9606
-      - object:
-          subject: NCBIGene:6616  # SNAP25
-          predicate: biolink:affects
-          object: CHEMBL.COMPOUND:CHEMBL4594539  # TRENIBOTULINUMTOXINE
-          category: biolink:GeneAffectsChemicalAssociation
-          knowledge_level: knowledge_assertion
-          agent_type: manual_agent
-          publications: ["PMID:12760419"]
-          subject_aspect_qualifier: hydrolysis
-          subject_direction_qualifier: increased
-          qualified_predicate: biolink:causes
-          species_context_qualifier: NCBITaxon:9606
-      - object:
-          subject: CHEBI:5556  # guanadrel sulfate
-          predicate: biolink:has_substrate
-          object: NCBIGene:6530  # SLC6A2
-          category: biolink:GeneAffectsChemicalAssociation
-          knowledge_level: knowledge_assertion
-          agent_type: manual_agent
-          publications: ["ISBN:0443-059748 PP. 157", "PMID:3896742"]
           species_context_qualifier: NCBITaxon:9606
       - object:
           subject: CHEBI:3172  # bretylium
@@ -12417,8 +12343,7 @@ classes:
     description: >-
       An association between a gene (or gene product) and a disease in which
       the gene is classified by its druggability (e.g., via the IDG/Pharos
-      target development-level tiers). Used to represent gene-disease links
-      whose therapeutic tractability is of interest.
+      target development-level tiers).
     is_a: gene to disease association
     slots:
       - druggable gene category
@@ -12579,8 +12504,7 @@ classes:
   variant to disease association:
     description: >-
       An association between a sequence variant and a disease, in which the
-      allele state of the variant is linked to the disease state (e.g., as
-      a pathogenic, likely-pathogenic, or risk-conferring variant).
+      allele state of the variant is linked to the disease state.
     is_a: association
     comments:
       - TODO decide no how to model pathogenicity
@@ -13045,14 +12969,6 @@ classes:
           knowledge_level: prediction
           agent_type: manual_validation_of_automated_agent
       - object:
-          subject: NCBIGene:65106  # Arl6ip5
-          predicate: biolink:acts_upstream_of_or_within_negative_effect
-          object: GO:0072659  # protein localization to plasma membrane
-          category: biolink:GeneToGoTermAssociation
-          knowledge_level: knowledge_assertion
-          agent_type: manual_agent
-          publications: ["PMID:22210510"]
-      - object:
           subject: NCBIGene:18072  # Nhlh2
           predicate: biolink:acts_upstream_of_or_within_positive_effect
           object: GO:0006915  # apoptotic process
@@ -13060,13 +12976,6 @@ classes:
           knowledge_level: knowledge_assertion
           agent_type: manual_agent
           publications: ["PMID:17573818"]
-      - object:
-          subject: NCBIGene:20375  # Spi1
-          predicate: biolink:acts_upstream_of_positive_effect
-          object: GO:0036462  # TRAIL-activated apoptotic signaling pathway
-          category: biolink:GeneToGoTermAssociation
-          knowledge_level: prediction
-          agent_type: manual_validation_of_automated_agent
       - object:
           subject: NCBIGene:12168  # Bmpr2
           predicate: biolink:colocalizes_with
@@ -13089,13 +12998,6 @@ classes:
           knowledge_level: prediction
           agent_type: automated_agent
       - object:
-          subject: GO:0005688  # U6 snRNP
-          predicate: biolink:has_part
-          object: NCBIGene:120103204  # LOC120103204
-          category: biolink:GeneToGoTermAssociation
-          knowledge_level: prediction
-          agent_type: automated_agent
-      - object:
           subject: NCBIGene:258177  # Or4c117
           predicate: biolink:located_in
           object: GO:0016020  # membrane
@@ -13103,13 +13005,6 @@ classes:
           knowledge_level: prediction
           agent_type: automated_agent
           publications: ["PMID:14611657"]
-      - object:
-          subject: NCBIGene:499342  # Cd274
-          predicate: biolink:related_to
-          object: GO:1905399  # regulation of activated CD4-positive, alpha-beta T cell apoptotic process
-          category: biolink:GeneToGoTermAssociation
-          knowledge_level: prediction
-          agent_type: manual_validation_of_automated_agent
 
   entity to disease association:
     description: >-
@@ -13135,23 +13030,9 @@ classes:
           knowledge_level: knowledge_assertion
           agent_type: manual_agent
       - object:
-          subject: UNII:DPT0O3T46P  # Pembrolizumab
-          predicate: biolink:in_clinical_trials_for
-          object: UMLS:C4527184  # Pathologic Stage III Cutaneous Melanoma AJCC v8
-          category: biolink:EntityToDiseaseAssociation
-          knowledge_level: knowledge_assertion
-          agent_type: manual_agent
-      - object:
           subject: CHEBI:9150  # simvastatin
           predicate: biolink:treats
           object: UMLS:C0520863  # Diastolic dysfunction
-          category: biolink:EntityToDiseaseAssociation
-          knowledge_level: knowledge_assertion
-          agent_type: manual_agent
-      - object:
-          subject: CHEBI:66880  # florbetapir F-18
-          predicate: biolink:treats
-          object: MONDO:0004975  # Alzheimer disease
           category: biolink:EntityToDiseaseAssociation
           knowledge_level: knowledge_assertion
           agent_type: manual_agent
@@ -13163,13 +13044,6 @@ classes:
           knowledge_level: observation
           agent_type: manual_validation_of_automated_agent
       - object:
-          subject: CHEBI:70735  # lurasidone
-          predicate: biolink:applied_to_treat
-          object: MONDO:0005180  # Parkinson disease
-          category: biolink:EntityToDiseaseAssociation
-          knowledge_level: observation
-          agent_type: manual_validation_of_automated_agent
-      - object:
           subject: RXCUI:1367436  # 21 DAY ethinyl estradiol 0.000625 MG/HR / etonogestrel 0.005 MG/HR Vaginal System
           predicate: biolink:contraindicated_in
           object: MONDO:0004981  # atrial fibrillation
@@ -13177,30 +13051,6 @@ classes:
           knowledge_level: knowledge_assertion
           agent_type: manual_validation_of_automated_agent
           publications: ["a280f164-2833-4f37-96e3-a857c91f77f2"]
-      - object:
-          subject: RXCUI:1165206  # glipizide / metformin Pill
-          predicate: biolink:contraindicated_in
-          object: MONDO:0001106  # kidney failure
-          category: biolink:EntityToDiseaseAssociation
-          knowledge_level: knowledge_assertion
-          agent_type: manual_validation_of_automated_agent
-          publications: ["13be49d2-0ce9-a78a-e557-ded85ddc808f", "43fb007c-19bb-4a04-b47b-288a4f464c81", "59909d47-da42-411c-8e79-fc867974a283"]
-      - object:
-          subject: CHEBI:74947  # 2-(2,6-dioxopiperidin-3-yl)-1H-isoindole-1,3(2H)-dione
-          predicate: biolink:treats
-          object: HP:0010783  # Erythema
-          category: biolink:EntityToDiseaseAssociation
-          knowledge_level: knowledge_assertion
-          agent_type: manual_validation_of_automated_agent
-          publications: ["2eda833b-1357-4ed4-a093-194524fcb061"]
-      - object:
-          subject: CHEBI:4712  # doxercalciferol
-          predicate: biolink:treats
-          object: MONDO:0005240  # kidney disorder
-          category: biolink:EntityToDiseaseAssociation
-          knowledge_level: knowledge_assertion
-          agent_type: manual_validation_of_automated_agent
-          publications: ["2ed2f592-27a7-4c10-a18a-21a3f221d3b1", "3376536b-043d-478a-b129-7ce11ec94e3e", "356fb38a-791c-48f0-9312-6203ae57d80c", "e99a1d29-3989-4437-999e-4e9cab8b9b1e"]
 
   entity to phenotypic feature association:
     description: >-
@@ -13226,23 +13076,9 @@ classes:
           knowledge_level: knowledge_assertion
           agent_type: manual_agent
       - object:
-          subject: UNII:3U02EL437C  # Clindamycin
-          predicate: biolink:in_clinical_trials_for
-          object: NCIT:C143951  # Wound Infection, CTCAE
-          category: biolink:EntityToPhenotypicFeatureAssociation
-          knowledge_level: knowledge_assertion
-          agent_type: manual_agent
-      - object:
           subject: CHEBI:6339  # etoricoxib
           predicate: biolink:treats
           object: HP:0001822  # Hallux valgus
-          category: biolink:EntityToPhenotypicFeatureAssociation
-          knowledge_level: knowledge_assertion
-          agent_type: manual_agent
-      - object:
-          subject: UMLS:C4766174  # Fosaprepitant for Injection
-          predicate: biolink:treats
-          object: NCIT:C57896  # Vomiting, CTCAE
           category: biolink:EntityToPhenotypicFeatureAssociation
           knowledge_level: knowledge_assertion
           agent_type: manual_agent
@@ -13254,13 +13090,6 @@ classes:
           knowledge_level: observation
           agent_type: manual_validation_of_automated_agent
       - object:
-          subject: CHEBI:4031  # cyclosporin A
-          predicate: biolink:applied_to_treat
-          object: MONDO:0011996  # chronic myelogenous leukemia, BCR-ABL1 positive
-          category: biolink:EntityToPhenotypicFeatureAssociation
-          knowledge_level: observation
-          agent_type: manual_validation_of_automated_agent
-      - object:
           subject: RXCUI:617430  # amoxicillin 80 MG/ML / clavulanate 11.4 MG/ML Oral Suspension
           predicate: biolink:contraindicated_in
           object: HP:0001410  # Decreased liver function
@@ -13268,22 +13097,6 @@ classes:
           knowledge_level: knowledge_assertion
           agent_type: manual_validation_of_automated_agent
           publications: ["2970fe7e-9e1f-47aa-85ad-663ee15c7e06", "a5fa252a-d39e-4099-a230-b665fbb97a80", "b897c800-24a2-4e76-8668-498c5515c3d0", "babf3b8d-f2ce-407d-9407-728c45eb19ee", "d74e93e5-11c9-434e-a60c-4a4f911dd0f8"]
-      - object:
-          subject: CHEBI:135530  # solifenacin
-          predicate: biolink:contraindicated_in
-          object: HP:0000016  # Urinary retention
-          category: biolink:EntityToPhenotypicFeatureAssociation
-          knowledge_level: knowledge_assertion
-          agent_type: manual_validation_of_automated_agent
-          publications: ["100678f1-313a-4e99-ae77-319c610a830f", "e433dc68-6b2a-4c48-beae-4ec946f1ff1e"]
-      - object:
-          subject: CHEBI:143117  # lorlatinib
-          predicate: biolink:treats
-          object: MONDO:0008903  # lung cancer
-          category: biolink:EntityToPhenotypicFeatureAssociation
-          knowledge_level: knowledge_assertion
-          agent_type: manual_validation_of_automated_agent
-          publications: ["004f93d7-a1cd-4b67-9207-31cdcb5c5976", "2b34d62d-e02a-4af3-bc0d-1571dd4ee76d"]
 
    ## -----------------
    ## SEQUENCE FEATURES
@@ -13492,7 +13305,7 @@ classes:
       - object
     slot_usage:
       subject:
-        range: gene or gene product
+        range: gene or gene product or gene family
       object:
         range: anatomical entity
 
