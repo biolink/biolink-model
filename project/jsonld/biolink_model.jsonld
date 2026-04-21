@@ -2992,6 +2992,7 @@
     {
       "name": "type",
       "definition_uri": "https://w3id.org/biolink/vocab/type",
+      "description": "An rdf:type property asserting that an entity is an instance of a particular class. In Biolink the value is typically used to indicate the most specific category (e.g. the ontology type URI) of which the entity is an instance.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "mappings": [
         "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
@@ -3146,6 +3147,7 @@
     {
       "name": "reaction_balanced",
       "definition_uri": "https://w3id.org/biolink/vocab/reaction_balanced",
+      "description": "Indicates whether a chemical reaction is stoichiometrically balanced, i.e. whether the conservation of atoms (and charge) holds between the reactants and the products.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "association_slot",
       "domain": "Association",
@@ -3223,6 +3225,7 @@
     {
       "name": "exact_synonym",
       "definition_uri": "https://w3id.org/biolink/vocab/exact_synonym",
+      "description": "An alternate label for an entity that denotes exactly the same meaning as the primary label and is interchangeable with it in all contexts; corresponds to oboInOwl:hasExactSynonym.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "exact_mappings": [
         "http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"
@@ -3238,6 +3241,7 @@
     {
       "name": "broad_synonym",
       "definition_uri": "https://w3id.org/biolink/vocab/broad_synonym",
+      "description": "An alternate label for an entity whose meaning is broader (more general) than the primary label but is still useful as a lexical alternative; corresponds to oboInOwl:hasBroadSynonym.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "exact_mappings": [
         "http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym"
@@ -3253,6 +3257,7 @@
     {
       "name": "narrow_synonym",
       "definition_uri": "https://w3id.org/biolink/vocab/narrow_synonym",
+      "description": "An alternate label for an entity whose meaning is narrower (more specific) than the primary label, for example naming a particular sub-type; corresponds to oboInOwl:hasNarrowSynonym.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "exact_mappings": [
         "http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym"
@@ -3268,6 +3273,7 @@
     {
       "name": "related_synonym",
       "definition_uri": "https://w3id.org/biolink/vocab/related_synonym",
+      "description": "An alternate label that is related to the primary label but is neither exactly synonymous nor cleanly broader or narrower; useful as a lexical pointer but not for strict equivalence. Corresponds to oboInOwl:hasRelatedSynonym.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "exact_mappings": [
         "http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"
@@ -3666,6 +3672,7 @@
     {
       "name": "aggregate_statistic",
       "definition_uri": "https://w3id.org/biolink/vocab/aggregate_statistic",
+      "description": "An abstract grouping for summary numerical measures (e.g. count, total, quotient, percentage, rate) computed over a set of observations or a reference population, used to describe a property of an aggregated entity rather than an individual instance.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "node_property",
       "abstract": true,
@@ -3740,6 +3747,7 @@
     {
       "name": "has_taxonomic_rank",
       "definition_uri": "https://w3id.org/biolink/vocab/has_taxonomic_rank",
+      "description": "The taxonomic rank (e.g. species, genus, family, order, kingdom) assigned to an organism taxon.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "mappings": [
         "https://www.wikidata.org/entity/P105"
@@ -3757,6 +3765,7 @@
     {
       "name": "has_dataset",
       "definition_uri": "https://w3id.org/biolink/vocab/has_dataset",
+      "description": "Links a dataset version to the underlying dataset that it is a version of.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "broad_mappings": [
         "http://purl.org/dc/terms/source"
@@ -3774,6 +3783,7 @@
     {
       "name": "source_web_page",
       "definition_uri": "https://w3id.org/biolink/vocab/source_web_page",
+      "description": "A URL of a web page that documents or serves as the landing page for a data source.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "broad_mappings": [
         "http://purl.org/dc/terms/source"
@@ -3791,6 +3801,7 @@
     {
       "name": "source_logo",
       "definition_uri": "https://w3id.org/biolink/vocab/source_logo",
+      "description": "A URL referencing an image that serves as the visual logo of a data source.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "mappings": [
         "http://schema.org/logo"
@@ -3808,6 +3819,7 @@
     {
       "name": "retrieved_on",
       "definition_uri": "https://w3id.org/biolink/vocab/retrieved_on",
+      "description": "The date on which a dataset was retrieved or harvested from its original source, following pav:retrievedOn.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "exact_mappings": [
         "http://purl.org/pav/retrievedOn"
@@ -3822,6 +3834,7 @@
     {
       "name": "version_of",
       "definition_uri": "https://w3id.org/biolink/vocab/version_of",
+      "description": "Links a dataset version to the dataset summary of which it is a version, edition, or adaptation; corresponds to dct:isVersionOf.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "exact_mappings": [
         "http://purl.org/dc/terms/isVersionOf"
@@ -3836,6 +3849,7 @@
     {
       "name": "version",
       "definition_uri": "https://w3id.org/biolink/vocab/version",
+      "description": "A label identifying a particular release or edition of a dataset or resource, typically following a versioning scheme such as a semantic version string or a release date.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "broad_mappings": [
         "http://purl.org/pav/version",
@@ -3851,6 +3865,7 @@
     {
       "name": "license",
       "definition_uri": "https://w3id.org/biolink/vocab/license",
+      "description": "A legal instrument under which the information content entity is made available, typically identified by a URL or CURIE pointing to a license document; corresponds to dct:license.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "exact_mappings": [
         "http://purl.org/dc/terms/license"
@@ -3871,6 +3886,7 @@
     {
       "name": "rights",
       "definition_uri": "https://w3id.org/biolink/vocab/rights",
+      "description": "A statement describing rights held in or over the information content entity, such as copyright, intellectual property, or access and usage rights; corresponds to dct:rights.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "exact_mappings": [
         "http://purl.org/dc/terms/rights"
@@ -3888,6 +3904,7 @@
     {
       "name": "format",
       "definition_uri": "https://w3id.org/biolink/vocab/format",
+      "description": "The file format, physical medium, or representational form of the information content entity; for digital resources typically a MIME type or format identifier. Corresponds to dct:format.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "exact_mappings": [
         "http://purl.org/dc/terms/format",
@@ -3906,6 +3923,7 @@
     {
       "name": "created_with",
       "definition_uri": "https://w3id.org/biolink/vocab/created_with",
+      "description": "An identifier (typically a URL or CURIE) of the software tool, service, or pipeline used to create the dataset; corresponds to pav:createdWith.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "exact_mappings": [
         "http://purl.org/pav/createdWith"
@@ -3920,6 +3938,7 @@
     {
       "name": "download_url",
       "definition_uri": "https://w3id.org/biolink/vocab/download_url",
+      "description": "A URL from which the information content entity may be directly downloaded in its native serialization; corresponds to dcat:downloadURL.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "mappings": [
         "http://www.w3.org/ns/dcat#downloadURL"
@@ -3934,6 +3953,7 @@
     {
       "name": "dataset_download_url",
       "definition_uri": "https://w3id.org/biolink/vocab/dataset_download_url",
+      "description": "A URL from which the dataset itself may be directly downloaded; corresponds to dcat:downloadURL specialised for the dataset domain.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "mappings": [
         "http://www.w3.org/ns/dcat#downloadURL"
@@ -3948,6 +3968,7 @@
     {
       "name": "distribution_download_url",
       "definition_uri": "https://w3id.org/biolink/vocab/distribution_download_url",
+      "description": "A URL from which a specific distribution (serialization or format) of a dataset may be directly downloaded; corresponds to dcat:downloadURL specialised for the dataset distribution domain.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "exact_mappings": [
         "http://www.w3.org/ns/dcat#downloadURL"
@@ -3965,6 +3986,7 @@
     {
       "name": "ingest_date",
       "definition_uri": "https://w3id.org/biolink/vocab/ingest_date",
+      "description": "The date on which a dataset version was ingested into the local knowledge graph or downstream data system; a specialization of dct:issued for the ingestion context.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "broad_mappings": [
         "http://purl.org/dc/terms/issued"
@@ -3982,6 +4004,7 @@
     {
       "name": "has_distribution",
       "definition_uri": "https://w3id.org/biolink/vocab/has_distribution",
+      "description": "Links a dataset version to one of its dataset distributions (a specific representation or serialization of the dataset); corresponds to dct:distribution.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "mappings": [
         "http://purl.org/dc/terms/distribution"
@@ -4620,6 +4643,7 @@
     {
       "name": "has_zygosity",
       "definition_uri": "https://w3id.org/biolink/vocab/has_zygosity",
+      "description": "The zygosity (e.g. homozygous, heterozygous, hemizygous) characterising a genotype or nucleic acid entity at a particular locus.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "node_property",
       "domain": "NucleicAcidEntity",
@@ -4858,7 +4882,7 @@
     {
       "name": "is_supplement",
       "definition_uri": "https://w3id.org/biolink/vocab/is_supplement",
-      "description": "",
+      "description": "A boolean or categorical flag indicating that a chemical mixture is marketed, formulated, or used as a dietary or nutritional supplement rather than as a conventional drug or food.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "node_property",
       "domain": "ChemicalMixture",
@@ -4873,7 +4897,7 @@
     {
       "name": "trade_name",
       "definition_uri": "https://w3id.org/biolink/vocab/trade_name",
-      "description": "",
+      "description": "A proprietary brand or trade name under which a chemical entity (typically a drug) is manufactured and marketed by a vendor.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "node_property",
       "domain": "ChemicalEntity",
@@ -4888,7 +4912,7 @@
     {
       "name": "available_from",
       "definition_uri": "https://w3id.org/biolink/vocab/available_from",
-      "description": "",
+      "description": "The regulatory or commercial availability channel through which a drug or chemical entity can be obtained, drawn from DrugAvailabilityEnum (e.g. over the counter, prescription only).",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "node_property",
       "domain": "NamedThing",
@@ -4904,7 +4928,7 @@
     {
       "name": "is_toxic",
       "definition_uri": "https://w3id.org/biolink/vocab/is_toxic",
-      "description": "",
+      "description": "A boolean flag indicating whether a chemical entity is toxic under ordinary conditions of exposure.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "node_property",
       "domain": "NamedThing",
@@ -4973,7 +4997,7 @@
     {
       "name": "animal_model_available_from",
       "definition_uri": "https://w3id.org/biolink/vocab/animal_model_available_from",
-      "description": "",
+      "description": "A resource (such as a model organism database) from which an animal model representing the given disease or phenotypic feature may be obtained.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "node_property",
       "domain": "NamedThing",
@@ -5034,7 +5058,7 @@
     {
       "name": "FDA_adverse_event_level",
       "definition_uri": "https://w3id.org/biolink/vocab/FDA_adverse_event_level",
-      "description": "",
+      "description": "The level or severity grade of an adverse event as classified by FDA adverse-event terminology, drawn from FDAIDAAdverseEventEnum; used on adverse-event associations.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "association_slot",
       "domain": "Association",
@@ -5560,6 +5584,7 @@
     {
       "name": "subject_context_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/subject_context_qualifier",
+      "description": "A qualifier describing the biological, experimental, or environmental context (for example cell type, tissue, developmental stage, or assay condition) in which the subject of an association holds.",
       "in_subset": [
         "translator_minimal"
       ],
@@ -5778,6 +5803,7 @@
     {
       "name": "object_context_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/object_context_qualifier",
+      "description": "A qualifier describing the biological, experimental, or environmental context (for example cell type, tissue, developmental stage, or assay condition) in which the object of an association holds.",
       "in_subset": [
         "translator_minimal"
       ],
@@ -6970,6 +6996,7 @@
           "@type": "Annotation"
         }
       ],
+      "description": "Holds between a gene or gene product and a cellular component in which it carries out its molecular function; corresponds to RO:0002432 'is active in'.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "exact_mappings": [
         "http://purl.obolibrary.org/obo/RO_0002432"
@@ -7010,6 +7037,7 @@
           "@type": "Annotation"
         }
       ],
+      "description": "Holds between a gene or gene product and a biological process such that the molecular function of the gene product, by way of a chain of causally linked events, is upstream of and contributes to the execution of the process; corresponds to RO:0002263.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "exact_mappings": [
         "http://purl.obolibrary.org/obo/RO_0002263"
@@ -7050,6 +7078,7 @@
           "@type": "Annotation"
         }
       ],
+      "description": "Holds between a gene or gene product and a biological process where the molecular function of the gene product is upstream of and has a positive (activating or increasing) effect on the execution of the process; corresponds to RO:0004034.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "exact_mappings": [
         "http://purl.obolibrary.org/obo/RO_0004034"
@@ -7090,6 +7119,7 @@
           "@type": "Annotation"
         }
       ],
+      "description": "Holds between a gene or gene product and a biological process where the molecular function of the gene product is upstream of and has a negative (inhibiting or decreasing) effect on the execution of the process; corresponds to RO:0004035.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "exact_mappings": [
         "http://purl.obolibrary.org/obo/RO_0004035"
@@ -7130,6 +7160,7 @@
           "@type": "Annotation"
         }
       ],
+      "description": "Holds between a gene or gene product and a biological process when the gene product either acts upstream of the process or participates in it; used when the more specific causal relationship is not known. Corresponds to RO:0002264.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "exact_mappings": [
         "http://purl.obolibrary.org/obo/RO_0002264"
@@ -7170,6 +7201,7 @@
           "@type": "Annotation"
         }
       ],
+      "description": "Holds between a gene or gene product and a biological process when the gene product acts upstream of or within the process with a positive (activating or increasing) effect on its execution. Corresponds to RO:0004032.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "exact_mappings": [
         "http://purl.obolibrary.org/obo/RO_0004032"
@@ -7210,6 +7242,7 @@
           "@type": "Annotation"
         }
       ],
+      "description": "Holds between a gene or gene product and a biological process when the gene product acts upstream of or within the process with a negative (inhibiting or decreasing) effect on its execution. Corresponds to RO:0004033.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "exact_mappings": [
         "http://purl.obolibrary.org/obo/RO_0004033"
@@ -7279,6 +7312,7 @@
     {
       "name": "contributor",
       "definition_uri": "https://w3id.org/biolink/vocab/contributor",
+      "description": "Links an information content entity (such as a dataset, publication, or software artefact) to an agent responsible for making contributions to it. Used as an abstract grouping predicate over more specific contribution roles (author, editor, publisher, provider). Corresponds to dct:contributor.",
       "comments": [
         "This is a grouping for predicates relating entities to their associated contributors realizing them"
       ],
@@ -7613,6 +7647,7 @@
           "@type": "Annotation"
         }
       ],
+      "description": "Holds between two entities that physically interact by way of one or more intermediary entities, rather than through direct physical contact.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "physically_interacts_with",
       "domain": "NamedThing",
@@ -8949,7 +8984,7 @@
           "@type": "Annotation"
         }
       ],
-      "description": "",
+      "description": "A statistical association, observed in genetic studies (e.g. GWAS, linkage analysis, or rare-variant burden testing), between a genetic entity such as a gene, locus, or variant and a phenotype, disease, or trait.",
       "in_subset": [
         "translator_minimal"
       ],
@@ -10984,6 +11019,7 @@
           "@type": "Annotation"
         }
       ],
+      "description": "Holds between a macromolecular machine (typically an enzyme or ribozyme) and a biochemical reaction or process whose rate it accelerates, without itself being consumed, by lowering the activation energy.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "exact_mappings": [
         "http://purl.obolibrary.org/obo/RO_0002327"
@@ -11024,6 +11060,7 @@
           "@type": "Annotation"
         }
       ],
+      "description": "Holds between a biochemical reaction or catalytic process and a chemical entity that is acted upon (consumed or transformed) by that reaction.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "has_participant",
       "domain": "ChemicalEntityOrGeneOrGeneProduct",
@@ -11713,6 +11750,7 @@
           "@type": "Annotation"
         }
       ],
+      "description": "Holds between a process and an entity that is taken in and depleted by the process; for example a metabolite consumed in a biochemical reaction.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "narrow_mappings": [
         "http://purl.obolibrary.org/obo/RO_0004009"
@@ -11909,6 +11947,7 @@
           "@type": "Annotation"
         }
       ],
+      "description": "Links a genotype or genetic variant to a condition (disease or phenotypic feature) that is associated with it; corresponds to GENO:0000790.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "exact_mappings": [
         "http://purl.obolibrary.org/obo/GENO_0000790"
@@ -12589,6 +12628,7 @@
           "@type": "Annotation"
         }
       ],
+      "description": "Holds between an entity (e.g. a cell type) and a component that is present at higher amount than in a reference state or sibling entity; used for comparative compositional statements.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "narrow_mappings": [
         "http://purl.obolibrary.org/obo/CL_has_high_plasma_membrane_amount"
@@ -12632,6 +12672,7 @@
           "@type": "Annotation"
         }
       ],
+      "description": "Holds between an entity (e.g. a cell type) and a component that is present at lower amount than in a reference state or sibling entity; used for comparative compositional statements.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "narrow_mappings": [
         "http://purl.obolibrary.org/obo/CL_has_low_plasma_membrane_amount"
@@ -12675,6 +12716,7 @@
           "@type": "Annotation"
         }
       ],
+      "description": "Holds between an entity and a component that is absent from it relative to a reference type; for example a cell type lacking a particular organelle or a protein lacking a particular domain. Corresponds to CL:lacks_part / PR:lacks_part.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "exact_mappings": [
         "http://purl.obolibrary.org/obo/CL_lacks_part",
@@ -12717,6 +12759,7 @@
           "@type": "Annotation"
         }
       ],
+      "description": "Holds between two entities where the first develops, by one or more developmental processes, from the second; for example a cell type developing from a precursor cell type or a tissue developing from an embryonic primordium. Corresponds to RO:0002202.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "exact_mappings": [
         "http://purl.obolibrary.org/obo/BTO_develops_from",
@@ -15289,6 +15332,7 @@
     {
       "name": "organism_taxon_has_taxonomic_rank",
       "definition_uri": "https://w3id.org/biolink/vocab/has_taxonomic_rank",
+      "description": "The taxonomic rank (e.g. species, genus, family, order, kingdom) assigned to an organism taxon.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "mappings": [
         "https://www.wikidata.org/entity/P105"
@@ -19213,6 +19257,7 @@
     {
       "name": "named_thing_associated_with_likelihood_of_named_thing_association_subject_context_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/subject_context_qualifier",
+      "description": "A qualifier describing the biological, experimental, or environmental context (for example cell type, tissue, developmental stage, or assay condition) in which the subject of an association holds.",
       "in_subset": [
         "translator_minimal"
       ],
@@ -19272,6 +19317,7 @@
     {
       "name": "named_thing_associated_with_likelihood_of_named_thing_association_object_context_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/object_context_qualifier",
+      "description": "A qualifier describing the biological, experimental, or environmental context (for example cell type, tissue, developmental stage, or assay condition) in which the object of an association holds.",
       "in_subset": [
         "translator_minimal"
       ],
@@ -19504,6 +19550,7 @@
     {
       "name": "chemical_gene_interaction_association_subject_context_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/subject_context_qualifier",
+      "description": "A qualifier describing the biological, experimental, or environmental context (for example cell type, tissue, developmental stage, or assay condition) in which the subject of an association holds.",
       "in_subset": [
         "translator_minimal"
       ],
@@ -19668,6 +19715,7 @@
     {
       "name": "chemical_gene_interaction_association_object_context_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/object_context_qualifier",
+      "description": "A qualifier describing the biological, experimental, or environmental context (for example cell type, tissue, developmental stage, or assay condition) in which the object of an association holds.",
       "in_subset": [
         "translator_minimal"
       ],
@@ -20369,6 +20417,7 @@
     {
       "name": "chemical_affects_biological_entity_association_subject_context_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/subject_context_qualifier",
+      "description": "A qualifier describing the biological, experimental, or environmental context (for example cell type, tissue, developmental stage, or assay condition) in which the subject of an association holds.",
       "in_subset": [
         "translator_minimal"
       ],
@@ -20635,6 +20684,7 @@
     {
       "name": "chemical_affects_biological_entity_association_object_context_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/object_context_qualifier",
+      "description": "A qualifier describing the biological, experimental, or environmental context (for example cell type, tissue, developmental stage, or assay condition) in which the object of an association holds.",
       "in_subset": [
         "translator_minimal"
       ],
@@ -20941,6 +20991,7 @@
     {
       "name": "gene_affects_chemical_association_subject_context_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/subject_context_qualifier",
+      "description": "A qualifier describing the biological, experimental, or environmental context (for example cell type, tissue, developmental stage, or assay condition) in which the subject of an association holds.",
       "in_subset": [
         "translator_minimal"
       ],
@@ -21234,6 +21285,7 @@
     {
       "name": "gene_affects_chemical_association_object_context_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/object_context_qualifier",
+      "description": "A qualifier describing the biological, experimental, or environmental context (for example cell type, tissue, developmental stage, or assay condition) in which the object of an association holds.",
       "in_subset": [
         "translator_minimal"
       ],
@@ -22474,6 +22526,7 @@
     {
       "name": "case_to_variant_association_has_zygosity",
       "definition_uri": "https://w3id.org/biolink/vocab/has_zygosity",
+      "description": "The zygosity (e.g. homozygous, heterozygous, hemizygous) characterising a genotype or nucleic acid entity at a particular locus.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "has_zygosity",
       "domain": "CaseToVariantAssociation",
@@ -43412,9 +43465,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2026-04-20T17:50:16",
-  "source_file_size": 510593,
-  "generation_date": "2026-04-20T17:50:24",
+  "source_file_date": "2026-04-21T10:15:19",
+  "source_file_size": 520828,
+  "generation_date": "2026-04-21T10:15:29",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",

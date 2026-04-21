@@ -534,6 +534,10 @@ slots:
       - WIKIDATA_PROPERTY:P854
 
   type:
+    description: >-
+      An rdf:type property asserting that an entity is an instance of a particular class.
+      In Biolink the value is typically used to indicate the most specific category
+      (e.g. the ontology type URI) of which the entity is an instance.
     slot_uri: rdf:type
     domain: entity
     exact_mappings:
@@ -628,6 +632,9 @@ slots:
       - NCIT:C42677
 
   reaction balanced:
+    description: >-
+      Indicates whether a chemical reaction is stoichiometrically balanced, i.e. whether the
+      conservation of atoms (and charge) holds between the reactants and the products.
     is_a: association slot
     range: boolean
 
@@ -670,21 +677,34 @@ slots:
       - RXNORM:has_tradename
 
   exact synonym:
+    description: >-
+      An alternate label for an entity that denotes exactly the same meaning as the primary label
+      and is interchangeable with it in all contexts; corresponds to oboInOwl:hasExactSynonym.
     is_a: synonym
     exact_mappings:
       - oboInOwl:hasExactSynonym
 
   broad synonym:
+    description: >-
+      An alternate label for an entity whose meaning is broader (more general) than the primary label
+      but is still useful as a lexical alternative; corresponds to oboInOwl:hasBroadSynonym.
     is_a: synonym
     exact_mappings:
       - oboInOwl:hasBroadSynonym
 
   narrow synonym:
+    description: >-
+      An alternate label for an entity whose meaning is narrower (more specific) than the primary label,
+      for example naming a particular sub-type; corresponds to oboInOwl:hasNarrowSynonym.
     is_a: synonym
     exact_mappings:
       - oboInOwl:hasNarrowSynonym
 
   related synonym:
+    description: >-
+      An alternate label that is related to the primary label but is neither exactly synonymous nor
+      cleanly broader or narrower; useful as a lexical pointer but not for strict equivalence.
+      Corresponds to oboInOwl:hasRelatedSynonym.
     is_a: synonym
     exact_mappings:
       - oboInOwl:hasRelatedSynonym
@@ -896,6 +916,10 @@ slots:
    ## Statistics
 
   aggregate statistic:
+    description: >-
+      An abstract grouping for summary numerical measures (e.g. count, total, quotient,
+      percentage, rate) computed over a set of observations or a reference population,
+      used to describe a property of an aggregated entity rather than an individual instance.
     is_a: node property
     abstract: true
 
@@ -926,6 +950,8 @@ slots:
    ## Properties for Information Content Entity and Publication Nodes
 
   has taxonomic rank:
+    description: >-
+      The taxonomic rank (e.g. species, genus, family, order, kingdom) assigned to an organism taxon.
     is_a: node property
     range: taxonomic rank
     multivalued: false
@@ -933,6 +959,8 @@ slots:
       - WIKIDATA:P105
 
   has dataset:
+    description: >-
+      Links a dataset version to the underlying dataset that it is a version of.
     is_a: node property
     domain: dataset version
     range: dataset
@@ -940,17 +968,24 @@ slots:
       - dct:source
 
   source web page:
+    description: >-
+      A URL of a web page that documents or serves as the landing page for a data source.
     is_a: node property
     domain: dataset summary
     broad_mappings:
       - dct:source
 
   source logo:
+    description: >-
+      A URL referencing an image that serves as the visual logo of a data source.
     is_a: node property
     domain: dataset summary
     slot_uri: schema:logo
 
   retrieved on:
+    description: >-
+      The date on which a dataset was retrieved or harvested from its original source,
+      following pav:retrievedOn.
     is_a: node property
     domain: dataset
     range: date
@@ -958,6 +993,9 @@ slots:
       - pav:retrievedOn
 
   version of:
+    description: >-
+      Links a dataset version to the dataset summary of which it is a version, edition, or
+      adaptation; corresponds to dct:isVersionOf.
     is_a: node property
     domain: dataset version
     range: dataset summary
@@ -965,6 +1003,9 @@ slots:
       - dct:isVersionOf
 
   version:
+    description: >-
+      A label identifying a particular release or edition of a dataset or resource, typically
+      following a versioning scheme such as a semantic version string or a release date.
     is_a: node property
     domain: dataset
     broad_mappings:
@@ -972,6 +1013,9 @@ slots:
       - owl:versionInfo
 
   license:
+    description: >-
+      A legal instrument under which the information content entity is made available, typically
+      identified by a URL or CURIE pointing to a license document; corresponds to dct:license.
     is_a: node property
     domain: information content entity
     exact_mappings:
@@ -980,12 +1024,18 @@ slots:
       - WIKIDATA_PROPERTY:P275
 
   rights:
+    description: >-
+      A statement describing rights held in or over the information content entity, such as copyright,
+      intellectual property, or access and usage rights; corresponds to dct:rights.
     is_a: node property
     domain: information content entity
     exact_mappings:
       - dct:rights
 
   format:
+    description: >-
+      The file format, physical medium, or representational form of the information content entity;
+      for digital resources typically a MIME type or format identifier. Corresponds to dct:format.
     is_a: node property
     domain: information content entity
     exact_mappings:
@@ -993,34 +1043,52 @@ slots:
       - WIKIDATA_PROPERTY:P2701
 
   created with:
+    description: >-
+      An identifier (typically a URL or CURIE) of the software tool, service, or pipeline used
+      to create the dataset; corresponds to pav:createdWith.
     is_a: node property
     domain: dataset
     exact_mappings:
       - pav:createdWith
 
   download url:
+    description: >-
+      A URL from which the information content entity may be directly downloaded in its native
+      serialization; corresponds to dcat:downloadURL.
     is_a: node property
     domain: information content entity
     slot_uri: dcat:downloadURL
 
   dataset download url:
+    description: >-
+      A URL from which the dataset itself may be directly downloaded; corresponds to dcat:downloadURL
+      specialised for the dataset domain.
     is_a: node property
     domain: dataset
     slot_uri: dcat:downloadURL
 
   distribution download url:
+    description: >-
+      A URL from which a specific distribution (serialization or format) of a dataset may be directly
+      downloaded; corresponds to dcat:downloadURL specialised for the dataset distribution domain.
     is_a: node property
     domain: dataset distribution
     exact_mappings:
       - dcat:downloadURL
 
   ingest date:
+    description: >-
+      The date on which a dataset version was ingested into the local knowledge graph or downstream
+      data system; a specialization of dct:issued for the ingestion context.
     is_a: node property
     domain: dataset version
     broad_mappings:
       - dct:issued
 
   has distribution:
+    description: >-
+      Links a dataset version to one of its dataset distributions (a specific representation or
+      serialization of the dataset); corresponds to dct:distribution.
     is_a: node property
     domain: dataset version
     range: dataset distribution
@@ -1340,6 +1408,9 @@ slots:
       - OMIM:has_inheritance_type
 
   has zygosity:
+    description: >-
+      The zygosity (e.g. homozygous, heterozygous, hemizygous) characterising a genotype or
+      nucleic acid entity at a particular locus.
     is_a: node property
     domain: nucleic acid entity
     range: zygosity
@@ -1464,22 +1535,29 @@ slots:
 
   is supplement:
     description: >-
+      A boolean or categorical flag indicating that a chemical mixture is marketed, formulated, or used
+      as a dietary or nutritional supplement rather than as a conventional drug or food.
     is_a: node property
     domain: chemical mixture
 
   trade name:
     description: >-
+      A proprietary brand or trade name under which a chemical entity (typically a drug)
+      is manufactured and marketed by a vendor.
     is_a: node property
     domain: chemical entity
 
   available from:
     description: >-
+      The regulatory or commercial availability channel through which a drug or chemical entity
+      can be obtained, drawn from DrugAvailabilityEnum (e.g. over the counter, prescription only).
     is_a: node property
     multivalued: true
     range: DrugAvailabilityEnum
 
   is toxic:
     description: >-
+      A boolean flag indicating whether a chemical entity is toxic under ordinary conditions of exposure.
     is_a: node property
     multivalued: false
     range: boolean
@@ -1519,6 +1597,8 @@ slots:
 
   animal model available from:
     description: >-
+      A resource (such as a model organism database) from which an animal model representing the given
+      disease or phenotypic feature may be obtained.
     is_a: node property
     multivalued: true
     range: disease or phenotypic feature
@@ -1549,6 +1629,8 @@ slots:
 
   FDA adverse event level:
     description: >-
+      The level or severity grade of an adverse event as classified by FDA adverse-event terminology,
+      drawn from FDAIDAAdverseEventEnum; used on adverse-event associations.
     is_a: association slot
     range: FDAIDAAdverseEventEnum
 
@@ -1830,6 +1912,10 @@ slots:
       - translator_minimal
 
   subject context qualifier:
+    description: >-
+      A qualifier describing the biological, experimental, or environmental context (for example
+      cell type, tissue, developmental stage, or assay condition) in which the subject of an
+      association holds.
     is_a: context qualifier
     in_subset:
       - translator_minimal
@@ -1913,6 +1999,10 @@ slots:
       - translator_minimal
 
   object context qualifier:
+    description: >-
+      A qualifier describing the biological, experimental, or environmental context (for example
+      cell type, tissue, developmental stage, or assay condition) in which the object of an
+      association holds.
     is_a: context qualifier
     in_subset:
       - translator_minimal
@@ -2569,6 +2659,9 @@ slots:
     range: gene
 
   active in:
+    description: >-
+      Holds between a gene or gene product and a cellular component in which it carries out its
+      molecular function; corresponds to RO:0002432 'is active in'.
     is_a: related to at instance level
     domain: gene or gene product
     range: cellular component
@@ -2584,6 +2677,10 @@ slots:
     range: gene or gene product
 
   acts upstream of:
+    description: >-
+      Holds between a gene or gene product and a biological process such that the molecular function
+      of the gene product, by way of a chain of causally linked events, is upstream of and
+      contributes to the execution of the process; corresponds to RO:0002263.
     is_a: related to at instance level
     domain: gene or gene product
     range: biological process
@@ -2599,6 +2696,10 @@ slots:
     range: gene or gene product
 
   acts upstream of positive effect:
+    description: >-
+      Holds between a gene or gene product and a biological process where the molecular function
+      of the gene product is upstream of and has a positive (activating or increasing) effect on
+      the execution of the process; corresponds to RO:0004034.
     is_a: acts upstream of
     domain: gene or gene product
     range: biological process
@@ -2614,6 +2715,10 @@ slots:
     range: gene or gene product
 
   acts upstream of negative effect:
+    description: >-
+      Holds between a gene or gene product and a biological process where the molecular function
+      of the gene product is upstream of and has a negative (inhibiting or decreasing) effect on
+      the execution of the process; corresponds to RO:0004035.
     is_a: acts upstream of
     domain: gene or gene product
     range: biological process
@@ -2629,6 +2734,10 @@ slots:
     range: gene or gene product
 
   acts upstream of or within:
+    description: >-
+      Holds between a gene or gene product and a biological process when the gene product either
+      acts upstream of the process or participates in it; used when the more specific causal
+      relationship is not known. Corresponds to RO:0002264.
     is_a: acts upstream of
     domain: gene or gene product
     range: biological process
@@ -2644,6 +2753,10 @@ slots:
     range: gene or gene product
 
   acts upstream of or within positive effect:
+    description: >-
+      Holds between a gene or gene product and a biological process when the gene product acts
+      upstream of or within the process with a positive (activating or increasing) effect on its
+      execution. Corresponds to RO:0004032.
     is_a: acts upstream of or within
     domain: gene or gene product
     range: biological process
@@ -2659,6 +2772,10 @@ slots:
     range: gene or gene product
 
   acts upstream of or within negative effect:
+    description: >-
+      Holds between a gene or gene product and a biological process when the gene product acts
+      upstream of or within the process with a negative (inhibiting or decreasing) effect on its
+      execution. Corresponds to RO:0004033.
     is_a: acts upstream of or within
     domain: gene or gene product
     range: biological process
@@ -2694,6 +2811,11 @@ slots:
    ## Publication related predicates
 
   contributor:
+    description: >-
+      Links an information content entity (such as a dataset, publication, or software artefact) to
+      an agent responsible for making contributions to it. Used as an abstract grouping predicate
+      over more specific contribution roles (author, editor, publisher, provider). Corresponds to
+      dct:contributor.
     is_a: related to at instance level
     domain: agent
     range: information content entity
@@ -2870,6 +2992,9 @@ slots:
       - DGIdb:binder
 
   indirectly physically interacts with:
+    description: >-
+      Holds between two entities that physically interact by way of one or more intermediary
+      entities, rather than through direct physical contact.
     is_a: physically interacts with
     symmetric: true
     annotations:
@@ -3636,6 +3761,9 @@ slots:
   genetically associated with:
     is_a: associated with
     description: >-
+      A statistical association, observed in genetic studies (e.g. GWAS, linkage analysis,
+      or rare-variant burden testing), between a genetic entity such as a gene, locus, or
+      variant and a phenotype, disease, or trait.
     symmetric: true
     annotations:
       canonical_predicate: true
@@ -4252,7 +4380,6 @@ slots:
       of the presence or state of the disease or feature.
     domain: chemical entity or gene or gene product
     range: disease or phenotypic feature
-    inverse: has biomarker
     annotations:
       canonical_predicate: true
     in_subset:
@@ -4821,6 +4948,10 @@ slots:
       - SNOMED:has_recipient_category
 
   catalyzes:
+    description: >-
+      Holds between a macromolecular machine (typically an enzyme or ribozyme) and a biochemical
+      reaction or process whose rate it accelerates, without itself being consumed, by lowering
+      the activation energy.
     is_a: participates in
     annotations:
       canonical_predicate: true
@@ -4832,6 +4963,9 @@ slots:
     inverse: catalyzes
 
   has substrate:
+    description: >-
+      Holds between a biochemical reaction or catalytic process and a chemical entity that is
+      acted upon (consumed or transformed) by that reaction.
     is_a: has participant
     domain: chemical entity or gene or gene product
     range: chemical entity or gene or gene product
@@ -5194,6 +5328,9 @@ slots:
       - RO:0003001
 
   consumes:
+    description: >-
+      Holds between a process and an entity that is taken in and depleted by the process; for
+      example a metabolite consumed in a biochemical reaction.
     is_a: has input
     domain: named thing
     range: named thing
@@ -5297,6 +5434,9 @@ slots:
     inverse: has variant part
 
   related condition:
+    description: >-
+      Links a genotype or genetic variant to a condition (disease or phenotypic feature) that is
+      associated with it; corresponds to GENO:0000790.
     is_a: related to at instance level
     symmetric: true
     annotations:
@@ -5583,6 +5723,9 @@ slots:
       - NCIT:C16798
 
   has increased amount:
+    description: >-
+      Holds between an entity (e.g. a cell type) and a component that is present at higher amount
+      than in a reference state or sibling entity; used for comparative compositional statements.
     is_a: related to at instance level
     annotations:
       canonical_predicate: true
@@ -5595,6 +5738,9 @@ slots:
     inverse: has increased amount
 
   has decreased amount:
+    description: >-
+      Holds between an entity (e.g. a cell type) and a component that is present at lower amount
+      than in a reference state or sibling entity; used for comparative compositional statements.
     is_a: related to at instance level
     annotations:
       canonical_predicate: true
@@ -5607,6 +5753,10 @@ slots:
     inverse: has decreased amount
 
   lacks part:
+    description: >-
+      Holds between an entity and a component that is absent from it relative to a reference type;
+      for example a cell type lacking a particular organelle or a protein lacking a particular
+      domain. Corresponds to CL:lacks_part / PR:lacks_part.
     is_a: related to at instance level
     annotations:
       canonical_predicate: true
@@ -5622,6 +5772,10 @@ slots:
     inverse: lacks part
 
   develops from:
+    description: >-
+      Holds between two entities where the first develops, by one or more developmental processes,
+      from the second; for example a cell type developing from a precursor cell type or a tissue
+      developing from an embryonic primordium. Corresponds to RO:0002202.
     is_a: related to at instance level
     annotations:
       canonical_predicate: true
