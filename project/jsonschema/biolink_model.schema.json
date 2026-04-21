@@ -608,7 +608,7 @@
             "type": "object"
         },
         "AgentTypeEnum": {
-            "description": "",
+            "description": "An enumeration of agent types responsible for generating a statement of knowledge, as defined by the Translator Knowledge Level / Agent Type (KL/AT) standard. Values distinguish human (manual) agents from automated agents (including data analysis pipelines, computational models, text-mining agents, image-processing agents) and mixed cases such as manual validation of automated output.",
             "enum": [
                 "manual_agent",
                 "automated_agent",
@@ -2049,7 +2049,7 @@
             "type": "object"
         },
         "ApprovalStatusEnum": {
-            "description": "",
+            "description": "An enumeration of regulatory and development milestones for a drug or therapeutic, spanning discovery, preclinical research, FDA clinical trial phases (1-4), special review designations (e.g., fast track, breakthrough therapy, priority review), regular FDA approval, and post-approval withdrawal.",
             "enum": [
                 "discovery_and_development_phase",
                 "preclinical_research_phase",
@@ -8899,7 +8899,7 @@
             "type": "object"
         },
         "CausalMechanismQualifierEnum": {
-            "description": "",
+            "description": "An enumeration used as a qualifier to specify the causal or pharmacologic mechanism by which an effect is exerted in an association (e.g., agonism, antagonism, inverse agonism, allosteric modulation, activation, inhibition, and their competitive or partial variants).",
             "enum": [
                 "modulation",
                 "allosteric_modulation",
@@ -9309,7 +9309,7 @@
         },
         "CellLineAsAModelOfDiseaseAssociation": {
             "additionalProperties": false,
-            "description": "",
+            "description": "An association in which a cell line - typically derived from an organismal entity with a disease state - serves as a model for that disease in experimental settings.",
             "properties": {
                 "adjusted_p_value": {
                     "description": "The adjusted p-value is the probability of obtaining test results at least as extreme as the results actually observed, under the assumption that the null hypothesis is correct, adjusted for multiple comparisons. P is always italicized and capitalized. The actual P value* should be expressed (P=. 04) rather than expressing a statement of inequality (P<. 05), unless P<.",
@@ -12231,7 +12231,7 @@
             "type": "object"
         },
         "ChemicalEntityDerivativeEnum": {
-            "description": "",
+            "description": "An enumeration of relationships by which one chemical entity is derived from another, e.g., a metabolite produced from a parent compound.",
             "enum": [
                 "metabolite"
             ],
@@ -17523,7 +17523,7 @@
             "type": "object"
         },
         "ChemicalOrGeneOrGeneProductFormOrVariantEnum": {
-            "description": "",
+            "description": "An enumeration used as a qualifier to indicate a specific form or variant of a chemical, gene, or gene product involved in an association (e.g., modified form, loss-of-function variant, gain-of-function variant, dominant-negative variant, polymorphic form, SNP form, mutant form, or analog form).",
             "enum": [
                 "genetic_variant_form",
                 "modified_form",
@@ -17830,7 +17830,7 @@
             "type": "object"
         },
         "ClinicalApprovalStatusEnum": {
-            "description": "",
+            "description": "An enumeration describing whether a chemical or therapy is approved for use in treating a specific condition (e.g., FDA-approved for a condition, not approved, off-label use, or withdrawn following approval).",
             "enum": [
                 "approved_for_condition",
                 "fda_approved_for_condition",
@@ -21088,7 +21088,7 @@
         },
         "CorrelatedGeneToDiseaseAssociation": {
             "additionalProperties": false,
-            "description": "",
+            "description": "An association between a gene (or gene product) and a disease for which the gene is statistically correlated with the disease rather than asserted as causal. Such associations typically derive from GWAS, co-occurrence analyses, or other statistical methods, and are annotated with scores such as a z-score or a diseases confidence score.",
             "properties": {
                 "adjusted_p_value": {
                     "description": "The adjusted p-value is the probability of obtaining test results at least as extreme as the results actually observed, under the assumption that the null hypothesis is correct, adjusted for multiple comparisons. P is always italicized and capitalized. The actual P value* should be expressed (P=. 04) rather than expressing a statement of inequality (P<. 05), unless P<.",
@@ -22530,7 +22530,7 @@
             "type": "object"
         },
         "DirectionQualifierEnum": {
-            "description": "",
+            "description": "An enumeration of values that qualify a change or effect by its direction, i.e., whether the referenced quantity or activity is increased (including up-regulated) or decreased (including down-regulated).",
             "enum": [
                 "increased",
                 "upregulated",
@@ -25494,7 +25494,7 @@
             "type": "object"
         },
         "DrugAvailabilityEnum": {
-            "description": "",
+            "description": "An enumeration describing how a drug or chemical entity may be obtained, distinguishing products that are available over the counter from those that require a prescription.",
             "enum": [
                 "over_the_counter",
                 "prescription"
@@ -25503,7 +25503,7 @@
             "type": "string"
         },
         "DrugDeliveryEnum": {
-            "description": "",
+            "description": "An enumeration of routes by which a drug is administered or delivered to a patient, including inhalation, oral, transdermal absorption, and various forms of injection (intravenous, subcutaneous, intramuscular).",
             "enum": [
                 "inhalation",
                 "oral",
@@ -26578,7 +26578,7 @@
             "type": "object"
         },
         "DruggableGeneCategoryEnum": {
-            "description": "",
+            "description": "An enumeration of druggability categories for gene targets as defined by the IDG (Illuminating the Druggable Genome) / Pharos target development level classification: Tclin (targets of approved drugs), Tchem (targets with potent bioactives), Tbio (targets with biological knowledge), and Tdark (poorly characterized targets).",
             "enum": [
                 "tclin",
                 "tbio",
@@ -26590,7 +26590,7 @@
         },
         "DruggableGeneToDiseaseAssociation": {
             "additionalProperties": false,
-            "description": "",
+            "description": "An association between a gene (or gene product) and a disease in which the gene is classified by its druggability (e.g., via the IDG/Pharos target development-level tiers). Used to represent gene-disease links whose therapeutic tractability is of interest.",
             "properties": {
                 "adjusted_p_value": {
                     "description": "The adjusted p-value is the probability of obtaining test results at least as extreme as the results actually observed, under the assumption that the null hypothesis is correct, adjusted for multiple comparisons. P is always italicized and capitalized. The actual P value* should be expressed (P=. 04) rather than expressing a statement of inequality (P<. 05), unless P<.",
@@ -32524,7 +32524,7 @@
         },
         "GeneAsAModelOfDiseaseAssociation": {
             "additionalProperties": false,
-            "description": "",
+            "description": "An association in which a gene (e.g., a model-organism ortholog of a known disease gene) serves as a model of a human disease - for example, because mutants of the gene recapitulate core features of the disease.",
             "properties": {
                 "adjusted_p_value": {
                     "description": "The adjusted p-value is the probability of obtaining test results at least as extreme as the results actually observed, under the assumption that the null hypothesis is correct, adjusted for multiple comparisons. P is always italicized and capitalized. The actual P value* should be expressed (P=. 04) rather than expressing a statement of inequality (P<. 05), unless P<.",
@@ -33599,7 +33599,7 @@
         },
         "GeneHasVariantThatContributesToDiseaseAssociation": {
             "additionalProperties": false,
-            "description": "",
+            "description": "A gene-to-disease association that is asserted on the grounds that the gene harbours a sequence variant that contributes to the disease. Qualifies the gene with the form or variant that underlies the contribution.",
             "properties": {
                 "adjusted_p_value": {
                     "description": "The adjusted p-value is the probability of obtaining test results at least as extreme as the results actually observed, under the assumption that the null hypothesis is correct, adjusted for multiple comparisons. P is always italicized and capitalized. The actual P value* should be expressed (P=. 04) rather than expressing a statement of inequality (P<. 05), unless P<.",
@@ -34061,7 +34061,7 @@
             "type": "object"
         },
         "GeneOrGeneProductOrChemicalEntityAspectEnum": {
-            "description": "",
+            "description": "An enumeration used as a qualifier to indicate the specific aspect of a gene, gene product, or chemical entity that is affected or measured in an association. Values cover activity and abundance (expression, synthesis, degradation, stability, localization, transport), molecular interactions, and a wide range of molecular modifications such as phosphorylation, methylation, acetylation, ubiquitination, and other post-translational or chemical modifications.",
             "enum": [
                 "activity_or_abundance",
                 "abundance",
@@ -34125,7 +34125,7 @@
             "type": "string"
         },
         "GeneOrGeneProductOrChemicalPartQualifierEnum": {
-            "description": "",
+            "description": "An enumeration used as a qualifier to indicate a particular structural or functional part of a gene, gene product, or chemical (e.g., 3' UTR, 5' UTR, poly-A tail, promoter, enhancer, exon, or intron).",
             "enum": [
                 "3_prime_utr",
                 "5_prime_utr",
@@ -38058,7 +38058,7 @@
         },
         "GeneToGoTermAssociation": {
             "additionalProperties": false,
-            "description": "",
+            "description": "A functional association between a gene (or gene product or macromolecular complex) and a Gene Ontology (GO) term describing the molecular function, biological process, or cellular component in which it participates.",
             "properties": {
                 "adjusted_p_value": {
                     "description": "The adjusted p-value is the probability of obtaining test results at least as extreme as the results actually observed, under the assumption that the null hypothesis is correct, adjusted for multiple comparisons. P is always italicized and capitalized. The actual P value* should be expressed (P=. 04) rather than expressing a statement of inequality (P<. 05), unless P<.",
@@ -40562,7 +40562,7 @@
         },
         "GenotypeAsAModelOfDiseaseAssociation": {
             "additionalProperties": false,
-            "description": "",
+            "description": "An association in which a genotype serves as a model of a disease, recapitulating features relevant for studying the disease outside of a patient who carries it.",
             "properties": {
                 "adjusted_p_value": {
                     "description": "The adjusted p-value is the probability of obtaining test results at least as extreme as the results actually observed, under the assumption that the null hypothesis is correct, adjusted for multiple comparisons. P is always italicized and capitalized. The actual P value* should be expressed (P=. 04) rather than expressing a statement of inequality (P<. 05), unless P<.",
@@ -41026,7 +41026,7 @@
         },
         "GenotypeToDiseaseAssociation": {
             "additionalProperties": false,
-            "description": "",
+            "description": "An association between a genotype and a disease, in which the genotype (typically a combination of alleles at one or more loci) is linked to the disease state.",
             "properties": {
                 "adjusted_p_value": {
                     "description": "The adjusted p-value is the probability of obtaining test results at least as extreme as the results actually observed, under the assumption that the null hypothesis is correct, adjusted for multiple comparisons. P is always italicized and capitalized. The actual P value* should be expressed (P=. 04) rather than expressing a statement of inequality (P<. 05), unless P<.",
@@ -46743,7 +46743,7 @@
             "type": "object"
         },
         "KnowledgeLevelEnum": {
-            "description": "",
+            "description": "An enumeration characterizing the type of knowledge expressed in a statement and the kind of evidence and reasoning that supports it, as defined by the Translator Knowledge Level / Agent Type (KL/AT) standard. Values include knowledge assertion, logical entailment, prediction, statistical association, text co-occurrence, direct observation, and not-provided.",
             "enum": [
                 "knowledge_assertion",
                 "logical_entailment",
@@ -47042,7 +47042,7 @@
             "type": "object"
         },
         "LogicalInterpretationEnum": {
-            "description": "",
+            "description": "An enumeration of logical interpretations that can be applied to a triple to indicate whether the relation should be read as existential on both sides (some-some), universal-existential (all-some), or its inverse (inverse all-some).",
             "enum": [
                 "some_some",
                 "all_some",
@@ -52267,7 +52267,7 @@
         },
         "NamedThingAssociatedWithLikelihoodOfNamedThingAssociation": {
             "additionalProperties": false,
-            "description": "",
+            "description": "An association in which the subject entity is linked to the likelihood of the object entity occurring, manifesting, or being observed. Subject and object may each be qualified by aspect and context, and the association may be further qualified by a population context (e.g., a cohort or demographic group in which the likelihood applies).",
             "properties": {
                 "adjusted_p_value": {
                     "description": "The adjusted p-value is the probability of obtaining test results at least as extreme as the results actually observed, under the assumption that the null hypothesis is correct, adjusted for multiple comparisons. P is always italicized and capitalized. The actual P value* should be expressed (P=. 04) rather than expressing a statement of inequality (P<. 05), unless P<.",
@@ -54912,7 +54912,7 @@
         },
         "OrganismToOrganismAssociation": {
             "additionalProperties": false,
-            "description": "",
+            "description": "An association between two individual organisms (e.g., symbiosis, parasitism, predation, or other inter-organism relationships).",
             "properties": {
                 "adjusted_p_value": {
                     "description": "The adjusted p-value is the probability of obtaining test results at least as extreme as the results actually observed, under the assumption that the null hypothesis is correct, adjusted for multiple comparisons. P is always italicized and capitalized. The actual P value* should be expressed (P=. 04) rather than expressing a statement of inequality (P<. 05), unless P<.",
@@ -55330,7 +55330,7 @@
         },
         "OrganismalEntityAsAModelOfDiseaseAssociation": {
             "additionalProperties": false,
-            "description": "",
+            "description": "An association in which an organismal entity (e.g., a strain or breed) serves as a model of a disease, either because it has a natural predisposition to the disease or was bred or engineered specifically to recapitulate it.",
             "properties": {
                 "adjusted_p_value": {
                     "description": "The adjusted p-value is the probability of obtaining test results at least as extreme as the results actually observed, under the assumption that the null hypothesis is correct, adjusted for multiple comparisons. P is always italicized and capitalized. The actual P value* should be expressed (P=. 04) rather than expressing a statement of inequality (P<. 05), unless P<.",
@@ -63229,7 +63229,7 @@
             "type": "object"
         },
         "ReactionDirectionEnum": {
-            "description": "",
+            "description": "An enumeration of possible directions for a biochemical reaction, indicating whether it proceeds left-to-right, right-to-left, is bidirectional (reversible), or has no net direction.",
             "enum": [
                 "left_to_right",
                 "right_to_left",
@@ -63240,7 +63240,7 @@
             "type": "string"
         },
         "ReactionSideEnum": {
-            "description": "",
+            "description": "An enumeration indicating on which side of a biochemical reaction a participant appears - the left-hand (reactant/substrate) side or the right-hand (product) side, as written.",
             "enum": [
                 "left",
                 "right"
@@ -63250,7 +63250,7 @@
         },
         "ReactionToCatalystAssociation": {
             "additionalProperties": false,
-            "description": "",
+            "description": "A specialization of reaction-to-participant association in which the participant is a gene or gene product (e.g., an enzyme) that catalyses the reaction.",
             "properties": {
                 "adjusted_p_value": {
                     "description": "The adjusted p-value is the probability of obtaining test results at least as extreme as the results actually observed, under the assumption that the null hypothesis is correct, adjusted for multiple comparisons. P is always italicized and capitalized. The actual P value* should be expressed (P=. 04) rather than expressing a statement of inequality (P<. 05), unless P<.",
@@ -63690,7 +63690,7 @@
         },
         "ReactionToParticipantAssociation": {
             "additionalProperties": false,
-            "description": "",
+            "description": "An association between a biochemical reaction and a participating molecular entity, qualified by the stoichiometry, the side (reactant vs. product) on which the participant appears, and the direction of the reaction.",
             "properties": {
                 "adjusted_p_value": {
                     "description": "The adjusted p-value is the probability of obtaining test results at least as extreme as the results actually observed, under the assumption that the null hypothesis is correct, adjusted for multiple comparisons. P is always italicized and capitalized. The actual P value* should be expressed (P=. 04) rather than expressing a statement of inequality (P<. 05), unless P<.",
@@ -64594,7 +64594,7 @@
             "type": "object"
         },
         "ResearchPhaseEnum": {
-            "description": "",
+            "description": "An enumeration of research phases describing the stage of investigation for a drug or therapy, spanning preclinical research through clinical trial phases 1 through 4 (including phase 1/2 and phase 2/3 combinations).",
             "enum": [
                 "pre_clinical_research_phase",
                 "clinical_trial_phase",
@@ -67822,7 +67822,7 @@
         },
         "TaxonToTaxonAssociation": {
             "additionalProperties": false,
-            "description": "",
+            "description": "An association between two organism taxa, capturing ecological or evolutionary relationships between the taxa (e.g., a host-pathogen relationship or shared habitat).",
             "properties": {
                 "adjusted_p_value": {
                     "description": "The adjusted p-value is the probability of obtaining test results at least as extreme as the results actually observed, under the assumption that the null hypothesis is correct, adjusted for multiple comparisons. P is always italicized and capitalized. The actual P value* should be expressed (P=. 04) rather than expressing a statement of inequality (P<. 05), unless P<.",
@@ -69403,7 +69403,7 @@
         },
         "VariantAsAModelOfDiseaseAssociation": {
             "additionalProperties": false,
-            "description": "",
+            "description": "An association in which a sequence variant serves as a model of a disease, recapitulating features relevant for studying the disease outside of a patient who carries it.",
             "properties": {
                 "adjusted_p_value": {
                     "description": "The adjusted p-value is the probability of obtaining test results at least as extreme as the results actually observed, under the assumption that the null hypothesis is correct, adjusted for multiple comparisons. P is always italicized and capitalized. The actual P value* should be expressed (P=. 04) rather than expressing a statement of inequality (P<. 05), unless P<.",
@@ -69867,7 +69867,7 @@
         },
         "VariantToDiseaseAssociation": {
             "additionalProperties": false,
-            "description": "",
+            "description": "An association between a sequence variant and a disease, in which the allele state of the variant is linked to the disease state (e.g., as a pathogenic, likely-pathogenic, or risk-conferring variant).",
             "properties": {
                 "adjusted_p_value": {
                     "description": "The adjusted p-value is the probability of obtaining test results at least as extreme as the results actually observed, under the assumption that the null hypothesis is correct, adjusted for multiple comparisons. P is always italicized and capitalized. The actual P value* should be expressed (P=. 04) rather than expressing a statement of inequality (P<. 05), unless P<.",
@@ -71209,7 +71209,7 @@
         },
         "VariantToPhenotypicFeatureAssociation": {
             "additionalProperties": false,
-            "description": "",
+            "description": "An association between a sequence variant and a phenotypic feature, in which the allele state of the variant is linked to the manifestation of the phenotype.",
             "properties": {
                 "adjusted_p_value": {
                     "description": "The adjusted p-value is the probability of obtaining test results at least as extreme as the results actually observed, under the assumption that the null hypothesis is correct, adjusted for multiple comparisons. P is always italicized and capitalized. The actual P value* should be expressed (P=. 04) rather than expressing a statement of inequality (P<. 05), unless P<.",

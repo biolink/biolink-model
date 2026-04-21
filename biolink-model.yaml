@@ -239,19 +239,33 @@ types:
   symbol type:
     uri: xsd:string
     typeof: string
+    description: >-
+      A short string used as a human-readable label or symbol for an entity,
+      such as an official gene symbol (e.g., "BRCA1") or a chemical symbol.
 
   frequency value:
     typeof: string
     uri: UO:0000105
+    description: >-
+      A quantity expressing the number of occurrences of a repeating event per
+      unit of time (UO:0000105). Typically used for rates such as incidence
+      or event frequency associated with a phenomenon.
 
   percentage frequency value:
     typeof: double
     uri: UO:0000187
+    description: >-
+      A frequency value expressed as a percentage (UO:0000187), i.e., a
+      dimensionless ratio multiplied by 100 (e.g., an allele frequency of 5%).
 
   quotient:
     aliases: ['ratio']
     typeof: double
     uri: UO:0010006
+    description: >-
+      A dimensionless value obtained by dividing one quantity by another of
+      the same kind (UO:0010006). Used to represent ratios such as odds
+      ratios, hazard ratios, or relative risks.
 
   unit:
     typeof: string
@@ -260,14 +274,25 @@ types:
       - UO
     exact_mappings:
       - qud:Unit
+    description: >-
+      A standard of measurement in which the magnitude of a physical quantity
+      is expressed (UO:0000000). Typically drawn from the Units of Measurement
+      Ontology (UO), e.g., gram, millilitre, or mole.
 
   time type:
     uri: xsd:string
     typeof: time
+    description: >-
+      A value representing a point in time, serialised as a lexical
+      representation of xsd:time (e.g., "14:30:00").
 
   biological sequence:
     uri: xsd:string
     typeof: string
+    description: >-
+      A string of characters representing a biological macromolecule sequence,
+      such as a nucleic acid sequence (DNA/RNA) using the IUPAC nucleotide
+      alphabet, or a protein sequence using the IUPAC amino-acid alphabet.
 
 ## ------------
 ## SLOTS
@@ -6774,6 +6799,11 @@ classes:
     abstract: true
 
   mapping collection:
+    description: >-
+      An abstract container class that holds a set of predicate mappings.
+      Serves as a top-level root for documents that enumerate how
+      third-party or deprecated predicates should be rewritten to Biolink
+      predicates and their associated qualifiers.
     abstract: true
     slots:
       - predicate mappings
@@ -10791,7 +10821,11 @@ classes:
           species_context_qualifier: NCBITaxon:9606
 
   reaction to participant association:
-    description:
+    description: >-
+      An association between a biochemical reaction and a participating
+      molecular entity, qualified by the stoichiometry, the side (reactant
+      vs. product) on which the participant appears, and the direction of
+      the reaction.
     is_a: chemical entity to chemical entity association
     slots:
       - stoichiometry
@@ -10806,7 +10840,10 @@ classes:
       - object
 
   reaction to catalyst association:
-    description:
+    description: >-
+      A specialization of reaction-to-participant association in which the
+      participant is a gene or gene product (e.g., an enzyme) that catalyses
+      the reaction.
     is_a: reaction to participant association
     slot_usage:
       object:
@@ -11026,6 +11063,11 @@ classes:
   named thing associated with likelihood of named thing association:
      # TODO: better name
     description: >-
+      An association in which the subject entity is linked to the likelihood
+      of the object entity occurring, manifesting, or being observed.
+      Subject and object may each be qualified by aspect and context, and
+      the association may be further qualified by a population context
+      (e.g., a cohort or demographic group in which the likelihood applies).
     is_a: association
     slots:
       - subject
@@ -12187,6 +12229,12 @@ classes:
         range: disease
 
   correlated gene to disease association:
+    description: >-
+      An association between a gene (or gene product) and a disease for which
+      the gene is statistically correlated with the disease rather than
+      asserted as causal. Such associations typically derive from GWAS,
+      co-occurrence analyses, or other statistical methods, and are annotated
+      with scores such as a z-score or a diseases confidence score.
     is_a: association
     defining_slots:
       - subject
@@ -12229,6 +12277,11 @@ classes:
           agent_type: data_analysis_pipeline
 
   druggable gene to disease association:
+    description: >-
+      An association between a gene (or gene product) and a disease in which
+      the gene is classified by its druggability (e.g., via the IDG/Pharos
+      target development-level tiers). Used to represent gene-disease links
+      whose therapeutic tractability is of interest.
     is_a: gene to disease association
     slots:
       - druggable gene category
@@ -12368,6 +12421,10 @@ classes:
           Derivation relationships can also be used
 
   variant to phenotypic feature association:
+    description: >-
+      An association between a sequence variant and a phenotypic feature, in
+      which the allele state of the variant is linked to the manifestation
+      of the phenotype.
     is_a: association
     defining_slots:
       - subject
@@ -12383,6 +12440,10 @@ classes:
           associated in some way with the phenotype state
 
   variant to disease association:
+    description: >-
+      An association between a sequence variant and a disease, in which the
+      allele state of the variant is linked to the disease state (e.g., as
+      a pathogenic, likely-pathogenic, or risk-conferring variant).
     is_a: association
     comments:
       - TODO decide no how to model pathogenicity
@@ -12412,6 +12473,10 @@ classes:
             description: hereditary breast cancer
 
   genotype to disease association:
+    description: >-
+      An association between a genotype and a disease, in which the genotype
+      (typically a combination of alleles at one or more loci) is linked to
+      the disease state.
     is_a: association
     comments:
       - TODO decide no how to model pathogenicity
@@ -12459,6 +12524,10 @@ classes:
           The relationship to the disease
 
   gene as a model of disease association:
+    description: >-
+      An association in which a gene (e.g., a model-organism ortholog of a
+      known disease gene) serves as a model of a human disease - for example,
+      because mutants of the gene recapitulate core features of the disease.
     is_a: gene to disease association
     defining_slots:
       - subject
@@ -12476,6 +12545,10 @@ classes:
           mutants recapitulate core features of the disease.
 
   variant as a model of disease association:
+    description: >-
+      An association in which a sequence variant serves as a model of a
+      disease, recapitulating features relevant for studying the disease
+      outside of a patient who carries it.
     is_a: variant to disease association
     defining_slots:
       - subject
@@ -12491,6 +12564,10 @@ classes:
           A variant that has a role in modeling the disease.
 
   genotype as a model of disease association:
+    description: >-
+      An association in which a genotype serves as a model of a disease,
+      recapitulating features relevant for studying the disease outside of
+      a patient who carries it.
     is_a: genotype to disease association
     defining_slots:
       - subject
@@ -12506,6 +12583,10 @@ classes:
           A genotype that has a role in modeling the disease.
 
   cell line as a model of disease association:
+    description: >-
+      An association in which a cell line - typically derived from an
+      organismal entity with a disease state - serves as a model for that
+      disease in experimental settings.
     is_a: cell line to disease or phenotypic feature association
     defining_slots:
       - subject
@@ -12522,6 +12603,11 @@ classes:
           as a model of that disease.
 
   organismal entity as a model of disease association:
+    description: >-
+      An association in which an organismal entity (e.g., a strain or breed)
+      serves as a model of a disease, either because it has a natural
+      predisposition to the disease or was bred or engineered specifically
+      to recapitulate it.
     is_a: association
     defining_slots:
       - subject
@@ -12538,6 +12624,9 @@ classes:
           specifically to model a disease.
 
   organism to organism association:
+    description: >-
+      An association between two individual organisms (e.g., symbiosis,
+      parasitism, predation, or other inter-organism relationships).
     is_a: association
     defining_slots:
       - subject
@@ -12552,6 +12641,10 @@ classes:
           An association between two individual organisms.
 
   taxon to taxon association:
+    description: >-
+      An association between two organism taxa, capturing ecological or
+      evolutionary relationships between the taxa (e.g., a host-pathogen
+      relationship or shared habitat).
     is_a: association
     defining_slots:
       - subject
@@ -12566,6 +12659,11 @@ classes:
           An association between individuals of different taxa.
 
   gene has variant that contributes to disease association:
+    description: >-
+      A gene-to-disease association that is asserted on the grounds that the
+      gene harbours a sequence variant that contributes to the disease.
+      Qualifies the gene with the form or variant that underlies the
+      contribution.
     is_a: gene to disease association
     defining_slots:
       - subject
@@ -12749,6 +12847,11 @@ classes:
 
 
   gene to go term association:
+    description: >-
+      A functional association between a gene (or gene product or
+      macromolecular complex) and a Gene Ontology (GO) term describing the
+      molecular function, biological process, or cellular component in which
+      it participates.
     aliases: ['functional association']
     is_a: functional association
     exact_mappings:
@@ -13350,6 +13453,10 @@ classes:
           the environment in which the two taxa interact
 
   organism taxon to environment association:
+    description: >-
+      An abstract association between an organism taxon and an environmental
+      context (e.g., a habitat, biome, or ecological setting) in which the
+      taxon occurs.
     is_a: association
     abstract: true
     mixins:
@@ -13450,6 +13557,11 @@ enums:
 
   ApprovalStatusEnum:
     description: >-
+      An enumeration of regulatory and development milestones for a drug or
+      therapeutic, spanning discovery, preclinical research, FDA clinical trial
+      phases (1-4), special review designations (e.g., fast track, breakthrough
+      therapy, priority review), regular FDA approval, and post-approval
+      withdrawal.
     permissible_values:
       "discovery_and_development_phase":
         description: >-
@@ -13540,7 +13652,10 @@ enums:
       "post_approval_withdrawal":
 
   ClinicalApprovalStatusEnum:
-    description:
+    description: >-
+      An enumeration describing whether a chemical or therapy is approved for
+      use in treating a specific condition (e.g., FDA-approved for a condition,
+      not approved, off-label use, or withdrawn following approval).
     permissible_values:
       approved_for_condition:
       fda_approved_for_condition:
@@ -13553,6 +13668,11 @@ enums:
       not_provided:
 
   ResearchPhaseEnum:
+    description: >-
+      An enumeration of research phases describing the stage of investigation
+      for a drug or therapy, spanning preclinical research through clinical
+      trial phases 1 through 4 (including phase 1/2 and phase 2/3
+      combinations).
     permissible_values:
       pre_clinical_research_phase:
         description: >-
@@ -13621,6 +13741,11 @@ enums:
       not_provided:
 
   DirectionQualifierEnum:
+    description: >-
+      An enumeration of values that qualify a change or effect by its
+      direction, i.e., whether the referenced quantity or activity is
+      increased (including up-regulated) or decreased (including
+      down-regulated).
     permissible_values:
       increased:
       upregulated:
@@ -13645,10 +13770,19 @@ enums:
           - RO:0004033
 
   ChemicalEntityDerivativeEnum:
+    description: >-
+      An enumeration of relationships by which one chemical entity is derived
+      from another, e.g., a metabolite produced from a parent compound.
     permissible_values:
       metabolite:
 
   ChemicalOrGeneOrGeneProductFormOrVariantEnum:
+    description: >-
+      An enumeration used as a qualifier to indicate a specific form or variant
+      of a chemical, gene, or gene product involved in an association (e.g.,
+      modified form, loss-of-function variant, gain-of-function variant,
+      dominant-negative variant, polymorphic form, SNP form, mutant form, or
+      analog form).
     permissible_values:
       genetic_variant_form:
         is_a: modified_form
@@ -13671,6 +13805,10 @@ enums:
         is_a: modified_form
 
   GeneOrGeneProductOrChemicalPartQualifierEnum:
+    description: >-
+      An enumeration used as a qualifier to indicate a particular structural or
+      functional part of a gene, gene product, or chemical (e.g., 3' UTR, 5'
+      UTR, poly-A tail, promoter, enhancer, exon, or intron).
     permissible_values:
       3_prime_utr:
       5_prime_utr:
@@ -13681,6 +13819,14 @@ enums:
       intron:
 
   GeneOrGeneProductOrChemicalEntityAspectEnum:
+    description: >-
+      An enumeration used as a qualifier to indicate the specific aspect of a
+      gene, gene product, or chemical entity that is affected or measured in
+      an association. Values cover activity and abundance (expression,
+      synthesis, degradation, stability, localization, transport), molecular
+      interactions, and a wide range of molecular modifications such as
+      phosphorylation, methylation, acetylation, ubiquitination, and other
+      post-translational or chemical modifications.
     permissible_values:
       activity_or_abundance:
         description: >-
@@ -13784,6 +13930,11 @@ enums:
         is_a: molecular_modification
 
   CausalMechanismQualifierEnum:
+    description: >-
+      An enumeration used as a qualifier to specify the causal or pharmacologic
+      mechanism by which an effect is exerted in an association (e.g.,
+      agonism, antagonism, inverse agonism, allosteric modulation,
+      activation, inhibition, and their competitive or partial variants).
     permissible_values:
       modulation:
         description: >-
@@ -14244,6 +14395,11 @@ enums:
         is_a: molecular_modification
 
   LogicalInterpretationEnum:
+    description: >-
+      An enumeration of logical interpretations that can be applied to a triple
+      to indicate whether the relation should be read as existential on both
+      sides (some-some), universal-existential (all-some), or its inverse
+      (inverse all-some).
     permissible_values:
       some_some:
         description: >-
@@ -14256,6 +14412,10 @@ enums:
       inverse_all_some:
 
   ReactionDirectionEnum:
+    description: >-
+      An enumeration of possible directions for a biochemical reaction,
+      indicating whether it proceeds left-to-right, right-to-left, is
+      bidirectional (reversible), or has no net direction.
     permissible_values:
       left_to_right:
       right_to_left:
@@ -14263,6 +14423,10 @@ enums:
       neutral:
 
   ReactionSideEnum:
+    description: >-
+      An enumeration indicating on which side of a biochemical reaction a
+      participant appears - the left-hand (reactant/substrate) side or the
+      right-hand (product) side, as written.
     permissible_values:
       left:
       right:
@@ -14295,6 +14459,12 @@ enums:
         description: amino acid
 
   DruggableGeneCategoryEnum:
+    description: >-
+      An enumeration of druggability categories for gene targets as defined by
+      the IDG (Illuminating the Druggable Genome) / Pharos target development
+      level classification: Tclin (targets of approved drugs), Tchem (targets
+      with potent bioactives), Tbio (targets with biological knowledge), and
+      Tdark (poorly characterized targets).
     permissible_values:
       "tclin":
         description: >-
@@ -14319,6 +14489,9 @@ enums:
 
   DrugAvailabilityEnum:
     description: >-
+      An enumeration describing how a drug or chemical entity may be obtained,
+      distinguishing products that are available over the counter from those
+      that require a prescription.
     permissible_values:
       "over_the_counter":
         description: >-
@@ -14328,6 +14501,10 @@ enums:
           chemical entity is available by prescription.
 
   DrugDeliveryEnum:
+    description: >-
+      An enumeration of routes by which a drug is administered or delivered to
+      a patient, including inhalation, oral, transdermal absorption, and
+      various forms of injection (intravenous, subcutaneous, intramuscular).
     permissible_values:
       inhalation:
       oral:
@@ -14434,6 +14611,13 @@ enums:
       - translator_minimal
 
   AgentTypeEnum:
+    description: >-
+      An enumeration of agent types responsible for generating a statement of
+      knowledge, as defined by the Translator Knowledge Level / Agent Type
+      (KL/AT) standard. Values distinguish human (manual) agents from
+      automated agents (including data analysis pipelines, computational
+      models, text-mining agents, image-processing agents) and mixed cases
+      such as manual validation of automated output.
     permissible_values:
       manual_agent:
         description: >-
@@ -14527,6 +14711,13 @@ enums:
       - translator_minimal
 
   KnowledgeLevelEnum:
+    description: >-
+      An enumeration characterizing the type of knowledge expressed in a
+      statement and the kind of evidence and reasoning that supports it, as
+      defined by the Translator Knowledge Level / Agent Type (KL/AT)
+      standard. Values include knowledge assertion, logical entailment,
+      prediction, statistical association, text co-occurrence, direct
+      observation, and not-provided.
     permissible_values:
       knowledge_assertion:
         aliases: ['assertion']

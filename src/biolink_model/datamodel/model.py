@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-04-20T17:22:40
+# Generation date: 2026-04-20T17:50:51
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/vocab/
@@ -367,6 +367,7 @@ class NarrativeText(String):
 
 
 class SymbolType(String):
+    """ A short string used as a human-readable label or symbol for an entity, such as an official gene symbol (e.g., "BRCA1") or a chemical symbol. """
     type_class_uri = XSD["string"]
     type_class_curie = "xsd:string"
     type_name = "symbol type"
@@ -374,6 +375,7 @@ class SymbolType(String):
 
 
 class FrequencyValue(String):
+    """ A quantity expressing the number of occurrences of a repeating event per unit of time (UO:0000105). Typically used for rates such as incidence or event frequency associated with a phenomenon. """
     type_class_uri = UO["0000105"]
     type_class_curie = "UO:0000105"
     type_name = "frequency value"
@@ -381,6 +383,7 @@ class FrequencyValue(String):
 
 
 class PercentageFrequencyValue(Double):
+    """ A frequency value expressed as a percentage (UO:0000187), i.e., a dimensionless ratio multiplied by 100 (e.g., an allele frequency of 5%). """
     type_class_uri = UO["0000187"]
     type_class_curie = "UO:0000187"
     type_name = "percentage frequency value"
@@ -388,6 +391,7 @@ class PercentageFrequencyValue(Double):
 
 
 class Quotient(Double):
+    """ A dimensionless value obtained by dividing one quantity by another of the same kind (UO:0010006). Used to represent ratios such as odds ratios, hazard ratios, or relative risks. """
     type_class_uri = UO["0010006"]
     type_class_curie = "UO:0010006"
     type_name = "quotient"
@@ -395,6 +399,7 @@ class Quotient(Double):
 
 
 class Unit(String):
+    """ A standard of measurement in which the magnitude of a physical quantity is expressed (UO:0000000). Typically drawn from the Units of Measurement Ontology (UO), e.g., gram, millilitre, or mole. """
     type_class_uri = UO["0000000"]
     type_class_curie = "UO:0000000"
     type_name = "unit"
@@ -402,6 +407,7 @@ class Unit(String):
 
 
 class TimeType(Time):
+    """ A value representing a point in time, serialised as a lexical representation of xsd:time (e.g., "14:30:00"). """
     type_class_uri = XSD["string"]
     type_class_curie = "xsd:string"
     type_name = "time type"
@@ -409,6 +415,7 @@ class TimeType(Time):
 
 
 class BiologicalSequence(String):
+    """ A string of characters representing a biological macromolecule sequence, such as a nucleic acid sequence (DNA/RNA) using the IUPAC nucleotide alphabet, or a protein sequence using the IUPAC amino-acid alphabet. """
     type_class_uri = XSD["string"]
     type_class_curie = "xsd:string"
     type_name = "biological sequence"
@@ -1564,6 +1571,11 @@ class KnowledgeGraph(YAMLRoot):
 
 @dataclass(repr=False)
 class MappingCollection(YAMLRoot):
+    """
+    An abstract container class that holds a set of predicate mappings. Serves as a top-level root for documents that
+    enumerate how third-party or deprecated predicates should be rewritten to Biolink predicates and their associated
+    qualifiers.
+    """
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["MappingCollection"]
@@ -9181,6 +9193,11 @@ class ChemicalEntityToChemicalEntityAssociation(Association):
 
 @dataclass(repr=False)
 class ReactionToParticipantAssociation(ChemicalEntityToChemicalEntityAssociation):
+    """
+    An association between a biochemical reaction and a participating molecular entity, qualified by the
+    stoichiometry, the side (reactant vs. product) on which the participant appears, and the direction of the
+    reaction.
+    """
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["ReactionToParticipantAssociation"]
@@ -9226,6 +9243,10 @@ class ReactionToParticipantAssociation(ChemicalEntityToChemicalEntityAssociation
 
 @dataclass(repr=False)
 class ReactionToCatalystAssociation(ReactionToParticipantAssociation):
+    """
+    A specialization of reaction-to-participant association in which the participant is a gene or gene product (e.g.,
+    an enzyme) that catalyses the reaction.
+    """
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["ReactionToCatalystAssociation"]
@@ -9852,6 +9873,12 @@ class ChemicalEntityToBiologicalProcessAssociation(Association):
 
 @dataclass(repr=False)
 class NamedThingAssociatedWithLikelihoodOfNamedThingAssociation(Association):
+    """
+    An association in which the subject entity is linked to the likelihood of the object entity occurring,
+    manifesting, or being observed. Subject and object may each be qualified by aspect and context, and the
+    association may be further qualified by a population context (e.g., a cohort or demographic group in which the
+    likelihood applies).
+    """
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["NamedThingAssociatedWithLikelihoodOfNamedThingAssociation"]
@@ -12374,6 +12401,11 @@ class CausalGeneToDiseaseAssociation(Association):
 
 @dataclass(repr=False)
 class CorrelatedGeneToDiseaseAssociation(Association):
+    """
+    An association between a gene (or gene product) and a disease for which the gene is statistically correlated with
+    the disease rather than asserted as causal. Such associations typically derive from GWAS, co-occurrence analyses,
+    or other statistical methods, and are annotated with scores such as a z-score or a diseases confidence score.
+    """
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["CorrelatedGeneToDiseaseAssociation"]
@@ -12461,6 +12493,11 @@ class CorrelatedGeneToDiseaseAssociation(Association):
 
 @dataclass(repr=False)
 class DruggableGeneToDiseaseAssociation(GeneToDiseaseAssociation):
+    """
+    An association between a gene (or gene product) and a disease in which the gene is classified by its druggability
+    (e.g., via the IDG/Pharos target development-level tiers). Used to represent gene-disease links whose therapeutic
+    tractability is of interest.
+    """
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["DruggableGeneToDiseaseAssociation"]
@@ -12813,6 +12850,10 @@ class PopulationToPopulationAssociation(Association):
 
 @dataclass(repr=False)
 class VariantToPhenotypicFeatureAssociation(Association):
+    """
+    An association between a sequence variant and a phenotypic feature, in which the allele state of the variant is
+    linked to the manifestation of the phenotype.
+    """
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["VariantToPhenotypicFeatureAssociation"]
@@ -12888,6 +12929,10 @@ class VariantToPhenotypicFeatureAssociation(Association):
 
 @dataclass(repr=False)
 class VariantToDiseaseAssociation(Association):
+    """
+    An association between a sequence variant and a disease, in which the allele state of the variant is linked to the
+    disease state (e.g., as a pathogenic, likely-pathogenic, or risk-conferring variant).
+    """
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["VariantToDiseaseAssociation"]
@@ -12959,6 +13004,10 @@ class VariantToDiseaseAssociation(Association):
 
 @dataclass(repr=False)
 class GenotypeToDiseaseAssociation(Association):
+    """
+    An association between a genotype and a disease, in which the genotype (typically a combination of alleles at one
+    or more loci) is linked to the disease state.
+    """
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["GenotypeToDiseaseAssociation"]
@@ -13067,6 +13116,10 @@ class ModelToDiseaseAssociationMixin(YAMLRoot):
 
 @dataclass(repr=False)
 class GeneAsAModelOfDiseaseAssociation(GeneToDiseaseAssociation):
+    """
+    An association in which a gene (e.g., a model-organism ortholog of a known disease gene) serves as a model of a
+    human disease - for example, because mutants of the gene recapitulate core features of the disease.
+    """
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["GeneAsAModelOfDiseaseAssociation"]
@@ -13120,6 +13173,10 @@ class GeneAsAModelOfDiseaseAssociation(GeneToDiseaseAssociation):
 
 @dataclass(repr=False)
 class VariantAsAModelOfDiseaseAssociation(VariantToDiseaseAssociation):
+    """
+    An association in which a sequence variant serves as a model of a disease, recapitulating features relevant for
+    studying the disease outside of a patient who carries it.
+    """
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["VariantAsAModelOfDiseaseAssociation"]
@@ -13181,6 +13238,10 @@ class VariantAsAModelOfDiseaseAssociation(VariantToDiseaseAssociation):
 
 @dataclass(repr=False)
 class GenotypeAsAModelOfDiseaseAssociation(GenotypeToDiseaseAssociation):
+    """
+    An association in which a genotype serves as a model of a disease, recapitulating features relevant for studying
+    the disease outside of a patient who carries it.
+    """
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["GenotypeAsAModelOfDiseaseAssociation"]
@@ -13242,6 +13303,10 @@ class GenotypeAsAModelOfDiseaseAssociation(GenotypeToDiseaseAssociation):
 
 @dataclass(repr=False)
 class CellLineAsAModelOfDiseaseAssociation(CellLineToDiseaseOrPhenotypicFeatureAssociation):
+    """
+    An association in which a cell line - typically derived from an organismal entity with a disease state - serves as
+    a model for that disease in experimental settings.
+    """
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["CellLineAsAModelOfDiseaseAssociation"]
@@ -13313,6 +13378,10 @@ class CellLineAsAModelOfDiseaseAssociation(CellLineToDiseaseOrPhenotypicFeatureA
 
 @dataclass(repr=False)
 class OrganismalEntityAsAModelOfDiseaseAssociation(Association):
+    """
+    An association in which an organismal entity (e.g., a strain or breed) serves as a model of a disease, either
+    because it has a natural predisposition to the disease or was bred or engineered specifically to recapitulate it.
+    """
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["OrganismalEntityAsAModelOfDiseaseAssociation"]
@@ -13384,6 +13453,10 @@ class OrganismalEntityAsAModelOfDiseaseAssociation(Association):
 
 @dataclass(repr=False)
 class OrganismToOrganismAssociation(Association):
+    """
+    An association between two individual organisms (e.g., symbiosis, parasitism, predation, or other inter-organism
+    relationships).
+    """
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["OrganismToOrganismAssociation"]
@@ -13422,6 +13495,10 @@ class OrganismToOrganismAssociation(Association):
 
 @dataclass(repr=False)
 class TaxonToTaxonAssociation(Association):
+    """
+    An association between two organism taxa, capturing ecological or evolutionary relationships between the taxa
+    (e.g., a host-pathogen relationship or shared habitat).
+    """
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["TaxonToTaxonAssociation"]
@@ -13460,6 +13537,10 @@ class TaxonToTaxonAssociation(Association):
 
 @dataclass(repr=False)
 class GeneHasVariantThatContributesToDiseaseAssociation(GeneToDiseaseAssociation):
+    """
+    A gene-to-disease association that is asserted on the grounds that the gene harbours a sequence variant that
+    contributes to the disease. Qualifies the gene with the form or variant that underlies the contribution.
+    """
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["GeneHasVariantThatContributesToDiseaseAssociation"]
@@ -13908,6 +13989,10 @@ class MolecularActivityToMolecularActivityAssociation(Association):
 
 @dataclass(repr=False)
 class GeneToGoTermAssociation(FunctionalAssociation):
+    """
+    A functional association between a gene (or gene product or macromolecular complex) and a Gene Ontology (GO) term
+    describing the molecular function, biological process, or cellular component in which it participates.
+    """
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["GeneToGoTermAssociation"]
@@ -14802,6 +14887,10 @@ class OrganismTaxonToOrganismTaxonInteraction(OrganismTaxonToOrganismTaxonAssoci
 
 @dataclass(repr=False)
 class OrganismTaxonToEnvironmentAssociation(Association):
+    """
+    An abstract association between an organism taxon and an environmental context (e.g., a habitat, biome, or
+    ecological setting) in which the taxon occurs.
+    """
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK["OrganismTaxonToEnvironmentAssociation"]
@@ -14959,7 +15048,11 @@ class ClinicalTrialAgeStageEnum(EnumDefinitionImpl):
     )
 
 class ApprovalStatusEnum(EnumDefinitionImpl):
-
+    """
+    An enumeration of regulatory and development milestones for a drug or therapeutic, spanning discovery, preclinical
+    research, FDA clinical trial phases (1-4), special review designations (e.g., fast track, breakthrough therapy,
+    priority review), regular FDA approval, and post-approval withdrawal.
+    """
     discovery_and_development_phase = PermissibleValue(
         text="discovery_and_development_phase",
         description="""Discovery & Development Phase. Discovery involves researchers finding new possibilities for medication through testing molecular compounds, noting unexpected effects from existing treatments, or the creation of new technology that allows novel ways of targeting medical products to sites in the body. Drug development occurs after researchers identify potential compounds for experiments.""")
@@ -15006,10 +15099,14 @@ class ApprovalStatusEnum(EnumDefinitionImpl):
 
     _defn = EnumDefinition(
         name="ApprovalStatusEnum",
+        description="""An enumeration of regulatory and development milestones for a drug or therapeutic, spanning discovery, preclinical research, FDA clinical trial phases (1-4), special review designations (e.g., fast track, breakthrough therapy, priority review), regular FDA approval, and post-approval withdrawal.""",
     )
 
 class ClinicalApprovalStatusEnum(EnumDefinitionImpl):
-
+    """
+    An enumeration describing whether a chemical or therapy is approved for use in treating a specific condition
+    (e.g., FDA-approved for a condition, not approved, off-label use, or withdrawn following approval).
+    """
     approved_for_condition = PermissibleValue(text="approved_for_condition")
     fda_approved_for_condition = PermissibleValue(text="fda_approved_for_condition")
     not_approved_for_condition = PermissibleValue(text="not_approved_for_condition")
@@ -15019,10 +15116,14 @@ class ClinicalApprovalStatusEnum(EnumDefinitionImpl):
 
     _defn = EnumDefinition(
         name="ClinicalApprovalStatusEnum",
+        description="""An enumeration describing whether a chemical or therapy is approved for use in treating a specific condition (e.g., FDA-approved for a condition, not approved, off-label use, or withdrawn following approval).""",
     )
 
 class ResearchPhaseEnum(EnumDefinitionImpl):
-
+    """
+    An enumeration of research phases describing the stage of investigation for a drug or therapy, spanning
+    preclinical research through clinical trial phases 1 through 4 (including phase 1/2 and phase 2/3 combinations).
+    """
     pre_clinical_research_phase = PermissibleValue(
         text="pre_clinical_research_phase",
         description="""Biolink 'pre_clinical_research' is the union of both the `FDA discovery and development phase` and `FDA preclinical research phase`. Discovery involves researchers finding new possibilities for medication through testing molecular compounds, noting unexpected effects from existing treatments, or the creation of new technology that allows novel ways of targeting medical products to sites in the body. Drug development occurs after researchers identify potential compounds for experiments Preclinical Research Phase. Once researchers have examined the possibilities a new drug may contain, they must do preliminary research to determine its potential for harm (toxicity). This is categorized as preclinical research and can be one of two types: in vitro or in vivo.""")
@@ -15051,10 +15152,14 @@ class ResearchPhaseEnum(EnumDefinitionImpl):
 
     _defn = EnumDefinition(
         name="ResearchPhaseEnum",
+        description="""An enumeration of research phases describing the stage of investigation for a drug or therapy, spanning preclinical research through clinical trial phases 1 through 4 (including phase 1/2 and phase 2/3 combinations).""",
     )
 
 class DirectionQualifierEnum(EnumDefinitionImpl):
-
+    """
+    An enumeration of values that qualify a change or effect by its direction, i.e., whether the referenced quantity
+    or activity is increased (including up-regulated) or decreased (including down-regulated).
+    """
     increased = PermissibleValue(text="increased")
     upregulated = PermissibleValue(text="upregulated")
     decreased = PermissibleValue(text="decreased")
@@ -15062,18 +15167,27 @@ class DirectionQualifierEnum(EnumDefinitionImpl):
 
     _defn = EnumDefinition(
         name="DirectionQualifierEnum",
+        description="""An enumeration of values that qualify a change or effect by its direction, i.e., whether the referenced quantity or activity is increased (including up-regulated) or decreased (including down-regulated).""",
     )
 
 class ChemicalEntityDerivativeEnum(EnumDefinitionImpl):
-
+    """
+    An enumeration of relationships by which one chemical entity is derived from another, e.g., a metabolite produced
+    from a parent compound.
+    """
     metabolite = PermissibleValue(text="metabolite")
 
     _defn = EnumDefinition(
         name="ChemicalEntityDerivativeEnum",
+        description="""An enumeration of relationships by which one chemical entity is derived from another, e.g., a metabolite produced from a parent compound.""",
     )
 
 class ChemicalOrGeneOrGeneProductFormOrVariantEnum(EnumDefinitionImpl):
-
+    """
+    An enumeration used as a qualifier to indicate a specific form or variant of a chemical, gene, or gene product
+    involved in an association (e.g., modified form, loss-of-function variant, gain-of-function variant,
+    dominant-negative variant, polymorphic form, SNP form, mutant form, or analog form).
+    """
     genetic_variant_form = PermissibleValue(text="genetic_variant_form")
     modified_form = PermissibleValue(text="modified_form")
     loss_of_function_variant_form = PermissibleValue(text="loss_of_function_variant_form")
@@ -15087,10 +15201,14 @@ class ChemicalOrGeneOrGeneProductFormOrVariantEnum(EnumDefinitionImpl):
 
     _defn = EnumDefinition(
         name="ChemicalOrGeneOrGeneProductFormOrVariantEnum",
+        description="""An enumeration used as a qualifier to indicate a specific form or variant of a chemical, gene, or gene product involved in an association (e.g., modified form, loss-of-function variant, gain-of-function variant, dominant-negative variant, polymorphic form, SNP form, mutant form, or analog form).""",
     )
 
 class GeneOrGeneProductOrChemicalPartQualifierEnum(EnumDefinitionImpl):
-
+    """
+    An enumeration used as a qualifier to indicate a particular structural or functional part of a gene, gene product,
+    or chemical (e.g., 3' UTR, 5' UTR, poly-A tail, promoter, enhancer, exon, or intron).
+    """
     polya_tail = PermissibleValue(text="polya_tail")
     promoter = PermissibleValue(text="promoter")
     enhancer = PermissibleValue(text="enhancer")
@@ -15099,6 +15217,7 @@ class GeneOrGeneProductOrChemicalPartQualifierEnum(EnumDefinitionImpl):
 
     _defn = EnumDefinition(
         name="GeneOrGeneProductOrChemicalPartQualifierEnum",
+        description="""An enumeration used as a qualifier to indicate a particular structural or functional part of a gene, gene product, or chemical (e.g., 3' UTR, 5' UTR, poly-A tail, promoter, enhancer, exon, or intron).""",
     )
 
     @classmethod
@@ -15109,7 +15228,13 @@ class GeneOrGeneProductOrChemicalPartQualifierEnum(EnumDefinitionImpl):
             PermissibleValue(text="5_prime_utr"))
 
 class GeneOrGeneProductOrChemicalEntityAspectEnum(EnumDefinitionImpl):
-
+    """
+    An enumeration used as a qualifier to indicate the specific aspect of a gene, gene product, or chemical entity
+    that is affected or measured in an association. Values cover activity and abundance (expression, synthesis,
+    degradation, stability, localization, transport), molecular interactions, and a wide range of molecular
+    modifications such as phosphorylation, methylation, acetylation, ubiquitination, and other post-translational or
+    chemical modifications.
+    """
     activity_or_abundance = PermissibleValue(
         text="activity_or_abundance",
         description="""Used in cases where the specificity of the relationship can not be determined to be either activity or abundance.  In general, a more specific value from this enumeration should be used.""")
@@ -15171,6 +15296,7 @@ class GeneOrGeneProductOrChemicalEntityAspectEnum(EnumDefinitionImpl):
 
     _defn = EnumDefinition(
         name="GeneOrGeneProductOrChemicalEntityAspectEnum",
+        description="""An enumeration used as a qualifier to indicate the specific aspect of a gene, gene product, or chemical entity that is affected or measured in an association. Values cover activity and abundance (expression, synthesis, degradation, stability, localization, transport), molecular interactions, and a wide range of molecular modifications such as phosphorylation, methylation, acetylation, ubiquitination, and other post-translational or chemical modifications.""",
     )
 
     @classmethod
@@ -15179,7 +15305,11 @@ class GeneOrGeneProductOrChemicalEntityAspectEnum(EnumDefinitionImpl):
             PermissibleValue(text="ADP-ribosylation"))
 
 class CausalMechanismQualifierEnum(EnumDefinitionImpl):
-
+    """
+    An enumeration used as a qualifier to specify the causal or pharmacologic mechanism by which an effect is exerted
+    in an association (e.g., agonism, antagonism, inverse agonism, allosteric modulation, activation, inhibition, and
+    their competitive or partial variants).
+    """
     modulation = PermissibleValue(
         text="modulation",
         description="""A causal mechanism that effects the normal functioning of a protein in some way e.g., mixed agonist/antagonist or unclear whether action is positive or negative""")
@@ -15425,6 +15555,7 @@ class CausalMechanismQualifierEnum(EnumDefinitionImpl):
 
     _defn = EnumDefinition(
         name="CausalMechanismQualifierEnum",
+        description="""An enumeration used as a qualifier to specify the causal or pharmacologic mechanism by which an effect is exerted in an association (e.g., agonism, antagonism, inverse agonism, allosteric modulation, activation, inhibition, and their competitive or partial variants).""",
     )
 
     @classmethod
@@ -15435,7 +15566,11 @@ class CausalMechanismQualifierEnum(EnumDefinitionImpl):
             PermissibleValue(text="de-ADP-ribosylation"))
 
 class LogicalInterpretationEnum(EnumDefinitionImpl):
-
+    """
+    An enumeration of logical interpretations that can be applied to a triple to indicate whether the relation should
+    be read as existential on both sides (some-some), universal-existential (all-some), or its inverse (inverse
+    all-some).
+    """
     some_some = PermissibleValue(
         text="some_some",
         description="A modifier on a triple that causes the triple to be interpreted as a some-some statement",
@@ -15448,10 +15583,14 @@ class LogicalInterpretationEnum(EnumDefinitionImpl):
 
     _defn = EnumDefinition(
         name="LogicalInterpretationEnum",
+        description="""An enumeration of logical interpretations that can be applied to a triple to indicate whether the relation should be read as existential on both sides (some-some), universal-existential (all-some), or its inverse (inverse all-some).""",
     )
 
 class ReactionDirectionEnum(EnumDefinitionImpl):
-
+    """
+    An enumeration of possible directions for a biochemical reaction, indicating whether it proceeds left-to-right,
+    right-to-left, is bidirectional (reversible), or has no net direction.
+    """
     left_to_right = PermissibleValue(text="left_to_right")
     right_to_left = PermissibleValue(text="right_to_left")
     bidirectional = PermissibleValue(text="bidirectional")
@@ -15459,15 +15598,20 @@ class ReactionDirectionEnum(EnumDefinitionImpl):
 
     _defn = EnumDefinition(
         name="ReactionDirectionEnum",
+        description="""An enumeration of possible directions for a biochemical reaction, indicating whether it proceeds left-to-right, right-to-left, is bidirectional (reversible), or has no net direction.""",
     )
 
 class ReactionSideEnum(EnumDefinitionImpl):
-
+    """
+    An enumeration indicating on which side of a biochemical reaction a participant appears - the left-hand
+    (reactant/substrate) side or the right-hand (product) side, as written.
+    """
     left = PermissibleValue(text="left")
     right = PermissibleValue(text="right")
 
     _defn = EnumDefinition(
         name="ReactionSideEnum",
+        description="""An enumeration indicating on which side of a biochemical reaction a participant appears - the left-hand (reactant/substrate) side or the right-hand (product) side, as written.""",
     )
 
 class PhaseEnum(EnumDefinitionImpl):
@@ -15533,7 +15677,11 @@ class SequenceEnum(EnumDefinitionImpl):
     )
 
 class DruggableGeneCategoryEnum(EnumDefinitionImpl):
-
+    """
+    An enumeration of druggability categories for gene targets as defined by the IDG (Illuminating the Druggable
+    Genome) / Pharos target development level classification: Tclin (targets of approved drugs), Tchem (targets with
+    potent bioactives), Tbio (targets with biological knowledge), and Tdark (poorly characterized targets).
+    """
     tclin = PermissibleValue(
         text="tclin",
         description="""These targets have activities in DrugCentral (ie. approved drugs) with known mechanism of action.""")
@@ -15549,10 +15697,14 @@ class DruggableGeneCategoryEnum(EnumDefinitionImpl):
 
     _defn = EnumDefinition(
         name="DruggableGeneCategoryEnum",
+        description="""An enumeration of druggability categories for gene targets as defined by the IDG (Illuminating the Druggable Genome) / Pharos target development level classification: Tclin (targets of approved drugs), Tchem (targets with potent bioactives), Tbio (targets with biological knowledge), and Tdark (poorly characterized targets).""",
     )
 
 class DrugAvailabilityEnum(EnumDefinitionImpl):
-
+    """
+    An enumeration describing how a drug or chemical entity may be obtained, distinguishing products that are
+    available over the counter from those that require a prescription.
+    """
     over_the_counter = PermissibleValue(
         text="over_the_counter",
         description="chemical entity is available over the counter without a prescription.")
@@ -15562,10 +15714,14 @@ class DrugAvailabilityEnum(EnumDefinitionImpl):
 
     _defn = EnumDefinition(
         name="DrugAvailabilityEnum",
+        description="""An enumeration describing how a drug or chemical entity may be obtained, distinguishing products that are available over the counter from those that require a prescription.""",
     )
 
 class DrugDeliveryEnum(EnumDefinitionImpl):
-
+    """
+    An enumeration of routes by which a drug is administered or delivered to a patient, including inhalation, oral,
+    transdermal absorption, and various forms of injection (intravenous, subcutaneous, intramuscular).
+    """
     inhalation = PermissibleValue(text="inhalation")
     oral = PermissibleValue(text="oral")
     absorption_through_the_skin = PermissibleValue(text="absorption_through_the_skin")
@@ -15576,6 +15732,7 @@ class DrugDeliveryEnum(EnumDefinitionImpl):
 
     _defn = EnumDefinition(
         name="DrugDeliveryEnum",
+        description="""An enumeration of routes by which a drug is administered or delivered to a patient, including inhalation, oral, transdermal absorption, and various forms of injection (intravenous, subcutaneous, intramuscular).""",
     )
 
 class ResourceRoleEnum(EnumDefinitionImpl):
@@ -15648,7 +15805,12 @@ class FDAIDAAdverseEventEnum(EnumDefinitionImpl):
     )
 
 class AgentTypeEnum(EnumDefinitionImpl):
-
+    """
+    An enumeration of agent types responsible for generating a statement of knowledge, as defined by the Translator
+    Knowledge Level / Agent Type (KL/AT) standard. Values distinguish human (manual) agents from automated agents
+    (including data analysis pipelines, computational models, text-mining agents, image-processing agents) and mixed
+    cases such as manual validation of automated output.
+    """
     manual_agent = PermissibleValue(
         text="manual_agent",
         description="""A human agent who is responsible for generating a statement of knowledge. The human may utilize computationally generated information as evidence for the resulting knowledge, but the human is the one who ultimately interprets/reasons with this evidence to produce a statement of knowledge.""")
@@ -15676,10 +15838,16 @@ class AgentTypeEnum(EnumDefinitionImpl):
 
     _defn = EnumDefinition(
         name="AgentTypeEnum",
+        description="""An enumeration of agent types responsible for generating a statement of knowledge, as defined by the Translator Knowledge Level / Agent Type (KL/AT) standard. Values distinguish human (manual) agents from automated agents (including data analysis pipelines, computational models, text-mining agents, image-processing agents) and mixed cases such as manual validation of automated output.""",
     )
 
 class KnowledgeLevelEnum(EnumDefinitionImpl):
-
+    """
+    An enumeration characterizing the type of knowledge expressed in a statement and the kind of evidence and
+    reasoning that supports it, as defined by the Translator Knowledge Level / Agent Type (KL/AT) standard. Values
+    include knowledge assertion, logical entailment, prediction, statistical association, text co-occurrence, direct
+    observation, and not-provided.
+    """
     knowledge_assertion = PermissibleValue(
         text="knowledge_assertion",
         description="""A statement of purported fact that is put forth by an agent as true, based on assessment of direct evidence. Assertions are likely but not definitively true.""")
@@ -15704,6 +15872,7 @@ class KnowledgeLevelEnum(EnumDefinitionImpl):
 
     _defn = EnumDefinition(
         name="KnowledgeLevelEnum",
+        description="""An enumeration characterizing the type of knowledge expressed in a statement and the kind of evidence and reasoning that supports it, as defined by the Translator Knowledge Level / Agent Type (KL/AT) standard. Values include knowledge assertion, logical entailment, prediction, statistical association, text co-occurrence, direct observation, and not-provided.""",
     )
 
 class GeneToPhenotypicFeaturePredicateEnum(EnumDefinitionImpl):
@@ -16712,7 +16881,7 @@ slots.has_biomarker = Slot(uri=BIOLINK.has_biomarker, name="has biomarker", curi
                    model_uri=BIOLINK.has_biomarker, domain=DiseaseOrPhenotypicFeature, range=Optional[Union[Union[dict, "ChemicalEntityOrGeneOrGeneProduct"], list[Union[dict, "ChemicalEntityOrGeneOrGeneProduct"]]]])
 
 slots.biomarker_for = Slot(uri=BIOLINK.biomarker_for, name="biomarker for", curie=BIOLINK.curie('biomarker_for'),
-                   model_uri=BIOLINK.biomarker_for, domain=NamedThing, range=Optional[Union[Union[str, DiseaseOrPhenotypicFeatureId], list[Union[str, DiseaseOrPhenotypicFeatureId]]]])
+                   model_uri=BIOLINK.biomarker_for, domain=None, range=Optional[Union[Union[str, DiseaseOrPhenotypicFeatureId], list[Union[str, DiseaseOrPhenotypicFeatureId]]]])
 
 slots.expressed_in = Slot(uri=BIOLINK.expressed_in, name="expressed in", curie=BIOLINK.curie('expressed_in'),
                    model_uri=BIOLINK.expressed_in, domain=None, range=Optional[Union[Union[str, AnatomicalEntityId], list[Union[str, AnatomicalEntityId]]]])

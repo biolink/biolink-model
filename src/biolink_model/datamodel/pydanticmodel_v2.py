@@ -182,6 +182,9 @@ class ClinicalTrialAgeStageEnum(str, Enum):
 
 
 class ApprovalStatusEnum(str, Enum):
+    """
+    An enumeration of regulatory and development milestones for a drug or therapeutic, spanning discovery, preclinical research, FDA clinical trial phases (1-4), special review designations (e.g., fast track, breakthrough therapy, priority review), regular FDA approval, and post-approval withdrawal.
+    """
     discovery_and_development_phase = "discovery_and_development_phase"
     """
     Discovery & Development Phase. Discovery involves researchers finding new possibilities for medication through testing molecular compounds, noting unexpected effects from existing treatments, or the creation of new technology that allows novel ways of targeting medical products to sites in the body. Drug development occurs after researchers identify potential compounds for experiments.
@@ -242,6 +245,9 @@ class ApprovalStatusEnum(str, Enum):
 
 
 class ClinicalApprovalStatusEnum(str, Enum):
+    """
+    An enumeration describing whether a chemical or therapy is approved for use in treating a specific condition (e.g., FDA-approved for a condition, not approved, off-label use, or withdrawn following approval).
+    """
     approved_for_condition = "approved_for_condition"
     fda_approved_for_condition = "fda_approved_for_condition"
     not_approved_for_condition = "not_approved_for_condition"
@@ -251,6 +257,9 @@ class ClinicalApprovalStatusEnum(str, Enum):
 
 
 class ResearchPhaseEnum(str, Enum):
+    """
+    An enumeration of research phases describing the stage of investigation for a drug or therapy, spanning preclinical research through clinical trial phases 1 through 4 (including phase 1/2 and phase 2/3 combinations).
+    """
     pre_clinical_research_phase = "pre_clinical_research_phase"
     """
     Biolink 'pre_clinical_research' is the union of both the `FDA discovery and development phase` and `FDA preclinical research phase`. Discovery involves researchers finding new possibilities for medication through testing molecular compounds, noting unexpected effects from existing treatments, or the creation of new technology that allows novel ways of targeting medical products to sites in the body. Drug development occurs after researchers identify potential compounds for experiments Preclinical Research Phase. Once researchers have examined the possibilities a new drug may contain, they must do preliminary research to determine its potential for harm (toxicity). This is categorized as preclinical research and can be one of two types: in vitro or in vivo.
@@ -287,6 +296,9 @@ class ResearchPhaseEnum(str, Enum):
 
 
 class DirectionQualifierEnum(str, Enum):
+    """
+    An enumeration of values that qualify a change or effect by its direction, i.e., whether the referenced quantity or activity is increased (including up-regulated) or decreased (including down-regulated).
+    """
     increased = "increased"
     upregulated = "upregulated"
     decreased = "decreased"
@@ -294,10 +306,16 @@ class DirectionQualifierEnum(str, Enum):
 
 
 class ChemicalEntityDerivativeEnum(str, Enum):
+    """
+    An enumeration of relationships by which one chemical entity is derived from another, e.g., a metabolite produced from a parent compound.
+    """
     metabolite = "metabolite"
 
 
 class ChemicalOrGeneOrGeneProductFormOrVariantEnum(str, Enum):
+    """
+    An enumeration used as a qualifier to indicate a specific form or variant of a chemical, gene, or gene product involved in an association (e.g., modified form, loss-of-function variant, gain-of-function variant, dominant-negative variant, polymorphic form, SNP form, mutant form, or analog form).
+    """
     genetic_variant_form = "genetic_variant_form"
     modified_form = "modified_form"
     loss_of_function_variant_form = "loss_of_function_variant_form"
@@ -311,6 +329,9 @@ class ChemicalOrGeneOrGeneProductFormOrVariantEnum(str, Enum):
 
 
 class GeneOrGeneProductOrChemicalPartQualifierEnum(str, Enum):
+    """
+    An enumeration used as a qualifier to indicate a particular structural or functional part of a gene, gene product, or chemical (e.g., 3' UTR, 5' UTR, poly-A tail, promoter, enhancer, exon, or intron).
+    """
     number_3_prime_utr = "3_prime_utr"
     number_5_prime_utr = "5_prime_utr"
     polya_tail = "polya_tail"
@@ -321,6 +342,9 @@ class GeneOrGeneProductOrChemicalPartQualifierEnum(str, Enum):
 
 
 class GeneOrGeneProductOrChemicalEntityAspectEnum(str, Enum):
+    """
+    An enumeration used as a qualifier to indicate the specific aspect of a gene, gene product, or chemical entity that is affected or measured in an association. Values cover activity and abundance (expression, synthesis, degradation, stability, localization, transport), molecular interactions, and a wide range of molecular modifications such as phosphorylation, methylation, acetylation, ubiquitination, and other post-translational or chemical modifications.
+    """
     activity_or_abundance = "activity_or_abundance"
     """
     Used in cases where the specificity of the relationship can not be determined to be either activity or abundance.  In general, a more specific value from this enumeration should be used.
@@ -384,6 +408,9 @@ class GeneOrGeneProductOrChemicalEntityAspectEnum(str, Enum):
 
 
 class CausalMechanismQualifierEnum(str, Enum):
+    """
+    An enumeration used as a qualifier to specify the causal or pharmacologic mechanism by which an effect is exerted in an association (e.g., agonism, antagonism, inverse agonism, allosteric modulation, activation, inhibition, and their competitive or partial variants).
+    """
     modulation = "modulation"
     """
     A causal mechanism that effects the normal functioning of a protein in some way e.g., mixed agonist/antagonist or unclear whether action is positive or negative
@@ -703,6 +730,9 @@ class CausalMechanismQualifierEnum(str, Enum):
 
 
 class LogicalInterpretationEnum(str, Enum):
+    """
+    An enumeration of logical interpretations that can be applied to a triple to indicate whether the relation should be read as existential on both sides (some-some), universal-existential (all-some), or its inverse (inverse all-some).
+    """
     some_some = "some_some"
     """
     A modifier on a triple that causes the triple to be interpreted as a some-some statement
@@ -715,6 +745,9 @@ class LogicalInterpretationEnum(str, Enum):
 
 
 class ReactionDirectionEnum(str, Enum):
+    """
+    An enumeration of possible directions for a biochemical reaction, indicating whether it proceeds left-to-right, right-to-left, is bidirectional (reversible), or has no net direction.
+    """
     left_to_right = "left_to_right"
     right_to_left = "right_to_left"
     bidirectional = "bidirectional"
@@ -722,6 +755,9 @@ class ReactionDirectionEnum(str, Enum):
 
 
 class ReactionSideEnum(str, Enum):
+    """
+    An enumeration indicating on which side of a biochemical reaction a participant appears - the left-hand (reactant/substrate) side or the right-hand (product) side, as written.
+    """
     left = "left"
     right = "right"
 
@@ -772,6 +808,9 @@ class SequenceEnum(str, Enum):
 
 
 class DruggableGeneCategoryEnum(str, Enum):
+    """
+    An enumeration of druggability categories for gene targets as defined by the IDG (Illuminating the Druggable Genome) / Pharos target development level classification: Tclin (targets of approved drugs), Tchem (targets with potent bioactives), Tbio (targets with biological knowledge), and Tdark (poorly characterized targets).
+    """
     tclin = "tclin"
     """
     These targets have activities in DrugCentral (ie. approved drugs) with known mechanism of action.
@@ -791,6 +830,9 @@ class DruggableGeneCategoryEnum(str, Enum):
 
 
 class DrugAvailabilityEnum(str, Enum):
+    """
+    An enumeration describing how a drug or chemical entity may be obtained, distinguishing products that are available over the counter from those that require a prescription.
+    """
     over_the_counter = "over_the_counter"
     """
     chemical entity is available over the counter without a prescription.
@@ -802,6 +844,9 @@ class DrugAvailabilityEnum(str, Enum):
 
 
 class DrugDeliveryEnum(str, Enum):
+    """
+    An enumeration of routes by which a drug is administered or delivered to a patient, including inhalation, oral, transdermal absorption, and various forms of injection (intravenous, subcutaneous, intramuscular).
+    """
     inhalation = "inhalation"
     oral = "oral"
     absorption_through_the_skin = "absorption_through_the_skin"
@@ -875,6 +920,9 @@ class FDAIDAAdverseEventEnum(str, Enum):
 
 
 class AgentTypeEnum(str, Enum):
+    """
+    An enumeration of agent types responsible for generating a statement of knowledge, as defined by the Translator Knowledge Level / Agent Type (KL/AT) standard. Values distinguish human (manual) agents from automated agents (including data analysis pipelines, computational models, text-mining agents, image-processing agents) and mixed cases such as manual validation of automated output.
+    """
     manual_agent = "manual_agent"
     """
     A human agent who is responsible for generating a statement of knowledge. The human may utilize computationally generated information as evidence for the resulting knowledge, but the human is the one who ultimately interprets/reasons with this evidence to produce a statement of knowledge.
@@ -910,6 +958,9 @@ class AgentTypeEnum(str, Enum):
 
 
 class KnowledgeLevelEnum(str, Enum):
+    """
+    An enumeration characterizing the type of knowledge expressed in a statement and the kind of evidence and reasoning that supports it, as defined by the Translator Knowledge Level / Agent Type (KL/AT) standard. Values include knowledge assertion, logical entailment, prediction, statistical association, text co-occurrence, direct observation, and not-provided.
+    """
     knowledge_assertion = "knowledge_assertion"
     """
     A statement of purported fact that is put forth by an agent as true, based on assessment of direct evidence. Assertions are likely but not definitively true.
@@ -982,6 +1033,9 @@ class Edge(ConfiguredBaseModel):
 
 
 class MappingCollection(ConfiguredBaseModel):
+    """
+    An abstract container class that holds a set of predicate mappings. Serves as a top-level root for documents that enumerate how third-party or deprecated predicates should be rewritten to Biolink predicates and their associated qualifiers.
+    """
     predicate_mappings: Optional[list[PredicateMapping]] = Field(default=None, description="""A collection of relationships that are not used in biolink, but have biolink patterns that can be used to replace them.  This is a temporary slot to help with the transition to the fully qualified predicate model in Biolink3.""")
 
 
@@ -6389,6 +6443,9 @@ class ChemicalEntityToChemicalEntityAssociation(Association):
 
 
 class ReactionToParticipantAssociation(ChemicalEntityToChemicalEntityAssociation):
+    """
+    An association between a biochemical reaction and a participating molecular entity, qualified by the stoichiometry, the side (reactant vs. product) on which the participant appears, and the direction of the reaction.
+    """
     stoichiometry: Optional[int] = Field(default=None, description="""the relationship between the relative quantities of substances taking part in a reaction or forming a compound, typically a ratio of whole integers.""")
     reaction_direction: Optional[ReactionDirectionEnum] = Field(default=None, description="""the direction of a reaction as constrained by the direction enum (ie: left_to_right, neutral, etc.)""")
     reaction_side: Optional[ReactionSideEnum] = Field(default=None, description="""the side of a reaction being modeled (ie: left or right)""")
@@ -6445,6 +6502,9 @@ class ReactionToParticipantAssociation(ChemicalEntityToChemicalEntityAssociation
 
 
 class ReactionToCatalystAssociation(ReactionToParticipantAssociation):
+    """
+    A specialization of reaction-to-participant association in which the participant is a gene or gene product (e.g., an enzyme) that catalyses the reaction.
+    """
     stoichiometry: Optional[int] = Field(default=None, description="""the relationship between the relative quantities of substances taking part in a reaction or forming a compound, typically a ratio of whole integers.""")
     reaction_direction: Optional[ReactionDirectionEnum] = Field(default=None, description="""the direction of a reaction as constrained by the direction enum (ie: left_to_right, neutral, etc.)""")
     reaction_side: Optional[ReactionSideEnum] = Field(default=None, description="""the side of a reaction being modeled (ie: left or right)""")
@@ -6727,6 +6787,9 @@ class ChemicalEntityToBiologicalProcessAssociation(Association):
 
 
 class NamedThingAssociatedWithLikelihoodOfNamedThingAssociation(Association):
+    """
+    An association in which the subject entity is linked to the likelihood of the object entity occurring, manifesting, or being observed. Subject and object may each be qualified by aspect and context, and the association may be further qualified by a population context (e.g., a cohort or demographic group in which the likelihood applies).
+    """
     subject: str = Field(default=..., description="""connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     subject_aspect_qualifier: Optional[str] = Field(default=None, description="""Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the subject of an association (aka: statement).""")
     subject_context_qualifier: Optional[str] = Field(default=None)
@@ -9053,6 +9116,9 @@ class CausalGeneToDiseaseAssociation(GeneToEntityAssociationMixin, Association):
 
 
 class CorrelatedGeneToDiseaseAssociation(GeneToEntityAssociationMixin, EntityToDiseaseAssociationMixin, Association):
+    """
+    An association between a gene (or gene product) and a disease for which the gene is statistically correlated with the disease rather than asserted as causal. Such associations typically derive from GWAS, co-occurrence analyses, or other statistical methods, and are annotated with scores such as a z-score or a diseases confidence score.
+    """
     z_score: Optional[float] = Field(default=None, description="""A measure of the divergence of an individual experimental result from the most probable result, the mean. Z is expressed in terms of the number of standard deviations from the mean value.""")
     diseases_confidence_score: Optional[float] = Field(default=None, description="""A score defined by Jensen Lab Diseases that reports confidence level in an association on a scale of 1-5 stars.  It is based on different inputs for curated knowledge associations vs text-mined associations vs experimental/GWAS based associations, but adjusts/caps scores for these types of knowledge such that they are comparable on a single scale.""")
     subject_form_or_variant_qualifier: Optional[str] = Field(default=None, description="""A qualifier that composes with a core subject/object concept to define a specific type, variant, alternative version of this concept. The composed concept remains a subtype or instance of the core concept. For example, the qualifier ‘mutation’ combines with the core concept ‘Gene X’ to express the compose concept ‘a mutation of Gene X’.  This qualifier specifies a change in the subject of an association (aka: statement).""")
@@ -9129,6 +9195,9 @@ class CorrelatedGeneToDiseaseAssociation(GeneToEntityAssociationMixin, EntityToD
 
 
 class DruggableGeneToDiseaseAssociation(GeneToDiseaseAssociation, GeneToEntityAssociationMixin, EntityToDiseaseAssociationMixin):
+    """
+    An association between a gene (or gene product) and a disease in which the gene is classified by its druggability (e.g., via the IDG/Pharos target development-level tiers). Used to represent gene-disease links whose therapeutic tractability is of interest.
+    """
     druggable_gene_category: Optional[DruggableGeneCategoryEnum] = Field(default=None, description="""Classification of druggable genes based on knowledge about drug or small molecule activities.""")
     subject: str = Field(default=..., description="""gene in which variation is correlated with the disease in a protective manner, or if the product produced by the gene can be targeted by a small molecule and this leads to a protective or improving disease state.""")
     predicate: Literal["target_for"] = Field(default=..., description="""Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats""")
@@ -9502,6 +9571,9 @@ class PopulationToPopulationAssociation(Association):
 
 
 class VariantToPhenotypicFeatureAssociation(VariantToEntityAssociationMixin, EntityToPhenotypicFeatureAssociationMixin, Association):
+    """
+    An association between a sequence variant and a phenotypic feature, in which the allele state of the variant is linked to the manifestation of the phenotype.
+    """
     subject: str = Field(default=..., description="""a sequence variant in which the allele state is associated in some way with the phenotype state""")
     predicate: str = Field(default=..., description="""Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats""")
     object: str = Field(default=..., description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
@@ -9566,6 +9638,9 @@ class VariantToPhenotypicFeatureAssociation(VariantToEntityAssociationMixin, Ent
 
 
 class VariantToDiseaseAssociation(VariantToEntityAssociationMixin, EntityToDiseaseAssociationMixin, Association):
+    """
+    An association between a sequence variant and a disease, in which the allele state of the variant is linked to the disease state (e.g., as a pathogenic, likely-pathogenic, or risk-conferring variant).
+    """
     subject: str = Field(default=..., description="""a sequence variant in which the allele state is associated in some way with the disease state""")
     predicate: Literal["biolink:related_condition"] = Field(default=..., description="""E.g. is pathogenic for""")
     object: str = Field(default=..., description="""a disease that is associated with that variant""")
@@ -9625,6 +9700,9 @@ class VariantToDiseaseAssociation(VariantToEntityAssociationMixin, EntityToDisea
 
 
 class GenotypeToDiseaseAssociation(GenotypeToEntityAssociationMixin, EntityToDiseaseAssociationMixin, Association):
+    """
+    An association between a genotype and a disease, in which the genotype (typically a combination of alleles at one or more loci) is linked to the disease state.
+    """
     subject: str = Field(default=..., description="""a genotype that is associated in some way with a disease state""")
     predicate: Literal["biolink:related_condition"] = Field(default=..., description="""E.g. is pathogenic for""")
     object: str = Field(default=..., description="""a disease that is associated with that genotype""")
@@ -9693,6 +9771,9 @@ class ModelToDiseaseAssociationMixin(ConfiguredBaseModel):
 
 
 class GeneAsAModelOfDiseaseAssociation(ModelToDiseaseAssociationMixin, GeneToDiseaseAssociation, EntityToDiseaseAssociationMixin):
+    """
+    An association in which a gene (e.g., a model-organism ortholog of a known disease gene) serves as a model of a human disease - for example, because mutants of the gene recapitulate core features of the disease.
+    """
     subject: str = Field(default=..., description="""A gene that has a role in modeling the disease. This may be a model organism ortholog of a known disease gene, or it may be a gene whose mutants recapitulate core features of the disease.""")
     predicate: Literal["model_of"] = Field(default=..., description="""The relationship to the disease""")
     object: str = Field(default=..., description="""disease""")
@@ -9769,6 +9850,9 @@ class GeneAsAModelOfDiseaseAssociation(ModelToDiseaseAssociationMixin, GeneToDis
 
 
 class VariantAsAModelOfDiseaseAssociation(ModelToDiseaseAssociationMixin, VariantToDiseaseAssociation, EntityToDiseaseAssociationMixin):
+    """
+    An association in which a sequence variant serves as a model of a disease, recapitulating features relevant for studying the disease outside of a patient who carries it.
+    """
     subject: str = Field(default=..., description="""A variant that has a role in modeling the disease.""")
     predicate: Literal["biolink:model_of"] = Field(default=..., description="""The relationship to the disease""")
     object: str = Field(default=..., description="""disease""")
@@ -9828,6 +9912,9 @@ class VariantAsAModelOfDiseaseAssociation(ModelToDiseaseAssociationMixin, Varian
 
 
 class GenotypeAsAModelOfDiseaseAssociation(ModelToDiseaseAssociationMixin, GenotypeToDiseaseAssociation, EntityToDiseaseAssociationMixin):
+    """
+    An association in which a genotype serves as a model of a disease, recapitulating features relevant for studying the disease outside of a patient who carries it.
+    """
     subject: str = Field(default=..., description="""A genotype that has a role in modeling the disease.""")
     predicate: Literal["biolink:model_of"] = Field(default=..., description="""The relationship to the disease""")
     object: str = Field(default=..., description="""disease""")
@@ -9887,6 +9974,9 @@ class GenotypeAsAModelOfDiseaseAssociation(ModelToDiseaseAssociationMixin, Genot
 
 
 class CellLineAsAModelOfDiseaseAssociation(ModelToDiseaseAssociationMixin, CellLineToDiseaseOrPhenotypicFeatureAssociation, EntityToDiseaseAssociationMixin):
+    """
+    An association in which a cell line - typically derived from an organismal entity with a disease state - serves as a model for that disease in experimental settings.
+    """
     subject: str = Field(default=..., description="""A cell line derived from an organismal entity with a disease state that is used as a model of that disease.""")
     predicate: Literal["biolink:model_of"] = Field(default=..., description="""The relationship to the disease""")
     object: str = Field(default=..., description="""disease""")
@@ -9949,6 +10039,9 @@ class CellLineAsAModelOfDiseaseAssociation(ModelToDiseaseAssociationMixin, CellL
 
 
 class OrganismalEntityAsAModelOfDiseaseAssociation(ModelToDiseaseAssociationMixin, EntityToDiseaseAssociationMixin, Association):
+    """
+    An association in which an organismal entity (e.g., a strain or breed) serves as a model of a disease, either because it has a natural predisposition to the disease or was bred or engineered specifically to recapitulate it.
+    """
     subject: str = Field(default=..., description="""A organismal entity (strain, breed) with a predisposition to a disease, or bred/created specifically to model a disease.""")
     predicate: Literal["biolink:model_of"] = Field(default=..., description="""The relationship to the disease""")
     object: str = Field(default=..., description="""disease""")
@@ -10008,6 +10101,9 @@ class OrganismalEntityAsAModelOfDiseaseAssociation(ModelToDiseaseAssociationMixi
 
 
 class OrganismToOrganismAssociation(Association):
+    """
+    An association between two individual organisms (e.g., symbiosis, parasitism, predation, or other inter-organism relationships).
+    """
     subject: str = Field(default=..., description="""connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     predicate: str = Field(default=..., description="""Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats""")
     object: str = Field(default=..., description="""An association between two individual organisms.""")
@@ -10060,6 +10156,9 @@ class OrganismToOrganismAssociation(Association):
 
 
 class TaxonToTaxonAssociation(Association):
+    """
+    An association between two organism taxa, capturing ecological or evolutionary relationships between the taxa (e.g., a host-pathogen relationship or shared habitat).
+    """
     subject: str = Field(default=..., description="""connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     predicate: str = Field(default=..., description="""Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats""")
     object: str = Field(default=..., description="""An association between individuals of different taxa.""")
@@ -10112,6 +10211,9 @@ class TaxonToTaxonAssociation(Association):
 
 
 class GeneHasVariantThatContributesToDiseaseAssociation(GeneToDiseaseAssociation):
+    """
+    A gene-to-disease association that is asserted on the grounds that the gene harbours a sequence variant that contributes to the disease. Qualifies the gene with the form or variant that underlies the contribution.
+    """
     subject_form_or_variant_qualifier: Optional[ChemicalOrGeneOrGeneProductFormOrVariantEnum] = Field(default=None, description="""A qualifier that composes with a core subject/object concept to define a specific type, variant, alternative version of this concept. The composed concept remains a subtype or instance of the core concept. For example, the qualifier ‘mutation’ combines with the core concept ‘Gene X’ to express the compose concept ‘a mutation of Gene X’.  This qualifier specifies a change in the subject of an association (aka: statement).""")
     subject_aspect_qualifier: Optional[GeneOrGeneProductOrChemicalEntityAspectEnum] = Field(default=None, description="""Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the subject of an association (aka: statement).""")
     object_direction_qualifier: Optional[DirectionQualifierEnum] = Field(default=None, description="""Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement).""")
@@ -10640,6 +10742,9 @@ class MolecularActivityToMolecularActivityAssociation(Association):
 
 
 class GeneToGoTermAssociation(FunctionalAssociation):
+    """
+    A functional association between a gene (or gene product or macromolecular complex) and a Gene Ontology (GO) term describing the molecular function, biological process, or cellular component in which it participates.
+    """
     subject: str = Field(default=..., description="""gene, product or macromolecular complex that has the function associated with the GO term""")
     predicate: str = Field(default=..., description="""Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats""")
     object: str = Field(default=..., description="""class describing the activity, process or localization of the gene product""")
@@ -11706,6 +11811,9 @@ class OrganismTaxonToOrganismTaxonInteraction(OrganismTaxonToOrganismTaxonAssoci
 
 
 class OrganismTaxonToEnvironmentAssociation(OrganismTaxonToEntityAssociation, Association):
+    """
+    An abstract association between an organism taxon and an environmental context (e.g., a habitat, biome, or ecological setting) in which the taxon occurs.
+    """
     subject: str = Field(default=..., description="""the taxon that is the subject of the association""")
     predicate: str = Field(default=..., description="""predicate describing the relationship between the taxon and the environment""")
     object: str = Field(default=..., description="""the environment in which the organism occurs""")

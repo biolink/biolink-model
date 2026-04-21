@@ -1201,6 +1201,7 @@ message CellLine
   labelType inTaxonLabel = 0
  repeated  attribute hasAttribute = 0
  }
+// An association in which a cell line - typically derived from an organismal entity with a disease state - serves as a model for that disease in experimental settings.
 message CellLineAsAModelOfDiseaseAssociation
  {
   string id = 0
@@ -2683,6 +2684,7 @@ message ContributorAssociation
   agent object = 0
  repeated  ontologyClass qualifiers = 0
  }
+// An association between a gene (or gene product) and a disease for which the gene is statistically correlated with the disease rather than asserted as causal. Such associations typically derive from GWAS, co-occurrence analyses, or other statistical methods, and are annotated with scores such as a z-score or a diseases confidence score.
 message CorrelatedGeneToDiseaseAssociation
  {
   string id = 0
@@ -3409,6 +3411,7 @@ message DrugToGeneInteractionExposure
  repeated  quantityValue hasQuantitativeValue = 0
  repeated  gene hasGeneOrGeneProduct = 0
  }
+// An association between a gene (or gene product) and a disease in which the gene is classified by its druggability (e.g., via the IDG/Pharos target development-level tiers). Used to represent gene-disease links whose therapeutic tractability is of interest.
 message DruggableGeneToDiseaseAssociation
  {
   string id = 0
@@ -4197,6 +4200,7 @@ message GeneAffectsChemicalAssociation
   uriorcurie predicate = 0
   chemicalEntity object = 0
  }
+// An association in which a gene (e.g., a model-organism ortholog of a known disease gene) serves as a model of a human disease - for example, because mutants of the gene recapitulate core features of the disease.
 message GeneAsAModelOfDiseaseAssociation
  {
   string id = 0
@@ -4335,6 +4339,7 @@ message GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation
   geneOrGeneProduct object = 0
   uriorcurie predicate = 0
  }
+// A gene-to-disease association that is asserted on the grounds that the gene harbours a sequence variant that contributes to the disease. Qualifies the gene with the form or variant that underlies the contribution.
 message GeneHasVariantThatContributesToDiseaseAssociation
  {
   string id = 0
@@ -4889,6 +4894,7 @@ message GeneToGeneProductRelationship
   geneProductMixin object = 0
   uriorcurie predicate = 0
  }
+// A functional association between a gene (or gene product or macromolecular complex) and a Gene Ontology (GO) term describing the molecular function, biological process, or cellular component in which it participates.
 message GeneToGoTermAssociation
  {
   string id = 0
@@ -5217,6 +5223,7 @@ message Genotype
   zygosity hasZygosity = 0
   biologicalSequence hasBiologicalSequence = 0
  }
+// An association in which a genotype serves as a model of a disease, recapitulating features relevant for studying the disease outside of a patient who carries it.
 message GenotypeAsAModelOfDiseaseAssociation
  {
   string id = 0
@@ -5276,6 +5283,7 @@ message GenotypeAsAModelOfDiseaseAssociation
   disease diseaseContextQualifier = 0
   genotype subject = 0
  }
+// An association between a genotype and a disease, in which the genotype (typically a combination of alleles at one or more loci) is linked to the disease state.
 message GenotypeToDiseaseAssociation
  {
   string id = 0
@@ -6608,6 +6616,7 @@ message NamedThing
   uriorcurie taxon = 0
  repeated  uriorcurie category = 0
  }
+// An association in which the subject entity is linked to the likelihood of the object entity occurring, manifesting, or being observed. Subject and object may each be qualified by aspect and context, and the association may be further qualified by a population context (e.g., a cohort or demographic group in which the likelihood applies).
 message NamedThingAssociatedWithLikelihoodOfNamedThingAssociation
  {
   string id = 0
@@ -6954,6 +6963,7 @@ message OrganismTaxonToOrganismTaxonSpecialization
   organismTaxon object = 0
   uriorcurie predicate = 0
  }
+// An association between two individual organisms (e.g., symbiosis, parasitism, predation, or other inter-organism relationships).
 message OrganismToOrganismAssociation
  {
   string id = 0
@@ -7006,6 +7016,7 @@ message OrganismToOrganismAssociation
   individualOrganism subject = 0
   individualOrganism object = 0
  }
+// An association in which an organismal entity (e.g., a strain or breed) serves as a model of a disease, either because it has a natural predisposition to the disease or was bred or engineered specifically to recapitulate it.
 message OrganismalEntityAsAModelOfDiseaseAssociation
  {
   string id = 0
@@ -8020,6 +8031,7 @@ message QuantityValue
   unit hasUnit = 0
   double hasNumericValue = 0
  }
+// A specialization of reaction-to-participant association in which the participant is a gene or gene product (e.g., an enzyme) that catalyses the reaction.
 message ReactionToCatalystAssociation
  {
   string id = 0
@@ -8076,6 +8088,7 @@ message ReactionToCatalystAssociation
   molecularEntity subject = 0
   geneOrGeneProduct object = 0
  }
+// An association between a biochemical reaction and a participating molecular entity, qualified by the stoichiometry, the side (reactant vs. product) on which the participant appears, and the direction of the reaction.
 message ReactionToParticipantAssociation
  {
   string id = 0
@@ -8644,6 +8657,7 @@ message StudyVariable
   string format = 0
   date creationDate = 0
  }
+// An association between two organism taxa, capturing ecological or evolutionary relationships between the taxa (e.g., a host-pathogen relationship or shared habitat).
 message TaxonToTaxonAssociation
  {
   string id = 0
@@ -8854,6 +8868,7 @@ message Treatment
  repeated  device hasDevice = 0
  repeated  procedure hasProcedure = 0
  }
+// An association in which a sequence variant serves as a model of a disease, recapitulating features relevant for studying the disease outside of a patient who carries it.
 message VariantAsAModelOfDiseaseAssociation
  {
   string id = 0
@@ -8913,6 +8928,7 @@ message VariantAsAModelOfDiseaseAssociation
   disease diseaseContextQualifier = 0
   sequenceVariant subject = 0
  }
+// An association between a sequence variant and a disease, in which the allele state of the variant is linked to the disease state (e.g., as a pathogenic, likely-pathogenic, or risk-conferring variant).
 message VariantToDiseaseAssociation
  {
   string id = 0
@@ -9082,6 +9098,7 @@ message VariantToGeneExpressionAssociation
   lifeStage stageQualifier = 0
   diseaseOrPhenotypicFeature phenotypicState = 0
  }
+// An association between a sequence variant and a phenotypic feature, in which the allele state of the variant is linked to the manifestation of the phenotype.
 message VariantToPhenotypicFeatureAssociation
  {
   string id = 0
