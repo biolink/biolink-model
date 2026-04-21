@@ -496,7 +496,7 @@ linkml:Sparqlpath xsd:string
     (  $<BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation_tes> (  &<Association_tes> ;
           rdf:type [ <Association> ] ? ;
           rdf:subject @<BiologicalProcessOrActivity> ;
-          rdf:object @<GeneOrGeneProductOrGeneFamily> ;
+          rdf:object @<NamedThing> ;
           rdf:predicate [ <actively_involves> <can_be_carried_out_by> <consumes> <enabled_by> <has_catalyst> <has_input>
              <has_output> <has_participant> <has_substrate> ]
        ) ;
@@ -579,7 +579,7 @@ linkml:Sparqlpath xsd:string
           rdf:type [ <Association> ] ? ;
           &<CaseToEntityAssociationMixin_tes> ;
           rdf:type [ <CaseToEntityAssociationMixin> ] ? ;
-          rdf:object @<GeneOrGeneProduct>
+          rdf:object @<NamedThing>
        ) ;
        rdf:type [ <CaseToGeneAssociation> ]
     )
@@ -641,7 +641,7 @@ linkml:Sparqlpath xsd:string
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#downregulated> ] ? ;
           <allelic_requirement> @<String> ? ;
           <qualified_predicate> @<Uriorcurie> ? ;
-          rdf:subject @<GeneOrGeneProduct> ;
+          rdf:subject @<NamedThing> ;
           rdf:object @<Disease>
        ) ;
        rdf:type [ <CausalGeneToDiseaseAssociation> ]
@@ -1092,8 +1092,8 @@ linkml:Sparqlpath xsd:string
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#decreased>
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#downregulated> ] ? ;
           rdf:predicate [ <regulates> ] ;
-          rdf:subject @<ChemicalEntityOrGeneOrGeneProduct> ;
-          rdf:object @<GeneOrGeneProduct>
+          rdf:subject @<NamedThing> ;
+          rdf:object @<NamedThing>
        ) ;
        rdf:type [ <ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation> ]
     )
@@ -1228,7 +1228,7 @@ linkml:Sparqlpath xsd:string
 )
 
 <ChemicalEntityToEntityAssociationMixin_struct> {
-    (  $<ChemicalEntityToEntityAssociationMixin_tes> (  rdf:subject @<ChemicalEntityOrGeneOrGeneProduct> ;
+    (  $<ChemicalEntityToEntityAssociationMixin_tes> (  rdf:subject @<NamedThing> ;
           rdf:predicate @<Uriorcurie> ;
           rdf:object @<NamedThing>
        ) ;
@@ -1467,7 +1467,7 @@ linkml:Sparqlpath xsd:string
           <dgidb_interaction_score> @<Float> ? ;
           <dgidb_evidence_score> @<Integer> ? ;
           rdf:subject @<ChemicalEntity> ;
-          rdf:object @<GeneOrGeneProduct> ;
+          rdf:object @<NamedThing> ;
           rdf:predicate [ <binds> <directly_physically_interacts_with> <gene_fusion_with> <genetic_neighborhood_of>
              <genetically_interacts_with> <indirectly_physically_interacts_with> <interacts_with>
              <pharmacologically_interacts_with> <physically_interacts_with> <regulates> ]
@@ -1844,7 +1844,7 @@ linkml:Sparqlpath xsd:string
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#downregulated> ] ? ;
           <allelic_requirement> @<String> ? ;
           <qualified_predicate> @<Uriorcurie> ? ;
-          rdf:subject @<GeneOrGeneProduct> ;
+          rdf:subject @<NamedThing> ;
           rdf:object @<Disease> ;
           rdf:predicate [ <biomarker_for> <coexpressed_with> <correlated_with> <has_biomarker> <negatively_correlated_with>
              <occurs_together_in_literature_with> <positively_correlated_with> ] ;
@@ -2102,7 +2102,7 @@ linkml:Sparqlpath xsd:string
           rdf:type [ <Association> ] ? ;
           &<DrugToEntityAssociationMixin_tes> ;
           rdf:type [ <DrugToEntityAssociationMixin> ] ? ;
-          rdf:object @<GeneOrGeneProduct>
+          rdf:object @<NamedThing>
        ) ;
        rdf:type [ <DrugToGeneAssociation> ]
     )
@@ -2130,7 +2130,7 @@ linkml:Sparqlpath xsd:string
              <https://w3id.org/biolink/vocab/DruggableGeneCategoryEnum#tbio>
              <https://w3id.org/biolink/vocab/DruggableGeneCategoryEnum#tchem>
              <https://w3id.org/biolink/vocab/DruggableGeneCategoryEnum#tdark> ] ? ;
-          rdf:subject @<GeneOrGeneProduct> ;
+          rdf:subject @<NamedThing> ;
           rdf:predicate [ <https://w3id.org/biolink/vocab/GeneToDiseasePredicateEnum#biolink%3Acontributes_to>
              <https://w3id.org/biolink/vocab/GeneToDiseasePredicateEnum#biolink%3Aassociated_with> ] ;
           <frequency_qualifier> @<FrequencyValue> ? ;
@@ -2871,7 +2871,7 @@ linkml:Sparqlpath xsd:string
           <anatomical_context_qualifier> @<AnatomicalEntity> * ;
           <qualified_predicate> [ <causes> ] ? ;
           <species_context_qualifier> @<OrganismTaxon> ? ;
-          rdf:subject @<GeneOrGeneProduct> ;
+          rdf:subject @<NamedThing> ;
           rdf:predicate [ <affects> <ameliorates_condition> <disrupts> <exacerbates_condition> <has_adverse_event>
              <has_side_effect> <regulates> ] ;
           rdf:object @<ChemicalEntity>
@@ -2887,7 +2887,7 @@ linkml:Sparqlpath xsd:string
           rdf:type [ <ModelToDiseaseAssociationMixin> ] ? ;
           &<EntityToDiseaseAssociationMixin_tes> ;
           rdf:type [ <EntityToDiseaseAssociationMixin> ] ? ;
-          rdf:subject @<GeneOrGeneProduct> ;
+          rdf:subject @<NamedThing> ;
           <frequency_qualifier> @<FrequencyValue> ? ;
           <subject_direction_qualifier> [ <https://w3id.org/biolink/vocab/DirectionQualifierEnum#increased>
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#upregulated>
@@ -2928,8 +2928,8 @@ linkml:Sparqlpath xsd:string
 <GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation> CLOSED {
     (  $<GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation_tes> (  &<Association_tes> ;
           rdf:type [ <Association> ] ? ;
-          rdf:subject @<Gene> ;
-          rdf:object @<GeneFamily> ;
+          rdf:subject @<GeneFamily> ;
+          rdf:object @<NamedThing> ;
           rdf:predicate [ <has_active_ingredient> <has_excipient> <has_food_component> <has_nutrient> <has_part>
              <has_plasma_membrane_part> <has_variant_part> ]
        ) ;
@@ -2947,7 +2947,7 @@ linkml:Sparqlpath xsd:string
     (  $<GeneHasVariantThatContributesToDiseaseAssociation_tes> (  &<GeneToDiseaseAssociation_tes> ;
           rdf:type [ <GeneToDiseaseAssociation> ] ? ;
           <subject_form_or_variant_qualifier> @<String> ? ;
-          rdf:subject @<GeneOrGeneProduct> ;
+          rdf:subject @<NamedThing> ;
           rdf:object @<Disease> ;
           rdf:predicate [ <https://w3id.org/biolink/vocab/GeneToDiseasePredicateEnum#biolink%3Acontributes_to>
              <https://w3id.org/biolink/vocab/GeneToDiseasePredicateEnum#biolink%3Aassociated_with> ]
@@ -2979,7 +2979,7 @@ linkml:Sparqlpath xsd:string
 <GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation> CLOSED {
     (  $<GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation_tes> (  &<Association_tes> ;
           rdf:type [ <Association> ] ? ;
-          rdf:subject @<GeneOrGeneProductOrGeneFamily> ;
+          rdf:subject @<NamedThing> ;
           rdf:object @<AnatomicalEntity>
        ) ;
        rdf:type [ <GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation> ]
@@ -2989,7 +2989,7 @@ linkml:Sparqlpath xsd:string
 <GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation> CLOSED {
     (  $<GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation_tes> (  &<Association_tes> ;
           rdf:type [ <Association> ] ? ;
-          rdf:subject @<GeneOrGeneProductOrGeneFamily> ;
+          rdf:subject @<NamedThing> ;
           rdf:object @<BiologicalProcessOrActivity> ;
           rdf:predicate [ <actively_involved_in> <capable_of> <catalyzes> <consumed_by> <enables> <is_input_of> <is_output_of>
              <is_substrate_of> <participates_in> ]
@@ -3085,9 +3085,9 @@ linkml:Sparqlpath xsd:string
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#downregulated> ] ;
           <qualified_predicate> [ <causes> ] ;
           <species_context_qualifier> @<OrganismTaxon> ? ;
-          rdf:subject @<GeneOrGeneProduct> ;
+          rdf:subject @<NamedThing> ;
           rdf:predicate [ <regulates> ] ;
-          rdf:object @<GeneOrGeneProduct>
+          rdf:object @<NamedThing>
        ) ;
        rdf:type [ <GeneRegulatesGeneAssociation> ]
     )
@@ -3176,7 +3176,7 @@ linkml:Sparqlpath xsd:string
              <qualified_predicate> @<Uriorcurie> ? ;
              <diseases_confidence_score> @<Float> ? ;
              <gene2phenotype_confidence_category> @<String> ? ;
-             rdf:subject @<GeneOrGeneProduct> ;
+             rdf:subject @<NamedThing> ;
              rdf:object @<Disease> ;
              rdf:predicate [ <https://w3id.org/biolink/vocab/GeneToDiseasePredicateEnum#biolink%3Acontributes_to>
                 <https://w3id.org/biolink/vocab/GeneToDiseasePredicateEnum#biolink%3Aassociated_with> ]
@@ -3188,7 +3188,7 @@ linkml:Sparqlpath xsd:string
 )
 
 <GeneToEntityAssociationMixin> {
-    (  $<GeneToEntityAssociationMixin_tes> (  rdf:subject @<GeneOrGeneProduct> ;
+    (  $<GeneToEntityAssociationMixin_tes> (  rdf:subject @<NamedThing> ;
           rdf:predicate @<Uriorcurie> ;
           rdf:object @<NamedThing>
        ) ;
@@ -3202,7 +3202,7 @@ linkml:Sparqlpath xsd:string
           <stage_qualifier> @<LifeStage> ? ;
           <quantifier_qualifier> @<OntologyClass> ? ;
           <object_specialization_qualifier> @<Uriorcurie> ? ;
-          rdf:subject @<GeneOrGeneProduct> ;
+          rdf:subject @<NamedThing> ;
           rdf:object @<AnatomicalEntity> ;
           rdf:predicate [ <expressed_in> ]
        ) ;
@@ -3217,8 +3217,8 @@ linkml:Sparqlpath xsd:string
 <GeneToGeneAssociation_struct> {
     (  $<GeneToGeneAssociation_tes> (  &<Association_tes> ;
           rdf:type [ <Association> ] ? ;
-          rdf:subject @<GeneOrGeneProduct> ;
-          rdf:object @<GeneOrGeneProduct>
+          rdf:subject @<NamedThing> ;
+          rdf:object @<NamedThing>
        ) ;
        rdf:type [ <GeneToGeneAssociation> ]
     )
@@ -3253,9 +3253,9 @@ linkml:Sparqlpath xsd:string
 <GeneToGeneHomologyAssociation> CLOSED {
     (  $<GeneToGeneHomologyAssociation_tes> (  &<GeneToGeneAssociation_tes> ;
           rdf:type [ <GeneToGeneAssociation> ] ? ;
-          rdf:subject @<GeneOrGeneProduct> ;
+          rdf:subject @<NamedThing> ;
           rdf:predicate [ <homologous_to> <orthologous_to> <paralogous_to> <xenologous_to> ] ;
-          rdf:object @<GeneOrGeneProduct>
+          rdf:object @<NamedThing>
        ) ;
        rdf:type [ <GeneToGeneHomologyAssociation> ]
     )
@@ -3287,7 +3287,7 @@ linkml:Sparqlpath xsd:string
           rdf:type [ <Association> ] ? ;
           &<GeneToEntityAssociationMixin_tes> ;
           rdf:type [ <GeneToEntityAssociationMixin> ] ? ;
-          rdf:subject @<GeneOrGeneProduct> ;
+          rdf:subject @<NamedThing> ;
           rdf:object @<Pathway>
        ) ;
        rdf:type [ <GeneToPathwayAssociation> ]
@@ -3375,7 +3375,7 @@ linkml:Sparqlpath xsd:string
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#decreased>
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#downregulated> ] ? ;
           <allelic_requirement> @<String> ? ;
-          rdf:subject @<GeneOrGeneProduct> ;
+          rdf:subject @<NamedThing> ;
           rdf:object @<PhenotypicFeature> ;
           rdf:predicate [ <https://w3id.org/biolink/vocab/GeneToPhenotypicFeaturePredicateEnum#biolink%3Acauses>
              <https://w3id.org/biolink/vocab/GeneToPhenotypicFeaturePredicateEnum#biolink%3Acontributes_to>
@@ -4885,7 +4885,7 @@ linkml:Sparqlpath xsd:string
 <ReactionToCatalystAssociation> CLOSED {
     (  $<ReactionToCatalystAssociation_tes> (  &<ReactionToParticipantAssociation_tes> ;
           rdf:type [ <ReactionToParticipantAssociation> ] ? ;
-          rdf:object @<GeneOrGeneProduct>
+          rdf:object @<ChemicalEntity>
        ) ;
        rdf:type [ <ReactionToCatalystAssociation> ]
     )

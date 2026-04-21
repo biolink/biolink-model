@@ -3546,7 +3546,6 @@ slots:
     description: >-
       holds between two genes or gene products that are part of in the same biological pathway
     is_a: coexists with
-    domain: gene or gene product
     range: gene or gene product
     in_subset:
       - translator_minimal
@@ -3581,8 +3580,8 @@ slots:
     description: >-
       holds between two genes or gene products that are expressed in the same cell type or population
     is_a: coexists with
-    domain: gene or gene product
     range: gene or gene product
+    domain: gene or gene product
     in_subset:
       - translator_minimal
     symmetric: true
@@ -4197,8 +4196,8 @@ slots:
     description: >-
       holds between any two genes or gene products, in which both are
       generally expressed within a single defined experimental context.
-    domain: gene or gene product
     range: gene or gene product
+    domain: gene or gene product
     symmetric: true
     annotations:
       canonical_predicate: true
@@ -4226,7 +4225,6 @@ slots:
       holds between a measurable chemical entity and a disease
       or phenotypic feature, where the entity is used as an indicator
       of the presence or state of the disease or feature.
-    domain: chemical entity or gene or gene product
     range: disease or phenotypic feature
     annotations:
       canonical_predicate: true
@@ -10503,9 +10501,9 @@ classes:
       - object
     slot_usage:
       subject:
-        range: gene
-      object:
         range: gene family
+      object:
+        range: gene or gene product
       predicate:
         subproperty_of: has part
         symmetric: false
@@ -11177,11 +11175,11 @@ classes:
       - species context qualifier
     slot_usage:
       subject:
-        range: gene or gene product
+        range: chemical entity or gene or gene product
       predicate:
         subproperty_of: regulates
       object:
-        range: gene or gene product
+        range: chemical entity or gene or gene product
       object aspect qualifier:
         range: GeneOrGeneProductOrChemicalEntityAspectEnum
         required: true
@@ -11458,7 +11456,7 @@ classes:
       - species context qualifier
     slot_usage:
       subject:
-        range: gene or gene product
+        range: chemical entity or gene or gene product
       subject form or variant qualifier:
         range: ChemicalOrGeneOrGeneProductFormOrVariantEnum
       subject part qualifier:
@@ -12037,7 +12035,7 @@ classes:
       - subject
     slot_usage:
       subject:
-        range: gene or gene product
+        range: gene or gene productt
         description: >-
           gene that is the subject of the association
 
@@ -13252,7 +13250,7 @@ classes:
       - object
     slot_usage:
       subject:
-        range: gene or gene product or gene family
+        range: gene or gene product
       object:
         range: anatomical entity
 

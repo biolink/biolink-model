@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-04-20T16:14:22
+# Generation date: 2026-04-20T17:11:28
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/vocab/
@@ -8404,19 +8404,19 @@ class GeneToGeneAssociation(Association):
     predicate: Union[str, URIorCURIE] = None
     knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
     agent_type: Union[str, "AgentTypeEnum"] = None
-    subject: Union[dict, GeneOrGeneProduct] = None
-    object: Union[dict, GeneOrGeneProduct] = None
+    subject: Union[str, NamedThingId] = None
+    object: Union[str, NamedThingId] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.subject):
             self.MissingRequiredField("subject")
-        if not isinstance(self.subject, GeneOrGeneProduct):
-            self.subject = GeneOrGeneProduct(**as_dict(self.subject))
+        if not isinstance(self.subject, NamedThingId):
+            self.subject = NamedThingId(self.subject)
 
         if self._is_empty(self.object):
             self.MissingRequiredField("object")
-        if not isinstance(self.object, GeneOrGeneProduct):
-            self.object = GeneOrGeneProduct(**as_dict(self.object))
+        if not isinstance(self.object, NamedThingId):
+            self.object = NamedThingId(self.object)
 
         super().__post_init__(**kwargs)
         if not isinstance(self.category, list):
@@ -8440,9 +8440,9 @@ class GeneToGeneHomologyAssociation(GeneToGeneAssociation):
     id: Union[str, GeneToGeneHomologyAssociationId] = None
     knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
     agent_type: Union[str, "AgentTypeEnum"] = None
-    subject: Union[dict, GeneOrGeneProduct] = None
+    subject: Union[str, NamedThingId] = None
     predicate: Union[str, URIorCURIE] = None
-    object: Union[dict, GeneOrGeneProduct] = None
+    object: Union[str, NamedThingId] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
@@ -8452,8 +8452,8 @@ class GeneToGeneHomologyAssociation(GeneToGeneAssociation):
 
         if self._is_empty(self.subject):
             self.MissingRequiredField("subject")
-        if not isinstance(self.subject, GeneOrGeneProduct):
-            self.subject = GeneOrGeneProduct(**as_dict(self.subject))
+        if not isinstance(self.subject, NamedThingId):
+            self.subject = NamedThingId(self.subject)
 
         if self._is_empty(self.predicate):
             self.MissingRequiredField("predicate")
@@ -8462,8 +8462,8 @@ class GeneToGeneHomologyAssociation(GeneToGeneAssociation):
 
         if self._is_empty(self.object):
             self.MissingRequiredField("object")
-        if not isinstance(self.object, GeneOrGeneProduct):
-            self.object = GeneOrGeneProduct(**as_dict(self.object))
+        if not isinstance(self.object, NamedThingId):
+            self.object = NamedThingId(self.object)
 
         super().__post_init__(**kwargs)
         if not isinstance(self.category, list):
@@ -8534,8 +8534,8 @@ class GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation(Association):
     id: Union[str, GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociationId] = None
     knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
     agent_type: Union[str, "AgentTypeEnum"] = None
-    subject: Union[str, GeneId] = None
-    object: Union[str, GeneFamilyId] = None
+    subject: Union[str, GeneFamilyId] = None
+    object: Union[str, NamedThingId] = None
     predicate: Union[str, URIorCURIE] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
@@ -8546,13 +8546,13 @@ class GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation(Association):
 
         if self._is_empty(self.subject):
             self.MissingRequiredField("subject")
-        if not isinstance(self.subject, GeneId):
-            self.subject = GeneId(self.subject)
+        if not isinstance(self.subject, GeneFamilyId):
+            self.subject = GeneFamilyId(self.subject)
 
         if self._is_empty(self.object):
             self.MissingRequiredField("object")
-        if not isinstance(self.object, GeneFamilyId):
-            self.object = GeneFamilyId(self.object)
+        if not isinstance(self.object, NamedThingId):
+            self.object = NamedThingId(self.object)
 
         if self._is_empty(self.predicate):
             self.MissingRequiredField("predicate")
@@ -8581,7 +8581,7 @@ class GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation(Asso
     id: Union[str, GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociationId] = None
     knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
     agent_type: Union[str, "AgentTypeEnum"] = None
-    subject: Union[dict, GeneOrGeneProductOrGeneFamily] = None
+    subject: Union[str, NamedThingId] = None
     object: Union[str, BiologicalProcessOrActivityId] = None
     predicate: Union[str, URIorCURIE] = None
 
@@ -8593,8 +8593,8 @@ class GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation(Asso
 
         if self._is_empty(self.subject):
             self.MissingRequiredField("subject")
-        if not isinstance(self.subject, GeneOrGeneProductOrGeneFamily):
-            self.subject = GeneOrGeneProductOrGeneFamily(**as_dict(self.subject))
+        if not isinstance(self.subject, NamedThingId):
+            self.subject = NamedThingId(self.subject)
 
         if self._is_empty(self.object):
             self.MissingRequiredField("object")
@@ -8629,7 +8629,7 @@ class BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation(Asso
     knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
     agent_type: Union[str, "AgentTypeEnum"] = None
     subject: Union[str, BiologicalProcessOrActivityId] = None
-    object: Union[dict, GeneOrGeneProductOrGeneFamily] = None
+    object: Union[str, NamedThingId] = None
     predicate: Union[str, URIorCURIE] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
@@ -8645,8 +8645,8 @@ class BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation(Asso
 
         if self._is_empty(self.object):
             self.MissingRequiredField("object")
-        if not isinstance(self.object, GeneOrGeneProductOrGeneFamily):
-            self.object = GeneOrGeneProductOrGeneFamily(**as_dict(self.object))
+        if not isinstance(self.object, NamedThingId):
+            self.object = NamedThingId(self.object)
 
         if self._is_empty(self.predicate):
             self.MissingRequiredField("predicate")
@@ -8755,8 +8755,8 @@ class GeneToGeneCoexpressionAssociation(GeneToGeneAssociation):
     id: Union[str, GeneToGeneCoexpressionAssociationId] = None
     knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
     agent_type: Union[str, "AgentTypeEnum"] = None
-    subject: Union[dict, GeneOrGeneProduct] = None
-    object: Union[dict, GeneOrGeneProduct] = None
+    subject: Union[str, NamedThingId] = None
+    object: Union[str, NamedThingId] = None
     predicate: Union[str, URIorCURIE] = None
     quantifier_qualifier: Optional[Union[str, OntologyClassId]] = None
     expression_site: Optional[Union[str, AnatomicalEntityId]] = None
@@ -8808,8 +8808,8 @@ class PairwiseGeneToGeneInteraction(GeneToGeneAssociation):
     id: Union[str, PairwiseGeneToGeneInteractionId] = None
     knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
     agent_type: Union[str, "AgentTypeEnum"] = None
-    subject: Union[dict, GeneOrGeneProduct] = None
-    object: Union[dict, GeneOrGeneProduct] = None
+    subject: Union[str, NamedThingId] = None
+    object: Union[str, NamedThingId] = None
     predicate: Union[str, URIorCURIE] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
@@ -8990,15 +8990,15 @@ class ChemicalEntityToEntityAssociationMixin(YAMLRoot):
     class_name: ClassVar[str] = "chemical entity to entity association mixin"
     class_model_uri: ClassVar[URIRef] = BIOLINK.ChemicalEntityToEntityAssociationMixin
 
-    subject: Union[dict, ChemicalEntityOrGeneOrGeneProduct] = None
+    subject: Union[str, NamedThingId] = None
     predicate: Union[str, URIorCURIE] = None
     object: Union[str, NamedThingId] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.subject):
             self.MissingRequiredField("subject")
-        if not isinstance(self.subject, ChemicalEntityOrGeneOrGeneProduct):
-            self.subject = ChemicalEntityOrGeneOrGeneProduct()
+        if not isinstance(self.subject, NamedThingId):
+            self.subject = NamedThingId(self.subject)
 
         if self._is_empty(self.predicate):
             self.MissingRequiredField("predicate")
@@ -9087,8 +9087,8 @@ class ChemicalToEntityAssociationMixin(ChemicalEntityToEntityAssociationMixin):
 
         if self._is_empty(self.subject):
             self.MissingRequiredField("subject")
-        if not isinstance(self.subject, ChemicalEntityOrGeneOrGeneProduct):
-            self.subject = ChemicalEntityOrGeneOrGeneProduct()
+        if not isinstance(self.subject, NamedThingId):
+            self.subject = NamedThingId(self.subject)
 
         super().__post_init__(**kwargs)
 
@@ -9238,7 +9238,7 @@ class ReactionToCatalystAssociation(ReactionToParticipantAssociation):
     agent_type: Union[str, "AgentTypeEnum"] = None
     predicate: Union[str, URIorCURIE] = None
     subject: Union[str, MolecularEntityId] = None
-    object: Union[dict, GeneOrGeneProduct] = None
+    object: Union[str, ChemicalEntityId] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
@@ -9248,8 +9248,8 @@ class ReactionToCatalystAssociation(ReactionToParticipantAssociation):
 
         if self._is_empty(self.object):
             self.MissingRequiredField("object")
-        if not isinstance(self.object, GeneOrGeneProduct):
-            self.object = GeneOrGeneProduct(**as_dict(self.object))
+        if not isinstance(self.object, ChemicalEntityId):
+            self.object = ChemicalEntityId(self.object)
 
         super().__post_init__(**kwargs)
         if not isinstance(self.category, list):
@@ -9669,7 +9669,7 @@ class GeneToPathwayAssociation(Association):
     predicate: Union[str, URIorCURIE] = None
     knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
     agent_type: Union[str, "AgentTypeEnum"] = None
-    subject: Union[dict, GeneOrGeneProduct] = None
+    subject: Union[str, NamedThingId] = None
     object: Union[str, PathwayId] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
@@ -9685,8 +9685,8 @@ class GeneToPathwayAssociation(Association):
 
         if self._is_empty(self.subject):
             self.MissingRequiredField("subject")
-        if not isinstance(self.subject, GeneOrGeneProduct):
-            self.subject = GeneOrGeneProduct(**as_dict(self.subject))
+        if not isinstance(self.subject, NamedThingId):
+            self.subject = NamedThingId(self.subject)
 
         if self._is_empty(self.object):
             self.MissingRequiredField("object")
@@ -9931,7 +9931,7 @@ class ChemicalGeneInteractionAssociation(Association):
     knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
     agent_type: Union[str, "AgentTypeEnum"] = None
     subject: Union[str, ChemicalEntityId] = None
-    object: Union[dict, GeneOrGeneProduct] = None
+    object: Union[str, NamedThingId] = None
     predicate: Union[str, URIorCURIE] = None
     has_affinity: Optional[Union[dict[Union[str, AffinityMeasurementId], Union[dict, AffinityMeasurement]], list[Union[dict, AffinityMeasurement]]]] = empty_dict()
     subject_form_or_variant_qualifier: Optional[Union[str, "ChemicalOrGeneOrGeneProductFormOrVariantEnum"]] = None
@@ -9962,8 +9962,8 @@ class ChemicalGeneInteractionAssociation(Association):
 
         if self._is_empty(self.object):
             self.MissingRequiredField("object")
-        if not isinstance(self.object, GeneOrGeneProduct):
-            self.object = GeneOrGeneProduct(**as_dict(self.object))
+        if not isinstance(self.object, NamedThingId):
+            self.object = NamedThingId(self.object)
 
         if self._is_empty(self.predicate):
             self.MissingRequiredField("predicate")
@@ -10086,9 +10086,9 @@ class GeneRegulatesGeneAssociation(Association):
     object_aspect_qualifier: Union[str, "GeneOrGeneProductOrChemicalEntityAspectEnum"] = None
     object_direction_qualifier: Union[str, "DirectionQualifierEnum"] = None
     qualified_predicate: Union[str, URIorCURIE] = None
-    subject: Union[dict, GeneOrGeneProduct] = None
+    subject: Union[str, NamedThingId] = None
     predicate: Union[str, URIorCURIE] = None
-    object: Union[dict, GeneOrGeneProduct] = None
+    object: Union[str, NamedThingId] = None
     species_context_qualifier: Optional[Union[str, OrganismTaxonId]] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
@@ -10114,8 +10114,8 @@ class GeneRegulatesGeneAssociation(Association):
 
         if self._is_empty(self.subject):
             self.MissingRequiredField("subject")
-        if not isinstance(self.subject, GeneOrGeneProduct):
-            self.subject = GeneOrGeneProduct(**as_dict(self.subject))
+        if not isinstance(self.subject, NamedThingId):
+            self.subject = NamedThingId(self.subject)
 
         if self._is_empty(self.predicate):
             self.MissingRequiredField("predicate")
@@ -10124,8 +10124,8 @@ class GeneRegulatesGeneAssociation(Association):
 
         if self._is_empty(self.object):
             self.MissingRequiredField("object")
-        if not isinstance(self.object, GeneOrGeneProduct):
-            self.object = GeneOrGeneProduct(**as_dict(self.object))
+        if not isinstance(self.object, NamedThingId):
+            self.object = NamedThingId(self.object)
 
         if self.species_context_qualifier is not None and not isinstance(self.species_context_qualifier, OrganismTaxonId):
             self.species_context_qualifier = OrganismTaxonId(self.species_context_qualifier)
@@ -10355,7 +10355,7 @@ class GeneAffectsChemicalAssociation(Association):
     id: Union[str, GeneAffectsChemicalAssociationId] = None
     knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
     agent_type: Union[str, "AgentTypeEnum"] = None
-    subject: Union[dict, GeneOrGeneProduct] = None
+    subject: Union[str, NamedThingId] = None
     predicate: Union[str, URIorCURIE] = None
     object: Union[str, ChemicalEntityId] = None
     subject_form_or_variant_qualifier: Optional[Union[str, "ChemicalOrGeneOrGeneProductFormOrVariantEnum"]] = None
@@ -10383,8 +10383,8 @@ class GeneAffectsChemicalAssociation(Association):
 
         if self._is_empty(self.subject):
             self.MissingRequiredField("subject")
-        if not isinstance(self.subject, GeneOrGeneProduct):
-            self.subject = GeneOrGeneProduct(**as_dict(self.subject))
+        if not isinstance(self.subject, NamedThingId):
+            self.subject = NamedThingId(self.subject)
 
         if self._is_empty(self.predicate):
             self.MissingRequiredField("predicate")
@@ -10468,7 +10468,7 @@ class DrugToGeneAssociation(Association):
     predicate: Union[str, URIorCURIE] = None
     knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
     agent_type: Union[str, "AgentTypeEnum"] = None
-    object: Union[dict, GeneOrGeneProduct] = None
+    object: Union[str, NamedThingId] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
@@ -10488,8 +10488,8 @@ class DrugToGeneAssociation(Association):
 
         if self._is_empty(self.object):
             self.MissingRequiredField("object")
-        if not isinstance(self.object, GeneOrGeneProduct):
-            self.object = GeneOrGeneProduct(**as_dict(self.object))
+        if not isinstance(self.object, NamedThingId):
+            self.object = NamedThingId(self.object)
 
         super().__post_init__(**kwargs)
         if not isinstance(self.category, list):
@@ -11971,7 +11971,7 @@ class CaseToGeneAssociation(Association):
     agent_type: Union[str, "AgentTypeEnum"] = None
     subject: Union[str, NamedThingId] = None
     predicate: Union[str, URIorCURIE] = None
-    object: Union[dict, GeneOrGeneProduct] = None
+    object: Union[str, NamedThingId] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
@@ -11991,8 +11991,8 @@ class CaseToGeneAssociation(Association):
 
         if self._is_empty(self.object):
             self.MissingRequiredField("object")
-        if not isinstance(self.object, GeneOrGeneProduct):
-            self.object = GeneOrGeneProduct(**as_dict(self.object))
+        if not isinstance(self.object, NamedThingId):
+            self.object = NamedThingId(self.object)
 
         super().__post_init__(**kwargs)
         if not isinstance(self.category, list):
@@ -12088,15 +12088,15 @@ class GeneToEntityAssociationMixin(YAMLRoot):
     class_name: ClassVar[str] = "gene to entity association mixin"
     class_model_uri: ClassVar[URIRef] = BIOLINK.GeneToEntityAssociationMixin
 
-    subject: Union[dict, GeneOrGeneProduct] = None
+    subject: Union[str, NamedThingId] = None
     predicate: Union[str, URIorCURIE] = None
     object: Union[str, NamedThingId] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.subject):
             self.MissingRequiredField("subject")
-        if not isinstance(self.subject, GeneOrGeneProduct):
-            self.subject = GeneOrGeneProduct(**as_dict(self.subject))
+        if not isinstance(self.subject, NamedThingId):
+            self.subject = NamedThingId(self.subject)
 
         if self._is_empty(self.predicate):
             self.MissingRequiredField("predicate")
@@ -12159,7 +12159,7 @@ class GeneToPhenotypicFeatureAssociation(Association):
     id: Union[str, GeneToPhenotypicFeatureAssociationId] = None
     knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
     agent_type: Union[str, "AgentTypeEnum"] = None
-    subject: Union[dict, GeneOrGeneProduct] = None
+    subject: Union[str, NamedThingId] = None
     object: Union[str, PhenotypicFeatureId] = None
     predicate: Union[str, "GeneToPhenotypicFeaturePredicateEnum"] = None
     subject_form_or_variant_qualifier: Optional[Union[str, "ChemicalOrGeneOrGeneProductFormOrVariantEnum"]] = None
@@ -12181,8 +12181,8 @@ class GeneToPhenotypicFeatureAssociation(Association):
 
         if self._is_empty(self.subject):
             self.MissingRequiredField("subject")
-        if not isinstance(self.subject, GeneOrGeneProduct):
-            self.subject = GeneOrGeneProduct(**as_dict(self.subject))
+        if not isinstance(self.subject, NamedThingId):
+            self.subject = NamedThingId(self.subject)
 
         if self._is_empty(self.object):
             self.MissingRequiredField("object")
@@ -12246,7 +12246,7 @@ class GeneToDiseaseAssociation(Association):
     id: Union[str, GeneToDiseaseAssociationId] = None
     knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
     agent_type: Union[str, "AgentTypeEnum"] = None
-    subject: Union[dict, GeneOrGeneProduct] = None
+    subject: Union[str, NamedThingId] = None
     object: Union[str, DiseaseId] = None
     predicate: Union[str, "GeneToDiseasePredicateEnum"] = None
     subject_form_or_variant_qualifier: Optional[Union[str, "ChemicalOrGeneOrGeneProductFormOrVariantEnum"]] = None
@@ -12265,8 +12265,8 @@ class GeneToDiseaseAssociation(Association):
 
         if self._is_empty(self.subject):
             self.MissingRequiredField("subject")
-        if not isinstance(self.subject, GeneOrGeneProduct):
-            self.subject = GeneOrGeneProduct(**as_dict(self.subject))
+        if not isinstance(self.subject, NamedThingId):
+            self.subject = NamedThingId(self.subject)
 
         if self._is_empty(self.object):
             self.MissingRequiredField("object")
@@ -12322,7 +12322,7 @@ class CausalGeneToDiseaseAssociation(Association):
     predicate: Union[str, URIorCURIE] = None
     knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
     agent_type: Union[str, "AgentTypeEnum"] = None
-    subject: Union[dict, GeneOrGeneProduct] = None
+    subject: Union[str, NamedThingId] = None
     object: Union[str, DiseaseId] = None
     subject_form_or_variant_qualifier: Optional[str] = None
     subject_aspect_qualifier: Optional[str] = None
@@ -12343,8 +12343,8 @@ class CausalGeneToDiseaseAssociation(Association):
 
         if self._is_empty(self.subject):
             self.MissingRequiredField("subject")
-        if not isinstance(self.subject, GeneOrGeneProduct):
-            self.subject = GeneOrGeneProduct(**as_dict(self.subject))
+        if not isinstance(self.subject, NamedThingId):
+            self.subject = NamedThingId(self.subject)
 
         if self._is_empty(self.object):
             self.MissingRequiredField("object")
@@ -12384,7 +12384,7 @@ class CorrelatedGeneToDiseaseAssociation(Association):
     id: Union[str, CorrelatedGeneToDiseaseAssociationId] = None
     knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
     agent_type: Union[str, "AgentTypeEnum"] = None
-    subject: Union[dict, GeneOrGeneProduct] = None
+    subject: Union[str, NamedThingId] = None
     object: Union[str, DiseaseId] = None
     predicate: Union[str, URIorCURIE] = None
     z_score: Optional[float] = None
@@ -12407,8 +12407,8 @@ class CorrelatedGeneToDiseaseAssociation(Association):
 
         if self._is_empty(self.subject):
             self.MissingRequiredField("subject")
-        if not isinstance(self.subject, GeneOrGeneProduct):
-            self.subject = GeneOrGeneProduct(**as_dict(self.subject))
+        if not isinstance(self.subject, NamedThingId):
+            self.subject = NamedThingId(self.subject)
 
         if self._is_empty(self.object):
             self.MissingRequiredField("object")
@@ -12472,7 +12472,7 @@ class DruggableGeneToDiseaseAssociation(GeneToDiseaseAssociation):
     knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
     agent_type: Union[str, "AgentTypeEnum"] = None
     object: Union[str, DiseaseId] = None
-    subject: Union[dict, GeneOrGeneProduct] = None
+    subject: Union[str, NamedThingId] = None
     predicate: Union[str, "GeneToDiseasePredicateEnum"] = None
     qualified_predicate: Optional[Union[str, URIorCURIE]] = None
     druggable_gene_category: Optional[Union[str, "DruggableGeneCategoryEnum"]] = None
@@ -12489,8 +12489,8 @@ class DruggableGeneToDiseaseAssociation(GeneToDiseaseAssociation):
 
         if self._is_empty(self.subject):
             self.MissingRequiredField("subject")
-        if not isinstance(self.subject, GeneOrGeneProduct):
-            self.subject = GeneOrGeneProduct(**as_dict(self.subject))
+        if not isinstance(self.subject, NamedThingId):
+            self.subject = NamedThingId(self.subject)
 
         if self._is_empty(self.predicate):
             self.MissingRequiredField("predicate")
@@ -13079,7 +13079,7 @@ class GeneAsAModelOfDiseaseAssociation(GeneToDiseaseAssociation):
     agent_type: Union[str, "AgentTypeEnum"] = None
     object: Union[str, DiseaseId] = None
     predicate: Union[str, "GeneToDiseasePredicateEnum"] = None
-    subject: Union[dict, GeneOrGeneProduct] = None
+    subject: Union[str, NamedThingId] = None
     qualified_predicate: Optional[Union[str, URIorCURIE]] = None
     frequency_qualifier: Optional[Union[str, FrequencyValue]] = None
     subject_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
@@ -13094,8 +13094,8 @@ class GeneAsAModelOfDiseaseAssociation(GeneToDiseaseAssociation):
 
         if self._is_empty(self.subject):
             self.MissingRequiredField("subject")
-        if not isinstance(self.subject, GeneOrGeneProduct):
-            self.subject = GeneOrGeneProduct(**as_dict(self.subject))
+        if not isinstance(self.subject, NamedThingId):
+            self.subject = NamedThingId(self.subject)
 
         if self.qualified_predicate is not None and not isinstance(self.qualified_predicate, URIorCURIE):
             self.qualified_predicate = URIorCURIE(self.qualified_predicate)
@@ -13470,7 +13470,7 @@ class GeneHasVariantThatContributesToDiseaseAssociation(GeneToDiseaseAssociation
     id: Union[str, GeneHasVariantThatContributesToDiseaseAssociationId] = None
     knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
     agent_type: Union[str, "AgentTypeEnum"] = None
-    subject: Union[dict, GeneOrGeneProduct] = None
+    subject: Union[str, NamedThingId] = None
     object: Union[str, DiseaseId] = None
     predicate: Union[str, "GeneToDiseasePredicateEnum"] = None
     subject_form_or_variant_qualifier: Optional[str] = None
@@ -13483,8 +13483,8 @@ class GeneHasVariantThatContributesToDiseaseAssociation(GeneToDiseaseAssociation
 
         if self._is_empty(self.subject):
             self.MissingRequiredField("subject")
-        if not isinstance(self.subject, GeneOrGeneProduct):
-            self.subject = GeneOrGeneProduct(**as_dict(self.subject))
+        if not isinstance(self.subject, NamedThingId):
+            self.subject = NamedThingId(self.subject)
 
         if self._is_empty(self.object):
             self.MissingRequiredField("object")
@@ -13520,7 +13520,7 @@ class GeneToExpressionSiteAssociation(Association):
     id: Union[str, GeneToExpressionSiteAssociationId] = None
     knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
     agent_type: Union[str, "AgentTypeEnum"] = None
-    subject: Union[dict, GeneOrGeneProduct] = None
+    subject: Union[str, NamedThingId] = None
     object: Union[str, AnatomicalEntityId] = None
     predicate: Union[str, URIorCURIE] = None
     stage_qualifier: Optional[Union[str, LifeStageId]] = None
@@ -13535,8 +13535,8 @@ class GeneToExpressionSiteAssociation(Association):
 
         if self._is_empty(self.subject):
             self.MissingRequiredField("subject")
-        if not isinstance(self.subject, GeneOrGeneProduct):
-            self.subject = GeneOrGeneProduct(**as_dict(self.subject))
+        if not isinstance(self.subject, NamedThingId):
+            self.subject = NamedThingId(self.subject)
 
         if self._is_empty(self.object):
             self.MissingRequiredField("object")
@@ -14325,8 +14325,8 @@ class ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation(Association):
     knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
     agent_type: Union[str, "AgentTypeEnum"] = None
     predicate: Union[str, URIorCURIE] = None
-    subject: Union[dict, ChemicalEntityOrGeneOrGeneProduct] = None
-    object: Union[dict, GeneOrGeneProduct] = None
+    subject: Union[str, NamedThingId] = None
+    object: Union[str, NamedThingId] = None
     object_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
@@ -14342,13 +14342,13 @@ class ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation(Association):
 
         if self._is_empty(self.subject):
             self.MissingRequiredField("subject")
-        if not isinstance(self.subject, ChemicalEntityOrGeneOrGeneProduct):
-            self.subject = ChemicalEntityOrGeneOrGeneProduct()
+        if not isinstance(self.subject, NamedThingId):
+            self.subject = NamedThingId(self.subject)
 
         if self._is_empty(self.object):
             self.MissingRequiredField("object")
-        if not isinstance(self.object, GeneOrGeneProduct):
-            self.object = GeneOrGeneProduct(**as_dict(self.object))
+        if not isinstance(self.object, NamedThingId):
+            self.object = NamedThingId(self.object)
 
         if self.object_direction_qualifier is not None and not isinstance(self.object_direction_qualifier, DirectionQualifierEnum):
             self.object_direction_qualifier = DirectionQualifierEnum(self.object_direction_qualifier)
@@ -14560,7 +14560,7 @@ class GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation(Association):
     predicate: Union[str, URIorCURIE] = None
     knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
     agent_type: Union[str, "AgentTypeEnum"] = None
-    subject: Union[dict, GeneOrGeneProductOrGeneFamily] = None
+    subject: Union[str, NamedThingId] = None
     object: Union[str, AnatomicalEntityId] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
@@ -14571,8 +14571,8 @@ class GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation(Association):
 
         if self._is_empty(self.subject):
             self.MissingRequiredField("subject")
-        if not isinstance(self.subject, GeneOrGeneProductOrGeneFamily):
-            self.subject = GeneOrGeneProductOrGeneFamily(**as_dict(self.subject))
+        if not isinstance(self.subject, NamedThingId):
+            self.subject = NamedThingId(self.subject)
 
         if self._is_empty(self.object):
             self.MissingRequiredField("object")
@@ -16367,43 +16367,43 @@ slots.active_in = Slot(uri=BIOLINK.active_in, name="active in", curie=BIOLINK.cu
                    model_uri=BIOLINK.active_in, domain=None, range=Optional[Union[Union[str, CellularComponentId], list[Union[str, CellularComponentId]]]])
 
 slots.has_active_component = Slot(uri=BIOLINK.has_active_component, name="has active component", curie=BIOLINK.curie('has_active_component'),
-                   model_uri=BIOLINK.has_active_component, domain=CellularComponent, range=Optional[Union[Union[dict, "GeneOrGeneProduct"], list[Union[dict, "GeneOrGeneProduct"]]]])
+                   model_uri=BIOLINK.has_active_component, domain=CellularComponent, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.acts_upstream_of = Slot(uri=BIOLINK.acts_upstream_of, name="acts upstream of", curie=BIOLINK.curie('acts_upstream_of'),
                    model_uri=BIOLINK.acts_upstream_of, domain=None, range=Optional[Union[Union[str, BiologicalProcessId], list[Union[str, BiologicalProcessId]]]])
 
 slots.has_upstream_actor = Slot(uri=BIOLINK.has_upstream_actor, name="has upstream actor", curie=BIOLINK.curie('has_upstream_actor'),
-                   model_uri=BIOLINK.has_upstream_actor, domain=BiologicalProcess, range=Optional[Union[Union[dict, "GeneOrGeneProduct"], list[Union[dict, "GeneOrGeneProduct"]]]])
+                   model_uri=BIOLINK.has_upstream_actor, domain=BiologicalProcess, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.acts_upstream_of_positive_effect = Slot(uri=BIOLINK.acts_upstream_of_positive_effect, name="acts upstream of positive effect", curie=BIOLINK.curie('acts_upstream_of_positive_effect'),
                    model_uri=BIOLINK.acts_upstream_of_positive_effect, domain=None, range=Optional[Union[Union[str, BiologicalProcessId], list[Union[str, BiologicalProcessId]]]])
 
 slots.has_positive_upstream_actor = Slot(uri=BIOLINK.has_positive_upstream_actor, name="has positive upstream actor", curie=BIOLINK.curie('has_positive_upstream_actor'),
-                   model_uri=BIOLINK.has_positive_upstream_actor, domain=BiologicalProcess, range=Optional[Union[Union[dict, "GeneOrGeneProduct"], list[Union[dict, "GeneOrGeneProduct"]]]])
+                   model_uri=BIOLINK.has_positive_upstream_actor, domain=BiologicalProcess, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.acts_upstream_of_negative_effect = Slot(uri=BIOLINK.acts_upstream_of_negative_effect, name="acts upstream of negative effect", curie=BIOLINK.curie('acts_upstream_of_negative_effect'),
                    model_uri=BIOLINK.acts_upstream_of_negative_effect, domain=None, range=Optional[Union[Union[str, BiologicalProcessId], list[Union[str, BiologicalProcessId]]]])
 
 slots.has_negative_upstream_actor = Slot(uri=BIOLINK.has_negative_upstream_actor, name="has negative upstream actor", curie=BIOLINK.curie('has_negative_upstream_actor'),
-                   model_uri=BIOLINK.has_negative_upstream_actor, domain=BiologicalProcess, range=Optional[Union[Union[dict, "GeneOrGeneProduct"], list[Union[dict, "GeneOrGeneProduct"]]]])
+                   model_uri=BIOLINK.has_negative_upstream_actor, domain=BiologicalProcess, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.acts_upstream_of_or_within = Slot(uri=BIOLINK.acts_upstream_of_or_within, name="acts upstream of or within", curie=BIOLINK.curie('acts_upstream_of_or_within'),
                    model_uri=BIOLINK.acts_upstream_of_or_within, domain=None, range=Optional[Union[Union[str, BiologicalProcessId], list[Union[str, BiologicalProcessId]]]])
 
 slots.has_upstream_or_within_actor = Slot(uri=BIOLINK.has_upstream_or_within_actor, name="has upstream or within actor", curie=BIOLINK.curie('has_upstream_or_within_actor'),
-                   model_uri=BIOLINK.has_upstream_or_within_actor, domain=BiologicalProcess, range=Optional[Union[Union[dict, "GeneOrGeneProduct"], list[Union[dict, "GeneOrGeneProduct"]]]])
+                   model_uri=BIOLINK.has_upstream_or_within_actor, domain=BiologicalProcess, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.acts_upstream_of_or_within_positive_effect = Slot(uri=BIOLINK.acts_upstream_of_or_within_positive_effect, name="acts upstream of or within positive effect", curie=BIOLINK.curie('acts_upstream_of_or_within_positive_effect'),
                    model_uri=BIOLINK.acts_upstream_of_or_within_positive_effect, domain=None, range=Optional[Union[Union[str, BiologicalProcessId], list[Union[str, BiologicalProcessId]]]])
 
 slots.has_positive_upstream_or_within_actor = Slot(uri=BIOLINK.has_positive_upstream_or_within_actor, name="has positive upstream or within actor", curie=BIOLINK.curie('has_positive_upstream_or_within_actor'),
-                   model_uri=BIOLINK.has_positive_upstream_or_within_actor, domain=BiologicalProcess, range=Optional[Union[Union[dict, "GeneOrGeneProduct"], list[Union[dict, "GeneOrGeneProduct"]]]])
+                   model_uri=BIOLINK.has_positive_upstream_or_within_actor, domain=BiologicalProcess, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.acts_upstream_of_or_within_negative_effect = Slot(uri=BIOLINK.acts_upstream_of_or_within_negative_effect, name="acts upstream of or within negative effect", curie=BIOLINK.curie('acts_upstream_of_or_within_negative_effect'),
                    model_uri=BIOLINK.acts_upstream_of_or_within_negative_effect, domain=None, range=Optional[Union[Union[str, BiologicalProcessId], list[Union[str, BiologicalProcessId]]]])
 
 slots.has_negative_upstream_or_within_actor = Slot(uri=BIOLINK.has_negative_upstream_or_within_actor, name="has negative upstream or within actor", curie=BIOLINK.curie('has_negative_upstream_or_within_actor'),
-                   model_uri=BIOLINK.has_negative_upstream_or_within_actor, domain=BiologicalProcess, range=Optional[Union[Union[dict, "GeneOrGeneProduct"], list[Union[dict, "GeneOrGeneProduct"]]]])
+                   model_uri=BIOLINK.has_negative_upstream_or_within_actor, domain=BiologicalProcess, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.mentions = Slot(uri=BIOLINK.mentions, name="mentions", curie=BIOLINK.curie('mentions'),
                    model_uri=BIOLINK.mentions, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
@@ -16523,22 +16523,22 @@ slots.biological_role_mixin = Slot(uri=BIOLINK.biological_role_mixin, name="biol
                    model_uri=BIOLINK.biological_role_mixin, domain=None, range=Optional[str])
 
 slots.affects_sensitivity_to = Slot(uri=BIOLINK.affects_sensitivity_to, name="affects sensitivity to", curie=BIOLINK.curie('affects_sensitivity_to'),
-                   model_uri=BIOLINK.affects_sensitivity_to, domain=None, range=Optional[Union[Union[dict, "ChemicalEntityOrGeneOrGeneProduct"], list[Union[dict, "ChemicalEntityOrGeneOrGeneProduct"]]]])
+                   model_uri=BIOLINK.affects_sensitivity_to, domain=None, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.sensitivity_affected_by = Slot(uri=BIOLINK.sensitivity_affected_by, name="sensitivity affected by", curie=BIOLINK.curie('sensitivity_affected_by'),
-                   model_uri=BIOLINK.sensitivity_affected_by, domain=None, range=Optional[Union[Union[dict, "ChemicalEntityOrGeneOrGeneProduct"], list[Union[dict, "ChemicalEntityOrGeneOrGeneProduct"]]]])
+                   model_uri=BIOLINK.sensitivity_affected_by, domain=None, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.increases_sensitivity_to = Slot(uri=BIOLINK.increases_sensitivity_to, name="increases sensitivity to", curie=BIOLINK.curie('increases_sensitivity_to'),
-                   model_uri=BIOLINK.increases_sensitivity_to, domain=None, range=Optional[Union[Union[dict, "ChemicalEntityOrGeneOrGeneProduct"], list[Union[dict, "ChemicalEntityOrGeneOrGeneProduct"]]]])
+                   model_uri=BIOLINK.increases_sensitivity_to, domain=None, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.sensitivity_increased_by = Slot(uri=BIOLINK.sensitivity_increased_by, name="sensitivity increased by", curie=BIOLINK.curie('sensitivity_increased_by'),
-                   model_uri=BIOLINK.sensitivity_increased_by, domain=None, range=Optional[Union[Union[dict, "ChemicalEntityOrGeneOrGeneProduct"], list[Union[dict, "ChemicalEntityOrGeneOrGeneProduct"]]]])
+                   model_uri=BIOLINK.sensitivity_increased_by, domain=None, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.decreases_sensitivity_to = Slot(uri=BIOLINK.decreases_sensitivity_to, name="decreases sensitivity to", curie=BIOLINK.curie('decreases_sensitivity_to'),
-                   model_uri=BIOLINK.decreases_sensitivity_to, domain=None, range=Optional[Union[Union[dict, "ChemicalEntityOrGeneOrGeneProduct"], list[Union[dict, "ChemicalEntityOrGeneOrGeneProduct"]]]])
+                   model_uri=BIOLINK.decreases_sensitivity_to, domain=None, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.sensitivity_decreased_by = Slot(uri=BIOLINK.sensitivity_decreased_by, name="sensitivity decreased by", curie=BIOLINK.curie('sensitivity_decreased_by'),
-                   model_uri=BIOLINK.sensitivity_decreased_by, domain=None, range=Optional[Union[Union[dict, "ChemicalEntityOrGeneOrGeneProduct"], list[Union[dict, "ChemicalEntityOrGeneOrGeneProduct"]]]])
+                   model_uri=BIOLINK.sensitivity_decreased_by, domain=None, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.regulates = Slot(uri=BIOLINK.regulates, name="regulates", curie=BIOLINK.curie('regulates'),
                    model_uri=BIOLINK.regulates, domain=None, range=Optional[Union[Union[dict, "PhysicalEssenceOrOccurrent"], list[Union[dict, "PhysicalEssenceOrOccurrent"]]]])
@@ -16586,13 +16586,13 @@ slots.coexists_with = Slot(uri=BIOLINK.coexists_with, name="coexists with", curi
                    model_uri=BIOLINK.coexists_with, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.in_pathway_with = Slot(uri=BIOLINK.in_pathway_with, name="in pathway with", curie=BIOLINK.curie('in_pathway_with'),
-                   model_uri=BIOLINK.in_pathway_with, domain=None, range=Optional[Union[Union[dict, "GeneOrGeneProduct"], list[Union[dict, "GeneOrGeneProduct"]]]])
+                   model_uri=BIOLINK.in_pathway_with, domain=None, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.in_complex_with = Slot(uri=BIOLINK.in_complex_with, name="in complex with", curie=BIOLINK.curie('in_complex_with'),
-                   model_uri=BIOLINK.in_complex_with, domain=None, range=Optional[Union[Union[dict, "GeneOrGeneProduct"], list[Union[dict, "GeneOrGeneProduct"]]]])
+                   model_uri=BIOLINK.in_complex_with, domain=None, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.in_cell_population_with = Slot(uri=BIOLINK.in_cell_population_with, name="in cell population with", curie=BIOLINK.curie('in_cell_population_with'),
-                   model_uri=BIOLINK.in_cell_population_with, domain=None, range=Optional[Union[Union[dict, "GeneOrGeneProduct"], list[Union[dict, "GeneOrGeneProduct"]]]])
+                   model_uri=BIOLINK.in_cell_population_with, domain=None, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.colocalizes_with = Slot(uri=BIOLINK.colocalizes_with, name="colocalizes with", curie=BIOLINK.curie('colocalizes_with'),
                    model_uri=BIOLINK.colocalizes_with, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
@@ -16706,10 +16706,10 @@ slots.occurs_together_in_literature_with = Slot(uri=BIOLINK.occurs_together_in_l
                    model_uri=BIOLINK.occurs_together_in_literature_with, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.coexpressed_with = Slot(uri=BIOLINK.coexpressed_with, name="coexpressed with", curie=BIOLINK.curie('coexpressed_with'),
-                   model_uri=BIOLINK.coexpressed_with, domain=None, range=Optional[Union[Union[dict, "GeneOrGeneProduct"], list[Union[dict, "GeneOrGeneProduct"]]]])
+                   model_uri=BIOLINK.coexpressed_with, domain=None, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.has_biomarker = Slot(uri=BIOLINK.has_biomarker, name="has biomarker", curie=BIOLINK.curie('has_biomarker'),
-                   model_uri=BIOLINK.has_biomarker, domain=DiseaseOrPhenotypicFeature, range=Optional[Union[Union[dict, "ChemicalEntityOrGeneOrGeneProduct"], list[Union[dict, "ChemicalEntityOrGeneOrGeneProduct"]]]])
+                   model_uri=BIOLINK.has_biomarker, domain=DiseaseOrPhenotypicFeature, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.biomarker_for = Slot(uri=BIOLINK.biomarker_for, name="biomarker for", curie=BIOLINK.curie('biomarker_for'),
                    model_uri=BIOLINK.biomarker_for, domain=None, range=Optional[Union[Union[str, DiseaseOrPhenotypicFeatureId], list[Union[str, DiseaseOrPhenotypicFeatureId]]]])
@@ -16718,7 +16718,7 @@ slots.expressed_in = Slot(uri=BIOLINK.expressed_in, name="expressed in", curie=B
                    model_uri=BIOLINK.expressed_in, domain=None, range=Optional[Union[Union[str, AnatomicalEntityId], list[Union[str, AnatomicalEntityId]]]])
 
 slots.expresses = Slot(uri=BIOLINK.expresses, name="expresses", curie=BIOLINK.curie('expresses'),
-                   model_uri=BIOLINK.expresses, domain=AnatomicalEntity, range=Optional[Union[Union[dict, "GeneOrGeneProduct"], list[Union[dict, "GeneOrGeneProduct"]]]])
+                   model_uri=BIOLINK.expresses, domain=AnatomicalEntity, range=Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]])
 
 slots.has_phenotype = Slot(uri=BIOLINK.has_phenotype, name="has phenotype", curie=BIOLINK.curie('has_phenotype'),
                    model_uri=BIOLINK.has_phenotype, domain=BiologicalEntity, range=Optional[Union[Union[str, PhenotypicFeatureId], list[Union[str, PhenotypicFeatureId]]]])
@@ -16805,10 +16805,10 @@ slots.has_catalyst = Slot(uri=BIOLINK.has_catalyst, name="has catalyst", curie=B
                    model_uri=BIOLINK.has_catalyst, domain=BiologicalProcessOrActivity, range=Optional[Union[Union[dict, Occurrent], list[Union[dict, Occurrent]]]])
 
 slots.has_substrate = Slot(uri=BIOLINK.has_substrate, name="has substrate", curie=BIOLINK.curie('has_substrate'),
-                   model_uri=BIOLINK.has_substrate, domain=None, range=Optional[Union[Union[dict, "ChemicalEntityOrGeneOrGeneProduct"], list[Union[dict, "ChemicalEntityOrGeneOrGeneProduct"]]]])
+                   model_uri=BIOLINK.has_substrate, domain=None, range=Optional[Union[Union[dict, Occurrent], list[Union[dict, Occurrent]]]])
 
 slots.is_substrate_of = Slot(uri=BIOLINK.is_substrate_of, name="is substrate of", curie=BIOLINK.curie('is_substrate_of'),
-                   model_uri=BIOLINK.is_substrate_of, domain=None, range=Optional[Union[Union[dict, "ChemicalEntityOrGeneOrGeneProduct"], list[Union[dict, "ChemicalEntityOrGeneOrGeneProduct"]]]])
+                   model_uri=BIOLINK.is_substrate_of, domain=None, range=Optional[Union[Union[str, BiologicalProcessOrActivityId], list[Union[str, BiologicalProcessOrActivityId]]]])
 
 slots.participates_in = Slot(uri=BIOLINK.participates_in, name="participates in", curie=BIOLINK.curie('participates_in'),
                    model_uri=BIOLINK.participates_in, domain=None, range=Optional[Union[Union[str, BiologicalProcessOrActivityId], list[Union[str, BiologicalProcessOrActivityId]]]])
@@ -17580,19 +17580,19 @@ slots.genotype_to_variant_association_object = Slot(uri=RDF.object, name="genoty
                    model_uri=BIOLINK.genotype_to_variant_association_object, domain=GenotypeToVariantAssociation, range=Union[str, SequenceVariantId])
 
 slots.gene_to_gene_association_subject = Slot(uri=RDF.subject, name="gene to gene association_subject", curie=RDF.curie('subject'),
-                   model_uri=BIOLINK.gene_to_gene_association_subject, domain=GeneToGeneAssociation, range=Union[dict, GeneOrGeneProduct])
+                   model_uri=BIOLINK.gene_to_gene_association_subject, domain=GeneToGeneAssociation, range=Union[str, NamedThingId])
 
 slots.gene_to_gene_association_object = Slot(uri=RDF.object, name="gene to gene association_object", curie=RDF.curie('object'),
-                   model_uri=BIOLINK.gene_to_gene_association_object, domain=GeneToGeneAssociation, range=Union[dict, GeneOrGeneProduct])
+                   model_uri=BIOLINK.gene_to_gene_association_object, domain=GeneToGeneAssociation, range=Union[str, NamedThingId])
 
 slots.gene_to_gene_homology_association_subject = Slot(uri=RDF.subject, name="gene to gene homology association_subject", curie=RDF.curie('subject'),
-                   model_uri=BIOLINK.gene_to_gene_homology_association_subject, domain=GeneToGeneHomologyAssociation, range=Union[dict, GeneOrGeneProduct])
+                   model_uri=BIOLINK.gene_to_gene_homology_association_subject, domain=GeneToGeneHomologyAssociation, range=Union[str, NamedThingId])
 
 slots.gene_to_gene_homology_association_predicate = Slot(uri=RDF.predicate, name="gene to gene homology association_predicate", curie=RDF.curie('predicate'),
                    model_uri=BIOLINK.gene_to_gene_homology_association_predicate, domain=GeneToGeneHomologyAssociation, range=Union[str, URIorCURIE])
 
 slots.gene_to_gene_homology_association_object = Slot(uri=RDF.object, name="gene to gene homology association_object", curie=RDF.curie('object'),
-                   model_uri=BIOLINK.gene_to_gene_homology_association_object, domain=GeneToGeneHomologyAssociation, range=Union[dict, GeneOrGeneProduct])
+                   model_uri=BIOLINK.gene_to_gene_homology_association_object, domain=GeneToGeneHomologyAssociation, range=Union[str, NamedThingId])
 
 slots.gene_to_gene_family_association_subject = Slot(uri=RDF.subject, name="gene to gene family association_subject", curie=RDF.curie('subject'),
                    model_uri=BIOLINK.gene_to_gene_family_association_subject, domain=GeneToGeneFamilyAssociation, range=Union[str, GeneId])
@@ -17604,16 +17604,16 @@ slots.gene_to_gene_family_association_predicate = Slot(uri=RDF.predicate, name="
                    model_uri=BIOLINK.gene_to_gene_family_association_predicate, domain=GeneToGeneFamilyAssociation, range=Union[str, URIorCURIE])
 
 slots.gene_family_to_gene_or_gene_product_or_gene_family_association_subject = Slot(uri=RDF.subject, name="gene family to gene or gene product or gene family association_subject", curie=RDF.curie('subject'),
-                   model_uri=BIOLINK.gene_family_to_gene_or_gene_product_or_gene_family_association_subject, domain=GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation, range=Union[str, GeneId])
+                   model_uri=BIOLINK.gene_family_to_gene_or_gene_product_or_gene_family_association_subject, domain=GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation, range=Union[str, GeneFamilyId])
 
 slots.gene_family_to_gene_or_gene_product_or_gene_family_association_object = Slot(uri=RDF.object, name="gene family to gene or gene product or gene family association_object", curie=RDF.curie('object'),
-                   model_uri=BIOLINK.gene_family_to_gene_or_gene_product_or_gene_family_association_object, domain=GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation, range=Union[str, GeneFamilyId])
+                   model_uri=BIOLINK.gene_family_to_gene_or_gene_product_or_gene_family_association_object, domain=GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation, range=Union[str, NamedThingId])
 
 slots.gene_family_to_gene_or_gene_product_or_gene_family_association_predicate = Slot(uri=RDF.predicate, name="gene family to gene or gene product or gene family association_predicate", curie=RDF.curie('predicate'),
                    model_uri=BIOLINK.gene_family_to_gene_or_gene_product_or_gene_family_association_predicate, domain=GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation, range=Union[str, URIorCURIE])
 
 slots.gene_or_gene_product_or_gene_family_to_biological_process_or_activity_association_subject = Slot(uri=RDF.subject, name="gene or gene product or gene family to biological process or activity association_subject", curie=RDF.curie('subject'),
-                   model_uri=BIOLINK.gene_or_gene_product_or_gene_family_to_biological_process_or_activity_association_subject, domain=GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation, range=Union[dict, GeneOrGeneProductOrGeneFamily])
+                   model_uri=BIOLINK.gene_or_gene_product_or_gene_family_to_biological_process_or_activity_association_subject, domain=GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation, range=Union[str, NamedThingId])
 
 slots.gene_or_gene_product_or_gene_family_to_biological_process_or_activity_association_object = Slot(uri=RDF.object, name="gene or gene product or gene family to biological process or activity association_object", curie=RDF.curie('object'),
                    model_uri=BIOLINK.gene_or_gene_product_or_gene_family_to_biological_process_or_activity_association_object, domain=GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation, range=Union[str, BiologicalProcessOrActivityId])
@@ -17625,7 +17625,7 @@ slots.biological_process_or_activity_to_gene_or_gene_product_or_gene_family_asso
                    model_uri=BIOLINK.biological_process_or_activity_to_gene_or_gene_product_or_gene_family_association_subject, domain=BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation, range=Union[str, BiologicalProcessOrActivityId])
 
 slots.biological_process_or_activity_to_gene_or_gene_product_or_gene_family_association_object = Slot(uri=RDF.object, name="biological process or activity to gene or gene product or gene family association_object", curie=RDF.curie('object'),
-                   model_uri=BIOLINK.biological_process_or_activity_to_gene_or_gene_product_or_gene_family_association_object, domain=BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation, range=Union[dict, GeneOrGeneProductOrGeneFamily])
+                   model_uri=BIOLINK.biological_process_or_activity_to_gene_or_gene_product_or_gene_family_association_object, domain=BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation, range=Union[str, NamedThingId])
 
 slots.biological_process_or_activity_to_gene_or_gene_product_or_gene_family_association_predicate = Slot(uri=RDF.predicate, name="biological process or activity to gene or gene product or gene family association_predicate", curie=RDF.curie('predicate'),
                    model_uri=BIOLINK.biological_process_or_activity_to_gene_or_gene_product_or_gene_family_association_predicate, domain=BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation, range=Union[str, URIorCURIE])
@@ -17667,13 +17667,13 @@ slots.cell_line_to_disease_or_phenotypic_feature_association_subject = Slot(uri=
                    model_uri=BIOLINK.cell_line_to_disease_or_phenotypic_feature_association_subject, domain=CellLineToDiseaseOrPhenotypicFeatureAssociation, range=Union[str, DiseaseOrPhenotypicFeatureId])
 
 slots.chemical_entity_to_entity_association_mixin_subject = Slot(uri=RDF.subject, name="chemical entity to entity association mixin_subject", curie=RDF.curie('subject'),
-                   model_uri=BIOLINK.chemical_entity_to_entity_association_mixin_subject, domain=None, range=Union[dict, ChemicalEntityOrGeneOrGeneProduct])
+                   model_uri=BIOLINK.chemical_entity_to_entity_association_mixin_subject, domain=None, range=Union[str, NamedThingId])
 
 slots.drug_to_entity_association_mixin_subject = Slot(uri=RDF.subject, name="drug to entity association mixin_subject", curie=RDF.curie('subject'),
                    model_uri=BIOLINK.drug_to_entity_association_mixin_subject, domain=None, range=Union[str, DrugId])
 
 slots.chemical_to_entity_association_mixin_subject = Slot(uri=RDF.subject, name="chemical to entity association mixin_subject", curie=RDF.curie('subject'),
-                   model_uri=BIOLINK.chemical_to_entity_association_mixin_subject, domain=None, range=Union[dict, ChemicalEntityOrGeneOrGeneProduct])
+                   model_uri=BIOLINK.chemical_to_entity_association_mixin_subject, domain=None, range=Union[str, NamedThingId])
 
 slots.case_to_entity_association_mixin_subject = Slot(uri=RDF.subject, name="case to entity association mixin_subject", curie=RDF.curie('subject'),
                    model_uri=BIOLINK.case_to_entity_association_mixin_subject, domain=None, range=Union[str, CaseId])
@@ -17685,7 +17685,7 @@ slots.reaction_to_participant_association_subject = Slot(uri=RDF.subject, name="
                    model_uri=BIOLINK.reaction_to_participant_association_subject, domain=ReactionToParticipantAssociation, range=Union[str, MolecularEntityId])
 
 slots.reaction_to_catalyst_association_object = Slot(uri=RDF.object, name="reaction to catalyst association_object", curie=RDF.curie('object'),
-                   model_uri=BIOLINK.reaction_to_catalyst_association_object, domain=ReactionToCatalystAssociation, range=Union[dict, GeneOrGeneProduct])
+                   model_uri=BIOLINK.reaction_to_catalyst_association_object, domain=ReactionToCatalystAssociation, range=Union[str, ChemicalEntityId])
 
 slots.chemical_entity_to_chemical_derivation_association_subject = Slot(uri=RDF.subject, name="chemical entity to chemical derivation association_subject", curie=RDF.curie('subject'),
                    model_uri=BIOLINK.chemical_entity_to_chemical_derivation_association_subject, domain=ChemicalEntityToChemicalDerivationAssociation, range=Union[str, ChemicalEntityId])
@@ -17712,7 +17712,7 @@ slots.chemical_or_drug_or_treatment_side_effect_association_predicate = Slot(uri
                    model_uri=BIOLINK.chemical_or_drug_or_treatment_side_effect_association_predicate, domain=ChemicalOrDrugOrTreatmentSideEffectAssociation, range=Union[str, URIorCURIE])
 
 slots.gene_to_pathway_association_subject = Slot(uri=RDF.subject, name="gene to pathway association_subject", curie=RDF.curie('subject'),
-                   model_uri=BIOLINK.gene_to_pathway_association_subject, domain=GeneToPathwayAssociation, range=Union[dict, GeneOrGeneProduct])
+                   model_uri=BIOLINK.gene_to_pathway_association_subject, domain=GeneToPathwayAssociation, range=Union[str, NamedThingId])
 
 slots.gene_to_pathway_association_object = Slot(uri=RDF.object, name="gene to pathway association_object", curie=RDF.curie('object'),
                    model_uri=BIOLINK.gene_to_pathway_association_object, domain=GeneToPathwayAssociation, range=Union[str, PathwayId])
@@ -17760,7 +17760,7 @@ slots.chemical_gene_interaction_association_subject = Slot(uri=RDF.subject, name
                    model_uri=BIOLINK.chemical_gene_interaction_association_subject, domain=ChemicalGeneInteractionAssociation, range=Union[str, ChemicalEntityId])
 
 slots.chemical_gene_interaction_association_object = Slot(uri=RDF.object, name="chemical gene interaction association_object", curie=RDF.curie('object'),
-                   model_uri=BIOLINK.chemical_gene_interaction_association_object, domain=ChemicalGeneInteractionAssociation, range=Union[dict, GeneOrGeneProduct])
+                   model_uri=BIOLINK.chemical_gene_interaction_association_object, domain=ChemicalGeneInteractionAssociation, range=Union[str, NamedThingId])
 
 slots.chemical_gene_interaction_association_predicate = Slot(uri=RDF.predicate, name="chemical gene interaction association_predicate", curie=RDF.curie('predicate'),
                    model_uri=BIOLINK.chemical_gene_interaction_association_predicate, domain=ChemicalGeneInteractionAssociation, range=Union[str, URIorCURIE])
@@ -17808,13 +17808,13 @@ slots.macromolecular_machine_has_substrate_association_object = Slot(uri=RDF.obj
                    model_uri=BIOLINK.macromolecular_machine_has_substrate_association_object, domain=MacromolecularMachineHasSubstrateAssociation, range=Union[dict, ChemicalEntityOrProteinOrPolypeptide])
 
 slots.gene_regulates_gene_association_subject = Slot(uri=RDF.subject, name="gene regulates gene association_subject", curie=RDF.curie('subject'),
-                   model_uri=BIOLINK.gene_regulates_gene_association_subject, domain=GeneRegulatesGeneAssociation, range=Union[dict, GeneOrGeneProduct])
+                   model_uri=BIOLINK.gene_regulates_gene_association_subject, domain=GeneRegulatesGeneAssociation, range=Union[str, NamedThingId])
 
 slots.gene_regulates_gene_association_predicate = Slot(uri=RDF.predicate, name="gene regulates gene association_predicate", curie=RDF.curie('predicate'),
                    model_uri=BIOLINK.gene_regulates_gene_association_predicate, domain=GeneRegulatesGeneAssociation, range=Union[str, URIorCURIE])
 
 slots.gene_regulates_gene_association_object = Slot(uri=RDF.object, name="gene regulates gene association_object", curie=RDF.curie('object'),
-                   model_uri=BIOLINK.gene_regulates_gene_association_object, domain=GeneRegulatesGeneAssociation, range=Union[dict, GeneOrGeneProduct])
+                   model_uri=BIOLINK.gene_regulates_gene_association_object, domain=GeneRegulatesGeneAssociation, range=Union[str, NamedThingId])
 
 slots.gene_regulates_gene_association_object_aspect_qualifier = Slot(uri=BIOLINK.object_aspect_qualifier, name="gene regulates gene association_object aspect qualifier", curie=BIOLINK.curie('object_aspect_qualifier'),
                    model_uri=BIOLINK.gene_regulates_gene_association_object_aspect_qualifier, domain=GeneRegulatesGeneAssociation, range=Union[str, "GeneOrGeneProductOrChemicalEntityAspectEnum"])
@@ -17889,7 +17889,7 @@ slots.chemical_affects_biological_entity_association_species_context_qualifier =
                    model_uri=BIOLINK.chemical_affects_biological_entity_association_species_context_qualifier, domain=ChemicalAffectsBiologicalEntityAssociation, range=Optional[Union[str, OrganismTaxonId]])
 
 slots.gene_affects_chemical_association_subject = Slot(uri=RDF.subject, name="gene affects chemical association_subject", curie=RDF.curie('subject'),
-                   model_uri=BIOLINK.gene_affects_chemical_association_subject, domain=GeneAffectsChemicalAssociation, range=Union[dict, GeneOrGeneProduct])
+                   model_uri=BIOLINK.gene_affects_chemical_association_subject, domain=GeneAffectsChemicalAssociation, range=Union[str, NamedThingId])
 
 slots.gene_affects_chemical_association_subject_form_or_variant_qualifier = Slot(uri=BIOLINK.subject_form_or_variant_qualifier, name="gene affects chemical association_subject form or variant qualifier", curie=BIOLINK.curie('subject_form_or_variant_qualifier'),
                    model_uri=BIOLINK.gene_affects_chemical_association_subject_form_or_variant_qualifier, domain=GeneAffectsChemicalAssociation, range=Optional[Union[str, "ChemicalOrGeneOrGeneProductFormOrVariantEnum"]])
@@ -17943,7 +17943,7 @@ slots.gene_affects_chemical_association_species_context_qualifier = Slot(uri=BIO
                    model_uri=BIOLINK.gene_affects_chemical_association_species_context_qualifier, domain=GeneAffectsChemicalAssociation, range=Optional[Union[str, OrganismTaxonId]])
 
 slots.drug_to_gene_association_object = Slot(uri=RDF.object, name="drug to gene association_object", curie=RDF.curie('object'),
-                   model_uri=BIOLINK.drug_to_gene_association_object, domain=DrugToGeneAssociation, range=Union[dict, GeneOrGeneProduct])
+                   model_uri=BIOLINK.drug_to_gene_association_object, domain=DrugToGeneAssociation, range=Union[str, NamedThingId])
 
 slots.material_sample_to_entity_association_mixin_subject = Slot(uri=RDF.subject, name="material sample to entity association mixin_subject", curie=RDF.curie('subject'),
                    model_uri=BIOLINK.material_sample_to_entity_association_mixin_subject, domain=None, range=Union[str, MaterialSampleId])
@@ -18027,7 +18027,7 @@ slots.case_to_variant_association_has_zygosity = Slot(uri=BIOLINK.has_zygosity, 
                    model_uri=BIOLINK.case_to_variant_association_has_zygosity, domain=CaseToVariantAssociation, range=Optional[Union[str, ZygosityId]])
 
 slots.case_to_gene_association_object = Slot(uri=RDF.object, name="case to gene association_object", curie=RDF.curie('object'),
-                   model_uri=BIOLINK.case_to_gene_association_object, domain=CaseToGeneAssociation, range=Union[dict, GeneOrGeneProduct])
+                   model_uri=BIOLINK.case_to_gene_association_object, domain=CaseToGeneAssociation, range=Union[str, NamedThingId])
 
 slots.behavior_to_behavioral_feature_association_subject = Slot(uri=RDF.subject, name="behavior to behavioral feature association_subject", curie=RDF.curie('subject'),
                    model_uri=BIOLINK.behavior_to_behavioral_feature_association_subject, domain=BehaviorToBehavioralFeatureAssociation, range=Union[str, BehaviorId])
@@ -18036,13 +18036,13 @@ slots.behavior_to_behavioral_feature_association_object = Slot(uri=RDF.object, n
                    model_uri=BIOLINK.behavior_to_behavioral_feature_association_object, domain=BehaviorToBehavioralFeatureAssociation, range=Union[str, BehavioralFeatureId])
 
 slots.gene_to_entity_association_mixin_subject = Slot(uri=RDF.subject, name="gene to entity association mixin_subject", curie=RDF.curie('subject'),
-                   model_uri=BIOLINK.gene_to_entity_association_mixin_subject, domain=None, range=Union[dict, GeneOrGeneProduct])
+                   model_uri=BIOLINK.gene_to_entity_association_mixin_subject, domain=None, range=Union[str, NamedThingId])
 
 slots.variant_to_entity_association_mixin_subject = Slot(uri=RDF.subject, name="variant to entity association mixin_subject", curie=RDF.curie('subject'),
                    model_uri=BIOLINK.variant_to_entity_association_mixin_subject, domain=None, range=Union[str, SequenceVariantId])
 
 slots.gene_to_phenotypic_feature_association_subject = Slot(uri=RDF.subject, name="gene to phenotypic feature association_subject", curie=RDF.curie('subject'),
-                   model_uri=BIOLINK.gene_to_phenotypic_feature_association_subject, domain=GeneToPhenotypicFeatureAssociation, range=Union[dict, GeneOrGeneProduct])
+                   model_uri=BIOLINK.gene_to_phenotypic_feature_association_subject, domain=GeneToPhenotypicFeatureAssociation, range=Union[str, NamedThingId])
 
 slots.gene_to_phenotypic_feature_association_subject_form_or_variant_qualifier = Slot(uri=BIOLINK.subject_form_or_variant_qualifier, name="gene to phenotypic feature association_subject form or variant qualifier", curie=BIOLINK.curie('subject_form_or_variant_qualifier'),
                    model_uri=BIOLINK.gene_to_phenotypic_feature_association_subject_form_or_variant_qualifier, domain=GeneToPhenotypicFeatureAssociation, range=Optional[Union[str, "ChemicalOrGeneOrGeneProductFormOrVariantEnum"]])
@@ -18060,7 +18060,7 @@ slots.gene_to_phenotypic_feature_association_predicate = Slot(uri=RDF.predicate,
                    model_uri=BIOLINK.gene_to_phenotypic_feature_association_predicate, domain=GeneToPhenotypicFeatureAssociation, range=Union[str, "GeneToPhenotypicFeaturePredicateEnum"])
 
 slots.gene_to_disease_association_subject = Slot(uri=RDF.subject, name="gene to disease association_subject", curie=RDF.curie('subject'),
-                   model_uri=BIOLINK.gene_to_disease_association_subject, domain=GeneToDiseaseAssociation, range=Union[dict, GeneOrGeneProduct])
+                   model_uri=BIOLINK.gene_to_disease_association_subject, domain=GeneToDiseaseAssociation, range=Union[str, NamedThingId])
 
 slots.gene_to_disease_association_subject_form_or_variant_qualifier = Slot(uri=BIOLINK.subject_form_or_variant_qualifier, name="gene to disease association_subject form or variant qualifier", curie=BIOLINK.curie('subject_form_or_variant_qualifier'),
                    model_uri=BIOLINK.gene_to_disease_association_subject_form_or_variant_qualifier, domain=GeneToDiseaseAssociation, range=Optional[Union[str, "ChemicalOrGeneOrGeneProductFormOrVariantEnum"]])
@@ -18078,13 +18078,13 @@ slots.gene_to_disease_association_predicate = Slot(uri=RDF.predicate, name="gene
                    model_uri=BIOLINK.gene_to_disease_association_predicate, domain=GeneToDiseaseAssociation, range=Union[str, "GeneToDiseasePredicateEnum"])
 
 slots.causal_gene_to_disease_association_subject = Slot(uri=RDF.subject, name="causal gene to disease association_subject", curie=RDF.curie('subject'),
-                   model_uri=BIOLINK.causal_gene_to_disease_association_subject, domain=CausalGeneToDiseaseAssociation, range=Union[dict, GeneOrGeneProduct])
+                   model_uri=BIOLINK.causal_gene_to_disease_association_subject, domain=CausalGeneToDiseaseAssociation, range=Union[str, NamedThingId])
 
 slots.causal_gene_to_disease_association_object = Slot(uri=RDF.object, name="causal gene to disease association_object", curie=RDF.curie('object'),
                    model_uri=BIOLINK.causal_gene_to_disease_association_object, domain=CausalGeneToDiseaseAssociation, range=Union[str, DiseaseId])
 
 slots.correlated_gene_to_disease_association_subject = Slot(uri=RDF.subject, name="correlated gene to disease association_subject", curie=RDF.curie('subject'),
-                   model_uri=BIOLINK.correlated_gene_to_disease_association_subject, domain=CorrelatedGeneToDiseaseAssociation, range=Union[dict, GeneOrGeneProduct])
+                   model_uri=BIOLINK.correlated_gene_to_disease_association_subject, domain=CorrelatedGeneToDiseaseAssociation, range=Union[str, NamedThingId])
 
 slots.correlated_gene_to_disease_association_object = Slot(uri=RDF.object, name="correlated gene to disease association_object", curie=RDF.curie('object'),
                    model_uri=BIOLINK.correlated_gene_to_disease_association_object, domain=CorrelatedGeneToDiseaseAssociation, range=Union[str, DiseaseId])
@@ -18093,7 +18093,7 @@ slots.correlated_gene_to_disease_association_predicate = Slot(uri=RDF.predicate,
                    model_uri=BIOLINK.correlated_gene_to_disease_association_predicate, domain=CorrelatedGeneToDiseaseAssociation, range=Union[str, URIorCURIE])
 
 slots.druggable_gene_to_disease_association_subject = Slot(uri=RDF.subject, name="druggable gene to disease association_subject", curie=RDF.curie('subject'),
-                   model_uri=BIOLINK.druggable_gene_to_disease_association_subject, domain=DruggableGeneToDiseaseAssociation, range=Union[dict, GeneOrGeneProduct])
+                   model_uri=BIOLINK.druggable_gene_to_disease_association_subject, domain=DruggableGeneToDiseaseAssociation, range=Union[str, NamedThingId])
 
 slots.druggable_gene_to_disease_association_predicate = Slot(uri=RDF.predicate, name="druggable gene to disease association_predicate", curie=RDF.curie('predicate'),
                    model_uri=BIOLINK.druggable_gene_to_disease_association_predicate, domain=DruggableGeneToDiseaseAssociation, range=Union[str, "GeneToDiseasePredicateEnum"])
@@ -18162,7 +18162,7 @@ slots.model_to_disease_association_mixin_predicate = Slot(uri=RDF.predicate, nam
                    model_uri=BIOLINK.model_to_disease_association_mixin_predicate, domain=None, range=Union[str, URIorCURIE])
 
 slots.gene_as_a_model_of_disease_association_subject = Slot(uri=RDF.subject, name="gene as a model of disease association_subject", curie=RDF.curie('subject'),
-                   model_uri=BIOLINK.gene_as_a_model_of_disease_association_subject, domain=GeneAsAModelOfDiseaseAssociation, range=Union[dict, GeneOrGeneProduct])
+                   model_uri=BIOLINK.gene_as_a_model_of_disease_association_subject, domain=GeneAsAModelOfDiseaseAssociation, range=Union[str, NamedThingId])
 
 slots.variant_as_a_model_of_disease_association_subject = Slot(uri=RDF.subject, name="variant as a model of disease association_subject", curie=RDF.curie('subject'),
                    model_uri=BIOLINK.variant_as_a_model_of_disease_association_subject, domain=VariantAsAModelOfDiseaseAssociation, range=Union[str, SequenceVariantId])
@@ -18189,7 +18189,7 @@ slots.taxon_to_taxon_association_object = Slot(uri=RDF.object, name="taxon to ta
                    model_uri=BIOLINK.taxon_to_taxon_association_object, domain=TaxonToTaxonAssociation, range=Union[str, OrganismTaxonId])
 
 slots.gene_has_variant_that_contributes_to_disease_association_subject = Slot(uri=RDF.subject, name="gene has variant that contributes to disease association_subject", curie=RDF.curie('subject'),
-                   model_uri=BIOLINK.gene_has_variant_that_contributes_to_disease_association_subject, domain=GeneHasVariantThatContributesToDiseaseAssociation, range=Union[dict, GeneOrGeneProduct])
+                   model_uri=BIOLINK.gene_has_variant_that_contributes_to_disease_association_subject, domain=GeneHasVariantThatContributesToDiseaseAssociation, range=Union[str, NamedThingId])
 
 slots.gene_has_variant_that_contributes_to_disease_association_object = Slot(uri=RDF.object, name="gene has variant that contributes to disease association_object", curie=RDF.curie('object'),
                    model_uri=BIOLINK.gene_has_variant_that_contributes_to_disease_association_object, domain=GeneHasVariantThatContributesToDiseaseAssociation, range=Union[str, DiseaseId])
@@ -18198,7 +18198,7 @@ slots.gene_has_variant_that_contributes_to_disease_association_predicate = Slot(
                    model_uri=BIOLINK.gene_has_variant_that_contributes_to_disease_association_predicate, domain=GeneHasVariantThatContributesToDiseaseAssociation, range=Union[str, "GeneToDiseasePredicateEnum"])
 
 slots.gene_to_expression_site_association_subject = Slot(uri=RDF.subject, name="gene to expression site association_subject", curie=RDF.curie('subject'),
-                   model_uri=BIOLINK.gene_to_expression_site_association_subject, domain=GeneToExpressionSiteAssociation, range=Union[dict, GeneOrGeneProduct])
+                   model_uri=BIOLINK.gene_to_expression_site_association_subject, domain=GeneToExpressionSiteAssociation, range=Union[str, NamedThingId])
 
 slots.gene_to_expression_site_association_object = Slot(uri=RDF.object, name="gene to expression site association_object", curie=RDF.curie('object'),
                    model_uri=BIOLINK.gene_to_expression_site_association_object, domain=GeneToExpressionSiteAssociation, range=Union[str, AnatomicalEntityId])
@@ -18294,10 +18294,10 @@ slots.chemical_entity_or_gene_or_gene_product_regulates_gene_association_predica
                    model_uri=BIOLINK.chemical_entity_or_gene_or_gene_product_regulates_gene_association_predicate, domain=ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation, range=Union[str, URIorCURIE])
 
 slots.chemical_entity_or_gene_or_gene_product_regulates_gene_association_subject = Slot(uri=RDF.subject, name="chemical entity or gene or gene product regulates gene association_subject", curie=RDF.curie('subject'),
-                   model_uri=BIOLINK.chemical_entity_or_gene_or_gene_product_regulates_gene_association_subject, domain=ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation, range=Union[dict, ChemicalEntityOrGeneOrGeneProduct])
+                   model_uri=BIOLINK.chemical_entity_or_gene_or_gene_product_regulates_gene_association_subject, domain=ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation, range=Union[str, NamedThingId])
 
 slots.chemical_entity_or_gene_or_gene_product_regulates_gene_association_object = Slot(uri=RDF.object, name="chemical entity or gene or gene product regulates gene association_object", curie=RDF.curie('object'),
-                   model_uri=BIOLINK.chemical_entity_or_gene_or_gene_product_regulates_gene_association_object, domain=ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation, range=Union[dict, GeneOrGeneProduct])
+                   model_uri=BIOLINK.chemical_entity_or_gene_or_gene_product_regulates_gene_association_object, domain=ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation, range=Union[str, NamedThingId])
 
 slots.chemical_entity_or_gene_or_gene_product_regulates_gene_association_object_direction_qualifier = Slot(uri=BIOLINK.object_direction_qualifier, name="chemical entity or gene or gene product regulates gene association_object direction qualifier", curie=BIOLINK.curie('object_direction_qualifier'),
                    model_uri=BIOLINK.chemical_entity_or_gene_or_gene_product_regulates_gene_association_object_direction_qualifier, domain=ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation, range=Optional[Union[str, "DirectionQualifierEnum"]])
@@ -18336,7 +18336,7 @@ slots.anatomical_entity_to_anatomical_entity_ontogenic_association_predicate = S
                    model_uri=BIOLINK.anatomical_entity_to_anatomical_entity_ontogenic_association_predicate, domain=AnatomicalEntityToAnatomicalEntityOntogenicAssociation, range=Union[str, URIorCURIE])
 
 slots.gene_or_gene_product_or_gene_family_to_anatomical_entity_association_subject = Slot(uri=RDF.subject, name="gene or gene product or gene family to anatomical entity association_subject", curie=RDF.curie('subject'),
-                   model_uri=BIOLINK.gene_or_gene_product_or_gene_family_to_anatomical_entity_association_subject, domain=GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation, range=Union[dict, GeneOrGeneProductOrGeneFamily])
+                   model_uri=BIOLINK.gene_or_gene_product_or_gene_family_to_anatomical_entity_association_subject, domain=GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation, range=Union[str, NamedThingId])
 
 slots.gene_or_gene_product_or_gene_family_to_anatomical_entity_association_object = Slot(uri=RDF.object, name="gene or gene product or gene family to anatomical entity association_object", curie=RDF.curie('object'),
                    model_uri=BIOLINK.gene_or_gene_product_or_gene_family_to_anatomical_entity_association_object, domain=GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation, range=Union[str, AnatomicalEntityId])

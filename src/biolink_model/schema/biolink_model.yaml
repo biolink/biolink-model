@@ -2556,7 +2556,10 @@ slots:
     is_a: related to at instance level
     inverse: active in
     domain: cellular component
-    range: gene or gene product
+    any_of:
+      - range: gene
+      - range: protein
+      - range: RNA product
 
   acts upstream of:
     is_a: related to at instance level
@@ -2571,7 +2574,10 @@ slots:
     is_a: related to at instance level
     inverse: acts upstream of
     domain: biological process
-    range: gene or gene product
+    any_of:
+      - range: gene
+      - range: protein
+      - range: RNA product
 
   acts upstream of positive effect:
     is_a: acts upstream of
@@ -2586,7 +2592,10 @@ slots:
     is_a: has upstream actor
     inverse: acts upstream of positive effect
     domain: biological process
-    range: gene or gene product
+    any_of:
+      - range: gene
+      - range: protein
+      - range: RNA product
 
   acts upstream of negative effect:
     is_a: acts upstream of
@@ -2601,7 +2610,10 @@ slots:
     is_a: has upstream actor
     inverse: acts upstream of negative effect
     domain: biological process
-    range: gene or gene product
+    any_of:
+      - range: gene
+      - range: protein
+      - range: RNA product
 
   acts upstream of or within:
     is_a: acts upstream of
@@ -2616,7 +2628,10 @@ slots:
     is_a: has upstream actor
     inverse: acts upstream of or within
     domain: biological process
-    range: gene or gene product
+    any_of:
+      - range: gene
+      - range: protein
+      - range: RNA product
 
   acts upstream of or within positive effect:
     is_a: acts upstream of or within
@@ -2631,7 +2646,10 @@ slots:
     is_a: has upstream or within actor
     inverse: acts upstream of or within positive effect
     domain: biological process
-    range: gene or gene product
+    any_of:
+      - range: gene
+      - range: protein
+      - range: RNA product
 
   acts upstream of or within negative effect:
     is_a: acts upstream of or within
@@ -2646,7 +2664,10 @@ slots:
     is_a: has upstream or within actor
     inverse: acts upstream of or within negative effect
     domain: biological process
-    range: gene or gene product
+    any_of:
+      - range: gene
+      - range: protein
+      - range: RNA product
 
      ## Publication related predicates
   mentions:
@@ -3093,7 +3114,10 @@ slots:
     in_subset:
       - translator_minimal
     domain: chemical entity or gene or gene product
-    range: chemical entity or gene or gene product
+    any_of:
+      - range: chemical entity
+      - range: gene
+      - range: gene product
     annotations:
       canonical_predicate: true
     exact_mappings:
@@ -3104,7 +3128,10 @@ slots:
     in_subset:
       - translator_minimal
     domain: chemical entity or gene or gene product
-    range: chemical entity or gene or gene product
+    any_of:
+      - range: chemical entity
+      - range: gene
+      - range: gene product
     inverse: affects sensitivity to
 
   increases sensitivity to:
@@ -3116,7 +3143,10 @@ slots:
     in_subset:
       - translator_minimal
     domain: chemical entity or gene or gene product
-    range: chemical entity or gene or gene product
+    any_of:
+      - range: chemical entity
+      - range: gene
+      - range: gene product
     annotations:
       canonical_predicate: true
       opposite_of: decreases sensitivity to
@@ -3128,7 +3158,10 @@ slots:
     in_subset:
       - translator_minimal
     domain: chemical entity or gene or gene product
-    range: chemical entity or gene or gene product
+    any_of:
+      - range: chemical entity
+      - range: gene
+      - range: gene product
     inverse: increases sensitivity to
 
   decreases sensitivity to:
@@ -3140,7 +3173,10 @@ slots:
     in_subset:
       - translator_minimal
     domain: chemical entity or gene or gene product
-    range: chemical entity or gene or gene product
+    any_of:
+      - range: chemical entity
+      - range: gene
+      - range: gene product
     annotations:
       canonical_predicate: true
       opposite_of: increases sensitivity to
@@ -3154,7 +3190,10 @@ slots:
     in_subset:
       - translator_minimal
     domain: chemical entity or gene or gene product
-    range: chemical entity or gene or gene product
+    any_of:
+      - range: chemical entity
+      - range: gene
+      - range: gene product
     inverse: decreases sensitivity to
 
   regulates:
@@ -3546,8 +3585,11 @@ slots:
     description: >-
       holds between two genes or gene products that are part of in the same biological pathway
     is_a: coexists with
+    any_of:
+      - range: gene
+      - range: protein
+      - range: RNA product
     domain: gene or gene product
-    range: gene or gene product
     in_subset:
       - translator_minimal
     symmetric: true
@@ -3563,8 +3605,11 @@ slots:
       holds between two genes or gene products that are part of (or code for
       products that are part of) in the same macromolecular complex
     is_a: coexists with
+    any_of:
+      - range: gene
+      - range: protein
+      - range: RNA product
     domain: gene or gene product
-    range: gene or gene product
     in_subset:
       - translator_minimal
     symmetric: true
@@ -3581,8 +3626,11 @@ slots:
     description: >-
       holds between two genes or gene products that are expressed in the same cell type or population
     is_a: coexists with
+    any_of:
+      - range: gene
+      - range: protein
+      - range: RNA product
     domain: gene or gene product
-    range: gene or gene product
     in_subset:
       - translator_minimal
     symmetric: true
@@ -4197,8 +4245,11 @@ slots:
     description: >-
       holds between any two genes or gene products, in which both are
       generally expressed within a single defined experimental context.
+    any_of:
+      - range: gene
+      - range: protein
+      - range: RNA product
     domain: gene or gene product
-    range: gene or gene product
     symmetric: true
     annotations:
       canonical_predicate: true
@@ -4211,7 +4262,10 @@ slots:
       or state of the disease or feature.
        # metabolite
     domain: disease or phenotypic feature
-    range: chemical entity or gene or gene product
+    any_of:
+      - range: chemical entity
+      - range: gene
+      - range: gene product
     in_subset:
       - translator_minimal
     inverse: biomarker for
@@ -4226,7 +4280,7 @@ slots:
       holds between a measurable chemical entity and a disease
       or phenotypic feature, where the entity is used as an indicator
       of the presence or state of the disease or feature.
-    domain: chemical entity or gene or gene product
+    domain: gene or gene product
     range: disease or phenotypic feature
     annotations:
       canonical_predicate: true
@@ -4270,7 +4324,10 @@ slots:
     description: >-
       holds between an anatomical entity and gene or gene product that is expressed there
     domain: anatomical entity
-    range: gene or gene product
+    any_of:
+      - range: gene
+      - range: protein
+      - range: RNA product
     multivalued: true
     in_subset:
       - translator_minimal
@@ -4809,7 +4866,10 @@ slots:
   has substrate:
     is_a: has participant
     domain: chemical entity or gene or gene product
-    range: chemical entity or gene or gene product
+    any_of:
+      - range: chemical entity
+      - range: gene
+      - range: gene product
     annotations:
       canonical_predicate: true
 
@@ -4817,7 +4877,10 @@ slots:
     is_a: participates in
     inverse: has substrate
     domain: chemical entity or gene or gene product
-    range: chemical entity or gene or gene product
+    any_of:
+      - range: chemical entity
+      - range: gene
+      - range: gene product
 
   participates in:
     is_a: related to at instance level
@@ -10437,13 +10500,19 @@ classes:
       - object
     slot_usage:
       subject:
-        range: gene or gene product
+        any_of:
+          - range: gene
+          - range: protein
+          - range: RNA product
         description: >-
           the subject gene in the association. If the relation is symmetric,
           subject vs object is arbitrary. We allow a gene product to stand
           as a proxy for the gene or vice versa.
       object:
-        range: gene or gene product
+        any_of:
+          - range: gene
+          - range: protein
+          - range: RNA product
         description: >-
           the object gene in the association. If the relation is symmetric,
           subject vs object is arbitrary. We allow a gene product to stand
@@ -10461,14 +10530,20 @@ classes:
       - object
     slot_usage:
       subject:
-        range: gene or gene product
+        any_of:
+          - range: gene
+          - range: protein
+          - range: RNA product
       predicate:
         subproperty_of: homologous to
         symmetric: true
         description: >-
           homology relationship type
       object:
-        range: gene or gene product
+        any_of:
+          - range: gene
+          - range: protein
+          - range: RNA product
 
   gene to gene family association:
     description: >-
@@ -10503,9 +10578,12 @@ classes:
       - object
     slot_usage:
       subject:
-        range: gene
-      object:
         range: gene family
+      object:
+        any_of:
+          - range: gene
+          - range: gene product
+          - range: gene family
       predicate:
         subproperty_of: has part
         symmetric: false
@@ -10526,7 +10604,11 @@ classes:
       - object
     slot_usage:
       subject:
-        range: gene or gene product or gene family
+        any_of:
+          - range: gene
+          - range: gene family
+          - range: protein
+          - range: RNA product
       object:
         range: biological process or activity
       predicate:
@@ -10552,7 +10634,11 @@ classes:
       subject:
         range: biological process or activity
       object:
-        range: gene or gene product or gene family
+        any_of:
+          - range: gene
+          - range: gene family
+          - range: protein
+          - range: RNA product
       predicate:
         subproperty_of: has participant
         symmetric: false
@@ -10702,7 +10788,10 @@ classes:
       - subject
     slot_usage:
       subject:
-        range: chemical entity or gene or gene product
+        any_of:
+          - range: chemical entity
+          - range: gene
+          - range: gene product
         description: "the chemical entity that is an interactor"
 
   drug to entity association mixin:
@@ -10735,7 +10824,10 @@ classes:
       - subject
     slot_usage:
       subject:
-        range: chemical entity or gene or gene product
+        any_of:
+          - range: chemical entity
+          - range: gene
+          - range: gene product
         description: "the chemical entity or entity that is an interactor"
 
   case to entity association mixin:
@@ -10810,7 +10902,10 @@ classes:
     is_a: reaction to participant association
     slot_usage:
       object:
-        range: gene or gene product
+        any_of:
+          - range: gene
+          - range: protein
+          - range: RNA product
 
   chemical entity to chemical derivation association:
     description: >-
@@ -10968,7 +11063,10 @@ classes:
       - gene to entity association mixin
     slot_usage:
       subject:
-        range: gene or gene product
+        any_of:
+          - range: gene
+          - range: protein
+          - range: RNA product
         description: "the gene or gene product entity that participates or influences the pathway"
       object:
         range: pathway
@@ -11085,7 +11183,10 @@ classes:
       subject:
         range: chemical entity
       object:
-        range: gene or gene product
+        any_of:
+          - range: gene
+          - range: protein
+          - range: RNA product
       predicate:
         subproperty_of: interacts with
       subject form or variant qualifier:
@@ -11177,11 +11278,17 @@ classes:
       - species context qualifier
     slot_usage:
       subject:
-        range: gene or gene product
+        any_of:
+          - range: gene
+          - range: protein
+          - range: RNA product
       predicate:
         subproperty_of: regulates
       object:
-        range: gene or gene product
+        any_of:
+          - range: gene
+          - range: protein
+          - range: RNA product
       object aspect qualifier:
         range: GeneOrGeneProductOrChemicalEntityAspectEnum
         required: true
@@ -11458,7 +11565,10 @@ classes:
       - species context qualifier
     slot_usage:
       subject:
-        range: gene or gene product
+        any_of:
+          - range: gene
+          - range: protein
+          - range: RNA product
       subject form or variant qualifier:
         range: ChemicalOrGeneOrGeneProductFormOrVariantEnum
       subject part qualifier:
@@ -11507,7 +11617,10 @@ classes:
       - drug to entity association mixin
     slot_usage:
       object:
-        range: gene or gene product
+        any_of:
+          - range: gene
+          - range: protein
+          - range: RNA product
         description: "the gene or gene product that is affected by the drug"
 
   material sample to entity association mixin:
@@ -11999,7 +12112,10 @@ classes:
     description: "Association between a Case and a Gene (e.g., indicating a gene of interest for the case)"
     slot_usage:
       object:
-        range: gene or gene product
+        any_of:
+          - range: gene
+          - range: protein
+          - range: RNA product
     slots:
       - subject
       - predicate
@@ -12037,7 +12153,10 @@ classes:
       - subject
     slot_usage:
       subject:
-        range: gene or gene product
+        any_of:
+          - range: gene
+          - range: protein
+          - range: RNA product
         description: >-
           gene that is the subject of the association
 
@@ -12086,7 +12205,10 @@ classes:
       - gene to entity association mixin
     slot_usage:
       subject:
-        range: gene or gene product
+        any_of:
+          - range: gene
+          - range: protein
+          - range: RNA product
         description: "gene in which variation is correlated with the phenotypic feature"
         examples:
           - value: HGNC:2197
@@ -12145,7 +12267,10 @@ classes:
       - gene2phenotype confidence category
     slot_usage:
       subject:
-        range: gene or gene product
+        any_of:
+          - range: gene
+          - range: protein
+          - range: RNA product
         description: "gene in which variation is correlated with the disease"
       subject form or variant qualifier:
         range: ChemicalOrGeneOrGeneProductFormOrVariantEnum
@@ -12180,7 +12305,10 @@ classes:
       - gene to entity association mixin
     slot_usage:
       subject:
-        range: gene or gene product
+        any_of:
+          - range: gene
+          - range: protein
+          - range: RNA product
         description: >-
           gene in which variation is shown to cause the disease.
       object:
@@ -12205,7 +12333,10 @@ classes:
       - gene to entity association mixin
     slot_usage:
       subject:
-        range: gene or gene product
+        any_of:
+          - range: gene
+          - range: protein
+          - range: RNA product
         description: >-
           gene in which variation is shown to correlate with the disease.
       object:
@@ -12234,7 +12365,10 @@ classes:
       - druggable gene category
     slot_usage:
       subject:
-        range: gene or gene product
+        any_of:
+          - range: gene
+          - range: protein
+          - range: RNA product
         description: >-
           gene in which variation is correlated with the disease
           in a protective manner, or if the product produced by the gene can be targeted by a small molecule and
@@ -12469,7 +12603,10 @@ classes:
       - entity to disease association mixin
     slot_usage:
       subject:
-        range: gene or gene product
+        any_of:
+          - range: gene
+          - range: protein
+          - range: RNA product
         description: >-
           A gene that has a role in modeling the disease. This may be a model
           organism ortholog of a known disease gene, or it may be a gene whose
@@ -12575,7 +12712,10 @@ classes:
       - subject form or variant qualifier
     slot_usage:
       subject:
-        range: gene or gene product
+        any_of:
+          - range: gene
+          - range: protein
+          - range: RNA product
         description: >-
           A gene that has a role in modeling the disease. This may be
           a model organism ortholog of a known disease gene, or it may be
@@ -12603,7 +12743,10 @@ classes:
       - object specialization qualifier
     slot_usage:
       subject:
-        range: gene or gene product
+        any_of:
+          - range: gene
+          - range: protein
+          - range: RNA product
         description: >-
           Gene or gene product positively within the specified
           anatomical entity (or subclass, i.e. cellular component) location.
@@ -13148,10 +13291,16 @@ classes:
           the direction is always from regulator to regulated
         subproperty_of: regulates
       subject:
-        range: chemical entity or gene or gene product
+        any_of:
+          - range: chemical entity
+          - range: gene
+          - range: gene product
         role: regulatory gene
       object:
-        range: gene or gene product
+        any_of:
+          - range: gene
+          - range: protein
+          - range: RNA product
         role: regulated gene
       object direction qualifier:
         range: DirectionQualifierEnum
@@ -13252,7 +13401,11 @@ classes:
       - object
     slot_usage:
       subject:
-        range: gene or gene product or gene family
+        any_of:
+          - range: gene
+          - range: gene family
+          - range: protein
+          - range: RNA product
       object:
         range: anatomical entity
 

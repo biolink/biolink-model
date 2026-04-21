@@ -738,7 +738,7 @@ message BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation
  repeated  string type = 0
  repeated  uriorcurie category = 0
   biologicalProcessOrActivity subject = 0
-  geneOrGeneProductOrGeneFamily object = 0
+  namedThing object = 0
   uriorcurie predicate = 0
  }
 // An organismal quality inhering in a bearer by virtue of the bearer's ability to undergo sexual reproduction in order to differentiate the individuals or types involved.
@@ -979,7 +979,7 @@ message CaseToGeneAssociation
  repeated  uriorcurie category = 0
   namedThing subject = 0
   uriorcurie predicate = 0
-  geneOrGeneProduct object = 0
+  namedThing object = 0
  }
 // An association between a case (e.g. individual patient) and a phenotypic feature in which the individual has or has had the phenotype.
 message CaseToPhenotypicFeatureAssociation
@@ -1156,7 +1156,7 @@ message CausalGeneToDiseaseAssociation
   directionQualifierEnum objectDirectionQualifier = 0
   string allelicRequirement = 0
   uriorcurie qualifiedPredicate = 0
-  geneOrGeneProduct subject = 0
+  namedThing subject = 0
   disease object = 0
  }
 // The basic structural and functional unit of all organisms. Includes the plasma membrane and any external encapsulating structures such as the cell wall and cell envelope.
@@ -1635,8 +1635,8 @@ message ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation
  repeated  uriorcurie category = 0
   directionQualifierEnum objectDirectionQualifier = 0
   uriorcurie predicate = 0
-  chemicalEntityOrGeneOrGeneProduct subject = 0
-  geneOrGeneProduct object = 0
+  namedThing subject = 0
+  namedThing object = 0
  }
 // An association between a chemical entity and a biological process, where the chemical entity has some effect on the biological process.
 message ChemicalEntityToBiologicalProcessAssociation
@@ -2010,7 +2010,7 @@ message ChemicalGeneInteractionAssociation
   float dgidbInteractionScore = 0
   integer dgidbEvidenceScore = 0
   chemicalEntity subject = 0
-  geneOrGeneProduct object = 0
+  namedThing object = 0
   uriorcurie predicate = 0
  }
 // A chemical mixture is a chemical entity composed of two or more molecular entities.
@@ -2738,7 +2738,7 @@ message CorrelatedGeneToDiseaseAssociation
   directionQualifierEnum objectDirectionQualifier = 0
   string allelicRequirement = 0
   uriorcurie qualifiedPredicate = 0
-  geneOrGeneProduct subject = 0
+  namedThing subject = 0
   disease object = 0
   uriorcurie predicate = 0
   frequencyValue frequencyQualifier = 0
@@ -3377,7 +3377,7 @@ message DrugToGeneAssociation
   integer semmedAgreementCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
-  geneOrGeneProduct object = 0
+  namedThing object = 0
  }
 // drug to gene interaction exposure is a drug exposure is where the interactions of the drug with specific genes are known to constitute an 'exposure' to the organism, leading to or influencing an outcome.
 message DrugToGeneInteractionExposure
@@ -3466,7 +3466,7 @@ message DruggableGeneToDiseaseAssociation
   string gene2phenotypeConfidenceCategory = 0
   disease object = 0
   druggableGeneCategoryEnum druggableGeneCategory = 0
-  geneOrGeneProduct subject = 0
+  namedThing subject = 0
   geneToDiseasePredicateEnum predicate = 0
   frequencyValue frequencyQualifier = 0
   directionQualifierEnum subjectDirectionQualifier = 0
@@ -4193,7 +4193,7 @@ message GeneAffectsChemicalAssociation
  repeated  anatomicalEntity anatomicalContextQualifier = 0
   uriorcurie qualifiedPredicate = 0
   organismTaxon speciesContextQualifier = 0
-  geneOrGeneProduct subject = 0
+  namedThing subject = 0
   uriorcurie predicate = 0
   chemicalEntity object = 0
  }
@@ -4254,7 +4254,7 @@ message GeneAsAModelOfDiseaseAssociation
   string gene2phenotypeConfidenceCategory = 0
   disease object = 0
   geneToDiseasePredicateEnum predicate = 0
-  geneOrGeneProduct subject = 0
+  namedThing subject = 0
   frequencyValue frequencyQualifier = 0
   directionQualifierEnum subjectDirectionQualifier = 0
   string objectAspectQualifier = 0
@@ -4331,8 +4331,8 @@ message GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation
   integer semmedAgreementCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
-  gene subject = 0
-  geneFamily object = 0
+  geneFamily subject = 0
+  namedThing object = 0
   uriorcurie predicate = 0
  }
 message GeneHasVariantThatContributesToDiseaseAssociation
@@ -4390,7 +4390,7 @@ message GeneHasVariantThatContributesToDiseaseAssociation
   float diseasesConfidenceScore = 0
   string gene2phenotypeConfidenceCategory = 0
   string subjectFormOrVariantQualifier = 0
-  geneOrGeneProduct subject = 0
+  namedThing subject = 0
   disease object = 0
   geneToDiseasePredicateEnum predicate = 0
  }
@@ -4444,7 +4444,7 @@ message GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation
   integer semmedAgreementCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
-  geneOrGeneProductOrGeneFamily subject = 0
+  namedThing subject = 0
   anatomicalEntity object = 0
  }
 // Relationship between a gene or gene product or gene family to a specified biological process or activity (e.g. molecular activity, biological process or pathway).
@@ -4496,7 +4496,7 @@ message GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation
   integer semmedAgreementCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
-  geneOrGeneProductOrGeneFamily subject = 0
+  namedThing subject = 0
   biologicalProcessOrActivity object = 0
   uriorcurie predicate = 0
  }
@@ -4553,9 +4553,9 @@ message GeneRegulatesGeneAssociation
   directionQualifierEnum objectDirectionQualifier = 0
   uriorcurie qualifiedPredicate = 0
   organismTaxon speciesContextQualifier = 0
-  geneOrGeneProduct subject = 0
+  namedThing subject = 0
   uriorcurie predicate = 0
-  geneOrGeneProduct object = 0
+  namedThing object = 0
  }
 // An association between a gene or gene product and a disease, where variation in the gene is correlated with the disease.
 message GeneToDiseaseAssociation
@@ -4613,7 +4613,7 @@ message GeneToDiseaseAssociation
   uriorcurie qualifiedPredicate = 0
   float diseasesConfidenceScore = 0
   string gene2phenotypeConfidenceCategory = 0
-  geneOrGeneProduct subject = 0
+  namedThing subject = 0
   disease object = 0
   geneToDiseasePredicateEnum predicate = 0
  }
@@ -4669,7 +4669,7 @@ message GeneToExpressionSiteAssociation
   lifeStage stageQualifier = 0
   ontologyClass quantifierQualifier = 0
   uriorcurie objectSpecializationQualifier = 0
-  geneOrGeneProduct subject = 0
+  namedThing subject = 0
   anatomicalEntity object = 0
   uriorcurie predicate = 0
  }
@@ -4722,8 +4722,8 @@ message GeneToGeneCoexpressionAssociation
   integer semmedAgreementCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
-  geneOrGeneProduct subject = 0
-  geneOrGeneProduct object = 0
+  namedThing subject = 0
+  namedThing object = 0
   uriorcurie predicate = 0
   ontologyClass quantifierQualifier = 0
   anatomicalEntity expressionSite = 0
@@ -4832,9 +4832,9 @@ message GeneToGeneHomologyAssociation
   integer semmedAgreementCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
-  geneOrGeneProduct subject = 0
+  namedThing subject = 0
   uriorcurie predicate = 0
-  geneOrGeneProduct object = 0
+  namedThing object = 0
  }
 // A gene is transcribed and potentially translated to a gene product
 message GeneToGeneProductRelationship
@@ -4991,7 +4991,7 @@ message GeneToPathwayAssociation
   integer semmedAgreementCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
-  geneOrGeneProduct subject = 0
+  namedThing subject = 0
   pathway object = 0
  }
 // An association between a gene or gene product and a phenotypic feature, where variation in the gene is correlated with the phenotypic feature.
@@ -5047,7 +5047,7 @@ message GeneToPhenotypicFeatureAssociation
   geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
   string allelicRequirement = 0
-  geneOrGeneProduct subject = 0
+  namedThing subject = 0
   phenotypicFeature object = 0
   geneToPhenotypicFeaturePredicateEnum predicate = 0
   frequencyValue frequencyQualifier = 0
@@ -7114,8 +7114,8 @@ message PairwiseGeneToGeneInteraction
   integer semmedAgreementCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
-  geneOrGeneProduct subject = 0
-  geneOrGeneProduct object = 0
+  namedThing subject = 0
+  namedThing object = 0
   uriorcurie predicate = 0
  }
 // An interaction at the molecular level between two physical entities
@@ -8074,7 +8074,7 @@ message ReactionToCatalystAssociation
   reactionDirectionEnum reactionDirection = 0
   reactionSideEnum reactionSide = 0
   molecularEntity subject = 0
-  geneOrGeneProduct object = 0
+  chemicalEntity object = 0
  }
 message ReactionToParticipantAssociation
  {
