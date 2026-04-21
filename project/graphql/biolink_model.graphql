@@ -5472,7 +5472,6 @@ interface GeneToGeneAssociation
     description: NarrativeText
     hasAttribute: [Attribute]
     deprecated: Boolean
-    predicate: Uriorcurie!
     negated: Boolean
     qualifier: String
     qualifiers: [OntologyClass]
@@ -5514,7 +5513,14 @@ interface GeneToGeneAssociation
     type: [String]
     category: [Uriorcurie]
     subject: GeneOrGeneProduct!
+    subjectAspectQualifier: MolecularActivity
+    subjectProcessQualifier: BiologicalProcess
+    subjectContextQualifier: AnatomicalEntity
+    predicate: Uriorcurie!
     object: GeneOrGeneProduct!
+    objectAspectQualifier: MolecularActivity
+    objectProcessQualifier: BiologicalProcess
+    objectContextQualifier: AnatomicalEntity
   }
 
 type GeneToGeneCoexpressionAssociation implements GeneExpressionMixin
@@ -5566,7 +5572,13 @@ type GeneToGeneCoexpressionAssociation implements GeneExpressionMixin
     type: [String]
     category: [Uriorcurie]
     subject: GeneOrGeneProduct!
+    subjectAspectQualifier: MolecularActivity
+    subjectProcessQualifier: BiologicalProcess
+    subjectContextQualifier: AnatomicalEntity
     object: GeneOrGeneProduct!
+    objectAspectQualifier: MolecularActivity
+    objectProcessQualifier: BiologicalProcess
+    objectContextQualifier: AnatomicalEntity
     predicate: Uriorcurie!
     quantifierQualifier: OntologyClass
     expressionSite: AnatomicalEntity
@@ -5675,6 +5687,12 @@ type GeneToGeneHomologyAssociation
     semmedAgreementCount: Integer
     type: [String]
     category: [Uriorcurie]
+    subjectAspectQualifier: MolecularActivity
+    subjectProcessQualifier: BiologicalProcess
+    subjectContextQualifier: AnatomicalEntity
+    objectAspectQualifier: MolecularActivity
+    objectProcessQualifier: BiologicalProcess
+    objectContextQualifier: AnatomicalEntity
     subject: GeneOrGeneProduct!
     predicate: Uriorcurie!
     object: GeneOrGeneProduct!
@@ -8199,7 +8217,13 @@ type PairwiseGeneToGeneInteraction
     type: [String]
     category: [Uriorcurie]
     subject: GeneOrGeneProduct!
+    subjectAspectQualifier: MolecularActivity
+    subjectProcessQualifier: BiologicalProcess
+    subjectContextQualifier: AnatomicalEntity
     object: GeneOrGeneProduct!
+    objectAspectQualifier: MolecularActivity
+    objectProcessQualifier: BiologicalProcess
+    objectContextQualifier: AnatomicalEntity
     predicate: Uriorcurie!
   }
 
@@ -8250,6 +8274,12 @@ type PairwiseMolecularInteraction
     semmedAgreementCount: Integer
     type: [String]
     category: [Uriorcurie]
+    subjectAspectQualifier: MolecularActivity
+    subjectProcessQualifier: BiologicalProcess
+    subjectContextQualifier: AnatomicalEntity
+    objectAspectQualifier: MolecularActivity
+    objectProcessQualifier: BiologicalProcess
+    objectContextQualifier: AnatomicalEntity
     interactingMoleculesCategory: OntologyClass
     subject: MolecularEntity!
     id: String!

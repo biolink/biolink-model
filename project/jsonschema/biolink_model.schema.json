@@ -36111,6 +36111,13 @@
                     "$ref": "#/$defs/GeneOrGeneProduct",
                     "description": "the object gene in the association. If the relation is symmetric, subject vs object is arbitrary. We allow a gene product to stand as a proxy for the gene or vice versa."
                 },
+                "object_aspect_qualifier": {
+                    "description": "Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the object of an association (aka: statement).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_category": {
                     "description": "Used to hold the biolink class/category of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "type": [
@@ -36138,6 +36145,12 @@
                         "null"
                     ]
                 },
+                "object_context_qualifier": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_feature_name": {
                     "description": "Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease",
                     "type": [
@@ -36157,6 +36170,12 @@
                 },
                 "object_namespace": {
                     "description": "Used to hold the object namespace of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "object_process_qualifier": {
                     "type": [
                         "string",
                         "null"
@@ -36280,6 +36299,13 @@
                     "$ref": "#/$defs/GeneOrGeneProduct",
                     "description": "the subject gene in the association. If the relation is symmetric, subject vs object is arbitrary. We allow a gene product to stand as a proxy for the gene or vice versa."
                 },
+                "subject_aspect_qualifier": {
+                    "description": "Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the subject of an association (aka: statement).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "subject_category": {
                     "description": "Used to hold the biolink class/category of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "type": [
@@ -36307,6 +36333,12 @@
                         "null"
                     ]
                 },
+                "subject_context_qualifier": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "subject_feature_name": {
                     "description": "Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene",
                     "type": [
@@ -36326,6 +36358,12 @@
                 },
                 "subject_namespace": {
                     "description": "Used to hold the subject namespace of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "subject_process_qualifier": {
                     "type": [
                         "string",
                         "null"
@@ -36968,6 +37006,13 @@
                     "$ref": "#/$defs/GeneOrGeneProduct",
                     "description": "the object gene in the association. If the relation is symmetric, subject vs object is arbitrary. We allow a gene product to stand as a proxy for the gene or vice versa."
                 },
+                "object_aspect_qualifier": {
+                    "description": "Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the object of an association (aka: statement).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_category": {
                     "description": "Used to hold the biolink class/category of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "type": [
@@ -36995,6 +37040,12 @@
                         "null"
                     ]
                 },
+                "object_context_qualifier": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_feature_name": {
                     "description": "Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease",
                     "type": [
@@ -37014,6 +37065,12 @@
                 },
                 "object_namespace": {
                     "description": "Used to hold the object namespace of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "object_process_qualifier": {
                     "type": [
                         "string",
                         "null"
@@ -37116,6 +37173,13 @@
                     "$ref": "#/$defs/GeneOrGeneProduct",
                     "description": "the subject gene in the association. If the relation is symmetric, subject vs object is arbitrary. We allow a gene product to stand as a proxy for the gene or vice versa."
                 },
+                "subject_aspect_qualifier": {
+                    "description": "Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the subject of an association (aka: statement).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "subject_category": {
                     "description": "Used to hold the biolink class/category of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "type": [
@@ -37143,6 +37207,12 @@
                         "null"
                     ]
                 },
+                "subject_context_qualifier": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "subject_feature_name": {
                     "description": "Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene",
                     "type": [
@@ -37162,6 +37232,12 @@
                 },
                 "subject_namespace": {
                     "description": "Used to hold the subject namespace of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "subject_process_qualifier": {
                     "type": [
                         "string",
                         "null"
@@ -55462,6 +55538,13 @@
                     "$ref": "#/$defs/GeneOrGeneProduct",
                     "description": "the object gene in the association. If the relation is symmetric, subject vs object is arbitrary. We allow a gene product to stand as a proxy for the gene or vice versa."
                 },
+                "object_aspect_qualifier": {
+                    "description": "Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the object of an association (aka: statement).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_category": {
                     "description": "Used to hold the biolink class/category of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "type": [
@@ -55489,6 +55572,12 @@
                         "null"
                     ]
                 },
+                "object_context_qualifier": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_feature_name": {
                     "description": "Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease",
                     "type": [
@@ -55508,6 +55597,12 @@
                 },
                 "object_namespace": {
                     "description": "Used to hold the object namespace of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "object_process_qualifier": {
                     "type": [
                         "string",
                         "null"
@@ -55610,6 +55705,13 @@
                     "$ref": "#/$defs/GeneOrGeneProduct",
                     "description": "the subject gene in the association. If the relation is symmetric, subject vs object is arbitrary. We allow a gene product to stand as a proxy for the gene or vice versa."
                 },
+                "subject_aspect_qualifier": {
+                    "description": "Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the subject of an association (aka: statement).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "subject_category": {
                     "description": "Used to hold the biolink class/category of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "type": [
@@ -55637,6 +55739,12 @@
                         "null"
                     ]
                 },
+                "subject_context_qualifier": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "subject_feature_name": {
                     "description": "Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene",
                     "type": [
@@ -55656,6 +55764,12 @@
                 },
                 "subject_namespace": {
                     "description": "Used to hold the subject namespace of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "subject_process_qualifier": {
                     "type": [
                         "string",
                         "null"
@@ -55886,6 +56000,13 @@
                     "description": "the object gene in the association. If the relation is symmetric, subject vs object is arbitrary. We allow a gene product to stand as a proxy for the gene or vice versa.",
                     "type": "string"
                 },
+                "object_aspect_qualifier": {
+                    "description": "Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the object of an association (aka: statement).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_category": {
                     "description": "Used to hold the biolink class/category of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "type": [
@@ -55913,6 +56034,12 @@
                         "null"
                     ]
                 },
+                "object_context_qualifier": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_feature_name": {
                     "description": "Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease",
                     "type": [
@@ -55932,6 +56059,12 @@
                 },
                 "object_namespace": {
                     "description": "Used to hold the object namespace of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "object_process_qualifier": {
                     "type": [
                         "string",
                         "null"
@@ -56034,6 +56167,13 @@
                     "description": "the subject gene in the association. If the relation is symmetric, subject vs object is arbitrary. We allow a gene product to stand as a proxy for the gene or vice versa.",
                     "type": "string"
                 },
+                "subject_aspect_qualifier": {
+                    "description": "Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the subject of an association (aka: statement).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "subject_category": {
                     "description": "Used to hold the biolink class/category of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "type": [
@@ -56061,6 +56201,12 @@
                         "null"
                     ]
                 },
+                "subject_context_qualifier": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "subject_feature_name": {
                     "description": "Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene",
                     "type": [
@@ -56080,6 +56226,12 @@
                 },
                 "subject_namespace": {
                     "description": "Used to hold the subject namespace of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "subject_process_qualifier": {
                     "type": [
                         "string",
                         "null"

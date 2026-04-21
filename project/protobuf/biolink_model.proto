@@ -4708,7 +4708,13 @@ message GeneToGeneCoexpressionAssociation
  repeated  string type = 0
  repeated  uriorcurie category = 0
   geneOrGeneProduct subject = 0
+  molecularActivity subjectAspectQualifier = 0
+  biologicalProcess subjectProcessQualifier = 0
+  anatomicalEntity subjectContextQualifier = 0
   geneOrGeneProduct object = 0
+  molecularActivity objectAspectQualifier = 0
+  biologicalProcess objectProcessQualifier = 0
+  anatomicalEntity objectContextQualifier = 0
   uriorcurie predicate = 0
   ontologyClass quantifierQualifier = 0
   anatomicalEntity expressionSite = 0
@@ -4817,6 +4823,12 @@ message GeneToGeneHomologyAssociation
   integer semmedAgreementCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
+  molecularActivity subjectAspectQualifier = 0
+  biologicalProcess subjectProcessQualifier = 0
+  anatomicalEntity subjectContextQualifier = 0
+  molecularActivity objectAspectQualifier = 0
+  biologicalProcess objectProcessQualifier = 0
+  anatomicalEntity objectContextQualifier = 0
   geneOrGeneProduct subject = 0
   uriorcurie predicate = 0
   geneOrGeneProduct object = 0
@@ -7098,7 +7110,13 @@ message PairwiseGeneToGeneInteraction
  repeated  string type = 0
  repeated  uriorcurie category = 0
   geneOrGeneProduct subject = 0
+  molecularActivity subjectAspectQualifier = 0
+  biologicalProcess subjectProcessQualifier = 0
+  anatomicalEntity subjectContextQualifier = 0
   geneOrGeneProduct object = 0
+  molecularActivity objectAspectQualifier = 0
+  biologicalProcess objectProcessQualifier = 0
+  anatomicalEntity objectContextQualifier = 0
   uriorcurie predicate = 0
  }
 // An interaction at the molecular level between two physical entities
@@ -7149,6 +7167,12 @@ message PairwiseMolecularInteraction
   integer semmedAgreementCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
+  molecularActivity subjectAspectQualifier = 0
+  biologicalProcess subjectProcessQualifier = 0
+  anatomicalEntity subjectContextQualifier = 0
+  molecularActivity objectAspectQualifier = 0
+  biologicalProcess objectProcessQualifier = 0
+  anatomicalEntity objectContextQualifier = 0
   ontologyClass interactingMoleculesCategory = 0
   molecularEntity subject = 0
   string id = 0
