@@ -1738,6 +1738,7 @@ slots:
   aspect qualifier:
     is_a: qualifier
     abstract: true
+    range: GeneOrGeneProductOrChemicalEntityAspectEnum
     description: >-
       Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which
       the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that
