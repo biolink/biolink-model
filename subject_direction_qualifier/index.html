@@ -715,6 +715,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#example-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example values
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#linkml-source" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -779,8 +790,28 @@
 </thead>
 <tbody>
 <tr>
+<td><a href="../PredicateMapping/">PredicateMapping</a></td>
+<td>A deprecated predicate mapping object contains the deprecated predicate and an example of the rewiring that should be done to use a qualified statement in its place.</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../GeneAffectsChemicalAssociation/">GeneAffectsChemicalAssociation</a></td>
+<td>Describes an effect that a gene or gene product has on a chemical entity (e.g. an impact of on its abundance, activity, localization, processing, transport, etc.)</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><a href="../ChemicalAffectsBiologicalEntityAssociation/">ChemicalAffectsBiologicalEntityAssociation</a></td>
+<td>Describes an effect that a chemical has on a biological entity (e.g. an impact of on its abundance, activity,localization, processing, expression, etc.)</td>
+<td>yes</td>
+</tr>
+<tr>
 <td><a href="../FeatureOrDiseaseQualifiersToEntityMixin/">FeatureOrDiseaseQualifiersToEntityMixin</a></td>
 <td>Qualifiers for disease or phenotype to entity associations.</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../EntityToFeatureOrGeneQualifiersMixin/">EntityToFeatureOrGeneQualifiersMixin</a></td>
+<td>Qualifiers for entity to gene associations.</td>
 <td>no</td>
 </tr>
 <tr>
@@ -793,25 +824,24 @@
 <td>Qualifiers for entity to disease or phenotype associations.</td>
 <td>no</td>
 </tr>
+</tbody>
+</table>
+<h2 id="example-values">Example values</h2>
+<table>
+<thead>
 <tr>
-<td><a href="../GeneAffectsChemicalAssociation/">GeneAffectsChemicalAssociation</a></td>
-<td>Describes an effect that a gene or gene product has on a chemical entity (e.g. an impact of on its abundance, activity, localization, processing, transport, etc.)</td>
-<td>yes</td>
+<th>Slot Name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>subject_direction_qualifier</td>
+<td>increased</td>
 </tr>
 <tr>
-<td><a href="../EntityToFeatureOrGeneQualifiersMixin/">EntityToFeatureOrGeneQualifiersMixin</a></td>
-<td>Qualifiers for entity to gene associations.</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../PredicateMapping/">PredicateMapping</a></td>
-<td>A deprecated predicate mapping object contains the deprecated predicate and an example of the rewiring that should be done to use a qualified statement in its place.</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../ChemicalAffectsBiologicalEntityAssociation/">ChemicalAffectsBiologicalEntityAssociation</a></td>
-<td>Describes an effect that a chemical has on a biological entity (e.g. an impact of on its abundance, activity,localization, processing, expression, etc.)</td>
-<td>yes</td>
+<td>subject_direction_qualifier</td>
+<td>downregulated</td>
 </tr>
 </tbody>
 </table>
@@ -822,6 +852,9 @@
 description: 'Composes with the core concept (+ aspect if provided) to describe a
   change in its direction or degree. This qualifier qualifies the subject of an association
   (aka: statement).'
+examples:
+- value: increased
+- value: downregulated
 in_subset:
 - translator_minimal
 from_schema: https://w3id.org/biolink/vocab/

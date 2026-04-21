@@ -372,6 +372,9 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="class-bookchapter"><strong>  Class: BookChapter </strong></h1>
+<div class="highlight-box">
+<strong>Description:</strong><i> A section of a book that forms a discrete unit of a larger published work and may be independently authored or cited.</i><br/>
+</div>
 <div class="mermaid"> classDiagram
     class BookChapter
       Publication &lt;|-- BookChapter
@@ -466,7 +469,7 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../published_in/">published_in</a>: <br/> <i> The enclosing parent book containing the chapter should have industry-standard identifier from ISBN. </i></td>
+<td><a href="../published_in/">published_in</a>: <br> <i> The enclosing parent book containing the chapter should have industry-standard identifier from ISBN. </i></br></td>
 <td>1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
 <td>direct</td>
 <td></td>
@@ -526,19 +529,19 @@
 <td></td>
 </tr>
 <tr>
-<td><a href="../license/">license</a>: <br/> <i> None </i></td>
+<td><a href="../license/">license</a>: <br/> <i> A legal instrument under which the information content entity is made available, typically identified by a URL or CURIE pointing to a license document. </i></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td><a href="../InformationContentEntity/">InformationContentEntity</a></td>
 <td></td>
 </tr>
 <tr>
-<td><a href="../rights/">rights</a>: <br/> <i> None </i></td>
+<td><a href="../rights/">rights</a>: <br/> <i> A statement describing rights held in or over the information content entity, such as copyright, intellectual property, or access and usage rights. </i></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td><a href="../InformationContentEntity/">InformationContentEntity</a></td>
 <td></td>
 </tr>
 <tr>
-<td><a href="../format/">format</a>: <br/> <i> None </i></td>
+<td><a href="../format/">format</a>: <br/> <i> The file format, physical medium, or representational form of the information content entity; for digital resources typically a MIME type or format identifier. Corresponds to dct:format. </i></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td><a href="../InformationContentEntity/">InformationContentEntity</a></td>
 <td></td>
@@ -604,7 +607,7 @@
 <td></td>
 </tr>
 <tr>
-<td><a href="../type/">type</a>: <br/> <i> None </i></td>
+<td><a href="../type/">type</a>: <br/> <i> An rdf:type property asserting that an entity is an instance of a particular class. In Biolink the value is typically used to indicate the most specific category of which the entity is an instance. </i></td>
 <td>* <br/> <a href="../String/">String</a></td>
 <td><a href="../Entity/">Entity</a></td>
 <td></td>
@@ -657,6 +660,8 @@
 <h2 id="linkml-source">LinkML Source</h2>
 <details open="">
 <pre><code class="language-yaml">name: book chapter
+description: A section of a book that forms a discrete unit of a larger published
+  work and may be independently authored or cited.
 in_subset:
 - model_organism_database
 from_schema: https://w3id.org/biolink/vocab/

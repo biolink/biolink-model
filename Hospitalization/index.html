@@ -363,6 +363,9 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="class-hospitalization"><strong>  Class: Hospitalization </strong></h1>
+<div class="highlight-box">
+<strong>Description:</strong><i> The admission and care of a patient in a hospital for observation, diagnosis, or treatment.</i><br/>
+</div>
 <div class="mermaid"> classDiagram
     class Hospitalization
       ClinicalIntervention &lt;|-- Hospitalization
@@ -429,7 +432,7 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../provided_by/">provided_by</a>: <br/> <i> The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph. </i></td>
+<td><a href="../provided_by/">provided_by</a>: <br> <i> The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph. </i></br></td>
 <td>* <br/> <a href="../String/">String</a></td>
 <td><a href="../NamedThing/">NamedThing</a></td>
 <td></td>
@@ -489,7 +492,7 @@
 <td></td>
 </tr>
 <tr>
-<td><a href="../type/">type</a>: <br/> <i> None </i></td>
+<td><a href="../type/">type</a>: <br/> <i> An rdf:type property asserting that an entity is an instance of a particular class. In Biolink the value is typically used to indicate the most specific category of which the entity is an instance. </i></td>
 <td>* <br/> <a href="../String/">String</a></td>
 <td><a href="../Entity/">Entity</a></td>
 <td></td>
@@ -523,6 +526,8 @@
 <h2 id="linkml-source">LinkML Source</h2>
 <details open="">
 <pre><code class="language-yaml">name: hospitalization
+description: The admission and care of a patient in a hospital for observation, diagnosis,
+  or treatment.
 from_schema: https://w3id.org/biolink/vocab/
 exact_mappings:
 - SNOMEDCT:32485007

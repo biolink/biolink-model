@@ -363,6 +363,9 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="class-diseasetoentityassociationmixin"><strong>  Class: DiseaseToEntityAssociationMixin </strong></h1>
+<div class="highlight-box">
+<strong>Description:</strong><i> A mixin applied to any association whose subject (source node) is a disease.</i><br/>
+</div>
 <div class="mermaid"> classDiagram
     class DiseaseToEntityAssociationMixin
       DiseaseToEntityAssociationMixin &lt;|-- DiseaseToExposureEventAssociation
@@ -393,7 +396,7 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../subject/">subject</a>: <br/> <i> disease class </i></td>
+<td><a href="../subject/">subject</a>: <br> <i> disease class </i></br></td>
 <td>1 <br/> <a href="../Disease/">Disease</a></td>
 <td>direct</td>
 <td>MONDO:0017314</td>
@@ -434,6 +437,7 @@
 <h2 id="linkml-source">LinkML Source</h2>
 <details open="">
 <pre><code class="language-yaml">name: disease to entity association mixin
+description: A mixin applied to any association whose subject (source node) is a disease.
 from_schema: https://w3id.org/biolink/vocab/
 mixin: true
 slots:

@@ -539,25 +539,25 @@
 <td><a href="../species_context_qualifier/">species_context_qualifier</a>: <br> <i> A statement qualifier representing a taxonomic category of species in which a relationship expressed in an association took place. </i></br></td>
 <td>0..1 <br/> <a href="../OrganismTaxon/">OrganismTaxon</a></td>
 <td>direct</td>
-<td>zebrafish, human</td>
+<td>NCBITaxon:7955, NCBITaxon:9606</td>
 </tr>
 <tr>
 <td><a href="../anatomical_context_qualifier/">anatomical_context_qualifier</a>: <br/> <i> A statement qualifier representing an anatomical location where an relationship expressed in an association took place (can be a tissue, cell type, or sub-cellular location). </i></td>
 <td>* <br/> <a href="../String/">String</a></td>
 <td>direct</td>
-<td>blood, cerebral cortext</td>
+<td>UBERON:0000178, UBERON:0000956</td>
 </tr>
 <tr>
 <td><a href="../qualified_predicate/">qualified_predicate</a>: <br/> <i> Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  Has a value from the Biolink 'related_to' hierarchy, for example, biolink:related_to, biolink:causes, biolink:treats This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a ‘full statement’ reading of the association, where qualifier-based semantics are included. This is necessary only in cases where the primary predicate does not work in a full statement reading. </i></td>
 <td>0..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
 <td>direct</td>
-<td></td>
+<td>biolink:causes</td>
 </tr>
 <tr>
 <td><a href="../object_direction_qualifier/">object_direction_qualifier</a>: <br/> <i> Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement). </i></td>
 <td>0..1 <br/> <a href="../DirectionQualifierEnum/">DirectionQualifierEnum</a></td>
 <td>direct</td>
-<td></td>
+<td>increased, downregulated</td>
 </tr>
 <tr>
 <td><a href="../subject/">subject</a>: <br/> <i> the chemical entity that affects the biological process </i></td>
@@ -767,7 +767,7 @@
 <td><a href="../supporting_text/">supporting_text</a>: <br/> <i> The segment of text from a document that supports the mined assertion. </i></td>
 <td>* <br/> <a href="../String/">String</a></td>
 <td><a href="../Association/">Association</a></td>
-<td>The administration of 50g/ml bupivacaine promoted maximum breast cancer.</td>
+<td>Here, we report two new cases of rivaroxaban-induced hepatitis.</td>
 </tr>
 <tr>
 <td><a href="../has_supporting_studies/">has_supporting_studies</a>: <br/> <i> Studies that produced information used as evidence to generate the knowledge expressed in an Association. </i></td>

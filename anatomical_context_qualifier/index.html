@@ -761,7 +761,7 @@
 
 
 <br>
- <strong> Notes:</strong> Anatomical context values can be any term from UBERON. For example, the context qualifier ‘cerebral cortext’ combines with a core concept of ‘neuron’ to express the composed concept ‘neuron in the cerebral cortext’. The species_context_qualifier applies taxonomic context, e.g. species-specific molecular activity.  Ontology CURIEs are expected as values here, the examples below are intended to help clarify the content of the CURIEs. 
+ <strong> Notes:</strong> Anatomical context values can be any term from UBERON. For example, the context qualifier ‘cerebral cortext’ combines with a core concept of ‘neuron’ to express the composed concept ‘neuron in the cerebral cortext’. The species_context_qualifier applies taxonomic context.  Ontology CURIEs are expected as values here, the examples below are intended to help clarify the content of the CURIEs. 
 </div>
 
 <p><strong>Domain:</strong> <a href="../Association/">Association</a><br>
@@ -790,9 +790,9 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../ChemicalGeneInteractionAssociation/">ChemicalGeneInteractionAssociation</a></td>
-<td>describes an interaction between a chemical entity and a gene or gene product. Any biological or chemical effect resulting from such an interaction are out of scope, and covered by the ChemicalAffectsGeneAssociation type (e.g. impact of a chemical on the abundance, activity, structure, etc, of either participant in the interaction)</td>
-<td>yes</td>
+<td><a href="../PredicateMapping/">PredicateMapping</a></td>
+<td>A deprecated predicate mapping object contains the deprecated predicate and an example of the rewiring that should be done to use a qualified statement in its place.</td>
+<td>no</td>
 </tr>
 <tr>
 <td><a href="../ChemicalEntityToBiologicalProcessAssociation/">ChemicalEntityToBiologicalProcessAssociation</a></td>
@@ -805,19 +805,19 @@
 <td>yes</td>
 </tr>
 <tr>
-<td><a href="../EntityToDiseaseOrPhenotypicFeatureAssociationMixin/">EntityToDiseaseOrPhenotypicFeatureAssociationMixin</a></td>
-<td>None</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../PredicateMapping/">PredicateMapping</a></td>
-<td>A deprecated predicate mapping object contains the deprecated predicate and an example of the rewiring that should be done to use a qualified statement in its place.</td>
-<td>no</td>
+<td><a href="../ChemicalGeneInteractionAssociation/">ChemicalGeneInteractionAssociation</a></td>
+<td>describes an interaction between a chemical entity and a gene or gene product. Any biological or chemical effect resulting from such an interaction are out of scope, and covered by the ChemicalAffectsGeneAssociation type (e.g. impact of a chemical on the abundance, activity, structure, etc, of either participant in the interaction)</td>
+<td>yes</td>
 </tr>
 <tr>
 <td><a href="../ChemicalAffectsBiologicalEntityAssociation/">ChemicalAffectsBiologicalEntityAssociation</a></td>
 <td>Describes an effect that a chemical has on a biological entity (e.g. an impact of on its abundance, activity,localization, processing, expression, etc.)</td>
 <td>yes</td>
+</tr>
+<tr>
+<td><a href="../EntityToDiseaseOrPhenotypicFeatureAssociationMixin/">EntityToDiseaseOrPhenotypicFeatureAssociationMixin</a></td>
+<td>None</td>
+<td>no</td>
 </tr>
 </tbody>
 </table>
@@ -832,11 +832,11 @@
 <tbody>
 <tr>
 <td>anatomical_context_qualifier</td>
-<td>blood</td>
+<td>UBERON:0000178</td>
 </tr>
 <tr>
 <td>anatomical_context_qualifier</td>
-<td>cerebral cortext</td>
+<td>UBERON:0000956</td>
 </tr>
 </tbody>
 </table>
@@ -851,12 +851,13 @@ notes:
 - Anatomical context values can be any term from UBERON. For example, the context
   qualifier ‘cerebral cortext’ combines with a core concept of ‘neuron’ to express
   the composed concept ‘neuron in the cerebral cortext’. The species_context_qualifier
-  applies taxonomic context, e.g. species-specific molecular activity.  Ontology CURIEs
-  are expected as values here, the examples below are intended to help clarify the
-  content of the CURIEs.
+  applies taxonomic context.  Ontology CURIEs are expected as values here, the examples
+  below are intended to help clarify the content of the CURIEs.
 examples:
-- value: blood
-- value: cerebral cortext
+- value: UBERON:0000178
+  description: blood
+- value: UBERON:0000956
+  description: cerebral cortex
 in_subset:
 - translator_minimal
 from_schema: https://w3id.org/biolink/vocab/

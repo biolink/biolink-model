@@ -759,12 +759,12 @@
 <h1 id="slot-has_chemical_role-multivalued"><strong> Slot: has_chemical_role </strong>  (multivalued)</h1>
 <div class="highlight-box"><strong>Description:</strong><i> A role is particular behaviour which a chemical entity may exhibit.</i><br>
 
-
+  <strong>Inverse:</strong> is chemical role of</a></small><br>
 <br>
 
 </div>
 
-<p><strong>Domain:</strong> <a href="../NamedThing/">NamedThing</a><br>
+<p><strong>Domain:</strong> <a href="../ChemicalEntity/">ChemicalEntity</a><br>
 <strong>Range:</strong>   <a href="../ChemicalRole/">ChemicalRole</a> <br></p>
 <h2 id="inheritance">Inheritance</h2>
 <ul>
@@ -821,11 +821,12 @@ comments:
   a mapping between CHEBI And ATC codes to support this slot.
 from_schema: https://w3id.org/biolink/vocab/
 is_a: related to at concept level
-domain: named thing
+domain: chemical entity
 inherited: true
 alias: has_chemical_role
 domain_of:
 - chemical entity
+inverse: is chemical role of
 range: chemical role
 multivalued: true
 

@@ -538,19 +538,19 @@
 <tr>
 <td><a href="../subject/">subject</a>: <br> <i> the material sample being described </i></br></td>
 <td>1 <br/> <a href="../MaterialSample/">MaterialSample</a></td>
-<td><a href="../Association/">Association</a>, <a href="../EntityToDiseaseOrPhenotypicFeatureAssociationMixin/">EntityToDiseaseOrPhenotypicFeatureAssociationMixin</a>, <a href="../MaterialSampleToEntityAssociationMixin/">MaterialSampleToEntityAssociationMixin</a></td>
+<td><a href="../MaterialSampleToEntityAssociationMixin/">MaterialSampleToEntityAssociationMixin</a>, <a href="../Association/">Association</a>, <a href="../EntityToDiseaseOrPhenotypicFeatureAssociationMixin/">EntityToDiseaseOrPhenotypicFeatureAssociationMixin</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="../predicate/">predicate</a>: <br/> <i> Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats </i></td>
 <td>1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
-<td><a href="../Association/">Association</a>, <a href="../EntityToDiseaseOrPhenotypicFeatureAssociationMixin/">EntityToDiseaseOrPhenotypicFeatureAssociationMixin</a>, <a href="../MaterialSampleToEntityAssociationMixin/">MaterialSampleToEntityAssociationMixin</a></td>
+<td><a href="../MaterialSampleToEntityAssociationMixin/">MaterialSampleToEntityAssociationMixin</a>, <a href="../Association/">Association</a>, <a href="../EntityToDiseaseOrPhenotypicFeatureAssociationMixin/">EntityToDiseaseOrPhenotypicFeatureAssociationMixin</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="../object/">object</a>: <br/> <i> disease or phenotype </i></td>
 <td>1 <br/> <a href="../DiseaseOrPhenotypicFeature/">DiseaseOrPhenotypicFeature</a></td>
-<td><a href="../Association/">Association</a>, <a href="../EntityToDiseaseOrPhenotypicFeatureAssociationMixin/">EntityToDiseaseOrPhenotypicFeatureAssociationMixin</a>, <a href="../MaterialSampleToEntityAssociationMixin/">MaterialSampleToEntityAssociationMixin</a></td>
+<td><a href="../MaterialSampleToEntityAssociationMixin/">MaterialSampleToEntityAssociationMixin</a>, <a href="../Association/">Association</a>, <a href="../EntityToDiseaseOrPhenotypicFeatureAssociationMixin/">EntityToDiseaseOrPhenotypicFeatureAssociationMixin</a></td>
 <td>MONDO:0017314, MP:0013229</td>
 </tr>
 <tr>
@@ -575,7 +575,7 @@
 <td><a href="../anatomical_context_qualifier/">anatomical_context_qualifier</a>: <br/> <i> A statement qualifier representing an anatomical location where an relationship expressed in an association took place (can be a tissue, cell type, or sub-cellular location). </i></td>
 <td>* <br/> <a href="../String/">String</a></td>
 <td><a href="../EntityToDiseaseOrPhenotypicFeatureAssociationMixin/">EntityToDiseaseOrPhenotypicFeatureAssociationMixin</a></td>
-<td>blood, cerebral cortext</td>
+<td>UBERON:0000178, UBERON:0000956</td>
 </tr>
 <tr>
 <td><a href="../negated/">negated</a>: <br/> <i> if set to true, then the association is negated i.e. is not true </i></td>
@@ -767,7 +767,7 @@
 <td><a href="../supporting_text/">supporting_text</a>: <br/> <i> The segment of text from a document that supports the mined assertion. </i></td>
 <td>* <br/> <a href="../String/">String</a></td>
 <td><a href="../Association/">Association</a></td>
-<td>The administration of 50g/ml bupivacaine promoted maximum breast cancer.</td>
+<td>Here, we report two new cases of rivaroxaban-induced hepatitis.</td>
 </tr>
 <tr>
 <td><a href="../has_supporting_studies/">has_supporting_studies</a>: <br/> <i> Studies that produced information used as evidence to generate the knowledge expressed in an Association. </i></td>

@@ -363,6 +363,9 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="class-epigenomicentity"><strong>  Class: EpigenomicEntity </strong></h1>
+<div class="highlight-box">
+<strong>Description:</strong><i> A mixin for entities that represent epigenomic modifications or features associated with heritable changes in gene expression that do not involve changes to the DNA sequence itself.</i><br/>
+</div>
 <div class="mermaid"> classDiagram
     class EpigenomicEntity
       EpigenomicEntity &lt;|-- NucleosomeModification
@@ -384,7 +387,7 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../has_biological_sequence/">has_biological_sequence</a>: <br/> <i> connects a genomic feature to its sequence </i></td>
+<td><a href="../has_biological_sequence/">has_biological_sequence</a>: <br> <i> connects a genomic feature to its sequence </i></br></td>
 <td>0..1 <br/> <a href="../BiologicalSequence/">BiologicalSequence</a></td>
 <td>direct</td>
 <td></td>
@@ -402,13 +405,16 @@
 <tbody>
 <tr>
 <td><a href="../NucleosomeModification/">NucleosomeModification</a></td>
-<td>A chemical modification of a histone protein within a nucleosome octomer or a substitution of a histone with a variant histone isoform. e.g. Histone 4 Lysine 20 methylation (H4K20me), histone variant H2AZ substituting H2A.</td>
+<td>A chemical modification of a histone protein within a nucleosome octomer or a substitution of a histone with a variant histone isoform.</td>
 </tr>
 </tbody>
 </table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details open="">
 <pre><code class="language-yaml">name: epigenomic entity
+description: A mixin for entities that represent epigenomic modifications or features
+  associated with heritable changes in gene expression that do not involve changes
+  to the DNA sequence itself.
 in_subset:
 - translator_minimal
 from_schema: https://w3id.org/biolink/vocab/

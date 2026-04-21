@@ -597,7 +597,7 @@
     {
       "name": "chemical_formula_value",
       "definition_uri": "https://w3id.org/biolink/vocab/ChemicalFormulaValue",
-      "description": "A chemical formula",
+      "description": "A type of string representing a chemical formula",
       "notes": [
         "Should be implemented as a stronger type"
       ],
@@ -609,7 +609,7 @@
     {
       "name": "iri_type",
       "definition_uri": "https://w3id.org/biolink/vocab/IriType",
-      "description": "An IRI",
+      "description": "An IRI.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "typeof": "uriorcurie",
       "base": "URIorCURIE",
@@ -620,7 +620,7 @@
     {
       "name": "label_type",
       "definition_uri": "https://w3id.org/biolink/vocab/LabelType",
-      "description": "A string that provides a human-readable name for an entity",
+      "description": "A type of string that provides a human-readable name for an entity.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "typeof": "string",
       "base": "str",
@@ -630,7 +630,7 @@
     {
       "name": "narrative_text",
       "definition_uri": "https://w3id.org/biolink/vocab/NarrativeText",
-      "description": "A string that provides a human-readable description of something",
+      "description": "A type of string that provides a human-readable description of something.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "typeof": "string",
       "base": "str",
@@ -640,6 +640,7 @@
     {
       "name": "symbol_type",
       "definition_uri": "https://w3id.org/biolink/vocab/SymbolType",
+      "description": "A type of string that is typically short, used as a human-readable label or symbol for an entity, such as an official gene symbol (e.g., \"BRCA1\") or a chemical symbol.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "typeof": "string",
       "base": "str",
@@ -649,6 +650,7 @@
     {
       "name": "frequency_value",
       "definition_uri": "https://w3id.org/biolink/vocab/FrequencyValue",
+      "description": "A quantity expressing the number of occurrences of a repeating event per unit of time (UO:0000105). Typically used for rates such as incidence or event frequency associated with a phenomenon.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "typeof": "string",
       "base": "str",
@@ -658,6 +660,7 @@
     {
       "name": "percentage_frequency_value",
       "definition_uri": "https://w3id.org/biolink/vocab/PercentageFrequencyValue",
+      "description": "A frequency value expressed as a percentage (UO:0000187), i.e., a dimensionless ratio multiplied by 100.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "typeof": "double",
       "base": "float",
@@ -667,6 +670,7 @@
     {
       "name": "quotient",
       "definition_uri": "https://w3id.org/biolink/vocab/Quotient",
+      "description": "A dimensionless value obtained by dividing one quantity by another of the same kind (UO:0010006). Used to represent ratios such as odds ratios, hazard ratios, or relative risks.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "aliases": [
         "ratio"
@@ -682,6 +686,7 @@
         "UO"
       ],
       "definition_uri": "https://w3id.org/biolink/vocab/Unit",
+      "description": "A standard of measurement in which the magnitude of a physical quantity is expressed (UO:0000000). Typically drawn from the Units of Measurement Ontology (UO).",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "exact_mappings": [
         "qud:Unit"
@@ -694,6 +699,7 @@
     {
       "name": "time_type",
       "definition_uri": "https://w3id.org/biolink/vocab/TimeType",
+      "description": "A value representing a point in time, serialised as a lexical representation of xsd:time.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "typeof": "time",
       "base": "XSDTime",
@@ -704,6 +710,7 @@
     {
       "name": "biological_sequence",
       "definition_uri": "https://w3id.org/biolink/vocab/BiologicalSequence",
+      "description": "A string of characters representing a biological macromolecule sequence, such as a nucleic acid sequence (DNA/RNA) using the IUPAC nucleotide alphabet, or a protein sequence using the IUPAC amino-acid alphabet.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "typeof": "string",
       "base": "str",
@@ -1157,7 +1164,7 @@
     {
       "name": "ApprovalStatusEnum",
       "definition_uri": "https://w3id.org/biolink/vocab/ApprovalStatusEnum",
-      "description": "",
+      "description": "An enumeration of regulatory and development milestones for a drug or therapeutic, spanning discovery, preclinical research, FDA clinical trial phases (1-4), special review designations (e.g., fast track, breakthrough therapy, priority review), regular FDA approval, and post-approval withdrawal.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "permissible_values": [
         {
@@ -1224,6 +1231,7 @@
     {
       "name": "ClinicalApprovalStatusEnum",
       "definition_uri": "https://w3id.org/biolink/vocab/ClinicalApprovalStatusEnum",
+      "description": "An enumeration describing whether a chemical or therapy is approved for use in treating a specific condition (e.g., FDA-approved for a condition, not approved, off-label use, or withdrawn following approval).",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "permissible_values": [
         {
@@ -1252,6 +1260,7 @@
     {
       "name": "ResearchPhaseEnum",
       "definition_uri": "https://w3id.org/biolink/vocab/ResearchPhaseEnum",
+      "description": "An enumeration of research phases describing the stage of investigation for a drug or therapy, spanning preclinical research through clinical trial phases 1 through 4 (including phase 1/2 and phase 2/3 combinations).",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "permissible_values": [
         {
@@ -1309,6 +1318,7 @@
     {
       "name": "DirectionQualifierEnum",
       "definition_uri": "https://w3id.org/biolink/vocab/DirectionQualifierEnum",
+      "description": "An enumeration of values that qualify a change or effect by its direction, i.e., whether the referenced quantity or activity is increased (including up-regulated) or decreased (including down-regulated).",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "permissible_values": [
         {
@@ -1351,6 +1361,7 @@
     {
       "name": "ChemicalEntityDerivativeEnum",
       "definition_uri": "https://w3id.org/biolink/vocab/ChemicalEntityDerivativeEnum",
+      "description": "An enumeration of relationships by which one chemical entity is derived from another, e.g., a metabolite produced from a parent compound.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "permissible_values": [
         {
@@ -1361,6 +1372,7 @@
     {
       "name": "ChemicalOrGeneOrGeneProductFormOrVariantEnum",
       "definition_uri": "https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum",
+      "description": "An enumeration used as a qualifier to indicate a specific form or variant of a chemical, gene, or gene product involved in an association (e.g., modified form, loss-of-function variant, gain-of-function variant, dominant-negative variant, polymorphic form, SNP form, mutant form, or analog form).",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "permissible_values": [
         {
@@ -1407,6 +1419,7 @@
     {
       "name": "GeneOrGeneProductOrChemicalPartQualifierEnum",
       "definition_uri": "https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalPartQualifierEnum",
+      "description": "An enumeration used as a qualifier to indicate a particular structural or functional part of a gene, gene product, or chemical (e.g., 3' UTR, 5' UTR, poly-A tail, promoter, enhancer, exon, or intron).",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "permissible_values": [
         {
@@ -1435,6 +1448,7 @@
     {
       "name": "GeneOrGeneProductOrChemicalEntityAspectEnum",
       "definition_uri": "https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum",
+      "description": "An enumeration used as a qualifier to indicate the specific aspect of a gene, gene product, or chemical entity that is affected or measured in an association. Values cover activity and abundance (expression, synthesis, degradation, stability, localization, transport), molecular interactions, and a wide range of molecular modifications such as phosphorylation, methylation, acetylation, ubiquitination, and other post-translational or chemical modifications.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "permissible_values": [
         {
@@ -1654,6 +1668,7 @@
     {
       "name": "CausalMechanismQualifierEnum",
       "definition_uri": "https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum",
+      "description": "An enumeration used as a qualifier to specify the causal or pharmacologic mechanism by which an effect is exerted in an association (e.g., agonism, antagonism, inverse agonism, allosteric modulation, activation, inhibition, and their competitive or partial variants).",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "permissible_values": [
         {
@@ -2204,6 +2219,7 @@
     {
       "name": "LogicalInterpretationEnum",
       "definition_uri": "https://w3id.org/biolink/vocab/LogicalInterpretationEnum",
+      "description": "An enumeration of logical interpretations that can be applied to a triple to indicate whether the relation should be read as existential on both sides (some-some), universal-existential (all-some), or its inverse (inverse all-some).",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "permissible_values": [
         {
@@ -2224,6 +2240,7 @@
     {
       "name": "ReactionDirectionEnum",
       "definition_uri": "https://w3id.org/biolink/vocab/ReactionDirectionEnum",
+      "description": "An enumeration of possible directions for a biochemical reaction, indicating whether it proceeds left-to-right, right-to-left, is bidirectional (reversible), or has no net direction.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "permissible_values": [
         {
@@ -2243,6 +2260,7 @@
     {
       "name": "ReactionSideEnum",
       "definition_uri": "https://w3id.org/biolink/vocab/ReactionSideEnum",
+      "description": "An enumeration indicating on which side of a biochemical reaction a participant appears - the left-hand (reactant/substrate) side or the right-hand (product) side, as written.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "permissible_values": [
         {
@@ -2313,6 +2331,7 @@
     {
       "name": "DruggableGeneCategoryEnum",
       "definition_uri": "https://w3id.org/biolink/vocab/DruggableGeneCategoryEnum",
+      "description": "An enumeration of druggability categories for gene targets as defined by the IDG (Illuminating the Druggable Genome) / Pharos target development level classification: Tclin (targets of approved drugs), Tchem (targets with potent bioactives), Tbio (targets with biological knowledge), and Tdark (poorly characterized targets).",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "permissible_values": [
         {
@@ -2336,7 +2355,7 @@
     {
       "name": "DrugAvailabilityEnum",
       "definition_uri": "https://w3id.org/biolink/vocab/DrugAvailabilityEnum",
-      "description": "",
+      "description": "An enumeration describing how a drug or chemical entity may be obtained, distinguishing products that are available over the counter from those that require a prescription.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "permissible_values": [
         {
@@ -2352,6 +2371,7 @@
     {
       "name": "DrugDeliveryEnum",
       "definition_uri": "https://w3id.org/biolink/vocab/DrugDeliveryEnum",
+      "description": "An enumeration of routes by which a drug is administered or delivered to a patient, including inhalation, oral, transdermal absorption, and various forms of injection (intravenous, subcutaneous, intramuscular).",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "permissible_values": [
         {
@@ -2468,6 +2488,7 @@
     {
       "name": "AgentTypeEnum",
       "definition_uri": "https://w3id.org/biolink/vocab/AgentTypeEnum",
+      "description": "An enumeration of agent types responsible for generating a statement of knowledge, as defined by the Translator Knowledge Level / Agent Type (KL/AT) standard. Values distinguish human (manual) agents from automated agents (including data analysis pipelines, computational models, text-mining agents, image-processing agents) and mixed cases such as manual validation of automated output.",
       "in_subset": [
         "translator_minimal"
       ],
@@ -2526,6 +2547,7 @@
     {
       "name": "KnowledgeLevelEnum",
       "definition_uri": "https://w3id.org/biolink/vocab/KnowledgeLevelEnum",
+      "description": "An enumeration characterizing the type of knowledge expressed in a statement and the kind of evidence and reasoning that supports it, as defined by the Translator Knowledge Level / Agent Type (KL/AT) standard. Values include knowledge assertion, logical entailment, prediction, statistical association, text co-occurrence, direct observation, and not-provided.",
       "in_subset": [
         "translator_minimal"
       ],
@@ -2837,6 +2859,7 @@
       "range": "QuantityValue",
       "multivalued": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -2969,6 +2992,7 @@
     {
       "name": "type",
       "definition_uri": "https://w3id.org/biolink/vocab/type",
+      "description": "An rdf:type property asserting that an entity is an instance of a particular class. In Biolink the value is typically used to indicate the most specific category of which the entity is an instance.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "mappings": [
         "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
@@ -3123,6 +3147,7 @@
     {
       "name": "reaction_balanced",
       "definition_uri": "https://w3id.org/biolink/vocab/reaction_balanced",
+      "description": "Indicates whether a chemical reaction is stoichiometrically balanced, i.e. whether the conservation of atoms (and charge) holds between the reactants and the products.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "association_slot",
       "domain": "Association",
@@ -3200,6 +3225,7 @@
     {
       "name": "exact_synonym",
       "definition_uri": "https://w3id.org/biolink/vocab/exact_synonym",
+      "description": "An alternate label for an entity that denotes exactly the same meaning as the primary label and is interchangeable with it in all contexts.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "exact_mappings": [
         "http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"
@@ -3215,6 +3241,7 @@
     {
       "name": "broad_synonym",
       "definition_uri": "https://w3id.org/biolink/vocab/broad_synonym",
+      "description": "An alternate label for an entity whose meaning is broader (more general) than the primary label but is still useful as a lexical alternative.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "exact_mappings": [
         "http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym"
@@ -3230,6 +3257,7 @@
     {
       "name": "narrow_synonym",
       "definition_uri": "https://w3id.org/biolink/vocab/narrow_synonym",
+      "description": "An alternate label for an entity whose meaning is narrower (more specific) than the primary label, for example naming a particular sub-type.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "exact_mappings": [
         "http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym"
@@ -3245,6 +3273,7 @@
     {
       "name": "related_synonym",
       "definition_uri": "https://w3id.org/biolink/vocab/related_synonym",
+      "description": "An alternate label that is related to the primary label but is neither exactly synonymous nor cleanly broader or narrower; useful as a lexical pointer but not for strict equivalence. Corresponds to oboInOwl:hasRelatedSynonym.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "exact_mappings": [
         "http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"
@@ -3442,7 +3471,7 @@
     {
       "name": "upstream_resource_ids",
       "definition_uri": "https://w3id.org/biolink/vocab/upstream_resource_ids",
-      "description": "An upstream InformationResource from which the resource being described directly retrieved a record of the knowledge expressed in the Edge, or data used to generate this knowledge. This is an array because there are cases where a merged Edge holds knowledge that was retrieved from multiple sources. e.g. an Edge provided by the ARAGORN ARA can expressing knowledge it retrieved from both the automat-mychem-info and molepro KPs, which both provided it with records of this single fact.",
+      "description": "An upstream InformationResource from which the resource being described directly retrieved a record of the knowledge expressed in the Edge, or data used to generate this knowledge. This is an array because there are cases where a merged Edge holds knowledge that was retrieved from multiple sources.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "node_property",
       "domain": "RetrievalSource",
@@ -3643,6 +3672,7 @@
     {
       "name": "aggregate_statistic",
       "definition_uri": "https://w3id.org/biolink/vocab/aggregate_statistic",
+      "description": "An abstract grouping for summary numerical measures (e.g. count, total, quotient, percentage, rate) computed over a set of observations or a reference population, used to describe a property of an aggregated entity rather than an individual instance.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "node_property",
       "abstract": true,
@@ -3717,6 +3747,7 @@
     {
       "name": "has_taxonomic_rank",
       "definition_uri": "https://w3id.org/biolink/vocab/has_taxonomic_rank",
+      "description": "The taxonomic rank (e.g. species, genus, family, order, kingdom) assigned to an organism taxon.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "mappings": [
         "https://www.wikidata.org/entity/P105"
@@ -3734,6 +3765,7 @@
     {
       "name": "has_dataset",
       "definition_uri": "https://w3id.org/biolink/vocab/has_dataset",
+      "description": "Links a dataset version to the underlying dataset that it is a version of.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "broad_mappings": [
         "http://purl.org/dc/terms/source"
@@ -3751,6 +3783,7 @@
     {
       "name": "source_web_page",
       "definition_uri": "https://w3id.org/biolink/vocab/source_web_page",
+      "description": "A URL of a web page that documents or serves as the landing page for a data source.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "broad_mappings": [
         "http://purl.org/dc/terms/source"
@@ -3768,6 +3801,7 @@
     {
       "name": "source_logo",
       "definition_uri": "https://w3id.org/biolink/vocab/source_logo",
+      "description": "A URL referencing an image that serves as the visual logo of a data source.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "mappings": [
         "http://schema.org/logo"
@@ -3785,6 +3819,7 @@
     {
       "name": "retrieved_on",
       "definition_uri": "https://w3id.org/biolink/vocab/retrieved_on",
+      "description": "The date on which a dataset was retrieved or harvested from its original source, following pav:retrievedOn.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "exact_mappings": [
         "http://purl.org/pav/retrievedOn"
@@ -3799,6 +3834,7 @@
     {
       "name": "version_of",
       "definition_uri": "https://w3id.org/biolink/vocab/version_of",
+      "description": "Links a dataset version to the dataset summary of which it is a version, edition, or adaptation.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "exact_mappings": [
         "http://purl.org/dc/terms/isVersionOf"
@@ -3813,6 +3849,7 @@
     {
       "name": "version",
       "definition_uri": "https://w3id.org/biolink/vocab/version",
+      "description": "A label identifying a particular release or edition of a dataset or resource, typically following a versioning scheme such as a semantic version string or a release date.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "broad_mappings": [
         "http://purl.org/pav/version",
@@ -3828,6 +3865,7 @@
     {
       "name": "license",
       "definition_uri": "https://w3id.org/biolink/vocab/license",
+      "description": "A legal instrument under which the information content entity is made available, typically identified by a URL or CURIE pointing to a license document.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "exact_mappings": [
         "http://purl.org/dc/terms/license"
@@ -3848,6 +3886,7 @@
     {
       "name": "rights",
       "definition_uri": "https://w3id.org/biolink/vocab/rights",
+      "description": "A statement describing rights held in or over the information content entity, such as copyright, intellectual property, or access and usage rights.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "exact_mappings": [
         "http://purl.org/dc/terms/rights"
@@ -3865,6 +3904,7 @@
     {
       "name": "format",
       "definition_uri": "https://w3id.org/biolink/vocab/format",
+      "description": "The file format, physical medium, or representational form of the information content entity; for digital resources typically a MIME type or format identifier. Corresponds to dct:format.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "exact_mappings": [
         "http://purl.org/dc/terms/format",
@@ -3883,6 +3923,7 @@
     {
       "name": "created_with",
       "definition_uri": "https://w3id.org/biolink/vocab/created_with",
+      "description": "An identifier (typically a URL or CURIE) of the software tool, service, or pipeline used to create the dataset.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "exact_mappings": [
         "http://purl.org/pav/createdWith"
@@ -3897,6 +3938,7 @@
     {
       "name": "download_url",
       "definition_uri": "https://w3id.org/biolink/vocab/download_url",
+      "description": "A URL from which the information content entity may be directly downloaded in its native serialization.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "mappings": [
         "http://www.w3.org/ns/dcat#downloadURL"
@@ -3911,6 +3953,7 @@
     {
       "name": "dataset_download_url",
       "definition_uri": "https://w3id.org/biolink/vocab/dataset_download_url",
+      "description": "A URL from which the dataset itself may be directly downloaded specialised for the dataset domain.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "mappings": [
         "http://www.w3.org/ns/dcat#downloadURL"
@@ -3925,6 +3968,7 @@
     {
       "name": "distribution_download_url",
       "definition_uri": "https://w3id.org/biolink/vocab/distribution_download_url",
+      "description": "A URL from which a specific distribution (serialization or format) of a dataset may be directly downloaded; corresponds to dcat:downloadURL specialised for the dataset distribution domain.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "exact_mappings": [
         "http://www.w3.org/ns/dcat#downloadURL"
@@ -3942,6 +3986,7 @@
     {
       "name": "ingest_date",
       "definition_uri": "https://w3id.org/biolink/vocab/ingest_date",
+      "description": "The date on which a dataset version was ingested into the local knowledge graph or downstream data system; a specialization of dct:issued for the ingestion context.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "broad_mappings": [
         "http://purl.org/dc/terms/issued"
@@ -3959,6 +4004,7 @@
     {
       "name": "has_distribution",
       "definition_uri": "https://w3id.org/biolink/vocab/has_distribution",
+      "description": "Links a dataset version to one of its dataset distributions (a specific representation or serialization of the dataset).",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "mappings": [
         "http://purl.org/dc/terms/distribution"
@@ -3976,7 +4022,7 @@
     {
       "name": "published_in",
       "definition_uri": "https://w3id.org/biolink/vocab/published_in",
-      "description": "CURIE identifier of a broader publication context within which the publication may be placed, e.g. a specified book or journal.",
+      "description": "CURIE identifier of a broader publication context within which the publication may be placed.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "exact_mappings": [
         "https://www.wikidata.org/prop/P1433"
@@ -4597,6 +4643,7 @@
     {
       "name": "has_zygosity",
       "definition_uri": "https://w3id.org/biolink/vocab/has_zygosity",
+      "description": "The zygosity characterising a genotype or nucleic acid entity at a particular locus.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "node_property",
       "domain": "NucleicAcidEntity",
@@ -4706,7 +4753,7 @@
     {
       "name": "has_receptor",
       "definition_uri": "https://w3id.org/biolink/vocab/has_receptor",
-      "description": "the organism or organism part being exposed",
+      "description": "An entity that interacts with an exposure stimulus during an exposure event.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "exact_mappings": [
         "http://purl.obolibrary.org/obo/ExO_0000001"
@@ -4720,8 +4767,11 @@
     },
     {
       "name": "has_stressor",
+      "id_prefixes": [
+        "ExO"
+      ],
       "definition_uri": "https://w3id.org/biolink/vocab/has_stressor",
-      "description": "the process or entity that the receptor is being exposed to",
+      "description": "An agent, stimulus, activity, or event that causes stress or tension on an organism and interacts with an exposure_receptor during an exposure event.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "aliases": [
         "has stimulus"
@@ -4832,7 +4882,7 @@
     {
       "name": "is_supplement",
       "definition_uri": "https://w3id.org/biolink/vocab/is_supplement",
-      "description": "",
+      "description": "A boolean or categorical flag indicating that a chemical mixture is marketed, formulated, or used as a dietary or nutritional supplement rather than as a conventional drug or food.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "node_property",
       "domain": "ChemicalMixture",
@@ -4847,7 +4897,7 @@
     {
       "name": "trade_name",
       "definition_uri": "https://w3id.org/biolink/vocab/trade_name",
-      "description": "",
+      "description": "A proprietary brand or trade name under which a chemical entity (typically a drug) is manufactured and marketed by a vendor.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "node_property",
       "domain": "ChemicalEntity",
@@ -4862,7 +4912,13 @@
     {
       "name": "available_from",
       "definition_uri": "https://w3id.org/biolink/vocab/available_from",
-      "description": "",
+      "description": "The regulatory or commercial availability channel through which a drug or chemical entity can be obtained, drawn from DrugAvailabilityEnum.",
+      "examples": [
+        {
+          "value": "over_the_counter",
+          "@type": "Example"
+        }
+      ],
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "node_property",
       "domain": "NamedThing",
@@ -4878,7 +4934,7 @@
     {
       "name": "is_toxic",
       "definition_uri": "https://w3id.org/biolink/vocab/is_toxic",
-      "description": "",
+      "description": "A boolean flag indicating whether a chemical entity is toxic under ordinary conditions of exposure.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "node_property",
       "domain": "NamedThing",
@@ -4902,14 +4958,30 @@
       ],
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "related_to_at_concept_level",
-      "domain": "NamedThing",
+      "domain": "ChemicalEntity",
       "slot_uri": "https://w3id.org/biolink/vocab/has_chemical_role",
       "inherited": true,
       "owner": "ChemicalEntity",
       "domain_of": [
         "ChemicalEntity"
       ],
+      "inverse": "is_chemical_role_of",
       "range": "ChemicalRole",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "is_chemical_role_of",
+      "definition_uri": "https://w3id.org/biolink/vocab/is_chemical_role_of",
+      "description": "Holds between a chemical role and a chemical entity that exhibits that role.",
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "is_a": "related_to_at_concept_level",
+      "domain": "ChemicalRole",
+      "slot_uri": "https://w3id.org/biolink/vocab/is_chemical_role_of",
+      "inherited": true,
+      "owner": "is_chemical_role_of",
+      "inverse": "has_chemical_role",
+      "range": "ChemicalEntity",
       "multivalued": true,
       "@type": "SlotDefinition"
     },
@@ -4931,7 +5003,7 @@
     {
       "name": "animal_model_available_from",
       "definition_uri": "https://w3id.org/biolink/vocab/animal_model_available_from",
-      "description": "",
+      "description": "A resource (such as a model organism database) from which an animal model representing the given disease or phenotypic feature may be obtained.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "node_property",
       "domain": "NamedThing",
@@ -4992,7 +5064,7 @@
     {
       "name": "FDA_adverse_event_level",
       "definition_uri": "https://w3id.org/biolink/vocab/FDA_adverse_event_level",
-      "description": "",
+      "description": "The level or severity grade of an adverse event as classified by FDA adverse-event terminology, drawn from FDAIDAAdverseEventEnum; used on adverse-event associations.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "association_slot",
       "domain": "Association",
@@ -5136,12 +5208,12 @@
       "examples": [
         {
           "value": "CHEBI:5118",
-          "description": "In a MAXO annotation this would be a specialization in treatment of a disease. For example, fluoxetine would be a specialization of the MAXO term 'serotonin-norepinephrine reuptake inhibitor agent therapy' as a treatment for the HP term 'Fatigable muscle weakness' in the context of the MONDO term 'congenital myasthenic syndrome '4A.'",
+          "description": "fluoxetine. In a MAXO annotation this would be a specialization in treatment of a disease. For example, fluoxetine would be a specialization of the MAXO term 'serotonin-norepinephrine reuptake inhibitor agent therapy' as a treatment for the HP term 'Fatigable muscle weakness' in the context of the MONDO term 'congenital myasthenic syndrome '4A.'",
           "@type": "Example"
         },
         {
           "value": "GO:0005634",
-          "description": "In an expression annotation this would be a specialization in location of an anatomical entity. For example, \"expression in the nucleus of hepatic cells\" would be a specialization of \"expression in hepatic cells\"",
+          "description": "nucleus. In an expression annotation this would be a specialization in location of an anatomical entity. For example, \"expression in the nucleus of hepatic cells\" would be a specialization of \"expression in hepatic cells\"",
           "@type": "Example"
         }
       ],
@@ -5188,7 +5260,7 @@
       "domain": "Association",
       "slot_uri": "https://w3id.org/biolink/vocab/aspect_qualifier",
       "owner": "aspect_qualifier",
-      "range": "string",
+      "range": "GeneOrGeneProductOrChemicalEntityAspectEnum",
       "@type": "SlotDefinition"
     },
     {
@@ -5216,7 +5288,7 @@
     {
       "name": "part_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/part_qualifier",
-      "description": "defines a specific part/component of the core concept (used in cases there this specific part has no IRI we can use to directly represent it, e.g. 'ESR1 transcript' q: polyA tail).",
+      "description": "defines a specific part/component of the core concept (used in cases there this specific part has no IRI we can use to directly represent it).",
       "examples": [
         {
           "value": "polyA tail",
@@ -5245,11 +5317,8 @@
       "description": "Restricts the setting/context/location where the core concept (or qualified core concept) resides or occurs.",
       "examples": [
         {
-          "value": "cohort x (e.g. a specific population, referenced by an identifier)",
-          "@type": "Example"
-        },
-        {
-          "value": "gut microbiome",
+          "value": "OHMI:0000020",
+          "description": "gut microbiome",
           "@type": "Example"
         }
       ],
@@ -5387,7 +5456,7 @@
         "CausalGeneToDiseaseAssociation",
         "CorrelatedGeneToDiseaseAssociation"
       ],
-      "range": "string",
+      "range": "GeneOrGeneProductOrChemicalEntityAspectEnum",
       "@type": "SlotDefinition"
     },
     {
@@ -5459,7 +5528,17 @@
     {
       "name": "subject_part_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/subject_part_qualifier",
-      "description": "defines a specific part/component of the core concept (used in cases there this specific part has no IRI we can use to directly represent it, e.g. 'ESR1 transcript' q: polyA tail).  This qualifier is for the subject of an association (or statement).",
+      "description": "defines a specific part/component of the core concept (used in cases there this specific part has no IRI we can use to directly represent it).  This qualifier is for the subject of an association (or statement).",
+      "examples": [
+        {
+          "value": "polyA tail",
+          "@type": "Example"
+        },
+        {
+          "value": "upstream control region",
+          "@type": "Example"
+        }
+      ],
       "in_subset": [
         "translator_minimal"
       ],
@@ -5507,6 +5586,7 @@
     {
       "name": "subject_context_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/subject_context_qualifier",
+      "description": "A qualifier describing the context in which the subject of an association holds.",
       "in_subset": [
         "translator_minimal"
       ],
@@ -5529,6 +5609,16 @@
       "name": "subject_direction_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/subject_direction_qualifier",
       "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement).",
+      "examples": [
+        {
+          "value": "increased",
+          "@type": "Example"
+        },
+        {
+          "value": "downregulated",
+          "@type": "Example"
+        }
+      ],
       "in_subset": [
         "translator_minimal"
       ],
@@ -5591,7 +5681,7 @@
         "EntityToFeatureOrGeneQualifiersMixin",
         "FeatureOrDiseaseQualifiersToEntityMixin"
       ],
-      "range": "string",
+      "range": "GeneOrGeneProductOrChemicalEntityAspectEnum",
       "@type": "SlotDefinition"
     },
     {
@@ -5659,7 +5749,17 @@
     {
       "name": "object_part_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/object_part_qualifier",
-      "description": "defines a specific part/component of the core concept (used in cases there this specific part has no IRI we can use to directly represent it, e.g. 'ESR1 transcript' q: polyA tail).  This qualifier is for the object of an association (or statement).",
+      "description": "defines a specific part/component of the core concept (used in cases there this specific part has no IRI we can use to directly represent it).  This qualifier is for the object of an association (or statement).",
+      "examples": [
+        {
+          "value": "polyA tail",
+          "@type": "Example"
+        },
+        {
+          "value": "upstream control region",
+          "@type": "Example"
+        }
+      ],
       "in_subset": [
         "translator_minimal"
       ],
@@ -5705,6 +5805,7 @@
     {
       "name": "object_context_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/object_context_qualifier",
+      "description": "A qualifier describing the context in which the object of an association holds.",
       "in_subset": [
         "translator_minimal"
       ],
@@ -5727,6 +5828,16 @@
       "name": "object_direction_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/object_direction_qualifier",
       "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement).",
+      "examples": [
+        {
+          "value": "increased",
+          "@type": "Example"
+        },
+        {
+          "value": "downregulated",
+          "@type": "Example"
+        }
+      ],
       "in_subset": [
         "translator_minimal"
       ],
@@ -5761,6 +5872,13 @@
       "description": "Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  Has a value from the Biolink 'related_to' hierarchy, for example, biolink:related_to, biolink:causes, biolink:treats This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a \u2018full statement\u2019 reading of the association, where qualifier-based semantics are included. This is necessary only in cases where the primary predicate does not work in a full statement reading.",
       "notes": [
         "to express the statement that \u201cChemical X causes increased expression of Gene Y\u201d, the core triple is read using the fields subject:ChemX, predicate:affects, object:GeneY . . . and the full statement is read using the fields subject:ChemX, qualified_predicate:causes, object:GeneY, object_aspect: expression, object_direction:increased. The predicate \u2018affects\u2019 is needed for the core triple reading, but does not make sense in the full statement reading  (because \u201cChemical X affects increased expression of Gene Y'' is not what we mean to say here: it causes increased expression of Gene Y)"
+      ],
+      "examples": [
+        {
+          "value": "biolink:causes",
+          "description": "used with `affects` predicate to express causal statements",
+          "@type": "Example"
+        }
       ],
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "qualifier",
@@ -5803,7 +5921,17 @@
     {
       "name": "causal_mechanism_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/causal_mechanism_qualifier",
-      "description": "A statement qualifier representing a type of molecular control mechanism through which an effect of a chemical on a gene or gene product is mediated (e.g. 'agonism', 'inhibition', 'allosteric modulation', 'channel blocker')",
+      "description": "A statement qualifier representing a type of molecular control mechanism through which an effect of a chemical on a gene or gene product is mediated",
+      "examples": [
+        {
+          "value": "agonism",
+          "@type": "Example"
+        },
+        {
+          "value": "inhibition",
+          "@type": "Example"
+        }
+      ],
       "in_subset": [
         "translator_minimal"
       ],
@@ -5826,15 +5954,17 @@
       "definition_uri": "https://w3id.org/biolink/vocab/anatomical_context_qualifier",
       "description": "A statement qualifier representing an anatomical location where an relationship expressed in an association took place (can be a tissue, cell type, or sub-cellular location).",
       "notes": [
-        "Anatomical context values can be any term from UBERON. For example, the context qualifier \u2018cerebral cortext\u2019 combines with a core concept of \u2018neuron\u2019 to express the composed concept \u2018neuron in the cerebral cortext\u2019. The species_context_qualifier applies taxonomic context, e.g. species-specific molecular activity.  Ontology CURIEs are expected as values here, the examples below are intended to help clarify the content of the CURIEs."
+        "Anatomical context values can be any term from UBERON. For example, the context qualifier \u2018cerebral cortext\u2019 combines with a core concept of \u2018neuron\u2019 to express the composed concept \u2018neuron in the cerebral cortext\u2019. The species_context_qualifier applies taxonomic context.  Ontology CURIEs are expected as values here, the examples below are intended to help clarify the content of the CURIEs."
       ],
       "examples": [
         {
-          "value": "blood",
+          "value": "UBERON:0000178",
+          "description": "blood",
           "@type": "Example"
         },
         {
-          "value": "cerebral cortext",
+          "value": "UBERON:0000956",
+          "description": "cerebral cortex",
           "@type": "Example"
         }
       ],
@@ -5867,11 +5997,13 @@
       ],
       "examples": [
         {
-          "value": "zebrafish",
+          "value": "NCBITaxon:7955",
+          "description": "zebrafish",
           "@type": "Example"
         },
         {
-          "value": "human",
+          "value": "NCBITaxon:9606",
+          "description": "human",
           "@type": "Example"
         }
       ],
@@ -5902,10 +6034,12 @@
       "examples": [
         {
           "value": "MONDO:0004979",
+          "description": "asthma",
           "@type": "Example"
         },
         {
           "value": "MONDO:0005148",
+          "description": "type 2 diabetes mellitus",
           "@type": "Example"
         }
       ],
@@ -6086,6 +6220,7 @@
       "range": "MacromolecularMachineMixin",
       "multivalued": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -6460,7 +6595,7 @@
           "@type": "Annotation"
         }
       ],
-      "description": "a list of terms from different schemas or terminology systems that have a semantically similar but not strictly equivalent, broader, or narrower meaning. Such terms often describe the same general concept from different ontological perspectives (e.g. drug as a type of chemical entity versus drug as a type of role borne by a chemical entity).",
+      "description": "a list of terms from different schemas or terminology systems that have a semantically similar but not strictly equivalent, broader, or narrower meaning. Such terms often describe the same general concept from different ontological perspectives.",
       "in_subset": [
         "translator_minimal"
       ],
@@ -6863,6 +6998,7 @@
           "@type": "Annotation"
         }
       ],
+      "description": "Holds between a gene or gene product and a cellular component in which it carries out its molecular function.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "exact_mappings": [
         "http://purl.obolibrary.org/obo/RO_0002432"
@@ -6890,6 +7026,7 @@
       "range": "GeneOrGeneProduct",
       "multivalued": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -6902,6 +7039,7 @@
           "@type": "Annotation"
         }
       ],
+      "description": "Holds between a gene or gene product and a biological process such that the molecular function of the gene product, by way of a chain of causally linked events, is upstream of and contributes to the execution of the process.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "exact_mappings": [
         "http://purl.obolibrary.org/obo/RO_0002263"
@@ -6929,6 +7067,7 @@
       "range": "GeneOrGeneProduct",
       "multivalued": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -6941,6 +7080,7 @@
           "@type": "Annotation"
         }
       ],
+      "description": "Holds between a gene or gene product and a biological process where the molecular function of the gene product is upstream of and has a positive (activating or increasing) effect on the execution of the process.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "exact_mappings": [
         "http://purl.obolibrary.org/obo/RO_0004034"
@@ -6968,6 +7108,7 @@
       "range": "GeneOrGeneProduct",
       "multivalued": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -6980,6 +7121,7 @@
           "@type": "Annotation"
         }
       ],
+      "description": "Holds between a gene or gene product and a biological process where the molecular function of the gene product is upstream of and has a negative (inhibiting or decreasing) effect on the execution of the process.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "exact_mappings": [
         "http://purl.obolibrary.org/obo/RO_0004035"
@@ -7007,6 +7149,7 @@
       "range": "GeneOrGeneProduct",
       "multivalued": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -7019,6 +7162,7 @@
           "@type": "Annotation"
         }
       ],
+      "description": "Holds between a gene or gene product and a biological process when the gene product either acts upstream of the process or participates in it; used when the more specific causal relationship is not known. Corresponds to RO:0002264.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "exact_mappings": [
         "http://purl.obolibrary.org/obo/RO_0002264"
@@ -7046,6 +7190,7 @@
       "range": "GeneOrGeneProduct",
       "multivalued": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -7058,6 +7203,7 @@
           "@type": "Annotation"
         }
       ],
+      "description": "Holds between a gene or gene product and a biological process when the gene product acts upstream of or within the process with a positive (activating or increasing) effect on its execution. Corresponds to RO:0004032.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "exact_mappings": [
         "http://purl.obolibrary.org/obo/RO_0004032"
@@ -7085,6 +7231,7 @@
       "range": "GeneOrGeneProduct",
       "multivalued": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -7097,6 +7244,7 @@
           "@type": "Annotation"
         }
       ],
+      "description": "Holds between a gene or gene product and a biological process when the gene product acts upstream of or within the process with a negative (inhibiting or decreasing) effect on its execution. Corresponds to RO:0004033.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "exact_mappings": [
         "http://purl.obolibrary.org/obo/RO_0004033"
@@ -7124,6 +7272,7 @@
       "range": "GeneOrGeneProduct",
       "multivalued": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -7165,6 +7314,7 @@
     {
       "name": "contributor",
       "definition_uri": "https://w3id.org/biolink/vocab/contributor",
+      "description": "Links an information content entity (such as a dataset, publication, or software artefact) to an agent responsible for making contributions to it. Used as an abstract grouping predicate over more specific contribution roles (author, editor, publisher, provider). Corresponds to dct:contributor.",
       "comments": [
         "This is a grouping for predicates relating entities to their associated contributors realizing them"
       ],
@@ -7200,7 +7350,7 @@
     {
       "name": "provider",
       "definition_uri": "https://w3id.org/biolink/vocab/provider",
-      "description": "person, group, organization or project that provides a piece of information (e.g. a knowledge association).",
+      "description": "person, group, organization or project that provides a piece of information.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "contributor",
       "domain": "Agent",
@@ -7499,6 +7649,7 @@
           "@type": "Annotation"
         }
       ],
+      "description": "Holds between two entities that physically interact by way of one or more intermediary entities, rather than through direct physical contact.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "physically_interacts_with",
       "domain": "NamedThing",
@@ -7709,9 +7860,6 @@
         }
       ],
       "description": "A statistical association used to indicate that the object of a statement using this predicate induces a response of some kind in the subject entity.  Intentionally broad in definition, this predicate should be used with qualifiers to narrow the type of response (E.g. whether the response is therapeutic, phenotypic, detrimental, resistant, etc. is captured in context, direction, and aspect qualifiers).",
-      "comments": [
-        "subject: NCBIGene:2064 # HER2 subject_aspect: Amplification predicate: associated with response to object: CHEBI:10035 # Trastuzumab response_type_qualifier: therapeutic_sensitivity response_direction_qualifer: increased response_target_qualifier: human patient disease_context_qualifier: MONDO:0007254  # breast cancer\nsubject: MONDO:0007254 predicate: associated with response to qualified_predicate: associated with object: CHEBI:10035 # Trastuzumab response_context_qualifier: therapeutic_sensitivity"
-      ],
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "associated_with",
       "domain": "NamedThing",
@@ -7959,7 +8107,7 @@
           "@type": "Annotation"
         }
       ],
-      "description": "holds between two chemical entities or genes or gene products where the action of one affects the susceptibility/sensitivity of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine mixin, biological or pathological process) to the other.",
+      "description": "holds between two chemical entities or genes or gene products where the action of one affects the susceptibility/sensitivity of a biological entity or system to the other.",
       "in_subset": [
         "translator_minimal"
       ],
@@ -7976,6 +8124,7 @@
       "range": "ChemicalEntityOrGeneOrGeneProduct",
       "multivalued": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -7994,6 +8143,7 @@
       "range": "ChemicalEntityOrGeneOrGeneProduct",
       "multivalued": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -8011,7 +8161,7 @@
           "@type": "Annotation"
         }
       ],
-      "description": "holds between two chemical entities or genes or gene products where the action or effect of one increases the susceptibility/sensitivity of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine mixin, biological or pathological process) to the other",
+      "description": "holds between two chemical entities or genes or gene products where the action or effect of one increases the susceptibility/sensitivity of a biological entity or system to the other",
       "in_subset": [
         "translator_minimal"
       ],
@@ -8028,6 +8178,7 @@
       "range": "ChemicalEntityOrGeneOrGeneProduct",
       "multivalued": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -8046,6 +8197,7 @@
       "range": "ChemicalEntityOrGeneOrGeneProduct",
       "multivalued": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -8063,7 +8215,7 @@
           "@type": "Annotation"
         }
       ],
-      "description": "holds between two chemical entities or genes or gene products where the action or effect of one decreases the susceptibility/sensitivity of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine mixin, biological or pathological process) to the other",
+      "description": "holds between two chemical entities or genes or gene products where the action or effect of one decreases the susceptibility/sensitivity of a biological entity or system  to the other",
       "in_subset": [
         "translator_minimal"
       ],
@@ -8083,6 +8235,7 @@
       "range": "ChemicalEntityOrGeneOrGeneProduct",
       "multivalued": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -8101,6 +8254,7 @@
       "range": "ChemicalEntityOrGeneOrGeneProduct",
       "multivalued": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -8140,6 +8294,7 @@
       "range": "PhysicalEssenceOrOccurrent",
       "multivalued": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -8155,6 +8310,7 @@
       "range": "PhysicalEssenceOrOccurrent",
       "multivalued": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -8269,6 +8425,7 @@
       "range": "GeneProductMixin",
       "multivalued": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -8707,6 +8864,7 @@
       "range": "GeneOrGeneProduct",
       "multivalued": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -8739,6 +8897,7 @@
       "range": "GeneOrGeneProduct",
       "multivalued": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -8765,6 +8924,7 @@
       "range": "GeneOrGeneProduct",
       "multivalued": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -8826,7 +8986,7 @@
           "@type": "Annotation"
         }
       ],
-      "description": "",
+      "description": "A statistical association, observed in genetic studies, between a genetic entity such as a gene, locus, or variant and a phenotype, disease, or trait.",
       "in_subset": [
         "translator_minimal"
       ],
@@ -9107,6 +9267,7 @@
       "range": "ChemicalOrDrugOrTreatment",
       "multivalued": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -9162,6 +9323,7 @@
       "range": "ChemicalOrDrugOrTreatment",
       "multivalued": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -9209,6 +9371,7 @@
       "range": "ChemicalOrDrugOrTreatment",
       "multivalued": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -9258,6 +9421,7 @@
       "range": "ChemicalOrDrugOrTreatment",
       "multivalued": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -9316,6 +9480,7 @@
       "range": "ChemicalOrDrugOrTreatment",
       "multivalued": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -9410,6 +9575,7 @@
       "range": "ChemicalOrDrugOrTreatment",
       "multivalued": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -9487,6 +9653,7 @@
       "range": "ChemicalOrDrugOrTreatment",
       "multivalued": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -9505,6 +9672,7 @@
       "range": "ChemicalOrDrugOrTreatment",
       "multivalued": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -9523,6 +9691,7 @@
       "range": "ChemicalOrDrugOrTreatment",
       "multivalued": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -9600,6 +9769,7 @@
       "range": "ChemicalOrDrugOrTreatment",
       "multivalued": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -9614,7 +9784,7 @@
       ],
       "description": "Holds between an  substance, procedure, or activity and a medical condition, and reports that the  substance, procedure, or activity was actually taken by one or more patients with the intent of treating the condition.",
       "notes": [
-        "This predicate is used simply to report observations of use in the real world, and is agnostic to whether the treatment is approved for or might be effective in treating the condition. The treatment could be taken by a patient on their own accord or prescribed by a clinician, as an off-label or an approved intervention. In practice, it would be used to represent records/statements from patient self-reporting sources like FAERS / AEOLUS where patients directly report the condition for which they took a drug, or statements from a database cataloging instances of off-label prescription of drugs for specific conditions (e.g. here, here, here)."
+        "This predicate is used simply to report observations of use in the real world, and is agnostic to whether the treatment is approved for or might be effective in treating the condition. The treatment could be taken by a patient on their own accord or prescribed by a clinician, as an off-label or an approved intervention. In practice, it would be used to represent records/statements from patient self-reporting sources like FAERS / AEOLUS where patients directly report the condition for which they took a drug, or statements from a database cataloging instances of off-label prescription of drugs for specific conditions."
       ],
       "in_subset": [
         "translator_minimal"
@@ -9654,6 +9824,7 @@
       "range": "ChemicalOrDrugOrTreatment",
       "multivalued": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -9702,6 +9873,7 @@
       "range": "ChemicalOrDrugOrTreatment",
       "multivalued": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -9848,6 +10020,7 @@
       "range": "GeneOrGeneProduct",
       "multivalued": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -9871,6 +10044,7 @@
       "range": "ChemicalEntityOrGeneOrGeneProduct",
       "multivalued": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -9965,6 +10139,7 @@
       "range": "GeneOrGeneProduct",
       "multivalued": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -10833,6 +11008,7 @@
       "range": "Occurrent",
       "multivalued": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -10845,6 +11021,7 @@
           "@type": "Annotation"
         }
       ],
+      "description": "Holds between a macromolecular machine (typically an enzyme or ribozyme) and a biochemical reaction or process whose rate it accelerates, without itself being consumed, by lowering the activation energy.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "exact_mappings": [
         "http://purl.obolibrary.org/obo/RO_0002327"
@@ -10872,6 +11049,7 @@
       "range": "Occurrent",
       "multivalued": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -10884,6 +11062,7 @@
           "@type": "Annotation"
         }
       ],
+      "description": "Holds between a biochemical reaction or catalytic process and a chemical entity that is acted upon (consumed or transformed) by that reaction.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "has_participant",
       "domain": "ChemicalEntityOrGeneOrGeneProduct",
@@ -10894,6 +11073,7 @@
       "range": "ChemicalEntityOrGeneOrGeneProduct",
       "multivalued": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -10909,6 +11089,7 @@
       "range": "ChemicalEntityOrGeneOrGeneProduct",
       "multivalued": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -11033,6 +11214,7 @@
       "range": "Occurrent",
       "multivalued": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -11570,6 +11752,7 @@
           "@type": "Annotation"
         }
       ],
+      "description": "Holds between a process and an entity that is taken in and depleted by the process; for example a metabolite consumed in a biochemical reaction.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "narrow_mappings": [
         "http://purl.obolibrary.org/obo/RO_0004009"
@@ -11638,6 +11821,7 @@
       "range": "Occurrent",
       "multivalued": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -11682,6 +11866,7 @@
       "range": "Occurrent",
       "multivalued": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -11712,6 +11897,7 @@
       "range": "Occurrent",
       "multivalued": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -11763,6 +11949,7 @@
           "@type": "Annotation"
         }
       ],
+      "description": "Links a genotype or genetic variant to a condition (disease or phenotypic feature) that is associated with it.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "exact_mappings": [
         "http://purl.obolibrary.org/obo/GENO_0000790"
@@ -11806,6 +11993,7 @@
       "range": "GenomicEntity",
       "multivalued": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -11846,6 +12034,7 @@
       "range": "GenomicEntity",
       "multivalued": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -11886,6 +12075,7 @@
       "range": "GenomicEntity",
       "multivalued": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -11929,6 +12119,7 @@
       "range": "GenomicEntity",
       "multivalued": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -11974,6 +12165,7 @@
       "range": "GenomicEntity",
       "multivalued": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -12019,6 +12211,7 @@
       "range": "GenomicEntity",
       "multivalued": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -12060,6 +12253,7 @@
       "range": "GenomicEntity",
       "multivalued": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -12104,6 +12298,7 @@
       "range": "GenomicEntity",
       "multivalued": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -12198,6 +12393,7 @@
       "range": "ChemicalOrDrugOrTreatment",
       "multivalued": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -12244,6 +12440,7 @@
       "range": "ChemicalOrDrugOrTreatment",
       "multivalued": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -12302,6 +12499,7 @@
       "range": "ChemicalOrDrugOrTreatment",
       "multivalued": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -12432,6 +12630,7 @@
           "@type": "Annotation"
         }
       ],
+      "description": "Holds between an entity and a component that is present at higher amount than in a reference state or sibling entity; used for comparative compositional statements.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "narrow_mappings": [
         "http://purl.obolibrary.org/obo/CL_has_high_plasma_membrane_amount"
@@ -12475,6 +12674,7 @@
           "@type": "Annotation"
         }
       ],
+      "description": "Holds between an entity and a component that is present at lower amount than in a reference state or sibling entity; used for comparative compositional statements.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "narrow_mappings": [
         "http://purl.obolibrary.org/obo/CL_has_low_plasma_membrane_amount"
@@ -12518,6 +12718,7 @@
           "@type": "Annotation"
         }
       ],
+      "description": "Holds between an entity and a component that is absent from it relative to a reference type; for example a cell type lacking a particular organelle or a protein lacking a particular domain. Corresponds to CL:lacks_part / PR:lacks_part.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "exact_mappings": [
         "http://purl.obolibrary.org/obo/CL_lacks_part",
@@ -12560,6 +12761,7 @@
           "@type": "Annotation"
         }
       ],
+      "description": "Holds between two entities where the first develops, by one or more developmental processes, from the second; for example a cell type developing from a precursor cell type or a tissue developing from an embryonic primordium. Corresponds to RO:0002202.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "exact_mappings": [
         "http://purl.obolibrary.org/obo/BTO_develops_from",
@@ -12704,6 +12906,7 @@
       "range": "ThingWithTaxon",
       "multivalued": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -13820,7 +14023,7 @@
     {
       "name": "dataset_count",
       "definition_uri": "https://w3id.org/biolink/vocab/dataset_count",
-      "description": "The total number of instances (e.g., number of patients, number of rows, etc) in a dataset/cohort.",
+      "description": "The total number of instances in a dataset/cohort.",
       "examples": [
         {
           "value": "100000",
@@ -13988,7 +14191,7 @@
       "description": "The segment of text from a document that supports the mined assertion.",
       "examples": [
         {
-          "value": "The administration of 50g/ml bupivacaine promoted maximum breast cancer.",
+          "value": "Here, we report two new cases of rivaroxaban-induced hepatitis.",
           "@type": "Example"
         }
       ],
@@ -14034,7 +14237,7 @@
       "description": "Character offsets for the text span(s) in the supporting text corresponding to the subject concept of the extracted assertion.",
       "examples": [
         {
-          "value": "15",
+          "value": "33",
           "@type": "Example"
         }
       ],
@@ -14056,7 +14259,7 @@
       "description": "Character offsets for the text span(s) in the supporting text corresponding to the object concept of the extracted assertion",
       "examples": [
         {
-          "value": "15",
+          "value": "53",
           "@type": "Example"
         }
       ],
@@ -14078,7 +14281,7 @@
       "description": "A quantitative confidence value that represents the probability of obtaining a result at least as extreme as that actually obtained, assuming that the actual value was the result of chance alone.",
       "examples": [
         {
-          "value": "15.0",
+          "value": "0.6188385904738642",
           "@type": "Example"
         }
       ],
@@ -14120,7 +14323,7 @@
       "description": "The document year (typically the publication year) for the supporting document used in a Text Mining Result.",
       "examples": [
         {
-          "value": "1999",
+          "value": "2018",
           "@type": "Example"
         }
       ],
@@ -14141,7 +14344,7 @@
       "description": "The section of the supporting text of a Text Mining Result within the supporting document. This is in the form of the name of the document section (e.g., Abstract, Introduction) that contains the supporting text.",
       "examples": [
         {
-          "value": "Introduction",
+          "value": "abstract",
           "@type": "Example"
         }
       ],
@@ -14639,7 +14842,7 @@
     {
       "name": "supporting_study_cohort",
       "definition_uri": "https://w3id.org/biolink/vocab/supporting_study_cohort",
-      "description": "A description of a study population/cohort that was interrogated to provide evidence for the association (e.g. the inclusion and exclusion criteria).",
+      "description": "A description of a study population/cohort that was interrogated to provide evidence for the association.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "supporting_study_metadata",
       "domain": "Association",
@@ -14663,7 +14866,7 @@
     {
       "name": "supporting_study_context",
       "definition_uri": "https://w3id.org/biolink/vocab/supporting_study_context",
-      "description": "A term or terms describing the experimental setting/context in which evidence supporting the Association was generated ('context' may be defined by many factors, including taxon, model system (e.g. cell line type), tissue type, disease, etc.).",
+      "description": "A term or terms describing the experimental setting/context in which evidence supporting the Association was generated ('context' may be defined by many factors, including taxon, model system, tissue type, disease, etc.).",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "supporting_study_metadata",
       "domain": "Association",
@@ -14748,7 +14951,7 @@
     {
       "name": "has_biological_sex",
       "definition_uri": "https://w3id.org/biolink/vocab/has_biological_sex",
-      "description": "The biological sex of the entity (e.g., male or female) regarding a case description from a phenopacket",
+      "description": "The biological sex of the entity regarding a case description from a phenopacket",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "slot_uri": "https://w3id.org/biolink/vocab/has_biological_sex",
       "owner": "Case",
@@ -15131,6 +15334,7 @@
     {
       "name": "organism_taxon_has_taxonomic_rank",
       "definition_uri": "https://w3id.org/biolink/vocab/has_taxonomic_rank",
+      "description": "The taxonomic rank (e.g. species, genus, family, order, kingdom) assigned to an organism taxon.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "mappings": [
         "https://www.wikidata.org/entity/P105"
@@ -15745,6 +15949,7 @@
       "range": "MacromolecularMachineMixin",
       "multivalued": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -17043,6 +17248,7 @@
       "range": "GeneOrGeneProduct",
       "required": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -17080,6 +17286,7 @@
       "range": "GeneOrGeneProduct",
       "required": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -17117,6 +17324,7 @@
       "range": "GeneOrGeneProduct",
       "required": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -17192,6 +17400,7 @@
       "range": "GeneOrGeneProduct",
       "required": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -17335,7 +17544,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "subject",
-      "range": "Gene",
+      "range": "GeneFamily",
       "required": true,
       "@type": "SlotDefinition"
     },
@@ -17371,8 +17580,10 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "object",
-      "range": "GeneFamily",
+      "range": "GeneOrGeneProduct",
       "required": true,
+      "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -17447,6 +17658,7 @@
       "range": "GeneOrGeneProductOrGeneFamily",
       "required": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -17593,6 +17805,7 @@
       "range": "GeneOrGeneProductOrGeneFamily",
       "required": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -18103,6 +18316,7 @@
       "range": "ChemicalEntityOrGeneOrGeneProduct",
       "required": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -18176,6 +18390,7 @@
       "range": "ChemicalEntityOrGeneOrGeneProduct",
       "required": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -18321,6 +18536,7 @@
       "range": "GeneOrGeneProduct",
       "required": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -18450,6 +18666,7 @@
       "range": "MacromolecularMachineMixin",
       "multivalued": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -18634,6 +18851,7 @@
       "range": "GeneOrGeneProduct",
       "required": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -19035,12 +19253,13 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "subject aspect qualifier",
-      "range": "string",
+      "range": "GeneOrGeneProductOrChemicalEntityAspectEnum",
       "@type": "SlotDefinition"
     },
     {
       "name": "named_thing_associated_with_likelihood_of_named_thing_association_subject_context_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/subject_context_qualifier",
+      "description": "A qualifier describing the context in which the subject of an association holds.",
       "in_subset": [
         "translator_minimal"
       ],
@@ -19094,12 +19313,13 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "object aspect qualifier",
-      "range": "string",
+      "range": "GeneOrGeneProductOrChemicalEntityAspectEnum",
       "@type": "SlotDefinition"
     },
     {
       "name": "named_thing_associated_with_likelihood_of_named_thing_association_object_context_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/object_context_qualifier",
+      "description": "A qualifier describing the context in which the object of an association holds.",
       "in_subset": [
         "translator_minimal"
       ],
@@ -19188,6 +19408,7 @@
       "range": "GeneOrGeneProduct",
       "required": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -19273,7 +19494,17 @@
     {
       "name": "chemical_gene_interaction_association_subject_part_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/subject_part_qualifier",
-      "description": "defines a specific part/component of the core concept (used in cases there this specific part has no IRI we can use to directly represent it, e.g. 'ESR1 transcript' q: polyA tail).  This qualifier is for the subject of an association (or statement).",
+      "description": "defines a specific part/component of the core concept (used in cases there this specific part has no IRI we can use to directly represent it).  This qualifier is for the subject of an association (or statement).",
+      "examples": [
+        {
+          "value": "polyA tail",
+          "@type": "Example"
+        },
+        {
+          "value": "upstream control region",
+          "@type": "Example"
+        }
+      ],
       "in_subset": [
         "translator_minimal"
       ],
@@ -19321,6 +19552,7 @@
     {
       "name": "chemical_gene_interaction_association_subject_context_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/subject_context_qualifier",
+      "description": "A qualifier describing the context in which the subject of an association holds.",
       "in_subset": [
         "translator_minimal"
       ],
@@ -19342,6 +19574,16 @@
       "name": "chemical_gene_interaction_association_object_direction_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/object_direction_qualifier",
       "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement).",
+      "examples": [
+        {
+          "value": "increased",
+          "@type": "Example"
+        },
+        {
+          "value": "downregulated",
+          "@type": "Example"
+        }
+      ],
       "in_subset": [
         "translator_minimal"
       ],
@@ -19444,7 +19686,17 @@
     {
       "name": "chemical_gene_interaction_association_object_part_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/object_part_qualifier",
-      "description": "defines a specific part/component of the core concept (used in cases there this specific part has no IRI we can use to directly represent it, e.g. 'ESR1 transcript' q: polyA tail).  This qualifier is for the object of an association (or statement).",
+      "description": "defines a specific part/component of the core concept (used in cases there this specific part has no IRI we can use to directly represent it).  This qualifier is for the object of an association (or statement).",
+      "examples": [
+        {
+          "value": "polyA tail",
+          "@type": "Example"
+        },
+        {
+          "value": "upstream control region",
+          "@type": "Example"
+        }
+      ],
       "in_subset": [
         "translator_minimal"
       ],
@@ -19465,6 +19717,7 @@
     {
       "name": "chemical_gene_interaction_association_object_context_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/object_context_qualifier",
+      "description": "A qualifier describing the context in which the object of an association holds.",
       "in_subset": [
         "translator_minimal"
       ],
@@ -19487,15 +19740,17 @@
       "definition_uri": "https://w3id.org/biolink/vocab/anatomical_context_qualifier",
       "description": "A statement qualifier representing an anatomical location where an relationship expressed in an association took place (can be a tissue, cell type, or sub-cellular location).",
       "notes": [
-        "Anatomical context values can be any term from UBERON. For example, the context qualifier \u2018cerebral cortext\u2019 combines with a core concept of \u2018neuron\u2019 to express the composed concept \u2018neuron in the cerebral cortext\u2019. The species_context_qualifier applies taxonomic context, e.g. species-specific molecular activity.  Ontology CURIEs are expected as values here, the examples below are intended to help clarify the content of the CURIEs."
+        "Anatomical context values can be any term from UBERON. For example, the context qualifier \u2018cerebral cortext\u2019 combines with a core concept of \u2018neuron\u2019 to express the composed concept \u2018neuron in the cerebral cortext\u2019. The species_context_qualifier applies taxonomic context.  Ontology CURIEs are expected as values here, the examples below are intended to help clarify the content of the CURIEs."
       ],
       "examples": [
         {
-          "value": "blood",
+          "value": "UBERON:0000178",
+          "description": "blood",
           "@type": "Example"
         },
         {
-          "value": "cerebral cortext",
+          "value": "UBERON:0000956",
+          "description": "cerebral cortex",
           "@type": "Example"
         }
       ],
@@ -19520,7 +19775,17 @@
     {
       "name": "chemical_gene_interaction_association_causal_mechanism_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/causal_mechanism_qualifier",
-      "description": "A statement qualifier representing a type of molecular control mechanism through which an effect of a chemical on a gene or gene product is mediated (e.g. 'agonism', 'inhibition', 'allosteric modulation', 'channel blocker')",
+      "description": "A statement qualifier representing a type of molecular control mechanism through which an effect of a chemical on a gene or gene product is mediated",
+      "examples": [
+        {
+          "value": "agonism",
+          "@type": "Example"
+        },
+        {
+          "value": "inhibition",
+          "@type": "Example"
+        }
+      ],
       "in_subset": [
         "translator_minimal"
       ],
@@ -19573,6 +19838,7 @@
       "range": "MacromolecularMachineMixin",
       "required": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -19647,6 +19913,7 @@
       "range": "ChemicalEntityOrProteinOrPolypeptide",
       "required": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -19681,16 +19948,14 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "subject",
-      "range": "GeneOrGeneProduct",
+      "range": "ChemicalEntityOrGeneOrGeneProduct",
       "required": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
       "name": "gene_regulates_gene_association_predicate",
-      "id_prefixes": [
-        "regulates"
-      ],
       "definition_uri": "https://w3id.org/biolink/vocab/predicate",
       "local_names": {
         "ga4gh": {
@@ -19719,6 +19984,7 @@
       "domain_of": [
         "GeneRegulatesGeneAssociation"
       ],
+      "subproperty_of": "regulates",
       "is_usage_slot": true,
       "usage_slot_name": "predicate",
       "range": "uriorcurie",
@@ -19757,9 +20023,10 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "object",
-      "range": "GeneOrGeneProduct",
+      "range": "ChemicalEntityOrGeneOrGeneProduct",
       "required": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -19806,6 +20073,16 @@
       "name": "gene_regulates_gene_association_object_direction_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/object_direction_qualifier",
       "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement).",
+      "examples": [
+        {
+          "value": "increased",
+          "@type": "Example"
+        },
+        {
+          "value": "downregulated",
+          "@type": "Example"
+        }
+      ],
       "in_subset": [
         "translator_minimal"
       ],
@@ -19830,6 +20107,13 @@
       "description": "Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  Has a value from the Biolink 'related_to' hierarchy, for example, biolink:related_to, biolink:causes, biolink:treats This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a \u2018full statement\u2019 reading of the association, where qualifier-based semantics are included. This is necessary only in cases where the primary predicate does not work in a full statement reading.",
       "notes": [
         "to express the statement that \u201cChemical X causes increased expression of Gene Y\u201d, the core triple is read using the fields subject:ChemX, predicate:affects, object:GeneY . . . and the full statement is read using the fields subject:ChemX, qualified_predicate:causes, object:GeneY, object_aspect: expression, object_direction:increased. The predicate \u2018affects\u2019 is needed for the core triple reading, but does not make sense in the full statement reading  (because \u201cChemical X affects increased expression of Gene Y'' is not what we mean to say here: it causes increased expression of Gene Y)"
+      ],
+      "examples": [
+        {
+          "value": "biolink:causes",
+          "description": "used with `affects` predicate to express causal statements",
+          "@type": "Example"
+        }
       ],
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "qualified_predicate",
@@ -20038,7 +20322,17 @@
     {
       "name": "chemical_affects_biological_entity_association_subject_part_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/subject_part_qualifier",
-      "description": "defines a specific part/component of the core concept (used in cases there this specific part has no IRI we can use to directly represent it, e.g. 'ESR1 transcript' q: polyA tail).  This qualifier is for the subject of an association (or statement).",
+      "description": "defines a specific part/component of the core concept (used in cases there this specific part has no IRI we can use to directly represent it).  This qualifier is for the subject of an association (or statement).",
+      "examples": [
+        {
+          "value": "polyA tail",
+          "@type": "Example"
+        },
+        {
+          "value": "upstream control region",
+          "@type": "Example"
+        }
+      ],
       "in_subset": [
         "translator_minimal"
       ],
@@ -20125,6 +20419,7 @@
     {
       "name": "chemical_affects_biological_entity_association_subject_context_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/subject_context_qualifier",
+      "description": "A qualifier describing the context in which the subject of an association holds.",
       "in_subset": [
         "translator_minimal"
       ],
@@ -20146,6 +20441,16 @@
       "name": "chemical_affects_biological_entity_association_subject_direction_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/subject_direction_qualifier",
       "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement).",
+      "examples": [
+        {
+          "value": "increased",
+          "@type": "Example"
+        },
+        {
+          "value": "downregulated",
+          "@type": "Example"
+        }
+      ],
       "in_subset": [
         "translator_minimal"
       ],
@@ -20206,6 +20511,13 @@
       "description": "Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  Has a value from the Biolink 'related_to' hierarchy, for example, biolink:related_to, biolink:causes, biolink:treats This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a \u2018full statement\u2019 reading of the association, where qualifier-based semantics are included. This is necessary only in cases where the primary predicate does not work in a full statement reading.",
       "notes": [
         "to express the statement that \u201cChemical X causes increased expression of Gene Y\u201d, the core triple is read using the fields subject:ChemX, predicate:affects, object:GeneY . . . and the full statement is read using the fields subject:ChemX, qualified_predicate:causes, object:GeneY, object_aspect: expression, object_direction:increased. The predicate \u2018affects\u2019 is needed for the core triple reading, but does not make sense in the full statement reading  (because \u201cChemical X affects increased expression of Gene Y'' is not what we mean to say here: it causes increased expression of Gene Y)"
+      ],
+      "examples": [
+        {
+          "value": "biolink:causes",
+          "description": "used with `affects` predicate to express causal statements",
+          "@type": "Example"
+        }
       ],
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "qualified_predicate",
@@ -20304,7 +20616,17 @@
     {
       "name": "chemical_affects_biological_entity_association_object_part_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/object_part_qualifier",
-      "description": "defines a specific part/component of the core concept (used in cases there this specific part has no IRI we can use to directly represent it, e.g. 'ESR1 transcript' q: polyA tail).  This qualifier is for the object of an association (or statement).",
+      "description": "defines a specific part/component of the core concept (used in cases there this specific part has no IRI we can use to directly represent it).  This qualifier is for the object of an association (or statement).",
+      "examples": [
+        {
+          "value": "polyA tail",
+          "@type": "Example"
+        },
+        {
+          "value": "upstream control region",
+          "@type": "Example"
+        }
+      ],
       "in_subset": [
         "translator_minimal"
       ],
@@ -20364,6 +20686,7 @@
     {
       "name": "chemical_affects_biological_entity_association_object_context_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/object_context_qualifier",
+      "description": "A qualifier describing the context in which the object of an association holds.",
       "in_subset": [
         "translator_minimal"
       ],
@@ -20385,6 +20708,16 @@
       "name": "chemical_affects_biological_entity_association_object_direction_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/object_direction_qualifier",
       "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement).",
+      "examples": [
+        {
+          "value": "increased",
+          "@type": "Example"
+        },
+        {
+          "value": "downregulated",
+          "@type": "Example"
+        }
+      ],
       "in_subset": [
         "translator_minimal"
       ],
@@ -20405,7 +20738,17 @@
     {
       "name": "chemical_affects_biological_entity_association_causal_mechanism_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/causal_mechanism_qualifier",
-      "description": "A statement qualifier representing a type of molecular control mechanism through which an effect of a chemical on a gene or gene product is mediated (e.g. 'agonism', 'inhibition', 'allosteric modulation', 'channel blocker')",
+      "description": "A statement qualifier representing a type of molecular control mechanism through which an effect of a chemical on a gene or gene product is mediated",
+      "examples": [
+        {
+          "value": "agonism",
+          "@type": "Example"
+        },
+        {
+          "value": "inhibition",
+          "@type": "Example"
+        }
+      ],
       "in_subset": [
         "translator_minimal"
       ],
@@ -20428,15 +20771,17 @@
       "definition_uri": "https://w3id.org/biolink/vocab/anatomical_context_qualifier",
       "description": "A statement qualifier representing an anatomical location where an relationship expressed in an association took place (can be a tissue, cell type, or sub-cellular location).",
       "notes": [
-        "Anatomical context values can be any term from UBERON. For example, the context qualifier \u2018cerebral cortext\u2019 combines with a core concept of \u2018neuron\u2019 to express the composed concept \u2018neuron in the cerebral cortext\u2019. The species_context_qualifier applies taxonomic context, e.g. species-specific molecular activity.  Ontology CURIEs are expected as values here, the examples below are intended to help clarify the content of the CURIEs."
+        "Anatomical context values can be any term from UBERON. For example, the context qualifier \u2018cerebral cortext\u2019 combines with a core concept of \u2018neuron\u2019 to express the composed concept \u2018neuron in the cerebral cortext\u2019. The species_context_qualifier applies taxonomic context.  Ontology CURIEs are expected as values here, the examples below are intended to help clarify the content of the CURIEs."
       ],
       "examples": [
         {
-          "value": "blood",
+          "value": "UBERON:0000178",
+          "description": "blood",
           "@type": "Example"
         },
         {
-          "value": "cerebral cortext",
+          "value": "UBERON:0000956",
+          "description": "cerebral cortex",
           "@type": "Example"
         }
       ],
@@ -20467,11 +20812,13 @@
       ],
       "examples": [
         {
-          "value": "zebrafish",
+          "value": "NCBITaxon:7955",
+          "description": "zebrafish",
           "@type": "Example"
         },
         {
-          "value": "human",
+          "value": "NCBITaxon:9606",
+          "description": "human",
           "@type": "Example"
         }
       ],
@@ -20524,9 +20871,10 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "subject",
-      "range": "GeneOrGeneProduct",
+      "range": "ChemicalEntityOrGeneOrGeneProduct",
       "required": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -20575,7 +20923,17 @@
     {
       "name": "gene_affects_chemical_association_subject_part_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/subject_part_qualifier",
-      "description": "defines a specific part/component of the core concept (used in cases there this specific part has no IRI we can use to directly represent it, e.g. 'ESR1 transcript' q: polyA tail).  This qualifier is for the subject of an association (or statement).",
+      "description": "defines a specific part/component of the core concept (used in cases there this specific part has no IRI we can use to directly represent it).  This qualifier is for the subject of an association (or statement).",
+      "examples": [
+        {
+          "value": "polyA tail",
+          "@type": "Example"
+        },
+        {
+          "value": "upstream control region",
+          "@type": "Example"
+        }
+      ],
       "in_subset": [
         "translator_minimal"
       ],
@@ -20635,6 +20993,7 @@
     {
       "name": "gene_affects_chemical_association_subject_context_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/subject_context_qualifier",
+      "description": "A qualifier describing the context in which the subject of an association holds.",
       "in_subset": [
         "translator_minimal"
       ],
@@ -20656,6 +21015,16 @@
       "name": "gene_affects_chemical_association_subject_direction_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/subject_direction_qualifier",
       "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement).",
+      "examples": [
+        {
+          "value": "increased",
+          "@type": "Example"
+        },
+        {
+          "value": "downregulated",
+          "@type": "Example"
+        }
+      ],
       "in_subset": [
         "translator_minimal"
       ],
@@ -20716,6 +21085,13 @@
       "description": "Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  Has a value from the Biolink 'related_to' hierarchy, for example, biolink:related_to, biolink:causes, biolink:treats This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a \u2018full statement\u2019 reading of the association, where qualifier-based semantics are included. This is necessary only in cases where the primary predicate does not work in a full statement reading.",
       "notes": [
         "to express the statement that \u201cChemical X causes increased expression of Gene Y\u201d, the core triple is read using the fields subject:ChemX, predicate:affects, object:GeneY . . . and the full statement is read using the fields subject:ChemX, qualified_predicate:causes, object:GeneY, object_aspect: expression, object_direction:increased. The predicate \u2018affects\u2019 is needed for the core triple reading, but does not make sense in the full statement reading  (because \u201cChemical X affects increased expression of Gene Y'' is not what we mean to say here: it causes increased expression of Gene Y)"
+      ],
+      "examples": [
+        {
+          "value": "biolink:causes",
+          "description": "used with `affects` predicate to express causal statements",
+          "@type": "Example"
+        }
       ],
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "qualified_predicate",
@@ -20814,7 +21190,17 @@
     {
       "name": "gene_affects_chemical_association_object_part_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/object_part_qualifier",
-      "description": "defines a specific part/component of the core concept (used in cases there this specific part has no IRI we can use to directly represent it, e.g. 'ESR1 transcript' q: polyA tail).  This qualifier is for the object of an association (or statement).",
+      "description": "defines a specific part/component of the core concept (used in cases there this specific part has no IRI we can use to directly represent it).  This qualifier is for the object of an association (or statement).",
+      "examples": [
+        {
+          "value": "polyA tail",
+          "@type": "Example"
+        },
+        {
+          "value": "upstream control region",
+          "@type": "Example"
+        }
+      ],
       "in_subset": [
         "translator_minimal"
       ],
@@ -20901,6 +21287,7 @@
     {
       "name": "gene_affects_chemical_association_object_context_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/object_context_qualifier",
+      "description": "A qualifier describing the context in which the object of an association holds.",
       "in_subset": [
         "translator_minimal"
       ],
@@ -20922,6 +21309,16 @@
       "name": "gene_affects_chemical_association_object_direction_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/object_direction_qualifier",
       "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement).",
+      "examples": [
+        {
+          "value": "increased",
+          "@type": "Example"
+        },
+        {
+          "value": "downregulated",
+          "@type": "Example"
+        }
+      ],
       "in_subset": [
         "translator_minimal"
       ],
@@ -20942,7 +21339,17 @@
     {
       "name": "gene_affects_chemical_association_causal_mechanism_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/causal_mechanism_qualifier",
-      "description": "A statement qualifier representing a type of molecular control mechanism through which an effect of a chemical on a gene or gene product is mediated (e.g. 'agonism', 'inhibition', 'allosteric modulation', 'channel blocker')",
+      "description": "A statement qualifier representing a type of molecular control mechanism through which an effect of a chemical on a gene or gene product is mediated",
+      "examples": [
+        {
+          "value": "agonism",
+          "@type": "Example"
+        },
+        {
+          "value": "inhibition",
+          "@type": "Example"
+        }
+      ],
       "in_subset": [
         "translator_minimal"
       ],
@@ -20965,15 +21372,17 @@
       "definition_uri": "https://w3id.org/biolink/vocab/anatomical_context_qualifier",
       "description": "A statement qualifier representing an anatomical location where an relationship expressed in an association took place (can be a tissue, cell type, or sub-cellular location).",
       "notes": [
-        "Anatomical context values can be any term from UBERON. For example, the context qualifier \u2018cerebral cortext\u2019 combines with a core concept of \u2018neuron\u2019 to express the composed concept \u2018neuron in the cerebral cortext\u2019. The species_context_qualifier applies taxonomic context, e.g. species-specific molecular activity.  Ontology CURIEs are expected as values here, the examples below are intended to help clarify the content of the CURIEs."
+        "Anatomical context values can be any term from UBERON. For example, the context qualifier \u2018cerebral cortext\u2019 combines with a core concept of \u2018neuron\u2019 to express the composed concept \u2018neuron in the cerebral cortext\u2019. The species_context_qualifier applies taxonomic context.  Ontology CURIEs are expected as values here, the examples below are intended to help clarify the content of the CURIEs."
       ],
       "examples": [
         {
-          "value": "blood",
+          "value": "UBERON:0000178",
+          "description": "blood",
           "@type": "Example"
         },
         {
-          "value": "cerebral cortext",
+          "value": "UBERON:0000956",
+          "description": "cerebral cortex",
           "@type": "Example"
         }
       ],
@@ -21004,11 +21413,13 @@
       ],
       "examples": [
         {
-          "value": "zebrafish",
+          "value": "NCBITaxon:7955",
+          "description": "zebrafish",
           "@type": "Example"
         },
         {
-          "value": "human",
+          "value": "NCBITaxon:9606",
+          "description": "human",
           "@type": "Example"
         }
       ],
@@ -21064,6 +21475,7 @@
       "range": "GeneOrGeneProduct",
       "required": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -21332,6 +21744,7 @@
       "range": "Outcome",
       "required": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -22115,6 +22528,7 @@
     {
       "name": "case_to_variant_association_has_zygosity",
       "definition_uri": "https://w3id.org/biolink/vocab/has_zygosity",
+      "description": "The zygosity characterising a genotype or nucleic acid entity at a particular locus.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "has_zygosity",
       "domain": "CaseToVariantAssociation",
@@ -22164,6 +22578,7 @@
       "range": "GeneOrGeneProduct",
       "required": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -22273,6 +22688,7 @@
       "range": "GeneOrGeneProduct",
       "required": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -22365,6 +22781,7 @@
       "range": "GeneOrGeneProduct",
       "required": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -22489,6 +22906,16 @@
       "name": "gene_to_phenotypic_feature_association_object_direction_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/object_direction_qualifier",
       "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement).",
+      "examples": [
+        {
+          "value": "increased",
+          "@type": "Example"
+        },
+        {
+          "value": "downregulated",
+          "@type": "Example"
+        }
+      ],
       "in_subset": [
         "translator_minimal"
       ],
@@ -22577,6 +23004,7 @@
       "range": "GeneOrGeneProduct",
       "required": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -22665,6 +23093,16 @@
       "name": "gene_to_disease_association_object_direction_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/object_direction_qualifier",
       "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement).",
+      "examples": [
+        {
+          "value": "increased",
+          "@type": "Example"
+        },
+        {
+          "value": "downregulated",
+          "@type": "Example"
+        }
+      ],
       "in_subset": [
         "translator_minimal"
       ],
@@ -22789,6 +23227,7 @@
       "range": "GeneOrGeneProduct",
       "required": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -22862,6 +23301,7 @@
       "range": "GeneOrGeneProduct",
       "required": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -22972,6 +23412,7 @@
       "range": "GeneOrGeneProduct",
       "required": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -23812,6 +24253,7 @@
       "range": "GeneOrGeneProduct",
       "required": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -24137,6 +24579,7 @@
       "range": "GeneOrGeneProduct",
       "required": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -24247,6 +24690,7 @@
       "range": "GeneOrGeneProduct",
       "required": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -24496,6 +24940,7 @@
       "range": "MacromolecularMachineMixin",
       "required": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -25256,6 +25701,7 @@
       "range": "GeneProductMixin",
       "required": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -25440,6 +25886,7 @@
       "range": "ChemicalEntityOrGeneOrGeneProduct",
       "required": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -25478,12 +25925,23 @@
       "range": "GeneOrGeneProduct",
       "required": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
       "name": "chemical_entity_or_gene_or_gene_product_regulates_gene_association_object_direction_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/object_direction_qualifier",
       "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement).",
+      "examples": [
+        {
+          "value": "increased",
+          "@type": "Example"
+        },
+        {
+          "value": "downregulated",
+          "@type": "Example"
+        }
+      ],
       "in_subset": [
         "translator_minimal"
       ],
@@ -25935,6 +26393,7 @@
       "range": "GeneOrGeneProductOrGeneFamily",
       "required": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -26508,7 +26967,7 @@
     {
       "name": "KnowledgeGraph",
       "definition_uri": "https://w3id.org/biolink/vocab/KnowledgeGraph",
-      "description": "A knowledge graph represented in KGX format",
+      "description": "A container representing a knowledge graph serialized in KGX (Knowledge Graph Exchange) format. A KnowledgeGraph aggregates a collection of nodes (entities) and edges (relationships between entities) conforming to the KGX specification, enabling interoperable exchange of biomedical knowledge graphs across tools and systems in the Biolink ecosystem.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "slots": [
         "nodes",
@@ -26521,7 +26980,7 @@
     {
       "name": "Node",
       "definition_uri": "https://w3id.org/biolink/vocab/Node",
-      "description": "A node in a KGX graph, will be superclass for named thing",
+      "description": "A generic node in a KGX-formatted knowledge graph, representing a single entity or concept with a unique identifier. This class serves as the structural superclass for `named thing` in Biolink, providing the minimal KGX-compliant contract (identifier, category, etc.) that any biolink entity participating in a knowledge graph must satisfy.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/Node",
@@ -26530,7 +26989,7 @@
     {
       "name": "Edge",
       "definition_uri": "https://w3id.org/biolink/vocab/Edge",
-      "description": "An edge in a KGX graph, will be superclass for association",
+      "description": "A generic edge in a KGX-formatted knowledge graph, representing a directed relationship between a subject node and an object node qualified by a predicate. This class serves as the structural superclass for `association` in Biolink, providing the minimal KGX-compliant contract (subject, predicate, object, and associated metadata) that any biolink relationship participating in a knowledge graph must satisfy.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/Edge",
@@ -26554,7 +27013,7 @@
     {
       "name": "MappingCollection",
       "definition_uri": "https://w3id.org/biolink/vocab/MappingCollection",
-      "description": "A collection of deprecated mappings.",
+      "description": "An abstract container class that holds a set of predicate mappings. Serves as a top-level root for documents that enumerate how third-party or deprecated predicates should be rewritten to Biolink predicates and their associated qualifiers.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "abstract": true,
       "slots": [
@@ -26712,6 +27171,7 @@
       "examples": [
         {
           "value": "CHEBI:35469",
+          "description": "antidepressant role",
           "@type": "Example"
         }
       ],
@@ -26747,6 +27207,7 @@
     {
       "name": "BiologicalSex",
       "definition_uri": "https://w3id.org/biolink/vocab/BiologicalSex",
+      "description": "An organismal quality inhering in a bearer by virtue of the bearer's ability to undergo sexual reproduction in order to differentiate the individuals or types involved.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "exact_mappings": [
         "PATO:0000047"
@@ -26876,6 +27337,7 @@
     {
       "name": "RelationshipQuantifier",
       "definition_uri": "https://w3id.org/biolink/vocab/RelationshipQuantifier",
+      "description": "A mixin for quantifying aspects of the strength, frequency, or specificity of a relationship between two entities.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "mixin": true,
       "slot_usage": {},
@@ -26885,6 +27347,7 @@
     {
       "name": "SensitivityQuantifier",
       "definition_uri": "https://w3id.org/biolink/vocab/SensitivityQuantifier",
+      "description": "A relationship quantifier that measures the sensitivity of a relationship, such as the proportion of true positives correctly identified in a diagnostic or association context.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "RelationshipQuantifier",
       "mixin": true,
@@ -26895,6 +27358,7 @@
     {
       "name": "SpecificityQuantifier",
       "definition_uri": "https://w3id.org/biolink/vocab/SpecificityQuantifier",
+      "description": "A relationship quantifier that measures the specificity of a relationship, such as the proportion of true negatives correctly identified in a diagnostic or association context.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "RelationshipQuantifier",
       "mixin": true,
@@ -26916,6 +27380,18 @@
     {
       "name": "FrequencyQuantifier",
       "definition_uri": "https://w3id.org/biolink/vocab/FrequencyQuantifier",
+      "description": "A relationship quantifier that expresses how often a relationship holds, using count, total, quotient, or percentage measures.",
+      "examples": [
+        {
+          "object": {
+            "has_count": 42,
+            "has_total": 100,
+            "has_quotient": 0.42,
+            "has_percentage": 42.0
+          },
+          "@type": "Example"
+        }
+      ],
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "RelationshipQuantifier",
       "mixin": true,
@@ -26938,6 +27414,7 @@
         "MAXO"
       ],
       "definition_uri": "https://w3id.org/biolink/vocab/ChemicalOrDrugOrTreatment",
+      "description": "A mixin for entities that represent chemical substances, pharmacological agents, or therapeutic interventions.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "mixin": true,
       "slot_usage": {},
@@ -27115,6 +27592,7 @@
     {
       "name": "AdministrativeEntity",
       "definition_uri": "https://w3id.org/biolink/vocab/AdministrativeEntity",
+      "description": "An entity that is the byproduct of an administrative process.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "NamedThing",
       "abstract": true,
@@ -27309,6 +27787,29 @@
       "name": "TextMiningStudyResult",
       "definition_uri": "https://w3id.org/biolink/vocab/TextMiningStudyResult",
       "description": "A study result that represents information extracted from text using natural language processing techniques. This includes the extracted text, location offsets within the source document, confidence scores, and other metadata related to the text mining process.",
+      "examples": [
+        {
+          "object": {
+            "id": "tmkp:id",
+            "category": "biolink:TextMiningStudyResult",
+            "supporting_text": [
+              "Here, we report two new cases of rivaroxaban-induced hepatitis."
+            ],
+            "subject_location_in_text": [
+              33,
+              44
+            ],
+            "object_location_in_text": [
+              53,
+              62
+            ],
+            "extraction_confidence_score": 0.6188385904738642,
+            "supporting_document_year": 2018,
+            "supporting_text_section_type": "abstract"
+          },
+          "@type": "Example"
+        }
+      ],
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "StudyResult",
       "slots": [
@@ -27852,7 +28353,7 @@
         "NLMID"
       ],
       "definition_uri": "https://w3id.org/biolink/vocab/Publication",
-      "description": "Any \u2018published\u2019 piece of information. Publications are considered broadly to include any document or document part made available in print or on the web - which may include scientific journal issues, individual articles, and books - as well as things like pre-prints, white papers, patents, drug labels, web pages, protocol documents,  and even a part of a publication if of significant knowledge scope (e.g. a figure, figure legend, or section highlighted by NLP).",
+      "description": "Any \u2018published\u2019 piece of information. Publications are considered broadly to include any document or document part made available in print or on the web - which may include scientific journal issues, individual articles, and books - as well as things like pre-prints, white papers, patents, drug labels, web pages, protocol documents,  and even a part of a publication if of significant knowledge scope.",
       "in_subset": [
         "model_organism_database"
       ],
@@ -27943,6 +28444,7 @@
     {
       "name": "BookChapter",
       "definition_uri": "https://w3id.org/biolink/vocab/BookChapter",
+      "description": "A section of a book that forms a discrete unit of a larger published work and may be independently authored or cited.",
       "in_subset": [
         "model_organism_database"
       ],
@@ -28302,6 +28804,20 @@
       "name": "RetrievalSource",
       "definition_uri": "https://w3id.org/biolink/vocab/RetrievalSource",
       "description": "Provides information about how a particular InformationResource served as a source from which knowledge expressed in an Edge, or data used to generate this knowledge, was retrieved.",
+      "examples": [
+        {
+          "object": {
+            "id": "urn:uuid:id",
+            "category": "biolink:RetrievalSource",
+            "resource_id": "infores:text-mining-provider-targeted",
+            "resource_role": "primary_knowledge_source",
+            "upstream_resource_ids": [
+              "infores:pubmed"
+            ]
+          },
+          "@type": "Example"
+        }
+      ],
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "InformationContentEntity",
       "slots": [
@@ -28465,7 +28981,8 @@
     {
       "name": "Procedure",
       "id_prefixes": [
-        "CPT"
+        "CPT",
+        "MAXO"
       ],
       "definition_uri": "https://w3id.org/biolink/vocab/Procedure",
       "description": "A series of actions conducted in a certain order or manner",
@@ -28478,7 +28995,8 @@
         "STY:T059",
         "STY:T060",
         "STY:T061",
-        "STY:T063"
+        "STY:T063",
+        "MAXO:0000001"
       ],
       "is_a": "NamedThing",
       "mixins": [
@@ -28728,6 +29246,7 @@
     {
       "name": "EnvironmentalProcess",
       "definition_uri": "https://w3id.org/biolink/vocab/EnvironmentalProcess",
+      "description": "A process that occurs within or involves the components of an environmental system.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "exact_mappings": [
         "ENVO:02500000"
@@ -28760,6 +29279,7 @@
     {
       "name": "EnvironmentalFeature",
       "definition_uri": "https://w3id.org/biolink/vocab/EnvironmentalFeature",
+      "description": "A system or entity in the natural environment that has the disposition to environ one or more material entities.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "exact_mappings": [
         "ENVO:01000254"
@@ -28866,6 +29386,7 @@
     {
       "name": "BiologicalEntity",
       "definition_uri": "https://w3id.org/biolink/vocab/BiologicalEntity",
+      "description": "A heterogeneous substance that contains genomic material or is the product of a biological process.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "aliases": [
         "bioentity"
@@ -28907,6 +29428,7 @@
     {
       "name": "GenomicEntity",
       "definition_uri": "https://w3id.org/biolink/vocab/GenomicEntity",
+      "description": "A generically dependent continuant that carries biological sequence that is part of or derived from a genome.",
       "in_subset": [
         "translator_minimal"
       ],
@@ -28926,6 +29448,7 @@
     {
       "name": "EpigenomicEntity",
       "definition_uri": "https://w3id.org/biolink/vocab/EpigenomicEntity",
+      "description": "A mixin for entities that represent epigenomic modifications or features associated with heritable changes in gene expression that do not involve changes to the DNA sequence itself.",
       "in_subset": [
         "translator_minimal"
       ],
@@ -29830,6 +30353,7 @@
         "ncats.bioplanet"
       ],
       "definition_uri": "https://w3id.org/biolink/vocab/Pathway",
+      "description": "A hierarchical ordering of connected molecular reactions (steps) that represent a specific biological process, such as signaling or metabolism.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "exact_mappings": [
         "PW:0000001",
@@ -29876,6 +30400,7 @@
         "REACT"
       ],
       "definition_uri": "https://w3id.org/biolink/vocab/PhysiologicalProcess",
+      "description": "A biological or chemical function within a living organism.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "aliases": [
         "physiology"
@@ -29923,6 +30448,7 @@
     {
       "name": "Behavior",
       "definition_uri": "https://w3id.org/biolink/vocab/Behavior",
+      "description": "The internally coordinated responses (actions or inactions) of organisms (individuals or groups) to internal or external stimuli, via a mechanism that involves nervous system activity.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "exact_mappings": [
         "GO:0007610",
@@ -30156,7 +30682,11 @@
         "UMLS"
       ],
       "definition_uri": "https://w3id.org/biolink/vocab/EnvironmentalFoodContaminant",
+      "description": "Any unwanted chemical in food. The term includes agrochemicals and industrial chemicals that may contaminate foodstuffs during their production, transportation or storage.",
       "from_schema": "https://w3id.org/biolink/vocab/",
+      "exact_mappings": [
+        "CHEBI:78299"
+      ],
       "related_mappings": [
         "CHEBI:78299"
       ],
@@ -30224,7 +30754,11 @@
         "UMLS"
       ],
       "definition_uri": "https://w3id.org/biolink/vocab/FoodAdditive",
+      "description": "Any substance which is added to food to preserve or enhance its flavour and/or appearance.",
       "from_schema": "https://w3id.org/biolink/vocab/",
+      "exact_mappings": [
+        "CHEBI:64047"
+      ],
       "related_mappings": [
         "CHEBI:64047"
       ],
@@ -30293,8 +30827,12 @@
         "UMLS"
       ],
       "definition_uri": "https://w3id.org/biolink/vocab/Food",
-      "description": "A substance consumed by a living organism as a source of nutrition",
+      "description": "A substance of plant, animal, or artificial origin consumed by a living organism to provide essential nutrients, energy, and support growth and the processes of life, or to satisfy other health needs or provide a social or organoleptic experience.",
       "from_schema": "https://w3id.org/biolink/vocab/",
+      "exact_mappings": [
+        "CHEBI:33290",
+        "FOODON:00002403"
+      ],
       "is_a": "ChemicalMixture",
       "slots": [
         "id",
@@ -30368,10 +30906,10 @@
     {
       "name": "PhenotypicQuality",
       "definition_uri": "https://w3id.org/biolink/vocab/PhenotypicQuality",
-      "description": "A property of a phenotype",
+      "description": "A characteristic of a phenotype (e.g., weight, size, shape, color) that can be observed, measured, or compared across organisms or conditions.",
       "examples": [
         {
-          "value": "weight",
+          "value": "PATO:0000128",
           "@type": "Example"
         }
       ],
@@ -30379,8 +30917,8 @@
       "aliases": [
         "phenotypic properties"
       ],
-      "mappings": [
-        "PATO:0000001"
+      "broad_mappings": [
+        "PATO:0001995"
       ],
       "is_a": "OrganismAttribute",
       "slots": [
@@ -30415,7 +30953,7 @@
         "NCIT"
       ],
       "definition_uri": "https://w3id.org/biolink/vocab/GeneticInheritance",
-      "description": "The pattern or 'mode' in which a particular genetic trait or disorder is passed from one generation to the next, e.g. autosomal dominant, autosomal recessive, etc.",
+      "description": "The pattern or 'mode' in which a particular genetic trait or disorder is passed from one generation to the next.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "aliases": [
         "inheritance"
@@ -30530,6 +31068,9 @@
       "name": "Virus",
       "definition_uri": "https://w3id.org/biolink/vocab/Virus",
       "description": "A virus is a microorganism that replicates itself as a microRNA and infects the host cell.",
+      "comments": [
+        "see: https://github.com/OBOFoundry/COB/pull/211"
+      ],
       "from_schema": "https://w3id.org/biolink/vocab/",
       "exact_mappings": [
         "NCBITaxon:10239",
@@ -30565,7 +31106,10 @@
     {
       "name": "CellularOrganism",
       "definition_uri": "https://w3id.org/biolink/vocab/CellularOrganism",
-      "description": "",
+      "description": "An organism that contains one or more cells belonging to the cellular lineages of life (Archaea, Bacteria, or Eukaryota), whose body consists of one or more cells. Distinguished from acellular biological entities such as viruses and viroids.",
+      "comments": [
+        "see: https://github.com/OBOFoundry/COB/pull/211"
+      ],
       "from_schema": "https://w3id.org/biolink/vocab/",
       "exact_mappings": [
         "NCBITaxon:131567"
@@ -30600,7 +31144,7 @@
     {
       "name": "Mammal",
       "definition_uri": "https://w3id.org/biolink/vocab/Mammal",
-      "description": "A member of the class Mammalia, a clade of endothermic amniotes distinguished from reptiles and birds by the possession of hair, three middle ear bones, mammary glands, and a neocortex",
+      "deprecated": "True",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "exact_mappings": [
         "NCBITaxon:40674",
@@ -30638,7 +31182,7 @@
     {
       "name": "Human",
       "definition_uri": "https://w3id.org/biolink/vocab/Human",
-      "description": "A member of the the species Homo sapiens.",
+      "deprecated": "True",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "exact_mappings": [
         "STY:T016",
@@ -30676,7 +31220,7 @@
     {
       "name": "Plant",
       "definition_uri": "https://w3id.org/biolink/vocab/Plant",
-      "description": "",
+      "deprecated": "True",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "exact_mappings": [
         "NCIT:C14258",
@@ -30711,7 +31255,7 @@
     {
       "name": "Invertebrate",
       "definition_uri": "https://w3id.org/biolink/vocab/Invertebrate",
-      "description": "An animal lacking a vertebral column. This group consists of 98% of all animal species.",
+      "deprecated": "True",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "exact_mappings": [
         "NCIT:C14228",
@@ -30749,7 +31293,7 @@
     {
       "name": "Vertebrate",
       "definition_uri": "https://w3id.org/biolink/vocab/Vertebrate",
-      "description": "A sub-phylum of animals consisting of those having a bony or cartilaginous vertebral column.",
+      "deprecated": "True",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "exact_mappings": [
         "STY:T010",
@@ -30786,7 +31330,7 @@
     {
       "name": "Fungus",
       "definition_uri": "https://w3id.org/biolink/vocab/Fungus",
-      "description": "A kingdom of eukaryotic, heterotrophic organisms that live as saprobes or parasites, including mushrooms, yeasts, smuts, molds, etc. They reproduce either sexually or asexually, and have life cycles that range from simple to complex. Filamentous fungi refer to those that grow as multicellular colonies (mushrooms and molds).",
+      "deprecated": "True",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "exact_mappings": [
         "STY:T004",
@@ -30876,7 +31420,13 @@
         "ORCID"
       ],
       "definition_uri": "https://w3id.org/biolink/vocab/IndividualOrganism",
-      "description": "An instance of an organism. For example, Richard Nixon, Charles Darwin, my pet cat. Example ID: ORCID:0000-0002-5355-2576",
+      "description": "An instance of an organism. For example, Charles Darwin, my pet cat.",
+      "examples": [
+        {
+          "value": "ORCID:0000-0002-5355-2576",
+          "@type": "Example"
+        }
+      ],
       "from_schema": "https://w3id.org/biolink/vocab/",
       "aliases": [
         "organism"
@@ -30970,12 +31520,12 @@
     {
       "name": "DiseaseOrPhenotypicFeature",
       "definition_uri": "https://w3id.org/biolink/vocab/DiseaseOrPhenotypicFeature",
-      "description": "Either one of a disease or an individual phenotypic feature. Some knowledge resources such as Monarch treat these as distinct, others such as MESH conflate.  Please see definitions of phenotypic feature and disease in this model for their independent descriptions.  This class is helpful to enforce domains and ranges that may involve either a disease or a phenotypic feature.",
+      "description": "A disease or an individual phenotypic feature, grouped as a single class to accommodate source vocabularies and assertions that do not distinguish the two. Prefer the more specific subclasses disease or phenotypic feature when the distinction is known.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "aliases": [
         "phenome"
       ],
-      "narrow_mappings": [
+      "related_mappings": [
         "STY:T033"
       ],
       "is_a": "BiologicalEntity",
@@ -31031,7 +31581,7 @@
         "PHARMGKB.DISEASE"
       ],
       "definition_uri": "https://w3id.org/biolink/vocab/Disease",
-      "description": "A disorder of structure or function, especially one that produces specific signs, phenotypes or symptoms or that affects a specific location and is not simply a direct result of physical injury.  A disposition to undergo pathological processes that exists in an organism because of one or more disorders in that organism.",
+      "description": "A disease is a disposition to undergo pathological processes that exists in an organism because of one or more disorders in that organism. A disorder of structure or function, especially one that produces specific signs, phenotypes or symptoms or that affects a specific location and is not simply a direct result of physical injury.",
       "in_subset": [
         "model_organism_database",
         "translator_minimal"
@@ -31106,7 +31656,7 @@
         "TO"
       ],
       "definition_uri": "https://w3id.org/biolink/vocab/PhenotypicFeature",
-      "description": "A combination of entity and quality that makes up a phenotyping statement. An observable characteristic of an individual resulting from the interaction of its genotype with its molecular and physical environment.",
+      "description": "A combination of entity and quality that makes up a phenotyping statement. An observable characteristic of an individual often resulting from the interaction of its genotype with its molecular and physical environment.",
       "examples": [
         {
           "value": "MP:0001262",
@@ -31227,7 +31777,19 @@
         "FMA"
       ],
       "definition_uri": "https://w3id.org/biolink/vocab/AnatomicalEntity",
-      "description": "A subcellular location, cell type or gross anatomical part",
+      "description": "A part of a cellular organism at or above the granularity of a protein complex. This is a grouping class with three concrete subclasses that should be preferred when applicable: \"biolink:Cell\" for whole cells, \"biolink:CellularComponent\" for subcellular and intracellular structures (organelles, membranes, bacterial flagella, etc.), and \"biolink:GrossAnatomcialStructure\" for multicellular parts (tissues, organs, body parts). Excludes viral and other acellular biological entities.",
+      "examples": [
+        {
+          "value": "UBERON:0000178",
+          "description": "blood",
+          "@type": "Example"
+        },
+        {
+          "value": "UBERON:0002553",
+          "description": "anatomical cavity",
+          "@type": "Example"
+        }
+      ],
       "in_subset": [
         "model_organism_database"
       ],
@@ -31298,6 +31860,33 @@
       ],
       "definition_uri": "https://w3id.org/biolink/vocab/CellularComponent",
       "description": "A location in or around a cell",
+      "examples": [
+        {
+          "value": "GO:0005739",
+          "description": "mitochondrion",
+          "@type": "Example"
+        },
+        {
+          "value": "GO:0005634",
+          "description": "nucleus",
+          "@type": "Example"
+        },
+        {
+          "value": "GO:0005886",
+          "description": "plasma membrane",
+          "@type": "Example"
+        },
+        {
+          "value": "GO:0009288",
+          "description": "bacterial-type flagellum",
+          "@type": "Example"
+        },
+        {
+          "value": "GO:0031012",
+          "description": "extracellular matrix",
+          "@type": "Example"
+        }
+      ],
       "from_schema": "https://w3id.org/biolink/vocab/",
       "aliases": [
         "cell component",
@@ -31349,6 +31938,19 @@
         "MESH"
       ],
       "definition_uri": "https://w3id.org/biolink/vocab/Cell",
+      "description": "The basic structural and functional unit of all organisms. Includes the plasma membrane and any external encapsulating structures such as the cell wall and cell envelope.",
+      "examples": [
+        {
+          "value": "CL:0000540",
+          "description": "neuron",
+          "@type": "Example"
+        },
+        {
+          "value": "CL:0000236",
+          "description": "B cell",
+          "@type": "Example"
+        }
+      ],
       "from_schema": "https://w3id.org/biolink/vocab/",
       "exact_mappings": [
         "GO:0005623",
@@ -31388,6 +31990,7 @@
         "CLO"
       ],
       "definition_uri": "https://w3id.org/biolink/vocab/CellLine",
+      "description": "A cultured cell population that is genetically stable and homogeneous, sharing a common propagation history through successive passages in culture.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "exact_mappings": [
         "CLO:0000031"
@@ -31430,6 +32033,39 @@
         "FAO"
       ],
       "definition_uri": "https://w3id.org/biolink/vocab/GrossAnatomicalStructure",
+      "description": "An anatomical structure that has more than one cell as a part.",
+      "examples": [
+        {
+          "value": "UBERON:0000955",
+          "description": "brain",
+          "@type": "Example"
+        },
+        {
+          "value": "UBERON:0002107",
+          "description": "liver",
+          "@type": "Example"
+        },
+        {
+          "value": "UBERON:0000479",
+          "description": "tissue",
+          "@type": "Example"
+        },
+        {
+          "value": "PO:0009046",
+          "description": "flower",
+          "@type": "Example"
+        },
+        {
+          "value": "PO:0009025",
+          "description": "leaf",
+          "@type": "Example"
+        },
+        {
+          "value": "FAO:0001001",
+          "description": "hypha",
+          "@type": "Example"
+        }
+      ],
       "from_schema": "https://w3id.org/biolink/vocab/",
       "aliases": [
         "tissue",
@@ -31525,9 +32161,13 @@
     {
       "name": "GeneOrGeneProductOrGeneFamily",
       "definition_uri": "https://w3id.org/biolink/vocab/GeneOrGeneProductOrGeneFamily",
-      "description": "A union of gene family or gene loci or gene products, useful to define the association between a gene or gene product or gene family and some other general class of entity (e.g. biological process or anatomical entity)",
+      "description": "A union of gene family or gene loci or gene products, useful to define the association between a gene or gene product or gene family and some other general class of entity.",
       "from_schema": "https://w3id.org/biolink/vocab/",
+      "is_a": "MacromolecularMachineMixin",
       "mixin": true,
+      "slots": [
+        "macromolecular_machine_mixin_name"
+      ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/GeneOrGeneProductOrGeneFamily",
       "@type": "ClassDefinition"
@@ -31576,6 +32216,7 @@
       "is_a": "BiologicalEntity",
       "mixins": [
         "GeneOrGeneProduct",
+        "GeneOrGeneProductOrGeneFamily",
         "GenomicEntity",
         "ChemicalEntityOrGeneOrGeneProduct",
         "PhysicalEssence",
@@ -31698,7 +32339,7 @@
     {
       "name": "NucleosomeModification",
       "definition_uri": "https://w3id.org/biolink/vocab/NucleosomeModification",
-      "description": "A chemical modification of a histone protein within a nucleosome octomer or a substitution of a histone with a variant histone isoform. e.g. Histone 4 Lysine 20 methylation (H4K20me), histone variant H2AZ substituting H2A.",
+      "description": "A chemical modification of a histone protein within a nucleosome octomer or a substitution of a histone with a variant histone isoform.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "BiologicalEntity",
       "mixins": [
@@ -31855,6 +32496,7 @@
     {
       "name": "CodingSequence",
       "definition_uri": "https://w3id.org/biolink/vocab/CodingSequence",
+      "description": "A contiguous sequence which begins with, and includes, a start codon and ends with, and includes, a stop codon.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "exact_mappings": [
         "SO:0000316",
@@ -32001,7 +32643,10 @@
         "ENSEMBL"
       ],
       "definition_uri": "https://w3id.org/biolink/vocab/ProteinIsoform",
-      "description": "Represents a protein that is a specific isoform of the canonical or reference protein. See https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4114032/",
+      "description": "Represents a protein that is a specific isoform of the canonical or reference protein.",
+      "comments": [
+        "See https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4114032/"
+      ],
       "from_schema": "https://w3id.org/biolink/vocab/",
       "aliases": [
         "proteoform"
@@ -32036,7 +32681,7 @@
     {
       "name": "ProteinDomain",
       "definition_uri": "https://w3id.org/biolink/vocab/ProteinDomain",
-      "description": "A conserved part of protein sequence and (tertiary) structure that can evolve, function, and exist independently of the rest of the protein chain. Protein domains maintain their structure and function independently of the proteins in which they are found. e.g. an SH3 domain.",
+      "description": "A conserved part of protein sequence and (tertiary) structure that can evolve, function, and exist independently of the rest of the protein chain. Protein domains maintain their structure and function independently of the proteins in which they are found.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "exact_mappings": [
         "NCIT:C13379",
@@ -32074,9 +32719,28 @@
     },
     {
       "name": "PosttranslationalModification",
+      "id_prefixes": [
+        "MOD",
+        "UNIMOD"
+      ],
       "definition_uri": "https://w3id.org/biolink/vocab/PosttranslationalModification",
-      "description": "A chemical modification of a polypeptide or protein that occurs after translation. e.g. polypeptide cleavage to form separate proteins, methylation or acetylation of histone tail amino acids, protein ubiquitination.",
+      "description": "A chemical modification of a polypeptide or protein that occurs after translation, altering its structure, activity, localization, or interactions.",
+      "examples": [
+        {
+          "value": "MOD:00696",
+          "description": "phosphorylated residue",
+          "@type": "Example"
+        },
+        {
+          "value": "MOD:01148",
+          "description": "ubiquitinylated lysine",
+          "@type": "Example"
+        }
+      ],
       "from_schema": "https://w3id.org/biolink/vocab/",
+      "exact_mappings": [
+        "MOD:00000"
+      ],
       "is_a": "BiologicalEntity",
       "mixins": [
         "GeneProductIsoformMixin"
@@ -32107,6 +32771,7 @@
     {
       "name": "ProteinFamily",
       "definition_uri": "https://w3id.org/biolink/vocab/ProteinFamily",
+      "description": "A set of proteins coding for diverse functions which, by virtue of their high degree of sequence similarity, are believed to have evolved from a single ancestral gene.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "exact_mappings": [
         "NCIT:C26004",
@@ -32149,7 +32814,7 @@
     {
       "name": "NucleicAcidSequenceMotif",
       "definition_uri": "https://w3id.org/biolink/vocab/NucleicAcidSequenceMotif",
-      "description": "A linear nucleotide sequence pattern that is widespread and has, or is conjectured to have, a biological significance. e.g. the TATA box promoter motif, transcription factor binding consensus sequences.",
+      "description": "A linear nucleotide sequence pattern that is widespread and has, or is conjectured to have, a biological significance. consensus sequences.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "aliases": [
         "consensus sequence"
@@ -32181,9 +32846,21 @@
     {
       "name": "RNAProduct",
       "id_prefixes": [
-        "RNACENTRAL"
+        "RNACENTRAL",
+        "mirbase"
       ],
       "definition_uri": "https://w3id.org/biolink/vocab/RNAProduct",
+      "description": "High molecular weight, linear polymers, composed of nucleotides containing ribose and linked by phosphodiester bonds typically synthesized by a DNA- or RNA-dependent RNA polymerase that constitutes the product of a gene. Distinct in emphasis from `biolink:Transcript`, which denotes the informational output of transcription at the gene-model level rather than the chemical species itself.",
+      "examples": [
+        {
+          "value": "RNACENTRAL:URS00005EB5B7_9606",
+          "@type": "Example"
+        },
+        {
+          "value": "mirbase:MI0000060",
+          "@type": "Example"
+        }
+      ],
       "from_schema": "https://w3id.org/biolink/vocab/",
       "exact_mappings": [
         "CHEBI:33697",
@@ -32259,6 +32936,7 @@
         "ENSEMBL"
       ],
       "definition_uri": "https://w3id.org/biolink/vocab/NoncodingRNAProduct",
+      "description": "An RNA transcript that does not encode for a protein rather the RNA molecule is the functional gene product.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "exact_mappings": [
         "SO:0000655",
@@ -32293,9 +32971,11 @@
       "id_prefixes": [
         "MIR",
         "HGNC",
-        "WormBase"
+        "WormBase",
+        "mirbase"
       ],
       "definition_uri": "https://w3id.org/biolink/vocab/MicroRNA",
+      "description": "A small (~22 nucleotide) RNA molecule that is the endogenous transcript of a miRNA gene. Produced from precursor molecules that form hairpin structures, which are processed (typically via the Dicer pathway) to yield a single miRNA molecule. miRNAs function by triggering cleavage of target molecules or acting as translational repressors.",
       "in_subset": [
         "model_organism_database"
       ],
@@ -32433,6 +33113,7 @@
       "is_a": "BiologicalEntity",
       "mixins": [
         "GeneGroupingMixin",
+        "GeneOrGeneProductOrGeneFamily",
         "ChemicalEntityOrGeneOrGeneProduct"
       ],
       "slots": [
@@ -32462,6 +33143,7 @@
     {
       "name": "Zygosity",
       "definition_uri": "https://w3id.org/biolink/vocab/Zygosity",
+      "description": "An allelic state describing the degree of similarity between features at a single locus, specifically whether alleles at the same location on paired chromosomes are identical or different.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "exact_mappings": [
         "GENO:0000133"
@@ -33000,6 +33682,7 @@
     {
       "name": "ClinicalIntervention",
       "definition_uri": "https://w3id.org/biolink/vocab/ClinicalIntervention",
+      "description": "A medical procedure, treatment, or action taken by healthcare professionals to modify the course of a disease or condition.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "ClinicalEntity",
       "slots": [
@@ -33061,6 +33744,7 @@
     {
       "name": "Hospitalization",
       "definition_uri": "https://w3id.org/biolink/vocab/Hospitalization",
+      "description": "The admission and care of a patient in a hospital for observation, diagnosis, or treatment.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "exact_mappings": [
         "SNOMEDCT:32485007",
@@ -33357,7 +34041,7 @@
     {
       "name": "PathologicalProcessExposure",
       "definition_uri": "https://w3id.org/biolink/vocab/PathologicalProcessExposure",
-      "description": "A pathological process, when viewed as an exposure, representing a precondition, leading to or influencing an outcome, e.g. autoimmunity leading to disease.",
+      "description": "A pathological process, when viewed as an exposure, representing a precondition, leading to or influencing an outcome.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "ExposureEvent",
       "slots": [
@@ -33428,7 +34112,7 @@
     {
       "name": "PathologicalAnatomicalExposure",
       "definition_uri": "https://w3id.org/biolink/vocab/PathologicalAnatomicalExposure",
-      "description": "An abnormal anatomical structure, when viewed as an exposure, representing an precondition, leading to or influencing an outcome, e.g. thrombosis leading to an ischemic disease outcome.",
+      "description": "An abnormal anatomical structure, when viewed as an exposure, represented as a precondition, leading to or influencing an outcome.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "ExposureEvent",
       "slots": [
@@ -33464,7 +34148,7 @@
     {
       "name": "DiseaseOrPhenotypicFeatureExposure",
       "definition_uri": "https://w3id.org/biolink/vocab/DiseaseOrPhenotypicFeatureExposure",
-      "description": "A disease or phenotypic feature state, when viewed as an exposure, represents an precondition, leading to or influencing an outcome, e.g. HIV predisposing an individual to infections; a relative deficiency of skin pigmentation predisposing an individual to skin cancer.",
+      "description": "A disease or phenotypic feature state, when viewed as an exposure, represented as a precondition, leading to or influencing an outcome,.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "ExposureEvent",
       "mixins": [
@@ -33544,7 +34228,7 @@
     {
       "name": "ComplexChemicalExposure",
       "definition_uri": "https://w3id.org/biolink/vocab/ComplexChemicalExposure",
-      "description": "A complex chemical exposure is an intake of a chemical mixture (e.g. gasoline), other than a drug.",
+      "description": "A complex chemical exposure is an intake of a chemical mixture, other than a drug.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "ExposureEvent",
       "slots": [
@@ -33889,7 +34573,7 @@
     {
       "name": "SocioeconomicExposure",
       "definition_uri": "https://w3id.org/biolink/vocab/SocioeconomicExposure",
-      "description": "A socioeconomic exposure is a factor relating to social and financial status of an affected individual (e.g. poverty).",
+      "description": "A socioeconomic exposure is a factor relating to social and financial status of an affected individual.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "ExposureEvent",
       "slots": [
@@ -33925,7 +34609,7 @@
     {
       "name": "Outcome",
       "definition_uri": "https://w3id.org/biolink/vocab/Outcome",
-      "description": "An entity that has the role of being the consequence of an exposure event. This is an abstract mixin grouping of various categories of possible biological or non-biological (e.g. clinical) outcomes.",
+      "description": "An entity that has the role of being the consequence of an exposure event. This is an abstract mixin grouping of various categories of possible biological or non-biological outcomes.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "mixin": true,
       "slot_usage": {},
@@ -34037,6 +34721,47 @@
       "description": "A typed association between two entities, supported by evidence",
       "comments": [
         "This is roughly the model used by biolink and ontobio at the moment"
+      ],
+      "examples": [
+        {
+          "object": {
+            "subject": "NCBIGene:6910",
+            "predicate": "biolink:acts_upstream_of",
+            "object": "GO:1901846",
+            "category": "biolink:Association",
+            "knowledge_level": "knowledge_assertion",
+            "agent_type": "manual_agent",
+            "publications": [
+              "PMID:15289437"
+            ]
+          },
+          "@type": "Example"
+        },
+        {
+          "object": {
+            "subject": "NCBIGene:4357",
+            "predicate": "biolink:enables",
+            "object": "GO:0005515",
+            "category": "biolink:Association",
+            "knowledge_level": "knowledge_assertion",
+            "agent_type": "manual_agent",
+            "publications": [
+              "PMID:32296183"
+            ]
+          },
+          "@type": "Example"
+        },
+        {
+          "object": {
+            "subject": "CHEBI:114566",
+            "predicate": "biolink:subclass_of",
+            "object": "CHEBI:38166",
+            "category": "biolink:Association",
+            "knowledge_level": "knowledge_assertion",
+            "agent_type": "manual_agent"
+          },
+          "@type": "Example"
+        }
       ],
       "from_schema": "https://w3id.org/biolink/vocab/",
       "exact_mappings": [
@@ -35350,6 +36075,38 @@
       "name": "ChemicalEntityToChemicalEntityAssociation",
       "definition_uri": "https://w3id.org/biolink/vocab/ChemicalEntityToChemicalEntityAssociation",
       "description": "A relationship between two chemical entities. This can encompass actual interactions as well as temporal causal edges, e.g. one chemical converted to another.",
+      "examples": [
+        {
+          "object": {
+            "subject": "CHEBI:85990",
+            "predicate": "biolink:has_metabolite",
+            "object": "PUBCHEM.COMPOUND:155543741",
+            "category": "biolink:ChemicalEntityToChemicalEntityAssociation",
+            "knowledge_level": "knowledge_assertion",
+            "agent_type": "manual_agent",
+            "publications": [
+              "PMID:22344701"
+            ],
+            "species_context_qualifier": "NCBITaxon:9606"
+          },
+          "@type": "Example"
+        },
+        {
+          "object": {
+            "subject": "CHEBI:85973",
+            "predicate": "biolink:has_metabolite",
+            "object": "UNII:9O1PTP64VA",
+            "category": "biolink:ChemicalEntityToChemicalEntityAssociation",
+            "knowledge_level": "knowledge_assertion",
+            "agent_type": "manual_agent",
+            "publications": [
+              "PMID:22936313"
+            ],
+            "species_context_qualifier": "NCBITaxon:9606"
+          },
+          "@type": "Example"
+        }
+      ],
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "Association",
       "slots": [
@@ -35415,6 +36172,7 @@
     {
       "name": "ReactionToParticipantAssociation",
       "definition_uri": "https://w3id.org/biolink/vocab/ReactionToParticipantAssociation",
+      "description": "An association between a biochemical reaction and a participating molecular entity, qualified by the stoichiometry, the side (reactant vs. product) on which the participant appears, and the direction of the reaction.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "ChemicalEntityToChemicalEntityAssociation",
       "slots": [
@@ -35484,6 +36242,7 @@
     {
       "name": "ReactionToCatalystAssociation",
       "definition_uri": "https://w3id.org/biolink/vocab/ReactionToCatalystAssociation",
+      "description": "A specialization of reaction-to-participant association in which the participant is a gene or gene product (e.g., an enzyme) that catalyses the reaction.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "ReactionToParticipantAssociation",
       "slots": [
@@ -35617,6 +36376,74 @@
       "name": "ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation",
       "definition_uri": "https://w3id.org/biolink/vocab/ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation",
       "description": "An interaction between a chemical entity and a phenotype or disease, where the presence of the chemical gives rise to or exacerbates the phenotype.",
+      "examples": [
+        {
+          "object": {
+            "subject": "CHEBI:167638",
+            "predicate": "biolink:contraindicated_in",
+            "object": "UMLS:C0271149",
+            "category": "biolink:ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation",
+            "knowledge_level": "knowledge_assertion",
+            "agent_type": "manual_validation_of_automated_agent"
+          },
+          "@type": "Example"
+        },
+        {
+          "object": {
+            "subject": "CHEBI:25879",
+            "predicate": "biolink:contraindicated_in",
+            "object": "UMLS:C0234976",
+            "category": "biolink:ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation",
+            "knowledge_level": "knowledge_assertion",
+            "agent_type": "manual_validation_of_automated_agent"
+          },
+          "@type": "Example"
+        },
+        {
+          "object": {
+            "subject": "PUBCHEM.COMPOUND:134612761",
+            "predicate": "biolink:diagnoses",
+            "object": "UMLS:C1720505",
+            "category": "biolink:ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation",
+            "knowledge_level": "knowledge_assertion",
+            "agent_type": "manual_validation_of_automated_agent"
+          },
+          "@type": "Example"
+        },
+        {
+          "object": {
+            "subject": "CHEBI:82720",
+            "predicate": "biolink:preventative_for_condition",
+            "object": "UMLS:C1320716",
+            "category": "biolink:ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation",
+            "knowledge_level": "knowledge_assertion",
+            "agent_type": "manual_validation_of_automated_agent"
+          },
+          "@type": "Example"
+        },
+        {
+          "object": {
+            "subject": "CHEBI:6919",
+            "predicate": "biolink:treats",
+            "object": "EFO:1001421",
+            "category": "biolink:ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation",
+            "knowledge_level": "knowledge_assertion",
+            "agent_type": "manual_validation_of_automated_agent"
+          },
+          "@type": "Example"
+        },
+        {
+          "object": {
+            "subject": "CHEBI:135361",
+            "predicate": "biolink:treats",
+            "object": "MONDO:0005324",
+            "category": "biolink:ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation",
+            "knowledge_level": "knowledge_assertion",
+            "agent_type": "manual_validation_of_automated_agent"
+          },
+          "@type": "Example"
+        }
+      ],
       "from_schema": "https://w3id.org/biolink/vocab/",
       "narrow_mappings": [
         "SIO:000993"
@@ -36196,7 +37023,7 @@
     {
       "name": "NamedThingAssociatedWithLikelihoodOfNamedThingAssociation",
       "definition_uri": "https://w3id.org/biolink/vocab/NamedThingAssociatedWithLikelihoodOfNamedThingAssociation",
-      "description": "",
+      "description": "An association in which the subject entity is linked to the likelihood of the object entity occurring, manifesting, or being observed. Subject and object may each be qualified by aspect and context, and the association may be further qualified by a population context.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "Association",
       "slots": [
@@ -36273,6 +37100,47 @@
       "name": "ChemicalGeneInteractionAssociation",
       "definition_uri": "https://w3id.org/biolink/vocab/ChemicalGeneInteractionAssociation",
       "description": "describes an interaction between a chemical entity and a gene or gene product. Any biological or chemical effect resulting from such an interaction are out of scope, and covered by the ChemicalAffectsGeneAssociation type (e.g. impact of a chemical on the abundance, activity, structure, etc, of either participant in the interaction)",
+      "examples": [
+        {
+          "object": {
+            "subject": "CHEBI:135370",
+            "predicate": "biolink:directly_physically_interacts_with",
+            "object": "UniProtKB:P0DP23",
+            "category": "biolink:ChemicalGeneInteractionAssociation",
+            "knowledge_level": "knowledge_assertion",
+            "agent_type": "manual_agent"
+          },
+          "@type": "Example"
+        },
+        {
+          "object": {
+            "subject": "CHEBI:4779",
+            "predicate": "biolink:directly_physically_interacts_with",
+            "object": "NCBIGene:3269",
+            "category": "biolink:ChemicalGeneInteractionAssociation",
+            "knowledge_level": "knowledge_assertion",
+            "agent_type": "manual_agent",
+            "publications": [
+              "http://www.accessdata.fda.gov/drugsatfda_docs/label/2003/20706slr011_emadine_lbl.pdf"
+            ]
+          },
+          "@type": "Example"
+        },
+        {
+          "object": {
+            "subject": "UNII:OP35X9610Y",
+            "predicate": "biolink:interacts_with",
+            "object": "NCBIGene:2690",
+            "category": "biolink:ChemicalGeneInteractionAssociation",
+            "knowledge_level": "knowledge_assertion",
+            "agent_type": "manual_agent",
+            "publications": [
+              "https://www.accessdata.fda.gov/drugsatfda_docs/label/2021/761177Orig1s000lbl.pdf"
+            ]
+          },
+          "@type": "Example"
+        }
+      ],
       "from_schema": "https://w3id.org/biolink/vocab/",
       "broad_mappings": [
         "SIO:001257"
@@ -36354,6 +37222,30 @@
       "description": "Describes the relationship between an enzyme (usually a macromolecular complex or gene product) and the molecules it acts on (substrate). The substrate can be a chemical, a polypeptide, or a protein.",
       "notes": [
         "Using macromolecular machine should cover cases of gene-protein conflation."
+      ],
+      "examples": [
+        {
+          "object": {
+            "subject": "NCBIGene:6530",
+            "predicate": "biolink:has_substrate",
+            "object": "CHEBI:5557",
+            "category": "biolink:MacromolecularMachineHasSubstrateAssociation",
+            "knowledge_level": "knowledge_assertion",
+            "agent_type": "manual_agent"
+          },
+          "@type": "Example"
+        },
+        {
+          "object": {
+            "subject": "NCBIGene:50719",
+            "predicate": "biolink:has_substrate",
+            "object": "UNII:UID84303EL",
+            "category": "biolink:MacromolecularMachineHasSubstrateAssociation",
+            "knowledge_level": "knowledge_assertion",
+            "agent_type": "manual_agent"
+          },
+          "@type": "Example"
+        }
       ],
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "Association",
@@ -36624,6 +37516,89 @@
       "name": "ChemicalAffectsGeneAssociation",
       "definition_uri": "https://w3id.org/biolink/vocab/ChemicalAffectsGeneAssociation",
       "description": "Describes an effect that a chemical has on a gene or gene product (e.g. an impact of on its abundance, activity,localization, processing, expression, etc.)",
+      "examples": [
+        {
+          "object": {
+            "subject": "PUBCHEM.COMPOUND:168290237",
+            "predicate": "biolink:affects",
+            "object": "NCBIGene:200424",
+            "category": "biolink:ChemicalAffectsGeneAssociation",
+            "knowledge_level": "knowledge_assertion",
+            "agent_type": "automated_agent",
+            "publications": [
+              "PMID:35978680"
+            ],
+            "object_aspect_qualifier": "activity",
+            "object_direction_qualifier": "decreased",
+            "causal_mechanism_qualifier": "inhibition",
+            "qualified_predicate": "biolink:causes",
+            "species_context_qualifier": "NCBITaxon:9606"
+          },
+          "@type": "Example"
+        },
+        {
+          "object": {
+            "subject": "CHEBI:91447",
+            "predicate": "biolink:directly_physically_interacts_with",
+            "object": "NCBIGene:3313",
+            "category": "biolink:ChemicalAffectsGeneAssociation",
+            "knowledge_level": "knowledge_assertion",
+            "agent_type": "automated_agent",
+            "publications": [
+              "PMID:29928781"
+            ],
+            "causal_mechanism_qualifier": "binding",
+            "species_context_qualifier": "NCBITaxon:9606"
+          },
+          "@type": "Example"
+        },
+        {
+          "object": {
+            "subject": "UNII:5V9KLZ54CY",
+            "predicate": "biolink:has_substrate",
+            "object": "NCBIGene:5244",
+            "category": "biolink:ChemicalAffectsGeneAssociation",
+            "knowledge_level": "knowledge_assertion",
+            "agent_type": "manual_agent",
+            "publications": [
+              "PMID:20190787"
+            ],
+            "species_context_qualifier": "NCBITaxon:9606"
+          },
+          "@type": "Example"
+        },
+        {
+          "object": {
+            "subject": "CHEMBL.COMPOUND:CHEMBL1743027",
+            "predicate": "biolink:interacts_with",
+            "object": "NCBIGene:768",
+            "category": "biolink:ChemicalAffectsGeneAssociation",
+            "knowledge_level": "knowledge_assertion",
+            "agent_type": "manual_agent",
+            "publications": [
+              "http://www.wilex.de/portfolio-english/rencarex/therapeutic-target/",
+              "PMID:11941456"
+            ],
+            "species_context_qualifier": "NCBITaxon:9606"
+          },
+          "@type": "Example"
+        },
+        {
+          "object": {
+            "subject": "CHEBI:3546",
+            "predicate": "biolink:affects",
+            "object": "NCBIGene:4790",
+            "category": "biolink:ChemicalAffectsGeneAssociation",
+            "knowledge_level": "knowledge_assertion",
+            "agent_type": "manual_agent",
+            "object_aspect_qualifier": "activity",
+            "object_direction_qualifier": "decreased",
+            "causal_mechanism_qualifier": "inhibition",
+            "qualified_predicate": "biolink:causes"
+          },
+          "@type": "Example"
+        }
+      ],
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "ChemicalAffectsBiologicalEntityAssociation",
       "slots": [
@@ -36705,7 +37680,39 @@
       "description": "Describes an effect that a gene or gene product has on a chemical entity (e.g. an impact of on its abundance, activity, localization, processing, transport, etc.)",
       "examples": [
         {
-          "value": "JsonObj(subject='TRPC4', predicate='affects', qualified_predicate='causes', object='Barium', object_aspect_qualifier='transport', object_direction_qualifier='increased')",
+          "object": {
+            "subject": "NCBIGene:6616",
+            "predicate": "biolink:affects",
+            "object": "CHEMBL.COMPOUND:CHEMBL3707322",
+            "category": "biolink:GeneAffectsChemicalAssociation",
+            "knowledge_level": "knowledge_assertion",
+            "agent_type": "manual_agent",
+            "publications": [
+              "CHEMBL.DOCUMENT:CHEMBL2107839",
+              "https://www.accessdata.fda.gov/drugsatfda_docs/label/2024/761225s000lbl.pdf"
+            ],
+            "subject_aspect_qualifier": "hydrolysis",
+            "subject_direction_qualifier": "increased",
+            "qualified_predicate": "biolink:causes",
+            "species_context_qualifier": "NCBITaxon:9606"
+          },
+          "@type": "Example"
+        },
+        {
+          "object": {
+            "subject": "CHEBI:3172",
+            "predicate": "biolink:has_substrate",
+            "object": "NCBIGene:6530",
+            "category": "biolink:GeneAffectsChemicalAssociation",
+            "knowledge_level": "knowledge_assertion",
+            "agent_type": "manual_agent",
+            "publications": [
+              "ISBN:9780702034718 PP. 190-191",
+              "PMID:18071295",
+              "PMID:9142404"
+            ],
+            "species_context_qualifier": "NCBITaxon:9606"
+          },
           "@type": "Example"
         }
       ],
@@ -37012,6 +38019,7 @@
     {
       "name": "DiseaseToEntityAssociationMixin",
       "definition_uri": "https://w3id.org/biolink/vocab/DiseaseToEntityAssociationMixin",
+      "description": "A mixin applied to any association whose subject (source node) is a disease.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "mixin": true,
       "slots": [
@@ -37309,6 +38317,7 @@
     {
       "name": "EntityToPhenotypicFeatureAssociationMixin",
       "definition_uri": "https://w3id.org/biolink/vocab/EntityToPhenotypicFeatureAssociationMixin",
+      "description": "A mixin applied to any association whose object (target node) is a phenotypic feature.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "EntityToFeatureOrDiseaseQualifiersMixin",
       "mixin": true,
@@ -37344,6 +38353,7 @@
     {
       "name": "PhenotypicFeatureToEntityAssociationMixin",
       "definition_uri": "https://w3id.org/biolink/vocab/PhenotypicFeatureToEntityAssociationMixin",
+      "description": "A mixin applied to any association whose subject (source node) is a phenotypic feature.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "FeatureOrDiseaseQualifiersToEntityMixin",
       "mixin": true,
@@ -38382,6 +39392,7 @@
     {
       "name": "GeneToPhenotypicFeatureAssociation",
       "definition_uri": "https://w3id.org/biolink/vocab/GeneToPhenotypicFeatureAssociation",
+      "description": "An association between a gene or gene product and a phenotypic feature, where variation in the gene is correlated with the phenotypic feature.",
       "comments": [
         "NCIT:R176 refers to the inverse relationship",
         "for use in describing the affect that the loss of function of a gene can have on exacerbating or ameliorating a symptom/phenotype",
@@ -38476,10 +39487,35 @@
     {
       "name": "GeneToDiseaseAssociation",
       "definition_uri": "https://w3id.org/biolink/vocab/GeneToDiseaseAssociation",
+      "description": "An association between a gene or gene product and a disease, where variation in the gene is correlated with the disease.",
       "comments": [
         "NCIT:R176 refers to the inverse relationship",
         "for use in describing the affect that the loss of function of a gene can have on exacerbating or ameliorating a disease",
         "if the relationship of the statement using this predicate is statistical in nature, please use `associated with likelihood` or one of its children."
+      ],
+      "examples": [
+        {
+          "object": {
+            "subject": "NCBIGene:60",
+            "predicate": "biolink:associated_with",
+            "object": "MONDO:0017579",
+            "category": "biolink:GeneToDiseaseAssociation",
+            "knowledge_level": "knowledge_assertion",
+            "agent_type": "manual_agent"
+          },
+          "@type": "Example"
+        },
+        {
+          "object": {
+            "subject": "UniProtKB:P11274-1",
+            "predicate": "biolink:associated_with",
+            "object": "MONDO:0011996",
+            "category": "biolink:GeneToDiseaseAssociation",
+            "knowledge_level": "knowledge_assertion",
+            "agent_type": "manual_agent"
+          },
+          "@type": "Example"
+        }
       ],
       "from_schema": "https://w3id.org/biolink/vocab/",
       "exact_mappings": [
@@ -38561,6 +39597,7 @@
     {
       "name": "CausalGeneToDiseaseAssociation",
       "definition_uri": "https://w3id.org/biolink/vocab/CausalGeneToDiseaseAssociation",
+      "description": "An association between a gene and a disease where variation in the gene has been shown to have a causal role in the disease.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "Association",
       "mixins": [
@@ -38633,6 +39670,31 @@
     {
       "name": "CorrelatedGeneToDiseaseAssociation",
       "definition_uri": "https://w3id.org/biolink/vocab/CorrelatedGeneToDiseaseAssociation",
+      "description": "An association between a gene (or gene product) and a disease for which the gene is statistically correlated with the disease rather than asserted as causal. Such associations typically derive from GWAS, co-occurrence analyses, or other statistical methods, and are annotated with scores such as a z-score or a diseases confidence score.",
+      "examples": [
+        {
+          "object": {
+            "subject": "NCBIGene:8506",
+            "predicate": "biolink:occurs_together_in_literature_with",
+            "object": "MONDO:0004585",
+            "category": "biolink:CorrelatedGeneToDiseaseAssociation",
+            "knowledge_level": "text_co_occurrence",
+            "agent_type": "data_analysis_pipeline"
+          },
+          "@type": "Example"
+        },
+        {
+          "object": {
+            "subject": "UniProtKB:Q2KHT3-1",
+            "predicate": "biolink:occurs_together_in_literature_with",
+            "object": "MONDO:0005578",
+            "category": "biolink:CorrelatedGeneToDiseaseAssociation",
+            "knowledge_level": "text_co_occurrence",
+            "agent_type": "data_analysis_pipeline"
+          },
+          "@type": "Example"
+        }
+      ],
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "Association",
       "mixins": [
@@ -38713,6 +39775,7 @@
     {
       "name": "DruggableGeneToDiseaseAssociation",
       "definition_uri": "https://w3id.org/biolink/vocab/DruggableGeneToDiseaseAssociation",
+      "description": "An association between a gene (or gene product) and a disease in which the gene is classified by its druggability (e.g., via the IDG/Pharos target development-level tiers).",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "GeneToDiseaseAssociation",
       "mixins": [
@@ -38794,6 +39857,7 @@
     {
       "name": "PhenotypicFeatureToDiseaseAssociation",
       "definition_uri": "https://w3id.org/biolink/vocab/PhenotypicFeatureToDiseaseAssociation",
+      "description": "An association between a phenotypic feature (sign or symptom) and a disease, where the phenotypic feature is a manifestation or clinical indicator of the disease.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "Association",
       "mixins": [
@@ -39157,6 +40221,7 @@
     {
       "name": "VariantToPhenotypicFeatureAssociation",
       "definition_uri": "https://w3id.org/biolink/vocab/VariantToPhenotypicFeatureAssociation",
+      "description": "An association between a sequence variant and a phenotypic feature, in which the allele state of the variant is linked to the manifestation of the phenotype.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "Association",
       "mixins": [
@@ -39237,6 +40302,7 @@
     {
       "name": "VariantToDiseaseAssociation",
       "definition_uri": "https://w3id.org/biolink/vocab/VariantToDiseaseAssociation",
+      "description": "An association between a sequence variant and a disease, in which the allele state of the variant is linked to the disease state.",
       "comments": [
         "TODO decide no how to model pathogenicity"
       ],
@@ -39315,6 +40381,7 @@
     {
       "name": "GenotypeToDiseaseAssociation",
       "definition_uri": "https://w3id.org/biolink/vocab/GenotypeToDiseaseAssociation",
+      "description": "An association between a genotype and a disease, in which the genotype (typically a combination of alleles at one or more loci) is linked to the disease state.",
       "comments": [
         "TODO decide no how to model pathogenicity"
       ],
@@ -39408,6 +40475,7 @@
     {
       "name": "GeneAsAModelOfDiseaseAssociation",
       "definition_uri": "https://w3id.org/biolink/vocab/GeneAsAModelOfDiseaseAssociation",
+      "description": "An association in which a gene (e.g., a model-organism ortholog of a known disease gene) serves as a model of a human disease - for example, because mutants of the gene recapitulate core features of the disease.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "GeneToDiseaseAssociation",
       "mixins": [
@@ -39488,6 +40556,7 @@
     {
       "name": "VariantAsAModelOfDiseaseAssociation",
       "definition_uri": "https://w3id.org/biolink/vocab/VariantAsAModelOfDiseaseAssociation",
+      "description": "An association in which a sequence variant serves as a model of a disease, recapitulating features relevant for studying the disease outside of a patient who carries it.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "VariantToDiseaseAssociation",
       "mixins": [
@@ -39564,6 +40633,7 @@
     {
       "name": "GenotypeAsAModelOfDiseaseAssociation",
       "definition_uri": "https://w3id.org/biolink/vocab/GenotypeAsAModelOfDiseaseAssociation",
+      "description": "An association in which a genotype serves as a model of a disease, recapitulating features relevant for studying the disease outside of a patient who carries it.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "GenotypeToDiseaseAssociation",
       "mixins": [
@@ -39640,6 +40710,7 @@
     {
       "name": "CellLineAsAModelOfDiseaseAssociation",
       "definition_uri": "https://w3id.org/biolink/vocab/CellLineAsAModelOfDiseaseAssociation",
+      "description": "An association in which a cell line - typically derived from an organismal entity with a disease state - serves as a model for that disease in experimental settings.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "CellLineToDiseaseOrPhenotypicFeatureAssociation",
       "mixins": [
@@ -39719,6 +40790,7 @@
     {
       "name": "OrganismalEntityAsAModelOfDiseaseAssociation",
       "definition_uri": "https://w3id.org/biolink/vocab/OrganismalEntityAsAModelOfDiseaseAssociation",
+      "description": "An association in which an organismal entity (e.g., a strain or breed) serves as a model of a disease, either because it has a natural predisposition to the disease or was bred or engineered specifically to recapitulate it.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "Association",
       "mixins": [
@@ -39795,6 +40867,7 @@
     {
       "name": "OrganismToOrganismAssociation",
       "definition_uri": "https://w3id.org/biolink/vocab/OrganismToOrganismAssociation",
+      "description": "An association between two individual organisms (e.g., symbiosis, parasitism, predation, or other inter-organism relationships).",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "Association",
       "slots": [
@@ -39860,6 +40933,7 @@
     {
       "name": "TaxonToTaxonAssociation",
       "definition_uri": "https://w3id.org/biolink/vocab/TaxonToTaxonAssociation",
+      "description": "An association between two organism taxa, capturing ecological or evolutionary relationships between the taxa (e.g., a host-pathogen relationship or shared habitat).",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "Association",
       "slots": [
@@ -39925,6 +40999,7 @@
     {
       "name": "GeneHasVariantThatContributesToDiseaseAssociation",
       "definition_uri": "https://w3id.org/biolink/vocab/GeneHasVariantThatContributesToDiseaseAssociation",
+      "description": "A gene-to-disease association that is asserted on the grounds that the gene harbours a sequence variant that contributes to the disease. Qualifies the gene with the form or variant that underlies the contribution.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "GeneToDiseaseAssociation",
       "slots": [
@@ -40535,6 +41610,114 @@
     {
       "name": "GeneToGoTermAssociation",
       "definition_uri": "https://w3id.org/biolink/vocab/GeneToGoTermAssociation",
+      "description": "A functional association between a gene (or gene product or macromolecular complex) and a Gene Ontology (GO) term describing the molecular function, biological process, or cellular component in which it participates.",
+      "examples": [
+        {
+          "object": {
+            "subject": "NCBIGene:25595",
+            "predicate": "biolink:active_in",
+            "object": "GO:0015630",
+            "category": "biolink:GeneToGoTermAssociation",
+            "knowledge_level": "prediction",
+            "agent_type": "manual_validation_of_automated_agent"
+          },
+          "@type": "Example"
+        },
+        {
+          "object": {
+            "subject": "NCBIGene:20502",
+            "predicate": "biolink:acts_upstream_of",
+            "object": "GO:0042403",
+            "category": "biolink:GeneToGoTermAssociation",
+            "knowledge_level": "prediction",
+            "agent_type": "manual_validation_of_automated_agent"
+          },
+          "@type": "Example"
+        },
+        {
+          "object": {
+            "subject": "NCBIGene:308911",
+            "predicate": "biolink:acts_upstream_of_negative_effect",
+            "object": "GO:1903450",
+            "category": "biolink:GeneToGoTermAssociation",
+            "knowledge_level": "prediction",
+            "agent_type": "manual_validation_of_automated_agent"
+          },
+          "@type": "Example"
+        },
+        {
+          "object": {
+            "subject": "NCBIGene:101148",
+            "predicate": "biolink:acts_upstream_of_or_within",
+            "object": "GO:0031669",
+            "category": "biolink:GeneToGoTermAssociation",
+            "knowledge_level": "prediction",
+            "agent_type": "manual_validation_of_automated_agent"
+          },
+          "@type": "Example"
+        },
+        {
+          "object": {
+            "subject": "NCBIGene:18072",
+            "predicate": "biolink:acts_upstream_of_or_within_positive_effect",
+            "object": "GO:0006915",
+            "category": "biolink:GeneToGoTermAssociation",
+            "knowledge_level": "knowledge_assertion",
+            "agent_type": "manual_agent",
+            "publications": [
+              "PMID:17573818"
+            ]
+          },
+          "@type": "Example"
+        },
+        {
+          "object": {
+            "subject": "NCBIGene:12168",
+            "predicate": "biolink:colocalizes_with",
+            "object": "GO:0005901",
+            "category": "biolink:GeneToGoTermAssociation",
+            "knowledge_level": "prediction",
+            "agent_type": "automated_agent"
+          },
+          "@type": "Example"
+        },
+        {
+          "object": {
+            "subject": "NCBIGene:303888",
+            "predicate": "biolink:contributes_to",
+            "object": "GO:0160270",
+            "category": "biolink:GeneToGoTermAssociation",
+            "knowledge_level": "prediction",
+            "agent_type": "manual_validation_of_automated_agent"
+          },
+          "@type": "Example"
+        },
+        {
+          "object": {
+            "subject": "NCBIGene:12193",
+            "predicate": "biolink:enables",
+            "object": "GO:0046872",
+            "category": "biolink:GeneToGoTermAssociation",
+            "knowledge_level": "prediction",
+            "agent_type": "automated_agent"
+          },
+          "@type": "Example"
+        },
+        {
+          "object": {
+            "subject": "NCBIGene:258177",
+            "predicate": "biolink:located_in",
+            "object": "GO:0016020",
+            "category": "biolink:GeneToGoTermAssociation",
+            "knowledge_level": "prediction",
+            "agent_type": "automated_agent",
+            "publications": [
+              "PMID:14611657"
+            ]
+          },
+          "@type": "Example"
+        }
+      ],
       "from_schema": "https://w3id.org/biolink/vocab/",
       "aliases": [
         "functional association"
@@ -40605,6 +41788,56 @@
     {
       "name": "EntityToDiseaseAssociation",
       "definition_uri": "https://w3id.org/biolink/vocab/EntityToDiseaseAssociation",
+      "description": "An association between any entity and a disease, capturing clinical context such as approval status, research phase, FDA regulatory approvals, and number of cases.",
+      "examples": [
+        {
+          "object": {
+            "subject": "CHEBI:50681",
+            "predicate": "biolink:in_clinical_trials_for",
+            "object": "MONDO:0971091",
+            "category": "biolink:EntityToDiseaseAssociation",
+            "knowledge_level": "knowledge_assertion",
+            "agent_type": "manual_agent"
+          },
+          "@type": "Example"
+        },
+        {
+          "object": {
+            "subject": "CHEBI:9150",
+            "predicate": "biolink:treats",
+            "object": "UMLS:C0520863",
+            "category": "biolink:EntityToDiseaseAssociation",
+            "knowledge_level": "knowledge_assertion",
+            "agent_type": "manual_agent"
+          },
+          "@type": "Example"
+        },
+        {
+          "object": {
+            "subject": "CHEBI:28077",
+            "predicate": "biolink:applied_to_treat",
+            "object": "MONDO:0005011",
+            "category": "biolink:EntityToDiseaseAssociation",
+            "knowledge_level": "observation",
+            "agent_type": "manual_validation_of_automated_agent"
+          },
+          "@type": "Example"
+        },
+        {
+          "object": {
+            "subject": "RXCUI:1367436",
+            "predicate": "biolink:contraindicated_in",
+            "object": "MONDO:0004981",
+            "category": "biolink:EntityToDiseaseAssociation",
+            "knowledge_level": "knowledge_assertion",
+            "agent_type": "manual_validation_of_automated_agent",
+            "publications": [
+              "a280f164-2833-4f37-96e3-a857c91f77f2"
+            ]
+          },
+          "@type": "Example"
+        }
+      ],
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "Association",
       "slots": [
@@ -40673,6 +41906,60 @@
     {
       "name": "EntityToPhenotypicFeatureAssociation",
       "definition_uri": "https://w3id.org/biolink/vocab/EntityToPhenotypicFeatureAssociation",
+      "description": "An association between any entity and a phenotypic feature, capturing clinical context such as approval status, research phase, FDA regulatory approvals, and number of cases.",
+      "examples": [
+        {
+          "object": {
+            "subject": "GTOPDB:13663",
+            "predicate": "biolink:in_clinical_trials_for",
+            "object": "NCIT:C146753",
+            "category": "biolink:EntityToPhenotypicFeatureAssociation",
+            "knowledge_level": "knowledge_assertion",
+            "agent_type": "manual_agent"
+          },
+          "@type": "Example"
+        },
+        {
+          "object": {
+            "subject": "CHEBI:6339",
+            "predicate": "biolink:treats",
+            "object": "HP:0001822",
+            "category": "biolink:EntityToPhenotypicFeatureAssociation",
+            "knowledge_level": "knowledge_assertion",
+            "agent_type": "manual_agent"
+          },
+          "@type": "Example"
+        },
+        {
+          "object": {
+            "subject": "CHEBI:78538",
+            "predicate": "biolink:applied_to_treat",
+            "object": "MONDO:0005294",
+            "category": "biolink:EntityToPhenotypicFeatureAssociation",
+            "knowledge_level": "observation",
+            "agent_type": "manual_validation_of_automated_agent"
+          },
+          "@type": "Example"
+        },
+        {
+          "object": {
+            "subject": "RXCUI:617430",
+            "predicate": "biolink:contraindicated_in",
+            "object": "HP:0001410",
+            "category": "biolink:EntityToPhenotypicFeatureAssociation",
+            "knowledge_level": "knowledge_assertion",
+            "agent_type": "manual_validation_of_automated_agent",
+            "publications": [
+              "2970fe7e-9e1f-47aa-85ad-663ee15c7e06",
+              "a5fa252a-d39e-4099-a230-b665fbb97a80",
+              "b897c800-24a2-4e76-8668-498c5515c3d0",
+              "babf3b8d-f2ce-407d-9407-728c45eb19ee",
+              "d74e93e5-11c9-434e-a60c-4a4f911dd0f8"
+            ]
+          },
+          "@type": "Example"
+        }
+      ],
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "Association",
       "slots": [
@@ -41199,6 +42486,7 @@
     {
       "name": "AnatomicalEntityToAnatomicalEntityAssociation",
       "definition_uri": "https://w3id.org/biolink/vocab/AnatomicalEntityToAnatomicalEntityAssociation",
+      "description": "An abstract parent class for associations between two anatomical entities, such as part-of, develops-from, or other mereological and ontogenic relationships.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "Association",
       "abstract": true,
@@ -41802,6 +43090,7 @@
     {
       "name": "OrganismTaxonToEnvironmentAssociation",
       "definition_uri": "https://w3id.org/biolink/vocab/OrganismTaxonToEnvironmentAssociation",
+      "description": "An abstract association between an organism taxon and an environmental context (e.g., a habitat, biome, or ecological setting) in which the taxon occurs.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "Association",
       "abstract": true,
@@ -41866,9 +43155,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2026-04-13T16:17:07",
-  "source_file_size": 463807,
-  "generation_date": "2026-04-13T16:17:20",
+  "source_file_date": "2026-04-21T12:14:59",
+  "source_file_size": 509081,
+  "generation_date": "2026-04-21T12:15:16",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",

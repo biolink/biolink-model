@@ -511,7 +511,7 @@
 <td></td>
 </tr>
 <tr>
-<td><a href="../type/">type</a>: <br/> <i> None </i></td>
+<td><a href="../type/">type</a>: <br/> <i> An rdf:type property asserting that an entity is an instance of a particular class. In Biolink the value is typically used to indicate the most specific category of which the entity is an instance. </i></td>
 <td>* <br/> <a href="../String/">String</a></td>
 <td><a href="../Entity/">Entity</a></td>
 <td></td>
@@ -547,6 +547,8 @@
 <pre><code class="language-yaml">name: virus
 description: A virus is a microorganism that replicates itself as a microRNA and infects
   the host cell.
+comments:
+- 'see: https://github.com/OBOFoundry/COB/pull/211'
 from_schema: https://w3id.org/biolink/vocab/
 exact_mappings:
 - NCBITaxon:10239

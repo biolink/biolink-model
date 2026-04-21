@@ -347,6 +347,15 @@
 </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="#example-values">
+<span class="md-ellipsis">
+      
+        Example values
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#linkml-source">
 <span class="md-ellipsis">
       
@@ -363,6 +372,9 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="class-correlatedgenetodiseaseassociation"><strong>  Class: CorrelatedGeneToDiseaseAssociation </strong></h1>
+<div class="highlight-box">
+<strong>Description:</strong><i> An association between a gene (or gene product) and a disease for which the gene is statistically correlated with the disease rather than asserted as causal. Such associations typically derive from GWAS, co-occurrence analyses, or other statistical methods, and are annotated with scores such as a z-score or a diseases confidence score.</i><br/>
+</div>
 <div class="mermaid"> classDiagram
     class CorrelatedGeneToDiseaseAssociation
       EntityToDiseaseAssociationMixin &lt;|-- CorrelatedGeneToDiseaseAssociation
@@ -435,6 +447,8 @@
 
       CorrelatedGeneToDiseaseAssociation : object_aspect_qualifier
 
+          CorrelatedGeneToDiseaseAssociation --|&gt; GeneOrGeneProductOrChemicalEntityAspectEnum : object_aspect_qualifier
+
       CorrelatedGeneToDiseaseAssociation : object_category
 
           CorrelatedGeneToDiseaseAssociation --|&gt; OntologyClass : object_category
@@ -495,6 +509,8 @@
 
       CorrelatedGeneToDiseaseAssociation : subject_aspect_qualifier
 
+          CorrelatedGeneToDiseaseAssociation --|&gt; GeneOrGeneProductOrChemicalEntityAspectEnum : subject_aspect_qualifier
+
       CorrelatedGeneToDiseaseAssociation : subject_category
 
           CorrelatedGeneToDiseaseAssociation --|&gt; OntologyClass : subject_category
@@ -551,7 +567,7 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../z_score/">z_score</a>: <br/> <i> A measure of the divergence of an individual experimental result from the most probable result, the mean. Z is expressed in terms of the number of standard deviations from the mean value. </i></td>
+<td><a href="../z_score/">z_score</a>: <br> <i> A measure of the divergence of an individual experimental result from the most probable result, the mean. Z is expressed in terms of the number of standard deviations from the mean value. </i></br></td>
 <td>0..1 <br/> <a href="../Float/">Float</a></td>
 <td>direct</td>
 <td></td>
@@ -570,7 +586,7 @@
 </tr>
 <tr>
 <td><a href="../subject_aspect_qualifier/">subject_aspect_qualifier</a>: <br/> <i> Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the subject of an association (aka: statement). </i></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../GeneOrGeneProductOrChemicalEntityAspectEnum/">GeneOrGeneProductOrChemicalEntityAspectEnum</a></td>
 <td>direct</td>
 <td>stability, abundance, expression, exposure</td>
 </tr>
@@ -578,7 +594,7 @@
 <td><a href="../object_direction_qualifier/">object_direction_qualifier</a>: <br/> <i> Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement). </i></td>
 <td>0..1 <br/> <a href="../DirectionQualifierEnum/">DirectionQualifierEnum</a></td>
 <td>direct</td>
-<td></td>
+<td>increased, downregulated</td>
 </tr>
 <tr>
 <td><a href="../allelic_requirement/">allelic_requirement</a>: <br/> <i> The allele configuration of a particular gene or variant required for the expression of a disease or phenotype in a specific patient or instance. </i></td>
@@ -590,24 +606,24 @@
 <td><a href="../qualified_predicate/">qualified_predicate</a>: <br/> <i> Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  Has a value from the Biolink 'related_to' hierarchy, for example, biolink:related_to, biolink:causes, biolink:treats This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a ‘full statement’ reading of the association, where qualifier-based semantics are included. This is necessary only in cases where the primary predicate does not work in a full statement reading. </i></td>
 <td>0..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
 <td>direct</td>
-<td></td>
+<td>biolink:causes</td>
 </tr>
 <tr>
 <td><a href="../subject/">subject</a>: <br/> <i> gene in which variation is shown to correlate with the disease. </i></td>
 <td>1 <br/> <a href="../GeneOrGeneProduct/">GeneOrGeneProduct</a></td>
-<td><a href="../GeneToEntityAssociationMixin/">GeneToEntityAssociationMixin</a>, <a href="../Association/">Association</a>, <a href="../FrequencyQualifierMixin/">FrequencyQualifierMixin</a></td>
+<td><a href="../GeneToEntityAssociationMixin/">GeneToEntityAssociationMixin</a>, <a href="../FrequencyQualifierMixin/">FrequencyQualifierMixin</a>, <a href="../Association/">Association</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="../predicate/">predicate</a>: <br/> <i> Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats </i></td>
 <td>1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
-<td><a href="../GeneToEntityAssociationMixin/">GeneToEntityAssociationMixin</a>, <a href="../Association/">Association</a>, <a href="../FrequencyQualifierMixin/">FrequencyQualifierMixin</a></td>
+<td><a href="../GeneToEntityAssociationMixin/">GeneToEntityAssociationMixin</a>, <a href="../FrequencyQualifierMixin/">FrequencyQualifierMixin</a>, <a href="../Association/">Association</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="../object/">object</a>: <br/> <i> disease </i></td>
 <td>1 <br/> <a href="../Disease/">Disease</a></td>
-<td><a href="../GeneToEntityAssociationMixin/">GeneToEntityAssociationMixin</a>, <a href="../Association/">Association</a>, <a href="../FrequencyQualifierMixin/">FrequencyQualifierMixin</a></td>
+<td><a href="../GeneToEntityAssociationMixin/">GeneToEntityAssociationMixin</a>, <a href="../FrequencyQualifierMixin/">FrequencyQualifierMixin</a>, <a href="../Association/">Association</a></td>
 <td>MONDO:0020066</td>
 </tr>
 <tr>
@@ -800,7 +816,7 @@
 <td><a href="../supporting_text/">supporting_text</a>: <br/> <i> The segment of text from a document that supports the mined assertion. </i></td>
 <td>* <br/> <a href="../String/">String</a></td>
 <td><a href="../Association/">Association</a></td>
-<td>The administration of 50g/ml bupivacaine promoted maximum breast cancer.</td>
+<td>Here, we report two new cases of rivaroxaban-induced hepatitis.</td>
 </tr>
 <tr>
 <td><a href="../has_supporting_studies/">has_supporting_studies</a>: <br/> <i> Studies that produced information used as evidence to generate the knowledge expressed in an Association. </i></td>
@@ -890,11 +906,11 @@
 <td><a href="../subject_direction_qualifier/">subject_direction_qualifier</a>: <br/> <i> Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement). </i></td>
 <td>0..1 <br/> <a href="../DirectionQualifierEnum/">DirectionQualifierEnum</a></td>
 <td><a href="../EntityToFeatureOrDiseaseQualifiersMixin/">EntityToFeatureOrDiseaseQualifiersMixin</a></td>
-<td></td>
+<td>increased, downregulated</td>
 </tr>
 <tr>
 <td><a href="../object_aspect_qualifier/">object_aspect_qualifier</a>: <br/> <i> Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the object of an association (aka: statement). </i></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../GeneOrGeneProductOrChemicalEntityAspectEnum/">GeneOrGeneProductOrChemicalEntityAspectEnum</a></td>
 <td><a href="../EntityToFeatureOrDiseaseQualifiersMixin/">EntityToFeatureOrDiseaseQualifiersMixin</a></td>
 <td>stability, abundance, expression, exposure</td>
 </tr>
@@ -912,9 +928,48 @@
 </tr>
 </tbody>
 </table>
+<h2 id="example-values">Example values</h2>
+<table>
+<thead>
+<tr>
+<th>Slot Name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CorrelatedGeneToDiseaseAssociation</td>
+<td>None</td>
+</tr>
+<tr>
+<td>CorrelatedGeneToDiseaseAssociation</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details open="">
 <pre><code class="language-yaml">name: correlated gene to disease association
+description: An association between a gene (or gene product) and a disease for which
+  the gene is statistically correlated with the disease rather than asserted as causal.
+  Such associations typically derive from GWAS, co-occurrence analyses, or other statistical
+  methods, and are annotated with scores such as a z-score or a diseases confidence
+  score.
+examples:
+- object:
+    subject: NCBIGene:8506
+    predicate: biolink:occurs_together_in_literature_with
+    object: MONDO:0004585
+    category: biolink:CorrelatedGeneToDiseaseAssociation
+    knowledge_level: text_co_occurrence
+    agent_type: data_analysis_pipeline
+- object:
+    subject: UniProtKB:Q2KHT3-1
+    predicate: biolink:occurs_together_in_literature_with
+    object: MONDO:0005578
+    category: biolink:CorrelatedGeneToDiseaseAssociation
+    knowledge_level: text_co_occurrence
+    agent_type: data_analysis_pipeline
 from_schema: https://w3id.org/biolink/vocab/
 is_a: association
 mixins:

@@ -715,6 +715,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#example-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example values
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#linkml-source" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -746,7 +757,7 @@
 
 
 <h1 id="slot-causal_mechanism_qualifier"><strong> Slot: causal_mechanism_qualifier </strong></h1>
-<div class="highlight-box"><strong>Description:</strong><i> A statement qualifier representing a type of molecular control mechanism through which an effect of a chemical on a gene or gene product is mediated (e.g. 'agonism', 'inhibition', 'allosteric modulation', 'channel blocker')</i><br>
+<div class="highlight-box"><strong>Description:</strong><i> A statement qualifier representing a type of molecular control mechanism through which an effect of a chemical on a gene or gene product is mediated</i><br>
 
 
 <br>
@@ -800,13 +811,34 @@
 </tr>
 </tbody>
 </table>
+<h2 id="example-values">Example values</h2>
+<table>
+<thead>
+<tr>
+<th>Slot Name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>causal_mechanism_qualifier</td>
+<td>agonism</td>
+</tr>
+<tr>
+<td>causal_mechanism_qualifier</td>
+<td>inhibition</td>
+</tr>
+</tbody>
+</table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details open>
 
 <pre><code class="language-yaml">name: causal mechanism qualifier
 description: A statement qualifier representing a type of molecular control mechanism
-  through which an effect of a chemical on a gene or gene product is mediated (e.g.
-  'agonism', 'inhibition', 'allosteric modulation', 'channel blocker')
+  through which an effect of a chemical on a gene or gene product is mediated
+examples:
+- value: agonism
+- value: inhibition
 in_subset:
 - translator_minimal
 from_schema: https://w3id.org/biolink/vocab/

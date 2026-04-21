@@ -715,6 +715,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#example-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example values
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#linkml-source" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -746,6 +757,13 @@
 
 
 <h1 id="slot-available_from-multivalued"><strong> Slot: available_from </strong>  (multivalued)</h1>
+<div class="highlight-box"><strong>Description:</strong><i> The regulatory or commercial availability channel through which a drug or chemical entity can be obtained, drawn from DrugAvailabilityEnum.</i><br>
+
+
+<br>
+
+</div>
+
 <p><strong>Domain:</strong> <a href="../NamedThing/">NamedThing</a><br>
 <strong>Range:</strong>   <a href="../DrugAvailabilityEnum/">DrugAvailabilityEnum</a> <br></p>
 <h2 id="inheritance">Inheritance</h2>
@@ -772,11 +790,29 @@
 </tr>
 </tbody>
 </table>
+<h2 id="example-values">Example values</h2>
+<table>
+<thead>
+<tr>
+<th>Slot Name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>available_from</td>
+<td>over_the_counter</td>
+</tr>
+</tbody>
+</table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details open>
 
 <pre><code class="language-yaml">name: available from
-description: ''
+description: The regulatory or commercial availability channel through which a drug
+  or chemical entity can be obtained, drawn from DrugAvailabilityEnum.
+examples:
+- value: over_the_counter
 from_schema: https://w3id.org/biolink/vocab/
 is_a: node property
 domain: named thing

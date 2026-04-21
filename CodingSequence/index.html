@@ -372,6 +372,9 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="class-codingsequence"><strong>  Class: CodingSequence </strong></h1>
+<div class="highlight-box">
+<strong>Description:</strong><i> A contiguous sequence which begins with, and includes, a start codon and ends with, and includes, a stop codon.</i><br/>
+</div>
 <div class="mermaid"> classDiagram
     class CodingSequence
       GenomicEntity &lt;|-- CodingSequence
@@ -444,7 +447,7 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../has_biological_sequence/">has_biological_sequence</a>: <br/> <i> connects a genomic feature to its sequence </i></td>
+<td><a href="../has_biological_sequence/">has_biological_sequence</a>: <br> <i> connects a genomic feature to its sequence </i></br></td>
 <td>0..1 <br/> <a href="../BiologicalSequence/">BiologicalSequence</a></td>
 <td><a href="../GenomicEntity/">GenomicEntity</a></td>
 <td></td>
@@ -522,7 +525,7 @@
 <td></td>
 </tr>
 <tr>
-<td><a href="../type/">type</a>: <br/> <i> None </i></td>
+<td><a href="../type/">type</a>: <br/> <i> An rdf:type property asserting that an entity is an instance of a particular class. In Biolink the value is typically used to indicate the most specific category of which the entity is an instance. </i></td>
 <td>* <br/> <a href="../String/">String</a></td>
 <td><a href="../Entity/">Entity</a></td>
 <td></td>
@@ -575,6 +578,8 @@
 <h2 id="linkml-source">LinkML Source</h2>
 <details open="">
 <pre><code class="language-yaml">name: coding sequence
+description: A contiguous sequence which begins with, and includes, a start codon
+  and ends with, and includes, a stop codon.
 from_schema: https://w3id.org/biolink/vocab/
 exact_mappings:
 - SO:0000316

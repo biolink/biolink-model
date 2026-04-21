@@ -347,6 +347,15 @@
 </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="#example-values">
+<span class="md-ellipsis">
+      
+        Example values
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#linkml-source">
 <span class="md-ellipsis">
       
@@ -446,25 +455,25 @@
 <td><a href="../supporting_text/">supporting_text</a>: <br> <i> The segment of text from a document that supports the mined assertion. </i></br></td>
 <td>* <br/> <a href="../String/">String</a></td>
 <td>direct</td>
-<td>The administration of 50g/ml bupivacaine promoted maximum breast cancer.</td>
+<td>Here, we report two new cases of rivaroxaban-induced hepatitis.</td>
 </tr>
 <tr>
 <td><a href="../subject_location_in_text/">subject_location_in_text</a>: <br/> <i> Character offsets for the text span(s) in the supporting text corresponding to the subject concept of the extracted assertion. </i></td>
 <td>* <br/> <a href="../Integer/">Integer</a></td>
 <td>direct</td>
-<td>15</td>
+<td>33</td>
 </tr>
 <tr>
 <td><a href="../object_location_in_text/">object_location_in_text</a>: <br/> <i> Character offsets for the text span(s) in the supporting text corresponding to the object concept of the extracted assertion </i></td>
 <td>* <br/> <a href="../Integer/">Integer</a></td>
 <td>direct</td>
-<td>15</td>
+<td>53</td>
 </tr>
 <tr>
 <td><a href="../extraction_confidence_score/">extraction_confidence_score</a>: <br/> <i> A quantitative confidence value that represents the probability of obtaining a result at least as extreme as that actually obtained, assuming that the actual value was the result of chance alone. </i></td>
 <td>0..1 <br/> <a href="../Float/">Float</a></td>
 <td>direct</td>
-<td>15.0</td>
+<td>0.6188385904738642</td>
 </tr>
 <tr>
 <td><a href="../supporting_document_type/">supporting_document_type</a>: <br/> <i> The document type (e.g., Journal Article, Case Study, Preprint) for the supporting document used in a Text Mining Result. </i></td>
@@ -476,13 +485,13 @@
 <td><a href="../supporting_document_year/">supporting_document_year</a>: <br/> <i> The document year (typically the publication year) for the supporting document used in a Text Mining Result. </i></td>
 <td>0..1 <br/> <a href="../Integer/">Integer</a></td>
 <td>direct</td>
-<td>1999</td>
+<td>2018</td>
 </tr>
 <tr>
 <td><a href="../supporting_text_section_type/">supporting_text_section_type</a>: <br/> <i> The section of the supporting text of a Text Mining Result within the supporting document. This is in the form of the name of the document section (e.g., Abstract, Introduction) that contains the supporting text. </i></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>direct</td>
-<td>Introduction</td>
+<td>abstract</td>
 </tr>
 <tr>
 <td><a href="../provided_by/">provided_by</a>: <br/> <i> The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph. </i></td>
@@ -545,7 +554,7 @@
 <td></td>
 </tr>
 <tr>
-<td><a href="../type/">type</a>: <br/> <i> None </i></td>
+<td><a href="../type/">type</a>: <br/> <i> An rdf:type property asserting that an entity is an instance of a particular class. In Biolink the value is typically used to indicate the most specific category of which the entity is an instance. </i></td>
 <td>* <br/> <a href="../String/">String</a></td>
 <td><a href="../Entity/">Entity</a></td>
 <td></td>
@@ -576,6 +585,21 @@
 </tr>
 </tbody>
 </table>
+<h2 id="example-values">Example values</h2>
+<table>
+<thead>
+<tr>
+<th>Slot Name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TextMiningStudyResult</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details open="">
 <pre><code class="language-yaml">name: text mining study result
@@ -583,6 +607,21 @@ description: A study result that represents information extracted from text usin
   natural language processing techniques. This includes the extracted text, location
   offsets within the source document, confidence scores, and other metadata related
   to the text mining process.
+examples:
+- object:
+    id: tmkp:id
+    category: biolink:TextMiningStudyResult
+    supporting_text:
+    - Here, we report two new cases of rivaroxaban-induced hepatitis.
+    subject_location_in_text:
+    - 33
+    - 44
+    object_location_in_text:
+    - 53
+    - 62
+    extraction_confidence_score: 0.6188385904738642
+    supporting_document_year: 2018
+    supporting_text_section_type: abstract
 from_schema: https://w3id.org/biolink/vocab/
 is_a: study result
 slots:

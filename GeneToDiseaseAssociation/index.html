@@ -347,6 +347,15 @@
 </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="#example-values">
+<span class="md-ellipsis">
+      
+        Example values
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#linkml-source">
 <span class="md-ellipsis">
       
@@ -363,6 +372,9 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="class-genetodiseaseassociation"><strong>  Class: GeneToDiseaseAssociation </strong></h1>
+<div class="highlight-box">
+<strong>Description:</strong><i> An association between a gene or gene product and a disease, where variation in the gene is correlated with the disease.</i><br/>
+</div>
 <div class="mermaid"> classDiagram
     class GeneToDiseaseAssociation
       GeneToEntityAssociationMixin &lt;|-- GeneToDiseaseAssociation
@@ -555,7 +567,7 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../subject_form_or_variant_qualifier/">subject_form_or_variant_qualifier</a>: <br/> <i> A qualifier that composes with a core subject/object concept to define a specific type, variant, alternative version of this concept. The composed concept remains a subtype or instance of the core concept. For example, the qualifier ‘mutation’ combines with the core concept ‘Gene X’ to express the compose concept ‘a mutation of Gene X’.  This qualifier specifies a change in the subject of an association (aka: statement). </i></td>
+<td><a href="../subject_form_or_variant_qualifier/">subject_form_or_variant_qualifier</a>: <br> <i> A qualifier that composes with a core subject/object concept to define a specific type, variant, alternative version of this concept. The composed concept remains a subtype or instance of the core concept. For example, the qualifier ‘mutation’ combines with the core concept ‘Gene X’ to express the compose concept ‘a mutation of Gene X’.  This qualifier specifies a change in the subject of an association (aka: statement). </i></br></td>
 <td>0..1 <br/> <a href="../ChemicalOrGeneOrGeneProductFormOrVariantEnum/">ChemicalOrGeneOrGeneProductFormOrVariantEnum</a></td>
 <td>direct</td>
 <td>mutation, late stage, severe, transplant, chemical analog</td>
@@ -570,7 +582,7 @@
 <td><a href="../object_direction_qualifier/">object_direction_qualifier</a>: <br/> <i> Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement). </i></td>
 <td>0..1 <br/> <a href="../DirectionQualifierEnum/">DirectionQualifierEnum</a></td>
 <td>direct</td>
-<td></td>
+<td>increased, downregulated</td>
 </tr>
 <tr>
 <td><a href="../allelic_requirement/">allelic_requirement</a>: <br/> <i> The allele configuration of a particular gene or variant required for the expression of a disease or phenotype in a specific patient or instance. </i></td>
@@ -582,7 +594,7 @@
 <td><a href="../qualified_predicate/">qualified_predicate</a>: <br/> <i> Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  Has a value from the Biolink 'related_to' hierarchy, for example, biolink:related_to, biolink:causes, biolink:treats This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a ‘full statement’ reading of the association, where qualifier-based semantics are included. This is necessary only in cases where the primary predicate does not work in a full statement reading. </i></td>
 <td>0..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
 <td>direct</td>
-<td></td>
+<td>biolink:causes</td>
 </tr>
 <tr>
 <td><a href="../diseases_confidence_score/">diseases_confidence_score</a>: <br/> <i> A score defined by Jensen Lab Diseases that reports confidence level in an association on a scale of 1-5 stars.  It is based on different inputs for curated knowledge associations vs text-mined associations vs experimental/GWAS based associations, but adjusts/caps scores for these types of knowledge such that they are comparable on a single scale. </i></td>
@@ -804,7 +816,7 @@
 <td><a href="../supporting_text/">supporting_text</a>: <br/> <i> The segment of text from a document that supports the mined assertion. </i></td>
 <td>* <br/> <a href="../String/">String</a></td>
 <td><a href="../Association/">Association</a></td>
-<td>The administration of 50g/ml bupivacaine promoted maximum breast cancer.</td>
+<td>Here, we report two new cases of rivaroxaban-induced hepatitis.</td>
 </tr>
 <tr>
 <td><a href="../has_supporting_studies/">has_supporting_studies</a>: <br/> <i> Studies that produced information used as evidence to generate the knowledge expressed in an Association. </i></td>
@@ -892,15 +904,51 @@
 </tr>
 </tbody>
 </table>
+<h2 id="example-values">Example values</h2>
+<table>
+<thead>
+<tr>
+<th>Slot Name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GeneToDiseaseAssociation</td>
+<td>None</td>
+</tr>
+<tr>
+<td>GeneToDiseaseAssociation</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details open="">
 <pre><code class="language-yaml">name: gene to disease association
+description: An association between a gene or gene product and a disease, where variation
+  in the gene is correlated with the disease.
 comments:
 - NCIT:R176 refers to the inverse relationship
 - for use in describing the affect that the loss of function of a gene can have on
   exacerbating or ameliorating a disease
 - if the relationship of the statement using this predicate is statistical in nature,
   please use `associated with likelihood` or one of its children.
+examples:
+- object:
+    subject: NCBIGene:60
+    predicate: biolink:associated_with
+    object: MONDO:0017579
+    category: biolink:GeneToDiseaseAssociation
+    knowledge_level: knowledge_assertion
+    agent_type: manual_agent
+- object:
+    subject: UniProtKB:P11274-1
+    predicate: biolink:associated_with
+    object: MONDO:0011996
+    category: biolink:GeneToDiseaseAssociation
+    knowledge_level: knowledge_assertion
+    agent_type: manual_agent
 from_schema: https://w3id.org/biolink/vocab/
 exact_mappings:
 - SIO:000983

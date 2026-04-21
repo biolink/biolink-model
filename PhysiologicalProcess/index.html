@@ -372,6 +372,9 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="class-physiologicalprocess"><strong>  Class: PhysiologicalProcess </strong></h1>
+<div class="highlight-box">
+<strong>Description:</strong><i> A biological or chemical function within a living organism.</i><br/>
+</div>
 <p>Aliases: physiology  </p>
 <div class="mermaid"> classDiagram
     class PhysiologicalProcess
@@ -461,7 +464,7 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../id/">id</a>: <br/> <i> A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI </i></td>
+<td><a href="../id/">id</a>: <br> <i> A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI </i></br></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td><a href="../OntologyClass/">OntologyClass</a>, <a href="../Entity/">Entity</a></td>
 <td></td>
@@ -551,7 +554,7 @@
 <td></td>
 </tr>
 <tr>
-<td><a href="../type/">type</a>: <br/> <i> None </i></td>
+<td><a href="../type/">type</a>: <br/> <i> An rdf:type property asserting that an entity is an instance of a particular class. In Biolink the value is typically used to indicate the most specific category of which the entity is an instance. </i></td>
 <td>* <br/> <a href="../String/">String</a></td>
 <td><a href="../Entity/">Entity</a></td>
 <td></td>
@@ -608,6 +611,7 @@
 id_prefixes:
 - GO
 - REACT
+description: A biological or chemical function within a living organism.
 from_schema: https://w3id.org/biolink/vocab/
 aliases:
 - physiology

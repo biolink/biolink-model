@@ -388,6 +388,7 @@
 <div class="mermaid"> classDiagram
     class GeneFamily
       GeneGroupingMixin &lt;|-- GeneFamily
+      GeneOrGeneProductOrGeneFamily &lt;|-- GeneFamily
       ChemicalEntityOrGeneOrGeneProduct &lt;|-- GeneFamily
       BiologicalEntity &lt;|-- GeneFamily
 
@@ -440,7 +441,7 @@
 <li><a href="../Entity/">Entity</a><ul>
 <li><a href="../NamedThing/">NamedThing</a><ul>
 <li><a href="../BiologicalEntity/">BiologicalEntity</a> [ <a href="../ThingWithTaxon/">ThingWithTaxon</a>]<ul>
-<li><strong>GeneFamily</strong> [ <a href="../GeneGroupingMixin/">GeneGroupingMixin</a> <a href="../ChemicalEntityOrGeneOrGeneProduct/">ChemicalEntityOrGeneOrGeneProduct</a>]</li>
+<li><strong>GeneFamily</strong> [ <a href="../GeneGroupingMixin/">GeneGroupingMixin</a> <a href="../GeneOrGeneProductOrGeneFamily/">GeneOrGeneProductOrGeneFamily</a> <a href="../ChemicalEntityOrGeneOrGeneProduct/">ChemicalEntityOrGeneOrGeneProduct</a>]</li>
 </ul>
 </li>
 </ul>
@@ -538,15 +539,15 @@
 <td></td>
 </tr>
 <tr>
-<td><a href="../type/">type</a>: <br/> <i> None </i></td>
+<td><a href="../type/">type</a>: <br/> <i> An rdf:type property asserting that an entity is an instance of a particular class. In Biolink the value is typically used to indicate the most specific category of which the entity is an instance. </i></td>
 <td>* <br/> <a href="../String/">String</a></td>
 <td><a href="../Entity/">Entity</a></td>
 <td></td>
 </tr>
 <tr>
-<td><a href="../name/">name</a>: <br/> <i> A human-readable name for an attribute or entity. </i></td>
-<td>0..1 <br/> <a href="../LabelType/">LabelType</a></td>
-<td><a href="../Entity/">Entity</a></td>
+<td><a href="../name/">name</a>: <br/> <i> genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name </i></td>
+<td>0..1 <br/> <a href="../SymbolType/">SymbolType</a></td>
+<td><a href="../Entity/">Entity</a>, <a href="../MacromolecularMachineMixin/">MacromolecularMachineMixin</a></td>
 <td></td>
 </tr>
 <tr>
@@ -588,7 +589,7 @@
 </tr>
 <tr>
 <td><a href="../GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation/">GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation</a></td>
-<td><a href="../object/">object</a></td>
+<td><a href="../subject/">subject</a></td>
 <td>range</td>
 <td><a href="./">GeneFamily</a></td>
 </tr>
@@ -727,6 +728,7 @@ narrow_mappings:
 is_a: biological entity
 mixins:
 - gene grouping mixin
+- gene or gene product or gene family
 - chemical entity or gene or gene product
 
 </code></pre>

@@ -355,7 +355,7 @@
 <article class="md-content__inner md-typeset">
 <h1 id="class-edge"><strong>  Class: Edge </strong></h1>
 <div class="highlight-box">
-<strong>Description:</strong><i> An edge in a KGX graph, will be superclass for association</i><br/>
+<strong>Description:</strong><i> A generic edge in a KGX-formatted knowledge graph, representing a directed relationship between a subject node and an object node qualified by a predicate. This class serves as the structural superclass for `association` in Biolink, providing the minimal KGX-compliant contract (subject, predicate, object, and associated metadata) that any biolink relationship participating in a knowledge graph must satisfy.</i><br/>
 </div>
 <div class="mermaid"> classDiagram
     class Edge
@@ -384,7 +384,11 @@
 <h2 id="linkml-source">LinkML Source</h2>
 <details open="">
 <pre><code class="language-yaml">name: Edge
-description: An edge in a KGX graph, will be superclass for association
+description: A generic edge in a KGX-formatted knowledge graph, representing a directed
+  relationship between a subject node and an object node qualified by a predicate.
+  This class serves as the structural superclass for `association` in Biolink, providing
+  the minimal KGX-compliant contract (subject, predicate, object, and associated metadata)
+  that any biolink relationship participating in a knowledge graph must satisfy.
 from_schema: https://w3id.org/biolink/vocab/
 
 </code></pre>

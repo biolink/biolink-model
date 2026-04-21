@@ -363,6 +363,9 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="class-genomicentity"><strong>  Class: GenomicEntity </strong></h1>
+<div class="highlight-box">
+<strong>Description:</strong><i> A generically dependent continuant that carries biological sequence that is part of or derived from a genome.</i><br/>
+</div>
 <div class="mermaid"> classDiagram
     class GenomicEntity
       GenomicEntity &lt;|-- NucleicAcidEntity
@@ -396,7 +399,7 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../has_biological_sequence/">has_biological_sequence</a>: <br/> <i> connects a genomic feature to its sequence </i></td>
+<td><a href="../has_biological_sequence/">has_biological_sequence</a>: <br> <i> connects a genomic feature to its sequence </i></br></td>
 <td>0..1 <br/> <a href="../BiologicalSequence/">BiologicalSequence</a></td>
 <td>direct</td>
 <td></td>
@@ -434,7 +437,7 @@
 </tr>
 <tr>
 <td><a href="../NucleosomeModification/">NucleosomeModification</a></td>
-<td>A chemical modification of a histone protein within a nucleosome octomer or a substitution of a histone with a variant histone isoform. e.g. Histone 4 Lysine 20 methylation (H4K20me), histone variant H2AZ substituting H2A.</td>
+<td>A chemical modification of a histone protein within a nucleosome octomer or a substitution of a histone with a variant histone isoform.</td>
 </tr>
 <tr>
 <td><a href="../Genome/">Genome</a></td>
@@ -442,7 +445,7 @@
 </tr>
 <tr>
 <td><a href="../CodingSequence/">CodingSequence</a></td>
-<td>None</td>
+<td>A contiguous sequence which begins with, and includes, a start codon and ends with, and includes, a stop codon.</td>
 </tr>
 <tr>
 <td><a href="../Genotype/">Genotype</a></td>
@@ -469,6 +472,8 @@
 <h2 id="linkml-source">LinkML Source</h2>
 <details open="">
 <pre><code class="language-yaml">name: genomic entity
+description: A generically dependent continuant that carries biological sequence that
+  is part of or derived from a genome.
 in_subset:
 - translator_minimal
 from_schema: https://w3id.org/biolink/vocab/

@@ -356,6 +356,15 @@
 </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="#example-values">
+<span class="md-ellipsis">
+      
+        Example values
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#linkml-source">
 <span class="md-ellipsis">
       
@@ -372,6 +381,9 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="class-cell"><strong>  Class: Cell </strong></h1>
+<div class="highlight-box">
+<strong>Description:</strong><i> The basic structural and functional unit of all organisms. Includes the plasma membrane and any external encapsulating structures such as the cell wall and cell envelope.</i><br/>
+</div>
 <div class="mermaid"> classDiagram
     class Cell
       AnatomicalEntity &lt;|-- Cell
@@ -447,7 +459,7 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../id/">id</a>: <br/> <i> A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI </i></td>
+<td><a href="../id/">id</a>: <br> <i> A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI </i></br></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td><a href="../OntologyClass/">OntologyClass</a>, <a href="../Entity/">Entity</a></td>
 <td></td>
@@ -519,7 +531,7 @@
 <td></td>
 </tr>
 <tr>
-<td><a href="../type/">type</a>: <br/> <i> None </i></td>
+<td><a href="../type/">type</a>: <br/> <i> An rdf:type property asserting that an entity is an instance of a particular class. In Biolink the value is typically used to indicate the most specific category of which the entity is an instance. </i></td>
 <td>* <br/> <a href="../String/">String</a></td>
 <td><a href="../Entity/">Entity</a></td>
 <td></td>
@@ -594,6 +606,25 @@
 </tr>
 </tbody>
 </table>
+<h2 id="example-values">Example values</h2>
+<table>
+<thead>
+<tr>
+<th>Slot Name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cell</td>
+<td>CL:0000540</td>
+</tr>
+<tr>
+<td>Cell</td>
+<td>CL:0000236</td>
+</tr>
+</tbody>
+</table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details open="">
 <pre><code class="language-yaml">name: cell
@@ -606,6 +637,14 @@ id_prefixes:
 - UBERON
 - SNOMEDCT
 - MESH
+description: The basic structural and functional unit of all organisms. Includes the
+  plasma membrane and any external encapsulating structures such as the cell wall
+  and cell envelope.
+examples:
+- value: CL:0000540
+  description: neuron
+- value: CL:0000236
+  description: B cell
 from_schema: https://w3id.org/biolink/vocab/
 exact_mappings:
 - GO:0005623

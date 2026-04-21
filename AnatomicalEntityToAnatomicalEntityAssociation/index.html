@@ -363,6 +363,9 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="class-anatomicalentitytoanatomicalentityassociation-abstract"><strong>  Class: AnatomicalEntityToAnatomicalEntityAssociation </strong> <span style="color: purple;"><strong><small> (Abstract) </small> </strong></span></h1>
+<div class="highlight-box">
+<strong>Description:</strong><i> An abstract parent class for associations between two anatomical entities, such as part-of, develops-from, or other mereological and ontogenic relationships.</i><br/>
+</div>
 <div class="mermaid"> classDiagram
     class AnatomicalEntityToAnatomicalEntityAssociation
       Association &lt;|-- AnatomicalEntityToAnatomicalEntityAssociation
@@ -532,7 +535,7 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../subject/">subject</a>: <br/> <i> connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object. </i></td>
+<td><a href="../subject/">subject</a>: <br> <i> connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object. </i></br></td>
 <td>1 <br/> <a href="../AnatomicalEntity/">AnatomicalEntity</a></td>
 <td><a href="../Association/">Association</a></td>
 <td></td>
@@ -739,7 +742,7 @@
 <td><a href="../supporting_text/">supporting_text</a>: <br/> <i> The segment of text from a document that supports the mined assertion. </i></td>
 <td>* <br/> <a href="../String/">String</a></td>
 <td><a href="../Association/">Association</a></td>
-<td>The administration of 50g/ml bupivacaine promoted maximum breast cancer.</td>
+<td>Here, we report two new cases of rivaroxaban-induced hepatitis.</td>
 </tr>
 <tr>
 <td><a href="../has_supporting_studies/">has_supporting_studies</a>: <br/> <i> Studies that produced information used as evidence to generate the knowledge expressed in an Association. </i></td>
@@ -830,6 +833,8 @@
 <h2 id="linkml-source">LinkML Source</h2>
 <details open="">
 <pre><code class="language-yaml">name: anatomical entity to anatomical entity association
+description: An abstract parent class for associations between two anatomical entities,
+  such as part-of, develops-from, or other mereological and ontogenic relationships.
 from_schema: https://w3id.org/biolink/vocab/
 is_a: association
 abstract: true

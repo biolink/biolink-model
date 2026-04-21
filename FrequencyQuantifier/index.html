@@ -356,6 +356,15 @@
 </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="#example-values">
+<span class="md-ellipsis">
+      
+        Example values
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#linkml-source">
 <span class="md-ellipsis">
       
@@ -372,6 +381,9 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="class-frequencyquantifier"><strong>  Class: FrequencyQuantifier </strong></h1>
+<div class="highlight-box">
+<strong>Description:</strong><i> A relationship quantifier that expresses how often a relationship holds, using count, total, quotient, or percentage measures.</i><br/>
+</div>
 <div class="mermaid"> classDiagram
     class FrequencyQuantifier
       RelationshipQuantifier &lt;|-- FrequencyQuantifier
@@ -412,7 +424,7 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../has_count/">has_count</a>: <br/> <i> number of things with a particular property </i></td>
+<td><a href="../has_count/">has_count</a>: <br> <i> number of things with a particular property </i></br></td>
 <td>0..1 <br/> <a href="../Integer/">Integer</a></td>
 <td>direct</td>
 <td></td>
@@ -448,11 +460,11 @@
 <tbody>
 <tr>
 <td><a href="../EntityToPhenotypicFeatureAssociationMixin/">EntityToPhenotypicFeatureAssociationMixin</a></td>
-<td>None</td>
+<td>A mixin applied to any association whose object (target node) is a phenotypic feature.</td>
 </tr>
 <tr>
 <td><a href="../PhenotypicFeatureToEntityAssociationMixin/">PhenotypicFeatureToEntityAssociationMixin</a></td>
-<td>None</td>
+<td>A mixin applied to any association whose subject (source node) is a phenotypic feature.</td>
 </tr>
 <tr>
 <td><a href="../DiseaseToPhenotypicFeatureAssociation/">DiseaseToPhenotypicFeatureAssociation</a></td>
@@ -464,9 +476,32 @@
 </tr>
 </tbody>
 </table>
+<h2 id="example-values">Example values</h2>
+<table>
+<thead>
+<tr>
+<th>Slot Name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FrequencyQuantifier</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details open="">
 <pre><code class="language-yaml">name: frequency quantifier
+description: A relationship quantifier that expresses how often a relationship holds,
+  using count, total, quotient, or percentage measures.
+examples:
+- object:
+    has_count: 42
+    has_total: 100
+    has_quotient: 0.42
+    has_percentage: 42.0
 from_schema: https://w3id.org/biolink/vocab/
 is_a: relationship quantifier
 mixin: true

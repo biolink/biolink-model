@@ -372,6 +372,9 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="class-noncodingrnaproduct"><strong>  Class: NoncodingRNAProduct </strong></h1>
+<div class="highlight-box">
+<strong>Description:</strong><i> An RNA transcript that does not encode for a protein rather the RNA molecule is the functional gene product.</i><br/>
+</div>
 <div class="mermaid"> classDiagram
     class NoncodingRNAProduct
       RNAProduct &lt;|-- NoncodingRNAProduct
@@ -456,15 +459,15 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../synonym/">synonym</a>: <br/> <i> Alternate human-readable names for a thing </i></td>
+<td><a href="../synonym/">synonym</a>: <br> <i> Alternate human-readable names for a thing </i></br></td>
 <td>* <br/> <a href="../LabelType/">LabelType</a></td>
-<td><a href="../NamedThing/">NamedThing</a>, <a href="../GeneProductMixin/">GeneProductMixin</a></td>
+<td><a href="../GeneProductMixin/">GeneProductMixin</a>, <a href="../NamedThing/">NamedThing</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="../xref/">xref</a>: <br/> <i> A database cross reference or alternative identifier for a NamedThing or edge between two NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references. </i></td>
 <td>* <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
-<td><a href="../NamedThing/">NamedThing</a>, <a href="../GeneProductMixin/">GeneProductMixin</a></td>
+<td><a href="../GeneProductMixin/">GeneProductMixin</a>, <a href="../NamedThing/">NamedThing</a></td>
 <td></td>
 </tr>
 <tr>
@@ -528,7 +531,7 @@
 <td></td>
 </tr>
 <tr>
-<td><a href="../type/">type</a>: <br/> <i> None </i></td>
+<td><a href="../type/">type</a>: <br/> <i> An rdf:type property asserting that an entity is an instance of a particular class. In Biolink the value is typically used to indicate the most specific category of which the entity is an instance. </i></td>
 <td>* <br/> <a href="../String/">String</a></td>
 <td><a href="../Entity/">Entity</a></td>
 <td></td>
@@ -536,7 +539,7 @@
 <tr>
 <td><a href="../name/">name</a>: <br/> <i> genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name </i></td>
 <td>0..1 <br/> <a href="../SymbolType/">SymbolType</a></td>
-<td><a href="../MacromolecularMachineMixin/">MacromolecularMachineMixin</a>, <a href="../Entity/">Entity</a></td>
+<td><a href="../Entity/">Entity</a>, <a href="../MacromolecularMachineMixin/">MacromolecularMachineMixin</a></td>
 <td></td>
 </tr>
 <tr>
@@ -590,6 +593,8 @@ id_prefixes:
 - RNACENTRAL
 - NCBIGene
 - ENSEMBL
+description: An RNA transcript that does not encode for a protein rather the RNA molecule
+  is the functional gene product.
 from_schema: https://w3id.org/biolink/vocab/
 exact_mappings:
 - SO:0000655

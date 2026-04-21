@@ -363,6 +363,9 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="class-proteinfamily"><strong>  Class: ProteinFamily </strong></h1>
+<div class="highlight-box">
+<strong>Description:</strong><i> A set of proteins coding for diverse functions which, by virtue of their high degree of sequence similarity, are believed to have evolved from a single ancestral gene.</i><br/>
+</div>
 <div class="mermaid"> classDiagram
     class ProteinFamily
       GeneGroupingMixin &lt;|-- ProteinFamily
@@ -438,7 +441,7 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../has_gene_or_gene_product/">has_gene_or_gene_product</a>: <br/> <i> connects an entity with one or more gene or gene products </i></td>
+<td><a href="../has_gene_or_gene_product/">has_gene_or_gene_product</a>: <br> <i> connects an entity with one or more gene or gene products </i></br></td>
 <td>* <br/> <a href="../Gene/">Gene</a></td>
 <td><a href="../GeneGroupingMixin/">GeneGroupingMixin</a></td>
 <td></td>
@@ -516,7 +519,7 @@
 <td></td>
 </tr>
 <tr>
-<td><a href="../type/">type</a>: <br/> <i> None </i></td>
+<td><a href="../type/">type</a>: <br/> <i> An rdf:type property asserting that an entity is an instance of a particular class. In Biolink the value is typically used to indicate the most specific category of which the entity is an instance. </i></td>
 <td>* <br/> <a href="../String/">String</a></td>
 <td><a href="../Entity/">Entity</a></td>
 <td></td>
@@ -550,6 +553,9 @@
 <h2 id="linkml-source">LinkML Source</h2>
 <details open="">
 <pre><code class="language-yaml">name: protein family
+description: A set of proteins coding for diverse functions which, by virtue of their
+  high degree of sequence similarity, are believed to have evolved from a single ancestral
+  gene.
 from_schema: https://w3id.org/biolink/vocab/
 exact_mappings:
 - NCIT:C26004

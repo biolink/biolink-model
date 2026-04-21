@@ -381,6 +381,9 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="class-cellline"><strong>  Class: CellLine </strong></h1>
+<div class="highlight-box">
+<strong>Description:</strong><i> A cultured cell population that is genetically stable and homogeneous, sharing a common propagation history through successive passages in culture.</i><br/>
+</div>
 <div class="mermaid"> classDiagram
     class CellLine
       SubjectOfInvestigation &lt;|-- CellLine
@@ -454,7 +457,7 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../in_taxon/">in_taxon</a>: <br/> <i> connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon' </i></td>
+<td><a href="../in_taxon/">in_taxon</a>: <br> <i> connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon' </i></br></td>
 <td>* <br/> <a href="../OrganismTaxon/">OrganismTaxon</a></td>
 <td><a href="../ThingWithTaxon/">ThingWithTaxon</a></td>
 <td></td>
@@ -526,7 +529,7 @@
 <td></td>
 </tr>
 <tr>
-<td><a href="../type/">type</a>: <br/> <i> None </i></td>
+<td><a href="../type/">type</a>: <br/> <i> An rdf:type property asserting that an entity is an instance of a particular class. In Biolink the value is typically used to indicate the most specific category of which the entity is an instance. </i></td>
 <td>* <br/> <a href="../String/">String</a></td>
 <td><a href="../Entity/">Entity</a></td>
 <td></td>
@@ -603,6 +606,8 @@
 <pre><code class="language-yaml">name: cell line
 id_prefixes:
 - CLO
+description: A cultured cell population that is genetically stable and homogeneous,
+  sharing a common propagation history through successive passages in culture.
 from_schema: https://w3id.org/biolink/vocab/
 exact_mappings:
 - CLO:0000031

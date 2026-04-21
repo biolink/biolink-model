@@ -239,35 +239,7 @@
                             },
                             {
                                 "name": "cellular_organism",
-                                "parent": "organismal_entity",
-                                "children": [
-                                    {
-                                        "name": "fungus",
-                                        "parent": "cellular_organism"
-                                    },
-                                    {
-                                        "name": "invertebrate",
-                                        "parent": "cellular_organism"
-                                    },
-                                    {
-                                        "name": "mammal",
-                                        "parent": "cellular_organism",
-                                        "children": [
-                                            {
-                                                "name": "human",
-                                                "parent": "mammal"
-                                            }
-                                        ]
-                                    },
-                                    {
-                                        "name": "plant",
-                                        "parent": "cellular_organism"
-                                    },
-                                    {
-                                        "name": "vertebrate",
-                                        "parent": "cellular_organism"
-                                    }
-                                ]
+                                "parent": "organismal_entity"
                             },
                             {
                                 "name": "individual_organism",

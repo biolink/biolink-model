@@ -363,6 +363,9 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="class-varianttophenotypicfeatureassociation"><strong>  Class: VariantToPhenotypicFeatureAssociation </strong></h1>
+<div class="highlight-box">
+<strong>Description:</strong><i> An association between a sequence variant and a phenotypic feature, in which the allele state of the variant is linked to the manifestation of the phenotype.</i><br/>
+</div>
 <div class="mermaid"> classDiagram
     class VariantToPhenotypicFeatureAssociation
       VariantToEntityAssociationMixin &lt;|-- VariantToPhenotypicFeatureAssociation
@@ -439,6 +442,8 @@
 
       VariantToPhenotypicFeatureAssociation : object_aspect_qualifier
 
+          VariantToPhenotypicFeatureAssociation --|&gt; GeneOrGeneProductOrChemicalEntityAspectEnum : object_aspect_qualifier
+
       VariantToPhenotypicFeatureAssociation : object_category
 
           VariantToPhenotypicFeatureAssociation --|&gt; OntologyClass : object_category
@@ -503,6 +508,8 @@
 
       VariantToPhenotypicFeatureAssociation : subject_aspect_qualifier
 
+          VariantToPhenotypicFeatureAssociation --|&gt; GeneOrGeneProductOrChemicalEntityAspectEnum : subject_aspect_qualifier
+
       VariantToPhenotypicFeatureAssociation : subject_category
 
           VariantToPhenotypicFeatureAssociation --|&gt; OntologyClass : subject_category
@@ -555,21 +562,21 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../subject/">subject</a>: <br/> <i> a sequence variant in which the allele state is associated in some way with the phenotype state </i></td>
+<td><a href="../subject/">subject</a>: <br> <i> a sequence variant in which the allele state is associated in some way with the phenotype state </i></br></td>
 <td>1 <br/> <a href="../SequenceVariant/">SequenceVariant</a></td>
-<td><a href="../Association/">Association</a>, <a href="../EntityToPhenotypicFeatureAssociationMixin/">EntityToPhenotypicFeatureAssociationMixin</a>, <a href="../VariantToEntityAssociationMixin/">VariantToEntityAssociationMixin</a>, <a href="../FrequencyQualifierMixin/">FrequencyQualifierMixin</a></td>
+<td><a href="../FrequencyQualifierMixin/">FrequencyQualifierMixin</a>, <a href="../EntityToPhenotypicFeatureAssociationMixin/">EntityToPhenotypicFeatureAssociationMixin</a>, <a href="../Association/">Association</a>, <a href="../VariantToEntityAssociationMixin/">VariantToEntityAssociationMixin</a></td>
 <td>CLINVAR:38077, ClinGen:CA024716</td>
 </tr>
 <tr>
 <td><a href="../predicate/">predicate</a>: <br/> <i> Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats </i></td>
 <td>1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
-<td><a href="../Association/">Association</a>, <a href="../EntityToPhenotypicFeatureAssociationMixin/">EntityToPhenotypicFeatureAssociationMixin</a>, <a href="../VariantToEntityAssociationMixin/">VariantToEntityAssociationMixin</a>, <a href="../FrequencyQualifierMixin/">FrequencyQualifierMixin</a></td>
+<td><a href="../FrequencyQualifierMixin/">FrequencyQualifierMixin</a>, <a href="../EntityToPhenotypicFeatureAssociationMixin/">EntityToPhenotypicFeatureAssociationMixin</a>, <a href="../Association/">Association</a>, <a href="../VariantToEntityAssociationMixin/">VariantToEntityAssociationMixin</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="../object/">object</a>: <br/> <i> connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object. </i></td>
 <td>1 <br/> <a href="../PhenotypicFeature/">PhenotypicFeature</a></td>
-<td><a href="../Association/">Association</a>, <a href="../EntityToPhenotypicFeatureAssociationMixin/">EntityToPhenotypicFeatureAssociationMixin</a>, <a href="../VariantToEntityAssociationMixin/">VariantToEntityAssociationMixin</a>, <a href="../FrequencyQualifierMixin/">FrequencyQualifierMixin</a></td>
+<td><a href="../FrequencyQualifierMixin/">FrequencyQualifierMixin</a>, <a href="../EntityToPhenotypicFeatureAssociationMixin/">EntityToPhenotypicFeatureAssociationMixin</a>, <a href="../Association/">Association</a>, <a href="../VariantToEntityAssociationMixin/">VariantToEntityAssociationMixin</a></td>
 <td>HP:0002487, WBPhenotype:0000180, MP:0001569</td>
 </tr>
 <tr>
@@ -768,7 +775,7 @@
 <td><a href="../supporting_text/">supporting_text</a>: <br/> <i> The segment of text from a document that supports the mined assertion. </i></td>
 <td>* <br/> <a href="../String/">String</a></td>
 <td><a href="../Association/">Association</a></td>
-<td>The administration of 50g/ml bupivacaine promoted maximum breast cancer.</td>
+<td>Here, we report two new cases of rivaroxaban-induced hepatitis.</td>
 </tr>
 <tr>
 <td><a href="../has_supporting_studies/">has_supporting_studies</a>: <br/> <i> Studies that produced information used as evidence to generate the knowledge expressed in an Association. </i></td>
@@ -880,7 +887,7 @@
 </tr>
 <tr>
 <td><a href="../subject_aspect_qualifier/">subject_aspect_qualifier</a>: <br/> <i> Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the subject of an association (aka: statement). </i></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../GeneOrGeneProductOrChemicalEntityAspectEnum/">GeneOrGeneProductOrChemicalEntityAspectEnum</a></td>
 <td><a href="../EntityToFeatureOrDiseaseQualifiersMixin/">EntityToFeatureOrDiseaseQualifiersMixin</a></td>
 <td>stability, abundance, expression, exposure</td>
 </tr>
@@ -888,11 +895,11 @@
 <td><a href="../subject_direction_qualifier/">subject_direction_qualifier</a>: <br/> <i> Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement). </i></td>
 <td>0..1 <br/> <a href="../DirectionQualifierEnum/">DirectionQualifierEnum</a></td>
 <td><a href="../EntityToFeatureOrDiseaseQualifiersMixin/">EntityToFeatureOrDiseaseQualifiersMixin</a></td>
-<td></td>
+<td>increased, downregulated</td>
 </tr>
 <tr>
 <td><a href="../object_aspect_qualifier/">object_aspect_qualifier</a>: <br/> <i> Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the object of an association (aka: statement). </i></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../GeneOrGeneProductOrChemicalEntityAspectEnum/">GeneOrGeneProductOrChemicalEntityAspectEnum</a></td>
 <td><a href="../EntityToFeatureOrDiseaseQualifiersMixin/">EntityToFeatureOrDiseaseQualifiersMixin</a></td>
 <td>stability, abundance, expression, exposure</td>
 </tr>
@@ -900,13 +907,13 @@
 <td><a href="../object_direction_qualifier/">object_direction_qualifier</a>: <br/> <i> Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement). </i></td>
 <td>0..1 <br/> <a href="../DirectionQualifierEnum/">DirectionQualifierEnum</a></td>
 <td><a href="../EntityToFeatureOrDiseaseQualifiersMixin/">EntityToFeatureOrDiseaseQualifiersMixin</a></td>
-<td></td>
+<td>increased, downregulated</td>
 </tr>
 <tr>
 <td><a href="../qualified_predicate/">qualified_predicate</a>: <br/> <i> Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  Has a value from the Biolink 'related_to' hierarchy, for example, biolink:related_to, biolink:causes, biolink:treats This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a ‘full statement’ reading of the association, where qualifier-based semantics are included. This is necessary only in cases where the primary predicate does not work in a full statement reading. </i></td>
 <td>0..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
 <td><a href="../EntityToFeatureOrDiseaseQualifiersMixin/">EntityToFeatureOrDiseaseQualifiersMixin</a></td>
-<td></td>
+<td>biolink:causes</td>
 </tr>
 <tr>
 <td><a href="../disease_context_qualifier/">disease_context_qualifier</a>: <br/> <i> A context qualifier representing a disease or condition in which a relationship expressed in an association took place. </i></td>
@@ -925,6 +932,8 @@
 <h2 id="linkml-source">LinkML Source</h2>
 <details open="">
 <pre><code class="language-yaml">name: variant to phenotypic feature association
+description: An association between a sequence variant and a phenotypic feature, in
+  which the allele state of the variant is linked to the manifestation of the phenotype.
 from_schema: https://w3id.org/biolink/vocab/
 is_a: association
 mixins:

@@ -347,6 +347,15 @@
 </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="#example-values">
+<span class="md-ellipsis">
+      
+        Example values
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#linkml-source">
 <span class="md-ellipsis">
       
@@ -590,10 +599,10 @@
 <td>mutation, late stage, severe, transplant, chemical analog</td>
 </tr>
 <tr>
-<td><a href="../subject_part_qualifier/">subject_part_qualifier</a>: <br/> <i> defines a specific part/component of the core concept (used in cases there this specific part has no IRI we can use to directly represent it, e.g. 'ESR1 transcript' q: polyA tail).  This qualifier is for the subject of an association (or statement). </i></td>
+<td><a href="../subject_part_qualifier/">subject_part_qualifier</a>: <br/> <i> defines a specific part/component of the core concept (used in cases there this specific part has no IRI we can use to directly represent it).  This qualifier is for the subject of an association (or statement). </i></td>
 <td>0..1 <br/> <a href="../GeneOrGeneProductOrChemicalPartQualifierEnum/">GeneOrGeneProductOrChemicalPartQualifierEnum</a></td>
 <td>direct</td>
-<td></td>
+<td>polyA tail, upstream control region</td>
 </tr>
 <tr>
 <td><a href="../subject_derivative_qualifier/">subject_derivative_qualifier</a>: <br/> <i> A qualifier that composes with a core subject/object  concept to describe something that is derived from the core concept.  For example, the qualifier ‘metabolite’ combines with a ‘Chemical X’ core concept to express the composed concept ‘a metabolite of Chemical X’.  This qualifier is for the subject of an association (or statement). </i></td>
@@ -602,7 +611,7 @@
 <td>metabolite</td>
 </tr>
 <tr>
-<td><a href="../subject_context_qualifier/">subject_context_qualifier</a>: <br/> <i> None </i></td>
+<td><a href="../subject_context_qualifier/">subject_context_qualifier</a>: <br/> <i> A qualifier describing the context in which the subject of an association holds. </i></td>
 <td>0..1 <br/> <a href="../AnatomicalEntity/">AnatomicalEntity</a></td>
 <td>direct</td>
 <td></td>
@@ -611,13 +620,13 @@
 <td><a href="../qualified_predicate/">qualified_predicate</a>: <br/> <i> Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  Has a value from the Biolink 'related_to' hierarchy, for example, biolink:related_to, biolink:causes, biolink:treats This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a ‘full statement’ reading of the association, where qualifier-based semantics are included. This is necessary only in cases where the primary predicate does not work in a full statement reading. </i></td>
 <td>0..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
 <td>direct</td>
-<td></td>
+<td>biolink:causes</td>
 </tr>
 <tr>
 <td><a href="../object_direction_qualifier/">object_direction_qualifier</a>: <br/> <i> Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement). </i></td>
 <td>0..1 <br/> <a href="../DirectionQualifierEnum/">DirectionQualifierEnum</a></td>
 <td>direct</td>
-<td></td>
+<td>increased, downregulated</td>
 </tr>
 <tr>
 <td><a href="../object_aspect_qualifier/">object_aspect_qualifier</a>: <br/> <i> Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the object of an association (aka: statement). </i></td>
@@ -632,13 +641,13 @@
 <td>mutation, late stage, severe, transplant, chemical analog</td>
 </tr>
 <tr>
-<td><a href="../object_part_qualifier/">object_part_qualifier</a>: <br/> <i> defines a specific part/component of the core concept (used in cases there this specific part has no IRI we can use to directly represent it, e.g. 'ESR1 transcript' q: polyA tail).  This qualifier is for the object of an association (or statement). </i></td>
+<td><a href="../object_part_qualifier/">object_part_qualifier</a>: <br/> <i> defines a specific part/component of the core concept (used in cases there this specific part has no IRI we can use to directly represent it).  This qualifier is for the object of an association (or statement). </i></td>
 <td>0..1 <br/> <a href="../GeneOrGeneProductOrChemicalPartQualifierEnum/">GeneOrGeneProductOrChemicalPartQualifierEnum</a></td>
 <td>direct</td>
-<td></td>
+<td>polyA tail, upstream control region</td>
 </tr>
 <tr>
-<td><a href="../object_context_qualifier/">object_context_qualifier</a>: <br/> <i> None </i></td>
+<td><a href="../object_context_qualifier/">object_context_qualifier</a>: <br/> <i> A qualifier describing the context in which the object of an association holds. </i></td>
 <td>0..1 <br/> <a href="../AnatomicalEntity/">AnatomicalEntity</a></td>
 <td>direct</td>
 <td></td>
@@ -647,13 +656,13 @@
 <td><a href="../anatomical_context_qualifier/">anatomical_context_qualifier</a>: <br/> <i> A statement qualifier representing an anatomical location where an relationship expressed in an association took place (can be a tissue, cell type, or sub-cellular location). </i></td>
 <td>* <br/> <a href="../AnatomicalEntity/">AnatomicalEntity</a></td>
 <td>direct</td>
-<td>blood, cerebral cortext</td>
+<td>UBERON:0000178, UBERON:0000956</td>
 </tr>
 <tr>
-<td><a href="../causal_mechanism_qualifier/">causal_mechanism_qualifier</a>: <br/> <i> A statement qualifier representing a type of molecular control mechanism through which an effect of a chemical on a gene or gene product is mediated (e.g. 'agonism', 'inhibition', 'allosteric modulation', 'channel blocker') </i></td>
+<td><a href="../causal_mechanism_qualifier/">causal_mechanism_qualifier</a>: <br/> <i> A statement qualifier representing a type of molecular control mechanism through which an effect of a chemical on a gene or gene product is mediated </i></td>
 <td>0..1 <br/> <a href="../CausalMechanismQualifierEnum/">CausalMechanismQualifierEnum</a></td>
 <td>direct</td>
-<td></td>
+<td>agonism, inhibition</td>
 </tr>
 <tr>
 <td><a href="../dgidb_interaction_score/">dgidb_interaction_score</a>: <br/> <i> A score defined by DGIdb that is used to rank interaction record results in DGIdb, which  combines their evidence score  (based on total supporting sources and pubs), with their relative gene specificity score and relative drug specificity score. See https://dgidb.org/about/overview/interaction-score. </i></td>
@@ -875,7 +884,7 @@
 <td><a href="../supporting_text/">supporting_text</a>: <br/> <i> The segment of text from a document that supports the mined assertion. </i></td>
 <td>* <br/> <a href="../String/">String</a></td>
 <td><a href="../Association/">Association</a></td>
-<td>The administration of 50g/ml bupivacaine promoted maximum breast cancer.</td>
+<td>Here, we report two new cases of rivaroxaban-induced hepatitis.</td>
 </tr>
 <tr>
 <td><a href="../has_supporting_studies/">has_supporting_studies</a>: <br/> <i> Studies that produced information used as evidence to generate the knowledge expressed in an Association. </i></td>
@@ -963,6 +972,29 @@
 </tr>
 </tbody>
 </table>
+<h2 id="example-values">Example values</h2>
+<table>
+<thead>
+<tr>
+<th>Slot Name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ChemicalGeneInteractionAssociation</td>
+<td>None</td>
+</tr>
+<tr>
+<td>ChemicalGeneInteractionAssociation</td>
+<td>None</td>
+</tr>
+<tr>
+<td>ChemicalGeneInteractionAssociation</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details open="">
 <pre><code class="language-yaml">name: chemical gene interaction association
@@ -971,6 +1003,32 @@ description: describes an interaction between a chemical entity and a gene or ge
   out of scope, and covered by the ChemicalAffectsGeneAssociation type (e.g. impact
   of a chemical on the abundance, activity, structure, etc, of either participant
   in the interaction)
+examples:
+- object:
+    subject: CHEBI:135370
+    predicate: biolink:directly_physically_interacts_with
+    object: UniProtKB:P0DP23
+    category: biolink:ChemicalGeneInteractionAssociation
+    knowledge_level: knowledge_assertion
+    agent_type: manual_agent
+- object:
+    subject: CHEBI:4779
+    predicate: biolink:directly_physically_interacts_with
+    object: NCBIGene:3269
+    category: biolink:ChemicalGeneInteractionAssociation
+    knowledge_level: knowledge_assertion
+    agent_type: manual_agent
+    publications:
+    - http://www.accessdata.fda.gov/drugsatfda_docs/label/2003/20706slr011_emadine_lbl.pdf
+- object:
+    subject: UNII:OP35X9610Y
+    predicate: biolink:interacts_with
+    object: NCBIGene:2690
+    category: biolink:ChemicalGeneInteractionAssociation
+    knowledge_level: knowledge_assertion
+    agent_type: manual_agent
+    publications:
+    - https://www.accessdata.fda.gov/drugsatfda_docs/label/2021/761177Orig1s000lbl.pdf
 from_schema: https://w3id.org/biolink/vocab/
 broad_mappings:
 - SIO:001257

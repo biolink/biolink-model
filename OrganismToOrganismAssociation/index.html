@@ -363,6 +363,9 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="class-organismtoorganismassociation"><strong>  Class: OrganismToOrganismAssociation </strong></h1>
+<div class="highlight-box">
+<strong>Description:</strong><i> An association between two individual organisms (e.g., symbiosis, parasitism, predation, or other inter-organism relationships).</i><br/>
+</div>
 <div class="mermaid"> classDiagram
     class OrganismToOrganismAssociation
       Association &lt;|-- OrganismToOrganismAssociation
@@ -521,7 +524,7 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../subject/">subject</a>: <br/> <i> connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object. </i></td>
+<td><a href="../subject/">subject</a>: <br> <i> connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object. </i></br></td>
 <td>1 <br/> <a href="../IndividualOrganism/">IndividualOrganism</a></td>
 <td><a href="../Association/">Association</a></td>
 <td></td>
@@ -728,7 +731,7 @@
 <td><a href="../supporting_text/">supporting_text</a>: <br/> <i> The segment of text from a document that supports the mined assertion. </i></td>
 <td>* <br/> <a href="../String/">String</a></td>
 <td><a href="../Association/">Association</a></td>
-<td>The administration of 50g/ml bupivacaine promoted maximum breast cancer.</td>
+<td>Here, we report two new cases of rivaroxaban-induced hepatitis.</td>
 </tr>
 <tr>
 <td><a href="../has_supporting_studies/">has_supporting_studies</a>: <br/> <i> Studies that produced information used as evidence to generate the knowledge expressed in an Association. </i></td>
@@ -819,6 +822,8 @@
 <h2 id="linkml-source">LinkML Source</h2>
 <details open="">
 <pre><code class="language-yaml">name: organism to organism association
+description: An association between two individual organisms (e.g., symbiosis, parasitism,
+  predation, or other inter-organism relationships).
 from_schema: https://w3id.org/biolink/vocab/
 is_a: association
 slot_usage:

@@ -372,6 +372,9 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="class-entitytophenotypicfeatureassociationmixin"><strong>  Class: EntityToPhenotypicFeatureAssociationMixin </strong></h1>
+<div class="highlight-box">
+<strong>Description:</strong><i> A mixin applied to any association whose object (target node) is a phenotypic feature.</i><br/>
+</div>
 <div class="mermaid"> classDiagram
     class EntityToPhenotypicFeatureAssociationMixin
       FrequencyQuantifier &lt;|-- EntityToPhenotypicFeatureAssociationMixin
@@ -408,6 +411,8 @@
 
       EntityToPhenotypicFeatureAssociationMixin : object_aspect_qualifier
 
+          EntityToPhenotypicFeatureAssociationMixin --|&gt; GeneOrGeneProductOrChemicalEntityAspectEnum : object_aspect_qualifier
+
       EntityToPhenotypicFeatureAssociationMixin : object_direction_qualifier
 
           EntityToPhenotypicFeatureAssociationMixin --|&gt; DirectionQualifierEnum : object_direction_qualifier
@@ -425,6 +430,8 @@
           EntityToPhenotypicFeatureAssociationMixin --|&gt; NamedThing : subject
 
       EntityToPhenotypicFeatureAssociationMixin : subject_aspect_qualifier
+
+          EntityToPhenotypicFeatureAssociationMixin --|&gt; GeneOrGeneProductOrChemicalEntityAspectEnum : subject_aspect_qualifier
 
       EntityToPhenotypicFeatureAssociationMixin : subject_direction_qualifier
 
@@ -454,7 +461,7 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../subject/">subject</a>: <br/> <i> connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object. </i></td>
+<td><a href="../subject/">subject</a>: <br> <i> connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object. </i></br></td>
 <td>1 <br/> <a href="../NamedThing/">NamedThing</a></td>
 <td>direct</td>
 <td></td>
@@ -503,7 +510,7 @@
 </tr>
 <tr>
 <td><a href="../subject_aspect_qualifier/">subject_aspect_qualifier</a>: <br/> <i> Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the subject of an association (aka: statement). </i></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../GeneOrGeneProductOrChemicalEntityAspectEnum/">GeneOrGeneProductOrChemicalEntityAspectEnum</a></td>
 <td><a href="../EntityToFeatureOrDiseaseQualifiersMixin/">EntityToFeatureOrDiseaseQualifiersMixin</a></td>
 <td>stability, abundance, expression, exposure</td>
 </tr>
@@ -511,11 +518,11 @@
 <td><a href="../subject_direction_qualifier/">subject_direction_qualifier</a>: <br/> <i> Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement). </i></td>
 <td>0..1 <br/> <a href="../DirectionQualifierEnum/">DirectionQualifierEnum</a></td>
 <td><a href="../EntityToFeatureOrDiseaseQualifiersMixin/">EntityToFeatureOrDiseaseQualifiersMixin</a></td>
-<td></td>
+<td>increased, downregulated</td>
 </tr>
 <tr>
 <td><a href="../object_aspect_qualifier/">object_aspect_qualifier</a>: <br/> <i> Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the object of an association (aka: statement). </i></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../GeneOrGeneProductOrChemicalEntityAspectEnum/">GeneOrGeneProductOrChemicalEntityAspectEnum</a></td>
 <td><a href="../EntityToFeatureOrDiseaseQualifiersMixin/">EntityToFeatureOrDiseaseQualifiersMixin</a></td>
 <td>stability, abundance, expression, exposure</td>
 </tr>
@@ -523,13 +530,13 @@
 <td><a href="../object_direction_qualifier/">object_direction_qualifier</a>: <br/> <i> Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement). </i></td>
 <td>0..1 <br/> <a href="../DirectionQualifierEnum/">DirectionQualifierEnum</a></td>
 <td><a href="../EntityToFeatureOrDiseaseQualifiersMixin/">EntityToFeatureOrDiseaseQualifiersMixin</a></td>
-<td></td>
+<td>increased, downregulated</td>
 </tr>
 <tr>
 <td><a href="../qualified_predicate/">qualified_predicate</a>: <br/> <i> Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  Has a value from the Biolink 'related_to' hierarchy, for example, biolink:related_to, biolink:causes, biolink:treats This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a ‘full statement’ reading of the association, where qualifier-based semantics are included. This is necessary only in cases where the primary predicate does not work in a full statement reading. </i></td>
 <td>0..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
 <td><a href="../EntityToFeatureOrDiseaseQualifiersMixin/">EntityToFeatureOrDiseaseQualifiersMixin</a></td>
-<td></td>
+<td>biolink:causes</td>
 </tr>
 <tr>
 <td><a href="../disease_context_qualifier/">disease_context_qualifier</a>: <br/> <i> A context qualifier representing a disease or condition in which a relationship expressed in an association took place. </i></td>
@@ -580,17 +587,19 @@
 </tr>
 <tr>
 <td><a href="../GeneToPhenotypicFeatureAssociation/">GeneToPhenotypicFeatureAssociation</a></td>
-<td>None</td>
+<td>An association between a gene or gene product and a phenotypic feature, where variation in the gene is correlated with the phenotypic feature.</td>
 </tr>
 <tr>
 <td><a href="../VariantToPhenotypicFeatureAssociation/">VariantToPhenotypicFeatureAssociation</a></td>
-<td>None</td>
+<td>An association between a sequence variant and a phenotypic feature, in which the allele state of the variant is linked to the manifestation of the phenotype.</td>
 </tr>
 </tbody>
 </table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details open="">
 <pre><code class="language-yaml">name: entity to phenotypic feature association mixin
+description: A mixin applied to any association whose object (target node) is a phenotypic
+  feature.
 from_schema: https://w3id.org/biolink/vocab/
 is_a: entity to feature or disease qualifiers mixin
 mixin: true

@@ -373,7 +373,7 @@
 <article class="md-content__inner md-typeset">
 <h1 id="class-diseaseorphenotypicfeature"><strong>  Class: DiseaseOrPhenotypicFeature </strong></h1>
 <div class="highlight-box">
-<strong>Description:</strong><i> Either one of a disease or an individual phenotypic feature. Some knowledge resources such as Monarch treat these as distinct, others such as MESH conflate.  Please see definitions of phenotypic feature and disease in this model for their independent descriptions.  This class is helpful to enforce domains and ranges that may involve either a disease or a phenotypic feature.</i><br/>
+<strong>Description:</strong><i> A disease or an individual phenotypic feature, grouped as a single class to accommodate source vocabularies and assertions that do not distinguish the two. Prefer the more specific subclasses disease or phenotypic feature when the distinction is known.</i><br/>
 </div>
 <p>Aliases: phenome  </p>
 <div class="mermaid"> classDiagram
@@ -537,7 +537,7 @@
 <td></td>
 </tr>
 <tr>
-<td><a href="../type/">type</a>: <br/> <i> None </i></td>
+<td><a href="../type/">type</a>: <br/> <i> An rdf:type property asserting that an entity is an instance of a particular class. In Biolink the value is typically used to indicate the most specific category of which the entity is an instance. </i></td>
 <td>* <br/> <a href="../String/">String</a></td>
 <td><a href="../Entity/">Entity</a></td>
 <td></td>
@@ -704,15 +704,14 @@
 <h2 id="linkml-source">LinkML Source</h2>
 <details open="">
 <pre><code class="language-yaml">name: disease or phenotypic feature
-description: Either one of a disease or an individual phenotypic feature. Some knowledge
-  resources such as Monarch treat these as distinct, others such as MESH conflate.  Please
-  see definitions of phenotypic feature and disease in this model for their independent
-  descriptions.  This class is helpful to enforce domains and ranges that may involve
-  either a disease or a phenotypic feature.
+description: A disease or an individual phenotypic feature, grouped as a single class
+  to accommodate source vocabularies and assertions that do not distinguish the two.
+  Prefer the more specific subclasses disease or phenotypic feature when the distinction
+  is known.
 from_schema: https://w3id.org/biolink/vocab/
 aliases:
 - phenome
-narrow_mappings:
+related_mappings:
 - STY:T033
 is_a: biological entity
 mixins:

@@ -715,6 +715,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#example-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example values
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#linkml-source" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -746,7 +757,7 @@
 
 
 <h1 id="slot-subject_part_qualifier"><strong> Slot: subject_part_qualifier </strong></h1>
-<div class="highlight-box"><strong>Description:</strong><i> defines a specific part/component of the core concept (used in cases there this specific part has no IRI we can use to directly represent it, e.g. 'ESR1 transcript' q: polyA tail).  This qualifier is for the subject of an association (or statement).</i><br>
+<div class="highlight-box"><strong>Description:</strong><i> defines a specific part/component of the core concept (used in cases there this specific part has no IRI we can use to directly represent it).  This qualifier is for the subject of an association (or statement).</i><br>
 
 
 <br>
@@ -800,14 +811,35 @@
 </tr>
 </tbody>
 </table>
+<h2 id="example-values">Example values</h2>
+<table>
+<thead>
+<tr>
+<th>Slot Name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>subject_part_qualifier</td>
+<td>polyA tail</td>
+</tr>
+<tr>
+<td>subject_part_qualifier</td>
+<td>upstream control region</td>
+</tr>
+</tbody>
+</table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details open>
 
 <pre><code class="language-yaml">name: subject part qualifier
-description: 'defines a specific part/component of the core concept (used in cases
-  there this specific part has no IRI we can use to directly represent it, e.g. ''ESR1
-  transcript'' q: polyA tail).  This qualifier is for the subject of an association
-  (or statement).'
+description: defines a specific part/component of the core concept (used in cases
+  there this specific part has no IRI we can use to directly represent it).  This
+  qualifier is for the subject of an association (or statement).
+examples:
+- value: polyA tail
+- value: upstream control region
 in_subset:
 - translator_minimal
 from_schema: https://w3id.org/biolink/vocab/

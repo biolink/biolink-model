@@ -746,6 +746,13 @@
 
 
 <h1 id="slot-subject_context_qualifier"><strong> Slot: subject_context_qualifier </strong></h1>
+<div class="highlight-box"><strong>Description:</strong><i> A qualifier describing the context in which the subject of an association holds.</i><br>
+
+
+<br>
+
+</div>
+
 <p><strong>Domain:</strong> <a href="../Association/">Association</a><br>
 <strong>Range:</strong>   <a href="../String/">String</a> <br></p>
 <h2 id="inheritance">Inheritance</h2>
@@ -772,8 +779,13 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../NamedThingAssociatedWithLikelihoodOfNamedThingAssociation/">NamedThingAssociatedWithLikelihoodOfNamedThingAssociation</a></td>
-<td></td>
+<td><a href="../PredicateMapping/">PredicateMapping</a></td>
+<td>A deprecated predicate mapping object contains the deprecated predicate and an example of the rewiring that should be done to use a qualified statement in its place.</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../GeneAffectsChemicalAssociation/">GeneAffectsChemicalAssociation</a></td>
+<td>Describes an effect that a gene or gene product has on a chemical entity (e.g. an impact of on its abundance, activity, localization, processing, transport, etc.)</td>
 <td>yes</td>
 </tr>
 <tr>
@@ -782,18 +794,13 @@
 <td>yes</td>
 </tr>
 <tr>
-<td><a href="../GeneAffectsChemicalAssociation/">GeneAffectsChemicalAssociation</a></td>
-<td>Describes an effect that a gene or gene product has on a chemical entity (e.g. an impact of on its abundance, activity, localization, processing, transport, etc.)</td>
+<td><a href="../ChemicalAffectsBiologicalEntityAssociation/">ChemicalAffectsBiologicalEntityAssociation</a></td>
+<td>Describes an effect that a chemical has on a biological entity (e.g. an impact of on its abundance, activity,localization, processing, expression, etc.)</td>
 <td>yes</td>
 </tr>
 <tr>
-<td><a href="../PredicateMapping/">PredicateMapping</a></td>
-<td>A deprecated predicate mapping object contains the deprecated predicate and an example of the rewiring that should be done to use a qualified statement in its place.</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../ChemicalAffectsBiologicalEntityAssociation/">ChemicalAffectsBiologicalEntityAssociation</a></td>
-<td>Describes an effect that a chemical has on a biological entity (e.g. an impact of on its abundance, activity,localization, processing, expression, etc.)</td>
+<td><a href="../NamedThingAssociatedWithLikelihoodOfNamedThingAssociation/">NamedThingAssociatedWithLikelihoodOfNamedThingAssociation</a></td>
+<td>An association in which the subject entity is linked to the likelihood of the object entity occurring, manifesting, or being observed. Subject and object may each be qualified by aspect and context, and the association may be further qualified by a population context.</td>
 <td>yes</td>
 </tr>
 </tbody>
@@ -802,6 +809,8 @@
 <details open>
 
 <pre><code class="language-yaml">name: subject context qualifier
+description: A qualifier describing the context in which the subject of an association
+  holds.
 in_subset:
 - translator_minimal
 from_schema: https://w3id.org/biolink/vocab/

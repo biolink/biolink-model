@@ -790,8 +790,8 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../MacromolecularMachineToEntityAssociationMixin/">MacromolecularMachineToEntityAssociationMixin</a></td>
-<td>an association which has a macromolecular machine mixin as a subject</td>
+<td><a href="../PredicateMapping/">PredicateMapping</a></td>
+<td>A deprecated predicate mapping object contains the deprecated predicate and an example of the rewiring that should be done to use a qualified statement in its place.</td>
 <td>no</td>
 </tr>
 <tr>
@@ -810,19 +810,19 @@
 <td>no</td>
 </tr>
 <tr>
+<td><a href="../ChemicalAffectsBiologicalEntityAssociation/">ChemicalAffectsBiologicalEntityAssociation</a></td>
+<td>Describes an effect that a chemical has on a biological entity (e.g. an impact of on its abundance, activity,localization, processing, expression, etc.)</td>
+<td>yes</td>
+</tr>
+<tr>
 <td><a href="../ChemicalEntityToChemicalEntityAssociation/">ChemicalEntityToChemicalEntityAssociation</a></td>
 <td>A relationship between two chemical entities. This can encompass actual interactions as well as temporal causal edges, e.g. one chemical converted to another.</td>
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../PredicateMapping/">PredicateMapping</a></td>
-<td>A deprecated predicate mapping object contains the deprecated predicate and an example of the rewiring that should be done to use a qualified statement in its place.</td>
+<td><a href="../MacromolecularMachineToEntityAssociationMixin/">MacromolecularMachineToEntityAssociationMixin</a></td>
+<td>an association which has a macromolecular machine mixin as a subject</td>
 <td>no</td>
-</tr>
-<tr>
-<td><a href="../ChemicalAffectsBiologicalEntityAssociation/">ChemicalAffectsBiologicalEntityAssociation</a></td>
-<td>Describes an effect that a chemical has on a biological entity (e.g. an impact of on its abundance, activity,localization, processing, expression, etc.)</td>
-<td>yes</td>
 </tr>
 </tbody>
 </table>
@@ -837,11 +837,11 @@
 <tbody>
 <tr>
 <td>species_context_qualifier</td>
-<td>zebrafish</td>
+<td>NCBITaxon:7955</td>
 </tr>
 <tr>
 <td>species_context_qualifier</td>
-<td>human</td>
+<td>NCBITaxon:9606</td>
 </tr>
 </tbody>
 </table>
@@ -855,8 +855,10 @@ notes:
 - Ontology CURIEs are expected as values here, the examples below are intended to
   help clarify the content of the CURIEs.
 examples:
-- value: zebrafish
-- value: human
+- value: NCBITaxon:7955
+  description: zebrafish
+- value: NCBITaxon:9606
+  description: human
 in_subset:
 - translator_minimal
 from_schema: https://w3id.org/biolink/vocab/

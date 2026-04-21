@@ -355,7 +355,7 @@
 <article class="md-content__inner md-typeset">
 <h1 id="class-node"><strong>  Class: Node </strong></h1>
 <div class="highlight-box">
-<strong>Description:</strong><i> A node in a KGX graph, will be superclass for named thing</i><br/>
+<strong>Description:</strong><i> A generic node in a KGX-formatted knowledge graph, representing a single entity or concept with a unique identifier. This class serves as the structural superclass for `named thing` in Biolink, providing the minimal KGX-compliant contract (identifier, category, etc.) that any biolink entity participating in a knowledge graph must satisfy.</i><br/>
 </div>
 <div class="mermaid"> classDiagram
     class Node
@@ -384,7 +384,11 @@
 <h2 id="linkml-source">LinkML Source</h2>
 <details open="">
 <pre><code class="language-yaml">name: Node
-description: A node in a KGX graph, will be superclass for named thing
+description: A generic node in a KGX-formatted knowledge graph, representing a single
+  entity or concept with a unique identifier. This class serves as the structural
+  superclass for `named thing` in Biolink, providing the minimal KGX-compliant contract
+  (identifier, category, etc.) that any biolink entity participating in a knowledge
+  graph must satisfy.
 from_schema: https://w3id.org/biolink/vocab/
 
 </code></pre>

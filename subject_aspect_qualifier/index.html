@@ -765,7 +765,7 @@
 </div>
 
 <p><strong>Domain:</strong> <a href="../Association/">Association</a><br>
-<strong>Range:</strong>   <a href="../String/">String</a> <br></p>
+<strong>Range:</strong>   <a href="../GeneOrGeneProductOrChemicalEntityAspectEnum/">GeneOrGeneProductOrChemicalEntityAspectEnum</a> <br></p>
 <h2 id="inheritance">Inheritance</h2>
 <ul>
 <li><a href="../association_slot/">association_slot</a><ul>
@@ -790,28 +790,8 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../NamedThingAssociatedWithLikelihoodOfNamedThingAssociation/">NamedThingAssociatedWithLikelihoodOfNamedThingAssociation</a></td>
-<td></td>
-<td>yes</td>
-</tr>
-<tr>
-<td><a href="../CorrelatedGeneToDiseaseAssociation/">CorrelatedGeneToDiseaseAssociation</a></td>
-<td>None</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../FeatureOrDiseaseQualifiersToEntityMixin/">FeatureOrDiseaseQualifiersToEntityMixin</a></td>
-<td>Qualifiers for disease or phenotype to entity associations.</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../EntityToFeatureOrVariantQualifiersMixin/">EntityToFeatureOrVariantQualifiersMixin</a></td>
-<td>Qualifiers for entity to variant associations.</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../EntityToFeatureOrDiseaseQualifiersMixin/">EntityToFeatureOrDiseaseQualifiersMixin</a></td>
-<td>Qualifiers for entity to disease or phenotype associations.</td>
+<td><a href="../PredicateMapping/">PredicateMapping</a></td>
+<td>A deprecated predicate mapping object contains the deprecated predicate and an example of the rewiring that should be done to use a qualified statement in its place.</td>
 <td>no</td>
 </tr>
 <tr>
@@ -820,19 +800,19 @@
 <td>yes</td>
 </tr>
 <tr>
-<td><a href="../GeneToDiseaseAssociation/">GeneToDiseaseAssociation</a></td>
-<td>None</td>
+<td><a href="../ChemicalAffectsBiologicalEntityAssociation/">ChemicalAffectsBiologicalEntityAssociation</a></td>
+<td>Describes an effect that a chemical has on a biological entity (e.g. an impact of on its abundance, activity,localization, processing, expression, etc.)</td>
 <td>yes</td>
 </tr>
 <tr>
-<td><a href="../CausalGeneToDiseaseAssociation/">CausalGeneToDiseaseAssociation</a></td>
-<td>None</td>
+<td><a href="../NamedThingAssociatedWithLikelihoodOfNamedThingAssociation/">NamedThingAssociatedWithLikelihoodOfNamedThingAssociation</a></td>
+<td>An association in which the subject entity is linked to the likelihood of the object entity occurring, manifesting, or being observed. Subject and object may each be qualified by aspect and context, and the association may be further qualified by a population context.</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><a href="../FeatureOrDiseaseQualifiersToEntityMixin/">FeatureOrDiseaseQualifiersToEntityMixin</a></td>
+<td>Qualifiers for disease or phenotype to entity associations.</td>
 <td>no</td>
-</tr>
-<tr>
-<td><a href="../GeneToPhenotypicFeatureAssociation/">GeneToPhenotypicFeatureAssociation</a></td>
-<td>None</td>
-<td>yes</td>
 </tr>
 <tr>
 <td><a href="../EntityToFeatureOrGeneQualifiersMixin/">EntityToFeatureOrGeneQualifiersMixin</a></td>
@@ -840,14 +820,34 @@
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../PredicateMapping/">PredicateMapping</a></td>
-<td>A deprecated predicate mapping object contains the deprecated predicate and an example of the rewiring that should be done to use a qualified statement in its place.</td>
+<td><a href="../GeneToPhenotypicFeatureAssociation/">GeneToPhenotypicFeatureAssociation</a></td>
+<td>An association between a gene or gene product and a phenotypic feature, where variation in the gene is correlated with the phenotypic feature.</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><a href="../CausalGeneToDiseaseAssociation/">CausalGeneToDiseaseAssociation</a></td>
+<td>An association between a gene and a disease where variation in the gene has been shown to have a causal role in the disease.</td>
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../ChemicalAffectsBiologicalEntityAssociation/">ChemicalAffectsBiologicalEntityAssociation</a></td>
-<td>Describes an effect that a chemical has on a biological entity (e.g. an impact of on its abundance, activity,localization, processing, expression, etc.)</td>
+<td><a href="../EntityToFeatureOrVariantQualifiersMixin/">EntityToFeatureOrVariantQualifiersMixin</a></td>
+<td>Qualifiers for entity to variant associations.</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../GeneToDiseaseAssociation/">GeneToDiseaseAssociation</a></td>
+<td>An association between a gene or gene product and a disease, where variation in the gene is correlated with the disease.</td>
 <td>yes</td>
+</tr>
+<tr>
+<td><a href="../EntityToFeatureOrDiseaseQualifiersMixin/">EntityToFeatureOrDiseaseQualifiersMixin</a></td>
+<td>Qualifiers for entity to disease or phenotype associations.</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../CorrelatedGeneToDiseaseAssociation/">CorrelatedGeneToDiseaseAssociation</a></td>
+<td>An association between a gene (or gene product) and a disease for which the gene is statistically correlated with the disease rather than asserted as causal. Such associations typically derive from GWAS, co-occurrence analyses, or other statistical methods, and are annotated with scores such as a z-score or a diseases confidence score.</td>
+<td>no</td>
 </tr>
 </tbody>
 </table>
@@ -912,7 +912,7 @@ domain_of:
 - gene to disease association
 - causal gene to disease association
 - correlated gene to disease association
-range: string
+range: GeneOrGeneProductOrChemicalEntityAspectEnum
 
 </code></pre>
 

@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://biolink.github.io/biolink-model/reaction_direction/">
+        <link rel="canonical" href="https://biolink.github.io/biolink-model/is_chemical_role_of/">
       
       
       
@@ -21,7 +21,7 @@
     
     
       
-        <title>Slot: reaction_direction - Biolink Model Documentation</title>
+        <title>Slot: is_chemical_role_of (multivalued) - Biolink Model Documentation</title>
       
     
     
@@ -82,7 +82,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slot-reaction_direction" class="md-skip">
+        <a href="#slot-is_chemical_role_of-multivalued" class="md-skip">
           Skip to content
         </a>
       
@@ -117,7 +117,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Slot: reaction_direction
+              Slot: is_chemical_role_of (multivalued)
             
           </span>
         </div>
@@ -704,17 +704,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#applicable-classes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Applicable Classes
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#linkml-source" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -745,55 +734,40 @@
   
 
 
-<h1 id="slot-reaction_direction"><strong> Slot: reaction_direction </strong></h1>
-<div class="highlight-box"><strong>Description:</strong><i> the direction of a reaction as constrained by the direction enum (ie: left_to_right, neutral, etc.)</i><br>
+<h1 id="slot-is_chemical_role_of-multivalued"><strong> Slot: is_chemical_role_of </strong>  (multivalued)</h1>
+<div class="highlight-box"><strong>Description:</strong><i> Holds between a chemical role and a chemical entity that exhibits that role.</i><br>
 
-
+  <strong>Inverse:</strong> has chemical role</a></small><br>
 <br>
 
 </div>
 
-<p><strong>Domain:</strong> <a href="../Association/">Association</a><br>
-<strong>Range:</strong>   <a href="../ReactionDirectionEnum/">ReactionDirectionEnum</a> <br></p>
+<p><strong>Domain:</strong> <a href="../ChemicalRole/">ChemicalRole</a><br>
+<strong>Range:</strong>   <a href="../ChemicalEntity/">ChemicalEntity</a> <br></p>
 <h2 id="inheritance">Inheritance</h2>
 <ul>
-<li><a href="../association_slot/">association_slot</a><ul>
-<li><strong>reaction_direction</strong></li>
+<li><a href="../related_to/">related_to</a><ul>
+<li><a href="../related_to_at_concept_level/">related_to_at_concept_level</a><ul>
+<li><strong>is_chemical_role_of</strong></li>
 </ul>
 </li>
 </ul>
-<h2 id="applicable-classes">Applicable Classes</h2>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Description</th>
-<th>Modifies Slot</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="../ReactionToParticipantAssociation/">ReactionToParticipantAssociation</a></td>
-<td>An association between a biochemical reaction and a participating molecular entity, qualified by the stoichiometry, the side (reactant vs. product) on which the participant appears, and the direction of the reaction.</td>
-<td>no</td>
-</tr>
-</tbody>
-</table>
+</li>
+</ul>
 <h2 id="linkml-source">LinkML Source</h2>
 <details open>
 
-<pre><code class="language-yaml">name: reaction direction
-description: 'the direction of a reaction as constrained by the direction enum (ie:
-  left_to_right, neutral, etc.)'
+<pre><code class="language-yaml">name: is chemical role of
+description: Holds between a chemical role and a chemical entity that exhibits that
+  role.
 from_schema: https://w3id.org/biolink/vocab/
-narrow_mappings:
-- NCIT:C42677
-is_a: association slot
-domain: association
-alias: reaction_direction
-domain_of:
-- reaction to participant association
-range: ReactionDirectionEnum
+is_a: related to at concept level
+domain: chemical role
+inherited: true
+alias: is_chemical_role_of
+inverse: has chemical role
+range: chemical entity
+multivalued: true
 
 </code></pre>
 

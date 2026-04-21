@@ -364,7 +364,7 @@
 <article class="md-content__inner md-typeset">
 <h1 id="class-nucleosomemodification"><strong>  Class: NucleosomeModification </strong></h1>
 <div class="highlight-box">
-<strong>Description:</strong><i> A chemical modification of a histone protein within a nucleosome octomer or a substitution of a histone with a variant histone isoform. e.g. Histone 4 Lysine 20 methylation (H4K20me), histone variant H2AZ substituting H2A.</i><br/>
+<strong>Description:</strong><i> A chemical modification of a histone protein within a nucleosome octomer or a substitution of a histone with a variant histone isoform.</i><br/>
 </div>
 <div class="mermaid"> classDiagram
     class NucleosomeModification
@@ -466,7 +466,7 @@
 <tr>
 <td><a href="../xref/">xref</a>: <br/> <i> A database cross reference or alternative identifier for a NamedThing or edge between two NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references. </i></td>
 <td>* <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
-<td><a href="../NamedThing/">NamedThing</a>, <a href="../GeneProductMixin/">GeneProductMixin</a></td>
+<td><a href="../GeneProductMixin/">GeneProductMixin</a>, <a href="../NamedThing/">NamedThing</a></td>
 <td></td>
 </tr>
 <tr>
@@ -478,7 +478,7 @@
 <tr>
 <td><a href="../synonym/">synonym</a>: <br/> <i> Alternate human-readable names for a thing </i></td>
 <td>* <br/> <a href="../LabelType/">LabelType</a></td>
-<td><a href="../NamedThing/">NamedThing</a>, <a href="../GeneProductMixin/">GeneProductMixin</a></td>
+<td><a href="../GeneProductMixin/">GeneProductMixin</a>, <a href="../NamedThing/">NamedThing</a></td>
 <td></td>
 </tr>
 <tr>
@@ -518,7 +518,7 @@
 <td></td>
 </tr>
 <tr>
-<td><a href="../type/">type</a>: <br/> <i> None </i></td>
+<td><a href="../type/">type</a>: <br/> <i> An rdf:type property asserting that an entity is an instance of a particular class. In Biolink the value is typically used to indicate the most specific category of which the entity is an instance. </i></td>
 <td>* <br/> <a href="../String/">String</a></td>
 <td><a href="../Entity/">Entity</a></td>
 <td></td>
@@ -526,7 +526,7 @@
 <tr>
 <td><a href="../name/">name</a>: <br/> <i> genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name </i></td>
 <td>0..1 <br/> <a href="../SymbolType/">SymbolType</a></td>
-<td><a href="../MacromolecularMachineMixin/">MacromolecularMachineMixin</a>, <a href="../Entity/">Entity</a></td>
+<td><a href="../Entity/">Entity</a>, <a href="../MacromolecularMachineMixin/">MacromolecularMachineMixin</a></td>
 <td></td>
 </tr>
 <tr>
@@ -553,8 +553,7 @@
 <details open="">
 <pre><code class="language-yaml">name: nucleosome modification
 description: A chemical modification of a histone protein within a nucleosome octomer
-  or a substitution of a histone with a variant histone isoform. e.g. Histone 4 Lysine
-  20 methylation (H4K20me), histone variant H2AZ substituting H2A.
+  or a substitution of a histone with a variant histone isoform.
 from_schema: https://w3id.org/biolink/vocab/
 is_a: biological entity
 mixins:

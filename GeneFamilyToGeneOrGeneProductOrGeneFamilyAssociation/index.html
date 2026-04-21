@@ -422,7 +422,7 @@
 
       GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation : object
 
-          GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation --|&gt; GeneFamily : object
+          GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation --|&gt; GeneOrGeneProduct : object
 
       GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation : object_category
 
@@ -474,7 +474,7 @@
 
       GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation : subject
 
-          GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation --|&gt; Gene : subject
+          GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation --|&gt; GeneFamily : subject
 
       GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation : subject_category
 
@@ -525,7 +525,7 @@
 <tbody>
 <tr>
 <td><a href="../subject/">subject</a>: <br> <i> connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object. </i></br></td>
-<td>1 <br/> <a href="../Gene/">Gene</a></td>
+<td>1 <br/> <a href="../GeneFamily/">GeneFamily</a></td>
 <td><a href="../Association/">Association</a></td>
 <td></td>
 </tr>
@@ -537,7 +537,7 @@
 </tr>
 <tr>
 <td><a href="../object/">object</a>: <br/> <i> connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object. </i></td>
-<td>1 <br/> <a href="../GeneFamily/">GeneFamily</a></td>
+<td>1 <br/> <a href="../GeneOrGeneProduct/">GeneOrGeneProduct</a></td>
 <td><a href="../Association/">Association</a></td>
 <td></td>
 </tr>
@@ -731,7 +731,7 @@
 <td><a href="../supporting_text/">supporting_text</a>: <br/> <i> The segment of text from a document that supports the mined assertion. </i></td>
 <td>* <br/> <a href="../String/">String</a></td>
 <td><a href="../Association/">Association</a></td>
-<td>The administration of 50g/ml bupivacaine promoted maximum breast cancer.</td>
+<td>Here, we report two new cases of rivaroxaban-induced hepatitis.</td>
 </tr>
 <tr>
 <td><a href="../has_supporting_studies/">has_supporting_studies</a>: <br/> <i> Studies that produced information used as evidence to generate the knowledge expressed in an Association. </i></td>
@@ -829,10 +829,10 @@ is_a: association
 slot_usage:
   subject:
     name: subject
-    range: gene
+    range: gene family
   object:
     name: object
-    range: gene family
+    range: gene or gene product
   predicate:
     name: predicate
     description: membership of a gene or gene product, or strict subset relationship

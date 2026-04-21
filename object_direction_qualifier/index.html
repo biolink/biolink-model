@@ -715,6 +715,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#example-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example values
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#linkml-source" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -779,28 +790,8 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../CorrelatedGeneToDiseaseAssociation/">CorrelatedGeneToDiseaseAssociation</a></td>
-<td>None</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../FeatureOrDiseaseQualifiersToEntityMixin/">FeatureOrDiseaseQualifiersToEntityMixin</a></td>
-<td>Qualifiers for disease or phenotype to entity associations.</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../ChemicalGeneInteractionAssociation/">ChemicalGeneInteractionAssociation</a></td>
-<td>describes an interaction between a chemical entity and a gene or gene product. Any biological or chemical effect resulting from such an interaction are out of scope, and covered by the ChemicalAffectsGeneAssociation type (e.g. impact of a chemical on the abundance, activity, structure, etc, of either participant in the interaction)</td>
-<td>yes</td>
-</tr>
-<tr>
-<td><a href="../EntityToFeatureOrVariantQualifiersMixin/">EntityToFeatureOrVariantQualifiersMixin</a></td>
-<td>Qualifiers for entity to variant associations.</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../EntityToFeatureOrDiseaseQualifiersMixin/">EntityToFeatureOrDiseaseQualifiersMixin</a></td>
-<td>Qualifiers for entity to disease or phenotype associations.</td>
+<td><a href="../PredicateMapping/">PredicateMapping</a></td>
+<td>A deprecated predicate mapping object contains the deprecated predicate and an example of the rewiring that should be done to use a qualified statement in its place.</td>
 <td>no</td>
 </tr>
 <tr>
@@ -809,19 +800,14 @@
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../GeneAffectsChemicalAssociation/">GeneAffectsChemicalAssociation</a></td>
-<td>Describes an effect that a gene or gene product has on a chemical entity (e.g. an impact of on its abundance, activity, localization, processing, transport, etc.)</td>
+<td><a href="../ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation/">ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation</a></td>
+<td>A regulatory relationship between two genes</td>
 <td>yes</td>
 </tr>
 <tr>
-<td><a href="../GeneToDiseaseAssociation/">GeneToDiseaseAssociation</a></td>
-<td>None</td>
+<td><a href="../ChemicalGeneInteractionAssociation/">ChemicalGeneInteractionAssociation</a></td>
+<td>describes an interaction between a chemical entity and a gene or gene product. Any biological or chemical effect resulting from such an interaction are out of scope, and covered by the ChemicalAffectsGeneAssociation type (e.g. impact of a chemical on the abundance, activity, structure, etc, of either participant in the interaction)</td>
 <td>yes</td>
-</tr>
-<tr>
-<td><a href="../CausalGeneToDiseaseAssociation/">CausalGeneToDiseaseAssociation</a></td>
-<td>None</td>
-<td>no</td>
 </tr>
 <tr>
 <td><a href="../GeneRegulatesGeneAssociation/">GeneRegulatesGeneAssociation</a></td>
@@ -829,14 +815,19 @@
 <td>yes</td>
 </tr>
 <tr>
-<td><a href="../ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation/">ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation</a></td>
-<td>A regulatory relationship between two genes</td>
+<td><a href="../ChemicalAffectsBiologicalEntityAssociation/">ChemicalAffectsBiologicalEntityAssociation</a></td>
+<td>Describes an effect that a chemical has on a biological entity (e.g. an impact of on its abundance, activity,localization, processing, expression, etc.)</td>
 <td>yes</td>
 </tr>
 <tr>
-<td><a href="../GeneToPhenotypicFeatureAssociation/">GeneToPhenotypicFeatureAssociation</a></td>
-<td>None</td>
+<td><a href="../GeneAffectsChemicalAssociation/">GeneAffectsChemicalAssociation</a></td>
+<td>Describes an effect that a gene or gene product has on a chemical entity (e.g. an impact of on its abundance, activity, localization, processing, transport, etc.)</td>
 <td>yes</td>
+</tr>
+<tr>
+<td><a href="../FeatureOrDiseaseQualifiersToEntityMixin/">FeatureOrDiseaseQualifiersToEntityMixin</a></td>
+<td>Qualifiers for disease or phenotype to entity associations.</td>
+<td>no</td>
 </tr>
 <tr>
 <td><a href="../EntityToFeatureOrGeneQualifiersMixin/">EntityToFeatureOrGeneQualifiersMixin</a></td>
@@ -844,14 +835,53 @@
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../PredicateMapping/">PredicateMapping</a></td>
-<td>A deprecated predicate mapping object contains the deprecated predicate and an example of the rewiring that should be done to use a qualified statement in its place.</td>
+<td><a href="../GeneToPhenotypicFeatureAssociation/">GeneToPhenotypicFeatureAssociation</a></td>
+<td>An association between a gene or gene product and a phenotypic feature, where variation in the gene is correlated with the phenotypic feature.</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><a href="../CausalGeneToDiseaseAssociation/">CausalGeneToDiseaseAssociation</a></td>
+<td>An association between a gene and a disease where variation in the gene has been shown to have a causal role in the disease.</td>
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../ChemicalAffectsBiologicalEntityAssociation/">ChemicalAffectsBiologicalEntityAssociation</a></td>
-<td>Describes an effect that a chemical has on a biological entity (e.g. an impact of on its abundance, activity,localization, processing, expression, etc.)</td>
+<td><a href="../EntityToFeatureOrVariantQualifiersMixin/">EntityToFeatureOrVariantQualifiersMixin</a></td>
+<td>Qualifiers for entity to variant associations.</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../GeneToDiseaseAssociation/">GeneToDiseaseAssociation</a></td>
+<td>An association between a gene or gene product and a disease, where variation in the gene is correlated with the disease.</td>
 <td>yes</td>
+</tr>
+<tr>
+<td><a href="../EntityToFeatureOrDiseaseQualifiersMixin/">EntityToFeatureOrDiseaseQualifiersMixin</a></td>
+<td>Qualifiers for entity to disease or phenotype associations.</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../CorrelatedGeneToDiseaseAssociation/">CorrelatedGeneToDiseaseAssociation</a></td>
+<td>An association between a gene (or gene product) and a disease for which the gene is statistically correlated with the disease rather than asserted as causal. Such associations typically derive from GWAS, co-occurrence analyses, or other statistical methods, and are annotated with scores such as a z-score or a diseases confidence score.</td>
+<td>no</td>
+</tr>
+</tbody>
+</table>
+<h2 id="example-values">Example values</h2>
+<table>
+<thead>
+<tr>
+<th>Slot Name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>object_direction_qualifier</td>
+<td>increased</td>
+</tr>
+<tr>
+<td>object_direction_qualifier</td>
+<td>downregulated</td>
 </tr>
 </tbody>
 </table>
@@ -862,6 +892,9 @@
 description: 'Composes with the core concept (+ aspect if provided) to describe a
   change in its direction or degree. This qualifier qualifies the object of an association
   (aka: statement).'
+examples:
+- value: increased
+- value: downregulated
 in_subset:
 - translator_minimal
 from_schema: https://w3id.org/biolink/vocab/

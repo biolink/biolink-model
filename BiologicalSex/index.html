@@ -372,6 +372,9 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="class-biologicalsex"><strong>  Class: BiologicalSex </strong></h1>
+<div class="highlight-box">
+<strong>Description:</strong><i> An organismal quality inhering in a bearer by virtue of the bearer's ability to undergo sexual reproduction in order to differentiate the individuals or types involved.</i><br/>
+</div>
 <div class="mermaid"> classDiagram
     class BiologicalSex
       Attribute &lt;|-- BiologicalSex
@@ -456,7 +459,7 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../name/">name</a>: <br/> <i> The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term. </i></td>
+<td><a href="../name/">name</a>: <br> <i> The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term. </i></br></td>
 <td>0..1 <br/> <a href="../LabelType/">LabelType</a></td>
 <td><a href="../Entity/">Entity</a>, <a href="../Attribute/">Attribute</a></td>
 <td></td>
@@ -540,7 +543,7 @@
 <td></td>
 </tr>
 <tr>
-<td><a href="../type/">type</a>: <br/> <i> None </i></td>
+<td><a href="../type/">type</a>: <br/> <i> An rdf:type property asserting that an entity is an instance of a particular class. In Biolink the value is typically used to indicate the most specific category of which the entity is an instance. </i></td>
 <td>* <br/> <a href="../String/">String</a></td>
 <td><a href="../Entity/">Entity</a></td>
 <td></td>
@@ -653,6 +656,9 @@
 <h2 id="linkml-source">LinkML Source</h2>
 <details open="">
 <pre><code class="language-yaml">name: biological sex
+description: An organismal quality inhering in a bearer by virtue of the bearer's
+  ability to undergo sexual reproduction in order to differentiate the individuals
+  or types involved.
 from_schema: https://w3id.org/biolink/vocab/
 exact_mappings:
 - PATO:0000047

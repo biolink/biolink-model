@@ -347,6 +347,24 @@
 </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="#valid-id-prefixes">
+<span class="md-ellipsis">
+      
+        Valid ID Prefixes
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#example-values">
+<span class="md-ellipsis">
+      
+        Example values
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#linkml-source">
 <span class="md-ellipsis">
       
@@ -364,7 +382,7 @@
 <article class="md-content__inner md-typeset">
 <h1 id="class-posttranslationalmodification"><strong>  Class: PosttranslationalModification </strong></h1>
 <div class="highlight-box">
-<strong>Description:</strong><i> A chemical modification of a polypeptide or protein that occurs after translation. e.g. polypeptide cleavage to form separate proteins, methylation or acetylation of histone tail amino acids, protein ubiquitination.</i><br/>
+<strong>Description:</strong><i> A chemical modification of a polypeptide or protein that occurs after translation, altering its structure, activity, localization, or interactions.</i><br/>
 </div>
 <div class="mermaid"> classDiagram
     class PosttranslationalModification
@@ -456,7 +474,7 @@
 <tr>
 <td><a href="../xref/">xref</a>: <br/> <i> A database cross reference or alternative identifier for a NamedThing or edge between two NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references. </i></td>
 <td>* <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
-<td><a href="../NamedThing/">NamedThing</a>, <a href="../GeneProductMixin/">GeneProductMixin</a></td>
+<td><a href="../GeneProductMixin/">GeneProductMixin</a>, <a href="../NamedThing/">NamedThing</a></td>
 <td></td>
 </tr>
 <tr>
@@ -468,7 +486,7 @@
 <tr>
 <td><a href="../synonym/">synonym</a>: <br/> <i> Alternate human-readable names for a thing </i></td>
 <td>* <br/> <a href="../LabelType/">LabelType</a></td>
-<td><a href="../NamedThing/">NamedThing</a>, <a href="../GeneProductMixin/">GeneProductMixin</a></td>
+<td><a href="../GeneProductMixin/">GeneProductMixin</a>, <a href="../NamedThing/">NamedThing</a></td>
 <td></td>
 </tr>
 <tr>
@@ -508,7 +526,7 @@
 <td></td>
 </tr>
 <tr>
-<td><a href="../type/">type</a>: <br/> <i> None </i></td>
+<td><a href="../type/">type</a>: <br/> <i> An rdf:type property asserting that an entity is an instance of a particular class. In Biolink the value is typically used to indicate the most specific category of which the entity is an instance. </i></td>
 <td>* <br/> <a href="../String/">String</a></td>
 <td><a href="../Entity/">Entity</a></td>
 <td></td>
@@ -516,7 +534,7 @@
 <tr>
 <td><a href="../name/">name</a>: <br/> <i> genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name </i></td>
 <td>0..1 <br/> <a href="../SymbolType/">SymbolType</a></td>
-<td><a href="../MacromolecularMachineMixin/">MacromolecularMachineMixin</a>, <a href="../Entity/">Entity</a></td>
+<td><a href="../Entity/">Entity</a>, <a href="../MacromolecularMachineMixin/">MacromolecularMachineMixin</a></td>
 <td></td>
 </tr>
 <tr>
@@ -539,13 +557,61 @@
 </tr>
 </tbody>
 </table>
+<h2 id="valid-id-prefixes">Valid ID Prefixes</h2>
+<p>Instances of this class <em>should</em> have identifiers with one of the following prefixes, ordered with the most preferred first:</p>
+<table>
+<thead>
+<tr>
+<th>ID Prefix</th>
+<th>Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MOD</td>
+<td><a href="./">PosttranslationalModification</a><br/></td>
+</tr>
+<tr>
+<td>UNIMOD</td>
+<td><a href="./">PosttranslationalModification</a><br/></td>
+</tr>
+</tbody>
+</table>
+<h2 id="example-values">Example values</h2>
+<table>
+<thead>
+<tr>
+<th>Slot Name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PosttranslationalModification</td>
+<td>MOD:00696</td>
+</tr>
+<tr>
+<td>PosttranslationalModification</td>
+<td>MOD:01148</td>
+</tr>
+</tbody>
+</table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details open="">
 <pre><code class="language-yaml">name: posttranslational modification
+id_prefixes:
+- MOD
+- UNIMOD
 description: A chemical modification of a polypeptide or protein that occurs after
-  translation. e.g. polypeptide cleavage to form separate proteins, methylation or
-  acetylation of histone tail amino acids, protein ubiquitination.
+  translation, altering its structure, activity, localization, or interactions.
+examples:
+- value: MOD:00696
+  description: phosphorylated residue
+- value: MOD:01148
+  description: ubiquitinylated lysine
 from_schema: https://w3id.org/biolink/vocab/
+exact_mappings:
+- MOD:00000
 is_a: biological entity
 mixins:
 - gene product isoform mixin

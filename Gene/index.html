@@ -387,6 +387,7 @@
 <div class="mermaid"> classDiagram
     class Gene
       GeneOrGeneProduct &lt;|-- Gene
+      GeneOrGeneProductOrGeneFamily &lt;|-- Gene
       GenomicEntity &lt;|-- Gene
       ChemicalEntityOrGeneOrGeneProduct &lt;|-- Gene
       PhysicalEssence &lt;|-- Gene
@@ -442,7 +443,7 @@
 <li><a href="../Entity/">Entity</a><ul>
 <li><a href="../NamedThing/">NamedThing</a><ul>
 <li><a href="../BiologicalEntity/">BiologicalEntity</a> [ <a href="../ThingWithTaxon/">ThingWithTaxon</a>]<ul>
-<li><strong>Gene</strong> [ <a href="../GeneOrGeneProduct/">GeneOrGeneProduct</a> <a href="../GenomicEntity/">GenomicEntity</a> <a href="../ChemicalEntityOrGeneOrGeneProduct/">ChemicalEntityOrGeneOrGeneProduct</a> <a href="../PhysicalEssence/">PhysicalEssence</a> <a href="../OntologyClass/">OntologyClass</a>]</li>
+<li><strong>Gene</strong> [ <a href="../GeneOrGeneProduct/">GeneOrGeneProduct</a> <a href="../GeneOrGeneProductOrGeneFamily/">GeneOrGeneProductOrGeneFamily</a> <a href="../GenomicEntity/">GenomicEntity</a> <a href="../ChemicalEntityOrGeneOrGeneProduct/">ChemicalEntityOrGeneOrGeneProduct</a> <a href="../PhysicalEssence/">PhysicalEssence</a> <a href="../OntologyClass/">OntologyClass</a>]</li>
 </ul>
 </li>
 </ul>
@@ -546,7 +547,7 @@
 <td></td>
 </tr>
 <tr>
-<td><a href="../type/">type</a>: <br/> <i> None </i></td>
+<td><a href="../type/">type</a>: <br/> <i> An rdf:type property asserting that an entity is an instance of a particular class. In Biolink the value is typically used to indicate the most specific category of which the entity is an instance. </i></td>
 <td>* <br/> <a href="../String/">String</a></td>
 <td><a href="../Entity/">Entity</a></td>
 <td></td>
@@ -554,7 +555,7 @@
 <tr>
 <td><a href="../name/">name</a>: <br/> <i> genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name </i></td>
 <td>0..1 <br/> <a href="../SymbolType/">SymbolType</a></td>
-<td><a href="../MacromolecularMachineMixin/">MacromolecularMachineMixin</a>, <a href="../Entity/">Entity</a></td>
+<td><a href="../Entity/">Entity</a>, <a href="../MacromolecularMachineMixin/">MacromolecularMachineMixin</a></td>
 <td></td>
 </tr>
 <tr>
@@ -644,12 +645,6 @@
 </tr>
 <tr>
 <td><a href="../GeneToGeneFamilyAssociation/">GeneToGeneFamilyAssociation</a></td>
-<td><a href="../subject/">subject</a></td>
-<td>range</td>
-<td><a href="./">Gene</a></td>
-</tr>
-<tr>
-<td><a href="../GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation/">GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation</a></td>
 <td><a href="../subject/">subject</a></td>
 <td>range</td>
 <td><a href="./">Gene</a></td>
@@ -811,6 +806,7 @@ broad_mappings:
 is_a: biological entity
 mixins:
 - gene or gene product
+- gene or gene product or gene family
 - genomic entity
 - chemical entity or gene or gene product
 - physical essence

@@ -390,6 +390,8 @@
 
       PredicateMapping : object_aspect_qualifier
 
+          PredicateMapping --|&gt; GeneOrGeneProductOrChemicalEntityAspectEnum : object_aspect_qualifier
+
       PredicateMapping : object_context_qualifier
 
       PredicateMapping : object_derivative_qualifier
@@ -411,6 +413,8 @@
           PredicateMapping --|&gt; OrganismTaxon : species_context_qualifier
 
       PredicateMapping : subject_aspect_qualifier
+
+          PredicateMapping --|&gt; GeneOrGeneProductOrChemicalEntityAspectEnum : subject_aspect_qualifier
 
       PredicateMapping : subject_context_qualifier
 
@@ -446,7 +450,7 @@
 </tr>
 <tr>
 <td><a href="../subject_aspect_qualifier/">subject_aspect_qualifier</a>: <br/> <i> Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the subject of an association (aka: statement). </i></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../GeneOrGeneProductOrChemicalEntityAspectEnum/">GeneOrGeneProductOrChemicalEntityAspectEnum</a></td>
 <td>direct</td>
 <td>stability, abundance, expression, exposure</td>
 </tr>
@@ -454,7 +458,7 @@
 <td><a href="../subject_direction_qualifier/">subject_direction_qualifier</a>: <br/> <i> Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement). </i></td>
 <td>0..1 <br/> <a href="../DirectionQualifierEnum/">DirectionQualifierEnum</a></td>
 <td>direct</td>
-<td></td>
+<td>increased, downregulated</td>
 </tr>
 <tr>
 <td><a href="../subject_form_or_variant_qualifier/">subject_form_or_variant_qualifier</a>: <br/> <i> A qualifier that composes with a core subject/object concept to define a specific type, variant, alternative version of this concept. The composed concept remains a subtype or instance of the core concept. For example, the qualifier ‘mutation’ combines with the core concept ‘Gene X’ to express the compose concept ‘a mutation of Gene X’.  This qualifier specifies a change in the subject of an association (aka: statement). </i></td>
@@ -463,10 +467,10 @@
 <td>mutation, late stage, severe, transplant, chemical analog</td>
 </tr>
 <tr>
-<td><a href="../subject_part_qualifier/">subject_part_qualifier</a>: <br/> <i> defines a specific part/component of the core concept (used in cases there this specific part has no IRI we can use to directly represent it, e.g. 'ESR1 transcript' q: polyA tail).  This qualifier is for the subject of an association (or statement). </i></td>
+<td><a href="../subject_part_qualifier/">subject_part_qualifier</a>: <br/> <i> defines a specific part/component of the core concept (used in cases there this specific part has no IRI we can use to directly represent it).  This qualifier is for the subject of an association (or statement). </i></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>direct</td>
-<td></td>
+<td>polyA tail, upstream control region</td>
 </tr>
 <tr>
 <td><a href="../subject_derivative_qualifier/">subject_derivative_qualifier</a>: <br/> <i> A qualifier that composes with a core subject/object  concept to describe something that is derived from the core concept.  For example, the qualifier ‘metabolite’ combines with a ‘Chemical X’ core concept to express the composed concept ‘a metabolite of Chemical X’.  This qualifier is for the subject of an association (or statement). </i></td>
@@ -475,7 +479,7 @@
 <td>metabolite</td>
 </tr>
 <tr>
-<td><a href="../subject_context_qualifier/">subject_context_qualifier</a>: <br/> <i> None </i></td>
+<td><a href="../subject_context_qualifier/">subject_context_qualifier</a>: <br/> <i> A qualifier describing the context in which the subject of an association holds. </i></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>direct</td>
 <td></td>
@@ -490,11 +494,11 @@
 <td><a href="../qualified_predicate/">qualified_predicate</a>: <br/> <i> Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  Has a value from the Biolink 'related_to' hierarchy, for example, biolink:related_to, biolink:causes, biolink:treats This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a ‘full statement’ reading of the association, where qualifier-based semantics are included. This is necessary only in cases where the primary predicate does not work in a full statement reading. </i></td>
 <td>0..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
 <td>direct</td>
-<td></td>
+<td>biolink:causes</td>
 </tr>
 <tr>
 <td><a href="../object_aspect_qualifier/">object_aspect_qualifier</a>: <br/> <i> Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the object of an association (aka: statement). </i></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../GeneOrGeneProductOrChemicalEntityAspectEnum/">GeneOrGeneProductOrChemicalEntityAspectEnum</a></td>
 <td>direct</td>
 <td>stability, abundance, expression, exposure</td>
 </tr>
@@ -502,7 +506,7 @@
 <td><a href="../object_direction_qualifier/">object_direction_qualifier</a>: <br/> <i> Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement). </i></td>
 <td>0..1 <br/> <a href="../DirectionQualifierEnum/">DirectionQualifierEnum</a></td>
 <td>direct</td>
-<td></td>
+<td>increased, downregulated</td>
 </tr>
 <tr>
 <td><a href="../object_form_or_variant_qualifier/">object_form_or_variant_qualifier</a>: <br/> <i> A qualifier that composes with a core subject/object concept to define a specific type, variant, alternative version of this concept. The composed concept remains a subtype or instance of the core concept. For example, the qualifier ‘mutation’ combines with the core concept ‘Gene X’ to express the compose concept ‘a mutation of Gene X’.  This qualifier specifies a change in the object of an association (aka: statement). </i></td>
@@ -511,10 +515,10 @@
 <td>mutation, late stage, severe, transplant, chemical analog</td>
 </tr>
 <tr>
-<td><a href="../object_part_qualifier/">object_part_qualifier</a>: <br/> <i> defines a specific part/component of the core concept (used in cases there this specific part has no IRI we can use to directly represent it, e.g. 'ESR1 transcript' q: polyA tail).  This qualifier is for the object of an association (or statement). </i></td>
+<td><a href="../object_part_qualifier/">object_part_qualifier</a>: <br/> <i> defines a specific part/component of the core concept (used in cases there this specific part has no IRI we can use to directly represent it).  This qualifier is for the object of an association (or statement). </i></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>direct</td>
-<td></td>
+<td>polyA tail, upstream control region</td>
 </tr>
 <tr>
 <td><a href="../object_derivative_qualifier/">object_derivative_qualifier</a>: <br/> <i> A qualifier that composes with a core subject/object  concept to describe something that is derived from the core concept.  For example, the qualifier ‘metabolite’ combines with a ‘Chemical X’ core concept to express the composed concept ‘a metabolite of Chemical X’.  This qualifier is for the object of an association (or statement). </i></td>
@@ -523,28 +527,28 @@
 <td>metabolite</td>
 </tr>
 <tr>
-<td><a href="../object_context_qualifier/">object_context_qualifier</a>: <br/> <i> None </i></td>
+<td><a href="../object_context_qualifier/">object_context_qualifier</a>: <br/> <i> A qualifier describing the context in which the object of an association holds. </i></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>direct</td>
 <td></td>
 </tr>
 <tr>
-<td><a href="../causal_mechanism_qualifier/">causal_mechanism_qualifier</a>: <br/> <i> A statement qualifier representing a type of molecular control mechanism through which an effect of a chemical on a gene or gene product is mediated (e.g. 'agonism', 'inhibition', 'allosteric modulation', 'channel blocker') </i></td>
+<td><a href="../causal_mechanism_qualifier/">causal_mechanism_qualifier</a>: <br/> <i> A statement qualifier representing a type of molecular control mechanism through which an effect of a chemical on a gene or gene product is mediated </i></td>
 <td>0..1 <br/> <a href="../CausalMechanismQualifierEnum/">CausalMechanismQualifierEnum</a></td>
 <td>direct</td>
-<td></td>
+<td>agonism, inhibition</td>
 </tr>
 <tr>
 <td><a href="../anatomical_context_qualifier/">anatomical_context_qualifier</a>: <br/> <i> A statement qualifier representing an anatomical location where an relationship expressed in an association took place (can be a tissue, cell type, or sub-cellular location). </i></td>
 <td>* <br/> <a href="../String/">String</a></td>
 <td>direct</td>
-<td>blood, cerebral cortext</td>
+<td>UBERON:0000178, UBERON:0000956</td>
 </tr>
 <tr>
 <td><a href="../species_context_qualifier/">species_context_qualifier</a>: <br/> <i> A statement qualifier representing a taxonomic category of species in which a relationship expressed in an association took place. </i></td>
 <td>0..1 <br/> <a href="../OrganismTaxon/">OrganismTaxon</a></td>
 <td>direct</td>
-<td>zebrafish, human</td>
+<td>NCBITaxon:7955, NCBITaxon:9606</td>
 </tr>
 <tr>
 <td><a href="../exact_match/">exact_match</a>: <br/> <i> holds between two entities that have strictly equivalent meanings, with a high degree of confidence </i></td>

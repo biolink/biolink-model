@@ -746,6 +746,7 @@
 
 
 <h1 id="enum-geneorgeneproductorchemicalentityaspectenum"><strong> Enum: </strong> GeneOrGeneProductOrChemicalEntityAspectEnum</h1>
+<p><em>An enumeration used as a qualifier to indicate the specific aspect of a gene, gene product, or chemical entity that is affected or measured in an association. Values cover activity and abundance (expression, synthesis, degradation, stability, localization, transport), molecular interactions, and a wide range of molecular modifications such as phosphorylation, methylation, acetylation, ubiquitination, and other post-translational or chemical modifications.</em></p>
 <h2 id="permissible-values">Permissible Values</h2>
 <table>
 <thead>
@@ -1052,6 +1053,9 @@
 </thead>
 <tbody>
 <tr>
+<td><a href="../aspect_qualifier/">aspect_qualifier</a></td>
+</tr>
+<tr>
 <td><a href="../object_aspect_qualifier/">object_aspect_qualifier</a></td>
 </tr>
 <tr>
@@ -1066,6 +1070,12 @@
 <details open>
 
 <pre><code class="language-yaml">name: GeneOrGeneProductOrChemicalEntityAspectEnum
+description: An enumeration used as a qualifier to indicate the specific aspect of
+  a gene, gene product, or chemical entity that is affected or measured in an association.
+  Values cover activity and abundance (expression, synthesis, degradation, stability,
+  localization, transport), molecular interactions, and a wide range of molecular
+  modifications such as phosphorylation, methylation, acetylation, ubiquitination,
+  and other post-translational or chemical modifications.
 from_schema: https://w3id.org/biolink/vocab/
 permissible_values:
   activity_or_abundance:

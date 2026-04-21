@@ -704,6 +704,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#valid-id-prefixes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Valid ID Prefixes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#linkml-source" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -735,7 +746,7 @@
 
 
 <h1 id="slot-has_stressor"><strong> Slot: has_stressor </strong></h1>
-<div class="highlight-box"><strong>Description:</strong><i> the process or entity that the receptor is being exposed to</i><br>
+<div class="highlight-box"><strong>Description:</strong><i> An agent, stimulus, activity, or event that causes stress or tension on an organism and interacts with an exposure_receptor during an exposure event.</i><br>
    <strong>Aliases:</strong> has stimulus<br>
 
 <br>
@@ -751,11 +762,30 @@
 </ul>
 </li>
 </ul>
+<h2 id="valid-id-prefixes">Valid ID Prefixes</h2>
+<p>Instances of this class <em>should</em> have identifiers with one of the following prefixes, ordered with the most preferred first:</p>
+<table>
+<thead>
+<tr>
+<th>ID Prefix</th>
+<th>Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ExO</td>
+<td><a href="./">has_stressor</a><br></td>
+</tr>
+</tbody>
+</table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details open>
 
 <pre><code class="language-yaml">name: has stressor
-description: the process or entity that the receptor is being exposed to
+id_prefixes:
+- ExO
+description: An agent, stimulus, activity, or event that causes stress or tension
+  on an organism and interacts with an exposure_receptor during an exposure event.
 from_schema: https://w3id.org/biolink/vocab/
 aliases:
 - has stimulus
