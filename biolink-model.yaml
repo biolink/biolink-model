@@ -4225,7 +4225,9 @@ slots:
       holds between a measurable chemical entity and a disease
       or phenotypic feature, where the entity is used as an indicator
       of the presence or state of the disease or feature.
+    domain: chemical entity or gene or gene product
     range: disease or phenotypic feature
+    inverse: has biomarker
     annotations:
       canonical_predicate: true
     in_subset:
