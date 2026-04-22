@@ -1959,7 +1959,12 @@ slots:
       to express the composed concept ‘neuron in the cerebral cortext’. The species_context_qualifier applies
       taxonomic context, e.g. species-specific molecular activity.  Ontology CURIEs are expected as values
       here, the examples below are intended to help clarify the content of the CURIEs.
-    examples:
+      - value: UBERON:0000178
+         description: blood
+      - value: UBERON:0000956
+         description: cerebral cortext
+      - value: GO:0005794
+         description: Golgi apperatus 
       - value: blood  # UBERON:0000178
       - value: cerebral cortext  # UBERON:0000956
       - value: Golgi apparatus # GO:0005794
