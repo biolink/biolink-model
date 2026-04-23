@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-04-20T20:39:05
+# Generation date: 2026-04-22T21:52:38
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/vocab/
@@ -8301,12 +8301,15 @@ class GeneToGeneAssociation(Association):
     subject: Union[dict, GeneOrGeneProduct] = None
     predicate: Union[str, URIorCURIE] = None
     object: Union[dict, GeneOrGeneProduct] = None
-    subject_aspect_qualifier: Optional[Union[str, MolecularActivityId]] = None
+    subject_aspect_qualifier: Optional[str] = None
     subject_process_qualifier: Optional[Union[str, BiologicalProcessId]] = None
     subject_context_qualifier: Optional[Union[str, AnatomicalEntityId]] = None
-    object_aspect_qualifier: Optional[Union[str, MolecularActivityId]] = None
+    qualified_predicate: Optional[Union[str, URIorCURIE]] = None
+    object_aspect_qualifier: Optional[str] = None
     object_process_qualifier: Optional[Union[str, BiologicalProcessId]] = None
     object_context_qualifier: Optional[Union[str, AnatomicalEntityId]] = None
+    subject_activity_qualifier: Optional[Union[str, MolecularActivityId]] = None
+    object_activity_qualifier: Optional[Union[str, MolecularActivityId]] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.subject):
@@ -8324,8 +8327,8 @@ class GeneToGeneAssociation(Association):
         if not isinstance(self.object, GeneOrGeneProduct):
             self.object = GeneOrGeneProduct(**as_dict(self.object))
 
-        if self.subject_aspect_qualifier is not None and not isinstance(self.subject_aspect_qualifier, MolecularActivityId):
-            self.subject_aspect_qualifier = MolecularActivityId(self.subject_aspect_qualifier)
+        if self.subject_aspect_qualifier is not None and not isinstance(self.subject_aspect_qualifier, str):
+            self.subject_aspect_qualifier = str(self.subject_aspect_qualifier)
 
         if self.subject_process_qualifier is not None and not isinstance(self.subject_process_qualifier, BiologicalProcessId):
             self.subject_process_qualifier = BiologicalProcessId(self.subject_process_qualifier)
@@ -8333,14 +8336,23 @@ class GeneToGeneAssociation(Association):
         if self.subject_context_qualifier is not None and not isinstance(self.subject_context_qualifier, AnatomicalEntityId):
             self.subject_context_qualifier = AnatomicalEntityId(self.subject_context_qualifier)
 
-        if self.object_aspect_qualifier is not None and not isinstance(self.object_aspect_qualifier, MolecularActivityId):
-            self.object_aspect_qualifier = MolecularActivityId(self.object_aspect_qualifier)
+        if self.qualified_predicate is not None and not isinstance(self.qualified_predicate, URIorCURIE):
+            self.qualified_predicate = URIorCURIE(self.qualified_predicate)
+
+        if self.object_aspect_qualifier is not None and not isinstance(self.object_aspect_qualifier, str):
+            self.object_aspect_qualifier = str(self.object_aspect_qualifier)
 
         if self.object_process_qualifier is not None and not isinstance(self.object_process_qualifier, BiologicalProcessId):
             self.object_process_qualifier = BiologicalProcessId(self.object_process_qualifier)
 
         if self.object_context_qualifier is not None and not isinstance(self.object_context_qualifier, AnatomicalEntityId):
             self.object_context_qualifier = AnatomicalEntityId(self.object_context_qualifier)
+
+        if self.subject_activity_qualifier is not None and not isinstance(self.subject_activity_qualifier, MolecularActivityId):
+            self.subject_activity_qualifier = MolecularActivityId(self.subject_activity_qualifier)
+
+        if self.object_activity_qualifier is not None and not isinstance(self.object_activity_qualifier, MolecularActivityId):
+            self.object_activity_qualifier = MolecularActivityId(self.object_activity_qualifier)
 
         super().__post_init__(**kwargs)
         if not isinstance(self.category, list):
@@ -16106,6 +16118,9 @@ slots.subject_part_qualifier = Slot(uri=BIOLINK.subject_part_qualifier, name="su
 slots.subject_derivative_qualifier = Slot(uri=BIOLINK.subject_derivative_qualifier, name="subject derivative qualifier", curie=BIOLINK.curie('subject_derivative_qualifier'),
                    model_uri=BIOLINK.subject_derivative_qualifier, domain=Association, range=Optional[str])
 
+slots.subject_activity_qualifier = Slot(uri=BIOLINK.subject_activity_qualifier, name="subject activity qualifier", curie=BIOLINK.curie('subject_activity_qualifier'),
+                   model_uri=BIOLINK.subject_activity_qualifier, domain=Association, range=Optional[str])
+
 slots.subject_process_qualifier = Slot(uri=BIOLINK.subject_process_qualifier, name="subject process qualifier", curie=BIOLINK.curie('subject_process_qualifier'),
                    model_uri=BIOLINK.subject_process_qualifier, domain=Association, range=Optional[str])
 
@@ -16129,6 +16144,9 @@ slots.object_part_qualifier = Slot(uri=BIOLINK.object_part_qualifier, name="obje
 
 slots.object_derivative_qualifier = Slot(uri=BIOLINK.object_derivative_qualifier, name="object derivative qualifier", curie=BIOLINK.curie('object_derivative_qualifier'),
                    model_uri=BIOLINK.object_derivative_qualifier, domain=Association, range=Optional[str])
+
+slots.object_activity_qualifier = Slot(uri=BIOLINK.object_activity_qualifier, name="object activity qualifier", curie=BIOLINK.curie('object_activity_qualifier'),
+                   model_uri=BIOLINK.object_activity_qualifier, domain=Association, range=Optional[str])
 
 slots.object_process_qualifier = Slot(uri=BIOLINK.object_process_qualifier, name="object process qualifier", curie=BIOLINK.curie('object_process_qualifier'),
                    model_uri=BIOLINK.object_process_qualifier, domain=Association, range=Optional[str])
@@ -17478,8 +17496,8 @@ slots.genotype_to_variant_association_object = Slot(uri=RDF.object, name="genoty
 slots.gene_to_gene_association_subject = Slot(uri=RDF.subject, name="gene to gene association_subject", curie=RDF.curie('subject'),
                    model_uri=BIOLINK.gene_to_gene_association_subject, domain=GeneToGeneAssociation, range=Union[dict, GeneOrGeneProduct])
 
-slots.gene_to_gene_association_subject_aspect_qualifier = Slot(uri=BIOLINK.subject_aspect_qualifier, name="gene to gene association_subject aspect qualifier", curie=BIOLINK.curie('subject_aspect_qualifier'),
-                   model_uri=BIOLINK.gene_to_gene_association_subject_aspect_qualifier, domain=GeneToGeneAssociation, range=Optional[Union[str, MolecularActivityId]])
+slots.gene_to_gene_association_subject_activity_qualifier = Slot(uri=BIOLINK.subject_activity_qualifier, name="gene to gene association_subject activity qualifier", curie=BIOLINK.curie('subject_activity_qualifier'),
+                   model_uri=BIOLINK.gene_to_gene_association_subject_activity_qualifier, domain=GeneToGeneAssociation, range=Optional[Union[str, MolecularActivityId]])
 
 slots.gene_to_gene_association_subject_process_qualifier = Slot(uri=BIOLINK.subject_process_qualifier, name="gene to gene association_subject process qualifier", curie=BIOLINK.curie('subject_process_qualifier'),
                    model_uri=BIOLINK.gene_to_gene_association_subject_process_qualifier, domain=GeneToGeneAssociation, range=Optional[Union[str, BiologicalProcessId]])
@@ -17490,8 +17508,8 @@ slots.gene_to_gene_association_subject_context_qualifier = Slot(uri=BIOLINK.subj
 slots.gene_to_gene_association_object = Slot(uri=RDF.object, name="gene to gene association_object", curie=RDF.curie('object'),
                    model_uri=BIOLINK.gene_to_gene_association_object, domain=GeneToGeneAssociation, range=Union[dict, GeneOrGeneProduct])
 
-slots.gene_to_gene_association_object_aspect_qualifier = Slot(uri=BIOLINK.object_aspect_qualifier, name="gene to gene association_object aspect qualifier", curie=BIOLINK.curie('object_aspect_qualifier'),
-                   model_uri=BIOLINK.gene_to_gene_association_object_aspect_qualifier, domain=GeneToGeneAssociation, range=Optional[Union[str, MolecularActivityId]])
+slots.gene_to_gene_association_object_activity_qualifier = Slot(uri=BIOLINK.object_activity_qualifier, name="gene to gene association_object activity qualifier", curie=BIOLINK.curie('object_activity_qualifier'),
+                   model_uri=BIOLINK.gene_to_gene_association_object_activity_qualifier, domain=GeneToGeneAssociation, range=Optional[Union[str, MolecularActivityId]])
 
 slots.gene_to_gene_association_object_process_qualifier = Slot(uri=BIOLINK.object_process_qualifier, name="gene to gene association_object process qualifier", curie=BIOLINK.curie('object_process_qualifier'),
                    model_uri=BIOLINK.gene_to_gene_association_object_process_qualifier, domain=GeneToGeneAssociation, range=Optional[Union[str, BiologicalProcessId]])

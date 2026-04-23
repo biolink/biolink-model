@@ -5287,7 +5287,8 @@
       "description": "Restricts the biological process within which the core concept (or qualified core concept) participates.",
       "examples": [
         {
-          "value": "glycoprotein biosynthetic process",
+          "value": "GO:0009101",
+          "description": "glycoprotein biosynthetic process",
           "@type": "Example"
         }
       ],
@@ -5544,6 +5545,20 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "subject_activity_qualifier",
+      "definition_uri": "https://w3id.org/biolink/vocab/subject_activity_qualifier",
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "is_a": "process_qualifier",
+      "domain": "Association",
+      "slot_uri": "https://w3id.org/biolink/vocab/subject_activity_qualifier",
+      "owner": "subject_activity_qualifier",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "subject_process_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/subject_process_qualifier",
       "in_subset": [
@@ -5761,6 +5776,20 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "object_activity_qualifier",
+      "definition_uri": "https://w3id.org/biolink/vocab/object_activity_qualifier",
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "is_a": "process_qualifier",
+      "domain": "Association",
+      "slot_uri": "https://w3id.org/biolink/vocab/object_activity_qualifier",
+      "owner": "object_activity_qualifier",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "object_process_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/object_process_qualifier",
       "in_subset": [
@@ -5845,6 +5874,7 @@
       "owner": "CorrelatedGeneToDiseaseAssociation",
       "domain_of": [
         "PredicateMapping",
+        "GeneToGeneAssociation",
         "ChemicalEntityToBiologicalProcessAssociation",
         "ChemicalGeneInteractionAssociation",
         "GeneRegulatesGeneAssociation",
@@ -17129,41 +17159,22 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "gene_to_gene_association_subject_aspect_qualifier",
-      "definition_uri": "https://w3id.org/biolink/vocab/subject_aspect_qualifier",
-      "description": "Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the subject of an association (aka: statement).",
-      "examples": [
-        {
-          "value": "stability",
-          "@type": "Example"
-        },
-        {
-          "value": "abundance",
-          "@type": "Example"
-        },
-        {
-          "value": "expression",
-          "@type": "Example"
-        },
-        {
-          "value": "exposure",
-          "@type": "Example"
-        }
-      ],
+      "name": "gene_to_gene_association_subject_activity_qualifier",
+      "definition_uri": "https://w3id.org/biolink/vocab/subject_activity_qualifier",
       "in_subset": [
         "translator_minimal"
       ],
       "from_schema": "https://w3id.org/biolink/vocab/",
-      "is_a": "subject_aspect_qualifier",
+      "is_a": "subject_activity_qualifier",
       "domain": "GeneToGeneAssociation",
-      "slot_uri": "https://w3id.org/biolink/vocab/subject_aspect_qualifier",
-      "alias": "subject aspect qualifier",
+      "slot_uri": "https://w3id.org/biolink/vocab/subject_activity_qualifier",
+      "alias": "subject activity qualifier",
       "owner": "GeneToGeneAssociation",
       "domain_of": [
         "GeneToGeneAssociation"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "subject aspect qualifier",
+      "usage_slot_name": "subject activity qualifier",
       "range": "MolecularActivity",
       "@type": "SlotDefinition"
     },
@@ -17245,41 +17256,22 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "gene_to_gene_association_object_aspect_qualifier",
-      "definition_uri": "https://w3id.org/biolink/vocab/object_aspect_qualifier",
-      "description": "Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the object of an association (aka: statement).",
-      "examples": [
-        {
-          "value": "stability",
-          "@type": "Example"
-        },
-        {
-          "value": "abundance",
-          "@type": "Example"
-        },
-        {
-          "value": "expression",
-          "@type": "Example"
-        },
-        {
-          "value": "exposure",
-          "@type": "Example"
-        }
-      ],
+      "name": "gene_to_gene_association_object_activity_qualifier",
+      "definition_uri": "https://w3id.org/biolink/vocab/object_activity_qualifier",
       "in_subset": [
         "translator_minimal"
       ],
       "from_schema": "https://w3id.org/biolink/vocab/",
-      "is_a": "object_aspect_qualifier",
+      "is_a": "object_activity_qualifier",
       "domain": "GeneToGeneAssociation",
-      "slot_uri": "https://w3id.org/biolink/vocab/object_aspect_qualifier",
-      "alias": "object aspect qualifier",
+      "slot_uri": "https://w3id.org/biolink/vocab/object_activity_qualifier",
+      "alias": "object activity qualifier",
       "owner": "GeneToGeneAssociation",
       "domain_of": [
         "GeneToGeneAssociation"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "object aspect qualifier",
+      "usage_slot_name": "object activity qualifier",
       "range": "MolecularActivity",
       "@type": "SlotDefinition"
     },
@@ -34803,14 +34795,17 @@
         "association_type",
         "association_category",
         "gene_to_gene_association_subject",
-        "gene_to_gene_association_subject_aspect_qualifier",
+        "subject_aspect_qualifier",
         "gene_to_gene_association_subject_process_qualifier",
         "gene_to_gene_association_subject_context_qualifier",
         "predicate",
+        "qualified_predicate",
         "gene_to_gene_association_object",
-        "gene_to_gene_association_object_aspect_qualifier",
+        "object_aspect_qualifier",
         "gene_to_gene_association_object_process_qualifier",
-        "gene_to_gene_association_object_context_qualifier"
+        "gene_to_gene_association_object_context_qualifier",
+        "gene_to_gene_association_subject_activity_qualifier",
+        "gene_to_gene_association_object_activity_qualifier"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/GeneToGeneAssociation",
@@ -34873,12 +34868,15 @@
         "semmed_agreement_count",
         "association_type",
         "association_category",
-        "gene_to_gene_association_subject_aspect_qualifier",
+        "subject_aspect_qualifier",
         "gene_to_gene_association_subject_process_qualifier",
         "gene_to_gene_association_subject_context_qualifier",
-        "gene_to_gene_association_object_aspect_qualifier",
+        "qualified_predicate",
+        "object_aspect_qualifier",
         "gene_to_gene_association_object_process_qualifier",
         "gene_to_gene_association_object_context_qualifier",
+        "gene_to_gene_association_subject_activity_qualifier",
+        "gene_to_gene_association_object_activity_qualifier",
         "gene_to_gene_homology_association_subject",
         "gene_to_gene_homology_association_predicate",
         "gene_to_gene_homology_association_object"
@@ -35295,13 +35293,16 @@
         "association_type",
         "association_category",
         "gene_to_gene_association_subject",
-        "gene_to_gene_association_subject_aspect_qualifier",
+        "subject_aspect_qualifier",
         "gene_to_gene_association_subject_process_qualifier",
         "gene_to_gene_association_subject_context_qualifier",
+        "qualified_predicate",
         "gene_to_gene_association_object",
-        "gene_to_gene_association_object_aspect_qualifier",
+        "object_aspect_qualifier",
         "gene_to_gene_association_object_process_qualifier",
         "gene_to_gene_association_object_context_qualifier",
+        "gene_to_gene_association_subject_activity_qualifier",
+        "gene_to_gene_association_object_activity_qualifier",
         "gene_to_gene_coexpression_association_predicate",
         "gene_expression_mixin_quantifier_qualifier",
         "expression_site",
@@ -35374,13 +35375,16 @@
         "association_type",
         "association_category",
         "gene_to_gene_association_subject",
-        "gene_to_gene_association_subject_aspect_qualifier",
+        "subject_aspect_qualifier",
         "gene_to_gene_association_subject_process_qualifier",
         "gene_to_gene_association_subject_context_qualifier",
+        "qualified_predicate",
         "gene_to_gene_association_object",
-        "gene_to_gene_association_object_aspect_qualifier",
+        "object_aspect_qualifier",
         "gene_to_gene_association_object_process_qualifier",
         "gene_to_gene_association_object_context_qualifier",
+        "gene_to_gene_association_subject_activity_qualifier",
+        "gene_to_gene_association_object_activity_qualifier",
         "pairwise_gene_to_gene_interaction_predicate"
       ],
       "slot_usage": {},
@@ -35444,12 +35448,15 @@
         "semmed_agreement_count",
         "association_type",
         "association_category",
-        "gene_to_gene_association_subject_aspect_qualifier",
+        "subject_aspect_qualifier",
         "gene_to_gene_association_subject_process_qualifier",
         "gene_to_gene_association_subject_context_qualifier",
-        "gene_to_gene_association_object_aspect_qualifier",
+        "qualified_predicate",
+        "object_aspect_qualifier",
         "gene_to_gene_association_object_process_qualifier",
         "gene_to_gene_association_object_context_qualifier",
+        "gene_to_gene_association_subject_activity_qualifier",
+        "gene_to_gene_association_object_activity_qualifier",
         "interacting_molecules_category",
         "pairwise_molecular_interaction_subject",
         "pairwise_molecular_interaction_id",
@@ -42149,9 +42156,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2026-04-20T20:38:50",
-  "source_file_size": 465243,
-  "generation_date": "2026-04-20T20:38:53",
+  "source_file_date": "2026-04-22T21:52:20",
+  "source_file_size": 465491,
+  "generation_date": "2026-04-22T21:52:26",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",
