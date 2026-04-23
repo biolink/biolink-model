@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-04-22T21:52:38
+# Generation date: 2026-04-22T22:43:44
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/vocab/
@@ -8301,15 +8301,13 @@ class GeneToGeneAssociation(Association):
     subject: Union[dict, GeneOrGeneProduct] = None
     predicate: Union[str, URIorCURIE] = None
     object: Union[dict, GeneOrGeneProduct] = None
-    subject_aspect_qualifier: Optional[str] = None
+    subject_activity_qualifier: Optional[Union[str, MolecularActivityId]] = None
     subject_process_qualifier: Optional[Union[str, BiologicalProcessId]] = None
     subject_context_qualifier: Optional[Union[str, AnatomicalEntityId]] = None
     qualified_predicate: Optional[Union[str, URIorCURIE]] = None
-    object_aspect_qualifier: Optional[str] = None
+    object_activity_qualifier: Optional[Union[str, MolecularActivityId]] = None
     object_process_qualifier: Optional[Union[str, BiologicalProcessId]] = None
     object_context_qualifier: Optional[Union[str, AnatomicalEntityId]] = None
-    subject_activity_qualifier: Optional[Union[str, MolecularActivityId]] = None
-    object_activity_qualifier: Optional[Union[str, MolecularActivityId]] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.subject):
@@ -8327,8 +8325,8 @@ class GeneToGeneAssociation(Association):
         if not isinstance(self.object, GeneOrGeneProduct):
             self.object = GeneOrGeneProduct(**as_dict(self.object))
 
-        if self.subject_aspect_qualifier is not None and not isinstance(self.subject_aspect_qualifier, str):
-            self.subject_aspect_qualifier = str(self.subject_aspect_qualifier)
+        if self.subject_activity_qualifier is not None and not isinstance(self.subject_activity_qualifier, MolecularActivityId):
+            self.subject_activity_qualifier = MolecularActivityId(self.subject_activity_qualifier)
 
         if self.subject_process_qualifier is not None and not isinstance(self.subject_process_qualifier, BiologicalProcessId):
             self.subject_process_qualifier = BiologicalProcessId(self.subject_process_qualifier)
@@ -8339,20 +8337,14 @@ class GeneToGeneAssociation(Association):
         if self.qualified_predicate is not None and not isinstance(self.qualified_predicate, URIorCURIE):
             self.qualified_predicate = URIorCURIE(self.qualified_predicate)
 
-        if self.object_aspect_qualifier is not None and not isinstance(self.object_aspect_qualifier, str):
-            self.object_aspect_qualifier = str(self.object_aspect_qualifier)
+        if self.object_activity_qualifier is not None and not isinstance(self.object_activity_qualifier, MolecularActivityId):
+            self.object_activity_qualifier = MolecularActivityId(self.object_activity_qualifier)
 
         if self.object_process_qualifier is not None and not isinstance(self.object_process_qualifier, BiologicalProcessId):
             self.object_process_qualifier = BiologicalProcessId(self.object_process_qualifier)
 
         if self.object_context_qualifier is not None and not isinstance(self.object_context_qualifier, AnatomicalEntityId):
             self.object_context_qualifier = AnatomicalEntityId(self.object_context_qualifier)
-
-        if self.subject_activity_qualifier is not None and not isinstance(self.subject_activity_qualifier, MolecularActivityId):
-            self.subject_activity_qualifier = MolecularActivityId(self.subject_activity_qualifier)
-
-        if self.object_activity_qualifier is not None and not isinstance(self.object_activity_qualifier, MolecularActivityId):
-            self.object_activity_qualifier = MolecularActivityId(self.object_activity_qualifier)
 
         super().__post_init__(**kwargs)
         if not isinstance(self.category, list):

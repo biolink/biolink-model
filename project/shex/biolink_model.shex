@@ -3152,16 +3152,14 @@ linkml:Sparqlpath xsd:string
     (  $<GeneToGeneAssociation_tes> (  &<Association_tes> ;
           rdf:type [ <Association> ] ? ;
           rdf:subject @<GeneOrGeneProduct> ;
-          <subject_aspect_qualifier> @linkml:String ? ;
+          <subject_activity_qualifier> @<MolecularActivity> ? ;
           <subject_process_qualifier> @<BiologicalProcess> ? ;
           <subject_context_qualifier> @<AnatomicalEntity> ? ;
           <qualified_predicate> @linkml:Uriorcurie ? ;
           rdf:object @<GeneOrGeneProduct> ;
-          <object_aspect_qualifier> @linkml:String ? ;
+          <object_activity_qualifier> @<MolecularActivity> ? ;
           <object_process_qualifier> @<BiologicalProcess> ? ;
-          <object_context_qualifier> @<AnatomicalEntity> ? ;
-          <subject_activity_qualifier> @<MolecularActivity> ? ;
-          <object_activity_qualifier> @<MolecularActivity> ?
+          <object_context_qualifier> @<AnatomicalEntity> ?
        ) ;
        rdf:type [ <GeneToGeneAssociation> ]
     )
