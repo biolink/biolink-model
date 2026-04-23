@@ -1694,10 +1694,9 @@ slots:
     abstract: true
     description: >-
       Restricts the biological process within which the core concept (or qualified core concept) participates.
-examples:
-- value: GO:0009101
-   description: glycoprotein biosynthetic process 
-      - value: glycoprotein biosynthetic process # GO_0009101
+    examples:
+    - value: GO:0009101
+      description: glycoprotein biosynthetic process
     in_subset:
       - translator_minimal
 
