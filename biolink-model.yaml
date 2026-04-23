@@ -1804,8 +1804,8 @@ slots:
     description: >-
       Restricts the biological process within which the core concept (or qualified core concept) participates.
     examples:
-    - value: GO:0009101
-      description: glycoprotein biosynthetic process
+      - value: GO:0009101
+        description: glycoprotein biosynthetic process
     in_subset:
       - translator_minimal
 
@@ -13152,7 +13152,12 @@ classes:
           category: biolink:EntityToPhenotypicFeatureAssociation
           knowledge_level: knowledge_assertion
           agent_type: manual_validation_of_automated_agent
-          publications: ["2970fe7e-9e1f-47aa-85ad-663ee15c7e06", "a5fa252a-d39e-4099-a230-b665fbb97a80", "b897c800-24a2-4e76-8668-498c5515c3d0", "babf3b8d-f2ce-407d-9407-728c45eb19ee", "d74e93e5-11c9-434e-a60c-4a4f911dd0f8"]
+          publications:
+            - "2970fe7e-9e1f-47aa-85ad-663ee15c7e06"
+            - "a5fa252a-d39e-4099-a230-b665fbb97a80"
+            - "b897c800-24a2-4e76-8668-498c5515c3d0"
+            - "babf3b8d-f2ce-407d-9407-728c45eb19ee"
+            - "d74e93e5-11c9-434e-a60c-4a4f911dd0f8"
 
    ## -----------------
    ## SEQUENCE FEATURES
