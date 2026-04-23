@@ -1798,6 +1798,17 @@ slots:
     in_subset:
       - translator_minimal
 
+  process qualifier:
+    is_a: qualifier
+    abstract: true
+    description: >-
+      Restricts the biological process within which the core concept (or qualified core concept) participates.
+    examples:
+      - value: GO:0009101
+        description: glycoprotein biosynthetic process
+    in_subset:
+      - translator_minimal
+
   direction qualifier:
     is_a: qualifier
     abstract: true
@@ -1911,6 +1922,16 @@ slots:
     in_subset:
       - translator_minimal
 
+  subject activity qualifier:
+    is_a: process qualifier
+    in_subset:
+      - translator_minimal
+
+  subject process qualifier:
+    is_a: process qualifier
+    in_subset:
+      - translator_minimal
+
   subject context qualifier:
     description: >-
       A qualifier describing the context in which the subject of an association holds.
@@ -1996,6 +2017,16 @@ slots:
     in_subset:
       - translator_minimal
 
+  object activity qualifier:
+    is_a: process qualifier
+    in_subset:
+      - translator_minimal
+
+  object process qualifier:
+    is_a: process qualifier
+    in_subset:
+      - translator_minimal
+
   object context qualifier:
     description: >-
       A qualifier describing the context in which the object of an association holds.
@@ -2074,6 +2105,8 @@ slots:
         description: blood
       - value: UBERON:0000956
         description: cerebral cortex
+      - value: GO:0005794
+        description: Golgi apparatus
     in_subset:
       - translator_minimal
     multivalued: true
@@ -10600,6 +10633,17 @@ classes:
       to gene product relationships. Includes homology and interaction.
     abstract: true
     is_a: association
+    slots:
+      - subject
+      - subject activity qualifier
+      - subject process qualifier
+      - subject context qualifier
+      - predicate
+      - qualified predicate
+      - object
+      - object activity qualifier
+      - object process qualifier
+      - object context qualifier
     defining_slots:
       - subject
       - object
@@ -10610,12 +10654,24 @@ classes:
           the subject gene in the association. If the relation is symmetric,
           subject vs object is arbitrary. We allow a gene product to stand
           as a proxy for the gene or vice versa.
+      subject activity qualifier:
+        range: molecular activity
+      subject process qualifier:
+        range: biological process
+      subject context qualifier:
+        range: anatomical entity
       object:
         range: gene or gene product
         description: >-
           the object gene in the association. If the relation is symmetric,
           subject vs object is arbitrary. We allow a gene product to stand
           as a proxy for the gene or vice versa.
+      object activity qualifier:
+        range: molecular activity
+      object process qualifier:
+        range: biological process
+      object context qualifier:
+        range: anatomical entity
 
   gene to gene homology association:
     description: >-
@@ -13096,7 +13152,12 @@ classes:
           category: biolink:EntityToPhenotypicFeatureAssociation
           knowledge_level: knowledge_assertion
           agent_type: manual_validation_of_automated_agent
-          publications: ["2970fe7e-9e1f-47aa-85ad-663ee15c7e06", "a5fa252a-d39e-4099-a230-b665fbb97a80", "b897c800-24a2-4e76-8668-498c5515c3d0", "babf3b8d-f2ce-407d-9407-728c45eb19ee", "d74e93e5-11c9-434e-a60c-4a4f911dd0f8"]
+          publications:
+            - "2970fe7e-9e1f-47aa-85ad-663ee15c7e06"
+            - "a5fa252a-d39e-4099-a230-b665fbb97a80"
+            - "b897c800-24a2-4e76-8668-498c5515c3d0"
+            - "babf3b8d-f2ce-407d-9407-728c45eb19ee"
+            - "d74e93e5-11c9-434e-a60c-4a4f911dd0f8"
 
    ## -----------------
    ## SEQUENCE FEATURES
