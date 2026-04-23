@@ -1809,6 +1809,11 @@ slots:
     in_subset:
       - translator_minimal
 
+  subject activity qualifier:
+    is_a: process qualifier
+    in_subset:
+      - translator_minimal
+
   subject process qualifier:
     is_a: process qualifier
     in_subset:
@@ -1888,6 +1893,11 @@ slots:
     examples:
       - value: metabolite
     is_a: derivative qualifier
+    in_subset:
+      - translator_minimal
+
+  object activity qualifier:
+    is_a: process qualifier
     in_subset:
       - translator_minimal
 
@@ -10236,6 +10246,7 @@ classes:
       - subject process qualifier
       - subject context qualifier
       - predicate
+      - qualified predicate
       - object
       - object aspect qualifier
       - object process qualifier
@@ -10250,7 +10261,7 @@ classes:
           the subject gene in the association. If the relation is symmetric,
           subject vs object is arbitrary. We allow a gene product to stand
           as a proxy for the gene or vice versa.
-      subject aspect qualifier:
+      subject activity qualifier:
         range: molecular activity
       subject process qualifier:
         range: biological process
@@ -10262,7 +10273,7 @@ classes:
           the object gene in the association. If the relation is symmetric,
           subject vs object is arbitrary. We allow a gene product to stand
           as a proxy for the gene or vice versa.
-      object aspect qualifier:
+      object activity qualifier:
         range: molecular activity
       object process qualifier:
         range: biological process
