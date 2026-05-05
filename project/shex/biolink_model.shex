@@ -3101,7 +3101,8 @@ linkml:Sparqlpath xsd:string
              <https://w3id.org/biolink/vocab/DruggableGeneCategoryEnum#tdark> ] ? ;
           rdf:subject @<GeneOrGeneProduct> ;
           rdf:predicate [ <https://w3id.org/biolink/vocab/GeneToDiseasePredicateEnum#biolink%3Acontributes_to>
-             <https://w3id.org/biolink/vocab/GeneToDiseasePredicateEnum#biolink%3Aassociated_with> ] ;
+             <https://w3id.org/biolink/vocab/GeneToDiseasePredicateEnum#biolink%3Aassociated_with>
+             <https://w3id.org/biolink/vocab/GeneToDiseasePredicateEnum#biolink%3Aaffects> ] ;
           <frequency_qualifier> @<FrequencyValue> ? ;
           <subject_direction_qualifier> [ <https://w3id.org/biolink/vocab/DirectionQualifierEnum#increased>
              <https://w3id.org/biolink/vocab/DirectionQualifierEnum#upregulated>
@@ -4553,6 +4554,14 @@ linkml:Sparqlpath xsd:string
     )
 }
 
+<GeneContributesToDiseaseAssociation> CLOSED {
+    (  $<GeneContributesToDiseaseAssociation_tes> (  &<GeneToDiseaseAssociation_tes> ;
+          rdf:type [ <GeneToDiseaseAssociation> ] ?
+       ) ;
+       rdf:type [ <GeneContributesToDiseaseAssociation> ]
+    )
+}
+
 <GeneExpressionMixin> {
     (  $<GeneExpressionMixin_tes> (  <quantifier_qualifier> @<OntologyClass> ? ;
           <expression_site> @<AnatomicalEntity> ? ;
@@ -4603,7 +4612,8 @@ linkml:Sparqlpath xsd:string
           rdf:subject @<GeneOrGeneProduct> ;
           rdf:object @<Disease> ;
           rdf:predicate [ <https://w3id.org/biolink/vocab/GeneToDiseasePredicateEnum#biolink%3Acontributes_to>
-             <https://w3id.org/biolink/vocab/GeneToDiseasePredicateEnum#biolink%3Aassociated_with> ]
+             <https://w3id.org/biolink/vocab/GeneToDiseasePredicateEnum#biolink%3Aassociated_with>
+             <https://w3id.org/biolink/vocab/GeneToDiseasePredicateEnum#biolink%3Aaffects> ]
        ) ;
        rdf:type [ <GeneHasVariantThatContributesToDiseaseAssociation> ]
     )
@@ -4830,11 +4840,12 @@ linkml:Sparqlpath xsd:string
              rdf:subject @<GeneOrGeneProduct> ;
              rdf:object @<Disease> ;
              rdf:predicate [ <https://w3id.org/biolink/vocab/GeneToDiseasePredicateEnum#biolink%3Acontributes_to>
-                <https://w3id.org/biolink/vocab/GeneToDiseasePredicateEnum#biolink%3Aassociated_with> ]
+                <https://w3id.org/biolink/vocab/GeneToDiseasePredicateEnum#biolink%3Aassociated_with>
+                <https://w3id.org/biolink/vocab/GeneToDiseasePredicateEnum#biolink%3Aaffects> ]
           ) ;
           rdf:type [ <GeneToDiseaseAssociation> ]
        )
-    } OR @<DruggableGeneToDiseaseAssociation> OR @<GeneAsAModelOfDiseaseAssociation> OR
+    } OR @<DruggableGeneToDiseaseAssociation> OR @<GeneAsAModelOfDiseaseAssociation> OR @<GeneContributesToDiseaseAssociation> OR
     @<GeneHasVariantThatContributesToDiseaseAssociation>
 )
 

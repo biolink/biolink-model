@@ -12269,6 +12269,9 @@ classes:
       - for use in describing the affect that the loss of function of a gene can have on exacerbating or ameliorating a disease
       - if the relationship of the statement using this predicate is statistical in nature, please use `associated with likelihood` or one of its children.
 
+  gene contributes to disease association:
+    is_a: gene to disease association
+
   causal gene to disease association:
     description: >-
       An association between a gene and a disease where variation
@@ -14775,3 +14778,4 @@ enums:
     permissible_values:
       "biolink:contributes_to":
       "biolink:associated_with":
+      "biolink:affects":
