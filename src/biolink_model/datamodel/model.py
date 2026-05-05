@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-05-05T15:55:08
+# Generation date: 2026-05-05T15:59:28
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/vocab/
@@ -1296,10 +1296,6 @@ class GeneToPhenotypicFeatureAssociationId(AssociationId):
 
 
 class GeneToDiseaseAssociationId(AssociationId):
-    pass
-
-
-class GeneContributesToDiseaseAssociationId(GeneToDiseaseAssociationId):
     pass
 
 
@@ -12325,34 +12321,6 @@ class GeneToDiseaseAssociation(Association):
 
         if self.gene2phenotype_confidence_category is not None and not isinstance(self.gene2phenotype_confidence_category, str):
             self.gene2phenotype_confidence_category = str(self.gene2phenotype_confidence_category)
-
-        super().__post_init__(**kwargs)
-        if not isinstance(self.category, list):
-            self.category = [self.category] if self.category is not None else []
-        self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
-
-
-@dataclass(repr=False)
-class GeneContributesToDiseaseAssociation(GeneToDiseaseAssociation):
-    _inherited_slots: ClassVar[list[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = BIOLINK["GeneContributesToDiseaseAssociation"]
-    class_class_curie: ClassVar[str] = "biolink:GeneContributesToDiseaseAssociation"
-    class_name: ClassVar[str] = "gene contributes to disease association"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.GeneContributesToDiseaseAssociation
-
-    id: Union[str, GeneContributesToDiseaseAssociationId] = None
-    knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
-    agent_type: Union[str, "AgentTypeEnum"] = None
-    subject: Union[dict, GeneOrGeneProduct] = None
-    object: Union[str, DiseaseId] = None
-    predicate: Union[str, "GeneToDiseasePredicateEnum"] = None
-
-    def __post_init__(self, *_: str, **kwargs: Any):
-        if self._is_empty(self.id):
-            self.MissingRequiredField("id")
-        if not isinstance(self.id, GeneContributesToDiseaseAssociationId):
-            self.id = GeneContributesToDiseaseAssociationId(self.id)
 
         super().__post_init__(**kwargs)
         if not isinstance(self.category, list):

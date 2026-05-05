@@ -4554,14 +4554,6 @@ linkml:Sparqlpath xsd:string
     )
 }
 
-<GeneContributesToDiseaseAssociation> CLOSED {
-    (  $<GeneContributesToDiseaseAssociation_tes> (  &<GeneToDiseaseAssociation_tes> ;
-          rdf:type [ <GeneToDiseaseAssociation> ] ?
-       ) ;
-       rdf:type [ <GeneContributesToDiseaseAssociation> ]
-    )
-}
-
 <GeneExpressionMixin> {
     (  $<GeneExpressionMixin_tes> (  <quantifier_qualifier> @<OntologyClass> ? ;
           <expression_site> @<AnatomicalEntity> ? ;
@@ -4845,7 +4837,7 @@ linkml:Sparqlpath xsd:string
           ) ;
           rdf:type [ <GeneToDiseaseAssociation> ]
        )
-    } OR @<DruggableGeneToDiseaseAssociation> OR @<GeneAsAModelOfDiseaseAssociation> OR @<GeneContributesToDiseaseAssociation> OR
+    } OR @<DruggableGeneToDiseaseAssociation> OR @<GeneAsAModelOfDiseaseAssociation> OR
     @<GeneHasVariantThatContributesToDiseaseAssociation>
 )
 
