@@ -111,6 +111,28 @@
                 "parent": "qualifier"
             },
             {
+                "name": "process_qualifier",
+                "parent": "qualifier",
+                "children": [
+                    {
+                        "name": "object_activity_qualifier",
+                        "parent": "process_qualifier"
+                    },
+                    {
+                        "name": "object_process_qualifier",
+                        "parent": "process_qualifier"
+                    },
+                    {
+                        "name": "subject_activity_qualifier",
+                        "parent": "process_qualifier"
+                    },
+                    {
+                        "name": "subject_process_qualifier",
+                        "parent": "process_qualifier"
+                    }
+                ]
+            },
+            {
                 "name": "qualified_predicate",
                 "parent": "qualifier"
             },

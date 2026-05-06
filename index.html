@@ -3175,6 +3175,10 @@ databases and formats.  For more information, see: <a href="understanding-the-mo
 <td>a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject</td>
 </tr>
 <tr>
+<td><a href="object_activity_qualifier/">object_activity_qualifier</a></td>
+<td>None</td>
+</tr>
+<tr>
 <td><a href="object_aspect_qualifier/">object_aspect_qualifier</a></td>
 <td>Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the object of an association (aka: statement).</td>
 </tr>
@@ -3199,6 +3203,10 @@ databases and formats.  For more information, see: <a href="understanding-the-mo
 <td>defines a specific part/component of the core concept (used in cases there this specific part has no IRI we can use to directly represent it).  This qualifier is for the object of an association (or statement).</td>
 </tr>
 <tr>
+<td><a href="object_process_qualifier/">object_process_qualifier</a></td>
+<td>None</td>
+</tr>
+<tr>
 <td><a href="object_specialization_qualifier/">object_specialization_qualifier</a></td>
 <td>A qualifier that composes with a core subject/object concept to define a more specific version of the subject concept, specifically using an ontology term that is not a subclass or descendant of the core concept and in the vast majority of cases, is of a different ontological namespace than the category or namespace of the subject identifier.</td>
 </tr>
@@ -3213,6 +3221,10 @@ databases and formats.  For more information, see: <a href="understanding-the-mo
 <tr>
 <td><a href="population_context_qualifier/">population_context_qualifier</a></td>
 <td>a biological population (general, study, cohort, etc.) with a specific set of characteristics to constrain an association.</td>
+</tr>
+<tr>
+<td><a href="process_qualifier/">process_qualifier</a></td>
+<td>Restricts the biological process within which the core concept (or qualified core concept) participates.</td>
 </tr>
 <tr>
 <td><a href="qualified_predicate/">qualified_predicate</a></td>
@@ -3255,6 +3267,10 @@ databases and formats.  For more information, see: <a href="understanding-the-mo
 <td>A property that qualifies the entirety of the statement made in an association.  It applies to both a fully qualified subject and a fully qualified object as well as the predicate and qualified predicate in an association.</td>
 </tr>
 <tr>
+<td><a href="subject_activity_qualifier/">subject_activity_qualifier</a></td>
+<td>None</td>
+</tr>
+<tr>
 <td><a href="subject_aspect_qualifier/">subject_aspect_qualifier</a></td>
 <td>Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the subject of an association (aka: statement).</td>
 </tr>
@@ -3277,6 +3293,10 @@ databases and formats.  For more information, see: <a href="understanding-the-mo
 <tr>
 <td><a href="subject_part_qualifier/">subject_part_qualifier</a></td>
 <td>defines a specific part/component of the core concept (used in cases there this specific part has no IRI we can use to directly represent it).  This qualifier is for the subject of an association (or statement).</td>
+</tr>
+<tr>
+<td><a href="subject_process_qualifier/">subject_process_qualifier</a></td>
+<td>None</td>
 </tr>
 <tr>
 <td><a href="subject_specialization_qualifier/">subject_specialization_qualifier</a></td>
@@ -3515,7 +3535,7 @@ databases and formats.  For more information, see: <a href="understanding-the-mo
 </tr>
 <tr>
 <td><a href="GeneToGeneAssociation/">GeneToGeneAssociation</a></td>
-<td>abstract parent class for different kinds of gene-gene or gene product to gene product relationships. Includes homology and interaction.</td>
+<td>parent class for different kinds of gene-gene or gene product to gene product relationships. Includes homology and interaction.</td>
 </tr>
 <tr>
 <td><a href="GeneToGeneCoexpressionAssociation/">GeneToGeneCoexpressionAssociation</a></td>
@@ -3973,6 +3993,10 @@ databases and formats.  For more information, see: <a href="understanding-the-mo
 <td>connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.</td>
 </tr>
 <tr>
+<td><a href="object_activity_qualifier/">object_activity_qualifier</a></td>
+<td>None</td>
+</tr>
+<tr>
 <td><a href="object_aspect_qualifier/">object_aspect_qualifier</a></td>
 <td>Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the object of an association (aka: statement).</td>
 </tr>
@@ -4025,6 +4049,10 @@ databases and formats.  For more information, see: <a href="understanding-the-mo
 <td>defines a specific part/component of the core concept (used in cases there this specific part has no IRI we can use to directly represent it).  This qualifier is for the object of an association (or statement).</td>
 </tr>
 <tr>
+<td><a href="object_process_qualifier/">object_process_qualifier</a></td>
+<td>None</td>
+</tr>
+<tr>
 <td><a href="object_specialization_qualifier/">object_specialization_qualifier</a></td>
 <td>A qualifier that composes with a core subject/object concept to define a more specific version of the subject concept, specifically using an ontology term that is not a subclass or descendant of the core concept and in the vast majority of cases, is of a different ontological namespace than the category or namespace of the subject identifier.</td>
 </tr>
@@ -4071,6 +4099,10 @@ databases and formats.  For more information, see: <a href="understanding-the-mo
 <tr>
 <td><a href="primary_knowledge_source/">primary_knowledge_source</a></td>
 <td>The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  "aggregator knowledge source" can be used to capture non-primary sources.</td>
+</tr>
+<tr>
+<td><a href="process_qualifier/">process_qualifier</a></td>
+<td>Restricts the biological process within which the core concept (or qualified core concept) participates.</td>
 </tr>
 <tr>
 <td><a href="publications/">publications</a></td>
@@ -4189,6 +4221,10 @@ databases and formats.  For more information, see: <a href="understanding-the-mo
 <td>connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.</td>
 </tr>
 <tr>
+<td><a href="subject_activity_qualifier/">subject_activity_qualifier</a></td>
+<td>None</td>
+</tr>
+<tr>
 <td><a href="subject_aspect_qualifier/">subject_aspect_qualifier</a></td>
 <td>Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the subject of an association (aka: statement).</td>
 </tr>
@@ -4239,6 +4275,10 @@ databases and formats.  For more information, see: <a href="understanding-the-mo
 <tr>
 <td><a href="subject_part_qualifier/">subject_part_qualifier</a></td>
 <td>defines a specific part/component of the core concept (used in cases there this specific part has no IRI we can use to directly represent it).  This qualifier is for the subject of an association (or statement).</td>
+</tr>
+<tr>
+<td><a href="subject_process_qualifier/">subject_process_qualifier</a></td>
+<td>None</td>
 </tr>
 <tr>
 <td><a href="subject_specialization_qualifier/">subject_specialization_qualifier</a></td>

@@ -8,7 +8,7 @@
 <link href="https://biolink.github.io/biolink-model/GeneToGeneAssociation/" rel="canonical"/>
 <link href="../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.6.1, mkdocs-material-9.7.6" name="generator"/>
-<title>Class: GeneToGeneAssociation (Abstract) - Biolink Model Documentation</title>
+<title>Class: GeneToGeneAssociation - Biolink Model Documentation</title>
 <link href="../assets/stylesheets/main.484c7ddc.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -24,7 +24,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#class-genetogeneassociation-abstract">
+<a class="md-skip" href="#class-genetogeneassociation">
           Skip to content
         </a>
 </div>
@@ -48,7 +48,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Class: GeneToGeneAssociation (Abstract)
+              Class: GeneToGeneAssociation
             
           </span>
 </div>
@@ -362,9 +362,9 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="class-genetogeneassociation-abstract"><strong>  Class: GeneToGeneAssociation </strong> <span style="color: purple;"><strong><small> (Abstract) </small> </strong></span></h1>
+<h1 id="class-genetogeneassociation"><strong>  Class: GeneToGeneAssociation </strong></h1>
 <div class="highlight-box">
-<strong>Description:</strong><i> abstract parent class for different kinds of gene-gene or gene product to gene product relationships. Includes homology and interaction.</i><br/>
+<strong>Description:</strong><i> parent class for different kinds of gene-gene or gene product to gene product relationships. Includes homology and interaction.</i><br/>
 </div>
 <p>Aliases: molecular or genetic interaction  </p>
 <div class="mermaid"> classDiagram
@@ -386,6 +386,10 @@
       GeneToGeneAssociation : aggregator_knowledge_source
 
       GeneToGeneAssociation : category
+
+      GeneToGeneAssociation : causal_mechanism_qualifier
+
+          GeneToGeneAssociation --|&gt; CausalMechanismQualifierEnum : causal_mechanism_qualifier
 
       GeneToGeneAssociation : deprecated
 
@@ -431,6 +435,14 @@
 
           GeneToGeneAssociation --|&gt; GeneOrGeneProduct : object
 
+      GeneToGeneAssociation : object_activity_qualifier
+
+          GeneToGeneAssociation --|&gt; MolecularActivity : object_activity_qualifier
+
+      GeneToGeneAssociation : object_aspect_qualifier
+
+          GeneToGeneAssociation --|&gt; GeneOrGeneProductOrChemicalEntityAspectEnum : object_aspect_qualifier
+
       GeneToGeneAssociation : object_category
 
           GeneToGeneAssociation --|&gt; OntologyClass : object_category
@@ -441,11 +453,23 @@
 
       GeneToGeneAssociation : object_closure
 
+      GeneToGeneAssociation : object_context_qualifier
+
+          GeneToGeneAssociation --|&gt; AnatomicalEntity : object_context_qualifier
+
+      GeneToGeneAssociation : object_direction_qualifier
+
+          GeneToGeneAssociation --|&gt; DirectionQualifierEnum : object_direction_qualifier
+
       GeneToGeneAssociation : object_feature_name
 
       GeneToGeneAssociation : object_label_closure
 
       GeneToGeneAssociation : object_namespace
+
+      GeneToGeneAssociation : object_process_qualifier
+
+          GeneToGeneAssociation --|&gt; BiologicalProcess : object_process_qualifier
 
       GeneToGeneAssociation : original_object
 
@@ -463,6 +487,8 @@
 
           GeneToGeneAssociation --|&gt; Publication : publications
 
+      GeneToGeneAssociation : qualified_predicate
+
       GeneToGeneAssociation : qualifier
 
       GeneToGeneAssociation : qualifiers
@@ -479,9 +505,21 @@
 
           GeneToGeneAssociation --|&gt; RetrievalSource : sources
 
+      GeneToGeneAssociation : species_context_qualifier
+
+          GeneToGeneAssociation --|&gt; OrganismTaxon : species_context_qualifier
+
       GeneToGeneAssociation : subject
 
           GeneToGeneAssociation --|&gt; GeneOrGeneProduct : subject
+
+      GeneToGeneAssociation : subject_activity_qualifier
+
+          GeneToGeneAssociation --|&gt; MolecularActivity : subject_activity_qualifier
+
+      GeneToGeneAssociation : subject_aspect_qualifier
+
+          GeneToGeneAssociation --|&gt; GeneOrGeneProductOrChemicalEntityAspectEnum : subject_aspect_qualifier
 
       GeneToGeneAssociation : subject_category
 
@@ -493,11 +531,23 @@
 
       GeneToGeneAssociation : subject_closure
 
+      GeneToGeneAssociation : subject_context_qualifier
+
+          GeneToGeneAssociation --|&gt; AnatomicalEntity : subject_context_qualifier
+
+      GeneToGeneAssociation : subject_direction_qualifier
+
+          GeneToGeneAssociation --|&gt; DirectionQualifierEnum : subject_direction_qualifier
+
       GeneToGeneAssociation : subject_feature_name
 
       GeneToGeneAssociation : subject_label_closure
 
       GeneToGeneAssociation : subject_namespace
+
+      GeneToGeneAssociation : subject_process_qualifier
+
+          GeneToGeneAssociation --|&gt; BiologicalProcess : subject_process_qualifier
 
       GeneToGeneAssociation : supporting_text
 
@@ -536,21 +586,105 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../subject/">subject</a>: <br> <i> the subject gene in the association. If the relation is symmetric, subject vs object is arbitrary. We allow a gene product to stand as a proxy for the gene or vice versa. </i></br></td>
+<td><a href="../subject_aspect_qualifier/">subject_aspect_qualifier</a>: <br> <i> Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the subject of an association (aka: statement). </i></br></td>
+<td>0..1 <br/> <a href="../GeneOrGeneProductOrChemicalEntityAspectEnum/">GeneOrGeneProductOrChemicalEntityAspectEnum</a></td>
+<td>direct</td>
+<td>stability, abundance, expression, exposure</td>
+</tr>
+<tr>
+<td><a href="../subject_direction_qualifier/">subject_direction_qualifier</a>: <br/> <i> Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement). </i></td>
+<td>0..1 <br/> <a href="../DirectionQualifierEnum/">DirectionQualifierEnum</a></td>
+<td>direct</td>
+<td>increased, downregulated</td>
+</tr>
+<tr>
+<td><a href="../object_aspect_qualifier/">object_aspect_qualifier</a>: <br/> <i> Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the object of an association (aka: statement). </i></td>
+<td>0..1 <br/> <a href="../GeneOrGeneProductOrChemicalEntityAspectEnum/">GeneOrGeneProductOrChemicalEntityAspectEnum</a></td>
+<td>direct</td>
+<td>stability, abundance, expression, exposure</td>
+</tr>
+<tr>
+<td><a href="../object_direction_qualifier/">object_direction_qualifier</a>: <br/> <i> Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement). </i></td>
+<td>0..1 <br/> <a href="../DirectionQualifierEnum/">DirectionQualifierEnum</a></td>
+<td>direct</td>
+<td>increased, downregulated</td>
+</tr>
+<tr>
+<td><a href="../causal_mechanism_qualifier/">causal_mechanism_qualifier</a>: <br/> <i> A statement qualifier representing a type of molecular control mechanism through which an effect of a chemical on a gene or gene product is mediated </i></td>
+<td>0..1 <br/> <a href="../CausalMechanismQualifierEnum/">CausalMechanismQualifierEnum</a></td>
+<td>direct</td>
+<td>agonism, inhibition</td>
+</tr>
+<tr>
+<td><a href="../qualified_predicate/">qualified_predicate</a>: <br/> <i> Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  Has a value from the Biolink 'related_to' hierarchy, for example, biolink:related_to, biolink:causes, biolink:treats This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a ‘full statement’ reading of the association, where qualifier-based semantics are included. This is necessary only in cases where the primary predicate does not work in a full statement reading. </i></td>
+<td>0..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
+<td>direct</td>
+<td>biolink:causes</td>
+</tr>
+<tr>
+<td><a href="../species_context_qualifier/">species_context_qualifier</a>: <br/> <i> A statement qualifier representing a taxonomic category of species in which a relationship expressed in an association took place. </i></td>
+<td>0..1 <br/> <a href="../OrganismTaxon/">OrganismTaxon</a></td>
+<td>direct</td>
+<td>NCBITaxon:7955, NCBITaxon:9606</td>
+</tr>
+<tr>
+<td><a href="../subject/">subject</a>: <br/> <i> the subject gene in the association. If the relation is symmetric, subject vs object is arbitrary. We allow a gene product to stand as a proxy for the gene or vice versa. </i></td>
 <td>1 <br/> <a href="../GeneOrGeneProduct/">GeneOrGeneProduct</a></td>
-<td><a href="../Association/">Association</a></td>
+<td>direct</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../subject_activity_qualifier/">subject_activity_qualifier</a>: <br/> <i> None </i></td>
+<td>0..1 <br/> <a href="../MolecularActivity/">MolecularActivity</a></td>
+<td>direct</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../subject_process_qualifier/">subject_process_qualifier</a>: <br/> <i> None </i></td>
+<td>0..1 <br/> <a href="../BiologicalProcess/">BiologicalProcess</a></td>
+<td>direct</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../subject_context_qualifier/">subject_context_qualifier</a>: <br/> <i> A qualifier describing the context in which the subject of an association holds. </i></td>
+<td>0..1 <br/> <a href="../AnatomicalEntity/">AnatomicalEntity</a></td>
+<td>direct</td>
 <td></td>
 </tr>
 <tr>
 <td><a href="../predicate/">predicate</a>: <br/> <i> Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats </i></td>
 <td>1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
-<td><a href="../Association/">Association</a></td>
+<td>direct</td>
 <td></td>
+</tr>
+<tr>
+<td><a href="../qualified_predicate/">qualified_predicate</a>: <br/> <i> Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  Has a value from the Biolink 'related_to' hierarchy, for example, biolink:related_to, biolink:causes, biolink:treats This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a ‘full statement’ reading of the association, where qualifier-based semantics are included. This is necessary only in cases where the primary predicate does not work in a full statement reading. </i></td>
+<td>0..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
+<td>direct</td>
+<td>biolink:causes</td>
 </tr>
 <tr>
 <td><a href="../object/">object</a>: <br/> <i> the object gene in the association. If the relation is symmetric, subject vs object is arbitrary. We allow a gene product to stand as a proxy for the gene or vice versa. </i></td>
 <td>1 <br/> <a href="../GeneOrGeneProduct/">GeneOrGeneProduct</a></td>
-<td><a href="../Association/">Association</a></td>
+<td>direct</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../object_activity_qualifier/">object_activity_qualifier</a>: <br/> <i> None </i></td>
+<td>0..1 <br/> <a href="../MolecularActivity/">MolecularActivity</a></td>
+<td>direct</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../object_process_qualifier/">object_process_qualifier</a>: <br/> <i> None </i></td>
+<td>0..1 <br/> <a href="../BiologicalProcess/">BiologicalProcess</a></td>
+<td>direct</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../object_context_qualifier/">object_context_qualifier</a>: <br/> <i> A qualifier describing the context in which the object of an association holds. </i></td>
+<td>0..1 <br/> <a href="../AnatomicalEntity/">AnatomicalEntity</a></td>
+<td>direct</td>
 <td></td>
 </tr>
 <tr>
@@ -834,13 +968,30 @@
 <h2 id="linkml-source">LinkML Source</h2>
 <details open="">
 <pre><code class="language-yaml">name: gene to gene association
-description: abstract parent class for different kinds of gene-gene or gene product
-  to gene product relationships. Includes homology and interaction.
+description: parent class for different kinds of gene-gene or gene product to gene
+  product relationships. Includes homology and interaction.
 from_schema: https://w3id.org/biolink/vocab/
 aliases:
 - molecular or genetic interaction
 is_a: association
-abstract: true
+slots:
+- subject aspect qualifier
+- subject direction qualifier
+- object aspect qualifier
+- object direction qualifier
+- causal mechanism qualifier
+- qualified predicate
+- species context qualifier
+- subject
+- subject activity qualifier
+- subject process qualifier
+- subject context qualifier
+- predicate
+- qualified predicate
+- object
+- object activity qualifier
+- object process qualifier
+- object context qualifier
 slot_usage:
   subject:
     name: subject
@@ -848,12 +999,30 @@ slot_usage:
       subject vs object is arbitrary. We allow a gene product to stand as a proxy
       for the gene or vice versa.
     range: gene or gene product
+  subject activity qualifier:
+    name: subject activity qualifier
+    range: molecular activity
+  subject process qualifier:
+    name: subject process qualifier
+    range: biological process
+  subject context qualifier:
+    name: subject context qualifier
+    range: anatomical entity
   object:
     name: object
     description: the object gene in the association. If the relation is symmetric,
       subject vs object is arbitrary. We allow a gene product to stand as a proxy
       for the gene or vice versa.
     range: gene or gene product
+  object activity qualifier:
+    name: object activity qualifier
+    range: molecular activity
+  object process qualifier:
+    name: object process qualifier
+    range: biological process
+  object context qualifier:
+    name: object context qualifier
+    range: anatomical entity
 defining_slots:
 - subject
 - object
