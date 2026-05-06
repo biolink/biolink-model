@@ -10598,10 +10598,17 @@ classes:
   gene to gene association:
     aliases: ['molecular or genetic interaction']
     description: >-
-      abstract parent class for different kinds of gene-gene or gene product
+      parent class for different kinds of gene-gene or gene product
       to gene product relationships. Includes homology and interaction.
-    abstract: true
     is_a: association
+    slots:
+      - subject aspect qualifier
+      - subject direction qualifier
+      - object aspect qualifier
+      - object direction qualifier
+      - causal mechanism qualifier
+      - qualified predicate
+      - species context qualifier
     defining_slots:
       - subject
       - object

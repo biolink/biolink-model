@@ -5447,6 +5447,7 @@
       "owner": "CorrelatedGeneToDiseaseAssociation",
       "domain_of": [
         "PredicateMapping",
+        "GeneToGeneAssociation",
         "NamedThingAssociatedWithLikelihoodOfNamedThingAssociation",
         "ChemicalAffectsBiologicalEntityAssociation",
         "GeneAffectsChemicalAssociation",
@@ -5632,6 +5633,7 @@
       "owner": "FeatureOrDiseaseQualifiersToEntityMixin",
       "domain_of": [
         "PredicateMapping",
+        "GeneToGeneAssociation",
         "ChemicalAffectsBiologicalEntityAssociation",
         "GeneAffectsChemicalAssociation",
         "EntityToFeatureOrDiseaseQualifiersMixin",
@@ -5674,6 +5676,7 @@
       "owner": "FeatureOrDiseaseQualifiersToEntityMixin",
       "domain_of": [
         "PredicateMapping",
+        "GeneToGeneAssociation",
         "NamedThingAssociatedWithLikelihoodOfNamedThingAssociation",
         "ChemicalGeneInteractionAssociation",
         "GeneRegulatesGeneAssociation",
@@ -5851,6 +5854,7 @@
       "owner": "ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation",
       "domain_of": [
         "PredicateMapping",
+        "GeneToGeneAssociation",
         "ChemicalEntityToBiologicalProcessAssociation",
         "ChemicalGeneInteractionAssociation",
         "GeneRegulatesGeneAssociation",
@@ -5890,6 +5894,7 @@
       "owner": "CorrelatedGeneToDiseaseAssociation",
       "domain_of": [
         "PredicateMapping",
+        "GeneToGeneAssociation",
         "ChemicalEntityToBiologicalProcessAssociation",
         "ChemicalGeneInteractionAssociation",
         "GeneRegulatesGeneAssociation",
@@ -5945,6 +5950,7 @@
       "owner": "GeneAffectsChemicalAssociation",
       "domain_of": [
         "PredicateMapping",
+        "GeneToGeneAssociation",
         "ChemicalGeneInteractionAssociation",
         "ChemicalAffectsBiologicalEntityAssociation",
         "GeneAffectsChemicalAssociation"
@@ -6020,6 +6026,7 @@
       "owner": "MacromolecularMachineToEntityAssociationMixin",
       "domain_of": [
         "PredicateMapping",
+        "GeneToGeneAssociation",
         "ChemicalEntityToChemicalEntityAssociation",
         "ChemicalEntityToBiologicalProcessAssociation",
         "GeneRegulatesGeneAssociation",
@@ -35223,13 +35230,12 @@
     {
       "name": "GeneToGeneAssociation",
       "definition_uri": "https://w3id.org/biolink/vocab/GeneToGeneAssociation",
-      "description": "abstract parent class for different kinds of gene-gene or gene product to gene product relationships. Includes homology and interaction.",
+      "description": "parent class for different kinds of gene-gene or gene product to gene product relationships. Includes homology and interaction.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "aliases": [
         "molecular or genetic interaction"
       ],
       "is_a": "Association",
-      "abstract": true,
       "slots": [
         "id",
         "iri",
@@ -35278,6 +35284,13 @@
         "semmed_agreement_count",
         "association_type",
         "association_category",
+        "subject_aspect_qualifier",
+        "subject_direction_qualifier",
+        "object_aspect_qualifier",
+        "object_direction_qualifier",
+        "causal_mechanism_qualifier",
+        "qualified_predicate",
+        "species_context_qualifier",
         "gene_to_gene_association_subject",
         "gene_to_gene_association_object"
       ],
@@ -35342,6 +35355,13 @@
         "semmed_agreement_count",
         "association_type",
         "association_category",
+        "subject_aspect_qualifier",
+        "subject_direction_qualifier",
+        "object_aspect_qualifier",
+        "object_direction_qualifier",
+        "causal_mechanism_qualifier",
+        "qualified_predicate",
+        "species_context_qualifier",
         "gene_to_gene_homology_association_subject",
         "gene_to_gene_homology_association_predicate",
         "gene_to_gene_homology_association_object"
@@ -35757,6 +35777,13 @@
         "semmed_agreement_count",
         "association_type",
         "association_category",
+        "subject_aspect_qualifier",
+        "subject_direction_qualifier",
+        "object_aspect_qualifier",
+        "object_direction_qualifier",
+        "causal_mechanism_qualifier",
+        "qualified_predicate",
+        "species_context_qualifier",
         "gene_to_gene_association_subject",
         "gene_to_gene_association_object",
         "gene_to_gene_coexpression_association_predicate",
@@ -35830,6 +35857,13 @@
         "semmed_agreement_count",
         "association_type",
         "association_category",
+        "subject_aspect_qualifier",
+        "subject_direction_qualifier",
+        "object_aspect_qualifier",
+        "object_direction_qualifier",
+        "causal_mechanism_qualifier",
+        "qualified_predicate",
+        "species_context_qualifier",
         "gene_to_gene_association_subject",
         "gene_to_gene_association_object",
         "pairwise_gene_to_gene_interaction_predicate"
@@ -35895,6 +35929,13 @@
         "semmed_agreement_count",
         "association_type",
         "association_category",
+        "subject_aspect_qualifier",
+        "subject_direction_qualifier",
+        "object_aspect_qualifier",
+        "object_direction_qualifier",
+        "causal_mechanism_qualifier",
+        "qualified_predicate",
+        "species_context_qualifier",
         "interacting_molecules_category",
         "pairwise_molecular_interaction_subject",
         "pairwise_molecular_interaction_id",
@@ -43158,9 +43199,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2026-05-05T15:58:51",
-  "source_file_size": 509216,
-  "generation_date": "2026-05-05T15:59:02",
+  "source_file_date": "2026-05-05T17:22:05",
+  "source_file_size": 509432,
+  "generation_date": "2026-05-05T17:22:14",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",
