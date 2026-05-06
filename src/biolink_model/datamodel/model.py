@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-04-27T21:23:26
+# Generation date: 2026-05-05T17:34:57
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/vocab/
@@ -8399,8 +8399,8 @@ class GenotypeToVariantAssociation(Association):
 @dataclass(repr=False)
 class GeneToGeneAssociation(Association):
     """
-    abstract parent class for different kinds of gene-gene or gene product to gene product relationships. Includes
-    homology and interaction.
+    parent class for different kinds of gene-gene or gene product to gene product relationships. Includes homology and
+    interaction.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -8415,15 +8415,26 @@ class GeneToGeneAssociation(Association):
     subject: Union[dict, GeneOrGeneProduct] = None
     predicate: Union[str, URIorCURIE] = None
     object: Union[dict, GeneOrGeneProduct] = None
+    subject_aspect_qualifier: Optional[Union[str, "GeneOrGeneProductOrChemicalEntityAspectEnum"]] = None
+    subject_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
+    object_aspect_qualifier: Optional[Union[str, "GeneOrGeneProductOrChemicalEntityAspectEnum"]] = None
+    object_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
+    causal_mechanism_qualifier: Optional[Union[str, "CausalMechanismQualifierEnum"]] = None
+    qualified_predicate: Optional[Union[str, URIorCURIE]] = None
+    species_context_qualifier: Optional[Union[str, OrganismTaxonId]] = None
     subject_activity_qualifier: Optional[Union[str, MolecularActivityId]] = None
     subject_process_qualifier: Optional[Union[str, BiologicalProcessId]] = None
     subject_context_qualifier: Optional[Union[str, AnatomicalEntityId]] = None
-    qualified_predicate: Optional[Union[str, URIorCURIE]] = None
     object_activity_qualifier: Optional[Union[str, MolecularActivityId]] = None
     object_process_qualifier: Optional[Union[str, BiologicalProcessId]] = None
     object_context_qualifier: Optional[Union[str, AnatomicalEntityId]] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, GeneToGeneAssociationId):
+            self.id = GeneToGeneAssociationId(self.id)
+
         if self._is_empty(self.subject):
             self.MissingRequiredField("subject")
         if not isinstance(self.subject, GeneOrGeneProduct):
@@ -8438,6 +8449,27 @@ class GeneToGeneAssociation(Association):
             self.MissingRequiredField("object")
         if not isinstance(self.object, GeneOrGeneProduct):
             self.object = GeneOrGeneProduct(**as_dict(self.object))
+
+        if self.subject_aspect_qualifier is not None and not isinstance(self.subject_aspect_qualifier, GeneOrGeneProductOrChemicalEntityAspectEnum):
+            self.subject_aspect_qualifier = GeneOrGeneProductOrChemicalEntityAspectEnum(self.subject_aspect_qualifier)
+
+        if self.subject_direction_qualifier is not None and not isinstance(self.subject_direction_qualifier, DirectionQualifierEnum):
+            self.subject_direction_qualifier = DirectionQualifierEnum(self.subject_direction_qualifier)
+
+        if self.object_aspect_qualifier is not None and not isinstance(self.object_aspect_qualifier, GeneOrGeneProductOrChemicalEntityAspectEnum):
+            self.object_aspect_qualifier = GeneOrGeneProductOrChemicalEntityAspectEnum(self.object_aspect_qualifier)
+
+        if self.object_direction_qualifier is not None and not isinstance(self.object_direction_qualifier, DirectionQualifierEnum):
+            self.object_direction_qualifier = DirectionQualifierEnum(self.object_direction_qualifier)
+
+        if self.causal_mechanism_qualifier is not None and not isinstance(self.causal_mechanism_qualifier, CausalMechanismQualifierEnum):
+            self.causal_mechanism_qualifier = CausalMechanismQualifierEnum(self.causal_mechanism_qualifier)
+
+        if self.qualified_predicate is not None and not isinstance(self.qualified_predicate, URIorCURIE):
+            self.qualified_predicate = URIorCURIE(self.qualified_predicate)
+
+        if self.species_context_qualifier is not None and not isinstance(self.species_context_qualifier, OrganismTaxonId):
+            self.species_context_qualifier = OrganismTaxonId(self.species_context_qualifier)
 
         if self.subject_activity_qualifier is not None and not isinstance(self.subject_activity_qualifier, MolecularActivityId):
             self.subject_activity_qualifier = MolecularActivityId(self.subject_activity_qualifier)
@@ -15940,6 +15972,8 @@ class GeneToDiseasePredicateEnum(EnumDefinitionImpl):
             PermissibleValue(text="biolink:contributes_to"))
         setattr(cls, "biolink:associated_with",
             PermissibleValue(text="biolink:associated_with"))
+        setattr(cls, "biolink:affects",
+            PermissibleValue(text="biolink:affects"))
 
 # Slots
 class slots:
