@@ -36573,6 +36573,12 @@
                     "$ref": "#/$defs/GeneOrGeneProduct",
                     "description": "the object gene in the association. If the relation is symmetric, subject vs object is arbitrary. We allow a gene product to stand as a proxy for the gene or vice versa."
                 },
+                "object_activity_qualifier": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_category": {
                     "description": "Used to hold the biolink class/category of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "type": [
@@ -36600,6 +36606,13 @@
                         "null"
                     ]
                 },
+                "object_context_qualifier": {
+                    "description": "A qualifier describing the context in which the object of an association holds.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_feature_name": {
                     "description": "Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease",
                     "type": [
@@ -36619,6 +36632,12 @@
                 },
                 "object_namespace": {
                     "description": "Used to hold the object namespace of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "object_process_qualifier": {
                     "type": [
                         "string",
                         "null"
@@ -36680,6 +36699,13 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "qualified_predicate": {
+                    "description": "Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  Has a value from the Biolink 'related_to' hierarchy, for example, biolink:related_to, biolink:causes, biolink:treats This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a \u2018full statement\u2019 reading of the association, where qualifier-based semantics are included. This is necessary only in cases where the primary predicate does not work in a full statement reading.",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },
@@ -36745,6 +36771,12 @@
                     "$ref": "#/$defs/GeneOrGeneProduct",
                     "description": "the subject gene in the association. If the relation is symmetric, subject vs object is arbitrary. We allow a gene product to stand as a proxy for the gene or vice versa."
                 },
+                "subject_activity_qualifier": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "subject_category": {
                     "description": "Used to hold the biolink class/category of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "type": [
@@ -36772,6 +36804,13 @@
                         "null"
                     ]
                 },
+                "subject_context_qualifier": {
+                    "description": "A qualifier describing the context in which the subject of an association holds.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "subject_feature_name": {
                     "description": "Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene",
                     "type": [
@@ -36791,6 +36830,12 @@
                 },
                 "subject_namespace": {
                     "description": "Used to hold the subject namespace of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "subject_process_qualifier": {
                     "type": [
                         "string",
                         "null"
@@ -37436,6 +37481,12 @@
                     "$ref": "#/$defs/GeneOrGeneProduct",
                     "description": "the object gene in the association. If the relation is symmetric, subject vs object is arbitrary. We allow a gene product to stand as a proxy for the gene or vice versa."
                 },
+                "object_activity_qualifier": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_category": {
                     "description": "Used to hold the biolink class/category of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "type": [
@@ -37463,6 +37514,13 @@
                         "null"
                     ]
                 },
+                "object_context_qualifier": {
+                    "description": "A qualifier describing the context in which the object of an association holds.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_feature_name": {
                     "description": "Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease",
                     "type": [
@@ -37482,6 +37540,12 @@
                 },
                 "object_namespace": {
                     "description": "Used to hold the object namespace of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "object_process_qualifier": {
                     "type": [
                         "string",
                         "null"
@@ -37542,6 +37606,13 @@
                         "null"
                     ]
                 },
+                "qualified_predicate": {
+                    "description": "Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  Has a value from the Biolink 'related_to' hierarchy, for example, biolink:related_to, biolink:causes, biolink:treats This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a \u2018full statement\u2019 reading of the association, where qualifier-based semantics are included. This is necessary only in cases where the primary predicate does not work in a full statement reading.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "qualifier": {
                     "description": "grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes",
                     "type": [
@@ -37590,6 +37661,12 @@
                     "$ref": "#/$defs/GeneOrGeneProduct",
                     "description": "the subject gene in the association. If the relation is symmetric, subject vs object is arbitrary. We allow a gene product to stand as a proxy for the gene or vice versa."
                 },
+                "subject_activity_qualifier": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "subject_category": {
                     "description": "Used to hold the biolink class/category of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "type": [
@@ -37617,6 +37694,13 @@
                         "null"
                     ]
                 },
+                "subject_context_qualifier": {
+                    "description": "A qualifier describing the context in which the subject of an association holds.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "subject_feature_name": {
                     "description": "Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene",
                     "type": [
@@ -37636,6 +37720,12 @@
                 },
                 "subject_namespace": {
                     "description": "Used to hold the subject namespace of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "subject_process_qualifier": {
                     "type": [
                         "string",
                         "null"
@@ -56025,6 +56115,12 @@
                     "$ref": "#/$defs/GeneOrGeneProduct",
                     "description": "the object gene in the association. If the relation is symmetric, subject vs object is arbitrary. We allow a gene product to stand as a proxy for the gene or vice versa."
                 },
+                "object_activity_qualifier": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_category": {
                     "description": "Used to hold the biolink class/category of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "type": [
@@ -56052,6 +56148,13 @@
                         "null"
                     ]
                 },
+                "object_context_qualifier": {
+                    "description": "A qualifier describing the context in which the object of an association holds.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_feature_name": {
                     "description": "Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease",
                     "type": [
@@ -56071,6 +56174,12 @@
                 },
                 "object_namespace": {
                     "description": "Used to hold the object namespace of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "object_process_qualifier": {
                     "type": [
                         "string",
                         "null"
@@ -56137,6 +56246,13 @@
                         "null"
                     ]
                 },
+                "qualified_predicate": {
+                    "description": "Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  Has a value from the Biolink 'related_to' hierarchy, for example, biolink:related_to, biolink:causes, biolink:treats This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a \u2018full statement\u2019 reading of the association, where qualifier-based semantics are included. This is necessary only in cases where the primary predicate does not work in a full statement reading.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "qualifier": {
                     "description": "grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes",
                     "type": [
@@ -56185,6 +56301,12 @@
                     "$ref": "#/$defs/GeneOrGeneProduct",
                     "description": "the subject gene in the association. If the relation is symmetric, subject vs object is arbitrary. We allow a gene product to stand as a proxy for the gene or vice versa."
                 },
+                "subject_activity_qualifier": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "subject_category": {
                     "description": "Used to hold the biolink class/category of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "type": [
@@ -56212,6 +56334,13 @@
                         "null"
                     ]
                 },
+                "subject_context_qualifier": {
+                    "description": "A qualifier describing the context in which the subject of an association holds.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "subject_feature_name": {
                     "description": "Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene",
                     "type": [
@@ -56231,6 +56360,12 @@
                 },
                 "subject_namespace": {
                     "description": "Used to hold the subject namespace of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "subject_process_qualifier": {
                     "type": [
                         "string",
                         "null"
@@ -56461,6 +56596,12 @@
                     "description": "the object gene in the association. If the relation is symmetric, subject vs object is arbitrary. We allow a gene product to stand as a proxy for the gene or vice versa.",
                     "type": "string"
                 },
+                "object_activity_qualifier": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_category": {
                     "description": "Used to hold the biolink class/category of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "type": [
@@ -56488,6 +56629,13 @@
                         "null"
                     ]
                 },
+                "object_context_qualifier": {
+                    "description": "A qualifier describing the context in which the object of an association holds.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "object_feature_name": {
                     "description": "Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease",
                     "type": [
@@ -56507,6 +56655,12 @@
                 },
                 "object_namespace": {
                     "description": "Used to hold the object namespace of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "object_process_qualifier": {
                     "type": [
                         "string",
                         "null"
@@ -56573,6 +56727,13 @@
                         "null"
                     ]
                 },
+                "qualified_predicate": {
+                    "description": "Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  Has a value from the Biolink 'related_to' hierarchy, for example, biolink:related_to, biolink:causes, biolink:treats This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a \u2018full statement\u2019 reading of the association, where qualifier-based semantics are included. This is necessary only in cases where the primary predicate does not work in a full statement reading.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "qualifier": {
                     "description": "grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes",
                     "type": [
@@ -56621,6 +56782,12 @@
                     "description": "the subject gene in the association. If the relation is symmetric, subject vs object is arbitrary. We allow a gene product to stand as a proxy for the gene or vice versa.",
                     "type": "string"
                 },
+                "subject_activity_qualifier": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "subject_category": {
                     "description": "Used to hold the biolink class/category of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "type": [
@@ -56648,6 +56815,13 @@
                         "null"
                     ]
                 },
+                "subject_context_qualifier": {
+                    "description": "A qualifier describing the context in which the subject of an association holds.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "subject_feature_name": {
                     "description": "Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene",
                     "type": [
@@ -56667,6 +56841,12 @@
                 },
                 "subject_namespace": {
                     "description": "Used to hold the subject namespace of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "subject_process_qualifier": {
                     "type": [
                         "string",
                         "null"
