@@ -742,6 +742,18 @@ slots:
       - gff3:Dbxref
       - gpi:DB_Xrefs
 
+  subsets:
+    is_a: node property
+    domain: named thing
+    range: string
+    description: >-
+      The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease
+      subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through
+      to downstream knowledge graphs.
+    multivalued: true
+    exact_mappings:
+      - oboInOwl:inSubset
+
   url:
     is_a: node property
     description: >-
@@ -7026,6 +7038,7 @@ classes:
     mixin: true
     slots:
       - id
+      - subsets
     description: >-
       a concept or class in an ontology, vocabulary or thesaurus. Note that nodes in
       a biolink compatible KG can be considered both instances of biolink classes, and

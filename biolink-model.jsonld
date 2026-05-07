@@ -3358,6 +3358,25 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "subsets",
+      "definition_uri": "https://w3id.org/biolink/vocab/subsets",
+      "description": "The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.",
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "exact_mappings": [
+        "http://www.geneontology.org/formats/oboInOwl#inSubset"
+      ],
+      "is_a": "node_property",
+      "domain": "NamedThing",
+      "slot_uri": "https://w3id.org/biolink/vocab/subsets",
+      "owner": "subsets",
+      "domain_of": [
+        "OntologyClass"
+      ],
+      "range": "string",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "url",
       "definition_uri": "https://w3id.org/biolink/vocab/url",
       "description": "This slot holds a string representation of a URL for an external resource about the node it is present on. Unlike an 'xref' that is primarily represented by a CURIE, this slot is intended to hold a full URL that can be used to directly access a resource. When linking to an external resource that cannot be represented by a unique CURIE, this slot should be used.  However, when the intent is to link to the default URI expansion of a CURIE related to the node it is present on, the xref slot should be used instead.",
@@ -27334,7 +27353,8 @@
       ],
       "mixin": true,
       "slots": [
-        "id"
+        "id",
+        "subsets"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/OntologyClass",
@@ -27403,7 +27423,8 @@
         "has_attribute_type",
         "has_quantitative_value",
         "has_qualitative_value",
-        "iri"
+        "iri",
+        "subsets"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/Attribute",
@@ -27446,7 +27467,8 @@
         "has_attribute_type",
         "has_quantitative_value",
         "has_qualitative_value",
-        "iri"
+        "iri",
+        "subsets"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/ChemicalRole",
@@ -27479,7 +27501,8 @@
         "has_attribute_type",
         "has_quantitative_value",
         "has_qualitative_value",
-        "iri"
+        "iri",
+        "subsets"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/BiologicalSex",
@@ -27512,7 +27535,8 @@
         "has_attribute_type",
         "has_quantitative_value",
         "has_qualitative_value",
-        "iri"
+        "iri",
+        "subsets"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/PhenotypicSex",
@@ -27545,7 +27569,8 @@
         "has_attribute_type",
         "has_quantitative_value",
         "has_qualitative_value",
-        "iri"
+        "iri",
+        "subsets"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/GenotypicSex",
@@ -27576,7 +27601,8 @@
         "has_attribute_type",
         "has_quantitative_value",
         "has_qualitative_value",
-        "iri"
+        "iri",
+        "subsets"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/SeverityValue",
@@ -27730,7 +27756,8 @@
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "OntologyClass",
       "slots": [
-        "id"
+        "id",
+        "subsets"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/RelationshipType",
@@ -27749,7 +27776,8 @@
       ],
       "is_a": "OntologyClass",
       "slots": [
-        "id"
+        "id",
+        "subsets"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/TaxonomicRank",
@@ -28555,7 +28583,8 @@
         "equivalent_identifiers",
         "information_content",
         "taxon",
-        "named_thing_category"
+        "named_thing_category",
+        "subsets"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/EvidenceType",
@@ -29781,7 +29810,8 @@
         "chembl_availability_type",
         "chembl_chirality",
         "chembl_drug_warning",
-        "is_metabolite"
+        "is_metabolite",
+        "subsets"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/MolecularEntity",
@@ -29987,7 +30017,8 @@
         "chembl_availability_type",
         "chembl_chirality",
         "chembl_drug_warning",
-        "is_metabolite"
+        "is_metabolite",
+        "subsets"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/SmallMolecule",
@@ -30068,7 +30099,8 @@
         "chembl_drug_warning",
         "is_supplement",
         "highest_FDA_approval_status",
-        "drug_regulatory_status_world_wide"
+        "drug_regulatory_status_world_wide",
+        "subsets"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/ChemicalMixture",
@@ -30153,6 +30185,7 @@
         "chembl_chirality",
         "chembl_drug_warning",
         "is_metabolite",
+        "subsets",
         "has_biological_sequence",
         "in_taxon",
         "in_taxon_label"
@@ -30199,7 +30232,8 @@
         "named_thing_category",
         "in_taxon",
         "in_taxon_label",
-        "has_biological_sequence"
+        "has_biological_sequence",
+        "subsets"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/RegulatoryRegion",
@@ -30242,7 +30276,8 @@
         "named_thing_category",
         "in_taxon",
         "in_taxon_label",
-        "has_biological_sequence"
+        "has_biological_sequence",
+        "subsets"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/AccessibleDnaRegion",
@@ -30285,7 +30320,8 @@
         "named_thing_category",
         "in_taxon",
         "in_taxon_label",
-        "has_biological_sequence"
+        "has_biological_sequence",
+        "subsets"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/TranscriptionFactorBindingSite",
@@ -30356,7 +30392,8 @@
         "chembl_drug_warning",
         "is_supplement",
         "highest_FDA_approval_status",
-        "drug_regulatory_status_world_wide"
+        "drug_regulatory_status_world_wide",
+        "subsets"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/MolecularMixture",
@@ -30424,7 +30461,8 @@
         "chembl_drug_warning",
         "is_supplement",
         "highest_FDA_approval_status",
-        "drug_regulatory_status_world_wide"
+        "drug_regulatory_status_world_wide",
+        "subsets"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/ComplexMolecularMixture",
@@ -30464,7 +30502,8 @@
         "in_taxon_label",
         "has_input",
         "has_output",
-        "enabled_by"
+        "enabled_by",
+        "subsets"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/BiologicalProcessOrActivity",
@@ -30525,6 +30564,7 @@
         "named_thing_category",
         "in_taxon",
         "in_taxon_label",
+        "subsets",
         "molecular_activity_has_input",
         "molecular_activity_has_output",
         "molecular_activity_enabled_by"
@@ -30579,7 +30619,8 @@
         "in_taxon_label",
         "has_input",
         "has_output",
-        "enabled_by"
+        "enabled_by",
+        "subsets"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/BiologicalProcess",
@@ -30635,7 +30676,8 @@
         "in_taxon_label",
         "has_input",
         "has_output",
-        "enabled_by"
+        "enabled_by",
+        "subsets"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/Pathway",
@@ -30687,7 +30729,8 @@
         "in_taxon_label",
         "has_input",
         "has_output",
-        "enabled_by"
+        "enabled_by",
+        "subsets"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/PhysiologicalProcess",
@@ -30732,7 +30775,8 @@
         "in_taxon_label",
         "has_input",
         "has_output",
-        "enabled_by"
+        "enabled_by",
+        "subsets"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/Behavior",
@@ -30804,7 +30848,8 @@
         "chembl_drug_warning",
         "is_supplement",
         "highest_FDA_approval_status",
-        "drug_regulatory_status_world_wide"
+        "drug_regulatory_status_world_wide",
+        "subsets"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/ProcessedMaterial",
@@ -30894,7 +30939,8 @@
         "chembl_drug_warning",
         "is_supplement",
         "highest_FDA_approval_status",
-        "drug_regulatory_status_world_wide"
+        "drug_regulatory_status_world_wide",
+        "subsets"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/Drug",
@@ -31112,7 +31158,8 @@
         "chembl_drug_warning",
         "is_supplement",
         "highest_FDA_approval_status",
-        "drug_regulatory_status_world_wide"
+        "drug_regulatory_status_world_wide",
+        "subsets"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/Food",
@@ -31145,7 +31192,8 @@
         "has_attribute_type",
         "has_quantitative_value",
         "has_qualitative_value",
-        "iri"
+        "iri",
+        "subsets"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/OrganismAttribute",
@@ -31187,7 +31235,8 @@
         "has_attribute_type",
         "has_quantitative_value",
         "has_qualitative_value",
-        "iri"
+        "iri",
+        "subsets"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/PhenotypicQuality",
@@ -31656,7 +31705,8 @@
         "named_thing_category",
         "in_taxon",
         "in_taxon_label",
-        "organismal_entity_has_attribute"
+        "organismal_entity_has_attribute",
+        "subsets"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/LifeStage",
@@ -31798,7 +31848,8 @@
         "named_thing_category",
         "in_taxon",
         "in_taxon_label",
-        "inheritance"
+        "inheritance",
+        "subsets"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/DiseaseOrPhenotypicFeature",
@@ -31877,7 +31928,8 @@
         "named_thing_category",
         "in_taxon",
         "in_taxon_label",
-        "inheritance"
+        "inheritance",
+        "subsets"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/Disease",
@@ -31970,7 +32022,8 @@
         "named_thing_category",
         "in_taxon",
         "in_taxon_label",
-        "inheritance"
+        "inheritance",
+        "subsets"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/PhenotypicFeature",
@@ -32003,7 +32056,8 @@
         "named_thing_category",
         "in_taxon",
         "in_taxon_label",
-        "inheritance"
+        "inheritance",
+        "subsets"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/BehavioralFeature",
@@ -32089,7 +32143,8 @@
         "named_thing_category",
         "in_taxon",
         "in_taxon_label",
-        "organismal_entity_has_attribute"
+        "organismal_entity_has_attribute",
+        "subsets"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/AnatomicalEntity",
@@ -32167,7 +32222,8 @@
         "named_thing_category",
         "in_taxon",
         "in_taxon_label",
-        "organismal_entity_has_attribute"
+        "organismal_entity_has_attribute",
+        "subsets"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/CellularComponent",
@@ -32226,7 +32282,8 @@
         "named_thing_category",
         "in_taxon",
         "in_taxon_label",
-        "organismal_entity_has_attribute"
+        "organismal_entity_has_attribute",
+        "subsets"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/Cell",
@@ -32346,7 +32403,8 @@
         "named_thing_category",
         "in_taxon",
         "in_taxon_label",
-        "organismal_entity_has_attribute"
+        "organismal_entity_has_attribute",
+        "subsets"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/GrossAnatomicalStructure",
@@ -32489,7 +32547,8 @@
         "in_taxon_label",
         "symbol",
         "xref",
-        "has_biological_sequence"
+        "has_biological_sequence",
+        "subsets"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/Gene",
@@ -32659,7 +32718,8 @@
         "named_thing_category",
         "in_taxon",
         "in_taxon_label",
-        "has_biological_sequence"
+        "has_biological_sequence",
+        "subsets"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/Genome",
@@ -33415,7 +33475,8 @@
         "has_attribute_type",
         "has_quantitative_value",
         "has_qualitative_value",
-        "iri"
+        "iri",
+        "subsets"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/Zygosity",
@@ -33465,7 +33526,8 @@
         "in_taxon",
         "in_taxon_label",
         "has_zygosity",
-        "has_biological_sequence"
+        "has_biological_sequence",
+        "subsets"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/Genotype",
@@ -33505,7 +33567,8 @@
         "named_thing_category",
         "in_taxon",
         "in_taxon_label",
-        "has_biological_sequence"
+        "has_biological_sequence",
+        "subsets"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/Haplotype",
@@ -33596,7 +33659,8 @@
         "sequence_variant_has_gene",
         "hgvs_nomenclature",
         "sequence_variant_has_biological_sequence",
-        "sequence_variant_id"
+        "sequence_variant_id",
+        "subsets"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/SequenceVariant",
@@ -33636,7 +33700,8 @@
         "sequence_variant_has_gene",
         "hgvs_nomenclature",
         "sequence_variant_has_biological_sequence",
-        "sequence_variant_id"
+        "sequence_variant_id",
+        "subsets"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/Snv",
@@ -33680,7 +33745,8 @@
         "named_thing_category",
         "in_taxon",
         "in_taxon_label",
-        "has_biological_sequence"
+        "has_biological_sequence",
+        "subsets"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/ReagentTargetedGene",
@@ -33713,7 +33779,8 @@
         "has_attribute_type",
         "has_quantitative_value",
         "has_qualitative_value",
-        "iri"
+        "iri",
+        "subsets"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/ClinicalAttribute",
@@ -33746,6 +33813,7 @@
         "has_quantitative_value",
         "has_qualitative_value",
         "iri",
+        "subsets",
         "clinical_measurement_has_attribute_type"
       ],
       "slot_usage": {},
@@ -33776,7 +33844,8 @@
         "has_attribute_type",
         "has_quantitative_value",
         "has_qualitative_value",
-        "iri"
+        "iri",
+        "subsets"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/ClinicalModifier",
@@ -33809,7 +33878,8 @@
         "has_attribute_type",
         "has_quantitative_value",
         "has_qualitative_value",
-        "iri"
+        "iri",
+        "subsets"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/ClinicalCourse",
@@ -33845,7 +33915,8 @@
         "has_attribute_type",
         "has_quantitative_value",
         "has_qualitative_value",
-        "iri"
+        "iri",
+        "subsets"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/Onset",
@@ -33983,6 +34054,7 @@
         "in_taxon",
         "in_taxon_label",
         "inheritance",
+        "subsets",
         "clinical_finding_has_attribute"
       ],
       "slot_usage": {},
@@ -34044,7 +34116,8 @@
         "has_attribute_type",
         "has_quantitative_value",
         "has_qualitative_value",
-        "iri"
+        "iri",
+        "subsets"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/SocioeconomicAttribute",
@@ -34171,7 +34244,8 @@
         "exposure_duration",
         "exposure_magnitude",
         "exposure_additional_condition",
-        "exposure_event_id"
+        "exposure_event_id",
+        "subsets"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/ExposureEvent",
@@ -34215,6 +34289,7 @@
         "exposure_magnitude",
         "exposure_additional_condition",
         "exposure_event_id",
+        "subsets",
         "has_gene_or_gene_product",
         "has_biological_sequence",
         "in_taxon",
@@ -34280,7 +34355,8 @@
         "in_taxon_label",
         "has_input",
         "has_output",
-        "enabled_by"
+        "enabled_by",
+        "subsets"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/PathologicalProcess",
@@ -34316,7 +34392,8 @@
         "exposure_duration",
         "exposure_magnitude",
         "exposure_additional_condition",
-        "exposure_event_id"
+        "exposure_event_id",
+        "subsets"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/PathologicalProcessExposure",
@@ -34351,7 +34428,8 @@
         "named_thing_category",
         "in_taxon",
         "in_taxon_label",
-        "organismal_entity_has_attribute"
+        "organismal_entity_has_attribute",
+        "subsets"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/PathologicalAnatomicalStructure",
@@ -34387,7 +34465,8 @@
         "exposure_duration",
         "exposure_magnitude",
         "exposure_additional_condition",
-        "exposure_event_id"
+        "exposure_event_id",
+        "subsets"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/PathologicalAnatomicalExposure",
@@ -34426,7 +34505,8 @@
         "exposure_duration",
         "exposure_magnitude",
         "exposure_additional_condition",
-        "exposure_event_id"
+        "exposure_event_id",
+        "subsets"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/DiseaseOrPhenotypicFeatureExposure",
@@ -34467,6 +34547,7 @@
         "exposure_magnitude",
         "exposure_additional_condition",
         "exposure_event_id",
+        "subsets",
         "has_quantitative_value"
       ],
       "slot_usage": {},
@@ -34503,7 +34584,8 @@
         "exposure_duration",
         "exposure_magnitude",
         "exposure_additional_condition",
-        "exposure_event_id"
+        "exposure_event_id",
+        "subsets"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/ComplexChemicalExposure",
@@ -34551,6 +34633,7 @@
         "exposure_magnitude",
         "exposure_additional_condition",
         "exposure_event_id",
+        "subsets",
         "has_quantitative_value"
       ],
       "slot_usage": {},
@@ -34591,6 +34674,7 @@
         "exposure_magnitude",
         "exposure_additional_condition",
         "exposure_event_id",
+        "subsets",
         "has_quantitative_value",
         "has_gene_or_gene_product"
       ],
@@ -34643,6 +34727,7 @@
         "exposure_magnitude",
         "exposure_additional_condition",
         "exposure_event_id",
+        "subsets",
         "has_drug",
         "has_device",
         "has_procedure"
@@ -34685,7 +34770,8 @@
         "exposure_duration",
         "exposure_magnitude",
         "exposure_additional_condition",
-        "exposure_event_id"
+        "exposure_event_id",
+        "subsets"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/BioticExposure",
@@ -34740,7 +34826,8 @@
         "exposure_duration",
         "exposure_magnitude",
         "exposure_additional_condition",
-        "exposure_event_id"
+        "exposure_event_id",
+        "subsets"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/GeographicExposure",
@@ -34776,7 +34863,8 @@
         "exposure_duration",
         "exposure_magnitude",
         "exposure_additional_condition",
-        "exposure_event_id"
+        "exposure_event_id",
+        "subsets"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/EnvironmentalExposure",
@@ -34812,7 +34900,8 @@
         "exposure_duration",
         "exposure_magnitude",
         "exposure_additional_condition",
-        "exposure_event_id"
+        "exposure_event_id",
+        "subsets"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/BehavioralExposure",
@@ -34848,6 +34937,7 @@
         "exposure_magnitude",
         "exposure_additional_condition",
         "exposure_event_id",
+        "subsets",
         "socioeconomic_exposure_has_attribute"
       ],
       "slot_usage": {},
@@ -43468,9 +43558,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2026-05-06T00:43:25",
-  "source_file_size": 510967,
-  "generation_date": "2026-05-06T00:43:29",
+  "source_file_date": "2026-05-07T20:50:21",
+  "source_file_size": 511381,
+  "generation_date": "2026-05-07T20:50:25",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",

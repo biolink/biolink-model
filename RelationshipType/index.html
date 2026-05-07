@@ -372,6 +372,8 @@
 
       RelationshipType : id
 
+      RelationshipType : subsets
+
 
 </div>
 <h2 id="inheritance">Inheritance</h2>
@@ -395,6 +397,12 @@
 <tr>
 <td><a href="../id/">id</a>: <br> <i> A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI </i></br></td>
 <td>1 <br/> <a href="../String/">String</a></td>
+<td><a href="../OntologyClass/">OntologyClass</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../subsets/">subsets</a>: <br/> <i> The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of <code>oboInOwl:inSubset</code> annotations from source ontologies through to downstream knowledge graphs. </i></td>
+<td>* <br/> <a href="../String/">String</a></td>
 <td><a href="../OntologyClass/">OntologyClass</a></td>
 <td></td>
 </tr>

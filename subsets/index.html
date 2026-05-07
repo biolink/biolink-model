@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://biolink.github.io/biolink-model/xref/">
+        <link rel="canonical" href="https://biolink.github.io/biolink-model/subsets/">
       
       
       
@@ -21,7 +21,7 @@
     
     
       
-        <title>Slot: xref (multivalued) - Biolink Model Documentation</title>
+        <title>Slot: subsets (multivalued) - Biolink Model Documentation</title>
       
     
     
@@ -82,7 +82,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slot-xref-multivalued" class="md-skip">
+        <a href="#slot-subsets-multivalued" class="md-skip">
           Skip to content
         </a>
       
@@ -117,7 +117,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Slot: xref (multivalued)
+              Slot: subsets (multivalued)
             
           </span>
         </div>
@@ -693,6 +693,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#inheritance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inheritance
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#applicable-classes" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -734,18 +745,23 @@
   
 
 
-<h1 id="slot-xref-multivalued"><strong> Slot: xref </strong>  (multivalued)</h1>
-<div class="highlight-box"><strong>Description:</strong><i> A database cross reference or alternative identifier for a NamedThing or edge between two NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.</i><br>
-   <strong>Aliases:</strong> dbxref, Dbxref, DbXref, record_url, source_record_urls<br>
+<h1 id="slot-subsets-multivalued"><strong> Slot: subsets </strong>  (multivalued)</h1>
+<div class="highlight-box"><strong>Description:</strong><i> The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.</i><br>
+
 
 <br>
 
 </div>
 
 <p><strong>Domain:</strong> <a href="../NamedThing/">NamedThing</a><br>
-<strong>Range:</strong>   <a href="../Uriorcurie/">Uriorcurie</a> <br></p>
-<!-- no inheritance hierarchy -->
-
+<strong>Range:</strong>   <a href="../String/">String</a> <br></p>
+<h2 id="inheritance">Inheritance</h2>
+<ul>
+<li><a href="../node_property/">node_property</a><ul>
+<li><strong>subsets</strong></li>
+</ul>
+</li>
+</ul>
 <h2 id="applicable-classes">Applicable Classes</h2>
 <table>
 <thead>
@@ -757,28 +773,8 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../Gene/">Gene</a></td>
-<td>A region (or regions) that includes all of the sequence elements necessary to encode a functional transcript. A gene locus may include regulatory regions, transcribed regions and/or other functional sequence regions.</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../RetrievalSource/">RetrievalSource</a></td>
-<td>Provides information about how a particular InformationResource served as a source from which knowledge expressed in an Edge, or data used to generate this knowledge, was retrieved.</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../NamedThing/">NamedThing</a></td>
-<td>a databased entity or concept/class</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../GeneProductMixin/">GeneProductMixin</a></td>
-<td>The functional molecular product of a single gene locus. Gene products are either proteins or functional RNA molecules.</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../Publication/">Publication</a></td>
-<td>Any ‘published’ piece of information. Publications are considered broadly to include any document or document part made available in print or on the web - which may include scientific journal issues, individual articles, and books - as well as things like pre-prints, white papers, patents, drug labels, web pages, protocol documents,  and even a part of a publication if of significant knowledge scope.</td>
+<td><a href="../OntologyClass/">OntologyClass</a></td>
+<td>a concept or class in an ontology, vocabulary or thesaurus. Note that nodes in a biolink compatible KG can be considered both instances of biolink classes, and OWL classes in their own right. In general you should not need to use this class directly. Instead, use the appropriate biolink class. For example, for the GO concept of endocytosis (GO:0006897), use bl:BiologicalProcess as the type.</td>
 <td>no</td>
 </tr>
 </tbody>
@@ -786,33 +782,19 @@
 <h2 id="linkml-source">LinkML Source</h2>
 <details open>
 
-<pre><code class="language-yaml">name: xref
-description: A database cross reference or alternative identifier for a NamedThing
-  or edge between two NamedThings.  This property should point to a database record
-  or webpage that supports the existence of the edge, or gives more detail about the
-  edge. This property can be used on a node or edge to provide multiple URIs or CURIE
-  cross references.
-in_subset:
-- translator_minimal
+<pre><code class="language-yaml">name: subsets
+description: The set of ontology subsets a term belongs to (e.g. GO slim subsets,
+  MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations
+  from source ontologies through to downstream knowledge graphs.
 from_schema: https://w3id.org/biolink/vocab/
-aliases:
-- dbxref
-- Dbxref
-- DbXref
-- record_url
-- source_record_urls
-narrow_mappings:
-- gff3:Dbxref
-- gpi:DB_Xrefs
+exact_mappings:
+- oboInOwl:inSubset
+is_a: node property
 domain: named thing
-alias: xref
+alias: subsets
 domain_of:
-- named thing
-- publication
-- retrieval source
-- gene
-- gene product mixin
-range: uriorcurie
+- ontology class
+range: string
 multivalued: true
 
 </code></pre>
