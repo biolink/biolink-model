@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-05-06T00:43:46
+# Generation date: 2026-05-07T20:50:41
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/vocab/
@@ -1715,12 +1715,17 @@ class OntologyClass(YAMLRoot):
     class_model_uri: ClassVar[URIRef] = BIOLINK.OntologyClass
 
     id: Union[str, OntologyClassId] = None
+    subsets: Optional[Union[str, list[str]]] = empty_list()
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, OntologyClassId):
             self.id = OntologyClassId(self.id)
+
+        if not isinstance(self.subsets, list):
+            self.subsets = [self.subsets] if self.subsets is not None else []
+        self.subsets = [v if isinstance(v, str) else str(v) for v in self.subsets]
 
         super().__post_init__(**kwargs)
 
@@ -2051,6 +2056,7 @@ class Attribute(NamedThing):
     has_quantitative_value: Optional[Union[Union[dict, QuantityValue], list[Union[dict, QuantityValue]]]] = empty_list()
     has_qualitative_value: Optional[Union[str, NamedThingId]] = None
     iri: Optional[Union[str, IriType]] = None
+    subsets: Optional[Union[str, list[str]]] = empty_list()
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
@@ -2075,6 +2081,10 @@ class Attribute(NamedThing):
 
         if self.iri is not None and not isinstance(self.iri, IriType):
             self.iri = IriType(self.iri)
+
+        if not isinstance(self.subsets, list):
+            self.subsets = [self.subsets] if self.subsets is not None else []
+        self.subsets = [v if isinstance(v, str) else str(v) for v in self.subsets]
 
         super().__post_init__(**kwargs)
         if self._is_empty(self.category):
@@ -2992,12 +3002,17 @@ class EvidenceType(NamedThing):
 
     id: Union[str, EvidenceTypeId] = None
     category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
+    subsets: Optional[Union[str, list[str]]] = empty_list()
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, EvidenceTypeId):
             self.id = EvidenceTypeId(self.id)
+
+        if not isinstance(self.subsets, list):
+            self.subsets = [self.subsets] if self.subsets is not None else []
+        self.subsets = [v if isinstance(v, str) else str(v) for v in self.subsets]
 
         super().__post_init__(**kwargs)
         if self._is_empty(self.category):
@@ -4149,6 +4164,7 @@ class MolecularEntity(ChemicalEntity):
     id: Union[str, MolecularEntityId] = None
     category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
     is_metabolite: Optional[Union[bool, Bool]] = None
+    subsets: Optional[Union[str, list[str]]] = empty_list()
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
@@ -4158,6 +4174,10 @@ class MolecularEntity(ChemicalEntity):
 
         if self.is_metabolite is not None and not isinstance(self.is_metabolite, Bool):
             self.is_metabolite = Bool(self.is_metabolite)
+
+        if not isinstance(self.subsets, list):
+            self.subsets = [self.subsets] if self.subsets is not None else []
+        self.subsets = [v if isinstance(v, str) else str(v) for v in self.subsets]
 
         super().__post_init__(**kwargs)
         if self._is_empty(self.category):
@@ -4259,6 +4279,7 @@ class ChemicalMixture(ChemicalEntity):
     is_supplement: Optional[str] = None
     highest_FDA_approval_status: Optional[Union[str, "ApprovalStatusEnum"]] = None
     drug_regulatory_status_world_wide: Optional[Union[str, "ApprovalStatusEnum"]] = None
+    subsets: Optional[Union[str, list[str]]] = empty_list()
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
@@ -4274,6 +4295,10 @@ class ChemicalMixture(ChemicalEntity):
 
         if self.drug_regulatory_status_world_wide is not None and not isinstance(self.drug_regulatory_status_world_wide, ApprovalStatusEnum):
             self.drug_regulatory_status_world_wide = ApprovalStatusEnum(self.drug_regulatory_status_world_wide)
+
+        if not isinstance(self.subsets, list):
+            self.subsets = [self.subsets] if self.subsets is not None else []
+        self.subsets = [v if isinstance(v, str) else str(v) for v in self.subsets]
 
         super().__post_init__(**kwargs)
         if self._is_empty(self.category):
@@ -4299,6 +4324,7 @@ class NucleicAcidEntity(MolecularEntity):
 
     id: Union[str, NucleicAcidEntityId] = None
     category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
+    subsets: Optional[Union[str, list[str]]] = empty_list()
     has_biological_sequence: Optional[Union[str, BiologicalSequence]] = None
     in_taxon: Optional[Union[Union[str, OrganismTaxonId], list[Union[str, OrganismTaxonId]]]] = empty_list()
     in_taxon_label: Optional[Union[str, LabelType]] = None
@@ -4308,6 +4334,10 @@ class NucleicAcidEntity(MolecularEntity):
             self.MissingRequiredField("id")
         if not isinstance(self.id, NucleicAcidEntityId):
             self.id = NucleicAcidEntityId(self.id)
+
+        if not isinstance(self.subsets, list):
+            self.subsets = [self.subsets] if self.subsets is not None else []
+        self.subsets = [v if isinstance(v, str) else str(v) for v in self.subsets]
 
         if self.has_biological_sequence is not None and not isinstance(self.has_biological_sequence, BiologicalSequence):
             self.has_biological_sequence = BiologicalSequence(self.has_biological_sequence)
@@ -4343,6 +4373,7 @@ class RegulatoryRegion(BiologicalEntity):
     id: Union[str, RegulatoryRegionId] = None
     category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
     has_biological_sequence: Optional[Union[str, BiologicalSequence]] = None
+    subsets: Optional[Union[str, list[str]]] = empty_list()
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
@@ -4352,6 +4383,10 @@ class RegulatoryRegion(BiologicalEntity):
 
         if self.has_biological_sequence is not None and not isinstance(self.has_biological_sequence, BiologicalSequence):
             self.has_biological_sequence = BiologicalSequence(self.has_biological_sequence)
+
+        if not isinstance(self.subsets, list):
+            self.subsets = [self.subsets] if self.subsets is not None else []
+        self.subsets = [v if isinstance(v, str) else str(v) for v in self.subsets]
 
         super().__post_init__(**kwargs)
         if self._is_empty(self.category):
@@ -4377,6 +4412,7 @@ class AccessibleDnaRegion(RegulatoryRegion):
     id: Union[str, AccessibleDnaRegionId] = None
     category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
     has_biological_sequence: Optional[Union[str, BiologicalSequence]] = None
+    subsets: Optional[Union[str, list[str]]] = empty_list()
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
@@ -4386,6 +4422,10 @@ class AccessibleDnaRegion(RegulatoryRegion):
 
         if self.has_biological_sequence is not None and not isinstance(self.has_biological_sequence, BiologicalSequence):
             self.has_biological_sequence = BiologicalSequence(self.has_biological_sequence)
+
+        if not isinstance(self.subsets, list):
+            self.subsets = [self.subsets] if self.subsets is not None else []
+        self.subsets = [v if isinstance(v, str) else str(v) for v in self.subsets]
 
         super().__post_init__(**kwargs)
         if self._is_empty(self.category):
@@ -4411,6 +4451,7 @@ class TranscriptionFactorBindingSite(RegulatoryRegion):
     id: Union[str, TranscriptionFactorBindingSiteId] = None
     category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
     has_biological_sequence: Optional[Union[str, BiologicalSequence]] = None
+    subsets: Optional[Union[str, list[str]]] = empty_list()
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
@@ -4420,6 +4461,10 @@ class TranscriptionFactorBindingSite(RegulatoryRegion):
 
         if self.has_biological_sequence is not None and not isinstance(self.has_biological_sequence, BiologicalSequence):
             self.has_biological_sequence = BiologicalSequence(self.has_biological_sequence)
+
+        if not isinstance(self.subsets, list):
+            self.subsets = [self.subsets] if self.subsets is not None else []
+        self.subsets = [v if isinstance(v, str) else str(v) for v in self.subsets]
 
         super().__post_init__(**kwargs)
         if self._is_empty(self.category):
@@ -4507,6 +4552,7 @@ class BiologicalProcessOrActivity(BiologicalEntity):
     has_input: Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]] = empty_list()
     has_output: Optional[Union[Union[str, NamedThingId], list[Union[str, NamedThingId]]]] = empty_list()
     enabled_by: Optional[Union[Union[str, PhysicalEntityId], list[Union[str, PhysicalEntityId]]]] = empty_list()
+    subsets: Optional[Union[str, list[str]]] = empty_list()
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
@@ -4525,6 +4571,10 @@ class BiologicalProcessOrActivity(BiologicalEntity):
         if not isinstance(self.enabled_by, list):
             self.enabled_by = [self.enabled_by] if self.enabled_by is not None else []
         self.enabled_by = [v if isinstance(v, PhysicalEntityId) else PhysicalEntityId(v) for v in self.enabled_by]
+
+        if not isinstance(self.subsets, list):
+            self.subsets = [self.subsets] if self.subsets is not None else []
+        self.subsets = [v if isinstance(v, str) else str(v) for v in self.subsets]
 
         super().__post_init__(**kwargs)
         if self._is_empty(self.category):
@@ -4548,6 +4598,7 @@ class MolecularActivity(BiologicalProcessOrActivity):
 
     id: Union[str, MolecularActivityId] = None
     category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
+    subsets: Optional[Union[str, list[str]]] = empty_list()
     has_input: Optional[Union[Union[str, MolecularEntityId], list[Union[str, MolecularEntityId]]]] = empty_list()
     has_output: Optional[Union[Union[str, MolecularEntityId], list[Union[str, MolecularEntityId]]]] = empty_list()
     enabled_by: Optional[Union[Union[dict, "MacromolecularMachineMixin"], list[Union[dict, "MacromolecularMachineMixin"]]]] = empty_list()
@@ -4557,6 +4608,10 @@ class MolecularActivity(BiologicalProcessOrActivity):
             self.MissingRequiredField("id")
         if not isinstance(self.id, MolecularActivityId):
             self.id = MolecularActivityId(self.id)
+
+        if not isinstance(self.subsets, list):
+            self.subsets = [self.subsets] if self.subsets is not None else []
+        self.subsets = [v if isinstance(v, str) else str(v) for v in self.subsets]
 
         if not isinstance(self.has_input, list):
             self.has_input = [self.has_input] if self.has_input is not None else []
@@ -4592,12 +4647,17 @@ class BiologicalProcess(BiologicalProcessOrActivity):
 
     id: Union[str, BiologicalProcessId] = None
     category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
+    subsets: Optional[Union[str, list[str]]] = empty_list()
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, BiologicalProcessId):
             self.id = BiologicalProcessId(self.id)
+
+        if not isinstance(self.subsets, list):
+            self.subsets = [self.subsets] if self.subsets is not None else []
+        self.subsets = [v if isinstance(v, str) else str(v) for v in self.subsets]
 
         super().__post_init__(**kwargs)
         if self._is_empty(self.category):
@@ -4622,12 +4682,17 @@ class Pathway(BiologicalProcess):
 
     id: Union[str, PathwayId] = None
     category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
+    subsets: Optional[Union[str, list[str]]] = empty_list()
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, PathwayId):
             self.id = PathwayId(self.id)
+
+        if not isinstance(self.subsets, list):
+            self.subsets = [self.subsets] if self.subsets is not None else []
+        self.subsets = [v if isinstance(v, str) else str(v) for v in self.subsets]
 
         super().__post_init__(**kwargs)
         if self._is_empty(self.category):
@@ -4651,12 +4716,17 @@ class PhysiologicalProcess(BiologicalProcess):
 
     id: Union[str, PhysiologicalProcessId] = None
     category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
+    subsets: Optional[Union[str, list[str]]] = empty_list()
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, PhysiologicalProcessId):
             self.id = PhysiologicalProcessId(self.id)
+
+        if not isinstance(self.subsets, list):
+            self.subsets = [self.subsets] if self.subsets is not None else []
+        self.subsets = [v if isinstance(v, str) else str(v) for v in self.subsets]
 
         super().__post_init__(**kwargs)
         if self._is_empty(self.category):
@@ -4681,12 +4751,17 @@ class Behavior(BiologicalProcess):
 
     id: Union[str, BehaviorId] = None
     category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
+    subsets: Optional[Union[str, list[str]]] = empty_list()
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, BehaviorId):
             self.id = BehaviorId(self.id)
+
+        if not isinstance(self.subsets, list):
+            self.subsets = [self.subsets] if self.subsets is not None else []
+        self.subsets = [v if isinstance(v, str) else str(v) for v in self.subsets]
 
         super().__post_init__(**kwargs)
         if self._is_empty(self.category):
@@ -4740,12 +4815,17 @@ class Drug(MolecularMixture):
 
     id: Union[str, DrugId] = None
     category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
+    subsets: Optional[Union[str, list[str]]] = empty_list()
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, DrugId):
             self.id = DrugId(self.id)
+
+        if not isinstance(self.subsets, list):
+            self.subsets = [self.subsets] if self.subsets is not None else []
+        self.subsets = [v if isinstance(v, str) else str(v) for v in self.subsets]
 
         super().__post_init__(**kwargs)
         if self._is_empty(self.category):
@@ -5225,12 +5305,17 @@ class LifeStage(OrganismalEntity):
 
     id: Union[str, LifeStageId] = None
     category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
+    subsets: Optional[Union[str, list[str]]] = empty_list()
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, LifeStageId):
             self.id = LifeStageId(self.id)
+
+        if not isinstance(self.subsets, list):
+            self.subsets = [self.subsets] if self.subsets is not None else []
+        self.subsets = [v if isinstance(v, str) else str(v) for v in self.subsets]
 
         super().__post_init__(**kwargs)
         if self._is_empty(self.category):
@@ -5345,6 +5430,7 @@ class DiseaseOrPhenotypicFeature(BiologicalEntity):
     id: Union[str, DiseaseOrPhenotypicFeatureId] = None
     category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
     inheritance: Optional[Union[str, GeneticInheritanceId]] = None
+    subsets: Optional[Union[str, list[str]]] = empty_list()
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
@@ -5354,6 +5440,10 @@ class DiseaseOrPhenotypicFeature(BiologicalEntity):
 
         if self.inheritance is not None and not isinstance(self.inheritance, GeneticInheritanceId):
             self.inheritance = GeneticInheritanceId(self.inheritance)
+
+        if not isinstance(self.subsets, list):
+            self.subsets = [self.subsets] if self.subsets is not None else []
+        self.subsets = [v if isinstance(v, str) else str(v) for v in self.subsets]
 
         super().__post_init__(**kwargs)
         if self._is_empty(self.category):
@@ -5471,12 +5561,17 @@ class AnatomicalEntity(OrganismalEntity):
 
     id: Union[str, AnatomicalEntityId] = None
     category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
+    subsets: Optional[Union[str, list[str]]] = empty_list()
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, AnatomicalEntityId):
             self.id = AnatomicalEntityId(self.id)
+
+        if not isinstance(self.subsets, list):
+            self.subsets = [self.subsets] if self.subsets is not None else []
+        self.subsets = [v if isinstance(v, str) else str(v) for v in self.subsets]
 
         super().__post_init__(**kwargs)
         if self._is_empty(self.category):
@@ -5696,6 +5791,7 @@ class Gene(BiologicalEntity):
     symbol: Optional[str] = None
     xref: Optional[Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]]] = empty_list()
     has_biological_sequence: Optional[Union[str, BiologicalSequence]] = None
+    subsets: Optional[Union[str, list[str]]] = empty_list()
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
@@ -5715,6 +5811,10 @@ class Gene(BiologicalEntity):
 
         if self.has_biological_sequence is not None and not isinstance(self.has_biological_sequence, BiologicalSequence):
             self.has_biological_sequence = BiologicalSequence(self.has_biological_sequence)
+
+        if not isinstance(self.subsets, list):
+            self.subsets = [self.subsets] if self.subsets is not None else []
+        self.subsets = [v if isinstance(v, str) else str(v) for v in self.subsets]
 
         super().__post_init__(**kwargs)
         if self._is_empty(self.category):
@@ -5863,6 +5963,7 @@ class Genome(BiologicalEntity):
     id: Union[str, GenomeId] = None
     category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
     has_biological_sequence: Optional[Union[str, BiologicalSequence]] = None
+    subsets: Optional[Union[str, list[str]]] = empty_list()
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
@@ -5872,6 +5973,10 @@ class Genome(BiologicalEntity):
 
         if self.has_biological_sequence is not None and not isinstance(self.has_biological_sequence, BiologicalSequence):
             self.has_biological_sequence = BiologicalSequence(self.has_biological_sequence)
+
+        if not isinstance(self.subsets, list):
+            self.subsets = [self.subsets] if self.subsets is not None else []
+        self.subsets = [v if isinstance(v, str) else str(v) for v in self.subsets]
 
         super().__post_init__(**kwargs)
         if self._is_empty(self.category):
@@ -6524,6 +6629,7 @@ class Genotype(BiologicalEntity):
     category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
     has_zygosity: Optional[Union[str, ZygosityId]] = None
     has_biological_sequence: Optional[Union[str, BiologicalSequence]] = None
+    subsets: Optional[Union[str, list[str]]] = empty_list()
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
@@ -6536,6 +6642,10 @@ class Genotype(BiologicalEntity):
 
         if self.has_biological_sequence is not None and not isinstance(self.has_biological_sequence, BiologicalSequence):
             self.has_biological_sequence = BiologicalSequence(self.has_biological_sequence)
+
+        if not isinstance(self.subsets, list):
+            self.subsets = [self.subsets] if self.subsets is not None else []
+        self.subsets = [v if isinstance(v, str) else str(v) for v in self.subsets]
 
         super().__post_init__(**kwargs)
         if self._is_empty(self.category):
@@ -6560,6 +6670,7 @@ class Haplotype(BiologicalEntity):
     id: Union[str, HaplotypeId] = None
     category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
     has_biological_sequence: Optional[Union[str, BiologicalSequence]] = None
+    subsets: Optional[Union[str, list[str]]] = empty_list()
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
@@ -6569,6 +6680,10 @@ class Haplotype(BiologicalEntity):
 
         if self.has_biological_sequence is not None and not isinstance(self.has_biological_sequence, BiologicalSequence):
             self.has_biological_sequence = BiologicalSequence(self.has_biological_sequence)
+
+        if not isinstance(self.subsets, list):
+            self.subsets = [self.subsets] if self.subsets is not None else []
+        self.subsets = [v if isinstance(v, str) else str(v) for v in self.subsets]
 
         super().__post_init__(**kwargs)
         if self._is_empty(self.category):
@@ -6595,6 +6710,7 @@ class SequenceVariant(BiologicalEntity):
     has_gene: Optional[Union[Union[str, GeneId], list[Union[str, GeneId]]]] = empty_list()
     hgvs_nomenclature: Optional[Union[str, list[str]]] = empty_list()
     has_biological_sequence: Optional[Union[str, BiologicalSequence]] = None
+    subsets: Optional[Union[str, list[str]]] = empty_list()
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
@@ -6612,6 +6728,10 @@ class SequenceVariant(BiologicalEntity):
 
         if self.has_biological_sequence is not None and not isinstance(self.has_biological_sequence, BiologicalSequence):
             self.has_biological_sequence = BiologicalSequence(self.has_biological_sequence)
+
+        if not isinstance(self.subsets, list):
+            self.subsets = [self.subsets] if self.subsets is not None else []
+        self.subsets = [v if isinstance(v, str) else str(v) for v in self.subsets]
 
         super().__post_init__(**kwargs)
         if self._is_empty(self.category):
@@ -6666,6 +6786,7 @@ class ReagentTargetedGene(BiologicalEntity):
     id: Union[str, ReagentTargetedGeneId] = None
     category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
     has_biological_sequence: Optional[Union[str, BiologicalSequence]] = None
+    subsets: Optional[Union[str, list[str]]] = empty_list()
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
@@ -6675,6 +6796,10 @@ class ReagentTargetedGene(BiologicalEntity):
 
         if self.has_biological_sequence is not None and not isinstance(self.has_biological_sequence, BiologicalSequence):
             self.has_biological_sequence = BiologicalSequence(self.has_biological_sequence)
+
+        if not isinstance(self.subsets, list):
+            self.subsets = [self.subsets] if self.subsets is not None else []
+        self.subsets = [v if isinstance(v, str) else str(v) for v in self.subsets]
 
         super().__post_init__(**kwargs)
         if self._is_empty(self.category):
@@ -7172,6 +7297,7 @@ class ExposureEvent(NamedThing):
     exposure_duration: Optional[Union[str, XSDTime]] = None
     exposure_magnitude: Optional[str] = None
     exposure_additional_condition: Optional[str] = None
+    subsets: Optional[Union[str, list[str]]] = empty_list()
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
@@ -7206,6 +7332,10 @@ class ExposureEvent(NamedThing):
         if self.exposure_additional_condition is not None and not isinstance(self.exposure_additional_condition, str):
             self.exposure_additional_condition = str(self.exposure_additional_condition)
 
+        if not isinstance(self.subsets, list):
+            self.subsets = [self.subsets] if self.subsets is not None else []
+        self.subsets = [v if isinstance(v, str) else str(v) for v in self.subsets]
+
         super().__post_init__(**kwargs)
         if self._is_empty(self.category):
             self.MissingRequiredField("category")
@@ -7230,6 +7360,7 @@ class GenomicBackgroundExposure(ExposureEvent):
 
     id: Union[str, GenomicBackgroundExposureId] = None
     category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
+    subsets: Optional[Union[str, list[str]]] = empty_list()
     has_gene_or_gene_product: Optional[Union[Union[str, GeneId], list[Union[str, GeneId]]]] = empty_list()
     has_biological_sequence: Optional[Union[str, BiologicalSequence]] = None
     in_taxon: Optional[Union[Union[str, OrganismTaxonId], list[Union[str, OrganismTaxonId]]]] = empty_list()
@@ -7240,6 +7371,10 @@ class GenomicBackgroundExposure(ExposureEvent):
             self.MissingRequiredField("id")
         if not isinstance(self.id, GenomicBackgroundExposureId):
             self.id = GenomicBackgroundExposureId(self.id)
+
+        if not isinstance(self.subsets, list):
+            self.subsets = [self.subsets] if self.subsets is not None else []
+        self.subsets = [v if isinstance(v, str) else str(v) for v in self.subsets]
 
         if not isinstance(self.has_gene_or_gene_product, list):
             self.has_gene_or_gene_product = [self.has_gene_or_gene_product] if self.has_gene_or_gene_product is not None else []
@@ -16071,6 +16206,9 @@ slots.has_topic = Slot(uri=BIOLINK.has_topic, name="has topic", curie=BIOLINK.cu
 
 slots.xref = Slot(uri=BIOLINK.xref, name="xref", curie=BIOLINK.curie('xref'),
                    model_uri=BIOLINK.xref, domain=NamedThing, range=Optional[Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]]])
+
+slots.subsets = Slot(uri=BIOLINK.subsets, name="subsets", curie=BIOLINK.curie('subsets'),
+                   model_uri=BIOLINK.subsets, domain=NamedThing, range=Optional[Union[str, list[str]]])
 
 slots.url = Slot(uri=BIOLINK.url, name="url", curie=BIOLINK.curie('url'),
                    model_uri=BIOLINK.url, domain=Entity, range=Optional[str])

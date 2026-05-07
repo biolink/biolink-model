@@ -114,6 +114,16 @@
                         "null"
                     ]
                 },
+                "subsets": {
+                    "description": "The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "synonym": {
                     "description": "Alternate human-readable names for a thing",
                     "items": {
@@ -725,6 +735,16 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "subsets": {
+                    "description": "The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.",
                     "items": {
                         "type": "string"
                     },
@@ -2849,6 +2869,16 @@
                         "null"
                     ]
                 },
+                "subsets": {
+                    "description": "The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "synonym": {
                     "description": "Alternate human-readable names for a thing",
                     "items": {
@@ -3176,6 +3206,16 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "subsets": {
+                    "description": "The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.",
                     "items": {
                         "type": "string"
                     },
@@ -3865,6 +3905,16 @@
                         "null"
                     ]
                 },
+                "subsets": {
+                    "description": "The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "synonym": {
                     "description": "Alternate human-readable names for a thing",
                     "items": {
@@ -4024,6 +4074,16 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "subsets": {
+                    "description": "The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.",
                     "items": {
                         "type": "string"
                     },
@@ -4230,6 +4290,16 @@
                         "null"
                     ]
                 },
+                "subsets": {
+                    "description": "The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "synonym": {
                     "description": "Alternate human-readable names for a thing",
                     "items": {
@@ -4404,6 +4474,16 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "subsets": {
+                    "description": "The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.",
                     "items": {
                         "type": "string"
                     },
@@ -5836,6 +5916,16 @@
                         "null"
                     ]
                 },
+                "subsets": {
+                    "description": "The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "synonym": {
                     "description": "Alternate human-readable names for a thing",
                     "items": {
@@ -6021,6 +6111,16 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "subsets": {
+                    "description": "The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.",
                     "items": {
                         "type": "string"
                     },
@@ -9124,6 +9224,16 @@
                         "null"
                     ]
                 },
+                "subsets": {
+                    "description": "The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "synonym": {
                     "description": "Alternate human-readable names for a thing",
                     "items": {
@@ -10351,6 +10461,16 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "subsets": {
+                    "description": "The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.",
                     "items": {
                         "type": "string"
                     },
@@ -15252,6 +15372,16 @@
                         "null"
                     ]
                 },
+                "subsets": {
+                    "description": "The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "synonym": {
                     "description": "Alternate human-readable names for a thing",
                     "items": {
@@ -16007,6 +16137,16 @@
                     "description": "the method or process of administering a pharmaceutical compound to achieve a therapeutic effect in humans or animals.",
                     "items": {
                         "$ref": "#/$defs/DrugDeliveryEnum"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "subsets": {
+                    "description": "The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.",
+                    "items": {
+                        "type": "string"
                     },
                     "type": [
                         "array",
@@ -17651,6 +17791,16 @@
                         "null"
                     ]
                 },
+                "subsets": {
+                    "description": "The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "synonym": {
                     "description": "Alternate human-readable names for a thing",
                     "items": {
@@ -17956,6 +18106,16 @@
                         "null"
                     ]
                 },
+                "subsets": {
+                    "description": "The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "synonym": {
                     "description": "Alternate human-readable names for a thing",
                     "items": {
@@ -18105,6 +18265,16 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "subsets": {
+                    "description": "The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.",
                     "items": {
                         "type": "string"
                     },
@@ -18408,6 +18578,16 @@
                         "null"
                     ]
                 },
+                "subsets": {
+                    "description": "The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "synonym": {
                     "description": "Alternate human-readable names for a thing",
                     "items": {
@@ -18699,6 +18879,16 @@
                         "null"
                     ]
                 },
+                "subsets": {
+                    "description": "The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "synonym": {
                     "description": "Alternate human-readable names for a thing",
                     "items": {
@@ -18848,6 +19038,16 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "subsets": {
+                    "description": "The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.",
                     "items": {
                         "type": "string"
                     },
@@ -20091,6 +20291,16 @@
                         "null"
                     ]
                 },
+                "subsets": {
+                    "description": "The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "synonym": {
                     "description": "Alternate human-readable names for a thing",
                     "items": {
@@ -20329,6 +20539,16 @@
                     "description": "the method or process of administering a pharmaceutical compound to achieve a therapeutic effect in humans or animals.",
                     "items": {
                         "$ref": "#/$defs/DrugDeliveryEnum"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "subsets": {
+                    "description": "The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.",
+                    "items": {
+                        "type": "string"
                     },
                     "type": [
                         "array",
@@ -22697,6 +22917,16 @@
                         "null"
                     ]
                 },
+                "subsets": {
+                    "description": "The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "synonym": {
                     "description": "Alternate human-readable names for a thing",
                     "items": {
@@ -23287,6 +23517,16 @@
                         "null"
                     ]
                 },
+                "subsets": {
+                    "description": "The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "synonym": {
                     "description": "Alternate human-readable names for a thing",
                     "items": {
@@ -23471,6 +23711,16 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "subsets": {
+                    "description": "The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.",
                     "items": {
                         "type": "string"
                     },
@@ -25482,6 +25732,16 @@
                         "null"
                     ]
                 },
+                "subsets": {
+                    "description": "The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "synonym": {
                     "description": "Alternate human-readable names for a thing",
                     "items": {
@@ -25706,6 +25966,16 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "subsets": {
+                    "description": "The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.",
                     "items": {
                         "type": "string"
                     },
@@ -26563,6 +26833,16 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "subsets": {
+                    "description": "The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.",
                     "items": {
                         "type": "string"
                     },
@@ -28162,6 +28442,16 @@
                         "null"
                     ]
                 },
+                "subsets": {
+                    "description": "The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "synonym": {
                     "description": "Alternate human-readable names for a thing",
                     "items": {
@@ -29108,6 +29398,16 @@
                         "null"
                     ]
                 },
+                "subsets": {
+                    "description": "The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "synonym": {
                     "description": "Alternate human-readable names for a thing",
                     "items": {
@@ -29862,6 +30162,16 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "subsets": {
+                    "description": "The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.",
                     "items": {
                         "type": "string"
                     },
@@ -31047,6 +31357,16 @@
                         "null"
                     ]
                 },
+                "subsets": {
+                    "description": "The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "synonym": {
                     "description": "Alternate human-readable names for a thing",
                     "items": {
@@ -32003,6 +32323,16 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "subsets": {
+                    "description": "The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.",
                     "items": {
                         "type": "string"
                     },
@@ -40359,6 +40689,16 @@
                         "null"
                     ]
                 },
+                "subsets": {
+                    "description": "The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "synonym": {
                     "description": "Alternate human-readable names for a thing",
                     "items": {
@@ -40577,6 +40917,16 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "subsets": {
+                    "description": "The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.",
                     "items": {
                         "type": "string"
                     },
@@ -41198,6 +41548,16 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "subsets": {
+                    "description": "The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.",
                     "items": {
                         "type": "string"
                     },
@@ -44027,6 +44387,16 @@
                         "null"
                     ]
                 },
+                "subsets": {
+                    "description": "The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "synonym": {
                     "description": "Alternate human-readable names for a thing",
                     "items": {
@@ -44212,6 +44582,16 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "subsets": {
+                    "description": "The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.",
                     "items": {
                         "type": "string"
                     },
@@ -44686,6 +45066,16 @@
                         "null"
                     ]
                 },
+                "subsets": {
+                    "description": "The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "synonym": {
                     "description": "Alternate human-readable names for a thing",
                     "items": {
@@ -44837,6 +45227,16 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "subsets": {
+                    "description": "The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.",
                     "items": {
                         "type": "string"
                     },
@@ -47549,6 +47949,16 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "subsets": {
+                    "description": "The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.",
                     "items": {
                         "type": "string"
                     },
@@ -51042,6 +51452,16 @@
                         "null"
                     ]
                 },
+                "subsets": {
+                    "description": "The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "synonym": {
                     "description": "Alternate human-readable names for a thing",
                     "items": {
@@ -52533,6 +52953,16 @@
                         "null"
                     ]
                 },
+                "subsets": {
+                    "description": "The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "synonym": {
                     "description": "Alternate human-readable names for a thing",
                     "items": {
@@ -52770,6 +53200,16 @@
                     "description": "the method or process of administering a pharmaceutical compound to achieve a therapeutic effect in humans or animals.",
                     "items": {
                         "$ref": "#/$defs/DrugDeliveryEnum"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "subsets": {
+                    "description": "The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.",
+                    "items": {
+                        "type": "string"
                     },
                     "type": [
                         "array",
@@ -53807,6 +54247,16 @@
                         "null"
                     ]
                 },
+                "subsets": {
+                    "description": "The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "synonym": {
                     "description": "Alternate human-readable names for a thing",
                     "items": {
@@ -54416,6 +54866,16 @@
                         "null"
                     ]
                 },
+                "subsets": {
+                    "description": "The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "synonym": {
                     "description": "Alternate human-readable names for a thing",
                     "items": {
@@ -54565,6 +55025,16 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "subsets": {
+                    "description": "The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.",
                     "items": {
                         "type": "string"
                     },
@@ -57871,6 +58341,16 @@
                         "null"
                     ]
                 },
+                "subsets": {
+                    "description": "The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "synonym": {
                     "description": "Alternate human-readable names for a thing",
                     "items": {
@@ -58029,6 +58509,16 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "subsets": {
+                    "description": "The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.",
                     "items": {
                         "type": "string"
                     },
@@ -58211,6 +58701,16 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "subsets": {
+                    "description": "The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.",
                     "items": {
                         "type": "string"
                     },
@@ -58411,6 +58911,16 @@
                         "null"
                     ]
                 },
+                "subsets": {
+                    "description": "The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "synonym": {
                     "description": "Alternate human-readable names for a thing",
                     "items": {
@@ -58599,6 +59109,16 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "subsets": {
+                    "description": "The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.",
                     "items": {
                         "type": "string"
                     },
@@ -58903,6 +59423,16 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "subsets": {
+                    "description": "The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.",
                     "items": {
                         "type": "string"
                     },
@@ -60071,6 +60601,16 @@
                         "null"
                     ]
                 },
+                "subsets": {
+                    "description": "The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "synonym": {
                     "description": "Alternate human-readable names for a thing",
                     "items": {
@@ -60220,6 +60760,16 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "subsets": {
+                    "description": "The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.",
                     "items": {
                         "type": "string"
                     },
@@ -60538,6 +61088,16 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "subsets": {
+                    "description": "The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.",
                     "items": {
                         "type": "string"
                     },
@@ -62870,6 +63430,16 @@
                         "null"
                     ]
                 },
+                "subsets": {
+                    "description": "The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "synonym": {
                     "description": "Alternate human-readable names for a thing",
                     "items": {
@@ -65109,6 +65679,16 @@
                         "null"
                     ]
                 },
+                "subsets": {
+                    "description": "The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "synonym": {
                     "description": "Alternate human-readable names for a thing",
                     "items": {
@@ -65268,6 +65848,16 @@
                         "null"
                     ]
                 },
+                "subsets": {
+                    "description": "The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "synonym": {
                     "description": "Alternate human-readable names for a thing",
                     "items": {
@@ -65320,6 +65910,16 @@
                 "id": {
                     "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                     "type": "string"
+                },
+                "subsets": {
+                    "description": "The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
                 }
             },
             "required": [
@@ -66682,6 +67282,16 @@
                         "null"
                     ]
                 },
+                "subsets": {
+                    "description": "The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "synonym": {
                     "description": "Alternate human-readable names for a thing",
                     "items": {
@@ -67078,6 +67688,16 @@
                         "null"
                     ]
                 },
+                "subsets": {
+                    "description": "The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "synonym": {
                     "description": "Alternate human-readable names for a thing",
                     "items": {
@@ -67459,6 +68079,16 @@
                         "null"
                     ]
                 },
+                "subsets": {
+                    "description": "The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "synonym": {
                     "description": "Alternate human-readable names for a thing",
                     "items": {
@@ -67645,6 +68275,16 @@
                         "null"
                     ]
                 },
+                "subsets": {
+                    "description": "The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "synonym": {
                     "description": "Alternate human-readable names for a thing",
                     "items": {
@@ -67793,6 +68433,16 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "subsets": {
+                    "description": "The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.",
                     "items": {
                         "type": "string"
                     },
@@ -67983,6 +68633,16 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "subsets": {
+                    "description": "The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.",
                     "items": {
                         "type": "string"
                     },
@@ -69136,6 +69796,16 @@
                 "id": {
                     "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                     "type": "string"
+                },
+                "subsets": {
+                    "description": "The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
                 }
             },
             "required": [
@@ -70021,6 +70691,16 @@
                         "null"
                     ]
                 },
+                "subsets": {
+                    "description": "The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "synonym": {
                     "description": "Alternate human-readable names for a thing",
                     "items": {
@@ -70235,6 +70915,16 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "subsets": {
+                    "description": "The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.",
                     "items": {
                         "type": "string"
                     },
@@ -73658,6 +74348,16 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "subsets": {
+                    "description": "The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.",
                     "items": {
                         "type": "string"
                     },

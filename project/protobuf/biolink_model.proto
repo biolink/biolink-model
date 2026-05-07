@@ -23,6 +23,7 @@ message AccessibleDnaRegion
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
   biologicalSequence hasBiologicalSequence = 0
+ repeated  string subsets = 0
  }
 // An activity is something that occurs over a period of time and acts upon or with entities; it may include consuming, processing, transforming, modifying, relocating, using, or generating entities.
 message Activity
@@ -106,6 +107,7 @@ message AnatomicalEntity
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
  repeated  attribute hasAttribute = 0
+ repeated  string subsets = 0
  }
 // A relationship between two anatomical entities where the relationship is mereological, i.e the two entities are related by parthood, that is, the subject is has the object entity as a part (the expected predicate is "biolink:has_part" or suitable predicate slots inheriting from it, i.e., "biolink:has_plasma_membrane_part",  "biolink:has_variant_part", etc.). This includes relationships between cells and cellular components, between issues and cells, whole organisms and tissues.
 message AnatomicalEntityHasPartAnatomicalEntityAssociation
@@ -373,6 +375,7 @@ message Attribute
  repeated  quantityValue hasQuantitativeValue = 0
   namedThing hasQualitativeValue = 0
   iriType iri = 0
+ repeated  string subsets = 0
  }
 // A member of a group of unicellular microorganisms lacking a nuclear membrane, that reproduce by binary fission and are often motile.
 message Bacterium
@@ -418,6 +421,7 @@ message Behavior
  repeated  namedThing hasInput = 0
  repeated  namedThing hasOutput = 0
  repeated  physicalEntity enabledBy = 0
+ repeated  string subsets = 0
  }
 // An association between an mixture behavior and a behavioral feature manifested by the individual exhibited or has exhibited the behavior.
 message BehaviorToBehavioralFeatureAssociation
@@ -511,6 +515,7 @@ message BehavioralExposure
   string exposureMagnitude = 0
   string exposureAdditionalCondition = 0
   string id = 0
+ repeated  string subsets = 0
  }
 // A phenotypic feature which is behavioral in nature.
 message BehavioralFeature
@@ -533,6 +538,7 @@ message BehavioralFeature
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
   geneticInheritance inheritance = 0
+ repeated  string subsets = 0
  }
 // One or more causally connected executions of molecular functions
 message BiologicalProcess
@@ -557,6 +563,7 @@ message BiologicalProcess
  repeated  namedThing hasInput = 0
  repeated  namedThing hasOutput = 0
  repeated  physicalEntity enabledBy = 0
+ repeated  string subsets = 0
  }
 // Either an individual molecular activity, or a collection of causally connected molecular activities in a biological system.
 message BiologicalProcessOrActivity
@@ -581,6 +588,7 @@ message BiologicalProcessOrActivity
  repeated  namedThing hasInput = 0
  repeated  namedThing hasOutput = 0
  repeated  physicalEntity enabledBy = 0
+ repeated  string subsets = 0
  }
 // An association between a biological process or activity and an anatomical entity.
 message BiologicalProcessOrActivityToAnatomicalEntityAssociation
@@ -762,6 +770,7 @@ message BiologicalSex
  repeated  quantityValue hasQuantitativeValue = 0
   namedThing hasQualitativeValue = 0
   iriType iri = 0
+ repeated  string subsets = 0
  }
 // An external biotic exposure is an intake of (sometimes pathological) biological organisms (including viruses).
 message BioticExposure
@@ -790,6 +799,7 @@ message BioticExposure
   string exposureMagnitude = 0
   string exposureAdditionalCondition = 0
   string id = 0
+ repeated  string subsets = 0
  }
 // This class may rarely be instantiated except if use cases of a given knowledge graph support its utility.
 message Book
@@ -1179,6 +1189,7 @@ message Cell
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
  repeated  attribute hasAttribute = 0
+ repeated  string subsets = 0
  }
 // A cultured cell population that is genetically stable and homogeneous, sharing a common propagation history through successive passages in culture.
 message CellLine
@@ -1341,6 +1352,7 @@ message CellularComponent
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
  repeated  attribute hasAttribute = 0
+ repeated  string subsets = 0
  }
 // An organism that contains one or more cells belonging to the cellular lineages of life (Archaea, Bacteria, or Eukaryota), whose body consists of one or more cells. Distinguished from acellular biological entities such as viruses and viroids.
 message CellularOrganism
@@ -1944,6 +1956,7 @@ message ChemicalExposure
   string exposureMagnitude = 0
   string exposureAdditionalCondition = 0
   string id = 0
+ repeated  string subsets = 0
  repeated  quantityValue hasQuantitativeValue = 0
  }
 // describes an interaction between a chemical entity and a gene or gene product. Any biological or chemical effect resulting from such an interaction are out of scope, and covered by the ChemicalAffectsGeneAssociation type (e.g. impact of a chemical on the abundance, activity, structure, etc, of either participant in the interaction)
@@ -2047,6 +2060,7 @@ message ChemicalMixture
   string isSupplement = 0
   approvalStatusEnum highestFDAApprovalStatus = 0
   approvalStatusEnum drugRegulatoryStatusWorldWide = 0
+ repeated  string subsets = 0
  }
 // This association defines a relationship between a chemical or treatment (or procedure) and a disease or phenotypic feature where the disease or phenotypic feature is an untoward medical occurrence that happens during treatment, whether or not considered related to the treatment.
 message ChemicalOrDrugOrTreatmentAdverseEventAssociation
@@ -2259,6 +2273,7 @@ message ChemicalRole
  repeated  quantityValue hasQuantitativeValue = 0
   namedThing hasQualitativeValue = 0
   iriType iri = 0
+ repeated  string subsets = 0
  }
 // A result of a chi squared analysis.
 message ChiSquaredAnalysisResult
@@ -2300,6 +2315,7 @@ message ClinicalAttribute
  repeated  quantityValue hasQuantitativeValue = 0
   namedThing hasQualitativeValue = 0
   iriType iri = 0
+ repeated  string subsets = 0
  }
 // The course a disease typically takes from its onset, progression in time, and eventual resolution or death of the affected individual
 message ClinicalCourse
@@ -2322,6 +2338,7 @@ message ClinicalCourse
  repeated  quantityValue hasQuantitativeValue = 0
   namedThing hasQualitativeValue = 0
   iriType iri = 0
+ repeated  string subsets = 0
  }
 // Any entity or process that exists in the clinical domain and outside the biological realm. Diseases are placed under biological entities
 message ClinicalEntity
@@ -2362,6 +2379,7 @@ message ClinicalFinding
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
   geneticInheritance inheritance = 0
+ repeated  string subsets = 0
  repeated  clinicalAttribute hasAttribute = 0
  }
 // A medical procedure, treatment, or action taken by healthcare professionals to modify the course of a disease or condition.
@@ -2403,6 +2421,7 @@ message ClinicalMeasurement
  repeated  quantityValue hasQuantitativeValue = 0
   namedThing hasQualitativeValue = 0
   iriType iri = 0
+ repeated  string subsets = 0
   ontologyClass hasAttributeType = 0
  }
 // Used to characterize and specify the phenotypic abnormalities defined in the phenotypic abnormality sub-ontology, with respect to severity, laterality, and other aspects
@@ -2426,6 +2445,7 @@ message ClinicalModifier
  repeated  quantityValue hasQuantitativeValue = 0
   namedThing hasQualitativeValue = 0
   iriType iri = 0
+ repeated  string subsets = 0
  }
 // A clinical trial is a research study that prospectively assigns human participants or groups of humans to one or more health-related interventions to evaluate the effects on health outcomes.
 message ClinicalTrial
@@ -2554,6 +2574,7 @@ message ComplexChemicalExposure
   string exposureMagnitude = 0
   string exposureAdditionalCondition = 0
   string id = 0
+ repeated  string subsets = 0
  }
 // A complex molecular mixture is a chemical mixture composed of two or more molecular entities with unknown concentration and stoichiometry.
 message ComplexMolecularMixture
@@ -2588,6 +2609,7 @@ message ComplexMolecularMixture
   string isSupplement = 0
   approvalStatusEnum highestFDAApprovalStatus = 0
   approvalStatusEnum drugRegulatoryStatusWorldWide = 0
+ repeated  string subsets = 0
  }
 // A result of a concept count analysis.
 message ConceptCountAnalysisResult
@@ -2905,6 +2927,7 @@ message Disease
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
   geneticInheritance inheritance = 0
+ repeated  string subsets = 0
  }
 // A statistical association between a disease and a chemical entity where the chemical entity has a therapeutic or adverse effect on the disease progression, symptoms or outcomes in a patient, cell line, or any model system.
 message DiseaseAssociatedWithResponseToChemicalEntityAssociation
@@ -2982,6 +3005,7 @@ message DiseaseOrPhenotypicFeature
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
   geneticInheritance inheritance = 0
+ repeated  string subsets = 0
  }
 // A disease or phenotypic feature state, when viewed as an exposure, represented as a precondition, leading to or influencing an outcome,.
 message DiseaseOrPhenotypicFeatureExposure
@@ -3010,6 +3034,7 @@ message DiseaseOrPhenotypicFeatureExposure
   string exposureMagnitude = 0
   string exposureAdditionalCondition = 0
   string id = 0
+ repeated  string subsets = 0
  }
 // An association between either a disease or a phenotypic feature and its mode of (genetic) inheritance.
 message DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation
@@ -3269,6 +3294,7 @@ message Drug
   string isSupplement = 0
   approvalStatusEnum highestFDAApprovalStatus = 0
   approvalStatusEnum drugRegulatoryStatusWorldWide = 0
+ repeated  string subsets = 0
  }
 // A drug exposure is an intake of a particular drug.
 message DrugExposure
@@ -3297,6 +3323,7 @@ message DrugExposure
   string exposureMagnitude = 0
   string exposureAdditionalCondition = 0
   string id = 0
+ repeated  string subsets = 0
  repeated  quantityValue hasQuantitativeValue = 0
  }
 // a document accompanying a drug or its container that provides written, printed or graphic information about the drug, including drug contents, specific instructions or warnings for administration, storage and disposal instructions, etc.
@@ -3408,6 +3435,7 @@ message DrugToGeneInteractionExposure
   string exposureMagnitude = 0
   string exposureAdditionalCondition = 0
   string id = 0
+ repeated  string subsets = 0
  repeated  quantityValue hasQuantitativeValue = 0
  repeated  gene hasGeneOrGeneProduct = 0
  }
@@ -3617,6 +3645,7 @@ message EnvironmentalExposure
   string exposureMagnitude = 0
   string exposureAdditionalCondition = 0
   string id = 0
+ repeated  string subsets = 0
  }
 // A system or entity in the natural environment that has the disposition to environ one or more material entities.
 message EnvironmentalFeature
@@ -3747,6 +3776,7 @@ message EvidenceType
   float informationContent = 0
   uriorcurie taxon = 0
  repeated  uriorcurie category = 0
+ repeated  string subsets = 0
  }
 // A region of the transcript sequence within a gene which is not removed from the primary RNA transcript by RNA splicing.
 message Exon
@@ -3849,6 +3879,7 @@ message ExposureEvent
   string exposureMagnitude = 0
   string exposureAdditionalCondition = 0
   string id = 0
+ repeated  string subsets = 0
  }
 // An association between an exposure event and an outcome.
 message ExposureEventToOutcomeAssociation
@@ -4003,6 +4034,7 @@ message Food
   string isSupplement = 0
   approvalStatusEnum highestFDAApprovalStatus = 0
   approvalStatusEnum drugRegulatoryStatusWorldWide = 0
+ repeated  string subsets = 0
  }
 // Any substance which is added to food to preserve or enhance its flavour and/or appearance.
 message FoodAdditive
@@ -4130,6 +4162,7 @@ message Gene
   string symbol = 0
  repeated  uriorcurie xref = 0
   biologicalSequence hasBiologicalSequence = 0
+ repeated  string subsets = 0
  }
 // Describes an effect that a gene or gene product has on a chemical entity (e.g. an impact of on its abundance, activity, localization, processing, transport, etc.)
 message GeneAffectsChemicalAssociation
@@ -5201,6 +5234,7 @@ message Genome
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
   biologicalSequence hasBiologicalSequence = 0
+ repeated  string subsets = 0
  }
 // A genomic background exposure is where an individual's specific genomic background of genes, sequence variants or other pre-existing genomic conditions constitute a kind of 'exposure' to the organism, leading to or influencing an outcome.
 message GenomicBackgroundExposure
@@ -5229,6 +5263,7 @@ message GenomicBackgroundExposure
   string exposureMagnitude = 0
   string exposureAdditionalCondition = 0
   string id = 0
+ repeated  string subsets = 0
  repeated  gene hasGeneOrGeneProduct = 0
   biologicalSequence hasBiologicalSequence = 0
  repeated  organismTaxon inTaxon = 0
@@ -5314,6 +5349,7 @@ message Genotype
   labelType inTaxonLabel = 0
   zygosity hasZygosity = 0
   biologicalSequence hasBiologicalSequence = 0
+ repeated  string subsets = 0
  }
 // An association in which a genotype serves as a model of a disease, recapitulating features relevant for studying the disease outside of a patient who carries it.
 message GenotypeAsAModelOfDiseaseAssociation
@@ -5680,6 +5716,7 @@ message GenotypicSex
  repeated  quantityValue hasQuantitativeValue = 0
   namedThing hasQualitativeValue = 0
   iriType iri = 0
+ repeated  string subsets = 0
  }
 // A geographic exposure is a factor relating to geographic proximity to some impactful entity.
 message GeographicExposure
@@ -5708,6 +5745,7 @@ message GeographicExposure
   string exposureMagnitude = 0
   string exposureAdditionalCondition = 0
   string id = 0
+ repeated  string subsets = 0
  }
 // a location that can be described in lat/long coordinates
 message GeographicLocation
@@ -5772,6 +5810,7 @@ message GrossAnatomicalStructure
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
  repeated  attribute hasAttribute = 0
+ repeated  string subsets = 0
  }
 // A set of zero or more Alleles on a single instance of a Sequence[VMC]
 message Haplotype
@@ -5794,6 +5833,7 @@ message Haplotype
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
   biologicalSequence hasBiologicalSequence = 0
+ repeated  string subsets = 0
  }
 // The admission and care of a patient in a hospital for observation, diagnosis, or treatment.
 message Hospitalization
@@ -6014,6 +6054,7 @@ message LifeStage
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
  repeated  attribute hasAttribute = 0
+ repeated  string subsets = 0
  }
 // A result of a log odds ratio analysis.
 message LogOddsAnalysisResult
@@ -6460,6 +6501,7 @@ message MolecularActivity
  repeated  uriorcurie category = 0
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
+ repeated  string subsets = 0
  repeated  molecularEntity hasInput = 0
  repeated  molecularEntity hasOutput = 0
  repeated  macromolecularMachineMixin enabledBy = 0
@@ -6654,6 +6696,7 @@ message MolecularEntity
   string chemblChirality = 0
   string chemblDrugWarning = 0
   boolean isMetabolite = 0
+ repeated  string subsets = 0
  }
 // A molecular mixture is a chemical mixture composed of two or more molecular entities with known concentration and stoichiometry.
 message MolecularMixture
@@ -6688,6 +6731,7 @@ message MolecularMixture
   string isSupplement = 0
   approvalStatusEnum highestFDAApprovalStatus = 0
   approvalStatusEnum drugRegulatoryStatusWorldWide = 0
+ repeated  string subsets = 0
  }
 // a databased entity or concept/class
 message NamedThing
@@ -6818,6 +6862,7 @@ message NucleicAcidEntity
   string chemblChirality = 0
   string chemblDrugWarning = 0
   boolean isMetabolite = 0
+ repeated  string subsets = 0
   biologicalSequence hasBiologicalSequence = 0
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
@@ -6905,6 +6950,7 @@ message Onset
  repeated  quantityValue hasQuantitativeValue = 0
   namedThing hasQualitativeValue = 0
   iriType iri = 0
+ repeated  string subsets = 0
  }
 // describes a characteristic of an organismal entity.
 message OrganismAttribute
@@ -6927,6 +6973,7 @@ message OrganismAttribute
  repeated  quantityValue hasQuantitativeValue = 0
   namedThing hasQualitativeValue = 0
   iriType iri = 0
+ repeated  string subsets = 0
  }
 // A classification of a set of organisms. Example instances: NCBITaxon:9606 (Homo sapiens), NCBITaxon:2 (Bacteria). Can also be used to represent strains or subspecies.
 message OrganismTaxon
@@ -7357,6 +7404,7 @@ message PathologicalAnatomicalExposure
   string exposureMagnitude = 0
   string exposureAdditionalCondition = 0
   string id = 0
+ repeated  string subsets = 0
  }
 // An anatomical structure with the potential of have an abnormal or deleterious effect at the subcellular, cellular, multicellular, or organismal level.
 message PathologicalAnatomicalStructure
@@ -7378,6 +7426,7 @@ message PathologicalAnatomicalStructure
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
  repeated  attribute hasAttribute = 0
+ repeated  string subsets = 0
  }
 // A biologic function or a process having an abnormal or deleterious effect at the subcellular, cellular, multicellular, or organismal level.
 message PathologicalProcess
@@ -7402,6 +7451,7 @@ message PathologicalProcess
  repeated  namedThing hasInput = 0
  repeated  namedThing hasOutput = 0
  repeated  physicalEntity enabledBy = 0
+ repeated  string subsets = 0
  }
 // A pathological process, when viewed as an exposure, representing a precondition, leading to or influencing an outcome.
 message PathologicalProcessExposure
@@ -7430,6 +7480,7 @@ message PathologicalProcessExposure
   string exposureMagnitude = 0
   string exposureAdditionalCondition = 0
   string id = 0
+ repeated  string subsets = 0
  }
 // A hierarchical ordering of connected molecular reactions (steps) that represent a specific biological process, such as signaling or metabolism.
 message Pathway
@@ -7454,6 +7505,7 @@ message Pathway
  repeated  namedThing hasInput = 0
  repeated  namedThing hasOutput = 0
  repeated  physicalEntity enabledBy = 0
+ repeated  string subsets = 0
  }
 // a fact or situation that is observed to exist or happen, especially one whose cause or explanation is in question
 message Phenomenon
@@ -7495,6 +7547,7 @@ message PhenotypicFeature
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
   geneticInheritance inheritance = 0
+ repeated  string subsets = 0
  }
 // An association between a phenotypic feature (sign or symptom) and a disease, where the phenotypic feature is a manifestation or clinical indicator of the disease.
 message PhenotypicFeatureToDiseaseAssociation
@@ -7647,6 +7700,7 @@ message PhenotypicQuality
  repeated  quantityValue hasQuantitativeValue = 0
   namedThing hasQualitativeValue = 0
   iriType iri = 0
+ repeated  string subsets = 0
  }
 // An attribute corresponding to the phenotypic sex of the individual, based upon the reproductive organs present.
 message PhenotypicSex
@@ -7669,6 +7723,7 @@ message PhenotypicSex
  repeated  quantityValue hasQuantitativeValue = 0
   namedThing hasQualitativeValue = 0
   iriType iri = 0
+ repeated  string subsets = 0
  }
 // An entity that has material reality (a.k.a. physical essence).
 message PhysicalEntity
@@ -7712,6 +7767,7 @@ message PhysiologicalProcess
  repeated  namedThing hasInput = 0
  repeated  namedThing hasOutput = 0
  repeated  physicalEntity enabledBy = 0
+ repeated  string subsets = 0
  }
 // Any entity or process that exists at the level of the whole planet
 message PlanetaryEntity
@@ -8027,6 +8083,7 @@ message ProcessedMaterial
   string isSupplement = 0
   approvalStatusEnum highestFDAApprovalStatus = 0
   approvalStatusEnum drugRegulatoryStatusWorldWide = 0
+ repeated  string subsets = 0
  }
 // A gene product that is composed of a chain of amino acid sequences and is produced by ribosome-mediated translation of mRNA
 message Protein
@@ -8284,6 +8341,7 @@ message ReagentTargetedGene
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
   biologicalSequence hasBiologicalSequence = 0
+ repeated  string subsets = 0
  }
 // A region (or regions) of the genome that contains known or putative regulatory elements that act in cis- or trans- to affect the transcription of gene
 message RegulatoryRegion
@@ -8306,11 +8364,13 @@ message RegulatoryRegion
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
   biologicalSequence hasBiologicalSequence = 0
+ repeated  string subsets = 0
  }
 // An OWL property used as an edge label
 message RelationshipType
  {
   string id = 0
+ repeated  string subsets = 0
  }
 // A result of a relative frequency analysis.
 message RelativeFrequencyAnalysisResult
@@ -8529,6 +8589,7 @@ message SequenceVariant
  repeated  string hgvsNomenclature = 0
   biologicalSequence hasBiologicalSequence = 0
   string id = 0
+ repeated  string subsets = 0
  }
 // This class may rarely be instantiated except if use cases of a given knowledge graph support its utility.
 message Serial
@@ -8583,6 +8644,7 @@ message SeverityValue
  repeated  quantityValue hasQuantitativeValue = 0
   namedThing hasQualitativeValue = 0
   iriType iri = 0
+ repeated  string subsets = 0
  }
 // A small RNA molecule that is the product of a longer exogenous or endogenous dsRNA, which is either a bimolecular duplex or very long hairpin, processed (via the Dicer pathway) such that numerous siRNAs accumulate from both strands of the dsRNA. SRNAs trigger the cleavage of their target molecules.
 message SiRNA
@@ -8636,6 +8698,7 @@ message SmallMolecule
   string chemblChirality = 0
   string chemblDrugWarning = 0
   boolean isMetabolite = 0
+ repeated  string subsets = 0
  }
 // SNVs are single nucleotide positions in genomic DNA at which different sequence alternatives exist
 message Snv
@@ -8660,6 +8723,7 @@ message Snv
  repeated  string hgvsNomenclature = 0
   biologicalSequence hasBiologicalSequence = 0
   string id = 0
+ repeated  string subsets = 0
  }
 // Attributes relating to a socioeconomic manifestation
 message SocioeconomicAttribute
@@ -8682,6 +8746,7 @@ message SocioeconomicAttribute
  repeated  quantityValue hasQuantitativeValue = 0
   namedThing hasQualitativeValue = 0
   iriType iri = 0
+ repeated  string subsets = 0
  }
 // A socioeconomic exposure is a factor relating to social and financial status of an affected individual.
 message SocioeconomicExposure
@@ -8709,6 +8774,7 @@ message SocioeconomicExposure
   string exposureMagnitude = 0
   string exposureAdditionalCondition = 0
   string id = 0
+ repeated  string subsets = 0
  repeated  socioeconomicAttribute hasAttribute = 0
  }
 // a detailed investigation and/or analysis
@@ -8832,6 +8898,7 @@ message TaxonToTaxonAssociation
 message TaxonomicRank
  {
   string id = 0
+ repeated  string subsets = 0
  }
 // A study result that represents information extracted from text using natural language processing techniques. This includes the extracted text, location offsets within the source document, confidence scores, and other metadata related to the text mining process.
 message TextMiningStudyResult
@@ -8954,6 +9021,7 @@ message TranscriptionFactorBindingSite
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
   biologicalSequence hasBiologicalSequence = 0
+ repeated  string subsets = 0
  }
 // A treatment is targeted at a disease or phenotype and may involve multiple drug 'exposures', medical devices and/or procedures
 message Treatment
@@ -8982,6 +9050,7 @@ message Treatment
   string exposureMagnitude = 0
   string exposureAdditionalCondition = 0
   string id = 0
+ repeated  string subsets = 0
  repeated  drug hasDrug = 0
  repeated  device hasDevice = 0
  repeated  procedure hasProcedure = 0
@@ -9430,4 +9499,5 @@ message Zygosity
  repeated  quantityValue hasQuantitativeValue = 0
   namedThing hasQualitativeValue = 0
   iriType iri = 0
+ repeated  string subsets = 0
  }

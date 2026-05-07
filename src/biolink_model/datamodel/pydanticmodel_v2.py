@@ -1072,6 +1072,7 @@ class OntologyClass(ConfiguredBaseModel):
     a concept or class in an ontology, vocabulary or thesaurus. Note that nodes in a biolink compatible KG can be considered both instances of biolink classes, and OWL classes in their own right. In general you should not need to use this class directly. Instead, use the appropriate biolink class. For example, for the GO concept of endocytosis (GO:0006897), use bl:BiologicalProcess as the type.
     """
     id: str = Field(default=..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
+    subsets: Optional[list[str]] = Field(default=None, description="""The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.""")
 
 
 class Annotation(ConfiguredBaseModel):
@@ -1179,6 +1180,7 @@ class Attribute(NamedThing, OntologyClass):
     has_qualitative_value: Optional[str] = Field(default=None, description="""connects an attribute to a value""")
     iri: Optional[str] = Field(default=None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     id: str = Field(default=..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
+    subsets: Optional[list[str]] = Field(default=None, description="""The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.""")
     provided_by: Optional[list[str]] = Field(default=None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[list[str]] = Field(default=None, description="""A database cross reference or alternative identifier for a NamedThing or edge between two NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     full_name: Optional[str] = Field(default=None, description="""a long-form human readable name for a thing""")
@@ -1203,6 +1205,7 @@ class ChemicalRole(Attribute):
     has_qualitative_value: Optional[str] = Field(default=None, description="""connects an attribute to a value""")
     iri: Optional[str] = Field(default=None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     id: str = Field(default=..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
+    subsets: Optional[list[str]] = Field(default=None, description="""The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.""")
     provided_by: Optional[list[str]] = Field(default=None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[list[str]] = Field(default=None, description="""A database cross reference or alternative identifier for a NamedThing or edge between two NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     full_name: Optional[str] = Field(default=None, description="""a long-form human readable name for a thing""")
@@ -1227,6 +1230,7 @@ class BiologicalSex(Attribute):
     has_qualitative_value: Optional[str] = Field(default=None, description="""connects an attribute to a value""")
     iri: Optional[str] = Field(default=None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     id: str = Field(default=..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
+    subsets: Optional[list[str]] = Field(default=None, description="""The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.""")
     provided_by: Optional[list[str]] = Field(default=None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[list[str]] = Field(default=None, description="""A database cross reference or alternative identifier for a NamedThing or edge between two NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     full_name: Optional[str] = Field(default=None, description="""a long-form human readable name for a thing""")
@@ -1251,6 +1255,7 @@ class PhenotypicSex(BiologicalSex):
     has_qualitative_value: Optional[str] = Field(default=None, description="""connects an attribute to a value""")
     iri: Optional[str] = Field(default=None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     id: str = Field(default=..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
+    subsets: Optional[list[str]] = Field(default=None, description="""The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.""")
     provided_by: Optional[list[str]] = Field(default=None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[list[str]] = Field(default=None, description="""A database cross reference or alternative identifier for a NamedThing or edge between two NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     full_name: Optional[str] = Field(default=None, description="""a long-form human readable name for a thing""")
@@ -1275,6 +1280,7 @@ class GenotypicSex(BiologicalSex):
     has_qualitative_value: Optional[str] = Field(default=None, description="""connects an attribute to a value""")
     iri: Optional[str] = Field(default=None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     id: str = Field(default=..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
+    subsets: Optional[list[str]] = Field(default=None, description="""The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.""")
     provided_by: Optional[list[str]] = Field(default=None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[list[str]] = Field(default=None, description="""A database cross reference or alternative identifier for a NamedThing or edge between two NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     full_name: Optional[str] = Field(default=None, description="""a long-form human readable name for a thing""")
@@ -1299,6 +1305,7 @@ class SeverityValue(Attribute):
     has_qualitative_value: Optional[str] = Field(default=None, description="""connects an attribute to a value""")
     iri: Optional[str] = Field(default=None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     id: str = Field(default=..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
+    subsets: Optional[list[str]] = Field(default=None, description="""The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.""")
     provided_by: Optional[list[str]] = Field(default=None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[list[str]] = Field(default=None, description="""A database cross reference or alternative identifier for a NamedThing or edge between two NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     full_name: Optional[str] = Field(default=None, description="""a long-form human readable name for a thing""")
@@ -1318,6 +1325,7 @@ class RelationshipType(OntologyClass):
     An OWL property used as an edge label
     """
     id: str = Field(default=..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
+    subsets: Optional[list[str]] = Field(default=None, description="""The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.""")
 
 
 class TaxonomicRank(OntologyClass):
@@ -1325,6 +1333,7 @@ class TaxonomicRank(OntologyClass):
     A descriptor for the rank within a taxonomic classification. Example instance: TAXRANK:0000017 (kingdom)
     """
     id: str = Field(default=..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
+    subsets: Optional[list[str]] = Field(default=None, description="""The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.""")
 
 
 class OrganismTaxon(NamedThing):
@@ -1811,6 +1820,7 @@ class EvidenceType(NamedThing, OntologyClass):
     Class of evidence that supports an association
     """
     id: str = Field(default=..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
+    subsets: Optional[list[str]] = Field(default=None, description="""The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.""")
     provided_by: Optional[list[str]] = Field(default=None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[list[str]] = Field(default=None, description="""A database cross reference or alternative identifier for a NamedThing or edge between two NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     full_name: Optional[str] = Field(default=None, description="""a long-form human readable name for a thing""")
@@ -2596,6 +2606,7 @@ class BiologicalProcessOrActivity(BiologicalEntity, Occurrent, OntologyClass):
     has_output: Optional[list[str]] = Field(default=None, description="""holds between a process and a continuant, where the continuant is an output of the process""")
     enabled_by: Optional[list[str]] = Field(default=None, description="""holds between a process and a physical entity, where the physical entity executes the process""")
     id: str = Field(default=..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
+    subsets: Optional[list[str]] = Field(default=None, description="""The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.""")
     in_taxon: Optional[list[str]] = Field(default=None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     in_taxon_label: Optional[str] = Field(default=None, description="""The human readable scientific name for the taxon of the entity.""")
     provided_by: Optional[list[str]] = Field(default=None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
@@ -2619,6 +2630,7 @@ class MolecularActivity(BiologicalProcessOrActivity, Occurrent, OntologyClass):
     An execution of a molecular function carried out by a gene product or macromolecular complex.
     """
     id: str = Field(default=..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
+    subsets: Optional[list[str]] = Field(default=None, description="""The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.""")
     has_input: Optional[list[str]] = Field(default=None, description="""A chemical entity that is the input for the reaction""")
     has_output: Optional[list[str]] = Field(default=None, description="""A chemical entity that is the output for the reaction""")
     enabled_by: Optional[list[str]] = Field(default=None, description="""The gene product, gene, or complex that catalyzes the reaction""")
@@ -2645,6 +2657,7 @@ class BiologicalProcess(BiologicalProcessOrActivity, Occurrent, OntologyClass):
     One or more causally connected executions of molecular functions
     """
     id: str = Field(default=..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
+    subsets: Optional[list[str]] = Field(default=None, description="""The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.""")
     has_input: Optional[list[str]] = Field(default=None, description="""holds between a process and a continuant, where the continuant is an input into the process""")
     has_output: Optional[list[str]] = Field(default=None, description="""holds between a process and a continuant, where the continuant is an output of the process""")
     enabled_by: Optional[list[str]] = Field(default=None, description="""holds between a process and a physical entity, where the physical entity executes the process""")
@@ -2671,6 +2684,7 @@ class Pathway(BiologicalProcess, OntologyClass):
     A hierarchical ordering of connected molecular reactions (steps) that represent a specific biological process, such as signaling or metabolism.
     """
     id: str = Field(default=..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
+    subsets: Optional[list[str]] = Field(default=None, description="""The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.""")
     has_input: Optional[list[str]] = Field(default=None, description="""holds between a process and a continuant, where the continuant is an input into the process""")
     has_output: Optional[list[str]] = Field(default=None, description="""holds between a process and a continuant, where the continuant is an output of the process""")
     enabled_by: Optional[list[str]] = Field(default=None, description="""holds between a process and a physical entity, where the physical entity executes the process""")
@@ -2697,6 +2711,7 @@ class PhysiologicalProcess(BiologicalProcess, OntologyClass):
     A biological or chemical function within a living organism.
     """
     id: str = Field(default=..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
+    subsets: Optional[list[str]] = Field(default=None, description="""The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.""")
     has_input: Optional[list[str]] = Field(default=None, description="""holds between a process and a continuant, where the continuant is an input into the process""")
     has_output: Optional[list[str]] = Field(default=None, description="""holds between a process and a continuant, where the continuant is an output of the process""")
     enabled_by: Optional[list[str]] = Field(default=None, description="""holds between a process and a physical entity, where the physical entity executes the process""")
@@ -2723,6 +2738,7 @@ class Behavior(BiologicalProcess, ActivityAndBehavior, OntologyClass):
     The internally coordinated responses (actions or inactions) of organisms (individuals or groups) to internal or external stimuli, via a mechanism that involves nervous system activity.
     """
     id: str = Field(default=..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
+    subsets: Optional[list[str]] = Field(default=None, description="""The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.""")
     has_input: Optional[list[str]] = Field(default=None, description="""holds between a process and a continuant, where the continuant is an input into the process""")
     has_output: Optional[list[str]] = Field(default=None, description="""holds between a process and a continuant, where the continuant is an output of the process""")
     enabled_by: Optional[list[str]] = Field(default=None, description="""holds between a process and a physical entity, where the physical entity executes the process""")
@@ -2754,6 +2770,7 @@ class OrganismAttribute(Attribute):
     has_qualitative_value: Optional[str] = Field(default=None, description="""connects an attribute to a value""")
     iri: Optional[str] = Field(default=None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     id: str = Field(default=..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
+    subsets: Optional[list[str]] = Field(default=None, description="""The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.""")
     provided_by: Optional[list[str]] = Field(default=None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[list[str]] = Field(default=None, description="""A database cross reference or alternative identifier for a NamedThing or edge between two NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     full_name: Optional[str] = Field(default=None, description="""a long-form human readable name for a thing""")
@@ -2778,6 +2795,7 @@ class PhenotypicQuality(OrganismAttribute):
     has_qualitative_value: Optional[str] = Field(default=None, description="""connects an attribute to a value""")
     iri: Optional[str] = Field(default=None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     id: str = Field(default=..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
+    subsets: Optional[list[str]] = Field(default=None, description="""The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.""")
     provided_by: Optional[list[str]] = Field(default=None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[list[str]] = Field(default=None, description="""A database cross reference or alternative identifier for a NamedThing or edge between two NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     full_name: Optional[str] = Field(default=None, description="""a long-form human readable name for a thing""")
@@ -3032,6 +3050,7 @@ class LifeStage(OrganismalEntity, OntologyClass):
     A stage of development or growth of an organism, including post-natal adult stages
     """
     id: str = Field(default=..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
+    subsets: Optional[list[str]] = Field(default=None, description="""The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.""")
     in_taxon: Optional[list[str]] = Field(default=None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     in_taxon_label: Optional[str] = Field(default=None, description="""The human readable scientific name for the taxon of the entity.""")
     provided_by: Optional[list[str]] = Field(default=None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
@@ -3125,6 +3144,7 @@ class DiseaseOrPhenotypicFeature(BiologicalEntity, OntologyClass):
     """
     inheritance: Optional[str] = Field(default=None, description="""Connects genetic inheritance to a disease or phenotypic feature, as a node property.""")
     id: str = Field(default=..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
+    subsets: Optional[list[str]] = Field(default=None, description="""The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.""")
     in_taxon: Optional[list[str]] = Field(default=None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     in_taxon_label: Optional[str] = Field(default=None, description="""The human readable scientific name for the taxon of the entity.""")
     provided_by: Optional[list[str]] = Field(default=None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
@@ -3149,6 +3169,7 @@ class Disease(DiseaseOrPhenotypicFeature):
     """
     inheritance: Optional[str] = Field(default=None, description="""Connects genetic inheritance to a disease or phenotypic feature, as a node property.""")
     id: str = Field(default=..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
+    subsets: Optional[list[str]] = Field(default=None, description="""The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.""")
     in_taxon: Optional[list[str]] = Field(default=None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     in_taxon_label: Optional[str] = Field(default=None, description="""The human readable scientific name for the taxon of the entity.""")
     provided_by: Optional[list[str]] = Field(default=None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
@@ -3173,6 +3194,7 @@ class PhenotypicFeature(DiseaseOrPhenotypicFeature):
     """
     inheritance: Optional[str] = Field(default=None, description="""Connects genetic inheritance to a disease or phenotypic feature, as a node property.""")
     id: str = Field(default=..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
+    subsets: Optional[list[str]] = Field(default=None, description="""The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.""")
     in_taxon: Optional[list[str]] = Field(default=None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     in_taxon_label: Optional[str] = Field(default=None, description="""The human readable scientific name for the taxon of the entity.""")
     provided_by: Optional[list[str]] = Field(default=None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
@@ -3197,6 +3219,7 @@ class BehavioralFeature(PhenotypicFeature):
     """
     inheritance: Optional[str] = Field(default=None, description="""Connects genetic inheritance to a disease or phenotypic feature, as a node property.""")
     id: str = Field(default=..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
+    subsets: Optional[list[str]] = Field(default=None, description="""The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.""")
     in_taxon: Optional[list[str]] = Field(default=None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     in_taxon_label: Optional[str] = Field(default=None, description="""The human readable scientific name for the taxon of the entity.""")
     provided_by: Optional[list[str]] = Field(default=None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
@@ -3220,6 +3243,7 @@ class AnatomicalEntity(OrganismalEntity, PhysicalEssence, OntologyClass):
     A part of a cellular organism at or above the granularity of a protein complex. This is a grouping class with three concrete subclasses that should be preferred when applicable: \"biolink:Cell\" for whole cells, \"biolink:CellularComponent\" for subcellular and intracellular structures (organelles, membranes, bacterial flagella, etc.), and \"biolink:GrossAnatomcialStructure\" for multicellular parts (tissues, organs, body parts). Excludes viral and other acellular biological entities.
     """
     id: str = Field(default=..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
+    subsets: Optional[list[str]] = Field(default=None, description="""The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.""")
     in_taxon: Optional[list[str]] = Field(default=None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     in_taxon_label: Optional[str] = Field(default=None, description="""The human readable scientific name for the taxon of the entity.""")
     provided_by: Optional[list[str]] = Field(default=None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
@@ -3243,6 +3267,7 @@ class CellularComponent(AnatomicalEntity):
     A location in or around a cell
     """
     id: str = Field(default=..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
+    subsets: Optional[list[str]] = Field(default=None, description="""The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.""")
     in_taxon: Optional[list[str]] = Field(default=None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     in_taxon_label: Optional[str] = Field(default=None, description="""The human readable scientific name for the taxon of the entity.""")
     provided_by: Optional[list[str]] = Field(default=None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
@@ -3266,6 +3291,7 @@ class Cell(AnatomicalEntity):
     The basic structural and functional unit of all organisms. Includes the plasma membrane and any external encapsulating structures such as the cell wall and cell envelope.
     """
     id: str = Field(default=..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
+    subsets: Optional[list[str]] = Field(default=None, description="""The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.""")
     in_taxon: Optional[list[str]] = Field(default=None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     in_taxon_label: Optional[str] = Field(default=None, description="""The human readable scientific name for the taxon of the entity.""")
     provided_by: Optional[list[str]] = Field(default=None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
@@ -3312,6 +3338,7 @@ class GrossAnatomicalStructure(AnatomicalEntity):
     An anatomical structure that has more than one cell as a part.
     """
     id: str = Field(default=..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
+    subsets: Optional[list[str]] = Field(default=None, description="""The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.""")
     in_taxon: Optional[list[str]] = Field(default=None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     in_taxon_label: Optional[str] = Field(default=None, description="""The human readable scientific name for the taxon of the entity.""")
     provided_by: Optional[list[str]] = Field(default=None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
@@ -3343,6 +3370,7 @@ class RegulatoryRegion(ChemicalEntityOrGeneOrGeneProduct, GenomicEntity, Biologi
     """
     has_biological_sequence: Optional[str] = Field(default=None, description="""connects a genomic feature to its sequence""")
     id: str = Field(default=..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
+    subsets: Optional[list[str]] = Field(default=None, description="""The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.""")
     in_taxon: Optional[list[str]] = Field(default=None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     in_taxon_label: Optional[str] = Field(default=None, description="""The human readable scientific name for the taxon of the entity.""")
     provided_by: Optional[list[str]] = Field(default=None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
@@ -3367,6 +3395,7 @@ class AccessibleDnaRegion(RegulatoryRegion, ChemicalEntityOrGeneOrGeneProduct, G
     """
     has_biological_sequence: Optional[str] = Field(default=None, description="""connects a genomic feature to its sequence""")
     id: str = Field(default=..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
+    subsets: Optional[list[str]] = Field(default=None, description="""The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.""")
     in_taxon: Optional[list[str]] = Field(default=None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     in_taxon_label: Optional[str] = Field(default=None, description="""The human readable scientific name for the taxon of the entity.""")
     provided_by: Optional[list[str]] = Field(default=None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
@@ -3391,6 +3420,7 @@ class TranscriptionFactorBindingSite(RegulatoryRegion, ChemicalEntityOrGeneOrGen
     """
     has_biological_sequence: Optional[str] = Field(default=None, description="""connects a genomic feature to its sequence""")
     id: str = Field(default=..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
+    subsets: Optional[list[str]] = Field(default=None, description="""The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.""")
     in_taxon: Optional[list[str]] = Field(default=None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     in_taxon_label: Optional[str] = Field(default=None, description="""The human readable scientific name for the taxon of the entity.""")
     provided_by: Optional[list[str]] = Field(default=None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
@@ -3455,6 +3485,7 @@ class MolecularEntity(ChemicalEntity, OntologyClass):
     """
     is_metabolite: Optional[bool] = Field(default=None, description="""indicates whether a molecular entity is a metabolite""")
     id: str = Field(default=..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
+    subsets: Optional[list[str]] = Field(default=None, description="""The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.""")
     trade_name: Optional[str] = Field(default=None, description="""A proprietary brand or trade name under which a chemical entity (typically a drug) is manufactured and marketed by a vendor.""")
     available_from: Optional[list[DrugAvailabilityEnum]] = Field(default=None, description="""The regulatory or commercial availability channel through which a drug or chemical entity can be obtained, drawn from DrugAvailabilityEnum.""")
     max_tolerated_dose: Optional[str] = Field(default=None, description="""The highest dose of a drug or treatment that does not cause unacceptable side effects. The maximum tolerated dose is determined in clinical trials by testing increasing doses on different groups of people until the highest dose with acceptable side effects is found. Also called MTD.""")
@@ -3489,6 +3520,7 @@ class SmallMolecule(MolecularEntity):
     """
     is_metabolite: Optional[bool] = Field(default=None, description="""indicates whether a molecular entity is a metabolite""")
     id: str = Field(default=..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
+    subsets: Optional[list[str]] = Field(default=None, description="""The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.""")
     trade_name: Optional[str] = Field(default=None, description="""A proprietary brand or trade name under which a chemical entity (typically a drug) is manufactured and marketed by a vendor.""")
     available_from: Optional[list[DrugAvailabilityEnum]] = Field(default=None, description="""The regulatory or commercial availability channel through which a drug or chemical entity can be obtained, drawn from DrugAvailabilityEnum.""")
     max_tolerated_dose: Optional[str] = Field(default=None, description="""The highest dose of a drug or treatment that does not cause unacceptable side effects. The maximum tolerated dose is determined in clinical trials by testing increasing doses on different groups of people until the highest dose with acceptable side effects is found. Also called MTD.""")
@@ -3525,6 +3557,7 @@ class ChemicalMixture(ChemicalEntity, OntologyClass):
     highest_FDA_approval_status: Optional[ApprovalStatusEnum] = Field(default=None, description="""Should be the highest level of FDA approval this chemical entity or device has, regardless of which disease, condition or phenotype it is currently being reviewed to treat.  For specific levels of FDA approval for a specific condition, disease, phenotype, etc., see the association slot, 'clinical approval status.'""")
     drug_regulatory_status_world_wide: Optional[ApprovalStatusEnum] = Field(default=None, description="""An agglomeration of drug regulatory status worldwide. Not specific to FDA.""")
     id: str = Field(default=..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
+    subsets: Optional[list[str]] = Field(default=None, description="""The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.""")
     trade_name: Optional[str] = Field(default=None, description="""A proprietary brand or trade name under which a chemical entity (typically a drug) is manufactured and marketed by a vendor.""")
     available_from: Optional[list[DrugAvailabilityEnum]] = Field(default=None, description="""The regulatory or commercial availability channel through which a drug or chemical entity can be obtained, drawn from DrugAvailabilityEnum.""")
     max_tolerated_dose: Optional[str] = Field(default=None, description="""The highest dose of a drug or treatment that does not cause unacceptable side effects. The maximum tolerated dose is determined in clinical trials by testing increasing doses on different groups of people until the highest dose with acceptable side effects is found. Also called MTD.""")
@@ -3561,6 +3594,7 @@ class NucleicAcidEntity(MolecularEntity, GenomicEntity, ThingWithTaxon, Physical
     in_taxon: Optional[list[str]] = Field(default=None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     in_taxon_label: Optional[str] = Field(default=None, description="""The human readable scientific name for the taxon of the entity.""")
     id: str = Field(default=..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
+    subsets: Optional[list[str]] = Field(default=None, description="""The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.""")
     is_metabolite: Optional[bool] = Field(default=None, description="""indicates whether a molecular entity is a metabolite""")
     trade_name: Optional[str] = Field(default=None, description="""A proprietary brand or trade name under which a chemical entity (typically a drug) is manufactured and marketed by a vendor.""")
     available_from: Optional[list[DrugAvailabilityEnum]] = Field(default=None, description="""The regulatory or commercial availability channel through which a drug or chemical entity can be obtained, drawn from DrugAvailabilityEnum.""")
@@ -3598,6 +3632,7 @@ class MolecularMixture(ChemicalMixture):
     highest_FDA_approval_status: Optional[ApprovalStatusEnum] = Field(default=None, description="""Should be the highest level of FDA approval this chemical entity or device has, regardless of which disease, condition or phenotype it is currently being reviewed to treat.  For specific levels of FDA approval for a specific condition, disease, phenotype, etc., see the association slot, 'clinical approval status.'""")
     drug_regulatory_status_world_wide: Optional[ApprovalStatusEnum] = Field(default=None, description="""An agglomeration of drug regulatory status worldwide. Not specific to FDA.""")
     id: str = Field(default=..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
+    subsets: Optional[list[str]] = Field(default=None, description="""The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.""")
     trade_name: Optional[str] = Field(default=None, description="""A proprietary brand or trade name under which a chemical entity (typically a drug) is manufactured and marketed by a vendor.""")
     available_from: Optional[list[DrugAvailabilityEnum]] = Field(default=None, description="""The regulatory or commercial availability channel through which a drug or chemical entity can be obtained, drawn from DrugAvailabilityEnum.""")
     max_tolerated_dose: Optional[str] = Field(default=None, description="""The highest dose of a drug or treatment that does not cause unacceptable side effects. The maximum tolerated dose is determined in clinical trials by testing increasing doses on different groups of people until the highest dose with acceptable side effects is found. Also called MTD.""")
@@ -3634,6 +3669,7 @@ class ComplexMolecularMixture(ChemicalMixture):
     highest_FDA_approval_status: Optional[ApprovalStatusEnum] = Field(default=None, description="""Should be the highest level of FDA approval this chemical entity or device has, regardless of which disease, condition or phenotype it is currently being reviewed to treat.  For specific levels of FDA approval for a specific condition, disease, phenotype, etc., see the association slot, 'clinical approval status.'""")
     drug_regulatory_status_world_wide: Optional[ApprovalStatusEnum] = Field(default=None, description="""An agglomeration of drug regulatory status worldwide. Not specific to FDA.""")
     id: str = Field(default=..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
+    subsets: Optional[list[str]] = Field(default=None, description="""The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.""")
     trade_name: Optional[str] = Field(default=None, description="""A proprietary brand or trade name under which a chemical entity (typically a drug) is manufactured and marketed by a vendor.""")
     available_from: Optional[list[DrugAvailabilityEnum]] = Field(default=None, description="""The regulatory or commercial availability channel through which a drug or chemical entity can be obtained, drawn from DrugAvailabilityEnum.""")
     max_tolerated_dose: Optional[str] = Field(default=None, description="""The highest dose of a drug or treatment that does not cause unacceptable side effects. The maximum tolerated dose is determined in clinical trials by testing increasing doses on different groups of people until the highest dose with acceptable side effects is found. Also called MTD.""")
@@ -3670,6 +3706,7 @@ class ProcessedMaterial(ChemicalMixture):
     highest_FDA_approval_status: Optional[ApprovalStatusEnum] = Field(default=None, description="""Should be the highest level of FDA approval this chemical entity or device has, regardless of which disease, condition or phenotype it is currently being reviewed to treat.  For specific levels of FDA approval for a specific condition, disease, phenotype, etc., see the association slot, 'clinical approval status.'""")
     drug_regulatory_status_world_wide: Optional[ApprovalStatusEnum] = Field(default=None, description="""An agglomeration of drug regulatory status worldwide. Not specific to FDA.""")
     id: str = Field(default=..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
+    subsets: Optional[list[str]] = Field(default=None, description="""The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.""")
     trade_name: Optional[str] = Field(default=None, description="""A proprietary brand or trade name under which a chemical entity (typically a drug) is manufactured and marketed by a vendor.""")
     available_from: Optional[list[DrugAvailabilityEnum]] = Field(default=None, description="""The regulatory or commercial availability channel through which a drug or chemical entity can be obtained, drawn from DrugAvailabilityEnum.""")
     max_tolerated_dose: Optional[str] = Field(default=None, description="""The highest dose of a drug or treatment that does not cause unacceptable side effects. The maximum tolerated dose is determined in clinical trials by testing increasing doses on different groups of people until the highest dose with acceptable side effects is found. Also called MTD.""")
@@ -3703,6 +3740,7 @@ class Drug(MolecularMixture, ChemicalOrDrugOrTreatment, OntologyClass):
     A substance intended for use in the diagnosis, cure, mitigation, treatment, or prevention of disease
     """
     id: str = Field(default=..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
+    subsets: Optional[list[str]] = Field(default=None, description="""The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.""")
     is_supplement: Optional[str] = Field(default=None, description="""A boolean or categorical flag indicating that a chemical mixture is marketed, formulated, or used as a dietary or nutritional supplement rather than as a conventional drug or food.""")
     highest_FDA_approval_status: Optional[ApprovalStatusEnum] = Field(default=None, description="""Should be the highest level of FDA approval this chemical entity or device has, regardless of which disease, condition or phenotype it is currently being reviewed to treat.  For specific levels of FDA approval for a specific condition, disease, phenotype, etc., see the association slot, 'clinical approval status.'""")
     drug_regulatory_status_world_wide: Optional[ApprovalStatusEnum] = Field(default=None, description="""An agglomeration of drug regulatory status worldwide. Not specific to FDA.""")
@@ -3808,6 +3846,7 @@ class Food(ChemicalMixture):
     highest_FDA_approval_status: Optional[ApprovalStatusEnum] = Field(default=None, description="""Should be the highest level of FDA approval this chemical entity or device has, regardless of which disease, condition or phenotype it is currently being reviewed to treat.  For specific levels of FDA approval for a specific condition, disease, phenotype, etc., see the association slot, 'clinical approval status.'""")
     drug_regulatory_status_world_wide: Optional[ApprovalStatusEnum] = Field(default=None, description="""An agglomeration of drug regulatory status worldwide. Not specific to FDA.""")
     id: str = Field(default=..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
+    subsets: Optional[list[str]] = Field(default=None, description="""The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.""")
     trade_name: Optional[str] = Field(default=None, description="""A proprietary brand or trade name under which a chemical entity (typically a drug) is manufactured and marketed by a vendor.""")
     available_from: Optional[list[DrugAvailabilityEnum]] = Field(default=None, description="""The regulatory or commercial availability channel through which a drug or chemical entity can be obtained, drawn from DrugAvailabilityEnum.""")
     max_tolerated_dose: Optional[str] = Field(default=None, description="""The highest dose of a drug or treatment that does not cause unacceptable side effects. The maximum tolerated dose is determined in clinical trials by testing increasing doses on different groups of people until the highest dose with acceptable side effects is found. Also called MTD.""")
@@ -3865,6 +3904,7 @@ class Gene(GeneOrGeneProductOrGeneFamily, GeneOrGeneProduct, ChemicalEntityOrGen
     xref: Optional[list[str]] = Field(default=None, description="""A database cross reference or alternative identifier for a NamedThing or edge between two NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     has_biological_sequence: Optional[str] = Field(default=None, description="""connects a genomic feature to its sequence""")
     id: str = Field(default=..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
+    subsets: Optional[list[str]] = Field(default=None, description="""The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.""")
     in_taxon: Optional[list[str]] = Field(default=None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     in_taxon_label: Optional[str] = Field(default=None, description="""The human readable scientific name for the taxon of the entity.""")
     provided_by: Optional[list[str]] = Field(default=None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
@@ -3953,6 +3993,7 @@ class Genome(GenomicEntity, BiologicalEntity, PhysicalEssence, OntologyClass):
     """
     has_biological_sequence: Optional[str] = Field(default=None, description="""connects a genomic feature to its sequence""")
     id: str = Field(default=..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
+    subsets: Optional[list[str]] = Field(default=None, description="""The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.""")
     in_taxon: Optional[list[str]] = Field(default=None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     in_taxon_label: Optional[str] = Field(default=None, description="""The human readable scientific name for the taxon of the entity.""")
     provided_by: Optional[list[str]] = Field(default=None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
@@ -4360,6 +4401,7 @@ class Zygosity(Attribute):
     has_qualitative_value: Optional[str] = Field(default=None, description="""connects an attribute to a value""")
     iri: Optional[str] = Field(default=None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     id: str = Field(default=..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
+    subsets: Optional[list[str]] = Field(default=None, description="""The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.""")
     provided_by: Optional[list[str]] = Field(default=None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[list[str]] = Field(default=None, description="""A database cross reference or alternative identifier for a NamedThing or edge between two NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     full_name: Optional[str] = Field(default=None, description="""a long-form human readable name for a thing""")
@@ -4381,6 +4423,7 @@ class Genotype(GenomicEntity, BiologicalEntity, PhysicalEssence, OntologyClass):
     has_zygosity: Optional[str] = Field(default=None, description="""The zygosity characterising a genotype or nucleic acid entity at a particular locus.""")
     has_biological_sequence: Optional[str] = Field(default=None, description="""connects a genomic feature to its sequence""")
     id: str = Field(default=..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
+    subsets: Optional[list[str]] = Field(default=None, description="""The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.""")
     in_taxon: Optional[list[str]] = Field(default=None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     in_taxon_label: Optional[str] = Field(default=None, description="""The human readable scientific name for the taxon of the entity.""")
     provided_by: Optional[list[str]] = Field(default=None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
@@ -4405,6 +4448,7 @@ class Haplotype(GenomicEntity, BiologicalEntity, PhysicalEssence, OntologyClass)
     """
     has_biological_sequence: Optional[str] = Field(default=None, description="""connects a genomic feature to its sequence""")
     id: str = Field(default=..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
+    subsets: Optional[list[str]] = Field(default=None, description="""The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.""")
     in_taxon: Optional[list[str]] = Field(default=None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     in_taxon_label: Optional[str] = Field(default=None, description="""The human readable scientific name for the taxon of the entity.""")
     provided_by: Optional[list[str]] = Field(default=None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
@@ -4431,6 +4475,7 @@ class SequenceVariant(GenomicEntity, BiologicalEntity, PhysicalEssence, Ontology
     hgvs_nomenclature: Optional[list[str]] = Field(default=None, description="""HGVS syntax refers to the specific rules and conventions used by the Human Variant Nomenclature Committee to describe the location and change in DNA, RNA, and protein sequence variants.  This slot is used to capture all the different forms of HGVS nomenclature that may be used to describe a sequence variant, including genomic, transcript, and protein HGVS expressions/nomenclatures and is thus multivalued.""")
     has_biological_sequence: Optional[str] = Field(default=None, description="""The state of the sequence w.r.t a reference sequence""")
     id: str = Field(default=..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
+    subsets: Optional[list[str]] = Field(default=None, description="""The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.""")
     in_taxon: Optional[list[str]] = Field(default=None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     in_taxon_label: Optional[str] = Field(default=None, description="""The human readable scientific name for the taxon of the entity.""")
     provided_by: Optional[list[str]] = Field(default=None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
@@ -4457,6 +4502,7 @@ class Snv(SequenceVariant):
     hgvs_nomenclature: Optional[list[str]] = Field(default=None, description="""HGVS syntax refers to the specific rules and conventions used by the Human Variant Nomenclature Committee to describe the location and change in DNA, RNA, and protein sequence variants.  This slot is used to capture all the different forms of HGVS nomenclature that may be used to describe a sequence variant, including genomic, transcript, and protein HGVS expressions/nomenclatures and is thus multivalued.""")
     has_biological_sequence: Optional[str] = Field(default=None, description="""The state of the sequence w.r.t a reference sequence""")
     id: str = Field(default=..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
+    subsets: Optional[list[str]] = Field(default=None, description="""The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.""")
     in_taxon: Optional[list[str]] = Field(default=None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     in_taxon_label: Optional[str] = Field(default=None, description="""The human readable scientific name for the taxon of the entity.""")
     provided_by: Optional[list[str]] = Field(default=None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
@@ -4481,6 +4527,7 @@ class ReagentTargetedGene(GenomicEntity, BiologicalEntity, PhysicalEssence, Onto
     """
     has_biological_sequence: Optional[str] = Field(default=None, description="""connects a genomic feature to its sequence""")
     id: str = Field(default=..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
+    subsets: Optional[list[str]] = Field(default=None, description="""The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.""")
     in_taxon: Optional[list[str]] = Field(default=None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     in_taxon_label: Optional[str] = Field(default=None, description="""The human readable scientific name for the taxon of the entity.""")
     provided_by: Optional[list[str]] = Field(default=None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
@@ -4509,6 +4556,7 @@ class ClinicalAttribute(Attribute):
     has_qualitative_value: Optional[str] = Field(default=None, description="""connects an attribute to a value""")
     iri: Optional[str] = Field(default=None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     id: str = Field(default=..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
+    subsets: Optional[list[str]] = Field(default=None, description="""The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.""")
     provided_by: Optional[list[str]] = Field(default=None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[list[str]] = Field(default=None, description="""A database cross reference or alternative identifier for a NamedThing or edge between two NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     full_name: Optional[str] = Field(default=None, description="""a long-form human readable name for a thing""")
@@ -4533,6 +4581,7 @@ class ClinicalMeasurement(ClinicalAttribute):
     has_qualitative_value: Optional[str] = Field(default=None, description="""connects an attribute to a value""")
     iri: Optional[str] = Field(default=None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     id: str = Field(default=..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
+    subsets: Optional[list[str]] = Field(default=None, description="""The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.""")
     provided_by: Optional[list[str]] = Field(default=None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[list[str]] = Field(default=None, description="""A database cross reference or alternative identifier for a NamedThing or edge between two NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     full_name: Optional[str] = Field(default=None, description="""a long-form human readable name for a thing""")
@@ -4557,6 +4606,7 @@ class ClinicalModifier(ClinicalAttribute):
     has_qualitative_value: Optional[str] = Field(default=None, description="""connects an attribute to a value""")
     iri: Optional[str] = Field(default=None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     id: str = Field(default=..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
+    subsets: Optional[list[str]] = Field(default=None, description="""The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.""")
     provided_by: Optional[list[str]] = Field(default=None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[list[str]] = Field(default=None, description="""A database cross reference or alternative identifier for a NamedThing or edge between two NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     full_name: Optional[str] = Field(default=None, description="""a long-form human readable name for a thing""")
@@ -4581,6 +4631,7 @@ class ClinicalCourse(ClinicalAttribute):
     has_qualitative_value: Optional[str] = Field(default=None, description="""connects an attribute to a value""")
     iri: Optional[str] = Field(default=None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     id: str = Field(default=..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
+    subsets: Optional[list[str]] = Field(default=None, description="""The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.""")
     provided_by: Optional[list[str]] = Field(default=None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[list[str]] = Field(default=None, description="""A database cross reference or alternative identifier for a NamedThing or edge between two NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     full_name: Optional[str] = Field(default=None, description="""a long-form human readable name for a thing""")
@@ -4605,6 +4656,7 @@ class Onset(ClinicalCourse):
     has_qualitative_value: Optional[str] = Field(default=None, description="""connects an attribute to a value""")
     iri: Optional[str] = Field(default=None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     id: str = Field(default=..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
+    subsets: Optional[list[str]] = Field(default=None, description="""The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.""")
     provided_by: Optional[list[str]] = Field(default=None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[list[str]] = Field(default=None, description="""A database cross reference or alternative identifier for a NamedThing or edge between two NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     full_name: Optional[str] = Field(default=None, description="""a long-form human readable name for a thing""")
@@ -4703,6 +4755,7 @@ class ClinicalFinding(PhenotypicFeature):
     """
     inheritance: Optional[str] = Field(default=None, description="""Connects genetic inheritance to a disease or phenotypic feature, as a node property.""")
     id: str = Field(default=..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
+    subsets: Optional[list[str]] = Field(default=None, description="""The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.""")
     in_taxon: Optional[list[str]] = Field(default=None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     in_taxon_label: Optional[str] = Field(default=None, description="""The human readable scientific name for the taxon of the entity.""")
     provided_by: Optional[list[str]] = Field(default=None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
@@ -4752,6 +4805,7 @@ class SocioeconomicAttribute(Attribute):
     has_qualitative_value: Optional[str] = Field(default=None, description="""connects an attribute to a value""")
     iri: Optional[str] = Field(default=None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     id: str = Field(default=..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
+    subsets: Optional[list[str]] = Field(default=None, description="""The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.""")
     provided_by: Optional[list[str]] = Field(default=None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[list[str]] = Field(default=None, description="""A database cross reference or alternative identifier for a NamedThing or edge between two NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     full_name: Optional[str] = Field(default=None, description="""a long-form human readable name for a thing""")
@@ -4827,6 +4881,7 @@ class ExposureEvent(NamedThing, OntologyClass):
     exposure_magnitude: Optional[str] = Field(default=None, description="""Magnitude of an exposure event, e.g, parts per million of a toxic chemical.""")
     exposure_additional_condition: Optional[str] = Field(default=None, description="""Additional conditions impacting an exposure event.""")
     id: str = Field(default=..., description="""Could generally be a CURIE from a suitable exposure ontology like ECTO.""")
+    subsets: Optional[list[str]] = Field(default=None, description="""The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.""")
     provided_by: Optional[list[str]] = Field(default=None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[list[str]] = Field(default=None, description="""A database cross reference or alternative identifier for a NamedThing or edge between two NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     full_name: Optional[str] = Field(default=None, description="""a long-form human readable name for a thing""")
@@ -4852,6 +4907,7 @@ class GenomicBackgroundExposure(ExposureEvent, GeneGroupingMixin, GenomicEntity,
     in_taxon: Optional[list[str]] = Field(default=None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     in_taxon_label: Optional[str] = Field(default=None, description="""The human readable scientific name for the taxon of the entity.""")
     id: str = Field(default=..., description="""Could generally be a CURIE from a suitable exposure ontology like ECTO.""")
+    subsets: Optional[list[str]] = Field(default=None, description="""The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.""")
     timepoint: Optional[str] = Field(default=None, description="""a point in time""")
     exposure_type: Optional[str] = Field(default=None, description="""Type of exposure""")
     exposure_vehicle: Optional[str] = Field(default=None, description="""Type of an exposure event.""")
@@ -4889,6 +4945,7 @@ class PathologicalProcess(PathologicalEntityMixin, BiologicalProcess):
     A biologic function or a process having an abnormal or deleterious effect at the subcellular, cellular, multicellular, or organismal level.
     """
     id: str = Field(default=..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
+    subsets: Optional[list[str]] = Field(default=None, description="""The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.""")
     has_input: Optional[list[str]] = Field(default=None, description="""holds between a process and a continuant, where the continuant is an input into the process""")
     has_output: Optional[list[str]] = Field(default=None, description="""holds between a process and a continuant, where the continuant is an output of the process""")
     enabled_by: Optional[list[str]] = Field(default=None, description="""holds between a process and a physical entity, where the physical entity executes the process""")
@@ -4924,6 +4981,7 @@ class PathologicalProcessExposure(ExposureEvent):
     exposure_magnitude: Optional[str] = Field(default=None, description="""Magnitude of an exposure event, e.g, parts per million of a toxic chemical.""")
     exposure_additional_condition: Optional[str] = Field(default=None, description="""Additional conditions impacting an exposure event.""")
     id: str = Field(default=..., description="""Could generally be a CURIE from a suitable exposure ontology like ECTO.""")
+    subsets: Optional[list[str]] = Field(default=None, description="""The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.""")
     provided_by: Optional[list[str]] = Field(default=None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[list[str]] = Field(default=None, description="""A database cross reference or alternative identifier for a NamedThing or edge between two NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     full_name: Optional[str] = Field(default=None, description="""a long-form human readable name for a thing""")
@@ -4945,6 +5003,7 @@ class PathologicalAnatomicalStructure(PathologicalEntityMixin, AnatomicalEntity)
     An anatomical structure with the potential of have an abnormal or deleterious effect at the subcellular, cellular, multicellular, or organismal level.
     """
     id: str = Field(default=..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
+    subsets: Optional[list[str]] = Field(default=None, description="""The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.""")
     in_taxon: Optional[list[str]] = Field(default=None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     in_taxon_label: Optional[str] = Field(default=None, description="""The human readable scientific name for the taxon of the entity.""")
     provided_by: Optional[list[str]] = Field(default=None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
@@ -4977,6 +5036,7 @@ class PathologicalAnatomicalExposure(ExposureEvent):
     exposure_magnitude: Optional[str] = Field(default=None, description="""Magnitude of an exposure event, e.g, parts per million of a toxic chemical.""")
     exposure_additional_condition: Optional[str] = Field(default=None, description="""Additional conditions impacting an exposure event.""")
     id: str = Field(default=..., description="""Could generally be a CURIE from a suitable exposure ontology like ECTO.""")
+    subsets: Optional[list[str]] = Field(default=None, description="""The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.""")
     provided_by: Optional[list[str]] = Field(default=None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[list[str]] = Field(default=None, description="""A database cross reference or alternative identifier for a NamedThing or edge between two NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     full_name: Optional[str] = Field(default=None, description="""a long-form human readable name for a thing""")
@@ -5007,6 +5067,7 @@ class DiseaseOrPhenotypicFeatureExposure(PathologicalEntityMixin, ExposureEvent)
     exposure_magnitude: Optional[str] = Field(default=None, description="""Magnitude of an exposure event, e.g, parts per million of a toxic chemical.""")
     exposure_additional_condition: Optional[str] = Field(default=None, description="""Additional conditions impacting an exposure event.""")
     id: str = Field(default=..., description="""Could generally be a CURIE from a suitable exposure ontology like ECTO.""")
+    subsets: Optional[list[str]] = Field(default=None, description="""The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.""")
     provided_by: Optional[list[str]] = Field(default=None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[list[str]] = Field(default=None, description="""A database cross reference or alternative identifier for a NamedThing or edge between two NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     full_name: Optional[str] = Field(default=None, description="""a long-form human readable name for a thing""")
@@ -5038,6 +5099,7 @@ class ChemicalExposure(ExposureEvent):
     exposure_magnitude: Optional[str] = Field(default=None, description="""Magnitude of an exposure event, e.g, parts per million of a toxic chemical.""")
     exposure_additional_condition: Optional[str] = Field(default=None, description="""Additional conditions impacting an exposure event.""")
     id: str = Field(default=..., description="""Could generally be a CURIE from a suitable exposure ontology like ECTO.""")
+    subsets: Optional[list[str]] = Field(default=None, description="""The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.""")
     provided_by: Optional[list[str]] = Field(default=None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[list[str]] = Field(default=None, description="""A database cross reference or alternative identifier for a NamedThing or edge between two NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     full_name: Optional[str] = Field(default=None, description="""a long-form human readable name for a thing""")
@@ -5068,6 +5130,7 @@ class ComplexChemicalExposure(ExposureEvent):
     exposure_magnitude: Optional[str] = Field(default=None, description="""Magnitude of an exposure event, e.g, parts per million of a toxic chemical.""")
     exposure_additional_condition: Optional[str] = Field(default=None, description="""Additional conditions impacting an exposure event.""")
     id: str = Field(default=..., description="""Could generally be a CURIE from a suitable exposure ontology like ECTO.""")
+    subsets: Optional[list[str]] = Field(default=None, description="""The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.""")
     provided_by: Optional[list[str]] = Field(default=None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[list[str]] = Field(default=None, description="""A database cross reference or alternative identifier for a NamedThing or edge between two NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     full_name: Optional[str] = Field(default=None, description="""a long-form human readable name for a thing""")
@@ -5099,6 +5162,7 @@ class DrugExposure(ChemicalExposure):
     exposure_magnitude: Optional[str] = Field(default=None, description="""Magnitude of an exposure event, e.g, parts per million of a toxic chemical.""")
     exposure_additional_condition: Optional[str] = Field(default=None, description="""Additional conditions impacting an exposure event.""")
     id: str = Field(default=..., description="""Could generally be a CURIE from a suitable exposure ontology like ECTO.""")
+    subsets: Optional[list[str]] = Field(default=None, description="""The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.""")
     provided_by: Optional[list[str]] = Field(default=None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[list[str]] = Field(default=None, description="""A database cross reference or alternative identifier for a NamedThing or edge between two NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     full_name: Optional[str] = Field(default=None, description="""a long-form human readable name for a thing""")
@@ -5131,6 +5195,7 @@ class DrugToGeneInteractionExposure(DrugExposure, GeneGroupingMixin):
     exposure_magnitude: Optional[str] = Field(default=None, description="""Magnitude of an exposure event, e.g, parts per million of a toxic chemical.""")
     exposure_additional_condition: Optional[str] = Field(default=None, description="""Additional conditions impacting an exposure event.""")
     id: str = Field(default=..., description="""Could generally be a CURIE from a suitable exposure ontology like ECTO.""")
+    subsets: Optional[list[str]] = Field(default=None, description="""The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.""")
     provided_by: Optional[list[str]] = Field(default=None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[list[str]] = Field(default=None, description="""A database cross reference or alternative identifier for a NamedThing or edge between two NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     full_name: Optional[str] = Field(default=None, description="""a long-form human readable name for a thing""")
@@ -5164,6 +5229,7 @@ class Treatment(ExposureEvent, ChemicalOrDrugOrTreatment):
     exposure_magnitude: Optional[str] = Field(default=None, description="""Magnitude of an exposure event, e.g, parts per million of a toxic chemical.""")
     exposure_additional_condition: Optional[str] = Field(default=None, description="""Additional conditions impacting an exposure event.""")
     id: str = Field(default=..., description="""Could generally be a CURIE from a suitable exposure ontology like ECTO.""")
+    subsets: Optional[list[str]] = Field(default=None, description="""The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.""")
     provided_by: Optional[list[str]] = Field(default=None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[list[str]] = Field(default=None, description="""A database cross reference or alternative identifier for a NamedThing or edge between two NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     full_name: Optional[str] = Field(default=None, description="""a long-form human readable name for a thing""")
@@ -5194,6 +5260,7 @@ class BioticExposure(ExposureEvent):
     exposure_magnitude: Optional[str] = Field(default=None, description="""Magnitude of an exposure event, e.g, parts per million of a toxic chemical.""")
     exposure_additional_condition: Optional[str] = Field(default=None, description="""Additional conditions impacting an exposure event.""")
     id: str = Field(default=..., description="""Could generally be a CURIE from a suitable exposure ontology like ECTO.""")
+    subsets: Optional[list[str]] = Field(default=None, description="""The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.""")
     provided_by: Optional[list[str]] = Field(default=None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[list[str]] = Field(default=None, description="""A database cross reference or alternative identifier for a NamedThing or edge between two NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     full_name: Optional[str] = Field(default=None, description="""a long-form human readable name for a thing""")
@@ -5224,6 +5291,7 @@ class EnvironmentalExposure(ExposureEvent):
     exposure_magnitude: Optional[str] = Field(default=None, description="""Magnitude of an exposure event, e.g, parts per million of a toxic chemical.""")
     exposure_additional_condition: Optional[str] = Field(default=None, description="""Additional conditions impacting an exposure event.""")
     id: str = Field(default=..., description="""Could generally be a CURIE from a suitable exposure ontology like ECTO.""")
+    subsets: Optional[list[str]] = Field(default=None, description="""The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.""")
     provided_by: Optional[list[str]] = Field(default=None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[list[str]] = Field(default=None, description="""A database cross reference or alternative identifier for a NamedThing or edge between two NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     full_name: Optional[str] = Field(default=None, description="""a long-form human readable name for a thing""")
@@ -5254,6 +5322,7 @@ class GeographicExposure(EnvironmentalExposure):
     exposure_magnitude: Optional[str] = Field(default=None, description="""Magnitude of an exposure event, e.g, parts per million of a toxic chemical.""")
     exposure_additional_condition: Optional[str] = Field(default=None, description="""Additional conditions impacting an exposure event.""")
     id: str = Field(default=..., description="""Could generally be a CURIE from a suitable exposure ontology like ECTO.""")
+    subsets: Optional[list[str]] = Field(default=None, description="""The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.""")
     provided_by: Optional[list[str]] = Field(default=None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[list[str]] = Field(default=None, description="""A database cross reference or alternative identifier for a NamedThing or edge between two NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     full_name: Optional[str] = Field(default=None, description="""a long-form human readable name for a thing""")
@@ -5284,6 +5353,7 @@ class BehavioralExposure(ExposureEvent):
     exposure_magnitude: Optional[str] = Field(default=None, description="""Magnitude of an exposure event, e.g, parts per million of a toxic chemical.""")
     exposure_additional_condition: Optional[str] = Field(default=None, description="""Additional conditions impacting an exposure event.""")
     id: str = Field(default=..., description="""Could generally be a CURIE from a suitable exposure ontology like ECTO.""")
+    subsets: Optional[list[str]] = Field(default=None, description="""The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.""")
     provided_by: Optional[list[str]] = Field(default=None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[list[str]] = Field(default=None, description="""A database cross reference or alternative identifier for a NamedThing or edge between two NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     full_name: Optional[str] = Field(default=None, description="""a long-form human readable name for a thing""")
@@ -5314,6 +5384,7 @@ class SocioeconomicExposure(ExposureEvent):
     exposure_magnitude: Optional[str] = Field(default=None, description="""Magnitude of an exposure event, e.g, parts per million of a toxic chemical.""")
     exposure_additional_condition: Optional[str] = Field(default=None, description="""Additional conditions impacting an exposure event.""")
     id: str = Field(default=..., description="""Could generally be a CURIE from a suitable exposure ontology like ECTO.""")
+    subsets: Optional[list[str]] = Field(default=None, description="""The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of `oboInOwl:inSubset` annotations from source ontologies through to downstream knowledge graphs.""")
     provided_by: Optional[list[str]] = Field(default=None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[list[str]] = Field(default=None, description="""A database cross reference or alternative identifier for a NamedThing or edge between two NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     full_name: Optional[str] = Field(default=None, description="""a long-form human readable name for a thing""")

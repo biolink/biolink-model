@@ -153,7 +153,8 @@ linkml:Sparqlpath xsd:string
              &<PhysicalEssence_tes> ;
              rdf:type [ <PhysicalEssence> ] ? ;
              &<OntologyClass_tes> ;
-             rdf:type [ <OntologyClass> ] ?
+             rdf:type [ <OntologyClass> ] ? ;
+             <subsets> @linkml:String *
           ) ;
           rdf:type [ <AnatomicalEntity> ]
        )
@@ -339,7 +340,8 @@ linkml:Sparqlpath xsd:string
              rdfs:label @<LabelType> ? ;
              <has_attribute_type> @<OntologyClass> ;
              <has_quantitative_value> @<QuantityValue> * ;
-             <has_qualitative_value> @<NamedThing> ?
+             <has_qualitative_value> @<NamedThing> ? ;
+             <subsets> @<String> *
           ) ;
           rdf:type [ <Attribute> ]
        )
@@ -578,7 +580,8 @@ linkml:Sparqlpath xsd:string
              rdf:type [ <OntologyClass> ] ? ;
              <has_input> @<NamedThing> * ;
              <has_output> @<NamedThing> * ;
-             <enabled_by> @<PhysicalEntity> *
+             <enabled_by> @<PhysicalEntity> * ;
+             <subsets> @<String> *
           ) ;
           rdf:type [ <BiologicalProcessOrActivity> ]
        )
@@ -1912,7 +1915,8 @@ linkml:Sparqlpath xsd:string
                 <https://w3id.org/biolink/vocab/ApprovalStatusEnum#fda_accelerated_approval>
                 <https://w3id.org/biolink/vocab/ApprovalStatusEnum#fda_priority_review>
                 <https://w3id.org/biolink/vocab/ApprovalStatusEnum#regular_fda_approval>
-                <https://w3id.org/biolink/vocab/ApprovalStatusEnum#post_approval_withdrawal> ] ?
+                <https://w3id.org/biolink/vocab/ApprovalStatusEnum#post_approval_withdrawal> ] ? ;
+             <subsets> @<String> *
           ) ;
           rdf:type [ <ChemicalMixture> ]
        )
@@ -2800,7 +2804,8 @@ linkml:Sparqlpath xsd:string
              rdf:type [ <BiologicalEntity> ] ? ;
              &<OntologyClass_tes> ;
              rdf:type [ <OntologyClass> ] ? ;
-             <inheritance> @<GeneticInheritance> ?
+             <inheritance> @<GeneticInheritance> ? ;
+             <subsets> @<String> *
           ) ;
           rdf:type [ <DiseaseOrPhenotypicFeature> ]
        )
@@ -3775,7 +3780,8 @@ linkml:Sparqlpath xsd:string
     (  $<EvidenceType_tes> (  &<NamedThing_tes> ;
           rdf:type [ <NamedThing> ] ? ;
           &<OntologyClass_tes> ;
-          rdf:type [ <OntologyClass> ] ?
+          rdf:type [ <OntologyClass> ] ? ;
+          <subsets> @<String> *
        ) ;
        rdf:type [ <EvidenceType> ]
     )
@@ -3813,7 +3819,8 @@ linkml:Sparqlpath xsd:string
              <exposure_end_age> @<Integer> ? ;
              <exposure_duration> @<Time> ? ;
              <exposure_magnitude> @<String> ? ;
-             <exposure_additional_condition> @<String> ?
+             <exposure_additional_condition> @<String> ? ;
+             <subsets> @<String> *
           ) ;
           rdf:type [ <ExposureEvent> ]
        )
@@ -4192,7 +4199,8 @@ linkml:Sparqlpath xsd:string
           &<OntologyClass_tes> ;
           rdf:type [ <OntologyClass> ] ? ;
           <symbol> @<String> ? ;
-          <has_biological_sequence> @<BiologicalSequence> ?
+          <has_biological_sequence> @<BiologicalSequence> ? ;
+          <subsets> @<String> *
        ) ;
        rdf:type [ <Gene> ]
     )
@@ -5357,7 +5365,8 @@ linkml:Sparqlpath xsd:string
           rdf:type [ <PhysicalEssence> ] ? ;
           &<OntologyClass_tes> ;
           rdf:type [ <OntologyClass> ] ? ;
-          <has_biological_sequence> @<BiologicalSequence> ?
+          <has_biological_sequence> @<BiologicalSequence> ? ;
+          <subsets> @<String> *
        ) ;
        rdf:type [ <Genome> ]
     )
@@ -5420,7 +5429,8 @@ linkml:Sparqlpath xsd:string
           &<OntologyClass_tes> ;
           rdf:type [ <OntologyClass> ] ? ;
           <has_zygosity> @<Zygosity> ? ;
-          <has_biological_sequence> @<BiologicalSequence> ?
+          <has_biological_sequence> @<BiologicalSequence> ? ;
+          <subsets> @<String> *
        ) ;
        rdf:type [ <Genotype> ]
     )
@@ -5825,7 +5835,8 @@ linkml:Sparqlpath xsd:string
           rdf:type [ <PhysicalEssence> ] ? ;
           &<OntologyClass_tes> ;
           rdf:type [ <OntologyClass> ] ? ;
-          <has_biological_sequence> @<BiologicalSequence> ?
+          <has_biological_sequence> @<BiologicalSequence> ? ;
+          <subsets> @<String> *
        ) ;
        rdf:type [ <Haplotype> ]
     )
@@ -5949,7 +5960,8 @@ linkml:Sparqlpath xsd:string
     (  $<LifeStage_tes> (  &<OrganismalEntity_tes> ;
           rdf:type [ <OrganismalEntity> ] ? ;
           &<OntologyClass_tes> ;
-          rdf:type [ <OntologyClass> ] ?
+          rdf:type [ <OntologyClass> ] ? ;
+          <subsets> @<String> *
        ) ;
        rdf:type [ <LifeStage> ]
     )
@@ -6174,7 +6186,8 @@ linkml:Sparqlpath xsd:string
              rdf:type [ <ChemicalEntity> ] ? ;
              &<OntologyClass_tes> ;
              rdf:type [ <OntologyClass> ] ? ;
-             <is_metabolite> @<Boolean> ?
+             <is_metabolite> @<Boolean> ? ;
+             <subsets> @<String> *
           ) ;
           rdf:type [ <MolecularEntity> ]
        )
@@ -6443,7 +6456,7 @@ linkml:Sparqlpath xsd:string
 )
 
 <OntologyClass_struct> {
-    (  $<OntologyClass_tes> rdf:type . * ;
+    (  $<OntologyClass_tes> <subsets> @<String> * ;
        rdf:type [ <OntologyClass> ]
     )
 }
@@ -7659,7 +7672,8 @@ linkml:Sparqlpath xsd:string
           rdf:type [ <PhysicalEssence> ] ? ;
           &<OntologyClass_tes> ;
           rdf:type [ <OntologyClass> ] ? ;
-          <has_biological_sequence> @<BiologicalSequence> ?
+          <has_biological_sequence> @<BiologicalSequence> ? ;
+          <subsets> @<String> *
        ) ;
        rdf:type [ <ReagentTargetedGene> ]
     )
@@ -7677,7 +7691,8 @@ linkml:Sparqlpath xsd:string
              rdf:type [ <PhysicalEssence> ] ? ;
              &<OntologyClass_tes> ;
              rdf:type [ <OntologyClass> ] ? ;
-             <has_biological_sequence> @<BiologicalSequence> ?
+             <has_biological_sequence> @<BiologicalSequence> ? ;
+             <subsets> @<String> *
           ) ;
           rdf:type [ <RegulatoryRegion> ]
        )
@@ -7788,7 +7803,8 @@ linkml:Sparqlpath xsd:string
              rdf:type [ <OntologyClass> ] ? ;
              <has_gene> @<Gene> * ;
              <hgvs_nomenclature> @<String> * ;
-             <has_biological_sequence> @<BiologicalSequence> ?
+             <has_biological_sequence> @<BiologicalSequence> ? ;
+             <subsets> @<String> *
           ) ;
           rdf:type [ <SequenceVariant> ]
        )
