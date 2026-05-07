@@ -1,5 +1,16 @@
 CHANGES
 =======
+4.4.0
+-----
+## What's Changed
+* Add is_chemical_role_of as inverse of has_chemical_role by @cbizon in https://github.com/biolink/biolink-model/pull/1728
+* add descriptions and example data to associations and classes in prep for feeding schema context into text mining pipeline by @sierra-moxon in https://github.com/biolink/biolink-model/pull/1727
+* GO-CAM gene-to-gene-association edge qualifiers by @RichardBruskiewich in https://github.com/biolink/biolink-model/pull/1729
+* Aspect range included, removed resource id, unabstract GeneToGeneAssociation (add qualfiiers)  by @sierra-moxon in https://github.com/biolink/biolink-model/pull/1732
+* Add `subsets` node property for ontology subset membership by @kevinschaper in https://github.com/biolink/biolink-model/pull/1734
+
+**Full Changelog**: https://github.com/biolink/biolink-model/compare/v4.3.9...v4.4.0
+
 4.3.9
 ---
 ## What's Changed
