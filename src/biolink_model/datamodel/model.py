@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-05-21T23:06:46
+# Generation date: 2026-05-21T23:22:44
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/vocab/
@@ -1962,6 +1962,10 @@ class NamedThing(Entity):
     xref: Optional[Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]]] = empty_list()
     full_name: Optional[Union[str, LabelType]] = None
     synonym: Optional[Union[Union[str, LabelType], list[Union[str, LabelType]]]] = empty_list()
+    exact_synonym: Optional[Union[Union[str, LabelType], list[Union[str, LabelType]]]] = empty_list()
+    broad_synonym: Optional[Union[Union[str, LabelType], list[Union[str, LabelType]]]] = empty_list()
+    narrow_synonym: Optional[Union[Union[str, LabelType], list[Union[str, LabelType]]]] = empty_list()
+    related_synonym: Optional[Union[Union[str, LabelType], list[Union[str, LabelType]]]] = empty_list()
     equivalent_identifiers: Optional[Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]]] = empty_list()
     information_content: Optional[float] = None
     taxon: Optional[Union[str, URIorCURIE]] = None
@@ -1992,6 +1996,22 @@ class NamedThing(Entity):
         if not isinstance(self.synonym, list):
             self.synonym = [self.synonym] if self.synonym is not None else []
         self.synonym = [v if isinstance(v, LabelType) else LabelType(v) for v in self.synonym]
+
+        if not isinstance(self.exact_synonym, list):
+            self.exact_synonym = [self.exact_synonym] if self.exact_synonym is not None else []
+        self.exact_synonym = [v if isinstance(v, LabelType) else LabelType(v) for v in self.exact_synonym]
+
+        if not isinstance(self.broad_synonym, list):
+            self.broad_synonym = [self.broad_synonym] if self.broad_synonym is not None else []
+        self.broad_synonym = [v if isinstance(v, LabelType) else LabelType(v) for v in self.broad_synonym]
+
+        if not isinstance(self.narrow_synonym, list):
+            self.narrow_synonym = [self.narrow_synonym] if self.narrow_synonym is not None else []
+        self.narrow_synonym = [v if isinstance(v, LabelType) else LabelType(v) for v in self.narrow_synonym]
+
+        if not isinstance(self.related_synonym, list):
+            self.related_synonym = [self.related_synonym] if self.related_synonym is not None else []
+        self.related_synonym = [v if isinstance(v, LabelType) else LabelType(v) for v in self.related_synonym]
 
         if not isinstance(self.equivalent_identifiers, list):
             self.equivalent_identifiers = [self.equivalent_identifiers] if self.equivalent_identifiers is not None else []

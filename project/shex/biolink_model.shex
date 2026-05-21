@@ -6321,6 +6321,10 @@ linkml:Sparqlpath xsd:string
              <xref> @<Uriorcurie> * ;
              <full_name> @<LabelType> ? ;
              <synonym> @<LabelType> * ;
+             <exact_synonym> @<LabelType> * ;
+             <broad_synonym> @<LabelType> * ;
+             <narrow_synonym> @<LabelType> * ;
+             <related_synonym> @<LabelType> * ;
              <equivalent_identifiers> @<Uriorcurie> * ;
              <information_content> @<Float> ? ;
              <taxon> @<Uriorcurie> ? ;
