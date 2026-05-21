@@ -15830,6 +15830,13 @@
                         "null"
                     ]
                 },
+                "species_context_qualifier": {
+                    "description": "A statement qualifier representing a taxonomic category of species in which a relationship expressed in an association took place.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "subject": {
                     "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
                     "type": "string"
@@ -35406,6 +35413,10 @@
                         "array",
                         "null"
                     ]
+                },
+                "causal_mechanism_qualifier": {
+                    "$ref": "#/$defs/CausalMechanismQualifierEnum",
+                    "description": "A statement qualifier representing a type of molecular control mechanism through which an effect of a chemical on a gene or gene product is mediated"
                 },
                 "deprecated": {
                     "description": "A boolean flag indicating that an entity is no longer considered current or valid.",

@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-05-07T23:57:10
+# Generation date: 2026-05-21T22:57:05
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/vocab/
@@ -10168,6 +10168,7 @@ class ChemicalGeneInteractionAssociation(Association):
     object_part_qualifier: Optional[Union[str, "GeneOrGeneProductOrChemicalPartQualifierEnum"]] = None
     object_context_qualifier: Optional[Union[str, AnatomicalEntityId]] = None
     anatomical_context_qualifier: Optional[Union[Union[str, AnatomicalEntityId], list[Union[str, AnatomicalEntityId]]]] = empty_list()
+    species_context_qualifier: Optional[Union[str, OrganismTaxonId]] = None
     causal_mechanism_qualifier: Optional[Union[str, "CausalMechanismQualifierEnum"]] = None
     dgidb_interaction_score: Optional[float] = None
     dgidb_evidence_score: Optional[int] = None
@@ -10228,6 +10229,9 @@ class ChemicalGeneInteractionAssociation(Association):
         if not isinstance(self.anatomical_context_qualifier, list):
             self.anatomical_context_qualifier = [self.anatomical_context_qualifier] if self.anatomical_context_qualifier is not None else []
         self.anatomical_context_qualifier = [v if isinstance(v, AnatomicalEntityId) else AnatomicalEntityId(v) for v in self.anatomical_context_qualifier]
+
+        if self.species_context_qualifier is not None and not isinstance(self.species_context_qualifier, OrganismTaxonId):
+            self.species_context_qualifier = OrganismTaxonId(self.species_context_qualifier)
 
         if self.causal_mechanism_qualifier is not None and not isinstance(self.causal_mechanism_qualifier, CausalMechanismQualifierEnum):
             self.causal_mechanism_qualifier = CausalMechanismQualifierEnum(self.causal_mechanism_qualifier)
@@ -10313,6 +10317,7 @@ class GeneRegulatesGeneAssociation(Association):
     predicate: Union[str, URIorCURIE] = None
     object: Union[dict, ChemicalEntityOrGeneOrGeneProduct] = None
     species_context_qualifier: Optional[Union[str, OrganismTaxonId]] = None
+    causal_mechanism_qualifier: Optional[Union[str, "CausalMechanismQualifierEnum"]] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
@@ -10352,6 +10357,9 @@ class GeneRegulatesGeneAssociation(Association):
 
         if self.species_context_qualifier is not None and not isinstance(self.species_context_qualifier, OrganismTaxonId):
             self.species_context_qualifier = OrganismTaxonId(self.species_context_qualifier)
+
+        if self.causal_mechanism_qualifier is not None and not isinstance(self.causal_mechanism_qualifier, CausalMechanismQualifierEnum):
+            self.causal_mechanism_qualifier = CausalMechanismQualifierEnum(self.causal_mechanism_qualifier)
 
         super().__post_init__(**kwargs)
         if not isinstance(self.category, list):

@@ -2020,6 +2020,7 @@ message ChemicalGeneInteractionAssociation
   geneOrGeneProductOrChemicalPartQualifierEnum objectPartQualifier = 0
   anatomicalEntity objectContextQualifier = 0
  repeated  anatomicalEntity anatomicalContextQualifier = 0
+  organismTaxon speciesContextQualifier = 0
   causalMechanismQualifierEnum causalMechanismQualifier = 0
   float dgidbInteractionScore = 0
   integer dgidbEvidenceScore = 0
@@ -4591,6 +4592,7 @@ message GeneRegulatesGeneAssociation
   directionQualifierEnum objectDirectionQualifier = 0
   uriorcurie qualifiedPredicate = 0
   organismTaxon speciesContextQualifier = 0
+  causalMechanismQualifierEnum causalMechanismQualifier = 0
   chemicalEntityOrGeneOrGeneProduct subject = 0
   uriorcurie predicate = 0
   chemicalEntityOrGeneOrGeneProduct object = 0
