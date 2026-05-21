@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-05-21T23:22:44
+# Generation date: 2026-05-21T16:32:39
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/vocab/
@@ -10287,6 +10287,21 @@ class MacromolecularMachineHasSubstrateAssociation(Association):
     subject: Union[dict, MacromolecularMachineMixin] = None
     predicate: Union[str, URIorCURIE] = None
     object: Union[dict, ChemicalEntityOrProteinOrPolypeptide] = None
+    subject_form_or_variant_qualifier: Optional[str] = None
+    subject_part_qualifier: Optional[str] = None
+    subject_derivative_qualifier: Optional[str] = None
+    subject_aspect_qualifier: Optional[Union[str, "GeneOrGeneProductOrChemicalEntityAspectEnum"]] = None
+    subject_context_qualifier: Optional[str] = None
+    subject_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
+    object_form_or_variant_qualifier: Optional[str] = None
+    object_part_qualifier: Optional[str] = None
+    object_aspect_qualifier: Optional[Union[str, "GeneOrGeneProductOrChemicalEntityAspectEnum"]] = None
+    object_context_qualifier: Optional[str] = None
+    object_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
+    causal_mechanism_qualifier: Optional[Union[str, "CausalMechanismQualifierEnum"]] = None
+    anatomical_context_qualifier: Optional[Union[str, list[str]]] = empty_list()
+    qualified_predicate: Optional[Union[str, URIorCURIE]] = None
+    species_context_qualifier: Optional[Union[str, OrganismTaxonId]] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
@@ -10308,6 +10323,52 @@ class MacromolecularMachineHasSubstrateAssociation(Association):
             self.MissingRequiredField("object")
         if not isinstance(self.object, ChemicalEntityOrProteinOrPolypeptide):
             self.object = ChemicalEntityOrProteinOrPolypeptide()
+
+        if self.subject_form_or_variant_qualifier is not None and not isinstance(self.subject_form_or_variant_qualifier, str):
+            self.subject_form_or_variant_qualifier = str(self.subject_form_or_variant_qualifier)
+
+        if self.subject_part_qualifier is not None and not isinstance(self.subject_part_qualifier, str):
+            self.subject_part_qualifier = str(self.subject_part_qualifier)
+
+        if self.subject_derivative_qualifier is not None and not isinstance(self.subject_derivative_qualifier, str):
+            self.subject_derivative_qualifier = str(self.subject_derivative_qualifier)
+
+        if self.subject_aspect_qualifier is not None and not isinstance(self.subject_aspect_qualifier, GeneOrGeneProductOrChemicalEntityAspectEnum):
+            self.subject_aspect_qualifier = GeneOrGeneProductOrChemicalEntityAspectEnum(self.subject_aspect_qualifier)
+
+        if self.subject_context_qualifier is not None and not isinstance(self.subject_context_qualifier, str):
+            self.subject_context_qualifier = str(self.subject_context_qualifier)
+
+        if self.subject_direction_qualifier is not None and not isinstance(self.subject_direction_qualifier, DirectionQualifierEnum):
+            self.subject_direction_qualifier = DirectionQualifierEnum(self.subject_direction_qualifier)
+
+        if self.object_form_or_variant_qualifier is not None and not isinstance(self.object_form_or_variant_qualifier, str):
+            self.object_form_or_variant_qualifier = str(self.object_form_or_variant_qualifier)
+
+        if self.object_part_qualifier is not None and not isinstance(self.object_part_qualifier, str):
+            self.object_part_qualifier = str(self.object_part_qualifier)
+
+        if self.object_aspect_qualifier is not None and not isinstance(self.object_aspect_qualifier, GeneOrGeneProductOrChemicalEntityAspectEnum):
+            self.object_aspect_qualifier = GeneOrGeneProductOrChemicalEntityAspectEnum(self.object_aspect_qualifier)
+
+        if self.object_context_qualifier is not None and not isinstance(self.object_context_qualifier, str):
+            self.object_context_qualifier = str(self.object_context_qualifier)
+
+        if self.object_direction_qualifier is not None and not isinstance(self.object_direction_qualifier, DirectionQualifierEnum):
+            self.object_direction_qualifier = DirectionQualifierEnum(self.object_direction_qualifier)
+
+        if self.causal_mechanism_qualifier is not None and not isinstance(self.causal_mechanism_qualifier, CausalMechanismQualifierEnum):
+            self.causal_mechanism_qualifier = CausalMechanismQualifierEnum(self.causal_mechanism_qualifier)
+
+        if not isinstance(self.anatomical_context_qualifier, list):
+            self.anatomical_context_qualifier = [self.anatomical_context_qualifier] if self.anatomical_context_qualifier is not None else []
+        self.anatomical_context_qualifier = [v if isinstance(v, str) else str(v) for v in self.anatomical_context_qualifier]
+
+        if self.qualified_predicate is not None and not isinstance(self.qualified_predicate, URIorCURIE):
+            self.qualified_predicate = URIorCURIE(self.qualified_predicate)
+
+        if self.species_context_qualifier is not None and not isinstance(self.species_context_qualifier, OrganismTaxonId):
+            self.species_context_qualifier = OrganismTaxonId(self.species_context_qualifier)
 
         super().__post_init__(**kwargs)
         if not isinstance(self.category, list):

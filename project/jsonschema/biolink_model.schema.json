@@ -51905,6 +51905,16 @@
                         "null"
                     ]
                 },
+                "anatomical_context_qualifier": {
+                    "description": "A statement qualifier representing an anatomical location where an relationship expressed in an association took place (can be a tissue, cell type, or sub-cellular location).",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
                     "enum": [
@@ -51917,6 +51927,10 @@
                         "array",
                         "null"
                     ]
+                },
+                "causal_mechanism_qualifier": {
+                    "$ref": "#/$defs/CausalMechanismQualifierEnum",
+                    "description": "A statement qualifier representing a type of molecular control mechanism through which an effect of a chemical on a gene or gene product is mediated"
                 },
                 "deprecated": {
                     "description": "A boolean flag indicating that an entity is no longer considered current or valid.",
@@ -52051,6 +52065,10 @@
                     "$ref": "#/$defs/ChemicalEntityOrProteinOrPolypeptide",
                     "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object."
                 },
+                "object_aspect_qualifier": {
+                    "$ref": "#/$defs/GeneOrGeneProductOrChemicalEntityAspectEnum",
+                    "description": "Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the object of an association (aka: statement)."
+                },
                 "object_category": {
                     "description": "Used to hold the biolink class/category of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "type": [
@@ -52078,8 +52096,26 @@
                         "null"
                     ]
                 },
+                "object_context_qualifier": {
+                    "description": "A qualifier describing the context in which the object of an association holds.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "object_direction_qualifier": {
+                    "$ref": "#/$defs/DirectionQualifierEnum",
+                    "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement)."
+                },
                 "object_feature_name": {
                     "description": "Used to describe a subordinate feature of the associated object for example, a symptom diagnosis of a disease",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "object_form_or_variant_qualifier": {
+                    "description": "A qualifier that composes with a core subject/object concept to define a specific type, variant, alternative version of this concept. The composed concept remains a subtype or instance of the core concept. For example, the qualifier \u2018mutation\u2019 combines with the core concept \u2018Gene X\u2019 to express the compose concept \u2018a mutation of Gene X\u2019.  This qualifier specifies a change in the object of an association (aka: statement).",
                     "type": [
                         "string",
                         "null"
@@ -52097,6 +52133,13 @@
                 },
                 "object_namespace": {
                     "description": "Used to hold the object namespace of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "object_part_qualifier": {
+                    "description": "defines a specific part/component of the core concept (used in cases there this specific part has no IRI we can use to directly represent it).  This qualifier is for the object of an association (or statement).",
                     "type": [
                         "string",
                         "null"
@@ -52154,6 +52197,13 @@
                         "null"
                     ]
                 },
+                "qualified_predicate": {
+                    "description": "Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  Has a value from the Biolink 'related_to' hierarchy, for example, biolink:related_to, biolink:causes, biolink:treats This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a \u2018full statement\u2019 reading of the association, where qualifier-based semantics are included. This is necessary only in cases where the primary predicate does not work in a full statement reading.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "qualifier": {
                     "description": "grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes",
                     "type": [
@@ -52198,9 +52248,20 @@
                         "null"
                     ]
                 },
+                "species_context_qualifier": {
+                    "description": "A statement qualifier representing a taxonomic category of species in which a relationship expressed in an association took place.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "subject": {
                     "$ref": "#/$defs/MacromolecularMachineMixin",
                     "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object."
+                },
+                "subject_aspect_qualifier": {
+                    "$ref": "#/$defs/GeneOrGeneProductOrChemicalEntityAspectEnum",
+                    "description": "Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the subject of an association (aka: statement)."
                 },
                 "subject_category": {
                     "description": "Used to hold the biolink class/category of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
@@ -52229,8 +52290,33 @@
                         "null"
                     ]
                 },
+                "subject_context_qualifier": {
+                    "description": "A qualifier describing the context in which the subject of an association holds.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "subject_derivative_qualifier": {
+                    "description": "A qualifier that composes with a core subject/object  concept to describe something that is derived from the core concept.  For example, the qualifier \u2018metabolite\u2019 combines with a \u2018Chemical X\u2019 core concept to express the composed concept \u2018a metabolite of Chemical X\u2019.  This qualifier is for the subject of an association (or statement).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "subject_direction_qualifier": {
+                    "$ref": "#/$defs/DirectionQualifierEnum",
+                    "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement)."
+                },
                 "subject_feature_name": {
                     "description": "Used to describe a subordinate feature of the associated subject for example, a particular sequence variant of a gene",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "subject_form_or_variant_qualifier": {
+                    "description": "A qualifier that composes with a core subject/object concept to define a specific type, variant, alternative version of this concept. The composed concept remains a subtype or instance of the core concept. For example, the qualifier \u2018mutation\u2019 combines with the core concept \u2018Gene X\u2019 to express the compose concept \u2018a mutation of Gene X\u2019.  This qualifier specifies a change in the subject of an association (aka: statement).",
                     "type": [
                         "string",
                         "null"
@@ -52248,6 +52334,13 @@
                 },
                 "subject_namespace": {
                     "description": "Used to hold the subject namespace of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "subject_part_qualifier": {
+                    "description": "defines a specific part/component of the core concept (used in cases there this specific part has no IRI we can use to directly represent it).  This qualifier is for the subject of an association (or statement).",
                     "type": [
                         "string",
                         "null"
