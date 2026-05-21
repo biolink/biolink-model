@@ -2,7 +2,7 @@
   "name": "Biolink-Model",
   "description": "Entity and association taxonomy and datamodel for life-sciences data",
   "id": "https://w3id.org/biolink/vocab/",
-  "version": "4.4.0",
+  "version": "4.4.1",
   "imports": [
     "linkml:types",
     "attributes"
@@ -6064,6 +6064,7 @@
         "PredicateMapping",
         "GeneToGeneAssociation",
         "ChemicalGeneInteractionAssociation",
+        "GeneRegulatesGeneAssociation",
         "ChemicalAffectsBiologicalEntityAssociation",
         "GeneAffectsChemicalAssociation"
       ],
@@ -6146,6 +6147,7 @@
         "GeneToGeneAssociation",
         "ChemicalEntityToChemicalEntityAssociation",
         "ChemicalEntityToBiologicalProcessAssociation",
+        "ChemicalGeneInteractionAssociation",
         "GeneRegulatesGeneAssociation",
         "ChemicalAffectsBiologicalEntityAssociation",
         "GeneAffectsChemicalAssociation",
@@ -37608,6 +37610,7 @@
         "chemical_gene_interaction_association_object_part_qualifier",
         "chemical_gene_interaction_association_object_context_qualifier",
         "chemical_gene_interaction_association_anatomical_context_qualifier",
+        "species_context_qualifier",
         "chemical_gene_interaction_association_causal_mechanism_qualifier",
         "dgidb_interaction_score",
         "dgidb_evidence_score",
@@ -37770,6 +37773,7 @@
         "gene_regulates_gene_association_object_direction_qualifier",
         "gene_regulates_gene_association_qualified_predicate",
         "species_context_qualifier",
+        "causal_mechanism_qualifier",
         "gene_regulates_gene_association_subject",
         "gene_regulates_gene_association_predicate",
         "gene_regulates_gene_association_object"
@@ -43558,9 +43562,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2026-05-07T16:42:39",
-  "source_file_size": 511381,
-  "generation_date": "2026-05-07T16:42:50",
+  "source_file_date": "2026-05-21T23:06:25",
+  "source_file_size": 511450,
+  "generation_date": "2026-05-21T23:06:30",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",

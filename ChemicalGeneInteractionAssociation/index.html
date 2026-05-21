@@ -519,6 +519,10 @@
 
           ChemicalGeneInteractionAssociation --|&gt; RetrievalSource : sources
 
+      ChemicalGeneInteractionAssociation : species_context_qualifier
+
+          ChemicalGeneInteractionAssociation --|&gt; OrganismTaxon : species_context_qualifier
+
       ChemicalGeneInteractionAssociation : subject
 
           ChemicalGeneInteractionAssociation --|&gt; ChemicalEntity : subject
@@ -657,6 +661,12 @@
 <td>* <br/> <a href="../AnatomicalEntity/">AnatomicalEntity</a></td>
 <td>direct</td>
 <td>UBERON:0000178, UBERON:0000956, GO:0005794</td>
+</tr>
+<tr>
+<td><a href="../species_context_qualifier/">species_context_qualifier</a>: <br/> <i> A statement qualifier representing a taxonomic category of species in which a relationship expressed in an association took place. </i></td>
+<td>0..1 <br/> <a href="../OrganismTaxon/">OrganismTaxon</a></td>
+<td>direct</td>
+<td>NCBITaxon:7955, NCBITaxon:9606</td>
 </tr>
 <tr>
 <td><a href="../causal_mechanism_qualifier/">causal_mechanism_qualifier</a>: <br/> <i> A statement qualifier representing a type of molecular control mechanism through which an effect of a chemical on a gene or gene product is mediated </i></td>
@@ -1046,6 +1056,7 @@ slots:
 - object part qualifier
 - object context qualifier
 - anatomical context qualifier
+- species context qualifier
 - causal mechanism qualifier
 - dgidb interaction score
 - dgidb evidence score

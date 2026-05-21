@@ -389,6 +389,10 @@
 
       GeneRegulatesGeneAssociation : category
 
+      GeneRegulatesGeneAssociation : causal_mechanism_qualifier
+
+          GeneRegulatesGeneAssociation --|&gt; CausalMechanismQualifierEnum : causal_mechanism_qualifier
+
       GeneRegulatesGeneAssociation : deprecated
 
       GeneRegulatesGeneAssociation : description
@@ -569,6 +573,12 @@
 <td>0..1 <br/> <a href="../OrganismTaxon/">OrganismTaxon</a></td>
 <td>direct</td>
 <td>NCBITaxon:7955, NCBITaxon:9606</td>
+</tr>
+<tr>
+<td><a href="../causal_mechanism_qualifier/">causal_mechanism_qualifier</a>: <br/> <i> A statement qualifier representing a type of molecular control mechanism through which an effect of a chemical on a gene or gene product is mediated </i></td>
+<td>0..1 <br/> <a href="../CausalMechanismQualifierEnum/">CausalMechanismQualifierEnum</a></td>
+<td>direct</td>
+<td>agonism, inhibition</td>
 </tr>
 <tr>
 <td><a href="../subject/">subject</a>: <br/> <i> connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object. </i></td>
@@ -895,6 +905,7 @@ slots:
 - object direction qualifier
 - qualified predicate
 - species context qualifier
+- causal mechanism qualifier
 slot_usage:
   subject:
     name: subject

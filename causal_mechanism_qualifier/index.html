@@ -790,13 +790,18 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../ChemicalAffectsBiologicalEntityAssociation/">ChemicalAffectsBiologicalEntityAssociation</a></td>
-<td>Describes an effect that a chemical has on a biological entity (e.g. an impact of on its abundance, activity,localization, processing, expression, etc.)</td>
-<td>yes</td>
-</tr>
-<tr>
 <td><a href="../GeneToGeneAssociation/">GeneToGeneAssociation</a></td>
 <td>parent class for different kinds of gene-gene or gene product to gene product relationships. Includes homology and interaction.</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../GeneRegulatesGeneAssociation/">GeneRegulatesGeneAssociation</a></td>
+<td>Describes a regulatory relationship between two genes or gene products.</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../PredicateMapping/">PredicateMapping</a></td>
+<td>A deprecated predicate mapping object contains the deprecated predicate and an example of the rewiring that should be done to use a qualified statement in its place.</td>
 <td>no</td>
 </tr>
 <tr>
@@ -805,9 +810,9 @@
 <td>yes</td>
 </tr>
 <tr>
-<td><a href="../PredicateMapping/">PredicateMapping</a></td>
-<td>A deprecated predicate mapping object contains the deprecated predicate and an example of the rewiring that should be done to use a qualified statement in its place.</td>
-<td>no</td>
+<td><a href="../ChemicalAffectsBiologicalEntityAssociation/">ChemicalAffectsBiologicalEntityAssociation</a></td>
+<td>Describes an effect that a chemical has on a biological entity (e.g. an impact of on its abundance, activity,localization, processing, expression, etc.)</td>
+<td>yes</td>
 </tr>
 <tr>
 <td><a href="../GeneAffectsChemicalAssociation/">GeneAffectsChemicalAssociation</a></td>
@@ -854,6 +859,7 @@ domain_of:
 - predicate mapping
 - gene to gene association
 - chemical gene interaction association
+- gene regulates gene association
 - chemical affects biological entity association
 - gene affects chemical association
 range: CausalMechanismQualifierEnum
