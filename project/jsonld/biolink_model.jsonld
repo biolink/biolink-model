@@ -2,7 +2,7 @@
   "name": "Biolink-Model",
   "description": "Entity and association taxonomy and datamodel for life-sciences data",
   "id": "https://w3id.org/biolink/vocab/",
-  "version": "4.4.1",
+  "version": "4.4.2",
   "imports": [
     "linkml:types",
     "attributes"
@@ -5503,6 +5503,7 @@
         "PredicateMapping",
         "GeneToGeneAssociation",
         "NamedThingAssociatedWithLikelihoodOfNamedThingAssociation",
+        "MacromolecularMachineHasSubstrateAssociation",
         "ChemicalAffectsBiologicalEntityAssociation",
         "GeneAffectsChemicalAssociation",
         "EntityToFeatureOrDiseaseQualifiersMixin",
@@ -5572,6 +5573,7 @@
       "domain_of": [
         "PredicateMapping",
         "ChemicalGeneInteractionAssociation",
+        "MacromolecularMachineHasSubstrateAssociation",
         "ChemicalAffectsBiologicalEntityAssociation",
         "GeneAffectsChemicalAssociation",
         "GeneToPhenotypicFeatureAssociation",
@@ -5608,6 +5610,7 @@
       "domain_of": [
         "PredicateMapping",
         "ChemicalGeneInteractionAssociation",
+        "MacromolecularMachineHasSubstrateAssociation",
         "ChemicalAffectsBiologicalEntityAssociation",
         "GeneAffectsChemicalAssociation"
       ],
@@ -5635,6 +5638,7 @@
       "domain_of": [
         "PredicateMapping",
         "ChemicalGeneInteractionAssociation",
+        "MacromolecularMachineHasSubstrateAssociation",
         "ChemicalAffectsBiologicalEntityAssociation",
         "GeneAffectsChemicalAssociation"
       ],
@@ -5692,6 +5696,7 @@
         "GeneToGeneAssociation",
         "NamedThingAssociatedWithLikelihoodOfNamedThingAssociation",
         "ChemicalGeneInteractionAssociation",
+        "MacromolecularMachineHasSubstrateAssociation",
         "ChemicalAffectsBiologicalEntityAssociation",
         "GeneAffectsChemicalAssociation"
       ],
@@ -5723,6 +5728,7 @@
       "domain_of": [
         "PredicateMapping",
         "GeneToGeneAssociation",
+        "MacromolecularMachineHasSubstrateAssociation",
         "ChemicalAffectsBiologicalEntityAssociation",
         "GeneAffectsChemicalAssociation",
         "EntityToFeatureOrDiseaseQualifiersMixin",
@@ -5768,6 +5774,7 @@
         "GeneToGeneAssociation",
         "NamedThingAssociatedWithLikelihoodOfNamedThingAssociation",
         "ChemicalGeneInteractionAssociation",
+        "MacromolecularMachineHasSubstrateAssociation",
         "GeneRegulatesGeneAssociation",
         "ChemicalAffectsBiologicalEntityAssociation",
         "GeneAffectsChemicalAssociation",
@@ -5835,6 +5842,7 @@
       "domain_of": [
         "PredicateMapping",
         "ChemicalGeneInteractionAssociation",
+        "MacromolecularMachineHasSubstrateAssociation",
         "ChemicalAffectsBiologicalEntityAssociation",
         "GeneAffectsChemicalAssociation"
       ],
@@ -5866,6 +5874,7 @@
       "domain_of": [
         "PredicateMapping",
         "ChemicalGeneInteractionAssociation",
+        "MacromolecularMachineHasSubstrateAssociation",
         "ChemicalAffectsBiologicalEntityAssociation",
         "GeneAffectsChemicalAssociation"
       ],
@@ -5948,6 +5957,7 @@
         "GeneToGeneAssociation",
         "NamedThingAssociatedWithLikelihoodOfNamedThingAssociation",
         "ChemicalGeneInteractionAssociation",
+        "MacromolecularMachineHasSubstrateAssociation",
         "ChemicalAffectsBiologicalEntityAssociation",
         "GeneAffectsChemicalAssociation"
       ],
@@ -5981,6 +5991,7 @@
         "GeneToGeneAssociation",
         "ChemicalEntityToBiologicalProcessAssociation",
         "ChemicalGeneInteractionAssociation",
+        "MacromolecularMachineHasSubstrateAssociation",
         "GeneRegulatesGeneAssociation",
         "ChemicalAffectsBiologicalEntityAssociation",
         "GeneAffectsChemicalAssociation",
@@ -6021,6 +6032,7 @@
         "GeneToGeneAssociation",
         "ChemicalEntityToBiologicalProcessAssociation",
         "ChemicalGeneInteractionAssociation",
+        "MacromolecularMachineHasSubstrateAssociation",
         "GeneRegulatesGeneAssociation",
         "ChemicalAffectsBiologicalEntityAssociation",
         "GeneAffectsChemicalAssociation",
@@ -6076,6 +6088,7 @@
         "PredicateMapping",
         "GeneToGeneAssociation",
         "ChemicalGeneInteractionAssociation",
+        "MacromolecularMachineHasSubstrateAssociation",
         "GeneRegulatesGeneAssociation",
         "ChemicalAffectsBiologicalEntityAssociation",
         "GeneAffectsChemicalAssociation"
@@ -6119,6 +6132,7 @@
         "PredicateMapping",
         "ChemicalEntityToBiologicalProcessAssociation",
         "ChemicalGeneInteractionAssociation",
+        "MacromolecularMachineHasSubstrateAssociation",
         "ChemicalAffectsBiologicalEntityAssociation",
         "GeneAffectsChemicalAssociation",
         "EntityToDiseaseOrPhenotypicFeatureAssociationMixin"
@@ -6160,6 +6174,7 @@
         "ChemicalEntityToChemicalEntityAssociation",
         "ChemicalEntityToBiologicalProcessAssociation",
         "ChemicalGeneInteractionAssociation",
+        "MacromolecularMachineHasSubstrateAssociation",
         "GeneRegulatesGeneAssociation",
         "ChemicalAffectsBiologicalEntityAssociation",
         "GeneAffectsChemicalAssociation",
@@ -38346,6 +38361,21 @@
         "semmed_agreement_count",
         "association_type",
         "association_category",
+        "subject_form_or_variant_qualifier",
+        "subject_part_qualifier",
+        "subject_derivative_qualifier",
+        "subject_aspect_qualifier",
+        "subject_context_qualifier",
+        "subject_direction_qualifier",
+        "object_form_or_variant_qualifier",
+        "object_part_qualifier",
+        "object_aspect_qualifier",
+        "object_context_qualifier",
+        "object_direction_qualifier",
+        "causal_mechanism_qualifier",
+        "anatomical_context_qualifier",
+        "qualified_predicate",
+        "species_context_qualifier",
         "macromolecular_machine_has_substrate_association_subject",
         "macromolecular_machine_has_substrate_association_predicate",
         "macromolecular_machine_has_substrate_association_object"
@@ -44206,9 +44236,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2026-05-21T23:22:23",
-  "source_file_size": 511541,
-  "generation_date": "2026-05-21T23:22:27",
+  "source_file_date": "2026-05-21T16:50:45",
+  "source_file_size": 512070,
+  "generation_date": "2026-05-21T16:51:02",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",
