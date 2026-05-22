@@ -790,18 +790,8 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../EntityToFeatureOrDiseaseQualifiersMixin/">EntityToFeatureOrDiseaseQualifiersMixin</a></td>
-<td>Qualifiers for entity to disease or phenotype associations.</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../GeneToGeneAssociation/">GeneToGeneAssociation</a></td>
-<td>parent class for different kinds of gene-gene or gene product to gene product relationships. Includes homology and interaction.</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../PredicateMapping/">PredicateMapping</a></td>
-<td>A deprecated predicate mapping object contains the deprecated predicate and an example of the rewiring that should be done to use a qualified statement in its place.</td>
+<td><a href="../FeatureOrDiseaseQualifiersToEntityMixin/">FeatureOrDiseaseQualifiersToEntityMixin</a></td>
+<td>Qualifiers for disease or phenotype to entity associations.</td>
 <td>no</td>
 </tr>
 <tr>
@@ -810,13 +800,18 @@
 <td>yes</td>
 </tr>
 <tr>
-<td><a href="../GeneAffectsChemicalAssociation/">GeneAffectsChemicalAssociation</a></td>
-<td>Describes an effect that a gene or gene product has on a chemical entity (e.g. an impact of on its abundance, activity, localization, processing, transport, etc.)</td>
-<td>yes</td>
+<td><a href="../GeneToGeneAssociation/">GeneToGeneAssociation</a></td>
+<td>parent class for different kinds of gene-gene or gene product to gene product relationships. Includes homology and interaction.</td>
+<td>no</td>
 </tr>
 <tr>
-<td><a href="../FeatureOrDiseaseQualifiersToEntityMixin/">FeatureOrDiseaseQualifiersToEntityMixin</a></td>
-<td>Qualifiers for disease or phenotype to entity associations.</td>
+<td><a href="../MacromolecularMachineHasSubstrateAssociation/">MacromolecularMachineHasSubstrateAssociation</a></td>
+<td>Describes the relationship between an enzyme (usually a macromolecular complex or gene product) and the molecules it acts on (substrate). The substrate can be a chemical, a polypeptide, or a protein.</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../PredicateMapping/">PredicateMapping</a></td>
+<td>A deprecated predicate mapping object contains the deprecated predicate and an example of the rewiring that should be done to use a qualified statement in its place.</td>
 <td>no</td>
 </tr>
 <tr>
@@ -825,9 +820,19 @@
 <td>no</td>
 </tr>
 <tr>
+<td><a href="../EntityToFeatureOrDiseaseQualifiersMixin/">EntityToFeatureOrDiseaseQualifiersMixin</a></td>
+<td>Qualifiers for entity to disease or phenotype associations.</td>
+<td>no</td>
+</tr>
+<tr>
 <td><a href="../EntityToFeatureOrGeneQualifiersMixin/">EntityToFeatureOrGeneQualifiersMixin</a></td>
 <td>Qualifiers for entity to gene associations.</td>
 <td>no</td>
+</tr>
+<tr>
+<td><a href="../GeneAffectsChemicalAssociation/">GeneAffectsChemicalAssociation</a></td>
+<td>Describes an effect that a gene or gene product has on a chemical entity (e.g. an impact of on its abundance, activity, localization, processing, transport, etc.)</td>
+<td>yes</td>
 </tr>
 </tbody>
 </table>
@@ -869,6 +874,7 @@ alias: subject_direction_qualifier
 domain_of:
 - predicate mapping
 - gene to gene association
+- macromolecular machine has substrate association
 - chemical affects biological entity association
 - gene affects chemical association
 - entity to feature or disease qualifiers mixin

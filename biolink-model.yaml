@@ -6,7 +6,7 @@ license: https://creativecommons.org/publicdomain/zero/1.0/
 
 # Version should be kept in sync with primary Git repository release tag
 
-version: 4.4.1
+version: 4.4.2
 
 ## ------------
 ##
@@ -7243,6 +7243,10 @@ classes:
       - xref
       - full name
       - synonym
+      - exact synonym
+      - broad synonym
+      - narrow synonym
+      - related synonym
       - equivalent identifiers
       - information content
       - taxon
@@ -11400,6 +11404,22 @@ classes:
       The substrate can be a chemical, a polypeptide, or a protein.
     notes: >-
       Using macromolecular machine should cover cases of gene-protein conflation.
+    slots:
+      - subject form or variant qualifier
+      - subject part qualifier
+      - subject derivative qualifier
+      - subject aspect qualifier
+      - subject context qualifier
+      - subject direction qualifier
+      - object form or variant qualifier
+      - object part qualifier
+      - object aspect qualifier
+      - object context qualifier
+      - object direction qualifier
+      - causal mechanism qualifier
+      - anatomical context qualifier
+      - qualified predicate
+      - species context qualifier
     slot_usage:
       subject:
         range: macromolecular machine mixin

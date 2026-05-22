@@ -790,23 +790,8 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../GeneToGeneAssociation/">GeneToGeneAssociation</a></td>
-<td>parent class for different kinds of gene-gene or gene product to gene product relationships. Includes homology and interaction.</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../GeneRegulatesGeneAssociation/">GeneRegulatesGeneAssociation</a></td>
-<td>Describes a regulatory relationship between two genes or gene products.</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../ChemicalEntityToBiologicalProcessAssociation/">ChemicalEntityToBiologicalProcessAssociation</a></td>
-<td>An association between a chemical entity and a biological process, where the chemical entity has some effect on the biological process.</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../PredicateMapping/">PredicateMapping</a></td>
-<td>A deprecated predicate mapping object contains the deprecated predicate and an example of the rewiring that should be done to use a qualified statement in its place.</td>
+<td><a href="../MacromolecularMachineToEntityAssociationMixin/">MacromolecularMachineToEntityAssociationMixin</a></td>
+<td>an association which has a macromolecular machine mixin as a subject</td>
 <td>no</td>
 </tr>
 <tr>
@@ -815,14 +800,29 @@
 <td>no</td>
 </tr>
 <tr>
+<td><a href="../GeneRegulatesGeneAssociation/">GeneRegulatesGeneAssociation</a></td>
+<td>Describes a regulatory relationship between two genes or gene products.</td>
+<td>no</td>
+</tr>
+<tr>
 <td><a href="../ChemicalAffectsBiologicalEntityAssociation/">ChemicalAffectsBiologicalEntityAssociation</a></td>
 <td>Describes an effect that a chemical has on a biological entity (e.g. an impact of on its abundance, activity,localization, processing, expression, etc.)</td>
 <td>yes</td>
 </tr>
 <tr>
-<td><a href="../GeneAffectsChemicalAssociation/">GeneAffectsChemicalAssociation</a></td>
-<td>Describes an effect that a gene or gene product has on a chemical entity (e.g. an impact of on its abundance, activity, localization, processing, transport, etc.)</td>
-<td>yes</td>
+<td><a href="../GeneToGeneAssociation/">GeneToGeneAssociation</a></td>
+<td>parent class for different kinds of gene-gene or gene product to gene product relationships. Includes homology and interaction.</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../MacromolecularMachineHasSubstrateAssociation/">MacromolecularMachineHasSubstrateAssociation</a></td>
+<td>Describes the relationship between an enzyme (usually a macromolecular complex or gene product) and the molecules it acts on (substrate). The substrate can be a chemical, a polypeptide, or a protein.</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../PredicateMapping/">PredicateMapping</a></td>
+<td>A deprecated predicate mapping object contains the deprecated predicate and an example of the rewiring that should be done to use a qualified statement in its place.</td>
+<td>no</td>
 </tr>
 <tr>
 <td><a href="../ChemicalEntityToChemicalEntityAssociation/">ChemicalEntityToChemicalEntityAssociation</a></td>
@@ -830,9 +830,14 @@
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../MacromolecularMachineToEntityAssociationMixin/">MacromolecularMachineToEntityAssociationMixin</a></td>
-<td>an association which has a macromolecular machine mixin as a subject</td>
+<td><a href="../ChemicalEntityToBiologicalProcessAssociation/">ChemicalEntityToBiologicalProcessAssociation</a></td>
+<td>An association between a chemical entity and a biological process, where the chemical entity has some effect on the biological process.</td>
 <td>no</td>
+</tr>
+<tr>
+<td><a href="../GeneAffectsChemicalAssociation/">GeneAffectsChemicalAssociation</a></td>
+<td>Describes an effect that a gene or gene product has on a chemical entity (e.g. an impact of on its abundance, activity, localization, processing, transport, etc.)</td>
+<td>yes</td>
 </tr>
 </tbody>
 </table>
@@ -881,6 +886,7 @@ domain_of:
 - chemical entity to chemical entity association
 - chemical entity to biological process association
 - chemical gene interaction association
+- macromolecular machine has substrate association
 - gene regulates gene association
 - chemical affects biological entity association
 - gene affects chemical association

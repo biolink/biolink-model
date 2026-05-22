@@ -704,6 +704,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#applicable-classes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Applicable Classes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#linkml-source" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -754,6 +765,23 @@
 </ul>
 </li>
 </ul>
+<h2 id="applicable-classes">Applicable Classes</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th>Modifies Slot</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../NamedThing/">NamedThing</a></td>
+<td>a databased entity or concept/class</td>
+<td>no</td>
+</tr>
+</tbody>
+</table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details open>
 
@@ -767,6 +795,8 @@ exact_mappings:
 is_a: synonym
 domain: named thing
 alias: related_synonym
+domain_of:
+- named thing
 range: label type
 multivalued: true
 

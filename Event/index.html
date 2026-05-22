@@ -370,6 +370,8 @@
     class Event
       NamedThing &lt;|-- Event
 
+      Event : broad_synonym
+
       Event : category
 
       Event : deprecated
@@ -377,6 +379,8 @@
       Event : description
 
       Event : equivalent_identifiers
+
+      Event : exact_synonym
 
       Event : full_name
 
@@ -392,7 +396,11 @@
 
       Event : name
 
+      Event : narrow_synonym
+
       Event : provided_by
+
+      Event : related_synonym
 
       Event : synonym
 
@@ -445,6 +453,30 @@
 </tr>
 <tr>
 <td><a href="../synonym/">synonym</a>: <br/> <i> Alternate human-readable names for a thing </i></td>
+<td>* <br/> <a href="../LabelType/">LabelType</a></td>
+<td><a href="../NamedThing/">NamedThing</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../exact_synonym/">exact_synonym</a>: <br/> <i> An alternate label for an entity that denotes exactly the same meaning as the primary label and is interchangeable with it in all contexts. </i></td>
+<td>* <br/> <a href="../LabelType/">LabelType</a></td>
+<td><a href="../NamedThing/">NamedThing</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../broad_synonym/">broad_synonym</a>: <br/> <i> An alternate label for an entity whose meaning is broader (more general) than the primary label but is still useful as a lexical alternative. </i></td>
+<td>* <br/> <a href="../LabelType/">LabelType</a></td>
+<td><a href="../NamedThing/">NamedThing</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../narrow_synonym/">narrow_synonym</a>: <br/> <i> An alternate label for an entity whose meaning is narrower (more specific) than the primary label, for example naming a particular sub-type. </i></td>
+<td>* <br/> <a href="../LabelType/">LabelType</a></td>
+<td><a href="../NamedThing/">NamedThing</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../related_synonym/">related_synonym</a>: <br/> <i> An alternate label that is related to the primary label but is neither exactly synonymous nor cleanly broader or narrower; useful as a lexical pointer but not for strict equivalence. Corresponds to oboInOwl:hasRelatedSynonym. </i></td>
 <td>* <br/> <a href="../LabelType/">LabelType</a></td>
 <td><a href="../NamedThing/">NamedThing</a></td>
 <td></td>

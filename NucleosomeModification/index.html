@@ -373,6 +373,8 @@
       EpigenomicEntity &lt;|-- NucleosomeModification
       BiologicalEntity &lt;|-- NucleosomeModification
 
+      NucleosomeModification : broad_synonym
+
       NucleosomeModification : category
 
       NucleosomeModification : deprecated
@@ -380,6 +382,8 @@
       NucleosomeModification : description
 
       NucleosomeModification : equivalent_identifiers
+
+      NucleosomeModification : exact_synonym
 
       NucleosomeModification : full_name
 
@@ -403,7 +407,11 @@
 
       NucleosomeModification : name
 
+      NucleosomeModification : narrow_synonym
+
       NucleosomeModification : provided_by
+
+      NucleosomeModification : related_synonym
 
       NucleosomeModification : synonym
 
@@ -442,7 +450,7 @@
 <tr>
 <td><a href="../has_biological_sequence/">has_biological_sequence</a>: <br> <i> connects a genomic feature to its sequence </i></br></td>
 <td>0..1 <br/> <a href="../BiologicalSequence/">BiologicalSequence</a></td>
-<td><a href="../GenomicEntity/">GenomicEntity</a>, <a href="../EpigenomicEntity/">EpigenomicEntity</a></td>
+<td><a href="../EpigenomicEntity/">EpigenomicEntity</a>, <a href="../GenomicEntity/">GenomicEntity</a></td>
 <td></td>
 </tr>
 <tr>
@@ -466,7 +474,7 @@
 <tr>
 <td><a href="../xref/">xref</a>: <br/> <i> A database cross reference or alternative identifier for a NamedThing or edge between two NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references. </i></td>
 <td>* <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
-<td><a href="../NamedThing/">NamedThing</a>, <a href="../GeneProductMixin/">GeneProductMixin</a></td>
+<td><a href="../GeneProductMixin/">GeneProductMixin</a>, <a href="../NamedThing/">NamedThing</a></td>
 <td></td>
 </tr>
 <tr>
@@ -478,7 +486,31 @@
 <tr>
 <td><a href="../synonym/">synonym</a>: <br/> <i> Alternate human-readable names for a thing </i></td>
 <td>* <br/> <a href="../LabelType/">LabelType</a></td>
-<td><a href="../NamedThing/">NamedThing</a>, <a href="../GeneProductMixin/">GeneProductMixin</a></td>
+<td><a href="../GeneProductMixin/">GeneProductMixin</a>, <a href="../NamedThing/">NamedThing</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../exact_synonym/">exact_synonym</a>: <br/> <i> An alternate label for an entity that denotes exactly the same meaning as the primary label and is interchangeable with it in all contexts. </i></td>
+<td>* <br/> <a href="../LabelType/">LabelType</a></td>
+<td><a href="../NamedThing/">NamedThing</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../broad_synonym/">broad_synonym</a>: <br/> <i> An alternate label for an entity whose meaning is broader (more general) than the primary label but is still useful as a lexical alternative. </i></td>
+<td>* <br/> <a href="../LabelType/">LabelType</a></td>
+<td><a href="../NamedThing/">NamedThing</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../narrow_synonym/">narrow_synonym</a>: <br/> <i> An alternate label for an entity whose meaning is narrower (more specific) than the primary label, for example naming a particular sub-type. </i></td>
+<td>* <br/> <a href="../LabelType/">LabelType</a></td>
+<td><a href="../NamedThing/">NamedThing</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../related_synonym/">related_synonym</a>: <br/> <i> An alternate label that is related to the primary label but is neither exactly synonymous nor cleanly broader or narrower; useful as a lexical pointer but not for strict equivalence. Corresponds to oboInOwl:hasRelatedSynonym. </i></td>
+<td>* <br/> <a href="../LabelType/">LabelType</a></td>
+<td><a href="../NamedThing/">NamedThing</a></td>
 <td></td>
 </tr>
 <tr>

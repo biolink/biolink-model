@@ -371,6 +371,8 @@
       PathologicalEntityMixin &lt;|-- PathologicalProcess
       BiologicalProcess &lt;|-- PathologicalProcess
 
+      PathologicalProcess : broad_synonym
+
       PathologicalProcess : category
 
       PathologicalProcess : deprecated
@@ -382,6 +384,8 @@
           PathologicalProcess --|&gt; PhysicalEntity : enabled_by
 
       PathologicalProcess : equivalent_identifiers
+
+      PathologicalProcess : exact_synonym
 
       PathologicalProcess : full_name
 
@@ -411,7 +415,11 @@
 
       PathologicalProcess : name
 
+      PathologicalProcess : narrow_synonym
+
       PathologicalProcess : provided_by
+
+      PathologicalProcess : related_synonym
 
       PathologicalProcess : subsets
 
@@ -458,7 +466,7 @@
 <tr>
 <td><a href="../id/">id</a>: <br> <i> A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI </i></br></td>
 <td>1 <br/> <a href="../String/">String</a></td>
-<td><a href="../OntologyClass/">OntologyClass</a>, <a href="../Entity/">Entity</a></td>
+<td><a href="../Entity/">Entity</a>, <a href="../OntologyClass/">OntologyClass</a></td>
 <td></td>
 </tr>
 <tr>
@@ -517,6 +525,30 @@
 </tr>
 <tr>
 <td><a href="../synonym/">synonym</a>: <br/> <i> Alternate human-readable names for a thing </i></td>
+<td>* <br/> <a href="../LabelType/">LabelType</a></td>
+<td><a href="../NamedThing/">NamedThing</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../exact_synonym/">exact_synonym</a>: <br/> <i> An alternate label for an entity that denotes exactly the same meaning as the primary label and is interchangeable with it in all contexts. </i></td>
+<td>* <br/> <a href="../LabelType/">LabelType</a></td>
+<td><a href="../NamedThing/">NamedThing</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../broad_synonym/">broad_synonym</a>: <br/> <i> An alternate label for an entity whose meaning is broader (more general) than the primary label but is still useful as a lexical alternative. </i></td>
+<td>* <br/> <a href="../LabelType/">LabelType</a></td>
+<td><a href="../NamedThing/">NamedThing</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../narrow_synonym/">narrow_synonym</a>: <br/> <i> An alternate label for an entity whose meaning is narrower (more specific) than the primary label, for example naming a particular sub-type. </i></td>
+<td>* <br/> <a href="../LabelType/">LabelType</a></td>
+<td><a href="../NamedThing/">NamedThing</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../related_synonym/">related_synonym</a>: <br/> <i> An alternate label that is related to the primary label but is neither exactly synonymous nor cleanly broader or narrower; useful as a lexical pointer but not for strict equivalence. Corresponds to oboInOwl:hasRelatedSynonym. </i></td>
 <td>* <br/> <a href="../LabelType/">LabelType</a></td>
 <td><a href="../NamedThing/">NamedThing</a></td>
 <td></td>
