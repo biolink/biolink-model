@@ -12150,6 +12150,39 @@ classes:
       object:
         range: phenotypic feature
 
+  disease to disease association:
+    is_a: association
+    defining_slots:
+      - subject
+      - object
+    description: >-
+      An association between two diseases. Captures clinical or biological
+      relationships such as comorbidity, sequela, post-infectious complication,
+      shared susceptibility, or differential diagnosis. The precise relationship
+      is carried by the predicate (e.g. ``associated with``, ``contributes to``,
+      ``risk affected by``, ``temporally related to``); use this class whenever
+      both ends of the association are diseases, rather than the more specific
+      ``disease to phenotypic feature association`` (which forces the object to
+      be a phenotypic feature) or a generic ``association``.
+    mixins:
+      - disease to entity association mixin
+      - entity to disease association mixin
+    slot_usage:
+      subject:
+        range: disease
+        description: "the disease that is the source/context of the association"
+        examples:
+          - value: MONDO:0005688
+            description: "campylobacteriosis (subject of: associated with Guillain-Barré syndrome as a post-infectious sequela)"
+      object:
+        range: disease
+        description: "the related disease"
+        examples:
+          - value: MONDO:0016218
+            description: "Guillain-Barré syndrome (object of: campylobacteriosis associated with Guillain-Barré syndrome)"
+      predicate:
+        subproperty_of: associated with
+
   case to phenotypic feature association:
     description: >-
       An association between a case (e.g. individual patient) and a phenotypic
