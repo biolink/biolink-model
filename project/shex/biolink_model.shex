@@ -4478,8 +4478,7 @@ linkml:Sparqlpath xsd:string
           <qualified_predicate> [ <causes> ] ? ;
           <species_context_qualifier> @<OrganismTaxon> ? ;
           rdf:subject @<ChemicalEntityOrGeneOrGeneProduct> ;
-          rdf:predicate [ <affects> <ameliorates_condition> <disrupts> <exacerbates_condition> <has_adverse_event>
-             <has_side_effect> <regulates> ] ;
+          rdf:predicate [ <has_phenotype> ] ;
           rdf:object @<ChemicalEntity>
        ) ;
        rdf:type [ <GeneAffectsChemicalAssociation> ]

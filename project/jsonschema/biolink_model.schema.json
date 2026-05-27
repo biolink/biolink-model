@@ -35454,13 +35454,7 @@
                 "predicate": {
                     "description": "Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats",
                     "enum": [
-                        "biolink:affects",
-                        "biolink:ameliorates_condition",
-                        "biolink:disrupts",
-                        "biolink:exacerbates_condition",
-                        "biolink:has_adverse_event",
-                        "biolink:has_side_effect",
-                        "biolink:regulates"
+                        "biolink:has_phenotype"
                     ],
                     "type": "string"
                 },
