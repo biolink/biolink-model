@@ -9378,6 +9378,14 @@ classes:
       - NCIT
       - PO
       - FAO
+      # model organism anatomy ontologies that include gross structures (organs, tissues),
+      # mirroring the model-organism prefixes on anatomical entity (see #1746)
+      - EMAPA  # mouse, e.g. subclasses of EMAPA:35949 "organ" and EMAPA:35868 "tissue"
+      - MA     # mouse adult anatomy
+      - ZFA    # zebrafish
+      - FBbt   # fly
+      - WBbt   # c. elegans
+      - XAO    # frog
 
 
   ## entity mixins
