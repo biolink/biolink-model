@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-05-22T14:54:17
+# Generation date: 2026-05-29T16:28:42
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/vocab/
@@ -1268,6 +1268,10 @@ class ExposureEventToPhenotypicFeatureAssociationId(AssociationId):
 
 
 class DiseaseToPhenotypicFeatureAssociationId(AssociationId):
+    pass
+
+
+class DiseaseToDiseaseAssociationId(AssociationId):
     pass
 
 
@@ -12080,6 +12084,85 @@ class DiseaseToPhenotypicFeatureAssociation(Association):
 
 
 @dataclass(repr=False)
+class DiseaseToDiseaseAssociation(Association):
+    """
+    An association between two diseases. Captures clinical or biological relationships such as comorbidity, sequela,
+    post-infectious complication, shared susceptibility, or differential diagnosis. The precise relationship is
+    carried by the predicate (e.g. ``associated with``, ``contributes to``, ``risk affected by``, ``temporally related
+    to``); use this class whenever both ends of the association are diseases, rather than the more specific ``disease
+    to phenotypic feature association`` (which forces the object to be a phenotypic feature) or a generic
+    ``association``.
+    """
+    _inherited_slots: ClassVar[list[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK["DiseaseToDiseaseAssociation"]
+    class_class_curie: ClassVar[str] = "biolink:DiseaseToDiseaseAssociation"
+    class_name: ClassVar[str] = "disease to disease association"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.DiseaseToDiseaseAssociation
+
+    id: Union[str, DiseaseToDiseaseAssociationId] = None
+    knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
+    agent_type: Union[str, "AgentTypeEnum"] = None
+    subject: Union[str, DiseaseId] = None
+    object: Union[str, DiseaseId] = None
+    predicate: Union[str, URIorCURIE] = None
+    frequency_qualifier: Optional[Union[str, FrequencyValue]] = None
+    subject_aspect_qualifier: Optional[Union[str, "GeneOrGeneProductOrChemicalEntityAspectEnum"]] = None
+    subject_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
+    object_aspect_qualifier: Optional[Union[str, "GeneOrGeneProductOrChemicalEntityAspectEnum"]] = None
+    object_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
+    qualified_predicate: Optional[Union[str, URIorCURIE]] = None
+    disease_context_qualifier: Optional[Union[str, DiseaseId]] = None
+
+    def __post_init__(self, *_: str, **kwargs: Any):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, DiseaseToDiseaseAssociationId):
+            self.id = DiseaseToDiseaseAssociationId(self.id)
+
+        if self._is_empty(self.subject):
+            self.MissingRequiredField("subject")
+        if not isinstance(self.subject, DiseaseId):
+            self.subject = DiseaseId(self.subject)
+
+        if self._is_empty(self.object):
+            self.MissingRequiredField("object")
+        if not isinstance(self.object, DiseaseId):
+            self.object = DiseaseId(self.object)
+
+        if self._is_empty(self.predicate):
+            self.MissingRequiredField("predicate")
+        if not isinstance(self.predicate, URIorCURIE):
+            self.predicate = URIorCURIE(self.predicate)
+
+        if self.frequency_qualifier is not None and not isinstance(self.frequency_qualifier, FrequencyValue):
+            self.frequency_qualifier = FrequencyValue(self.frequency_qualifier)
+
+        if self.subject_aspect_qualifier is not None and not isinstance(self.subject_aspect_qualifier, GeneOrGeneProductOrChemicalEntityAspectEnum):
+            self.subject_aspect_qualifier = GeneOrGeneProductOrChemicalEntityAspectEnum(self.subject_aspect_qualifier)
+
+        if self.subject_direction_qualifier is not None and not isinstance(self.subject_direction_qualifier, DirectionQualifierEnum):
+            self.subject_direction_qualifier = DirectionQualifierEnum(self.subject_direction_qualifier)
+
+        if self.object_aspect_qualifier is not None and not isinstance(self.object_aspect_qualifier, GeneOrGeneProductOrChemicalEntityAspectEnum):
+            self.object_aspect_qualifier = GeneOrGeneProductOrChemicalEntityAspectEnum(self.object_aspect_qualifier)
+
+        if self.object_direction_qualifier is not None and not isinstance(self.object_direction_qualifier, DirectionQualifierEnum):
+            self.object_direction_qualifier = DirectionQualifierEnum(self.object_direction_qualifier)
+
+        if self.qualified_predicate is not None and not isinstance(self.qualified_predicate, URIorCURIE):
+            self.qualified_predicate = URIorCURIE(self.qualified_predicate)
+
+        if self.disease_context_qualifier is not None and not isinstance(self.disease_context_qualifier, DiseaseId):
+            self.disease_context_qualifier = DiseaseId(self.disease_context_qualifier)
+
+        super().__post_init__(**kwargs)
+        if not isinstance(self.category, list):
+            self.category = [self.category] if self.category is not None else []
+        self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
+
+
+@dataclass(repr=False)
 class CaseToPhenotypicFeatureAssociation(Association):
     """
     An association between a case (e.g. individual patient) and a phenotypic feature in which the individual has or
@@ -18507,6 +18590,15 @@ slots.disease_to_phenotypic_feature_association_subject = Slot(uri=RDF.subject, 
 
 slots.disease_to_phenotypic_feature_association_object = Slot(uri=RDF.object, name="disease to phenotypic feature association_object", curie=RDF.curie('object'),
                    model_uri=BIOLINK.disease_to_phenotypic_feature_association_object, domain=DiseaseToPhenotypicFeatureAssociation, range=Union[str, PhenotypicFeatureId])
+
+slots.disease_to_disease_association_subject = Slot(uri=RDF.subject, name="disease to disease association_subject", curie=RDF.curie('subject'),
+                   model_uri=BIOLINK.disease_to_disease_association_subject, domain=DiseaseToDiseaseAssociation, range=Union[str, DiseaseId])
+
+slots.disease_to_disease_association_object = Slot(uri=RDF.object, name="disease to disease association_object", curie=RDF.curie('object'),
+                   model_uri=BIOLINK.disease_to_disease_association_object, domain=DiseaseToDiseaseAssociation, range=Union[str, DiseaseId])
+
+slots.disease_to_disease_association_predicate = Slot(uri=RDF.predicate, name="disease to disease association_predicate", curie=RDF.curie('predicate'),
+                   model_uri=BIOLINK.disease_to_disease_association_predicate, domain=DiseaseToDiseaseAssociation, range=Union[str, URIorCURIE])
 
 slots.case_to_disease_association_object = Slot(uri=RDF.object, name="case to disease association_object", curie=RDF.curie('object'),
                    model_uri=BIOLINK.case_to_disease_association_object, domain=CaseToDiseaseAssociation, range=Union[str, DiseaseId])
