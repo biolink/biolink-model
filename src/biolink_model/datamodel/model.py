@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-06-26T12:44:37
+# Generation date: 2026-06-26T20:06:45
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/vocab/
@@ -17302,8 +17302,8 @@ slots.condition_ameliorated_by = Slot(uri=BIOLINK.condition_ameliorated_by, name
 slots.preventative_for_condition = Slot(uri=BIOLINK.preventative_for_condition, name="preventative for condition", curie=BIOLINK.curie('preventative_for_condition'),
                    model_uri=BIOLINK.preventative_for_condition, domain=None, range=Optional[Union[Union[str, DiseaseOrPhenotypicFeatureId], list[Union[str, DiseaseOrPhenotypicFeatureId]]]])
 
-slots.condition_prevented_by = Slot(uri=BIOLINK.condition_prevented_by, name="condition prevented by", curie=BIOLINK.curie('condition_prevented_by'),
-                   model_uri=BIOLINK.condition_prevented_by, domain=DiseaseOrPhenotypicFeature, range=Optional[Union[Union[dict, ChemicalOrDrugOrTreatment], list[Union[dict, ChemicalOrDrugOrTreatment]]]])
+slots.has_preventative_intervention = Slot(uri=BIOLINK.has_preventative_intervention, name="has preventative intervention", curie=BIOLINK.curie('has_preventative_intervention'),
+                   model_uri=BIOLINK.has_preventative_intervention, domain=DiseaseOrPhenotypicFeature, range=Optional[Union[Union[dict, ChemicalOrDrugOrTreatment], list[Union[dict, ChemicalOrDrugOrTreatment]]]])
 
 slots.promotes_condition = Slot(uri=BIOLINK.promotes_condition, name="promotes condition", curie=BIOLINK.curie('promotes_condition'),
                    model_uri=BIOLINK.promotes_condition, domain=None, range=Optional[Union[Union[str, DiseaseOrPhenotypicFeatureId], list[Union[str, DiseaseOrPhenotypicFeatureId]]]])
