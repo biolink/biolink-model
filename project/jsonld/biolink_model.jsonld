@@ -6238,7 +6238,7 @@
         }
       ],
       "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
-      "deprecated": "True",
+      "deprecated": "true",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "association_slot",
       "domain": "Association",
@@ -6273,7 +6273,7 @@
       "name": "severity_qualifier",
       "definition_uri": "https://w3id.org/biolink/vocab/severity_qualifier",
       "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject",
-      "deprecated": "True",
+      "deprecated": "true",
       "in_subset": [
         "translator_minimal"
       ],
@@ -7654,7 +7654,7 @@
         }
       ],
       "description": "Reports that the subject was interrogated in an experiment to determine how it may affect the object. A relationship between some perturbing agent (usually a chemical compound) and some target entity, where the affect of the perturbing agent on the target entity was interrogated in a particular assay. The target might be a particular protein, tissue, phenotype, whole organism, cell line, or other type of biological entity.",
-      "deprecated": "True",
+      "deprecated": "true",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "aliases": [
         "was assayed against",
@@ -7673,7 +7673,7 @@
     {
       "name": "was_tested_for_effect_of",
       "definition_uri": "https://w3id.org/biolink/vocab/was_tested_for_effect_of",
-      "deprecated": "True",
+      "deprecated": "true",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "related_to_at_instance_level",
       "domain": "NamedThing",
@@ -7793,7 +7793,7 @@
         }
       ],
       "description": "A causal mechanism mediated by the direct contact between effector and target chemical or biomolecular entity, which form a stable physical interaction.",
-      "deprecated": "True",
+      "deprecated": "true",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "close_mappings": [
         "https://www.dgidb.org/interaction_typesbinder"
@@ -8180,7 +8180,7 @@
       "name": "increases_amount_or_activity_of",
       "definition_uri": "https://w3id.org/biolink/vocab/increases_amount_or_activity_of",
       "description": "A grouping mixin to help with searching for all the predicates that increase the amount or activity of the object.",
-      "deprecated": "True",
+      "deprecated": "true",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "related_to_at_instance_level",
       "mixin": true,
@@ -8196,7 +8196,7 @@
     {
       "name": "amount_or_activity_increased_by",
       "definition_uri": "https://w3id.org/biolink/vocab/amount_or_activity_increased_by",
-      "deprecated": "True",
+      "deprecated": "true",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "related_to_at_instance_level",
       "domain": "NamedThing",
@@ -8212,7 +8212,7 @@
       "name": "decreases_amount_or_activity_of",
       "definition_uri": "https://w3id.org/biolink/vocab/decreases_amount_or_activity_of",
       "description": "A grouping mixin to help with searching for all the predicates that decrease the amount or activity of the object.",
-      "deprecated": "True",
+      "deprecated": "true",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "related_to_at_instance_level",
       "mixin": true,
@@ -8228,7 +8228,7 @@
     {
       "name": "amount_or_activity_decreased_by",
       "definition_uri": "https://w3id.org/biolink/vocab/amount_or_activity_decreased_by",
-      "deprecated": "True",
+      "deprecated": "true",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "related_to_at_instance_level",
       "domain": "NamedThing",
@@ -9127,7 +9127,7 @@
     {
       "name": "genetic_association",
       "definition_uri": "https://w3id.org/biolink/vocab/genetic_association",
-      "deprecated": "True",
+      "deprecated": "true",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "deprecated_element_has_exact_replacement": "biolink:genetically_associated_with",
       "is_a": "associated_with",
@@ -13365,7 +13365,7 @@
       "description": "Used to hold the subject category closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
       "examples": [
         {
-          "value": "['biolink:Gene\", \"biolink:NamedThing']",
+          "value": "['biolink:Gene', 'biolink:NamedThing']",
           "description": "The subject category closure of the association between the gene 'BRCA1' and the disease 'breast cancer' is the set of all biolink classes that are ancestors of 'biolink:Gene' in the biolink model.  Note: typically the \"subclass of\" and \"part of\" relations are used to construct the closure, but other relations may be used as well.",
           "@type": "Example"
         }
@@ -13395,7 +13395,7 @@
       "description": "Used to hold the object category closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.",
       "examples": [
         {
-          "value": "['biolink:Disease\", \"biolink:NamedThing']",
+          "value": "['biolink:Disease', 'biolink:NamedThing']",
           "description": "The object category closure of the association between the gene 'BRCA1' and the disease 'breast cancer' is the set of all biolink classes that are ancestors of 'biolink:Disease' in the biolink model.  Note: typically the \"subclass of\" and \"part of\" relations are used to construct the closure, but other relations may be used as well.",
           "@type": "Example"
         }
@@ -13741,7 +13741,7 @@
     {
       "name": "relation",
       "definition_uri": "https://w3id.org/biolink/vocab/relation",
-      "deprecated": "True",
+      "deprecated": "true",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "slot_uri": "https://w3id.org/biolink/vocab/relation",
       "range": "string",
@@ -14385,7 +14385,7 @@
       "name": "supporting_documents",
       "definition_uri": "https://w3id.org/biolink/vocab/supporting_documents",
       "description": "One or more referenceable documents that report the statement expressed in an Association, or provide information used as evidence supporting this statement.",
-      "deprecated": "True",
+      "deprecated": "true",
       "examples": [
         {
           "value": "PMID:12345678",
@@ -17046,7 +17046,7 @@
         }
       },
       "description": "this field can be used to annotate special characteristics of an agent relationship, such as the fact that a given author agent of a publication is the 'corresponding author'",
-      "deprecated": "True",
+      "deprecated": "true",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "qualifiers",
       "domain": "ContributorAssociation",
@@ -28327,7 +28327,7 @@
       "name": "SeverityValue",
       "definition_uri": "https://w3id.org/biolink/vocab/SeverityValue",
       "description": "describes the severity of a phenotypic feature or disease",
-      "deprecated": "True",
+      "deprecated": "true",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "Attribute",
       "slots": [
@@ -32504,7 +32504,7 @@
     {
       "name": "Mammal",
       "definition_uri": "https://w3id.org/biolink/vocab/Mammal",
-      "deprecated": "True",
+      "deprecated": "true",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "exact_mappings": [
         "NCBITaxon:40674",
@@ -32546,7 +32546,7 @@
     {
       "name": "Human",
       "definition_uri": "https://w3id.org/biolink/vocab/Human",
-      "deprecated": "True",
+      "deprecated": "true",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "exact_mappings": [
         "STY:T016",
@@ -32588,7 +32588,7 @@
     {
       "name": "Plant",
       "definition_uri": "https://w3id.org/biolink/vocab/Plant",
-      "deprecated": "True",
+      "deprecated": "true",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "exact_mappings": [
         "NCIT:C14258",
@@ -32627,7 +32627,7 @@
     {
       "name": "Invertebrate",
       "definition_uri": "https://w3id.org/biolink/vocab/Invertebrate",
-      "deprecated": "True",
+      "deprecated": "true",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "exact_mappings": [
         "NCIT:C14228",
@@ -32669,7 +32669,7 @@
     {
       "name": "Vertebrate",
       "definition_uri": "https://w3id.org/biolink/vocab/Vertebrate",
-      "deprecated": "True",
+      "deprecated": "true",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "exact_mappings": [
         "STY:T010",
@@ -32710,7 +32710,7 @@
     {
       "name": "Fungus",
       "definition_uri": "https://w3id.org/biolink/vocab/Fungus",
-      "deprecated": "True",
+      "deprecated": "true",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "exact_mappings": [
         "STY:T004",
@@ -36602,7 +36602,7 @@
     {
       "name": "ChemicalEntityAssessesNamedThingAssociation",
       "definition_uri": "https://w3id.org/biolink/vocab/ChemicalEntityAssessesNamedThingAssociation",
-      "deprecated": "True",
+      "deprecated": "true",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "Association",
       "slots": [
@@ -37805,7 +37805,7 @@
       "name": "ChemicalToEntityAssociationMixin",
       "definition_uri": "https://w3id.org/biolink/vocab/ChemicalToEntityAssociationMixin",
       "description": "An interaction between a chemical entity and another entity",
-      "deprecated": "True",
+      "deprecated": "true",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "ChemicalEntityToEntityAssociationMixin",
       "mixin": true,
@@ -39095,7 +39095,8 @@
       "description": "Describes a regulatory relationship between two genes or gene products.",
       "examples": [
         {
-          "value": "JsonObj(subject='NCBIGene:551', predicate='regulates', qualified_predicate='causes', object='NCBIGene:1636', object_aspect_qualifier='activity_or_abundance', object_direction_qualifier='downregulated')",
+          "value": "{subject: NCBIGene:551, predicate: regulates, qualified_predicate: causes, object: NCBIGene:1636, object_aspect_qualifier: activity_or_abundance, object_direction_qualifier: downregulated}",
+          "description": "AVP (NCBIGene:551) regulates ACE (NCBIGene:1636), with qualified predicate 'causes', object aspect qualifier 'activity_or_abundance', and object direction qualifier 'downregulated'.",
           "@type": "Example"
         }
       ],
@@ -45121,9 +45122,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2026-06-26T22:43:29",
-  "source_file_size": 517241,
-  "generation_date": "2026-06-26T22:43:32",
+  "source_file_date": "2026-06-26T16:52:33",
+  "source_file_size": 517855,
+  "generation_date": "2026-06-26T16:52:41",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",
