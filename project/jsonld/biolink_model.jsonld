@@ -5505,6 +5505,7 @@
         "NamedThingAssociatedWithLikelihoodOfNamedThingAssociation",
         "MacromolecularMachineHasSubstrateAssociation",
         "ChemicalAffectsBiologicalEntityAssociation",
+        "ChemicalGeneSensitivityAssociation",
         "GeneAffectsChemicalAssociation",
         "EntityToFeatureOrDiseaseQualifiersMixin",
         "EntityToFeatureOrVariantQualifiersMixin",
@@ -5575,6 +5576,7 @@
         "ChemicalGeneInteractionAssociation",
         "MacromolecularMachineHasSubstrateAssociation",
         "ChemicalAffectsBiologicalEntityAssociation",
+        "ChemicalGeneSensitivityAssociation",
         "GeneAffectsChemicalAssociation",
         "GeneToPhenotypicFeatureAssociation",
         "GeneToDiseaseAssociation",
@@ -5612,6 +5614,7 @@
         "ChemicalGeneInteractionAssociation",
         "MacromolecularMachineHasSubstrateAssociation",
         "ChemicalAffectsBiologicalEntityAssociation",
+        "ChemicalGeneSensitivityAssociation",
         "GeneAffectsChemicalAssociation"
       ],
       "range": "string",
@@ -5640,6 +5643,7 @@
         "ChemicalGeneInteractionAssociation",
         "MacromolecularMachineHasSubstrateAssociation",
         "ChemicalAffectsBiologicalEntityAssociation",
+        "ChemicalGeneSensitivityAssociation",
         "GeneAffectsChemicalAssociation"
       ],
       "range": "string",
@@ -5730,6 +5734,7 @@
         "GeneToGeneAssociation",
         "MacromolecularMachineHasSubstrateAssociation",
         "ChemicalAffectsBiologicalEntityAssociation",
+        "ChemicalGeneSensitivityAssociation",
         "GeneAffectsChemicalAssociation",
         "EntityToFeatureOrDiseaseQualifiersMixin",
         "EntityToFeatureOrVariantQualifiersMixin",
@@ -5777,6 +5782,7 @@
         "MacromolecularMachineHasSubstrateAssociation",
         "GeneRegulatesGeneAssociation",
         "ChemicalAffectsBiologicalEntityAssociation",
+        "ChemicalGeneSensitivityAssociation",
         "GeneAffectsChemicalAssociation",
         "EntityToFeatureOrDiseaseQualifiersMixin",
         "EntityToFeatureOrVariantQualifiersMixin",
@@ -5844,6 +5850,7 @@
         "ChemicalGeneInteractionAssociation",
         "MacromolecularMachineHasSubstrateAssociation",
         "ChemicalAffectsBiologicalEntityAssociation",
+        "ChemicalGeneSensitivityAssociation",
         "GeneAffectsChemicalAssociation"
       ],
       "range": "string",
@@ -5876,6 +5883,7 @@
         "ChemicalGeneInteractionAssociation",
         "MacromolecularMachineHasSubstrateAssociation",
         "ChemicalAffectsBiologicalEntityAssociation",
+        "ChemicalGeneSensitivityAssociation",
         "GeneAffectsChemicalAssociation"
       ],
       "range": "string",
@@ -5901,6 +5909,7 @@
       "owner": "GeneAffectsChemicalAssociation",
       "domain_of": [
         "PredicateMapping",
+        "ChemicalGeneSensitivityAssociation",
         "GeneAffectsChemicalAssociation"
       ],
       "range": "string",
@@ -5994,6 +6003,7 @@
         "MacromolecularMachineHasSubstrateAssociation",
         "GeneRegulatesGeneAssociation",
         "ChemicalAffectsBiologicalEntityAssociation",
+        "ChemicalGeneSensitivityAssociation",
         "GeneAffectsChemicalAssociation",
         "EntityToFeatureOrDiseaseQualifiersMixin",
         "EntityToFeatureOrVariantQualifiersMixin",
@@ -6035,6 +6045,7 @@
         "MacromolecularMachineHasSubstrateAssociation",
         "GeneRegulatesGeneAssociation",
         "ChemicalAffectsBiologicalEntityAssociation",
+        "ChemicalGeneSensitivityAssociation",
         "GeneAffectsChemicalAssociation",
         "EntityToFeatureOrDiseaseQualifiersMixin",
         "EntityToFeatureOrVariantQualifiersMixin",
@@ -6134,6 +6145,7 @@
         "ChemicalGeneInteractionAssociation",
         "MacromolecularMachineHasSubstrateAssociation",
         "ChemicalAffectsBiologicalEntityAssociation",
+        "ChemicalGeneSensitivityAssociation",
         "GeneAffectsChemicalAssociation",
         "EntityToDiseaseOrPhenotypicFeatureAssociationMixin"
       ],
@@ -6177,6 +6189,7 @@
         "MacromolecularMachineHasSubstrateAssociation",
         "GeneRegulatesGeneAssociation",
         "ChemicalAffectsBiologicalEntityAssociation",
+        "ChemicalGeneSensitivityAssociation",
         "GeneAffectsChemicalAssociation",
         "MacromolecularMachineToEntityAssociationMixin"
       ],
@@ -14171,10 +14184,11 @@
       "is_a": "association_slot",
       "domain": "Association",
       "slot_uri": "https://w3id.org/biolink/vocab/evidence_count",
-      "owner": "ChemicalAffectsGeneAssociation",
+      "owner": "ChemicalGeneSensitivityAssociation",
       "domain_of": [
         "Association",
-        "ChemicalAffectsGeneAssociation"
+        "ChemicalAffectsGeneAssociation",
+        "ChemicalGeneSensitivityAssociation"
       ],
       "range": "integer",
       "@type": "SlotDefinition"
@@ -14382,9 +14396,10 @@
       "is_a": "association_slot",
       "domain": "Association",
       "slot_uri": "https://w3id.org/biolink/vocab/supporting_documents",
-      "owner": "ChemicalAffectsGeneAssociation",
+      "owner": "ChemicalGeneSensitivityAssociation",
       "domain_of": [
-        "ChemicalAffectsGeneAssociation"
+        "ChemicalAffectsGeneAssociation",
+        "ChemicalGeneSensitivityAssociation"
       ],
       "range": "uriorcurie",
       "multivalued": true,
@@ -21124,6 +21139,566 @@
       "owner": "ChemicalAffectsBiologicalEntityAssociation",
       "domain_of": [
         "ChemicalAffectsBiologicalEntityAssociation"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "species context qualifier",
+      "range": "OrganismTaxon",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "chemical_gene_sensitivity_association_subject",
+      "definition_uri": "https://w3id.org/biolink/vocab/subject",
+      "local_names": {
+        "ga4gh": {
+          "local_name_source": "ga4gh",
+          "local_name_value": "annotation subject"
+        },
+        "neo4j": {
+          "local_name_source": "neo4j",
+          "local_name_value": "node with outgoing relationship"
+        }
+      },
+      "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "mappings": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject"
+      ],
+      "exact_mappings": [
+        "http://www.w3.org/2002/07/owl#annotatedSource",
+        "http://purl.org/oban/association_has_subject"
+      ],
+      "is_a": "subject",
+      "domain": "ChemicalGeneSensitivityAssociation",
+      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
+      "alias": "subject",
+      "owner": "ChemicalGeneSensitivityAssociation",
+      "domain_of": [
+        "ChemicalGeneSensitivityAssociation"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "subject",
+      "range": "ChemicalEntity",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "chemical_gene_sensitivity_association_object",
+      "definition_uri": "https://w3id.org/biolink/vocab/object",
+      "local_names": {
+        "ga4gh": {
+          "local_name_source": "ga4gh",
+          "local_name_value": "descriptor"
+        },
+        "neo4j": {
+          "local_name_source": "neo4j",
+          "local_name_value": "node with incoming relationship"
+        }
+      },
+      "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "mappings": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#object"
+      ],
+      "exact_mappings": [
+        "http://www.w3.org/2002/07/owl#annotatedTarget",
+        "http://purl.org/oban/association_has_object"
+      ],
+      "is_a": "object",
+      "domain": "ChemicalGeneSensitivityAssociation",
+      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
+      "alias": "object",
+      "owner": "ChemicalGeneSensitivityAssociation",
+      "domain_of": [
+        "ChemicalGeneSensitivityAssociation"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "object",
+      "range": "GeneOrGeneProduct",
+      "required": true,
+      "inlined": true,
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "chemical_gene_sensitivity_association_predicate",
+      "definition_uri": "https://w3id.org/biolink/vocab/predicate",
+      "local_names": {
+        "ga4gh": {
+          "local_name_source": "ga4gh",
+          "local_name_value": "annotation predicate"
+        },
+        "translator": {
+          "local_name_source": "translator",
+          "local_name_value": "predicate"
+        }
+      },
+      "description": "must be a descendant of 'affects sensitivity to' (e.g. 'increases sensitivity to' or 'decreases sensitivity to')",
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "mappings": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate"
+      ],
+      "exact_mappings": [
+        "http://www.w3.org/2002/07/owl#annotatedProperty",
+        "http://purl.org/oban/association_has_predicate"
+      ],
+      "is_a": "predicate",
+      "domain": "ChemicalGeneSensitivityAssociation",
+      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate",
+      "alias": "predicate",
+      "owner": "ChemicalGeneSensitivityAssociation",
+      "domain_of": [
+        "ChemicalGeneSensitivityAssociation"
+      ],
+      "subproperty_of": "affects_sensitivity_to",
+      "is_usage_slot": true,
+      "usage_slot_name": "predicate",
+      "range": "uriorcurie",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "chemical_gene_sensitivity_association_subject_form_or_variant_qualifier",
+      "definition_uri": "https://w3id.org/biolink/vocab/subject_form_or_variant_qualifier",
+      "description": "A qualifier that composes with a core subject/object concept to define a specific type, variant, alternative version of this concept. The composed concept remains a subtype or instance of the core concept. For example, the qualifier \u2018mutation\u2019 combines with the core concept \u2018Gene X\u2019 to express the compose concept \u2018a mutation of Gene X\u2019.  This qualifier specifies a change in the subject of an association (aka: statement).",
+      "examples": [
+        {
+          "value": "mutation",
+          "@type": "Example"
+        },
+        {
+          "value": "late stage",
+          "@type": "Example"
+        },
+        {
+          "value": "severe",
+          "@type": "Example"
+        },
+        {
+          "value": "transplant",
+          "@type": "Example"
+        },
+        {
+          "value": "chemical analog",
+          "@type": "Example"
+        }
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "is_a": "subject_form_or_variant_qualifier",
+      "domain": "ChemicalGeneSensitivityAssociation",
+      "slot_uri": "https://w3id.org/biolink/vocab/subject_form_or_variant_qualifier",
+      "alias": "subject form or variant qualifier",
+      "owner": "ChemicalGeneSensitivityAssociation",
+      "domain_of": [
+        "ChemicalGeneSensitivityAssociation"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "subject form or variant qualifier",
+      "range": "ChemicalOrGeneOrGeneProductFormOrVariantEnum",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "chemical_gene_sensitivity_association_subject_part_qualifier",
+      "definition_uri": "https://w3id.org/biolink/vocab/subject_part_qualifier",
+      "description": "defines a specific part/component of the core concept (used in cases there this specific part has no IRI we can use to directly represent it).  This qualifier is for the subject of an association (or statement).",
+      "examples": [
+        {
+          "value": "polyA tail",
+          "@type": "Example"
+        },
+        {
+          "value": "upstream control region",
+          "@type": "Example"
+        }
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "is_a": "subject_part_qualifier",
+      "domain": "ChemicalGeneSensitivityAssociation",
+      "slot_uri": "https://w3id.org/biolink/vocab/subject_part_qualifier",
+      "alias": "subject part qualifier",
+      "owner": "ChemicalGeneSensitivityAssociation",
+      "domain_of": [
+        "ChemicalGeneSensitivityAssociation"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "subject part qualifier",
+      "range": "GeneOrGeneProductOrChemicalPartQualifierEnum",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "chemical_gene_sensitivity_association_subject_derivative_qualifier",
+      "definition_uri": "https://w3id.org/biolink/vocab/subject_derivative_qualifier",
+      "description": "A qualifier that composes with a core subject/object  concept to describe something that is derived from the core concept.  For example, the qualifier \u2018metabolite\u2019 combines with a \u2018Chemical X\u2019 core concept to express the composed concept \u2018a metabolite of Chemical X\u2019.  This qualifier is for the subject of an association (or statement).",
+      "examples": [
+        {
+          "value": "metabolite",
+          "@type": "Example"
+        }
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "is_a": "subject_derivative_qualifier",
+      "domain": "ChemicalGeneSensitivityAssociation",
+      "slot_uri": "https://w3id.org/biolink/vocab/subject_derivative_qualifier",
+      "alias": "subject derivative qualifier",
+      "owner": "ChemicalGeneSensitivityAssociation",
+      "domain_of": [
+        "ChemicalGeneSensitivityAssociation"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "subject derivative qualifier",
+      "range": "ChemicalEntityDerivativeEnum",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "chemical_gene_sensitivity_association_subject_aspect_qualifier",
+      "definition_uri": "https://w3id.org/biolink/vocab/subject_aspect_qualifier",
+      "description": "Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the subject of an association (aka: statement).",
+      "examples": [
+        {
+          "value": "stability",
+          "@type": "Example"
+        },
+        {
+          "value": "abundance",
+          "@type": "Example"
+        },
+        {
+          "value": "expression",
+          "@type": "Example"
+        },
+        {
+          "value": "exposure",
+          "@type": "Example"
+        }
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "is_a": "subject_aspect_qualifier",
+      "domain": "ChemicalGeneSensitivityAssociation",
+      "slot_uri": "https://w3id.org/biolink/vocab/subject_aspect_qualifier",
+      "alias": "subject aspect qualifier",
+      "owner": "ChemicalGeneSensitivityAssociation",
+      "domain_of": [
+        "ChemicalGeneSensitivityAssociation"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "subject aspect qualifier",
+      "range": "GeneOrGeneProductOrChemicalEntityAspectEnum",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "chemical_gene_sensitivity_association_subject_direction_qualifier",
+      "definition_uri": "https://w3id.org/biolink/vocab/subject_direction_qualifier",
+      "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement).",
+      "examples": [
+        {
+          "value": "increased",
+          "@type": "Example"
+        },
+        {
+          "value": "downregulated",
+          "@type": "Example"
+        }
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "is_a": "subject_direction_qualifier",
+      "domain": "ChemicalGeneSensitivityAssociation",
+      "slot_uri": "https://w3id.org/biolink/vocab/subject_direction_qualifier",
+      "alias": "subject direction qualifier",
+      "owner": "ChemicalGeneSensitivityAssociation",
+      "domain_of": [
+        "ChemicalGeneSensitivityAssociation"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "subject direction qualifier",
+      "range": "DirectionQualifierEnum",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "chemical_gene_sensitivity_association_qualified_predicate",
+      "definition_uri": "https://w3id.org/biolink/vocab/qualified_predicate",
+      "description": "Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  Has a value from the Biolink 'related_to' hierarchy, for example, biolink:related_to, biolink:causes, biolink:treats This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a \u2018full statement\u2019 reading of the association, where qualifier-based semantics are included. This is necessary only in cases where the primary predicate does not work in a full statement reading.",
+      "notes": [
+        "to express the statement that \u201cChemical X causes increased expression of Gene Y\u201d, the core triple is read using the fields subject:ChemX, predicate:affects, object:GeneY . . . and the full statement is read using the fields subject:ChemX, qualified_predicate:causes, object:GeneY, object_aspect: expression, object_direction:increased. The predicate \u2018affects\u2019 is needed for the core triple reading, but does not make sense in the full statement reading  (because \u201cChemical X affects increased expression of Gene Y'' is not what we mean to say here: it causes increased expression of Gene Y)"
+      ],
+      "examples": [
+        {
+          "value": "biolink:causes",
+          "description": "used with `affects` predicate to express causal statements",
+          "@type": "Example"
+        }
+      ],
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "is_a": "qualified_predicate",
+      "domain": "ChemicalGeneSensitivityAssociation",
+      "slot_uri": "https://w3id.org/biolink/vocab/qualified_predicate",
+      "alias": "qualified predicate",
+      "owner": "ChemicalGeneSensitivityAssociation",
+      "domain_of": [
+        "ChemicalGeneSensitivityAssociation"
+      ],
+      "subproperty_of": "causes",
+      "is_usage_slot": true,
+      "usage_slot_name": "qualified predicate",
+      "range": "uriorcurie",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "chemical_gene_sensitivity_association_object_form_or_variant_qualifier",
+      "definition_uri": "https://w3id.org/biolink/vocab/object_form_or_variant_qualifier",
+      "description": "A qualifier that composes with a core subject/object concept to define a specific type, variant, alternative version of this concept. The composed concept remains a subtype or instance of the core concept. For example, the qualifier \u2018mutation\u2019 combines with the core concept \u2018Gene X\u2019 to express the compose concept \u2018a mutation of Gene X\u2019.  This qualifier specifies a change in the object of an association (aka: statement).",
+      "examples": [
+        {
+          "value": "mutation",
+          "@type": "Example"
+        },
+        {
+          "value": "late stage",
+          "@type": "Example"
+        },
+        {
+          "value": "severe",
+          "@type": "Example"
+        },
+        {
+          "value": "transplant",
+          "@type": "Example"
+        },
+        {
+          "value": "chemical analog",
+          "@type": "Example"
+        }
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "is_a": "object_form_or_variant_qualifier",
+      "domain": "ChemicalGeneSensitivityAssociation",
+      "slot_uri": "https://w3id.org/biolink/vocab/object_form_or_variant_qualifier",
+      "alias": "object form or variant qualifier",
+      "owner": "ChemicalGeneSensitivityAssociation",
+      "domain_of": [
+        "ChemicalGeneSensitivityAssociation"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "object form or variant qualifier",
+      "range": "ChemicalOrGeneOrGeneProductFormOrVariantEnum",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "chemical_gene_sensitivity_association_object_part_qualifier",
+      "definition_uri": "https://w3id.org/biolink/vocab/object_part_qualifier",
+      "description": "defines a specific part/component of the core concept (used in cases there this specific part has no IRI we can use to directly represent it).  This qualifier is for the object of an association (or statement).",
+      "examples": [
+        {
+          "value": "polyA tail",
+          "@type": "Example"
+        },
+        {
+          "value": "upstream control region",
+          "@type": "Example"
+        }
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "is_a": "object_part_qualifier",
+      "domain": "ChemicalGeneSensitivityAssociation",
+      "slot_uri": "https://w3id.org/biolink/vocab/object_part_qualifier",
+      "alias": "object part qualifier",
+      "owner": "ChemicalGeneSensitivityAssociation",
+      "domain_of": [
+        "ChemicalGeneSensitivityAssociation"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "object part qualifier",
+      "range": "GeneOrGeneProductOrChemicalPartQualifierEnum",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "chemical_gene_sensitivity_association_object_derivative_qualifier",
+      "definition_uri": "https://w3id.org/biolink/vocab/object_derivative_qualifier",
+      "description": "A qualifier that composes with a core subject/object  concept to describe something that is derived from the core concept.  For example, the qualifier \u2018metabolite\u2019 combines with a \u2018Chemical X\u2019 core concept to express the composed concept \u2018a metabolite of Chemical X\u2019.  This qualifier is for the object of an association (or statement).",
+      "examples": [
+        {
+          "value": "metabolite",
+          "@type": "Example"
+        }
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "is_a": "object_derivative_qualifier",
+      "domain": "ChemicalGeneSensitivityAssociation",
+      "slot_uri": "https://w3id.org/biolink/vocab/object_derivative_qualifier",
+      "alias": "object derivative qualifier",
+      "owner": "ChemicalGeneSensitivityAssociation",
+      "domain_of": [
+        "ChemicalGeneSensitivityAssociation"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "object derivative qualifier",
+      "range": "ChemicalEntityDerivativeEnum",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "chemical_gene_sensitivity_association_object_aspect_qualifier",
+      "definition_uri": "https://w3id.org/biolink/vocab/object_aspect_qualifier",
+      "description": "Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the object of an association (aka: statement).",
+      "examples": [
+        {
+          "value": "stability",
+          "@type": "Example"
+        },
+        {
+          "value": "abundance",
+          "@type": "Example"
+        },
+        {
+          "value": "expression",
+          "@type": "Example"
+        },
+        {
+          "value": "exposure",
+          "@type": "Example"
+        }
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "is_a": "object_aspect_qualifier",
+      "domain": "ChemicalGeneSensitivityAssociation",
+      "slot_uri": "https://w3id.org/biolink/vocab/object_aspect_qualifier",
+      "alias": "object aspect qualifier",
+      "owner": "ChemicalGeneSensitivityAssociation",
+      "domain_of": [
+        "ChemicalGeneSensitivityAssociation"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "object aspect qualifier",
+      "range": "GeneOrGeneProductOrChemicalEntityAspectEnum",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "chemical_gene_sensitivity_association_object_direction_qualifier",
+      "definition_uri": "https://w3id.org/biolink/vocab/object_direction_qualifier",
+      "description": "Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement).",
+      "examples": [
+        {
+          "value": "increased",
+          "@type": "Example"
+        },
+        {
+          "value": "downregulated",
+          "@type": "Example"
+        }
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "is_a": "object_direction_qualifier",
+      "domain": "ChemicalGeneSensitivityAssociation",
+      "slot_uri": "https://w3id.org/biolink/vocab/object_direction_qualifier",
+      "alias": "object direction qualifier",
+      "owner": "ChemicalGeneSensitivityAssociation",
+      "domain_of": [
+        "ChemicalGeneSensitivityAssociation"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "object direction qualifier",
+      "range": "DirectionQualifierEnum",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "chemical_gene_sensitivity_association_anatomical_context_qualifier",
+      "definition_uri": "https://w3id.org/biolink/vocab/anatomical_context_qualifier",
+      "description": "A statement qualifier representing an anatomical location where an relationship expressed in an association took place (can be a tissue, cell type, or sub-cellular location).",
+      "notes": [
+        "Anatomical context values can be any term from UBERON. For example, the context qualifier \u2018cerebral cortext\u2019 combines with a core concept of \u2018neuron\u2019 to express the composed concept \u2018neuron in the cerebral cortext\u2019. The species_context_qualifier applies taxonomic context.  Ontology CURIEs are expected as values here, the examples below are intended to help clarify the content of the CURIEs."
+      ],
+      "examples": [
+        {
+          "value": "UBERON:0000178",
+          "description": "blood",
+          "@type": "Example"
+        },
+        {
+          "value": "UBERON:0000956",
+          "description": "cerebral cortex",
+          "@type": "Example"
+        },
+        {
+          "value": "GO:0005794",
+          "description": "Golgi apparatus",
+          "@type": "Example"
+        }
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "is_a": "anatomical_context_qualifier",
+      "domain": "ChemicalGeneSensitivityAssociation",
+      "slot_uri": "https://w3id.org/biolink/vocab/anatomical_context_qualifier",
+      "alias": "anatomical context qualifier",
+      "owner": "ChemicalGeneSensitivityAssociation",
+      "domain_of": [
+        "ChemicalGeneSensitivityAssociation"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "anatomical context qualifier",
+      "range": "AnatomicalEntity",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "chemical_gene_sensitivity_association_species_context_qualifier",
+      "definition_uri": "https://w3id.org/biolink/vocab/species_context_qualifier",
+      "description": "A statement qualifier representing a taxonomic category of species in which a relationship expressed in an association took place.",
+      "notes": [
+        "Ontology CURIEs are expected as values here, the examples below are intended to help clarify the content of the CURIEs."
+      ],
+      "examples": [
+        {
+          "value": "NCBITaxon:7955",
+          "description": "zebrafish",
+          "@type": "Example"
+        },
+        {
+          "value": "NCBITaxon:9606",
+          "description": "human",
+          "@type": "Example"
+        }
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "is_a": "species_context_qualifier",
+      "domain": "ChemicalGeneSensitivityAssociation",
+      "slot_uri": "https://w3id.org/biolink/vocab/species_context_qualifier",
+      "alias": "species context qualifier",
+      "owner": "ChemicalGeneSensitivityAssociation",
+      "domain_of": [
+        "ChemicalGeneSensitivityAssociation"
       ],
       "is_usage_slot": true,
       "usage_slot_name": "species context qualifier",
@@ -38886,6 +39461,110 @@
       "@type": "ClassDefinition"
     },
     {
+      "name": "ChemicalGeneSensitivityAssociation",
+      "definition_uri": "https://w3id.org/biolink/vocab/ChemicalGeneSensitivityAssociation",
+      "description": "Describes a relationship in which a chemical entity affects the sensitivity or susceptibility of a biological system to a gene or gene product (e.g. a chemical that increases or decreases the response to a gene or gene product). This covers 'response to substance' style interactions from sources such as CTD that map to the 'affects sensitivity to' predicate hierarchy, as opposed to the abundance/activity/processing effects covered by ChemicalAffectsGeneAssociation.",
+      "examples": [
+        {
+          "object": {
+            "subject": "CHEBI:28748",
+            "predicate": "biolink:increases_sensitivity_to",
+            "object": "NCBIGene:7157",
+            "category": "biolink:ChemicalGeneSensitivityAssociation",
+            "knowledge_level": "knowledge_assertion",
+            "agent_type": "manual_agent",
+            "species_context_qualifier": "NCBITaxon:9606"
+          },
+          "@type": "Example"
+        },
+        {
+          "object": {
+            "subject": "CHEBI:45863",
+            "predicate": "biolink:decreases_sensitivity_to",
+            "object": "NCBIGene:5243",
+            "category": "biolink:ChemicalGeneSensitivityAssociation",
+            "knowledge_level": "knowledge_assertion",
+            "agent_type": "manual_agent",
+            "species_context_qualifier": "NCBITaxon:9606"
+          },
+          "@type": "Example"
+        }
+      ],
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "broad_mappings": [
+        "SIO:001257"
+      ],
+      "is_a": "Association",
+      "slots": [
+        "id",
+        "iri",
+        "name",
+        "description",
+        "has_attribute",
+        "deprecated",
+        "negated",
+        "qualifier",
+        "qualifiers",
+        "publications",
+        "association_sources",
+        "has_evidence_of_type",
+        "has_evidence",
+        "knowledge_source",
+        "primary_knowledge_source",
+        "aggregator_knowledge_source",
+        "knowledge_level",
+        "agent_type",
+        "timepoint",
+        "original_subject",
+        "original_predicate",
+        "original_object",
+        "subject_feature_name",
+        "object_feature_name",
+        "subject_category",
+        "object_category",
+        "subject_closure",
+        "object_closure",
+        "subject_category_closure",
+        "object_category_closure",
+        "subject_namespace",
+        "object_namespace",
+        "subject_label_closure",
+        "object_label_closure",
+        "retrieval_source_ids",
+        "p_value",
+        "adjusted_p_value",
+        "supporting_text",
+        "association_has_supporting_studies",
+        "update_date",
+        "has_confidence_score",
+        "elevate_to_prediction",
+        "semmed_agreement_count",
+        "association_type",
+        "association_category",
+        "chemical_gene_sensitivity_association_subject_form_or_variant_qualifier",
+        "chemical_gene_sensitivity_association_subject_part_qualifier",
+        "chemical_gene_sensitivity_association_subject_derivative_qualifier",
+        "chemical_gene_sensitivity_association_subject_aspect_qualifier",
+        "chemical_gene_sensitivity_association_subject_direction_qualifier",
+        "chemical_gene_sensitivity_association_object_form_or_variant_qualifier",
+        "chemical_gene_sensitivity_association_object_part_qualifier",
+        "chemical_gene_sensitivity_association_object_derivative_qualifier",
+        "chemical_gene_sensitivity_association_object_aspect_qualifier",
+        "chemical_gene_sensitivity_association_object_direction_qualifier",
+        "chemical_gene_sensitivity_association_qualified_predicate",
+        "chemical_gene_sensitivity_association_anatomical_context_qualifier",
+        "chemical_gene_sensitivity_association_species_context_qualifier",
+        "evidence_count",
+        "supporting_documents",
+        "chemical_gene_sensitivity_association_subject",
+        "chemical_gene_sensitivity_association_object",
+        "chemical_gene_sensitivity_association_predicate"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/biolink/vocab/ChemicalGeneSensitivityAssociation",
+      "@type": "ClassDefinition"
+    },
+    {
       "name": "GeneAffectsChemicalAssociation",
       "definition_uri": "https://w3id.org/biolink/vocab/GeneAffectsChemicalAssociation",
       "description": "Describes an effect that a gene or gene product has on a chemical entity (e.g. an impact of on its abundance, activity, localization, processing, transport, etc.)",
@@ -44442,9 +45121,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2026-05-29T21:50:36",
-  "source_file_size": 513950,
-  "generation_date": "2026-05-29T21:50:40",
+  "source_file_date": "2026-06-26T12:44:00",
+  "source_file_size": 517228,
+  "generation_date": "2026-06-26T12:44:08",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",

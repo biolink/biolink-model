@@ -11625,6 +11625,86 @@ classes:
           causal_mechanism_qualifier: inhibition
           qualified_predicate: biolink:causes
 
+  chemical gene sensitivity association:
+    description: >-
+      Describes a relationship in which a chemical entity affects the sensitivity or susceptibility
+      of a biological system to a gene or gene product (e.g. a chemical that increases or decreases
+      the response to a gene or gene product). This covers 'response to substance' style interactions
+      from sources such as CTD that map to the 'affects sensitivity to' predicate hierarchy, as opposed
+      to the abundance/activity/processing effects covered by ChemicalAffectsGeneAssociation.
+    is_a: association
+    broad_mappings:
+      - SIO:001257    ## chemical-gene association
+    slots:
+      - subject form or variant qualifier
+      - subject part qualifier
+      - subject derivative qualifier
+      - subject aspect qualifier
+      - subject direction qualifier
+      - object form or variant qualifier
+      - object part qualifier
+      - object derivative qualifier
+      - object aspect qualifier
+      - object direction qualifier
+      - qualified predicate
+      - anatomical context qualifier
+      - species context qualifier
+      - evidence count
+      - supporting documents
+    slot_usage:
+      subject:
+        range: chemical entity
+      object:
+        range: gene or gene product
+      predicate:
+        subproperty_of: affects sensitivity to
+        description: >-
+          must be a descendant of 'affects sensitivity to' (e.g. 'increases sensitivity to'
+          or 'decreases sensitivity to')
+      subject form or variant qualifier:
+        range: ChemicalOrGeneOrGeneProductFormOrVariantEnum
+      subject part qualifier:
+        range: GeneOrGeneProductOrChemicalPartQualifierEnum
+      subject derivative qualifier:
+        range: ChemicalEntityDerivativeEnum
+      subject aspect qualifier:
+        range: GeneOrGeneProductOrChemicalEntityAspectEnum
+      subject direction qualifier:
+        range: DirectionQualifierEnum
+      qualified predicate:
+        subproperty_of: causes
+      object form or variant qualifier:
+        range: ChemicalOrGeneOrGeneProductFormOrVariantEnum
+      object part qualifier:
+        range: GeneOrGeneProductOrChemicalPartQualifierEnum
+      object derivative qualifier:
+        range: ChemicalEntityDerivativeEnum
+      object aspect qualifier:
+        range: GeneOrGeneProductOrChemicalEntityAspectEnum
+      object direction qualifier:
+        range: DirectionQualifierEnum
+      anatomical context qualifier:
+        range: anatomical entity
+      species context qualifier:
+        range: organism taxon
+    examples:
+      - object:
+          subject: CHEBI:28748  # doxorubicin
+          predicate: biolink:increases_sensitivity_to
+          object: NCBIGene:7157  # TP53
+          category: biolink:ChemicalGeneSensitivityAssociation
+          knowledge_level: knowledge_assertion
+          agent_type: manual_agent
+          species_context_qualifier: NCBITaxon:9606
+      - object:
+          subject: CHEBI:45863  # paclitaxel
+          predicate: biolink:decreases_sensitivity_to
+          object: NCBIGene:5243  # ABCB1
+          category: biolink:ChemicalGeneSensitivityAssociation
+          knowledge_level: knowledge_assertion
+          agent_type: manual_agent
+          species_context_qualifier: NCBITaxon:9606
+
   gene affects chemical association:
     description: >-
       Describes an effect that a gene or gene product has on a chemical entity (e.g. an impact
