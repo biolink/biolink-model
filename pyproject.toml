@@ -63,6 +63,13 @@ source = "uv-dynamic-versioning"
 [tool.hatch.build.targets.wheel]
 packages = ["src/biolink_model"]
 
+[tool.uv]
+# Dependency cooldown: ignore releases newer than 7 days so malware/CVE advisories have time to surface.
+# uv records this as `exclude-newer-span = "P7D"` in uv.lock (and may also include a placeholder
+# `exclude-newer` timestamp for backwards compatibility), avoiding per-relock absolute timestamps and
+# reducing cross-branch merge conflicts (see astral-sh/uv#18708). Requires uv >= 0.9.17.
+exclude-newer = "7 days"
+
 [tool.codespell]
 skip = '.idea,.git,SEMMEDDB*,semmed*,*.svg,docs,./src/docs/registry.md,./.venv'
 ignore-words-list = 'amination,ehr,mor,brite,nin,mirgate'
