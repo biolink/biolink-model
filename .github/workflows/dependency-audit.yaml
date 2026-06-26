@@ -1,0 +1,45 @@
+name: Audit dependencies
+
+env:
+  UV_PREVIEW: "1"          # Enable preview uv audit/malware engines
+  UV_MALWARE_CHECK: "1"    # Block malicious installs on sync/run
+  UV_EXCLUDE_NEWER: "7 days"  # Mirror pyproject.toml cooldown
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+  merge_group:
+  workflow_dispatch:
+
+jobs:
+  security-check:
+    name: Validate Dependencies
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+
+      # Unpinned: audit/malware-check are preview-only and ship in recent uv releases.
+      - name: Install uv and setup uv caching
+        uses: astral-sh/setup-uv@v8.1.0
+        with:
+          enable-cache: true
+
+      - name: Set up Python
+        uses: actions/setup-python@v6.2.0
+        id: setup-python
+        with:
+          python-version: 3.13
+
+      # Check the lockfile for known CVEs.
+      - name: Audit lockfile for CVEs
+        run: uv audit
+
+      # Anti-malware gate: a sync against a package with a known OSV malware
+      # advisory exits non-zero. The advisory-publication gap is covered by the
+      # 7-day exclude-newer cooldown.
+      - name: Verify Environment Sync (Anti-Malware Gate)
+        run: uv sync --frozen
