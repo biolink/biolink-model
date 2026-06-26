@@ -151,7 +151,7 @@ dev = [
     { name = "mkdocs-material", specifier = ">=9.5.17,<10" },
     { name = "mkdocs-mermaid2-plugin", specifier = ">=1.1.1,<2" },
     { name = "pytest", specifier = ">=8.1.1,<10" },
-    { name = "schemasheets", specifier = ">=0.2.1,<0.3" },
+    { name = "schemasheets", specifier = ">=0.2.1,<0.5" },
     { name = "yamllint", specifier = ">=1.35.1,<2" },
 ]
 
@@ -2031,7 +2031,7 @@ wheels = [
 
 [[package]]
 name = "schemasheets"
-version = "0.2.1"
+version = "0.4.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "bioregistry" },
@@ -2040,9 +2040,9 @@ dependencies = [
     { name = "linkml-runtime" },
     { name = "ontodev-cogs" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/5f/f7/3cc30fef8ecb51b125b3a080cfcc867f3c947351ae5585b990f5c81a5e3f/schemasheets-0.2.1.tar.gz", hash = "sha256:3d82a241f89735c74c7f0fda4d780c5b1fadc3e59aeaedb008a71673105966ea", size = 28573, upload-time = "2024-03-04T19:26:33.309Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/a2/55/3e82bdeda72abbaa4be9d9fe06e0dcb1796d854d6d7258809909eb6ddaf8/schemasheets-0.4.0.tar.gz", hash = "sha256:0bf142a9e3691fb7ed2130b21e3010f6f094f52e78823ad3e770aa697115b353", size = 30244, upload-time = "2025-05-01T18:21:37.077Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/35/94/cbce1c29599f3b9ae164761d9585253246d2bcae7def578293b8926f178d/schemasheets-0.2.1-py3-none-any.whl", hash = "sha256:e574e941a6be023055f5aff1d436e70d4a2f18e11b575c5aa9d72bea305d402b", size = 33142, upload-time = "2024-03-04T19:26:30.74Z" },
+    { url = "https://files.pythonhosted.org/packages/56/f1/b08c293f0bec5ffe294134cc3f6016fd1c5c7bbb502612e619142b6f7c57/schemasheets-0.4.0-py3-none-any.whl", hash = "sha256:e122702605a131a30a5c7837e894bab97375a2e0633199b11f33a721de15ae85", size = 34850, upload-time = "2025-05-01T18:21:36.202Z" },
 ]
 
 [[package]]
