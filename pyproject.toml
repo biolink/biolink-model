@@ -64,11 +64,10 @@ source = "uv-dynamic-versioning"
 packages = ["src/biolink_model"]
 
 [tool.uv]
-# Dependency cooldown: ignore releases newer than 7 days so malware/CVE
-# advisories have time to surface before a version is adopted. uv resolves
-# this to a relative span (`exclude-newer-span = "P7D"`) embedded in uv.lock
-# rather than an absolute timestamp, avoiding per-relock churn / cross-branch
-# merge conflicts (see astral-sh/uv#18708). Requires uv >= 0.9.17.
+# Dependency cooldown: ignore releases newer than 7 days so malware/CVE advisories have time to surface.
+# uv records this as `exclude-newer-span = "P7D"` in uv.lock (and may also include a placeholder
+# `exclude-newer` timestamp for backwards compatibility), avoiding per-relock absolute timestamps and
+# reducing cross-branch merge conflicts (see astral-sh/uv#18708). Requires uv >= 0.9.17.
 exclude-newer = "7 days"
 
 [tool.codespell]
