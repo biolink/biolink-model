@@ -24,13 +24,13 @@ jobs:
     steps:
       - name: Check out commit
         # Reference: https://github.com/actions/checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6.2.0
         with:
           python-version: "3.10"
       - name: Install uv
-        uses: astral-sh/setup-uv@v3
+        uses: astral-sh/setup-uv@v7
       - name: Install Python dependencies (including "docs" extras)
         run: uv sync --extra docs
       - name: Build docs
@@ -40,7 +40,7 @@ jobs:
         # Possible exit codes: https://github.com/lycheeverse/lychee?tab=readme-ov-file#exit-codes
         # Reference: https://github.com/lycheeverse/lychee-action
         id: lychee
-        uses: lycheeverse/lychee-action@v2.0.2
+        uses: lycheeverse/lychee-action@v2.8.0
         with:
           # Reference: https://github.com/lycheeverse/lychee#commandline-parameters
           args: --base docs --verbose --no-progress --format markdown --timeout 5 'docs/*.md' 'docs/**/*.md'
@@ -51,7 +51,7 @@ jobs:
         # This step will only run if lychee returned a non-zero exit code.
         # Reference: https://docs.github.com/en/actions/learn-github-actions/variables#using-the-env-context-to-access-environment-variable-values
         if: ${{ env.lychee_exit_code != 0 }}
-        uses: peter-evans/create-issue-from-file@v4
+        uses: peter-evans/create-issue-from-file@v6
         with:
           title: Markdown docs contain broken links
           content-filepath: ./lychee/out.md

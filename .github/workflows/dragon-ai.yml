@@ -22,11 +22,11 @@ jobs:
       result: ${{ steps.check.outputs.result }}
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v7
 
       - name: Check for qualifying mention
         id: check
-        uses: actions/github-script@v6
+        uses: actions/github-script@v9
         with:
           github-token: ${{ secrets.PAT_FOR_PR }}  # Use PAT instead of default token
           script: |
@@ -98,7 +98,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v7
         with:
           fetch-depth: 0
           token: ${{ secrets.PAT_FOR_PR }}  # Use PAT for checkout to allow committing later
@@ -112,7 +112,7 @@ jobs:
         run: mkdir -p ${{ env.TOOLS_DIR }}
 
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v6
         with:
           node-version: '18'
 
@@ -138,7 +138,7 @@ jobs:
           echo "LOGFIRE_SEND_TO_LOGFIRE=false" >> $GITHUB_ENV
 
       - name: Install uv
-        uses: astral-sh/setup-uv@v5
+        uses: astral-sh/setup-uv@v7
 
       - name: Install python tools
         run: |
