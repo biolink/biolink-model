@@ -2124,6 +2124,73 @@ message ChemicalGeneInteractionAssociation
   geneOrGeneProduct object = 0
   uriorcurie predicate = 0
  }
+// Describes a relationship in which a chemical entity affects the sensitivity or susceptibility of a biological system to a gene or gene product (e.g. a chemical that increases or decreases the response to a gene or gene product). This covers 'response to substance' style interactions from sources such as CTD that map to the 'affects sensitivity to' predicate hierarchy, as opposed to the abundance/activity/processing effects covered by ChemicalAffectsGeneAssociation.
+message ChemicalGeneSensitivityAssociation
+ {
+  string id = 0
+  iriType iri = 0
+  labelType name = 0
+  narrativeText description = 0
+ repeated  attribute hasAttribute = 0
+  boolean deprecated = 0
+  boolean negated = 0
+  string qualifier = 0
+ repeated  ontologyClass qualifiers = 0
+ repeated  publication publications = 0
+ repeated  retrievalSource sources = 0
+ repeated  evidenceType hasEvidenceOfType = 0
+ repeated  informationContentEntity hasEvidence = 0
+  string knowledgeSource = 0
+  string primaryKnowledgeSource = 0
+ repeated  string aggregatorKnowledgeSource = 0
+  knowledgeLevelEnum knowledgeLevel = 0
+  agentTypeEnum agentType = 0
+  timeType timepoint = 0
+  string originalSubject = 0
+  uriorcurie originalPredicate = 0
+  string originalObject = 0
+  string subjectFeatureName = 0
+  string objectFeatureName = 0
+  ontologyClass subjectCategory = 0
+  ontologyClass objectCategory = 0
+ repeated  string subjectClosure = 0
+ repeated  string objectClosure = 0
+ repeated  ontologyClass subjectCategoryClosure = 0
+ repeated  ontologyClass objectCategoryClosure = 0
+  string subjectNamespace = 0
+  string objectNamespace = 0
+ repeated  string subjectLabelClosure = 0
+ repeated  string objectLabelClosure = 0
+ repeated  retrievalSource retrievalSourceIds = 0
+  float pValue = 0
+  float adjustedPValue = 0
+ repeated  string supportingText = 0
+ repeated  study hasSupportingStudies = 0
+  date updateDate = 0
+  float hasConfidenceScore = 0
+  boolean elevateToPrediction = 0
+  integer semmedAgreementCount = 0
+ repeated  string type = 0
+ repeated  uriorcurie category = 0
+  chemicalOrGeneOrGeneProductFormOrVariantEnum subjectFormOrVariantQualifier = 0
+  geneOrGeneProductOrChemicalPartQualifierEnum subjectPartQualifier = 0
+  chemicalEntityDerivativeEnum subjectDerivativeQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
+  directionQualifierEnum subjectDirectionQualifier = 0
+  chemicalOrGeneOrGeneProductFormOrVariantEnum objectFormOrVariantQualifier = 0
+  geneOrGeneProductOrChemicalPartQualifierEnum objectPartQualifier = 0
+  chemicalEntityDerivativeEnum objectDerivativeQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum objectAspectQualifier = 0
+  directionQualifierEnum objectDirectionQualifier = 0
+  uriorcurie qualifiedPredicate = 0
+ repeated  anatomicalEntity anatomicalContextQualifier = 0
+  organismTaxon speciesContextQualifier = 0
+  integer evidenceCount = 0
+ repeated  uriorcurie supportingDocuments = 0
+  chemicalEntity subject = 0
+  geneOrGeneProduct object = 0
+  uriorcurie predicate = 0
+ }
 // A chemical mixture is a chemical entity composed of two or more molecular entities.
 message ChemicalMixture
  {
