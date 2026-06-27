@@ -498,7 +498,7 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../authors/">authors</a>: <br> <i> connects an publication to the list of authors who contributed to the publication. This property should be a comma-delimited list of author names. It is recommended that an author's name be formatted as "surname, firstname initial.".   Note that this property is a node annotation expressing the citation list of authorship which might typically otherwise be more completely documented in biolink:PublicationToProviderAssociation defined edges which point to full details about an author and possibly, some qualifiers which clarify the specific status of a given author in the publication. </i></br></td>
+<td><a href="../authors/">authors</a>: <br/> <i> connects an publication to the list of authors who contributed to the publication. This property should be a comma-delimited list of author names. It is recommended that an author's name be formatted as "surname, firstname initial.".   Note that this property is a node annotation expressing the citation list of authorship which might typically otherwise be more completely documented in biolink:PublicationToProviderAssociation defined edges which point to full details about an author and possibly, some qualifiers which clarify the specific status of a given author in the publication. </i></td>
 <td>* <br/> <a href="../Agent/">Agent</a></td>
 <td>direct</td>
 <td></td>
@@ -1285,6 +1285,12 @@
 <td><a href="./">Publication</a></td>
 </tr>
 <tr>
+<td><a href="../ChemicalGeneSensitivityAssociation/">ChemicalGeneSensitivityAssociation</a></td>
+<td><a href="../publications/">publications</a></td>
+<td>range</td>
+<td><a href="./">Publication</a></td>
+</tr>
+<tr>
 <td><a href="../GeneAffectsChemicalAssociation/">GeneAffectsChemicalAssociation</a></td>
 <td><a href="../publications/">publications</a></td>
 <td>range</td>
@@ -1364,6 +1370,12 @@
 </tr>
 <tr>
 <td><a href="../DiseaseToPhenotypicFeatureAssociation/">DiseaseToPhenotypicFeatureAssociation</a></td>
+<td><a href="../publications/">publications</a></td>
+<td>range</td>
+<td><a href="./">Publication</a></td>
+</tr>
+<tr>
+<td><a href="../DiseaseToDiseaseAssociation/">DiseaseToDiseaseAssociation</a></td>
 <td><a href="../publications/">publications</a></td>
 <td>range</td>
 <td><a href="./">Publication</a></td>

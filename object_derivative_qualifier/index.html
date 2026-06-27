@@ -790,13 +790,18 @@
 </thead>
 <tbody>
 <tr>
+<td><a href="../GeneAffectsChemicalAssociation/">GeneAffectsChemicalAssociation</a></td>
+<td>Describes an effect that a gene or gene product has on a chemical entity (e.g. an impact of on its abundance, activity, localization, processing, transport, etc.)</td>
+<td>yes</td>
+</tr>
+<tr>
 <td><a href="../PredicateMapping/">PredicateMapping</a></td>
 <td>A deprecated predicate mapping object contains the deprecated predicate and an example of the rewiring that should be done to use a qualified statement in its place.</td>
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../GeneAffectsChemicalAssociation/">GeneAffectsChemicalAssociation</a></td>
-<td>Describes an effect that a gene or gene product has on a chemical entity (e.g. an impact of on its abundance, activity, localization, processing, transport, etc.)</td>
+<td><a href="../ChemicalGeneSensitivityAssociation/">ChemicalGeneSensitivityAssociation</a></td>
+<td>Describes a relationship in which a chemical entity affects the sensitivity or susceptibility of a biological system to a gene or gene product (e.g. a chemical that increases or decreases the response to a gene or gene product). This covers 'response to substance' style interactions from sources such as CTD that map to the 'affects sensitivity to' predicate hierarchy, as opposed to the abundance/activity/processing effects covered by ChemicalAffectsGeneAssociation.</td>
 <td>yes</td>
 </tr>
 </tbody>
@@ -834,6 +839,7 @@ domain: association
 alias: object_derivative_qualifier
 domain_of:
 - predicate mapping
+- chemical gene sensitivity association
 - gene affects chemical association
 range: string
 

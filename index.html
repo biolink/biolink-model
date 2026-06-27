@@ -2320,10 +2320,6 @@ databases and formats.  For more information, see: <a href="understanding-the-mo
 <td>None</td>
 </tr>
 <tr>
-<td><a href="condition_prevented_by/">condition_prevented_by</a></td>
-<td>None</td>
-</tr>
-<tr>
 <td><a href="condition_promoted_by/">condition_promoted_by</a></td>
 <td>None</td>
 </tr>
@@ -2633,6 +2629,10 @@ databases and formats.  For more information, see: <a href="understanding-the-mo
 </tr>
 <tr>
 <td><a href="has_positive_upstream_or_within_actor/">has_positive_upstream_or_within_actor</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="has_preventative_intervention/">has_preventative_intervention</a></td>
 <td>None</td>
 </tr>
 <tr>
@@ -3430,6 +3430,10 @@ databases and formats.  For more information, see: <a href="understanding-the-mo
 <td>describes an interaction between a chemical entity and a gene or gene product. Any biological or chemical effect resulting from such an interaction are out of scope, and covered by the ChemicalAffectsGeneAssociation type (e.g. impact of a chemical on the abundance, activity, structure, etc, of either participant in the interaction)</td>
 </tr>
 <tr>
+<td><a href="ChemicalGeneSensitivityAssociation/">ChemicalGeneSensitivityAssociation</a></td>
+<td>Describes a relationship in which a chemical entity affects the sensitivity or susceptibility of a biological system to a gene or gene product (e.g. a chemical that increases or decreases the response to a gene or gene product). This covers 'response to substance' style interactions from sources such as CTD that map to the 'affects sensitivity to' predicate hierarchy, as opposed to the abundance/activity/processing effects covered by ChemicalAffectsGeneAssociation.</td>
+</tr>
+<tr>
 <td><a href="ChemicalOrDrugOrTreatmentAdverseEventAssociation/">ChemicalOrDrugOrTreatmentAdverseEventAssociation</a></td>
 <td>This association defines a relationship between a chemical or treatment (or procedure) and a disease or phenotypic feature where the disease or phenotypic feature is an untoward medical occurrence that happens during treatment, whether or not considered related to the treatment.</td>
 </tr>
@@ -3460,6 +3464,10 @@ databases and formats.  For more information, see: <a href="understanding-the-mo
 <tr>
 <td><a href="DiseaseOrPhenotypicFeatureToLocationAssociation/">DiseaseOrPhenotypicFeatureToLocationAssociation</a></td>
 <td>An association between either a disease or a phenotypic feature and an anatomical entity, where the disease/feature manifests in that site.</td>
+</tr>
+<tr>
+<td><a href="DiseaseToDiseaseAssociation/">DiseaseToDiseaseAssociation</a></td>
+<td>An association between two diseases. Captures clinical or biological relationships such as comorbidity, sequela, post-infectious complication, shared susceptibility, or differential diagnosis. The precise relationship is carried by the predicate (e.g. <code>associated with</code>, <code>contributes to</code>, <code>risk affected by</code>, <code>temporally related to</code>); use this class whenever both ends of the association are diseases, rather than the more specific <code>disease to phenotypic feature association</code> (which forces the object to be a phenotypic feature) or a generic <code>association</code>.</td>
 </tr>
 <tr>
 <td><a href="DiseaseToExposureEventAssociation/">DiseaseToExposureEventAssociation</a></td>

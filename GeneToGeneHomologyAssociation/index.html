@@ -577,7 +577,7 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../subject_aspect_qualifier/">subject_aspect_qualifier</a>: <br> <i> Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the subject of an association (aka: statement). </i></br></td>
+<td><a href="../subject_aspect_qualifier/">subject_aspect_qualifier</a>: <br/> <i> Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the subject of an association (aka: statement). </i></td>
 <td>0..1 <br/> <a href="../GeneOrGeneProductOrChemicalEntityAspectEnum/">GeneOrGeneProductOrChemicalEntityAspectEnum</a></td>
 <td><a href="../GeneToGeneAssociation/">GeneToGeneAssociation</a></td>
 <td>stability, abundance, expression, exposure</td>
@@ -621,7 +621,7 @@
 <tr>
 <td><a href="../subject/">subject</a>: <br/> <i> the subject gene in the association. If the relation is symmetric, subject vs object is arbitrary. We allow a gene product to stand as a proxy for the gene or vice versa. </i></td>
 <td>1 <br/> <a href="../GeneOrGeneProduct/">GeneOrGeneProduct</a></td>
-<td><a href="../Association/">Association</a>, <a href="../GeneToGeneAssociation/">GeneToGeneAssociation</a></td>
+<td><a href="../GeneToGeneAssociation/">GeneToGeneAssociation</a>, <a href="../Association/">Association</a></td>
 <td></td>
 </tr>
 <tr>
@@ -645,13 +645,13 @@
 <tr>
 <td><a href="../predicate/">predicate</a>: <br/> <i> homology relationship type </i></td>
 <td>1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
-<td><a href="../Association/">Association</a>, <a href="../GeneToGeneAssociation/">GeneToGeneAssociation</a></td>
+<td><a href="../GeneToGeneAssociation/">GeneToGeneAssociation</a>, <a href="../Association/">Association</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="../object/">object</a>: <br/> <i> the object gene in the association. If the relation is symmetric, subject vs object is arbitrary. We allow a gene product to stand as a proxy for the gene or vice versa. </i></td>
 <td>1 <br/> <a href="../GeneOrGeneProduct/">GeneOrGeneProduct</a></td>
-<td><a href="../Association/">Association</a>, <a href="../GeneToGeneAssociation/">GeneToGeneAssociation</a></td>
+<td><a href="../GeneToGeneAssociation/">GeneToGeneAssociation</a>, <a href="../Association/">Association</a></td>
 <td></td>
 </tr>
 <tr>
@@ -808,13 +808,13 @@
 <td><a href="../subject_category_closure/">subject_category_closure</a>: <br/> <i> Used to hold the subject category closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX. </i></td>
 <td>* <br/> <a href="../OntologyClass/">OntologyClass</a></td>
 <td><a href="../Association/">Association</a></td>
-<td>['biolink:Gene", "biolink:NamedThing']</td>
+<td>['biolink:Gene', 'biolink:NamedThing']</td>
 </tr>
 <tr>
 <td><a href="../object_category_closure/">object_category_closure</a>: <br/> <i> Used to hold the object category closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX. </i></td>
 <td>* <br/> <a href="../OntologyClass/">OntologyClass</a></td>
 <td><a href="../Association/">Association</a></td>
-<td>['biolink:Disease", "biolink:NamedThing']</td>
+<td>['biolink:Disease', 'biolink:NamedThing']</td>
 </tr>
 <tr>
 <td><a href="../subject_namespace/">subject_namespace</a>: <br/> <i> Used to hold the subject namespace of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX. </i></td>

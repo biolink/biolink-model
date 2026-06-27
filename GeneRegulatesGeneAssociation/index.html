@@ -551,7 +551,7 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../object_aspect_qualifier/">object_aspect_qualifier</a>: <br> <i> the aspect of the object gene or gene product that is being regulated, must be a descendant of "activity_or_abundance"" </i></br></td>
+<td><a href="../object_aspect_qualifier/">object_aspect_qualifier</a>: <br/> <i> the aspect of the object gene or gene product that is being regulated, must be a descendant of "activity_or_abundance"" </i></td>
 <td>1 <br/> <a href="../GeneOrGeneProductOrChemicalEntityAspectEnum/">GeneOrGeneProductOrChemicalEntityAspectEnum</a></td>
 <td>direct</td>
 <td>stability, abundance, expression, exposure</td>
@@ -734,13 +734,13 @@
 <td><a href="../subject_category_closure/">subject_category_closure</a>: <br/> <i> Used to hold the subject category closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX. </i></td>
 <td>* <br/> <a href="../OntologyClass/">OntologyClass</a></td>
 <td><a href="../Association/">Association</a></td>
-<td>['biolink:Gene", "biolink:NamedThing']</td>
+<td>['biolink:Gene', 'biolink:NamedThing']</td>
 </tr>
 <tr>
 <td><a href="../object_category_closure/">object_category_closure</a>: <br/> <i> Used to hold the object category closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX. </i></td>
 <td>* <br/> <a href="../OntologyClass/">OntologyClass</a></td>
 <td><a href="../Association/">Association</a></td>
-<td>['biolink:Disease", "biolink:NamedThing']</td>
+<td>['biolink:Disease', 'biolink:NamedThing']</td>
 </tr>
 <tr>
 <td><a href="../subject_namespace/">subject_namespace</a>: <br/> <i> Used to hold the subject namespace of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX. </i></td>
@@ -887,7 +887,7 @@
 <tbody>
 <tr>
 <td>GeneRegulatesGeneAssociation</td>
-<td>JsonObj(subject='NCBIGene:551', predicate='regulates', qualified_predicate='causes', object='NCBIGene:1636', object_aspect_qualifier='activity_or_abundance', object_direction_qualifier='downregulated')</td>
+<td>{subject: NCBIGene:551, predicate: regulates, qualified_predicate: causes, object: NCBIGene:1636, object_aspect_qualifier: activity_or_abundance, object_direction_qualifier: downregulated}</td>
 </tr>
 </tbody>
 </table>
@@ -896,8 +896,12 @@
 <pre><code class="language-yaml">name: gene regulates gene association
 description: Describes a regulatory relationship between two genes or gene products.
 examples:
-- value: JsonObj(subject='NCBIGene:551', predicate='regulates', qualified_predicate='causes',
-    object='NCBIGene:1636', object_aspect_qualifier='activity_or_abundance', object_direction_qualifier='downregulated')
+- value: '{subject: NCBIGene:551, predicate: regulates, qualified_predicate: causes,
+    object: NCBIGene:1636, object_aspect_qualifier: activity_or_abundance, object_direction_qualifier:
+    downregulated}'
+  description: AVP (NCBIGene:551) regulates ACE (NCBIGene:1636), with qualified predicate
+    'causes', object aspect qualifier 'activity_or_abundance', and object direction
+    qualifier 'downregulated'.
 from_schema: https://w3id.org/biolink/vocab/
 is_a: association
 slots:

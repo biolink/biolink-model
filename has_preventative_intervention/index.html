@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://biolink.github.io/biolink-model/condition_prevented_by/">
+        <link rel="canonical" href="https://biolink.github.io/biolink-model/has_preventative_intervention/">
       
       
       
@@ -21,7 +21,7 @@
     
     
       
-        <title>Slot: condition_prevented_by (multivalued) - Biolink Model Documentation</title>
+        <title>Slot: has_preventative_intervention (multivalued) - Biolink Model Documentation</title>
       
     
     
@@ -82,7 +82,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slot-condition_prevented_by-multivalued" class="md-skip">
+        <a href="#slot-has_preventative_intervention-multivalued" class="md-skip">
           Skip to content
         </a>
       
@@ -117,7 +117,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Slot: condition_prevented_by (multivalued)
+              Slot: has_preventative_intervention (multivalued)
             
           </span>
         </div>
@@ -734,7 +734,7 @@
   
 
 
-<h1 id="slot-condition_prevented_by-multivalued"><strong> Slot: condition_prevented_by </strong>  (multivalued)</h1>
+<h1 id="slot-has_preventative_intervention-multivalued"><strong> Slot: has_preventative_intervention </strong>  (multivalued)</h1>
 <div class="highlight-box">
 
   <strong>Inverse:</strong> preventative for condition</a></small><br>
@@ -748,8 +748,8 @@
 <ul>
 <li><a href="../related_to/">related_to</a><ul>
 <li><a href="../related_to_at_instance_level/">related_to_at_instance_level</a><ul>
-<li><a href="../affected_by/">affected_by</a><ul>
-<li><strong>condition_prevented_by</strong></li>
+<li><a href="../likelihood_affected_by/">likelihood_affected_by</a><ul>
+<li><strong>has_preventative_intervention</strong></li>
 </ul>
 </li>
 </ul>
@@ -760,12 +760,12 @@
 <h2 id="linkml-source">LinkML Source</h2>
 <details open>
 
-<pre><code class="language-yaml">name: condition prevented by
+<pre><code class="language-yaml">name: has preventative intervention
 from_schema: https://w3id.org/biolink/vocab/
-is_a: affected by
+is_a: likelihood affected by
 domain: disease or phenotypic feature
 inherited: true
-alias: condition_prevented_by
+alias: has_preventative_intervention
 inverse: preventative for condition
 range: chemical or drug or treatment
 multivalued: true

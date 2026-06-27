@@ -125,10 +125,6 @@
                                 "parent": "affected_by"
                             },
                             {
-                                "name": "condition_prevented_by",
-                                "parent": "affected_by"
-                            },
-                            {
                                 "name": "disrupted_by",
                                 "parent": "affected_by"
                             },
@@ -733,6 +729,10 @@
                             {
                                 "name": "condition_promoted_by",
                                 "parent": "likelihood_affected_by"
+                            },
+                            {
+                                "name": "has_preventative_intervention",
+                                "parent": "likelihood_affected_by"
                             }
                         ]
                     },
@@ -937,12 +937,12 @@
                             {
                                 "name": "sensitivity_decreased_by",
                                 "parent": "sensitivity_affected_by"
+                            },
+                            {
+                                "name": "sensitivity_increased_by",
+                                "parent": "sensitivity_affected_by"
                             }
                         ]
-                    },
-                    {
-                        "name": "sensitivity_increased_by",
-                        "parent": "related_to_at_instance_level"
                     },
                     {
                         "name": "sequence_location_of",

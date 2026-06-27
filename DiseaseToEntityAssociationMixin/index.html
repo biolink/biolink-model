@@ -370,6 +370,7 @@
     class DiseaseToEntityAssociationMixin
       DiseaseToEntityAssociationMixin &lt;|-- DiseaseToExposureEventAssociation
       DiseaseToEntityAssociationMixin &lt;|-- DiseaseToPhenotypicFeatureAssociation
+      DiseaseToEntityAssociationMixin &lt;|-- DiseaseToDiseaseAssociation
 
       DiseaseToEntityAssociationMixin : object
 
@@ -396,7 +397,7 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../subject/">subject</a>: <br> <i> disease class </i></br></td>
+<td><a href="../subject/">subject</a>: <br/> <i> disease class </i></td>
 <td>1 <br/> <a href="../Disease/">Disease</a></td>
 <td>direct</td>
 <td>MONDO:0017314</td>
@@ -431,6 +432,10 @@
 <tr>
 <td><a href="../DiseaseToPhenotypicFeatureAssociation/">DiseaseToPhenotypicFeatureAssociation</a></td>
 <td>An association between a disease and a phenotypic feature in which the phenotypic feature is associated with the disease in some way.</td>
+</tr>
+<tr>
+<td><a href="../DiseaseToDiseaseAssociation/">DiseaseToDiseaseAssociation</a></td>
+<td>An association between two diseases. Captures clinical or biological relationships such as comorbidity, sequela, post-infectious complication, shared susceptibility, or differential diagnosis. The precise relationship is carried by the predicate (e.g. <code>associated with</code>, <code>contributes to</code>, <code>risk affected by</code>, <code>temporally related to</code>); use this class whenever both ends of the association are diseases, rather than the more specific <code>disease to phenotypic feature association</code> (which forces the object to be a phenotypic feature) or a generic <code>association</code>.</td>
 </tr>
 </tbody>
 </table>

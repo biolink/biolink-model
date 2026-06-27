@@ -827,7 +827,7 @@
 <tbody>
 <tr>
 <td>subject_category_closure</td>
-<td>['biolink:Gene", "biolink:NamedThing']</td>
+<td>['biolink:Gene', 'biolink:NamedThing']</td>
 </tr>
 </tbody>
 </table>
@@ -843,7 +843,7 @@ description: Used to hold the subject category closure of an association. This i
   a denormalized field used primarily in the SQL serialization of a knowledge graph
   via KGX.
 examples:
-- value: '[''biolink:Gene&quot;, &quot;biolink:NamedThing'']'
+- value: '[''biolink:Gene'', ''biolink:NamedThing'']'
   description: 'The subject category closure of the association between the gene ''BRCA1''
     and the disease ''breast cancer'' is the set of all biolink classes that are ancestors
     of ''biolink:Gene'' in the biolink model.  Note: typically the &quot;subclass of&quot; and

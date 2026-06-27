@@ -545,7 +545,7 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../clinical_approval_status/">clinical_approval_status</a>: <br> <i> The clinical approval status of a chemical entity for treating a specific disease or condition, as captured in the context of the association between the chemical and the disease. </i></br></td>
+<td><a href="../clinical_approval_status/">clinical_approval_status</a>: <br/> <i> The clinical approval status of a chemical entity for treating a specific disease or condition, as captured in the context of the association between the chemical and the disease. </i></td>
 <td>0..1 <br/> <a href="../ClinicalApprovalStatusEnum/">ClinicalApprovalStatusEnum</a></td>
 <td>direct</td>
 <td></td>
@@ -722,13 +722,13 @@
 <td><a href="../subject_category_closure/">subject_category_closure</a>: <br/> <i> Used to hold the subject category closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX. </i></td>
 <td>* <br/> <a href="../OntologyClass/">OntologyClass</a></td>
 <td><a href="../Association/">Association</a></td>
-<td>['biolink:Gene", "biolink:NamedThing']</td>
+<td>['biolink:Gene', 'biolink:NamedThing']</td>
 </tr>
 <tr>
 <td><a href="../object_category_closure/">object_category_closure</a>: <br/> <i> Used to hold the object category closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX. </i></td>
 <td>* <br/> <a href="../OntologyClass/">OntologyClass</a></td>
 <td><a href="../Association/">Association</a></td>
-<td>['biolink:Disease", "biolink:NamedThing']</td>
+<td>['biolink:Disease', 'biolink:NamedThing']</td>
 </tr>
 <tr>
 <td><a href="../subject_namespace/">subject_namespace</a>: <br/> <i> Used to hold the subject namespace of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX. </i></td>

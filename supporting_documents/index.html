@@ -788,6 +788,11 @@
 <td>Describes an effect that a chemical has on a gene or gene product (e.g. an impact of on its abundance, activity,localization, processing, expression, etc.)</td>
 <td>no</td>
 </tr>
+<tr>
+<td><a href="../ChemicalGeneSensitivityAssociation/">ChemicalGeneSensitivityAssociation</a></td>
+<td>Describes a relationship in which a chemical entity affects the sensitivity or susceptibility of a biological system to a gene or gene product (e.g. a chemical that increases or decreases the response to a gene or gene product). This covers 'response to substance' style interactions from sources such as CTD that map to the 'affects sensitivity to' predicate hierarchy, as opposed to the abundance/activity/processing effects covered by ChemicalAffectsGeneAssociation.</td>
+<td>no</td>
+</tr>
 </tbody>
 </table>
 <h2 id="example-values">Example values</h2>
@@ -811,7 +816,7 @@
 <pre><code class="language-yaml">name: supporting documents
 description: One or more referenceable documents that report the statement expressed
   in an Association, or provide information used as evidence supporting this statement.
-deprecated: 'True'
+deprecated: 'true'
 examples:
 - value: PMID:12345678
 from_schema: https://w3id.org/biolink/vocab/
@@ -820,6 +825,7 @@ domain: association
 alias: supporting_documents
 domain_of:
 - chemical affects gene association
+- chemical gene sensitivity association
 range: uriorcurie
 multivalued: true
 

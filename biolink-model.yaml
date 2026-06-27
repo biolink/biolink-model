@@ -6,7 +6,7 @@ license: https://creativecommons.org/publicdomain/zero/1.0/
 
 # Version should be kept in sync with primary Git repository release tag
 
-version: 4.4.2
+version: 4.4.3
 
 ## ------------
 ##
@@ -612,9 +612,10 @@ slots:
       to describe the location and change in DNA, RNA, and protein sequence variants.  This slot is used to capture all the
       different forms of HGVS nomenclature that may be used to describe a sequence variant, including genomic, transcript,
       and protein HGVS expressions/nomenclatures and is thus multivalued.
-    comments: >-
-      For more information, please see: https://hgvs-nomenclature.org/stable/background/simple/ and examples:
-      https://hgvs-nomenclature.org/stable/recommendations/summary/.
+    comments:
+      - >-
+        For more information, please see: https://hgvs-nomenclature.org/stable/background/simple/ and examples:
+        https://hgvs-nomenclature.org/stable/recommendations/summary/.
 
   stoichiometry:
     description: >-
@@ -1584,9 +1585,10 @@ slots:
     inverse: is chemical role of
     id_prefixes:
       - CHEBI
-    comments: >-
-      We expect primarily to use CHEBI chemical roles here; however, we are looking for a mapping between
-      CHEBI And ATC codes to support this slot.
+    comments:
+      - >-
+        We expect primarily to use CHEBI chemical roles here; however, we are looking for a mapping between
+        CHEBI And ATC codes to support this slot.
 
   is chemical role of:
     is_a: related to at concept level
@@ -1717,13 +1719,14 @@ slots:
       - value: severe
       - value: transplant
       - value: chemical analog
-    notes: >-
-      please see the ChemicalOrGeneOrGeneProductFormOrVariantEnum (below) for examples of 'form or variant qualifier'
-      terms in the gene->chemical association space.
-      the qualifier ‘mutation’ combines with the core concept ‘Gene X’ to express the compose concept ‘Mutated forms of Gene X’.
-      the qualifier ‘late stage’ combines with a core concept of ‘Disease X’ to express the  more specific concept ‘Late Stage forms of Disease X’
-      the qualifier ‘recombinant’ combines with a core concept of ‘FLT1 Gene’ to express the composed concept ‘Recombinant forms of the FLT1 gene’
-      the qualifier ‘chemical analog’ combines with a core concept of ‘Ditiocarb’ to express the composed concept ‘analog forms of Ditiocarb’
+    notes:
+      - >-
+        please see the ChemicalOrGeneOrGeneProductFormOrVariantEnum (below) for examples of 'form or variant qualifier'
+        terms in the gene->chemical association space.
+        the qualifier ‘mutation’ combines with the core concept ‘Gene X’ to express the compose concept ‘Mutated forms of Gene X’.
+        the qualifier ‘late stage’ combines with a core concept of ‘Disease X’ to express the  more specific concept ‘Late Stage forms of Disease X’
+        the qualifier ‘recombinant’ combines with a core concept of ‘FLT1 Gene’ to express the composed concept ‘Recombinant forms of the FLT1 gene’
+        the qualifier ‘chemical analog’ combines with a core concept of ‘Ditiocarb’ to express the composed concept ‘analog forms of Ditiocarb’
     in_subset:
       - translator_minimal
 
@@ -1761,17 +1764,18 @@ slots:
       - value: abundance
       - value: expression
       - value: exposure
-    notes: >-
-      for good examples of aspects in the gene-> chemical space, please see the
-      GeneOrGeneProductOrChemicalEntityAspectEnum (below) which lists many aspects that can be used to qualify
-      the gene making the full subject a different ontological type.
-      the qualifier ‘expression’ combines with a core concept of ‘Gene X’ to express the composed concept ‘expression of Gene X’ (Gene → Biological Process)
-      the qualifier ‘exposure’ combines with a core concept of ‘Chemical X’ to express the composed concept ‘exposure to Chemical X’ (Chemical → Exposure Process)
-      the qualifier ‘activity’ combines with a core concept of ‘PPARG’ to express the concept ‘activity of PPARG’ (Gene → function/activity)
-      the qualifier ‘emergency Department Visit’ combines with a core concept of ‘Disease X’ to express the concept ‘Emergency Department visits for Disease X’ (Disease → Clinical Event)
-      the qualifier ‘infection’ combines with a core concept of ‘Giardia’ to express the concept ‘Infection with Giardia’ (Taxon → Biological / Pathological Process)
-      the qualifier ‘severity’ combines with a core concept of ‘DILI’ to express the concept ‘the severity level of DILI’ (Disease → (intrinsic) Characteristic/Quality)
-      the qualifier ‘abundance’ combines with a core concept of ‘BRCA2’ to express the concept ‘abundance of BRCA2’ (Gene → (extrinsic) characteristic/quality)
+    notes:
+      - >-
+        for good examples of aspects in the gene-> chemical space, please see the
+        GeneOrGeneProductOrChemicalEntityAspectEnum (below) which lists many aspects that can be used to qualify
+        the gene making the full subject a different ontological type.
+        the qualifier ‘expression’ combines with a core concept of ‘Gene X’ to express the composed concept ‘expression of Gene X’ (Gene → Biological Process)
+        the qualifier ‘exposure’ combines with a core concept of ‘Chemical X’ to express the composed concept ‘exposure to Chemical X’ (Chemical → Exposure Process)
+        the qualifier ‘activity’ combines with a core concept of ‘PPARG’ to express the concept ‘activity of PPARG’ (Gene → function/activity)
+        the qualifier ‘emergency Department Visit’ combines with a core concept of ‘Disease X’ to express the concept ‘Emergency Department visits for Disease X’ (Disease → Clinical Event)
+        the qualifier ‘infection’ combines with a core concept of ‘Giardia’ to express the concept ‘Infection with Giardia’ (Taxon → Biological / Pathological Process)
+        the qualifier ‘severity’ combines with a core concept of ‘DILI’ to express the concept ‘the severity level of DILI’ (Disease → (intrinsic) Characteristic/Quality)
+        the qualifier ‘abundance’ combines with a core concept of ‘BRCA2’ to express the concept ‘abundance of BRCA2’ (Gene → (extrinsic) characteristic/quality)
     in_subset:
       - translator_minimal
 
@@ -1826,9 +1830,10 @@ slots:
     abstract: true
     description: >-
       Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree.
-    notes: >-
-      the qualifier ‘increased’ combines with a core concept of ‘Gene X’ and an aspect of ‘expression’ to express the composed concept ‘increased expression of Gene X’
-      the qualifier ‘decreased’ combines with a core concept of ‘Protein X’ and an aspect of ‘abundance’ to express the composed concept ‘decreased abundance of Protein X’
+    notes:
+      - >-
+        the qualifier ‘increased’ combines with a core concept of ‘Gene X’ and an aspect of ‘expression’ to express the composed concept ‘increased expression of Gene X’
+        the qualifier ‘decreased’ combines with a core concept of ‘Protein X’ and an aspect of ‘abundance’ to express the composed concept ‘decreased abundance of Protein X’
     in_subset:
       - translator_minimal
 
@@ -2074,13 +2079,14 @@ slots:
       - value: biolink:causes
         description: used with `affects` predicate to express causal statements
     range: uriorcurie
-    notes: >-
-      to express the statement that “Chemical X causes increased expression of Gene Y”, the core triple is read
-      using the fields subject:ChemX, predicate:affects, object:GeneY . . . and the full statement is read using
-      the fields subject:ChemX, qualified_predicate:causes, object:GeneY, object_aspect: expression,
-      object_direction:increased. The predicate ‘affects’ is needed for the core triple reading, but does not make
-      sense in the full statement reading  (because “Chemical X affects increased expression of Gene Y'' is not
-      what we mean to say here: it causes increased expression of Gene Y)
+    notes:
+      - >-
+        to express the statement that “Chemical X causes increased expression of Gene Y”, the core triple is read
+        using the fields subject:ChemX, predicate:affects, object:GeneY . . . and the full statement is read using
+        the fields subject:ChemX, qualified_predicate:causes, object:GeneY, object_aspect: expression,
+        object_direction:increased. The predicate ‘affects’ is needed for the core triple reading, but does not make
+        sense in the full statement reading  (because “Chemical X affects increased expression of Gene Y'' is not
+        what we mean to say here: it causes increased expression of Gene Y)
 
   statement qualifier:
     is_a: qualifier
@@ -2108,12 +2114,13 @@ slots:
     description: >-
       A statement qualifier representing an anatomical location where an relationship expressed in an
       association took place (can be a tissue, cell type, or sub-cellular location).
-    notes: >-
-      Anatomical context values can be any term from UBERON. For example, the context qualifier ‘cerebral cortext’
-      combines with a core concept of ‘neuron’
-      to express the composed concept ‘neuron in the cerebral cortext’. The species_context_qualifier applies
-      taxonomic context.  Ontology CURIEs are expected as values here, the examples below are intended to help
-      clarify the content of the CURIEs.
+    notes:
+      - >-
+        Anatomical context values can be any term from UBERON. For example, the context qualifier ‘cerebral cortext’
+        combines with a core concept of ‘neuron’
+        to express the composed concept ‘neuron in the cerebral cortext’. The species_context_qualifier applies
+        taxonomic context.  Ontology CURIEs are expected as values here, the examples below are intended to help
+        clarify the content of the CURIEs.
     examples:
       - value: UBERON:0000178
         description: blood
@@ -2155,7 +2162,7 @@ slots:
       - translator_minimal
 
   qualifiers:
-    deprecated: true
+    deprecated: "true"
     description: >-
       connects an association to qualifiers that modify or
       qualify the meaning of that association
@@ -2174,7 +2181,7 @@ slots:
       - translator_minimal
 
   severity qualifier:
-    deprecated: true
+    deprecated: "true"
     description: >-
       a qualifier used in a phenotypic association to state
       how severe the phenotype is in the subject
@@ -2196,12 +2203,13 @@ slots:
     description: >-
       a qualifier used in a phenotypic association to state
       when the phenotype appears is in the subject.
-    notes: >-
-      This  is in Biolink to support HP ontology annotations which use "onset" (with terms from HP)
-      as an annotation on a disease to phenotypic feature association.  Please only use it for this
-      purpose.  If the intent is to describe the onset of a disease in the context of a treatment,
-      use object_aspect_qualifier and object_direction_qualifier to capture "delayed onset" or "exacerbated onset"
-      slot.
+    notes:
+      - >-
+        This  is in Biolink to support HP ontology annotations which use "onset" (with terms from HP)
+        as an annotation on a disease to phenotypic feature association.  Please only use it for this
+        purpose.  If the intent is to describe the onset of a disease in the context of a treatment,
+        use object_aspect_qualifier and object_direction_qualifier to capture "delayed onset" or "exacerbated onset"
+        slot.
     is_a: qualifier
     range: onset
     in_subset:
@@ -2627,11 +2635,12 @@ slots:
     description: >-
       Holds between two entities where the presence or application of one alters the chance that the other will come
       to be.
-    notes: >-
-      - This predicate implies causation, where the 'affected' entity is something that does not yet exist, and the
-      actions/execution of effector impact the likelihood that this entity may come to be. It is NOT to be used
-      for a statistical associations that describe correlations between two feature variables (use predicates
-      in the 'associated with likelihood of' hierarchy here.)
+    notes:
+      - >-
+        - This predicate implies causation, where the 'affected' entity is something that does not yet exist, and the
+        actions/execution of effector impact the likelihood that this entity may come to be. It is NOT to be used
+        for a statistical associations that describe correlations between two feature variables (use predicates
+        in the 'associated with likelihood of' hierarchy here.)
     annotations:
       canonical_predicate: true
     in_subset:
@@ -2941,7 +2950,7 @@ slots:
    ## end of Publication related predicates
 
   was tested for effect on:
-    deprecated: true
+    deprecated: "true"
     is_a: related to at instance level
     aliases: ['was assayed against', 'was experimentally tested against']
     description: >-
@@ -2956,7 +2965,7 @@ slots:
       canonical_predicate: true
 
   was tested for effect of:
-    deprecated: true
+    deprecated: "true"
     is_a: related to at instance level
     inverse: was tested for effect on
     domain: named thing
@@ -2974,9 +2983,10 @@ slots:
     mixin: true
     exact_mappings:
       - SEMMEDDB:INTERACTS_WITH
-    notes: >-
-      Please use a more specific child predicate of interacts with, either physically interacts with
-      or genetically interacts with or pharmacologically interacts with.
+    notes:
+      - >-
+        Please use a more specific child predicate of interacts with, either physically interacts with
+        or genetically interacts with or pharmacologically interacts with.
 
   physically interacts with:
     is_a: interacts with
@@ -3021,7 +3031,7 @@ slots:
       canonical_predicate: true
 
   binds:
-    deprecated: true
+    deprecated: "true"
     is_a: directly physically interacts with
     description: >-
       A causal mechanism mediated by the direct contact between effector and target chemical or biomolecular entity,
@@ -3105,10 +3115,11 @@ slots:
     is_a: related to at instance level
     description: >-
       Describes an entity that has an effect on the state or quality of another existing entity.
-    notes: >-
-      Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as
-      'affects likelihood of' and 'prevents' where the effect concerns whether or when something may or
-      may not come into existence.
+    notes:
+      - >-
+        Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as
+        'affects likelihood of' and 'prevents' where the effect concerns whether or when something may or
+        may not come into existence.
     in_subset:
       - translator_minimal
     annotations:
@@ -3234,7 +3245,7 @@ slots:
     range: diagnostic aid
 
   increases amount or activity of:
-    deprecated: true
+    deprecated: "true"
     is_a: related to at instance level
     mixin: true
     description: >-
@@ -3242,12 +3253,12 @@ slots:
       or activity of the object.
 
   amount or activity increased by:
-    deprecated: true
+    deprecated: "true"
     is_a: related to at instance level
     inverse: increases amount or activity of
 
   decreases amount or activity of:
-    deprecated: true
+    deprecated: "true"
     is_a: related to at instance level
     mixin: true
     description: >-
@@ -3255,7 +3266,7 @@ slots:
       or activity of the object.
 
   amount or activity decreased by:
-    deprecated: true
+    deprecated: "true"
     is_a: related to at instance level
     inverse: decreases amount or activity of
 
@@ -3313,7 +3324,7 @@ slots:
       - CTD:increases_response_to
 
   sensitivity increased by:
-    is_a: related to at instance level
+    is_a: sensitivity affected by
     in_subset:
       - translator_minimal
     domain: chemical entity or gene or gene product
@@ -3365,10 +3376,11 @@ slots:
       - RO:0002295
       - RO:0002332
       - RO:0002448
-    notes: >-
-      The RO definition of 'directly regulates the activity of' is an exact_mapping here because
-      it describes genetic regulation from the point of view of one genetic entity regulating another, as opposed to
-      "RO:0002211" which describes process to process regulation.
+    notes:
+      - >-
+        The RO definition of 'directly regulates the activity of' is an exact_mapping here because
+        it describes genetic regulation from the point of view of one genetic entity regulating another, as opposed to
+        "RO:0002211" which describes process to process regulation.
     mixins:
       - interacts with
 
@@ -3792,7 +3804,7 @@ slots:
    # Despite the name, note that this particular entity is
    # NOT a biolink:Association but rather, a biolink:predicate
   genetic association:
-    deprecated: true
+    deprecated: "true"
     deprecated_element_has_exact_replacement: biolink:genetically_associated_with
     is_a: associated with
     symmetric: true
@@ -3950,9 +3962,10 @@ slots:
     description: >-
       Holds between an entity and an existing medical condition (disease or phenotypic feature) where the entity is
       able to ameliorate symptoms, stabilize progression, or cure the condition.
-    notes: >-
-      This predicate describes a narrower view of 'treats' - that covers interventions that are beneficial for existing
-      disease, and excludes interventions that prevent/reduce risk of developing a condition in the future.
+    notes:
+      - >-
+        This predicate describes a narrower view of 'treats' - that covers interventions that are beneficial for existing
+        disease, and excludes interventions that prevent/reduce risk of developing a condition in the future.
     mixins:
       - treats
     domain: chemical or drug or treatment
@@ -3987,9 +4000,9 @@ slots:
     broad_mappings:
       - SEMMEDDB:PREVENTS
 
-  condition prevented by:
+  has preventative intervention:
     inverse: preventative for condition
-    is_a: affected by
+    is_a: likelihood affected by
     domain: disease or phenotypic feature
     range: chemical or drug or treatment
 
@@ -4149,11 +4162,12 @@ slots:
       scientific study has been performed to specifically test the potential of the  substance, procedure, or
       activity to treat the medical condition  (i.e. to ameliorate, stabilize, or cure the condition, or to delay,
       prevent, or reduce the risk of it manifesting in the first place).
-    notes: >-
-      Predicates in this hierarchy are used in practice when a source reports performance of a study, but there is
-      not sufficient evidence or demonstrated efficacy against the condition to warrant creating a ‘treats’ assertion
-      edge. Note however that a 'studied to treat' edge may be used as evidence to support creation of a separate
-      'treats' prediction edge.
+    notes:
+      - >-
+        Predicates in this hierarchy are used in practice when a source reports performance of a study, but there is
+        not sufficient evidence or demonstrated efficacy against the condition to warrant creating a ‘treats’ assertion
+        edge. Note however that a 'studied to treat' edge may be used as evidence to support creation of a separate
+        'treats' prediction edge.
     domain: chemical or drug or treatment
     range: disease or phenotypic feature
     mixins:
@@ -4168,10 +4182,11 @@ slots:
       performed in human patients to test the potential of the intervention to treat the medical condition
       (e.g. to ameliorate, stabilize, or cure the condition, or to delay, prevent, or reduce the risk of it
       manifesting in the first place).
-    notes: >-
-      This predicate should be used when a source reports a clinical trial where the intervention is being or was
-      interrogated, regardless of the phase of the trial, or its ultimate outcome.  Information about phase and outcome
-      can be capture using other modeling elements.
+    notes:
+      - >-
+        This predicate should be used when a source reports a clinical trial where the intervention is being or was
+        interrogated, regardless of the phase of the trial, or its ultimate outcome.  Information about phase and outcome
+        can be capture using other modeling elements.
     domain: chemical or drug or treatment
     range: disease or phenotypic feature
     mixins:
@@ -4229,11 +4244,12 @@ slots:
       Holds between an  substance, procedure, or activity and a medical condition, and reports that the substance,
       procedure, or activity has been shown to be effective in alleviating, preventing, or delaying symptoms/
       phenotypes associated with a disease, in a model system for that disease (e.g. a mouse, fly, cell line, etc).
-    notes: >-
-      This predicate would be used to represent Model Organism Database (MOD) records reporting that an intervention
-      alleviated phenotypes associated with a human disease in a model organism designated as a model of that disease.
-      (e.g. a ZFIN record reporting that treatment with Braf Inhibitors reduced the abnormal brain cell proliferation
-      phenotype of zebrafish used to model the human disease Kabuki Syndrome) .
+    notes:
+      - >-
+        This predicate would be used to represent Model Organism Database (MOD) records reporting that an intervention
+        alleviated phenotypes associated with a human disease in a model organism designated as a model of that disease.
+        (e.g. a ZFIN record reporting that treatment with Braf Inhibitors reduced the abnormal brain cell proliferation
+        phenotype of zebrafish used to model the human disease Kabuki Syndrome) .
     mixins:
       - treats or applied or studied to treat
     domain: chemical or drug or treatment
@@ -4258,13 +4274,14 @@ slots:
     description: >-
       Holds between an  substance, procedure, or activity and a medical condition, and reports that the  substance,
       procedure, or activity was actually taken by one or more patients with the intent of treating the condition.
-    notes: >-
-      This predicate is used simply to report observations of use in the real world, and is agnostic to whether the
-      treatment is approved for or might be effective in treating the condition. The treatment could be taken by a
-      patient on their own accord or prescribed by a clinician, as an off-label or an approved intervention. In
-      practice, it would be used to represent records/statements from patient self-reporting sources like FAERS / AEOLUS
-      where patients directly report the condition for which they took a drug, or statements from a database cataloging
-      instances of off-label prescription of drugs for specific conditions.
+    notes:
+      - >-
+        This predicate is used simply to report observations of use in the real world, and is agnostic to whether the
+        treatment is approved for or might be effective in treating the condition. The treatment could be taken by a
+        patient on their own accord or prescribed by a clinician, as an off-label or an approved intervention. In
+        practice, it would be used to represent records/statements from patient self-reporting sources like FAERS / AEOLUS
+        where patients directly report the condition for which they took a drug, or statements from a database cataloging
+        instances of off-label prescription of drugs for specific conditions.
     mixins:
       - treats or applied or studied to treat
     domain: chemical or drug or treatment
@@ -4291,12 +4308,13 @@ slots:
       and states that the substance, procedure, or activity is able to treat the condition, has been observed to be
       taken/prescribed in practice with the intent of treating the condition, or has been interrogated in a scientific
       study that hypothesized an ability to treat the condition (in humans or other biological systems/organisms).
-    notes: >-
-      This predicate is helpful both as a grouping predicate to aid in searching for broader senses of treating a
-      condition, and as a catch-all for representing sources that are not clear about the sense of treats that is
-      being reported. For example, text-mined statements concerning treatments for disease are based on sentences
-      that can report treatment in any of these different senses and thus require a broader predicate such as
-      this to safely report statement semantics.
+    notes:
+      - >-
+        This predicate is helpful both as a grouping predicate to aid in searching for broader senses of treating a
+        condition, and as a catch-all for representing sources that are not clear about the sense of treats that is
+        being reported. For example, text-mined statements concerning treatments for disease are based on sentences
+        that can report treatment in any of these different senses and thus require a broader predicate such as
+        this to safely report statement semantics.
     annotations:
       canonical_predicate: true
     in_subset:
@@ -4318,11 +4336,12 @@ slots:
     description: >-
       A relationship that holds between two concepts represented by variables for which a statistical correlation is
       believed to exist, as demonstrated using a correlation analysis method.
-    notes: >-
-      These concepts may map exactly to the statistical variables, or represent related entities for which the
-      variables serve as proxies in an Association (e.g. diseases, chemical entities or processes). Note also that this
-      predicate can be used in the absence of a direct statistical analysis, if there is other evidence suggesting that
-      a correlation is likely to exist.
+    notes:
+      - >-
+        These concepts may map exactly to the statistical variables, or represent related entities for which the
+        variables serve as proxies in an Association (e.g. diseases, chemical entities or processes). Note also that this
+        predicate can be used in the absence of a direct statistical analysis, if there is other evidence suggesting that
+        a correlation is likely to exist.
     domain: named thing
     range: named thing
     in_subset:
@@ -4377,7 +4396,8 @@ slots:
       in which both occur, using some threshold of occurrence as defined by the edge provider.
     domain: named thing
     range: named thing
-    in_subset: translator_minimal
+    in_subset:
+      - translator_minimal
     symmetric: true
     annotations:
       canonical_predicate: true
@@ -5670,9 +5690,10 @@ slots:
       An unintended, but predictable, secondary effect shown to be correlated with a therapeutic agent, drug or treatment.
       Side effects happen at normal, recommended doses or treatments, and are unrelated to the intended purpose of
       the medication.
-    notes: >-
-      Side effects are listed on drug labels. There can be positive side effects, while adverse events are always negative.
-      Aeolus, Sider are both resources that provide side effects.
+    notes:
+      - >-
+        Side effects are listed on drug labels. There can be positive side effects, while adverse events are always negative.
+        Aeolus, Sider are both resources that provide side effects.
     domain: chemical or drug or treatment
     range: disease or phenotypic feature
     annotations:
@@ -5692,13 +5713,14 @@ slots:
       Holds between a substance, procedure, or activity and a medical condition or circumstance, where an authority
       has established that the substance, procedure, or activity should not be applied as an intervention in patients
       with the condition or circumstance because it can result in detrimental outcomes.
-    notes: >-
-      This predicate relates the intervention with a specific disease, phenotype, or other medical circumstance that
-      puts patients at high risk for detrimental outcomes.  This may be a different condition from the one that the
-      drug would be used to treat (e.g. pseudoephedrine is contraindicated in people with high-blood pressure as
-      a treatment for nasal congestion), a biological state (e.g. isotretinoin is contraindicated in people who
-      are pregnant as a treatment for acne), or being on a different medication (e.g. aspirin is contraindicated
-      in people taking warfarin as a preventative treatment for stroke).
+    notes:
+      - >-
+        This predicate relates the intervention with a specific disease, phenotype, or other medical circumstance that
+        puts patients at high risk for detrimental outcomes.  This may be a different condition from the one that the
+        drug would be used to treat (e.g. pseudoephedrine is contraindicated in people with high-blood pressure as
+        a treatment for nasal congestion), a biological state (e.g. isotretinoin is contraindicated in people who
+        are pregnant as a treatment for acne), or being on a different medication (e.g. aspirin is contraindicated
+        in people taking warfarin as a preventative treatment for stroke).
     domain: chemical or drug or treatment
     range: biological entity
     annotations:
@@ -5840,11 +5862,12 @@ slots:
     description: >-
       A property that indicates the taxonomic classification of an entity.
       Values for this slot should be from the NCBITaxon ontology.
-    comments: >-
-      Note there is also a predicate 'in taxon'
-      that can be used to instantiate an edge between a taxon entity and a thing with taxon entity.  This is
-      an acceptable practice for KG construction, but for many applications it is more convenient to
-      use this property slot to directly annotate the taxon on the entity itself.
+    comments:
+      - >-
+        Note there is also a predicate 'in taxon'
+        that can be used to instantiate an edge between a taxon entity and a thing with taxon entity.  This is
+        an acceptable practice for KG construction, but for many applications it is more convenient to
+        use this property slot to directly annotate the taxon on the entity itself.
     in_subset:
       - translator_minimal
     range: uriorcurie
@@ -5976,7 +5999,7 @@ slots:
     multivalued: true
     domain: association
     examples:
-      - value: ["MONDO:0000167", "MONDO:0005395"]
+      - value: "['MONDO:0000167', 'MONDO:0005395']"
         description: >-
           The object closure of the association between the gene
           'BRCA1' and the disease 'breast cancer' is the set of all
@@ -6028,7 +6051,7 @@ slots:
     domain: association
     range: ontology class
     examples:
-      - value: ['biolink:Gene", "biolink:NamedThing']
+      - value: "['biolink:Gene', 'biolink:NamedThing']"
         description: >-
           The subject category closure of the association between the gene
           'BRCA1' and the disease 'breast cancer' is the set of all
@@ -6048,7 +6071,7 @@ slots:
     domain: association
     range: ontology class
     examples:
-      - value: ['biolink:Disease", "biolink:NamedThing']
+      - value: "['biolink:Disease', 'biolink:NamedThing']"
         description: >-
           The object category closure of the association between the gene
           'BRCA1' and the disease 'breast cancer' is the set of all
@@ -6068,7 +6091,7 @@ slots:
     domain: association
     range: string
     examples:
-      - value: ["BRCA1"]
+      - value: "['BRCA1']"
         description: >-
           The subject label closure of the association between the gene
           'BRCA1' and the disease 'breast cancer' is the set of all
@@ -6188,7 +6211,7 @@ slots:
       - os:LogicalInterpretation
 
   relation:
-    deprecated: true
+    deprecated: "true"
 
   negated:
     is_a: association slot
@@ -6259,7 +6282,7 @@ slots:
     range: float
     multivalued: true
     examples:
-      - value: [0.6996904681742875, 1.6429124024089072]
+      - value: "[0.6996904681742875, 1.6429124024089072]"
 
   total sample size:
     is_a: dataset count
@@ -6303,13 +6326,14 @@ slots:
       implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort
       is made to catalog the most upstream source of data in this property.  Only one data source should be declared
       primary in any association.  "aggregator knowledge source" can be used to capture non-primary sources.
-    notes: >-
-      For example: a single ChemicalToGene Edge originally curated by ClinicalTrials.org, is aggregated by ChEMBL, then
-      incorporated into the MolePro KP, then sent via TRAPI message to the ARAGORN ARA, and finally sent to
-      the NCATS ARS. The retrieval path for this Edge is as follows:
-      ARS--retrieved_from-->  ARAGORN  --retrieved_from-->   MolePro  --retrieved_from--> ChEMBL --retrieved_from-->  ClinicalTrials.gov
-      The "primary knowledge source" for this edge is "infores:clinical-trials-gov".  "infores:chembl" and "infores:molecular_data_provider"
-      are listed in the "aggregator knowledge source" property.
+    notes:
+      - >-
+        For example: a single ChemicalToGene Edge originally curated by ClinicalTrials.org, is aggregated by ChEMBL, then
+        incorporated into the MolePro KP, then sent via TRAPI message to the ARAGORN ARA, and finally sent to
+        the NCATS ARS. The retrieval path for this Edge is as follows:
+        ARS--retrieved_from-->  ARAGORN  --retrieved_from-->   MolePro  --retrieved_from--> ChEMBL --retrieved_from-->  ClinicalTrials.gov
+        The "primary knowledge source" for this edge is "infores:clinical-trials-gov".  "infores:chembl" and "infores:molecular_data_provider"
+        are listed in the "aggregator knowledge source" property.
     multivalued: false
 
   aggregator knowledge source:
@@ -6318,16 +6342,17 @@ slots:
       An intermediate aggregator resource from which knowledge expressed in an Association was
       retrieved downstream of the original source, on its path to its current serialized form.
     multivalued: true
-    notes: >-
-      For example, in this Feature Variable Association Edge generated by the Exposure Agent’s ICEES KP,
-      through statistical analysis of clinical and environmental data supplied by the UNC Clinical Data Warehouse,
-      the Edge is passed to the Ranking Agent’s ARAGORN ARA,
-      and then on to the ARS. The retrieval path for this Edge is as follows:
-      ARS--retrieved_from-->  ARAGORN  --retrieved_from-->   ICEES --supporting_data_from-->  UNC Data Warehouse
-      This example illustrates how to represent the source provenance of KP-generated knowledge, including the source of
-      data from which the knowledge was derived.
-      The "primary knowledge source" for this edge is "infores:icees-asthma". A "supporting data source" for this KP-
-      generated knowledge is "infores:unc-cdw-health."  The "aggregator knowledge source" for this data is "infores:aragorn-ara"
+    notes:
+      - >-
+        For example, in this Feature Variable Association Edge generated by the Exposure Agent’s ICEES KP,
+        through statistical analysis of clinical and environmental data supplied by the UNC Clinical Data Warehouse,
+        the Edge is passed to the Ranking Agent’s ARAGORN ARA,
+        and then on to the ARS. The retrieval path for this Edge is as follows:
+        ARS--retrieved_from-->  ARAGORN  --retrieved_from-->   ICEES --supporting_data_from-->  UNC Data Warehouse
+        This example illustrates how to represent the source provenance of KP-generated knowledge, including the source of
+        data from which the knowledge was derived.
+        The "primary knowledge source" for this edge is "infores:icees-asthma". A "supporting data source" for this KP-
+        generated knowledge is "infores:unc-cdw-health."  The "aggregator knowledge source" for this data is "infores:aragorn-ara"
 
   supporting data source:
     is_a: association slot
@@ -6336,16 +6361,17 @@ slots:
       evidence to generate the knowledge expressed in an Association (e.g. through
       computation on, reasoning or inference over the retrieved data).
     multivalued: true
-    notes: >-
-      For example, in this Feature Variable Association Edge generated by the Exposure Agent’s ICEES KP,
-      through statistical analysis of clinical and environmental data supplied by the UNC Clinical Data Warehouse,
-      the Edge is passed to the Ranking Agent’s ARAGORN ARA,
-      and then on to the ARS. The retrieval path for this Edge is as follows:
-      ARS--retrieved_from-->  ARAGORN  --retrieved_from-->   ICEES --supporting_data_from-->  UNC Data Warehouse
-      This example illustrates how to represent the source provenance of KP-generated knowledge, including the source of
-      data from which the knowledge was derived.
-      The "primary knowledge source" for this edge is "infores:icees-asthma". A "supporting data source" for this KP-
-      generated knowledge is "infores:unc-cdw-health."  The "aggregator knowledge source" for this data is "infores:aragorn-ara"
+    notes:
+      - >-
+        For example, in this Feature Variable Association Edge generated by the Exposure Agent’s ICEES KP,
+        through statistical analysis of clinical and environmental data supplied by the UNC Clinical Data Warehouse,
+        the Edge is passed to the Ranking Agent’s ARAGORN ARA,
+        and then on to the ARS. The retrieval path for this Edge is as follows:
+        ARS--retrieved_from-->  ARAGORN  --retrieved_from-->   ICEES --supporting_data_from-->  UNC Data Warehouse
+        This example illustrates how to represent the source provenance of KP-generated knowledge, including the source of
+        data from which the knowledge was derived.
+        The "primary knowledge source" for this edge is "infores:icees-asthma". A "supporting data source" for this KP-
+        generated knowledge is "infores:unc-cdw-health."  The "aggregator knowledge source" for this data is "infores:aragorn-ara"
 
   supporting data set:
     is_a: association slot
@@ -6363,7 +6389,7 @@ slots:
     exact_mappings:
       - STATO:0000030
     examples:
-      - value: 26.38523077566414
+      - value: "26.38523077566414"
 
   chi squared dof:
     is_a: association slot
@@ -6372,7 +6398,7 @@ slots:
        number of values in the final calculation of a statistic that are free to vary
     range: integer
     examples:
-      - value: 1
+      - value: "1"
 
   chi squared p:
     is_a: association slot
@@ -6381,7 +6407,7 @@ slots:
        (or associations) in your data occurred by random chance, assuming the null hypothesis is true.
     range: float
     examples:
-      - value: 2.7967079822744063e-07
+      - value: "2.7967079822744063e-07"
 
   fisher exact odds ratio:
     is_a: association slot
@@ -6394,7 +6420,7 @@ slots:
           OR < 1 implies Negative association (Group A less likely to have Outcome 1)
     range: float
     examples:
-      - value: 3.226188583240579
+      - value: "3.226188583240579"
 
   fisher exact p:
     is_a: association slot
@@ -6406,7 +6432,7 @@ slots:
       are small or expected counts are low.
     range: float
     examples:
-      - value: 2.8581244515361156e-06
+      - value: "2.8581244515361156e-06"
 
   z score:
     aliases: ['z-score', 'z-value', 'standard score', 'normal score']
@@ -6446,7 +6472,7 @@ slots:
       The total number of instances in a dataset/cohort.
     range: integer
     examples:
-      - value: 100000
+      - value: "100000"
 
   concept count subject:
     is_a: association slot
@@ -6455,7 +6481,7 @@ slots:
       the concept in the subject slot of an association.
     range: integer
     examples:
-      - value: 489
+      - value: "489"
 
   concept count object:
     is_a: association slot
@@ -6471,7 +6497,7 @@ slots:
       both the subject and object concept of an association.
     range: integer
     examples:
-      - value: 1731
+      - value: "1731"
 
   expected count:
     is_a: association slot
@@ -6487,7 +6513,7 @@ slots:
       concept appears in these same records.
     range: float
     examples:
-      - value: 0.01840490798
+      - value: "0.01840490798"
 
   relative frequency object:
     is_a: association slot
@@ -6531,7 +6557,7 @@ slots:
       (P<. 05), unless P<.
     range: float
     examples:
-      - value: 0.018
+      - value: "0.018"
 
   supporting text:
     is_a: association slot
@@ -6542,7 +6568,7 @@ slots:
       - value: "Here, we report two new cases of rivaroxaban-induced hepatitis."
 
   supporting documents:
-    deprecated: true
+    deprecated: "true"
     is_a: association slot
     description: >-
       One or more referenceable documents that report the statement expressed in an Association, or provide
@@ -6559,7 +6585,7 @@ slots:
       to the subject concept of the extracted assertion.
     range: integer
     examples:
-      - value: 33
+      - value: "33"
     multivalued: true
 
   object location in text:
@@ -6569,7 +6595,7 @@ slots:
       to the object concept of the extracted assertion
     range: integer
     examples:
-      - value: 53
+      - value: "53"
     multivalued: true
 
   extraction confidence score:
@@ -6598,7 +6624,7 @@ slots:
       document used in a Text Mining Result.
     range: integer
     examples:
-      - value: 2018
+      - value: "2018"
 
   supporting text section type:
     is_a: association slot
@@ -6615,7 +6641,7 @@ slots:
     description: the natural log of the ratio of co-occurrence to expected
     range: float
     examples:
-      - value: 2.922827136
+      - value: "2.922827136"
 
   ln ratio confidence interval:
     is_a: association slot
@@ -6624,7 +6650,7 @@ slots:
       (i.e. the range of values within which the true value has a 99% chance of falling)
     range: float
     examples:
-      - value: 2.922827136
+      - value: "2.922827136"
 
   interacting molecules category:
     is_a: association slot
@@ -6662,26 +6688,28 @@ slots:
     is_a: association slot
     range: string
     pattern: "^HP:\\d{7}$"
-    comments: >-
-      This edge property may be used by associations between Genes or
-      SequenceVariants and DiseaseOrPhenotypicFeatures to provide the inheritance
-      pattern and genetic context of the relationship.
-      Terms from the HP mode of inheritance sub-ontology (HP:0000005) should be used
-      in the value of this slot. This slot differs from the predicate "has_mode_of_inheritance",
-      in that the predicate is used to link a disease or phenotype with its general
-      inheritance pattern (how it is typically transmitted from one generation to the next,
-      regardless of the specific genetic variant that is present in an individual or instance).
+    comments:
+      - >-
+        This edge property may be used by associations between Genes or
+        SequenceVariants and DiseaseOrPhenotypicFeatures to provide the inheritance
+        pattern and genetic context of the relationship.
+        Terms from the HP mode of inheritance sub-ontology (HP:0000005) should be used
+        in the value of this slot. This slot differs from the predicate "has_mode_of_inheritance",
+        in that the predicate is used to link a disease or phenotype with its general
+        inheritance pattern (how it is typically transmitted from one generation to the next,
+        regardless of the specific genetic variant that is present in an individual or instance).
 
   publications:
     aliases: ['supporting publications', 'supporting documents']
     description: >-
       One or more publications that report the statement expressed in an
       Association, or provide information used as evidence supporting this statement.
-    comments: >-
-        The notion of a ‘Publication’ is considered broadly to include any
-        document made available for public consumption. It covers journal issues,
-        individual articles, and books - and also things like article pre-prints,
-        white papers, patents, drug labels, web pages, protocol documents, etc.
+    comments:
+      - >-
+          The notion of a ‘Publication’ is considered broadly to include any
+          document made available for public consumption. It covers journal issues,
+          individual articles, and books - and also things like article pre-prints,
+          white papers, patents, drug labels, web pages, protocol documents, etc.
     is_a: association slot
     multivalued: true
     range: publication
@@ -6694,13 +6722,14 @@ slots:
       might be traced through the Translator Resource that provided it (e.g. MolePro)
       to one or more intermediate aggregator resources (e.g. ChEMBL), and finally to
       the resource that originally created/curated it (e.g. ClinicalTrials.org).
-    comments: >-
-      Note that source retrieval provenance concerns the mechanical retrieval and
-      transformation of data between web accessible information systems. It does not
-      trace the source of knowledge back to specific publications or data sets. And
-      it is not concerned with the reasoning, inference or analysis activities that
-      generate knowledge in the first place (this is instead covered by 'knowledge
-      level' and 'agent type' properties).
+    comments:
+      - >-
+        Note that source retrieval provenance concerns the mechanical retrieval and
+        transformation of data between web accessible information systems. It does not
+        trace the source of knowledge back to specific publications or data sets. And
+        it is not concerned with the reasoning, inference or analysis activities that
+        generate knowledge in the first place (this is instead covered by 'knowledge
+        level' and 'agent type' properties).
     is_a: association slot
     multivalued: true
     range: retrieval source
@@ -6893,18 +6922,19 @@ slots:
       Describes the level of knowledge expressed in a statement, based on the
       reasoning or analysis methods used to generate the statement, or the
       scope or specificity of what the statement expresses to be true.
-    notes: >-
-      The notion of a 'level' of knowledge can in one sense relate to the strength
-      of a statement - i.e. how confident we are that it says something true about
-      our domain of discourse. Here, we can generally consider Assertions to be
-      stronger than Entailments to be stronger than Predictions.
-      But in another sense, 'level' of knowledge can refer to the scope or specificity of
-      what a statement expresses - on a spectrum from context-specific results of a data
-      analysis, to generalized assertions of knowledge or fact. Here, Statistical
-      Associations and  Observations represent more foundational statements that are only
-      slightly removed from the data on which they are based (the former reporting the
-      direct results of  an analysis in terms of correlations between variables in the data,
-      and the latter describing phenomena that were observed/reported to have occurred).
+    notes:
+      - >-
+        The notion of a 'level' of knowledge can in one sense relate to the strength
+        of a statement - i.e. how confident we are that it says something true about
+        our domain of discourse. Here, we can generally consider Assertions to be
+        stronger than Entailments to be stronger than Predictions.
+        But in another sense, 'level' of knowledge can refer to the scope or specificity of
+        what a statement expresses - on a spectrum from context-specific results of a data
+        analysis, to generalized assertions of knowledge or fact. Here, Statistical
+        Associations and  Observations represent more foundational statements that are only
+        slightly removed from the data on which they are based (the former reporting the
+        direct results of  an analysis in terms of correlations between variables in the data,
+        and the latter describing phenomena that were observed/reported to have occurred).
     domain: association
     range: KnowledgeLevelEnum
     multivalued: false
@@ -6919,19 +6949,20 @@ slots:
     description: >-
         Describes the high-level category of agent who originally generated a
         statement of knowledge or other type of information.
-    notes: >-
-        Note that this property indicates the type of agent who produced a
-        final statement of knowledge, which is often different from the
-        agent oragents who produced information used as evidence to
-        support generation of this knowledge. For example, if a human curator
-        concludes that a particular gene variant causes a medical condition -
-        based on their interpretation of information produced by computational
-        modeling tools, automated data analysis pipelines, and robotic laboratory
-        assay systems - the agent_type for this statement is 'manual agent' -
-        despite all of the evidence being created by automated agents. But if any
-        of these systems is programmed to generate knowledge statements
-        directly and without human assistance, the statement would be attributed
-        to an 'automated_agent'.
+    notes:
+      - >-
+          Note that this property indicates the type of agent who produced a
+          final statement of knowledge, which is often different from the
+          agent oragents who produced information used as evidence to
+          support generation of this knowledge. For example, if a human curator
+          concludes that a particular gene variant causes a medical condition -
+          based on their interpretation of information produced by computational
+          modeling tools, automated data analysis pipelines, and robotic laboratory
+          assay systems - the agent_type for this statement is 'manual agent' -
+          despite all of the evidence being created by automated agents. But if any
+          of these systems is programmed to generate knowledge statements
+          directly and without human assistance, the statement would be attributed
+          to an 'automated_agent'.
     domain: association
     range: AgentTypeEnum
     multivalued: false
@@ -7153,7 +7184,7 @@ classes:
       - PATO:0020000
 
   severity value:
-    deprecated: true
+    deprecated: "true"
     is_a: attribute
     description: >-
       describes the severity of a phenotypic feature or disease
@@ -7334,11 +7365,12 @@ classes:
       of this data as evidence.
     abstract: true
     notes:
-      The data/metadata included in a Study Result object are typically a subset of data from a larger study data set,
-      that are selected by a curator because they may be useful as evidence for deriving knowledge about a specific
-      focus of the study. The notion of a 'study' here is defined broadly to include any research activity at any
-      scale that is aimed at generating knowledge or hypotheses. This may include a single assay or computational
-      analyses, or a larger scale clinical trial or experimental research investigation.
+      - >-
+        The data/metadata included in a Study Result object are typically a subset of data from a larger study data set,
+        that are selected by a curator because they may be useful as evidence for deriving knowledge about a specific
+        focus of the study. The notion of a 'study' here is defined broadly to include any research activity at any
+        scale that is aimed at generating knowledge or hypotheses. This may include a single assay or computational
+        analyses, or a larger scale clinical trial or experimental research investigation.
 
    ## epc result sets
   concept count analysis result:
@@ -8936,8 +8968,9 @@ classes:
     description: >-
       A virus is a microorganism that replicates itself as a microRNA
       and infects the host cell.
-    comments: >-
-      see: https://github.com/OBOFoundry/COB/pull/211
+    comments:
+      - >-
+        see: https://github.com/OBOFoundry/COB/pull/211
     exact_mappings:
       - NCBITaxon:10239
       - STY:T005  # Virus
@@ -8950,13 +8983,14 @@ classes:
       An organism that contains one or more cells belonging to the cellular lineages of life (Archaea, Bacteria, or
       Eukaryota), whose body consists of one or more cells. Distinguished from acellular biological entities such as
       viruses and viroids.
-    comments: >-
-      see: https://github.com/OBOFoundry/COB/pull/211
+    comments:
+      - >-
+        see: https://github.com/OBOFoundry/COB/pull/211
     exact_mappings:
       - NCBITaxon:131567
 
   mammal:
-    deprecated: true
+    deprecated: "true"
     is_a: cellular organism
     mixins:
       - subject of investigation
@@ -8967,7 +9001,7 @@ classes:
       - FOODON:03411134  # mammal
 
   human:
-    deprecated: true
+    deprecated: "true"
     is_a: mammal
     mixins:
       - subject of investigation
@@ -8978,7 +9012,7 @@ classes:
       - NCIT:C14225
 
   plant:
-    deprecated: true
+    deprecated: "true"
     is_a: cellular organism
     exact_mappings:
       - NCIT:C14258  # plant
@@ -8987,7 +9021,7 @@ classes:
       - NCIT:C79659  # plant, whole
 
   invertebrate:
-    deprecated: true
+    deprecated: "true"
     is_a: cellular organism
     exact_mappings:
       - NCIT:C14228  # invertebrate
@@ -8998,7 +9032,7 @@ classes:
       - NCBITaxon:1767184  # unidentified invertebrate
 
   vertebrate:
-    deprecated: true
+    deprecated: "true"
     is_a: cellular organism
     exact_mappings:
       - STY:T010
@@ -9008,7 +9042,7 @@ classes:
       - NCBITaxon:2662825  # unclassified vertebrata (in:vertebrates)
 
   fungus:
-    deprecated: true
+    deprecated: "true"
     is_a: cellular organism
     exact_mappings:
       - STY:T004
@@ -9378,6 +9412,14 @@ classes:
       - NCIT
       - PO
       - FAO
+      # model organism anatomy ontologies that include gross structures (organs, tissues),
+      # mirroring the model-organism prefixes on anatomical entity (see #1746)
+      - EMAPA  # mouse, e.g. subclasses of EMAPA:35949 "organ" and EMAPA:35868 "tissue"
+      - MA     # mouse adult anatomy
+      - ZFA    # zebrafish
+      - FBbt   # fly
+      - WBbt   # c. elegans
+      - XAO    # frog
 
 
   ## entity mixins
@@ -9636,6 +9678,7 @@ classes:
       - ENSEMBL  # ENSEMBL:ENSP*
       - FB       # FlyBase FBpp*
       - UMLS
+      - NCIT
       - MESH
       - ncats.drug
     broad_mappings:
@@ -9656,8 +9699,9 @@ classes:
     description: >-
       Represents a protein that is a specific isoform of the canonical or
       reference protein.
-    comments: >-
-      See https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4114032/
+    comments:
+      - >-
+        See https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4114032/
     mixins:
       - gene product isoform mixin
     id_prefixes:
@@ -10045,10 +10089,11 @@ classes:
     is_a: clinical course
     description: >-
       The age group in which (disease) symptom manifestations appear.
-    notes: >-
-      This class is in Biolink to support HP ontology annotations which use "onset" (with terms from HP)
-      as an annotation on a disease to phenotypic feature association.  This should be the primary use
-      case for this class.
+    notes:
+      - >-
+        This class is in Biolink to support HP ontology annotations which use "onset" (with terms from HP)
+        as an annotation on a disease to phenotypic feature association.  This should be the primary use
+        case for this class.
     exact_mappings:
       - HP:0003674
 
@@ -10546,7 +10591,7 @@ classes:
 
 
   chemical entity assesses named thing association:
-    deprecated: true
+    deprecated: "true"
     is_a: association
     slot_usage:
       subject:
@@ -10971,7 +11016,7 @@ classes:
         description: "the drug that is an interactor"
 
   chemical to entity association mixin:
-    deprecated: true
+    deprecated: "true"
     description: >-
       An interaction between a chemical entity and another entity
     is_a: chemical entity to entity association mixin
@@ -11402,8 +11447,9 @@ classes:
       Describes the relationship between an enzyme (usually a macromolecular
       complex or gene product) and the molecules it acts on (substrate).
       The substrate can be a chemical, a polypeptide, or a protein.
-    notes: >-
-      Using macromolecular machine should cover cases of gene-protein conflation.
+    notes:
+      - >-
+        Using macromolecular machine should cover cases of gene-protein conflation.
     slots:
       - subject form or variant qualifier
       - subject part qualifier
@@ -11473,13 +11519,11 @@ classes:
         subproperty_of: causes
         required: true
     examples:
-      value:
-        subject: "NCBIGene:551"  # AVP
-        predicate: regulates
-        qualified_predicate: causes
-        object: "NCBIGene:1636"  # ACE
-        object_aspect_qualifier: activity_or_abundance
-        object_direction_qualifier: downregulated
+      - value: "{subject: NCBIGene:551, predicate: regulates, qualified_predicate: causes, object: NCBIGene:1636, object_aspect_qualifier: activity_or_abundance, object_direction_qualifier: downregulated}"
+        description: >-
+          AVP (NCBIGene:551) regulates ACE (NCBIGene:1636), with qualified predicate
+          'causes', object aspect qualifier 'activity_or_abundance', and object
+          direction qualifier 'downregulated'.
 
   process regulates process association:
     is_a: association
@@ -11615,6 +11659,86 @@ classes:
           object_direction_qualifier: decreased
           causal_mechanism_qualifier: inhibition
           qualified_predicate: biolink:causes
+
+  chemical gene sensitivity association:
+    description: >-
+      Describes a relationship in which a chemical entity affects the sensitivity or susceptibility
+      of a biological system to a gene or gene product (e.g. a chemical that increases or decreases
+      the response to a gene or gene product). This covers 'response to substance' style interactions
+      from sources such as CTD that map to the 'affects sensitivity to' predicate hierarchy, as opposed
+      to the abundance/activity/processing effects covered by ChemicalAffectsGeneAssociation.
+    is_a: association
+    broad_mappings:
+      - SIO:001257    ## chemical-gene association
+    slots:
+      - subject form or variant qualifier
+      - subject part qualifier
+      - subject derivative qualifier
+      - subject aspect qualifier
+      - subject direction qualifier
+      - object form or variant qualifier
+      - object part qualifier
+      - object derivative qualifier
+      - object aspect qualifier
+      - object direction qualifier
+      - qualified predicate
+      - anatomical context qualifier
+      - species context qualifier
+      - evidence count
+      - supporting documents
+    slot_usage:
+      subject:
+        range: chemical entity
+      object:
+        range: gene or gene product
+      predicate:
+        subproperty_of: affects sensitivity to
+        description: >-
+          must be a descendant of 'affects sensitivity to' (e.g. 'increases sensitivity to'
+          or 'decreases sensitivity to')
+      subject form or variant qualifier:
+        range: ChemicalOrGeneOrGeneProductFormOrVariantEnum
+      subject part qualifier:
+        range: GeneOrGeneProductOrChemicalPartQualifierEnum
+      subject derivative qualifier:
+        range: ChemicalEntityDerivativeEnum
+      subject aspect qualifier:
+        range: GeneOrGeneProductOrChemicalEntityAspectEnum
+      subject direction qualifier:
+        range: DirectionQualifierEnum
+      qualified predicate:
+        subproperty_of: causes
+      object form or variant qualifier:
+        range: ChemicalOrGeneOrGeneProductFormOrVariantEnum
+      object part qualifier:
+        range: GeneOrGeneProductOrChemicalPartQualifierEnum
+      object derivative qualifier:
+        range: ChemicalEntityDerivativeEnum
+      object aspect qualifier:
+        range: GeneOrGeneProductOrChemicalEntityAspectEnum
+      object direction qualifier:
+        range: DirectionQualifierEnum
+      anatomical context qualifier:
+        range: anatomical entity
+      species context qualifier:
+        range: organism taxon
+    examples:
+      - object:
+          subject: CHEBI:28748  # doxorubicin
+          predicate: biolink:increases_sensitivity_to
+          object: NCBIGene:7157  # TP53
+          category: biolink:ChemicalGeneSensitivityAssociation
+          knowledge_level: knowledge_assertion
+          agent_type: manual_agent
+          species_context_qualifier: NCBITaxon:9606
+      - object:
+          subject: CHEBI:45863  # paclitaxel
+          predicate: biolink:decreases_sensitivity_to
+          object: NCBIGene:5243  # ABCB1
+          category: biolink:ChemicalGeneSensitivityAssociation
+          knowledge_level: knowledge_assertion
+          agent_type: manual_agent
+          species_context_qualifier: NCBITaxon:9606
 
   gene affects chemical association:
     description: >-
@@ -12149,6 +12273,39 @@ classes:
         range: disease
       object:
         range: phenotypic feature
+
+  disease to disease association:
+    is_a: association
+    defining_slots:
+      - subject
+      - object
+    description: >-
+      An association between two diseases. Captures clinical or biological
+      relationships such as comorbidity, sequela, post-infectious complication,
+      shared susceptibility, or differential diagnosis. The precise relationship
+      is carried by the predicate (e.g. ``associated with``, ``contributes to``,
+      ``risk affected by``, ``temporally related to``); use this class whenever
+      both ends of the association are diseases, rather than the more specific
+      ``disease to phenotypic feature association`` (which forces the object to
+      be a phenotypic feature) or a generic ``association``.
+    mixins:
+      - disease to entity association mixin
+      - entity to disease association mixin
+    slot_usage:
+      subject:
+        range: disease
+        description: "the disease that is the source/context of the association"
+        examples:
+          - value: MONDO:0005688
+            description: "campylobacteriosis (subject of: associated with Guillain-Barré syndrome as a post-infectious sequela)"
+      object:
+        range: disease
+        description: "the related disease"
+        examples:
+          - value: MONDO:0016218
+            description: "Guillain-Barré syndrome (object of: campylobacteriosis associated with Guillain-Barré syndrome)"
+      predicate:
+        subproperty_of: associated with
 
   case to phenotypic feature association:
     description: >-
@@ -12854,7 +13011,8 @@ classes:
       possibly qualified by stage/timing info.
     notes:
       - "TBD: introduce subclasses for distinction between wild-type and experimental conditions?"
-    see_also: "https://github.com/monarch-initiative/ingest-artifacts/tree/master/sources/BGee"
+    see_also:
+      - "https://github.com/monarch-initiative/ingest-artifacts/tree/master/sources/BGee"
     slots:
       - stage qualifier
       - quantifier qualifier
@@ -13738,8 +13896,9 @@ enums:
           Once researchers have examined the possibilities a new drug may contain, they must do preliminary research
           to determine its potential for harm (toxicity). This is categorized as preclinical research and can be one of
           two types: in vitro or in vivo.
-        notes: >-
-          DrugBank calls this 'experimental'.
+        notes:
+          - >-
+            DrugBank calls this 'experimental'.
       clinical_trial_phase:
         description: >-
           Clinical research involves trials of the drug on people,
@@ -14695,13 +14854,14 @@ enums:
           statistical associations/correlations between variables in the input
           dataset, and do not interpret/infer broader conclusions from associations
           the analysis reveals in the data.
-        notes: >-
-          If an analysis pipeline includes any rules for generating broader
-          conclusions based on the dataset-specific statistical correlations
-          it calculates (e.g. create a 'treats' edge when the analysis reveals a
-          drug-disease correlation in the data with statistical scores that meet a
-          certain threshold) - we would consider this agent to be a Computational Model
-          rather than just a Data Analysis Pipeline.
+        notes:
+          - >-
+            If an analysis pipeline includes any rules for generating broader
+            conclusions based on the dataset-specific statistical correlations
+            it calculates (e.g. create a 'treats' edge when the analysis reveals a
+            drug-disease correlation in the data with statistical scores that meet a
+            certain threshold) - we would consider this agent to be a Computational Model
+            rather than just a Data Analysis Pipeline.
       computational_model:
         is_a: automated_agent
         description: >-
@@ -14709,38 +14869,40 @@ enums:
           predictions) based on rules/logic explicitly encoded in an algorithm
           (e.g. heuristic models, supervised classifiers), or learned from patterns
           observed in data (e.g. ML models, unsupervised classifiers).
-        notes: >-
-          The bar is quite low relatively for what is considered to be a
-          ‘computational model’ by our definition. Even agents/tools that apply
-          simple rules or logic to the output of an ingest or analysis pipeline
-          to allow for a stronger or more general conclusion to be stated can
-          qualify an agent as a model. For example, an ingest pipeline that applies rules to its ingest of
-          clinical trials data to create a 'treats' prediction edge when the
-          source reports a drug to be in phase 2 or 3 trials represents a
-          computational model because it is automatically drawing a stronger
-          conclusion than the source reports, based on logic encoded in the ingest
-          pipeline. Similarly, a data analysis pipeline that is extended with rules to
-          automatically generate broader conclusions based on dataset-specific
-          statistical correlations (e.g. create a 'treats' edge when the analysis
-          reveals a drug-disease correlation in the data with statistical scores
-          that meet a certain threshold), would also qualify as a computational
-          model by our definition.
+        notes:
+          - >-
+            The bar is quite low relatively for what is considered to be a
+            ‘computational model’ by our definition. Even agents/tools that apply
+            simple rules or logic to the output of an ingest or analysis pipeline
+            to allow for a stronger or more general conclusion to be stated can
+            qualify an agent as a model. For example, an ingest pipeline that applies rules to its ingest of
+            clinical trials data to create a 'treats' prediction edge when the
+            source reports a drug to be in phase 2 or 3 trials represents a
+            computational model because it is automatically drawing a stronger
+            conclusion than the source reports, based on logic encoded in the ingest
+            pipeline. Similarly, a data analysis pipeline that is extended with rules to
+            automatically generate broader conclusions based on dataset-specific
+            statistical correlations (e.g. create a 'treats' edge when the analysis
+            reveals a drug-disease correlation in the data with statistical scores
+            that meet a certain threshold), would also qualify as a computational
+            model by our definition.
       text_mining_agent:
         is_a: automated_agent
         description: >-
           An automated agent that uses Natural Language Processing to recognize
           concepts and/or relationships in text, and report them using formally
           encoded semantics (e.g. as an edge in a knowledge graph).
-        notes: >-
-          The original statement in the source text is typically made by a human /
-          manual agent, but if a specific encoding of this knowledge is produced
-          by a text-mining tool, it has an agent_type of 'text_mining_agent'.
-          Examples of text mining agents include SemmedDB, and the Translator
-          Text-Mining Knowledge Provider. Note that text-mining tools are prone to erroneous interpretation of
-          concepts and relationships, and can fail to provide important details
-          about the context in which the original knowledge was reported - so
-          users should always consult the source text for a text-mined statement
-          to assess its veracity and relevance.
+        notes:
+          - >-
+            The original statement in the source text is typically made by a human /
+            manual agent, but if a specific encoding of this knowledge is produced
+            by a text-mining tool, it has an agent_type of 'text_mining_agent'.
+            Examples of text mining agents include SemmedDB, and the Translator
+            Text-Mining Knowledge Provider. Note that text-mining tools are prone to erroneous interpretation of
+            concepts and relationships, and can fail to provide important details
+            about the context in which the original knowledge was reported - so
+            users should always consult the source text for a text-mined statement
+            to assess its veracity and relevance.
       image_processing_agent:
         is_a: automated_agent
         description: >-
@@ -14751,11 +14913,12 @@ enums:
         description: >-
           A human agent reviews and validates/approves the veracity of knowledge
           that is initially generated by an automated agent.
-        notes: >-
-          This term applies when a human was only involved in evaluating the veracity
-          of a knowledge statement that was generated by an automated agent. It is
-          important to indicate when such manual review has occurred, because it can
-          give a user more confidence in an automated statement.
+        notes:
+          - >-
+            This term applies when a human was only involved in evaluating the veracity
+            of a knowledge statement that was generated by an automated agent. It is
+            important to indicate when such manual review has occurred, because it can
+            give a user more confidence in an automated statement.
       not_provided:
         description: >-
           The agent type is not provided, typically because it cannot be determined
@@ -14779,84 +14942,91 @@ enums:
           A statement of purported fact that is put forth by an agent as true,
           based on assessment of direct evidence. Assertions are likely but not
           definitively true.
-        notes: >-
-          Knowledge Assertions are supported by direct evidence deemed sufficient
-          by some agent to support a confidence assertion of truth. Our certainty
-          in this truth is not absolute, but is typically higher than for Predictions.
+        notes:
+          - >-
+            Knowledge Assertions are supported by direct evidence deemed sufficient
+            by some agent to support a confidence assertion of truth. Our certainty
+            in this truth is not absolute, but is typically higher than for Predictions.
       logical_entailment:
         aliases: ['deductive_inference']
         description: >-
           A statement reporting a conclusion that follows logically from premises
           representing established facts or knowledge assertions (e.g. fingernail
           part of finger, finger part of hand --> fingernail part of hand).
-        notes: >-
-          These statements report entailed conclusions derived through dedictive inference.
-          They are not directly asserted by a source, but logically follow from statement(s)
-          a source does make - and are necessarily true if their supporting premises are true.
-          In practice, these will primarily be entailments based on logic encoded in ontologies.
-          Examples include propagation of annotated knowledge to hierarchically-related concepts,
-          across paths through a graph constructed from transitive relationships, or sets of
-          relationships that support property chain inference.
+        notes:
+          - >-
+            These statements report entailed conclusions derived through dedictive inference.
+            They are not directly asserted by a source, but logically follow from statement(s)
+            a source does make - and are necessarily true if their supporting premises are true.
+            In practice, these will primarily be entailments based on logic encoded in ontologies.
+            Examples include propagation of annotated knowledge to hierarchically-related concepts,
+            across paths through a graph constructed from transitive relationships, or sets of
+            relationships that support property chain inference.
       prediction:
         aliases: ['hypothesis']
         description: >-
           A statement of a possible fact based on probabilistic forms of reasoning over
           more indirect forms of evidence, that lead to more speculative conclusions.
-        notes: >-
-          Predictions typically result from non-deductive forms of reasoning - e.g.
-          inductive and deductive inference, or statistical inference where conclusions
-          are drawn about a broader/global population based on data from a representative
-          cohort. For example, a prediction that a drug may treat a particular disease based on its chemical
-          similarity to known drugs that treat the disease, and the fact that it can inhibit proteins
-          in a pathway that is associated with the disease
-          As Predictions are based on weaker forms of inference and evidence, they are typically
-          considered lower confidence statements as compared to Knowledge Assertions and Logical
-          Entailments.
+        notes:
+          - >-
+            Predictions typically result from non-deductive forms of reasoning - e.g.
+            inductive and deductive inference, or statistical inference where conclusions
+            are drawn about a broader/global population based on data from a representative
+            cohort. For example, a prediction that a drug may treat a particular disease based on its chemical
+            similarity to known drugs that treat the disease, and the fact that it can inhibit proteins
+            in a pathway that is associated with the disease
+            As Predictions are based on weaker forms of inference and evidence, they are typically
+            considered lower confidence statements as compared to Knowledge Assertions and Logical
+            Entailments.
       statistical_association:
         description: >-
           A statement that reports concepts representing variables in a dataset to be statistically
           associated with each other in a particular cohort (e.g. 'Metformin Treatment (variable 1)
           is correlated with Diabetes Diagnosis (variable 2) in EHR dataset X').
-        notes: >-
-          Such statements report the direct results of some statistical analysis. Their scope is limited
-          tp the cohort/dataset interrogated in the analysis, and they do not make broader claims or draw
-          more meaningful conclusions about the domain of discourse. Note however that such Statistical
-          Associations can be used as evidence to support a more pointed/precise Prediction or Assertion
-          of knowledge. For example, e.g. a Statistical Association between 'Metformin Prescription' and
-          'Diabetes Diagnosis' in EHR records could support a Prediction that 'Metformin treats Diabetes',
-          or 'Metformin causes Diabetes'. This 'treats' edge may have a knowledge_level of 'Prediction',
-          but the provider could use the 'evidence_type' edge property to indicate that this prediction is
-          based on a 'Statistical Association'. Because Statistical Associations directly report analysis-specific
-          results, we can consider them to be inherently true statements, whose broader utility is dependent on
-          subsequent generalization of the reported result to a broader population, and/or interpretation of the
-          result as support for a more meaningful statements about the domain of discourse.
+        notes:
+          - >-
+            Such statements report the direct results of some statistical analysis. Their scope is limited
+            tp the cohort/dataset interrogated in the analysis, and they do not make broader claims or draw
+            more meaningful conclusions about the domain of discourse. Note however that such Statistical
+            Associations can be used as evidence to support a more pointed/precise Prediction or Assertion
+            of knowledge. For example, e.g. a Statistical Association between 'Metformin Prescription' and
+            'Diabetes Diagnosis' in EHR records could support a Prediction that 'Metformin treats Diabetes',
+            or 'Metformin causes Diabetes'. This 'treats' edge may have a knowledge_level of 'Prediction',
+            but the provider could use the 'evidence_type' edge property to indicate that this prediction is
+            based on a 'Statistical Association'. Because Statistical Associations directly report analysis-specific
+            results, we can consider them to be inherently true statements, whose broader utility is dependent on
+            subsequent generalization of the reported result to a broader population, and/or interpretation of the
+            result as support for a more meaningful statements about the domain of discourse.
       text_co_occurrence:
         description: >-
           A statement reporting that mentions of two concepts in some corpus of text (e.g. the biomedical literature)
           occur together at a statistically significant frequency - suggesting that a real-world biological or clinical
           relationship may exist between the concepts.
-        notes: >-
-          Such statements often utilize NLP/text-mining to identify concept mentions in text, but the reported statement is
-          generated by a data analysis pipeline that performs calculations on mention counts and determines the strength
-          of their correlation.
+        notes:
+          - >-
+            Such statements often utilize NLP/text-mining to identify concept mentions in text, but the reported statement is
+            generated by a data analysis pipeline that performs calculations on mention counts and determines the strength
+            of their correlation.
       observation:
         description: >-
           A statement reporting (and possibly quantifying) a phenomenon that was observed to occur -
           absent any analysis or interpretation that generates a statistical association or supports
           a broader conclusion or inference.
-        notes: >-
-          An observation that "56362 people self-reported taking melatonin to treat migraines"
-          is agnostic to whether melatonin is an effective or approved treatment - it only claims that it was
-          taken for this purpose. Such observations, however, may be used as the basis for predicting that a
-          drug may be efficacious against a disease.
+        notes:
+          - >-
+            An observation that "56362 people self-reported taking melatonin to treat migraines"
+            is agnostic to whether melatonin is an effective or approved treatment - it only claims that it was
+            taken for this purpose. Such observations, however, may be used as the basis for predicting that a
+            drug may be efficacious against a disease.
       not_provided:
         description: >-
           The knowledge level is not provided, typically because it cannot be determined from available.
           information.
-        notes: >-
-          This term is most often applied for text-mined edges, as NLP tools are typically not able to detect
-          a specific knowledge level for the concept relationships they extract (e.g. whether the author
-          was predicting or asserting a relationship, or merely observed it to occur).
+        notes:
+          - >-
+            This term is most often applied for text-mined edges, as NLP tools are typically not able to detect
+            a specific knowledge level for the concept relationships they extract (e.g. whether the author
+            was predicting or asserting a relationship, or merely observed it to occur).
     in_subset:
       - translator_minimal
 

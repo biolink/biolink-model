@@ -570,7 +570,7 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../subject_form_or_variant_qualifier/">subject_form_or_variant_qualifier</a>: <br> <i> A qualifier that composes with a core subject/object concept to define a specific type, variant, alternative version of this concept. The composed concept remains a subtype or instance of the core concept. For example, the qualifier ‘mutation’ combines with the core concept ‘Gene X’ to express the compose concept ‘a mutation of Gene X’.  This qualifier specifies a change in the subject of an association (aka: statement). </i></br></td>
+<td><a href="../subject_form_or_variant_qualifier/">subject_form_or_variant_qualifier</a>: <br/> <i> A qualifier that composes with a core subject/object concept to define a specific type, variant, alternative version of this concept. The composed concept remains a subtype or instance of the core concept. For example, the qualifier ‘mutation’ combines with the core concept ‘Gene X’ to express the compose concept ‘a mutation of Gene X’.  This qualifier specifies a change in the subject of an association (aka: statement). </i></td>
 <td>0..1 <br/> <a href="../ChemicalOrGeneOrGeneProductFormOrVariantEnum/">ChemicalOrGeneOrGeneProductFormOrVariantEnum</a></td>
 <td>direct</td>
 <td>mutation, late stage, severe, transplant, chemical analog</td>
@@ -596,19 +596,19 @@
 <tr>
 <td><a href="../subject/">subject</a>: <br/> <i> gene in which variation is correlated with the phenotypic feature </i></td>
 <td>1 <br/> <a href="../GeneOrGeneProduct/">GeneOrGeneProduct</a></td>
-<td><a href="../EntityToPhenotypicFeatureAssociationMixin/">EntityToPhenotypicFeatureAssociationMixin</a>, <a href="../Association/">Association</a>, <a href="../GeneToEntityAssociationMixin/">GeneToEntityAssociationMixin</a>, <a href="../FrequencyQualifierMixin/">FrequencyQualifierMixin</a></td>
+<td><a href="../FrequencyQualifierMixin/">FrequencyQualifierMixin</a>, <a href="../Association/">Association</a>, <a href="../GeneToEntityAssociationMixin/">GeneToEntityAssociationMixin</a>, <a href="../EntityToPhenotypicFeatureAssociationMixin/">EntityToPhenotypicFeatureAssociationMixin</a></td>
 <td>HGNC:2197</td>
 </tr>
 <tr>
 <td><a href="../predicate/">predicate</a>: <br/> <i> Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats </i></td>
 <td>1 <br/> <a href="../GeneToPhenotypicFeaturePredicateEnum/">GeneToPhenotypicFeaturePredicateEnum</a></td>
-<td><a href="../EntityToPhenotypicFeatureAssociationMixin/">EntityToPhenotypicFeatureAssociationMixin</a>, <a href="../Association/">Association</a>, <a href="../GeneToEntityAssociationMixin/">GeneToEntityAssociationMixin</a>, <a href="../FrequencyQualifierMixin/">FrequencyQualifierMixin</a></td>
+<td><a href="../FrequencyQualifierMixin/">FrequencyQualifierMixin</a>, <a href="../Association/">Association</a>, <a href="../GeneToEntityAssociationMixin/">GeneToEntityAssociationMixin</a>, <a href="../EntityToPhenotypicFeatureAssociationMixin/">EntityToPhenotypicFeatureAssociationMixin</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="../object/">object</a>: <br/> <i> connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object. </i></td>
 <td>1 <br/> <a href="../PhenotypicFeature/">PhenotypicFeature</a></td>
-<td><a href="../EntityToPhenotypicFeatureAssociationMixin/">EntityToPhenotypicFeatureAssociationMixin</a>, <a href="../Association/">Association</a>, <a href="../GeneToEntityAssociationMixin/">GeneToEntityAssociationMixin</a>, <a href="../FrequencyQualifierMixin/">FrequencyQualifierMixin</a></td>
+<td><a href="../FrequencyQualifierMixin/">FrequencyQualifierMixin</a>, <a href="../Association/">Association</a>, <a href="../GeneToEntityAssociationMixin/">GeneToEntityAssociationMixin</a>, <a href="../EntityToPhenotypicFeatureAssociationMixin/">EntityToPhenotypicFeatureAssociationMixin</a></td>
 <td>HP:0002487, WBPhenotype:0000180, MP:0001569</td>
 </tr>
 <tr>
@@ -753,13 +753,13 @@
 <td><a href="../subject_category_closure/">subject_category_closure</a>: <br/> <i> Used to hold the subject category closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX. </i></td>
 <td>* <br/> <a href="../OntologyClass/">OntologyClass</a></td>
 <td><a href="../Association/">Association</a></td>
-<td>['biolink:Gene", "biolink:NamedThing']</td>
+<td>['biolink:Gene', 'biolink:NamedThing']</td>
 </tr>
 <tr>
 <td><a href="../object_category_closure/">object_category_closure</a>: <br/> <i> Used to hold the object category closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX. </i></td>
 <td>* <br/> <a href="../OntologyClass/">OntologyClass</a></td>
 <td><a href="../Association/">Association</a></td>
-<td>['biolink:Disease", "biolink:NamedThing']</td>
+<td>['biolink:Disease', 'biolink:NamedThing']</td>
 </tr>
 <tr>
 <td><a href="../subject_namespace/">subject_namespace</a>: <br/> <i> Used to hold the subject namespace of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX. </i></td>
