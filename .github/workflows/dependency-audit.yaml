@@ -29,7 +29,7 @@ jobs:
           enable-cache: true
 
       - name: Set up Python
-        uses: actions/setup-python@v6.2.0
+        uses: actions/setup-python@v6.3.0
         id: setup-python
         with:
           python-version: 3.13
