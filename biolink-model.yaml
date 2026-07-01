@@ -2161,11 +2161,14 @@ slots:
   statistical significance qualifier:
     is_a: statement qualifier
     description: >-
-      A statement qualifier indicating whether the evidence supporting an
-      association reaches a defined threshold of statistical significance
-      (e.g., a p-value at or below a stated alpha, after any multiple-testing
-      correction). This is a coarse categorical companion to the numeric
-      'p value' and 'adjusted p value' slots.
+      A statement qualifier categorizing an association's evidence by
+      statistical significance, banded against conventional p-value (or
+      adjusted p-value) thresholds. A coarse categorical companion to the
+      numeric 'p value' and 'adjusted p value' slots.
+    examples:
+      - value: significant
+      - value: not_significant
+      - value: inconclusive
     range: StatisticalSignificanceQualifierEnum
     in_subset:
       - translator_minimal
@@ -14215,24 +14218,24 @@ enums:
 
   StatisticalSignificanceQualifierEnum:
     description: >-
-      An enumeration used as a qualifier to indicate whether an association's
-      supporting evidence has been assessed for statistical significance and,
-      if so, whether it meets the stated significance threshold.
+      Qualifies an association by the magnitude of its statistical-significance
+      statistic (raw p-value, multiple-testing-adjusted p-value, or q-value/FDR),
+      banded against two conventional thresholds: alpha = 0.05 and a wider
+      'suggestive' threshold = 0.10. The numeric value itself lives in the
+      'p value' and 'adjusted p value' slots.
     permissible_values:
       significant:
         description: >-
-          The association's supporting evidence meets the statistical-significance
-          threshold (e.g., p-value at or below the stated alpha, after correction).
+          Significance statistic <= 0.05 (e.g. p-value or adjusted p-value at or
+          below alpha), indicating the association is unlikely to be due to chance.
       not_significant:
         description: >-
-          The association's supporting evidence was assessed for statistical
-          significance and does not meet the stated threshold.
+          Significance statistic > 0.10, indicating no statistically credible
+          evidence for the association at either threshold.
       inconclusive:
         description: >-
-          The association's supporting evidence was assessed but the result is
-          borderline or ambiguous (e.g., p-value near the threshold, or conflicting
-          results across multiple-testing correction methods), so a clear
-          significant / not-significant determination cannot be made.
+          Significance statistic in (0.05, 0.10] — a borderline 'trend' that is
+          suggestive of an association but does not meet the 0.05 threshold.
 
   CausalMechanismQualifierEnum:
     description: >-
