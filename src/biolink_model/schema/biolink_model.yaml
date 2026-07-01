@@ -2161,6 +2161,18 @@ slots:
     in_subset:
       - translator_minimal
 
+  statistical significance qualifier:
+    is_a: statement qualifier
+    description: >-
+      A statement qualifier indicating whether the evidence supporting an
+      association reaches a defined threshold of statistical significance
+      (e.g., a p-value at or below a stated alpha, after any multiple-testing
+      correction). This is a coarse categorical companion to the numeric
+      'p value' and 'adjusted p value' slots.
+    range: StatisticalSignificanceQualifierEnum
+    in_subset:
+      - translator_minimal
+
   qualifiers:
     deprecated: "true"
     description: >-
@@ -14141,6 +14153,27 @@ enums:
         is_a: molecular_modification
       carboxylation:
         is_a: molecular_modification
+
+  StatisticalSignificanceQualifierEnum:
+    description: >-
+      An enumeration used as a qualifier to indicate whether an association's
+      supporting evidence has been assessed for statistical significance and,
+      if so, whether it meets the stated significance threshold.
+    permissible_values:
+      significant:
+        description: >-
+          The association's supporting evidence meets the statistical-significance
+          threshold (e.g., p-value at or below the stated alpha, after correction).
+      not_significant:
+        description: >-
+          The association's supporting evidence was assessed for statistical
+          significance and does not meet the stated threshold.
+      inconclusive:
+        description: >-
+          The association's supporting evidence was assessed but the result is
+          borderline or ambiguous (e.g., p-value near the threshold, or conflicting
+          results across multiple-testing correction methods), so a clear
+          significant / not-significant determination cannot be made.
 
   CausalMechanismQualifierEnum:
     description: >-

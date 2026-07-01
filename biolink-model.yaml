@@ -21,143 +21,146 @@ version: 4.4.3
 # 1. The following 'prefixes:' delimited list has first precedence in resolution.
 #
 prefixes:
-  AGRKB: 'https://www.alliancegenome.org/'
-  apollo: 'https://github.com/GMOD/Apollo'
-  AspGD: 'http://www.aspergillusgenome.org/cgi-bin/locus.pl?dbid='
-  biolink: 'https://w3id.org/biolink/vocab/'
-  bioschemas: 'https://bioschemas.org/'
-  linkml: 'https://w3id.org/linkml/'
-  CAID: 'http://reg.clinicalgenome.org/redmine/projects/registry/genboree_registry/by_caid?caid='
-   # Placeholder: just points to GMOD Chado wiki
-  CHADO: 'http://gmod.org/wiki/Chado/'
-   # Placeholders: not sure how 'chembio'and CHEMBL.MECHANISM really resolve
-  ChemBank: 'http://chembank.broadinstitute.org/chemistry/viewMolecule.htm?cbid='
-  CHEMBL.MECHANISM: 'https://www.ebi.ac.uk/chembl/mechanism/inspect/'
-  CID: 'http://pubchem.ncbi.nlm.nih.gov/compound/'
-  CLINVAR: 'http://identifiers.org/clinvar'
-  COAR_RESOURCE: 'http://purl.org/coar/resource_type/'
-  COG: 'https://www.ncbi.nlm.nih.gov/research/cog-project/'
-  ComplexPortal: 'https://www.ebi.ac.uk/complexportal/complex/'
-  CPT: 'https://www.ama-assn.org/practice-management/cpt/'
-  CTD.CHEMICAL: 'http://ctdbase.org/detail.go?type=chem&acc='
-  CTD.DISEASE: 'http://ctdbase.org/detail.go?type=disease&db=MESH&acc='
-  CTD.GENE: 'http://ctdbase.org/detail.go?type=gene&acc='
-  CTD: 'http://ctdbase.org/'
-  DGIdb: 'https://www.dgidb.org/interaction_types'
-  dcat: 'http://www.w3.org/ns/dcat#'
-  dct: 'http://purl.org/dc/terms/'
-  dcid: 'https://datacommons.org/browser/'
-  doi: 'https://doi.org/'
-  DOID-PROPERTY: 'http://purl.obolibrary.org/obo/doid#'
-  DrugCentral: 'http://drugcentral.org/drugcard/'
-  ECTO: 'http://purl.obolibrary.org/obo/ECTO_'
-  EDAM-DATA: 'http://edamontology.org/data_'
-  EDAM-FORMAT: 'http://edamontology.org/format_'
-  EDAM-OPERATION: 'http://edamontology.org/operation_'
-  EDAM-TOPIC: 'http://edamontology.org/topic_'
-  EFO: 'http://www.ebi.ac.uk/efo/EFO_'
-  ExO: 'http://purl.obolibrary.org/obo/ExO_'
-  fabio: 'http://purl.org/spar/fabio/'
-  FMA: 'http://purl.obolibrary.org/obo/FMA_'
-  foaf: 'http://xmlns.com/foaf/0.1/'
-  foodb.compound: 'http://foodb.ca/compounds/'
-  foodb.food: 'http://foodb.ca/foods/'
-  FYECO: 'https://www.pombase.org/term/'
-  FYPO: 'http://purl.obolibrary.org/obo/FYPO_'   # Fission Yeast Phenotype Ontology
-  gff3: 'https://github.com/The-Sequence-Ontology/Specifications/blob/master/gff3.md#'
-  GOREL: 'http://purl.obolibrary.org/obo/GOREL_'
-   # GOP: Gene Ontology Property (not really a GO term but an associated metadatum)
-  GOP: 'http://purl.obolibrary.org/obo/go#'
-  gpi: 'https://github.com/geneontology/go-annotation/blob/master/specs/gpad-gpi-2-0.md#'
-  GSID: 'https://scholar.google.com/citations?user='
-  GTEx: 'https://www.gtexportal.org/home/gene/'
-  GTOPDB: 'https://www.guidetopharmacology.org/GRAC/LigandDisplayForward?ligandId='
-  gtpo: 'https://rdf.guidetopharmacology.org/ns/gtpo#'
-  HANCESTRO: 'http://www.ebi.ac.uk/ancestro/ancestro_'
-  HCPCS: 'http://purl.bioontology.org/ontology/HCPCS/'
-  HsapDv: 'http://purl.obolibrary.org/obo/HsapDv_'
-  ICD10: 'https://icd.who.int/browse10/2016/en#/'
-  ICD9: 'http://translator.ncats.nih.gov/ICD9_'
-  icd11: 'http://id.who.int/icd/entity/'
-  icd11.foundation: 'http://id.who.int/icd/entity/'
-  interpro: 'https://www.ebi.ac.uk/interpro/entry/'
-  INO: 'http://purl.obolibrary.org/obo/INO_'
-  isbn: 'https://www.isbn-international.org/identifier/'  # note: a resolvable base URI not available from isbn-international
-  isni: 'https://isni.org/isni/'
-  issn: 'https://portal.issn.org/resource/ISSN/'
-  ncats.drug: 'https://drugs.ncats.io/drug/'
-  KEGG.BRITE: 'https://bioregistry.io/kegg.brite:'
-  KEGG: 'http://www.kegg.jp/entry/'
-  KEGG.GENES: 'https://bioregistry.io/kegg.genes:bsu:'
-  KEGG.PATHWAY: 'https://bioregistry.io/kegg.pathway:'
-  KEGG.RCLASS: 'https://www.genome.jp/dbget-bin/www_bget?rc:'
-  LOINC: 'http://loinc.org/rdf/'
-  MAXO: 'http://purl.obolibrary.org/obo/MAXO_'
-  medgen: 'https://www.ncbi.nlm.nih.gov/medgen/'
-  metacyc.reaction: 'http://identifiers.org/metacyc.reaction:'
-  METANETX.REACTION: 'https://www.metanetx.org/equa_info/'
-  METPO: 'https://w3id.org/metpo/'
-  MESH: 'http://id.nlm.nih.gov/mesh/'
-  MI: 'http://purl.obolibrary.org/obo/MI_'
-  mirbase: 'http://identifiers.org/mirbase'
-  mmmp.biomaps: 'https://bioregistry.io/mmmp.biomaps:'
-  MmusDv: 'http://purl.obolibrary.org/obo/MMUSDV_'
-  MSigDB: 'https://www.gsea-msigdb.org/gsea/msigdb/'
-  NBO-PROPERTY: 'http://purl.obolibrary.org/obo/nbo#'
-  ncats.bioplanet: 'https://tripod.nih.gov/bioplanet/detail.jsp?pid='
-  NCBIGene: 'http://identifiers.org/ncbigene/'
-  NCIT-OBO: 'http://purl.obolibrary.org/obo/ncit#'
-  NDDF: 'http://purl.bioontology.org/ontology/NDDF/'
-  NLMID: 'https://www.ncbi.nlm.nih.gov/nlmcatalog/?term='
-  OBAN: 'http://purl.org/oban/'
-  OMIM.PS: 'https://www.omim.org/phenotypicSeries/'
-  ORCID: 'https://orcid.org/'
-  orphanet: 'http://www.orpha.net/ORDO/Orphanet_'
-  os: 'https://github.com/cmungall/owlstar/blob/master/owlstar.ttl'
-  PANTHER.FAMILY: 'http://www.pantherdb.org/panther/family.do?clsAccession='
-  PathWhiz: 'http://smpdb.ca/pathways/#'   #  See also https://smpdb.ca/pathwhiz/
-  pav: 'http://purl.org/pav/'
-  PHARMGKB.DRUG: 'https://www.pharmgkb.org/chemical/'
-  PHARMGKB.DISEASE: 'https://www.pharmgkb.org/disease/'
-  PHARMGKB.GENE: 'https://www.pharmgkb.org/gene/'
-  PHARMGKB.PATHWAYS: 'https://www.pharmgkb.org/pathway/'
-  PHARMGKB.VARIANT: 'https://www.pharmgkb.org/variant/'
-  PHAROS: 'http://pharos.nih.gov'
-  PomBase: 'https://www.pombase.org/gene/'
-  prov: 'http://www.w3.org/ns/prov#'
-  qud: 'http://qudt.org/1.1/schema/qudt#'
-  REPODB: 'http://apps.chiragjpgroup.org/repoDB/'
-  ResearchID: 'https://publons.com/researcher/'
-  RO: 'http://purl.obolibrary.org/obo/RO_'
-  RXNORM: 'http://purl.bioontology.org/ontology/RXNORM/'
-  RXCUI: 'https://mor.nlm.nih.gov/RxNav/search?searchBy=RXCUI&searchTerm='
-  schema: 'http://schema.org/'
-  ScopusID: 'https://www.scopus.com/authid/detail.uri?authorId='
-  SEED.REACTION: 'https://modelseed.org/biochem/reactions/'
-  SEMMEDDB: 'https://skr3.nlm.nih.gov/SemMedDB'
-  SIO: 'http://semanticscience.org/resource/SIO_'
-  SNOMEDCT: 'http://snomed.info/id/'
-  SPDI: 'https://api.ncbi.nlm.nih.gov/variation/v0/spdi/'
-  UBERGRAPH: 'http://translator.renci.org/ubergraph-axioms.ofn#'
-  UBERON_CORE: 'http://purl.obolibrary.org/obo/uberon/core#'
-  UBERON_NONAMESPACE: 'http://purl.obolibrary.org/obo/core#'
-  STY: 'http://purl.bioontology.org/ontology/STY/'
-  UMLSSG: 'https://lhncbc.nlm.nih.gov/semanticnetwork/download/sg_archive/SemGroups-v04.txt'
-  UniProtKB: 'http://purl.uniprot.org/uniprot/'
-  UNIPROT.ISOFORM: 'http://purl.uniprot.org/isoforms/'
+  AGRKB: "https://www.alliancegenome.org/"
+  apollo: "https://github.com/GMOD/Apollo"
+  AspGD: "http://www.aspergillusgenome.org/cgi-bin/locus.pl?dbid="
+  biolink: "https://w3id.org/biolink/vocab/"
+  bioschemas: "https://bioschemas.org/"
+  linkml: "https://w3id.org/linkml/"
+  CAID:
+    "http://reg.clinicalgenome.org/redmine/projects/registry/genboree_registry/by_caid?caid="
+    # Placeholder: just points to GMOD Chado wiki
+  CHADO:
+    "http://gmod.org/wiki/Chado/"
+    # Placeholders: not sure how 'chembio'and CHEMBL.MECHANISM really resolve
+  ChemBank: "http://chembank.broadinstitute.org/chemistry/viewMolecule.htm?cbid="
+  CHEMBL.MECHANISM: "https://www.ebi.ac.uk/chembl/mechanism/inspect/"
+  CID: "http://pubchem.ncbi.nlm.nih.gov/compound/"
+  CLINVAR: "http://identifiers.org/clinvar"
+  COAR_RESOURCE: "http://purl.org/coar/resource_type/"
+  COG: "https://www.ncbi.nlm.nih.gov/research/cog-project/"
+  ComplexPortal: "https://www.ebi.ac.uk/complexportal/complex/"
+  CPT: "https://www.ama-assn.org/practice-management/cpt/"
+  CTD.CHEMICAL: "http://ctdbase.org/detail.go?type=chem&acc="
+  CTD.DISEASE: "http://ctdbase.org/detail.go?type=disease&db=MESH&acc="
+  CTD.GENE: "http://ctdbase.org/detail.go?type=gene&acc="
+  CTD: "http://ctdbase.org/"
+  DGIdb: "https://www.dgidb.org/interaction_types"
+  dcat: "http://www.w3.org/ns/dcat#"
+  dct: "http://purl.org/dc/terms/"
+  dcid: "https://datacommons.org/browser/"
+  doi: "https://doi.org/"
+  DOID-PROPERTY: "http://purl.obolibrary.org/obo/doid#"
+  DrugCentral: "http://drugcentral.org/drugcard/"
+  ECTO: "http://purl.obolibrary.org/obo/ECTO_"
+  EDAM-DATA: "http://edamontology.org/data_"
+  EDAM-FORMAT: "http://edamontology.org/format_"
+  EDAM-OPERATION: "http://edamontology.org/operation_"
+  EDAM-TOPIC: "http://edamontology.org/topic_"
+  EFO: "http://www.ebi.ac.uk/efo/EFO_"
+  ExO: "http://purl.obolibrary.org/obo/ExO_"
+  fabio: "http://purl.org/spar/fabio/"
+  FMA: "http://purl.obolibrary.org/obo/FMA_"
+  foaf: "http://xmlns.com/foaf/0.1/"
+  foodb.compound: "http://foodb.ca/compounds/"
+  foodb.food: "http://foodb.ca/foods/"
+  FYECO: "https://www.pombase.org/term/"
+  FYPO: "http://purl.obolibrary.org/obo/FYPO_" # Fission Yeast Phenotype Ontology
+  gff3: "https://github.com/The-Sequence-Ontology/Specifications/blob/master/gff3.md#"
+  GOREL:
+    "http://purl.obolibrary.org/obo/GOREL_"
+    # GOP: Gene Ontology Property (not really a GO term but an associated metadatum)
+  GOP: "http://purl.obolibrary.org/obo/go#"
+  gpi: "https://github.com/geneontology/go-annotation/blob/master/specs/gpad-gpi-2-0.md#"
+  GSID: "https://scholar.google.com/citations?user="
+  GTEx: "https://www.gtexportal.org/home/gene/"
+  GTOPDB: "https://www.guidetopharmacology.org/GRAC/LigandDisplayForward?ligandId="
+  gtpo: "https://rdf.guidetopharmacology.org/ns/gtpo#"
+  HANCESTRO: "http://www.ebi.ac.uk/ancestro/ancestro_"
+  HCPCS: "http://purl.bioontology.org/ontology/HCPCS/"
+  HsapDv: "http://purl.obolibrary.org/obo/HsapDv_"
+  ICD10: "https://icd.who.int/browse10/2016/en#/"
+  ICD9: "http://translator.ncats.nih.gov/ICD9_"
+  icd11: "http://id.who.int/icd/entity/"
+  icd11.foundation: "http://id.who.int/icd/entity/"
+  interpro: "https://www.ebi.ac.uk/interpro/entry/"
+  INO: "http://purl.obolibrary.org/obo/INO_"
+  isbn: "https://www.isbn-international.org/identifier/" # note: a resolvable base URI not available from isbn-international
+  isni: "https://isni.org/isni/"
+  issn: "https://portal.issn.org/resource/ISSN/"
+  ncats.drug: "https://drugs.ncats.io/drug/"
+  KEGG.BRITE: "https://bioregistry.io/kegg.brite:"
+  KEGG: "http://www.kegg.jp/entry/"
+  KEGG.GENES: "https://bioregistry.io/kegg.genes:bsu:"
+  KEGG.PATHWAY: "https://bioregistry.io/kegg.pathway:"
+  KEGG.RCLASS: "https://www.genome.jp/dbget-bin/www_bget?rc:"
+  LOINC: "http://loinc.org/rdf/"
+  MAXO: "http://purl.obolibrary.org/obo/MAXO_"
+  medgen: "https://www.ncbi.nlm.nih.gov/medgen/"
+  metacyc.reaction: "http://identifiers.org/metacyc.reaction:"
+  METANETX.REACTION: "https://www.metanetx.org/equa_info/"
+  METPO: "https://w3id.org/metpo/"
+  MESH: "http://id.nlm.nih.gov/mesh/"
+  MI: "http://purl.obolibrary.org/obo/MI_"
+  mirbase: "http://identifiers.org/mirbase"
+  mmmp.biomaps: "https://bioregistry.io/mmmp.biomaps:"
+  MmusDv: "http://purl.obolibrary.org/obo/MMUSDV_"
+  MSigDB: "https://www.gsea-msigdb.org/gsea/msigdb/"
+  NBO-PROPERTY: "http://purl.obolibrary.org/obo/nbo#"
+  ncats.bioplanet: "https://tripod.nih.gov/bioplanet/detail.jsp?pid="
+  NCBIGene: "http://identifiers.org/ncbigene/"
+  NCIT-OBO: "http://purl.obolibrary.org/obo/ncit#"
+  NDDF: "http://purl.bioontology.org/ontology/NDDF/"
+  NLMID: "https://www.ncbi.nlm.nih.gov/nlmcatalog/?term="
+  OBAN: "http://purl.org/oban/"
+  OMIM.PS: "https://www.omim.org/phenotypicSeries/"
+  ORCID: "https://orcid.org/"
+  orphanet: "http://www.orpha.net/ORDO/Orphanet_"
+  os: "https://github.com/cmungall/owlstar/blob/master/owlstar.ttl"
+  PANTHER.FAMILY: "http://www.pantherdb.org/panther/family.do?clsAccession="
+  PathWhiz: "http://smpdb.ca/pathways/#" #  See also https://smpdb.ca/pathwhiz/
+  pav: "http://purl.org/pav/"
+  PHARMGKB.DRUG: "https://www.pharmgkb.org/chemical/"
+  PHARMGKB.DISEASE: "https://www.pharmgkb.org/disease/"
+  PHARMGKB.GENE: "https://www.pharmgkb.org/gene/"
+  PHARMGKB.PATHWAYS: "https://www.pharmgkb.org/pathway/"
+  PHARMGKB.VARIANT: "https://www.pharmgkb.org/variant/"
+  PHAROS: "http://pharos.nih.gov"
+  PomBase: "https://www.pombase.org/gene/"
+  prov: "http://www.w3.org/ns/prov#"
+  qud: "http://qudt.org/1.1/schema/qudt#"
+  REPODB: "http://apps.chiragjpgroup.org/repoDB/"
+  ResearchID: "https://publons.com/researcher/"
+  RO: "http://purl.obolibrary.org/obo/RO_"
+  RXNORM: "http://purl.bioontology.org/ontology/RXNORM/"
+  RXCUI: "https://mor.nlm.nih.gov/RxNav/search?searchBy=RXCUI&searchTerm="
+  schema: "http://schema.org/"
+  ScopusID: "https://www.scopus.com/authid/detail.uri?authorId="
+  SEED.REACTION: "https://modelseed.org/biochem/reactions/"
+  SEMMEDDB: "https://skr3.nlm.nih.gov/SemMedDB"
+  SIO: "http://semanticscience.org/resource/SIO_"
+  SNOMEDCT: "http://snomed.info/id/"
+  SPDI: "https://api.ncbi.nlm.nih.gov/variation/v0/spdi/"
+  UBERGRAPH: "http://translator.renci.org/ubergraph-axioms.ofn#"
+  UBERON_CORE: "http://purl.obolibrary.org/obo/uberon/core#"
+  UBERON_NONAMESPACE: "http://purl.obolibrary.org/obo/core#"
+  STY: "http://purl.bioontology.org/ontology/STY/"
+  UMLSSG: "https://lhncbc.nlm.nih.gov/semanticnetwork/download/sg_archive/SemGroups-v04.txt"
+  UniProtKB: "http://purl.uniprot.org/uniprot/"
+  UNIPROT.ISOFORM: "http://purl.uniprot.org/isoforms/"
   uspto-patent: "http://www.uspto.gov/patent/grant/v1/"
-  VANDF: 'https://www.nlm.nih.gov/research/umls/sourcereleasedocs/current/VANDF/'
-  UO-PROPERTY: 'http://purl.obolibrary.org/obo/uo#'
-  VMC: 'https://github.com/ga4gh/vr-spec/'
-  WBls: 'http://purl.obolibrary.org/obo/WBls_'
-  WBbt: 'http://purl.obolibrary.org/obo/WBbt_'
-  WBVocab: 'http://bio2rdf.org/wormbase_vocabulary'
-  WIKIDATA: 'https://www.wikidata.org/entity/'             #  Wikidata Entity
-  WIKIDATA_PROPERTY: 'https://www.wikidata.org/prop/'
-  wgs: 'http://www.w3.org/2003/01/geo/wgs84_pos'
-  XPO: 'http://purl.obolibrary.org/obo/XPO_'   #  Xenopus Phenotype Ontology
-  Xenbase: 'http://www.xenbase.org/gene/showgene.do?method=display&geneId='
-  PMC: 'http://europepmc.org/articles/PMC'
+  VANDF: "https://www.nlm.nih.gov/research/umls/sourcereleasedocs/current/VANDF/"
+  UO-PROPERTY: "http://purl.obolibrary.org/obo/uo#"
+  VMC: "https://github.com/ga4gh/vr-spec/"
+  WBls: "http://purl.obolibrary.org/obo/WBls_"
+  WBbt: "http://purl.obolibrary.org/obo/WBbt_"
+  WBVocab: "http://bio2rdf.org/wormbase_vocabulary"
+  WIKIDATA: "https://www.wikidata.org/entity/" #  Wikidata Entity
+  WIKIDATA_PROPERTY: "https://www.wikidata.org/prop/"
+  wgs: "http://www.w3.org/2003/01/geo/wgs84_pos"
+  XPO: "http://purl.obolibrary.org/obo/XPO_" #  Xenopus Phenotype Ontology
+  Xenbase: "http://www.xenbase.org/gene/showgene.do?method=display&geneId="
+  PMC: "http://europepmc.org/articles/PMC"
 
 default_prefix: biolink
 default_range: string
@@ -181,9 +184,7 @@ emit_prefixes:
 ## SUBSETS
 ## ------------
 
-
 subsets:
-
   model_organism_database:
     description: >-
       Subset that is relevant for a typical Model Organism Database (MOD)
@@ -200,7 +201,6 @@ subsets:
     description: >-
       TBD
 
-
 ## ------------
 ## TYPES
 ## ------------
@@ -210,7 +210,6 @@ imports:
   - attributes
 
 types:
-
   chemical formula value:
     uri: xsd:string
     base: str
@@ -259,7 +258,7 @@ types:
       dimensionless ratio multiplied by 100.
 
   quotient:
-    aliases: ['ratio']
+    aliases: ["ratio"]
     typeof: double
     uri: UO:0010006
     description: >-
@@ -299,7 +298,6 @@ types:
 ## ------------
 
 slots:
-
   node property:
     abstract: true
     description: >-
@@ -331,18 +329,18 @@ slots:
     in_subset:
       - samples
     close_mappings:
-       # RTX term meaning 'specifies value of' tagged as inverse of 'biolink:has attribute'
+      # RTX term meaning 'specifies value of' tagged as inverse of 'biolink:has attribute'
       - OBI:0001927
     exact_mappings:
       - SIO:000008
     narrow_mappings:
-       # if 'has attribute' annotates a NamedThing as subject or
-       # object of an association, these OBAN mappings may apply
+      # if 'has attribute' annotates a NamedThing as subject or
+      # object of an association, these OBAN mappings may apply
       - OBAN:association_has_subject_property
       - OBAN:association_has_object_property
       - CPT:has_possibly_included_panel_element
       - DRUGBANK:category
-       # RTX contributed terms. Could perhaps review for more semantically precise mappings?
+        # RTX contributed terms. Could perhaps review for more semantically precise mappings?
       - EFO:is_executed_in
       - HANCESTRO:0301
       - LOINC:has_action_guidance
@@ -359,7 +357,7 @@ slots:
       - LOINC:has_time_aspect
       - LOINC:has_time_modifier
       - LOINC:has_timing_of
-       # disease is stage
+        # disease is stage
       - NCIT:R88
       - NCIT:eo_disease_has_property_or_attribute
       - NCIT:has_data_element
@@ -378,7 +376,7 @@ slots:
       - orphanet:C016
       - orphanet:C017
       - RO:0000053
-       # RTX tagged a few RO terms as 'biolink:related_to' but semantics suggest a better mapping here
+        # RTX tagged a few RO terms as 'biolink:related_to' but semantics suggest a better mapping here
       - RO:0000086
       - RO:0000087
       - SNOMED:has_access
@@ -428,10 +426,10 @@ slots:
       - LOINC:has_modality_type
       - LOINC:has_view_type
 
-   # TRAPI Attribute schema alignment:
-   # value: NamedThing.name
-   # value_type: NamedThing.category
-   # value_type_name: quantity_value.NamedThing.name
+    # TRAPI Attribute schema alignment:
+    # value: NamedThing.name
+    # value_type: NamedThing.category
+    # value_type_name: quantity_value.NamedThing.name
   has qualitative value:
     description: >-
       connects an attribute to a value
@@ -441,10 +439,10 @@ slots:
     in_subset:
       - samples
 
-   # TRAPI Attribute schema alignment:
-   # value: quantity_value.has_numeric_value[double] - may be a vector?
-   # value_type: quantity_value.has_unit.unit.uri
-   # value_type_name: quantity_value.has_unit.unit.name[string]
+    # TRAPI Attribute schema alignment:
+    # value: quantity_value.has_numeric_value[double] - may be a vector?
+    # value_type: quantity_value.has_unit.unit.uri
+    # value_type_name: quantity_value.has_unit.unit.name[string]
   has quantitative value:
     description: >-
       connects an attribute to a value
@@ -483,7 +481,7 @@ slots:
     range: unit
     multivalued: false
     close_mappings:
-       # These RTX contributed terms mean "is unit of" which is the semantic inverse of this biolink:has_unit term
+      # These RTX contributed terms mean "is unit of" which is the semantic inverse of this biolink:has_unit term
       - EFO:0001697
       - UO-PROPERTY:is_unit_of
     exact_mappings:
@@ -500,14 +498,14 @@ slots:
 
   base coordinate:
     is_a: sequence localization attribute
-    aliases: ['one-based', 'fully-closed']
+    aliases: ["one-based", "fully-closed"]
     description: >-
       A position in the base coordinate system.  Base coordinates start at position 1 instead of position 0.
     range: integer
 
-   ## --------------------
-   ## NODE PROPERTY SLOTS
-   ## --------------------
+    ## --------------------
+    ## NODE PROPERTY SLOTS
+    ## --------------------
 
   id:
     identifier: true
@@ -578,7 +576,7 @@ slots:
       equivalent publication type ontology. When a given publication type ontology term
       is used within a given knowledge graph, then the CURIE identified term must be
       documented in the graph as a concept node of biolink:category biolink:OntologyClass.
-    values_from:  # Not sure which takes precedence, if any...
+    values_from: # Not sure which takes precedence, if any...
       - dctypes
       - fabio
       - MESH_PUB
@@ -587,7 +585,7 @@ slots:
     multivalued: true
 
   name:
-    aliases: ['label', 'display name', 'title']
+    aliases: ["label", "display name", "title"]
     description: >-
       A human-readable name for an attribute or entity.
     domain: entity
@@ -656,7 +654,7 @@ slots:
 
   synonym:
     is_a: node property
-    aliases: ['alias']
+    aliases: ["alias"]
     domain: named thing
     range: label type
     description: >-
@@ -665,14 +663,14 @@ slots:
     in_subset:
       - translator_minimal
     narrow_mappings:
-       # there is an interesting debate here: are these terms "narrower" a.k.a. more specialized instances of
-       # 'biolink:synonym' or should they be binned into their respective namesake class of mappings?
-       # namely, is 'oboInOwl:hasExactSynonym' an instance 'exact_mappings', etc.
+      # there is an interesting debate here: are these terms "narrower" a.k.a. more specialized instances of
+      # 'biolink:synonym' or should they be binned into their respective namesake class of mappings?
+      # namely, is 'oboInOwl:hasExactSynonym' an instance 'exact_mappings', etc.
       - skos:altLabel
       - gff3:Alias
       - AGRKB:synonyms
       - gpi:DB_Object_Synonyms
-       # TODO: RTX contributed terms mapped here... May need review?
+        # TODO: RTX contributed terms mapped here... May need review?
       - HANCESTRO:0330
       - IAO:0000136
       - RXNORM:has_tradename
@@ -718,7 +716,7 @@ slots:
       A boolean flag indicating that an entity is no longer considered current or valid.
 
   has topic:
-    aliases: ['topic', 'descriptors']
+    aliases: ["topic", "descriptors"]
     is_a: node property
     range: ontology class
     exact_mappings:
@@ -728,7 +726,7 @@ slots:
       See https://github.com/biolink/biolink-model/issues/238
 
   xref:
-    aliases: ['dbxref', 'Dbxref', 'DbXref', 'record_url', 'source_record_urls']
+    aliases: ["dbxref", "Dbxref", "DbXref", "record_url", "source_record_urls"]
     domain: named thing
     range: uriorcurie
     description: >-
@@ -807,9 +805,9 @@ slots:
 
   retrieval source ids:
     description: >-
-        A list of retrieval sources that served as a source of knowledge
-        expressed in an Edge, or a source of data used to generate this
-        knowledge.
+      A list of retrieval sources that served as a source of knowledge
+      expressed in an Edge, or a source of data used to generate this
+      knowledge.
     multivalued: true
     range: retrieval source
     in_subset:
@@ -846,7 +844,7 @@ slots:
     range: uriorcurie
 
   description:
-    aliases: ['definition']
+    aliases: ["definition"]
     range: narrative text
     description: >-
       a human-readable description of an entity
@@ -884,7 +882,7 @@ slots:
       simple text "blob" containing all relevant details of the given location for fitness of purpose.
       For the moment, this "address" can include other contact details such as email and phone number(?).
 
-   ## Space
+    ## Space
 
   latitude:
     is_a: node property
@@ -902,17 +900,17 @@ slots:
     exact_mappings:
       - wgs:long
 
-   ## Time
+    ## Time
 
   timepoint:
-    aliases: ['duration']
+    aliases: ["duration"]
     range: time type
     description: >-
       a point in time
 
   creation date:
     is_a: node property
-    aliases: ['publication date', 'date started']
+    aliases: ["publication date", "date started"]
     range: date
     description: >-
       date on which an entity was created. This can be applied to nodes or edges
@@ -926,7 +924,7 @@ slots:
     description: >-
       date on which an entity was updated. This can be applied to nodes or edges
 
-   ## Statistics
+    ## Statistics
 
   aggregate statistic:
     description: >-
@@ -960,7 +958,7 @@ slots:
     is_a: aggregate statistic
     range: double
 
-   ## Properties for Information Content Entity and Publication Nodes
+    ## Properties for Information Content Entity and Publication Nodes
 
   has taxonomic rank:
     description: >-
@@ -1177,10 +1175,11 @@ slots:
       - WIKIDATA_PROPERTY:P304
 
   summary:
-    is_a: node property
-     # since 'abstract' is a linkML keyword denoting a non-instantiable class or slot,
-     # it is generally recommended that knowledge graphs use 'summary' instead to tag a Publication 'abstract'
-    aliases: ['abstract']
+    is_a:
+      node property
+      # since 'abstract' is a linkML keyword denoting a non-instantiable class or slot,
+      # it is generally recommended that knowledge graphs use 'summary' instead to tag a Publication 'abstract'
+    aliases: ["abstract"]
     description: >-
       executive  summary of a publication
     domain: publication
@@ -1280,7 +1279,7 @@ slots:
     range: ResearchPhaseEnum
 
   clinical trial primary purpose:
-    aliases: ['primary purpose']
+    aliases: ["primary purpose"]
     is_a: node property
     description: >-
       The primary purpose of a clinical trial as determined by clinicaltrials.gov.  The most common values are
@@ -1374,7 +1373,7 @@ slots:
   clinical trial interventions:
     is_a: node property
     description: >-
-        connects a clinical trial to one or more interventions being tested in the trial
+      connects a clinical trial to one or more interventions being tested in the trial
     range: clinical intervention
     multivalued: true
     domain: clinical trial
@@ -1382,7 +1381,7 @@ slots:
   clinical trial conditions:
     is_a: node property
     description: >-
-        connects a clinical trial to one or more conditions being studied in the trial
+      connects a clinical trial to one or more conditions being studied in the trial
     range: disease or phenotypic feature
     multivalued: true
     domain: clinical trial
@@ -1426,7 +1425,7 @@ slots:
     domain: nucleic acid entity
     range: zygosity
 
-   ## Chemistry, drugs and food
+    ## Chemistry, drugs and food
 
   has chemical formula:
     is_a: node property
@@ -1473,7 +1472,7 @@ slots:
     range: procedure
     multivalued: true
 
-   ## Clinical exposures
+    ## Clinical exposures
 
   has receptor:
     is_a: node property
@@ -1488,7 +1487,7 @@ slots:
   has stressor:
     is_a: node property
     domain: exposure event
-    aliases: ['has stimulus']
+    aliases: ["has stimulus"]
     description: >-
       An agent, stimulus, activity, or event that causes stress or tension on an organism and interacts with an
       exposure_receptor during an exposure event.
@@ -1509,7 +1508,6 @@ slots:
       - SNOMED:has_dose_form_intended_site
       - SNOMED:has_route_of_administration
 
-
   response context qualifier:
     description: >-
       a biological response (general, study, cohort, etc.) with a specific set of characteristics to constrain
@@ -1529,7 +1527,7 @@ slots:
       a biological population (general, study, cohort, etc.) with a specific
       set of characteristics to constrain an association.
     is_a: qualifier
-    range: population of individual organisms  # TODO: harmonize with 'response target context qualifier'
+    range: population of individual organisms # TODO: harmonize with 'response target context qualifier'
 
   temporal context qualifier:
     description: >-
@@ -1655,7 +1653,6 @@ slots:
       approval for a specific condition, disease, phenotype, etc., see the association slot, 'clinical approval status.'
     range: ApprovalStatusEnum
 
-
   FDA regulatory approvals:
     description: >-
       Numbers that identify specific drug applications. Each drug can have multiple approval numbers
@@ -1664,7 +1661,7 @@ slots:
     multivalued: true
 
   drug regulatory status world wide:
-    aliases: ['max phase']
+    aliases: ["max phase"]
     range: ApprovalStatusEnum
     description: >-
       An agglomeration of drug regulatory status worldwide. Not specific to FDA.
@@ -1673,7 +1670,7 @@ slots:
     narrow_mappings:
       - NCIT:R172
       - NCIT:regimen_has_accepted_use_for_disease
-       # RTX mapped REPODB terms
+        # RTX mapped REPODB terms
       - REPODB:clinically_tested_approved_unknown_phase
       - REPODB:clinically_tested_suspended_phase_0
       - REPODB:clinically_tested_suspended_phase_1
@@ -1701,9 +1698,9 @@ slots:
     multivalued: true
     range: DrugDeliveryEnum
 
-   ## -------------------
-   ## QUALIFIERS
-   ## -------------------
+    ## -------------------
+    ## QUALIFIERS
+    ## -------------------
 
   form or variant qualifier:
     is_a: qualifier
@@ -2151,13 +2148,25 @@ slots:
   disease context qualifier:
     is_a: context qualifier
     description: >-
-        A context qualifier representing a disease or condition in which a relationship expressed in an association took place.
+      A context qualifier representing a disease or condition in which a relationship expressed in an association took place.
     range: disease
     examples:
       - value: MONDO:0004979
         description: asthma
       - value: MONDO:0005148
         description: type 2 diabetes mellitus
+    in_subset:
+      - translator_minimal
+
+  statistical significance qualifier:
+    is_a: statement qualifier
+    description: >-
+      A statement qualifier indicating whether the evidence supporting an
+      association reaches a defined threshold of statistical significance
+      (e.g., a p-value at or below a stated alpha, after any multiple-testing
+      correction). This is a coarse categorical companion to the numeric
+      'p value' and 'adjusted p value' slots.
+    range: StatisticalSignificanceQualifierEnum
     in_subset:
       - translator_minimal
 
@@ -2234,7 +2243,7 @@ slots:
     description: >-
       A measurable quantity for the object of the association
     narrow_mappings:
-       # TODO: RTX contributed terms mapped here... May need review?
+      # TODO: RTX contributed terms mapped here... May need review?
       - LOINC:analyzes
       - LOINC:measured_by
       - LOINC:property_of
@@ -2255,17 +2264,18 @@ slots:
     description: >-
       stage during which gene or protein expression of takes place.
     is_a: statement qualifier
-    range: life stage
-     # path: "object/during"
+    range:
+      life stage
+      # path: "object/during"
     examples:
       - value: UBERON:0000069
         description: larval stage
     in_subset:
       - translator_minimal
 
-   ## --------------------
-   ## PREDICATES/RELATIONS
-   ## --------------------
+    ## --------------------
+    ## PREDICATES/RELATIONS
+    ## --------------------
 
   related to:
     description: >-
@@ -2291,7 +2301,7 @@ slots:
       - UBERON_CORE:protects
       - GOREL:0002005
       - GOREL:0012006
-       # several of the following terms mapped here by RTX could merit upgrade to new Biolink terms
+        # several of the following terms mapped here by RTX could merit upgrade to new Biolink terms
       - BTO:related_to
       - CHEBI:is_conjugate_acid_of
       - CHEBI:is_conjugate_base_of
@@ -2306,7 +2316,7 @@ slots:
       - RO:0002092
       - RO:0002084
       - HCPCS:mapped_to
-       # RTX contributed terms, perhaps belong somewhere else with more precise semantics?
+        # RTX contributed terms, perhaps belong somewhere else with more precise semantics?
       - HMDB:disease
       - HMDB:has_protein_association
       - IAO:0000136
@@ -2326,7 +2336,7 @@ slots:
       - UBERON_NONAMESPACE:connected_to
       - UBERON_NONAMESPACE:innervated_by
       - NBO-PROPERTY:is_about
-      - RO:0000053  # bearer_of
+      - RO:0000053 # bearer_of
       - PATO:reciprocal_of
       - RO:0000052
       - RO:0002001
@@ -2342,7 +2352,7 @@ slots:
       - RO:0002179
       - RO:0002314
       - RO:0002322
-       # functionally related to
+        # functionally related to
       - RO:0002328
       - RO:0002332
       - RO:0002338
@@ -2467,7 +2477,7 @@ slots:
     annotations:
       canonical_predicate: true
     close_mappings:
-       # RTX
+      # RTX
       - LOINC:class_of
       - LOINC:has_class
     exact_mappings:
@@ -2485,7 +2495,7 @@ slots:
       - LOINC:has_parent_group
       - LOINC:is_presence_guidance_for
       - NCIT:gene_product_has_chemical_classification
-       # RTX mapped terms classes for biomarkers
+        # RTX mapped terms classes for biomarkers
       - NCIT:R36
       - NCIT:R42
       - NCIT:A16
@@ -2497,7 +2507,7 @@ slots:
       - RXNORM:has_doseformgroup
       - SNOMED:entire_anatomy_structure_of
       - SNOMED:has_dose_form
-       # RTX mapping
+        # RTX mapping
       - rdfs:subPropertyOf
 
   same as:
@@ -2510,15 +2520,15 @@ slots:
     annotations:
       canonical_predicate: true
     close_mappings:
-       # identical class extension with identical sets of individuals
+      # identical class extension with identical sets of individuals
       - owl:equivalentClass
     exact_mappings:
-       # identical individual, or identical class concept/meaning
+      # identical individual, or identical class concept/meaning
       - owl:sameAs
       - skos:exactMatch
-       # Semantic Medline definition: "comparative predicate" where the equivalence could simply be functional
-       # RTX suggests mapping this to proposed new "biolink:close_match" predicate instead
-       # - SEMMEDDB:same_as
+        # Semantic Medline definition: "comparative predicate" where the equivalence could simply be functional
+        # RTX suggests mapping this to proposed new "biolink:close_match" predicate instead
+        # - SEMMEDDB:same_as
       - WIKIDATA_PROPERTY:P2888
       - CHEMBL.MECHANISM:equivalent_to
       - MONDO:equivalentTo
@@ -2539,7 +2549,7 @@ slots:
       canonical_predicate: true
     exact_mappings:
       - skos:closeMatch
-       # Semantic Medline definition: "comparative predicate" where the equivalence could simply be functional
+        # Semantic Medline definition: "comparative predicate" where the equivalence could simply be functional
       - SEMMEDDB:same_as
     narrow_mappings:
       - CHEBI:is_enantiomer_of
@@ -2838,9 +2848,10 @@ slots:
     is_a: has upstream or within actor
     inverse: acts upstream of or within negative effect
     domain: biological process
-    range: gene or gene product
+    range:
+      gene or gene product
 
-     ## Publication related predicates
+      ## Publication related predicates
   mentions:
     description: >-
       refers to is a relation between one information content entity and the named thing
@@ -2858,7 +2869,7 @@ slots:
     is_a: related to at instance level
     inverse: mentions
 
-   ## Publication related predicates
+    ## Publication related predicates
 
   contributor:
     description: >-
@@ -2947,12 +2958,12 @@ slots:
     domain: publication
     range: agent
 
-   ## end of Publication related predicates
+    ## end of Publication related predicates
 
   was tested for effect on:
     deprecated: "true"
     is_a: related to at instance level
-    aliases: ['was assayed against', 'was experimentally tested against']
+    aliases: ["was assayed against", "was experimentally tested against"]
     description: >-
       Reports that the subject was interrogated in an experiment to determine how it may affect the object.
       A relationship between some perturbing agent (usually a chemical compound) and some target entity,
@@ -3001,7 +3012,7 @@ slots:
     broad_mappings:
       - WIKIDATA_PROPERTY:P129
     narrow_mappings:
-       # Defined more narrowly as "substance interaction", thus specific applies to a subclass entities
+      # Defined more narrowly as "substance interaction", thus specific applies to a subclass entities
       - DRUGBANK:drug-interaction
       - FMA:adheres_to
       - NCIT:A7
@@ -3018,8 +3029,8 @@ slots:
     exact_mappings:
       - RO:0002436
     broad_mappings:
-       # Definition of this term is more generic than direct physical molecular interactions:
-       # A is connected to B iff there exists a fiat, material or temporal path between A and B.
+      # Definition of this term is more generic than direct physical molecular interactions:
+      # A is connected to B iff there exists a fiat, material or temporal path between A and B.
       - SIO:000203
       - RO:0002578
     narrow_mappings:
@@ -3069,7 +3080,7 @@ slots:
       - RO:0002435
 
   pharmacologically interacts with:
-    aliases: ['drug drug interaction']
+    aliases: ["drug drug interaction"]
     is_a: interacts with
     description: >-
       holds between two pharmacologically active chemicals (typically drugs), where one alters
@@ -3125,7 +3136,7 @@ slots:
     annotations:
       canonical_predicate: true
     related_mappings:
-       # Contributed by RTX. Seems possible that a new predicate "biolink:in_pathway" could be justified?
+      # Contributed by RTX. Seems possible that a new predicate "biolink:in_pathway" could be justified?
       - DRUGBANK:pathway
     exact_mappings:
       - SEMMEDDB:AFFECTS
@@ -3159,8 +3170,8 @@ slots:
       - RO:0002592
       - RO:0012003
       - SNOMED:has_pathological_process
-      - UBERGRAPH:is_increase_of  # talked to Jim Balhoff, this is a valid mapping
-      - UBERGRAPH:is_decrease_of  # talked to Jim Balhoff, this is a valid mapping
+      - UBERGRAPH:is_increase_of # talked to Jim Balhoff, this is a valid mapping
+      - UBERGRAPH:is_decrease_of # talked to Jim Balhoff, this is a valid mapping
 
   affected by:
     is_a: related to at instance level
@@ -3195,9 +3206,9 @@ slots:
     annotations:
       canonical_predicate: true
     broad_mappings:
-      - PATO:0000085  # sensitivity toward
+      - PATO:0000085 # sensitivity toward
     narrow_mappings:
-      - SNOMEDCT:418038007  # propensity to adverse reaction
+      - SNOMEDCT:418038007 # propensity to adverse reaction
 
   sensitivity associated with:
     is_a: associated with
@@ -3232,8 +3243,8 @@ slots:
     annotations:
       canonical_predicate: true
     close_mappings:
-      - NCIT:C15220  # diagnosis
-      - SIO:001331  # diagnosis
+      - NCIT:C15220 # diagnosis
+      - SIO:001331 # diagnosis
     exact_mappings:
       - DrugCentral:5271
       - SEMMEDDB:DIAGNOSES
@@ -3270,7 +3281,7 @@ slots:
     is_a: related to at instance level
     inverse: decreases amount or activity of
 
-   ## role mixins for use in tagging corresponding role predicates
+    ## role mixins for use in tagging corresponding role predicates
 
   chemical role mixin:
     description: >-
@@ -3370,7 +3381,7 @@ slots:
     exact_mappings:
       - RO:0002448
     broad_mappings:
-       # https://www.wikidata.org/wiki/Property:P128 - regulates (molecular biology)
+      # https://www.wikidata.org/wiki/Property:P128 - regulates (molecular biology)
       - WIKIDATA_PROPERTY:P128
       - CHEMBL.MECHANISM:modulator
       - RO:0002295
@@ -3392,7 +3403,7 @@ slots:
 
   disrupts:
     is_a: affects
-    aliases: ['disease causes disruption of']
+    aliases: ["disease causes disruption of"]
     description: >-
       describes a relationship where one entity degrades or interferes
       with the structure, function, or occurrence of another.
@@ -3441,7 +3452,7 @@ slots:
     in_subset:
       - translator_minimal
     close_mappings:
-       # RTX term tagged as inverse mapping
+      # RTX term tagged as inverse mapping
       - PR:has_gene_template
     exact_mappings:
       - RO:0002205
@@ -3500,7 +3511,7 @@ slots:
 
   homologous to:
     is_a: similar to
-    aliases: ['in homology relationship with']
+    aliases: ["in homology relationship with"]
     description: >-
       holds between two biological entities that have common evolutionary origin
     comments:
@@ -3514,7 +3525,7 @@ slots:
       - RO:HOM0000001
       - SIO:010302
     narrow_mappings:
-       # This is a tricky one to place; seems narrower than the RO mapping but that mapping, RO:0002158
+      # This is a tricky one to place; seems narrower than the RO mapping but that mapping, RO:0002158
       - UBERON_CORE:sexually_homologous_to
 
   paralogous to:
@@ -3603,7 +3614,7 @@ slots:
       - UBERON_CORE:transitively_connected_to
       - UBERON_CORE:transitively_distally_connected_to
       - UBERON_CORE:transitively_proximally_connected_to
-       # RTX contributed Environmental Ontology term meaning "partially surrounded by"
+        # RTX contributed Environmental Ontology term meaning "partially surrounded by"
       - ENVO:01001307
       - FMA:adjacent_to
       - FMA:afferent_to
@@ -3612,8 +3623,8 @@ slots:
       - FMA:anterolateral_to
       - FMA:anteromedial_to
       - FMA:anterosuperior_to
-       # RTX contributed terms (also inverses to one another?) might better be mapped to another term with more precise functional semantics?
-       # Some of these terms also seem to be semantic inverses of one another, thus, perhaps not simple narrow_mappings to Biolink
+        # RTX contributed terms (also inverses to one another?) might better be mapped to another term with more precise functional semantics?
+        # Some of these terms also seem to be semantic inverses of one another, thus, perhaps not simple narrow_mappings to Biolink
       - FMA:arterial_supply_of
       - FMA:has_arterial_supply
       - FMA:articulates_with
@@ -3637,10 +3648,10 @@ slots:
       - FMA:external_to
       - FMA:formed_by
       - FMA:forms
-       # these next two RTX mapped terms also seem to be inverses of one another
+        # these next two RTX mapped terms also seem to be inverses of one another
       - FMA:full_grown_phenotype_of
       - FMA:has_full_grown_phenotype
-       # these next two RTX mapped terms also seem to be inverses of one another
+        # these next two RTX mapped terms also seem to be inverses of one another
       - FMA:fuses_with
       - FMA:fusion_of
       - FMA:has_fusion
@@ -3711,18 +3722,18 @@ slots:
       - FMA:surrounds
       - FMA:tributary_of
       - FMA:venous_drainage_of
-       # These LOINC: terms contributed by RTX were only tagged as 'biolink:has_attribute'
-       # but seem more aligned to the FMA entries in this biolink term, so I leave them here for now
+        # These LOINC: terms contributed by RTX were only tagged as 'biolink:has_attribute'
+        # but seem more aligned to the FMA entries in this biolink term, so I leave them here for now
       - LOINC:has_lateral_anatomic_location
       - LOINC:has_lateral_location_presence
       - UBERON_NONAMESPACE:distally_connected_to
       - UBERON_NONAMESPACE:subdivision_of
-       # These RO terms seem similar to the FMA terms above, so I place them here rather than under 'biolink:related_to'
+        # These RO terms seem similar to the FMA terms above, so I place them here rather than under 'biolink:related_to'
       - RO:0002219
       - RO:0002220
       - RO:0002221
       - SO:has_origin
-       # RTX mapped these UBERON terms all here
+        # RTX mapped these UBERON terms all here
       - UBERON:anastomoses_with
       - UBERON:anteriorly_connected_to
       - UBERON:channel_for
@@ -3754,8 +3765,8 @@ slots:
     annotations:
       canonical_predicate: true
     related_mappings:
-       # generally pertains to membership of a (subject) component - gene,
-       # metabolite, etc? - in an (object) metabolic pathway
+      # generally pertains to membership of a (subject) component - gene,
+      # metabolite, etc? - in an (object) metabolic pathway
       - SIO:010532
 
   in complex with:
@@ -3771,10 +3782,10 @@ slots:
     annotations:
       canonical_predicate: true
     related_mappings:
-       # generally pertains to membership of a (subject) protein in an (object) protein complex (doesn't cover RNA-Protein, Lipid-Protein, etc complexes though)
+      # generally pertains to membership of a (subject) protein in an (object) protein complex (doesn't cover RNA-Protein, Lipid-Protein, etc complexes though)
       - SIO:010497
     broad_mappings:
-       # generally pertains to membership of any (subject) constituent molecule in an (object) molecular complex (might also generically cover RNA-Protein, Lipid-Protein, etc complexes)
+      # generally pertains to membership of any (subject) constituent molecule in an (object) molecular complex (might also generically cover RNA-Protein, Lipid-Protein, etc complexes)
       - SIO:010285
 
   in cell population with:
@@ -3801,8 +3812,8 @@ slots:
     exact_mappings:
       - RO:0002325
 
-   # Despite the name, note that this particular entity is
-   # NOT a biolink:Association but rather, a biolink:predicate
+    # Despite the name, note that this particular entity is
+    # NOT a biolink:Association but rather, a biolink:predicate
   genetic association:
     deprecated: "true"
     deprecated_element_has_exact_replacement: biolink:genetically_associated_with
@@ -3837,17 +3848,17 @@ slots:
     in_subset:
       - translator_minimal
     broad_mappings:
-      - GENO:0000840  # broader than a single gene: 'genotype' pathogenic for condition
+      - GENO:0000840 # broader than a single gene: 'genotype' pathogenic for condition
       - GENO:0000841
     narrow_mappings:
-       # narrower: just diseases, not phenotypic features as well
+      # narrower: just diseases, not phenotypic features as well
       - NCIT:R38
       - NCIT:R175
       - NCIT:R48
 
   condition associated with gene:
     is_a: genetically associated with
-    aliases: ['disease associated with gene']
+    aliases: ["disease associated with gene"]
     description: >-
       holds between a gene and a disease or phenotypic feature that may be influenced, contribute to, or be correlated with the gene or its alleles/products
     domain: disease or phenotypic feature
@@ -3856,11 +3867,10 @@ slots:
       - translator_minimal
     inverse: gene associated with condition
     narrow_mappings:
-       # RO term implies causality making it narrower
+      # RO term implies causality making it narrower
       - RO:0004000
-       # narrower since just diseases, not phenotypic features as well
+        # narrower since just diseases, not phenotypic features as well
       - NCIT:R176
-
 
   contributes to:
     is_a: related to at instance level
@@ -3872,16 +3882,16 @@ slots:
     annotations:
       canonical_predicate: true
     close_mappings:
-       # RTX contributed mapping tagged as 'inverse' of this Biolink predicate
+      # RTX contributed mapping tagged as 'inverse' of this Biolink predicate
       - IDO:0000664
     exact_mappings:
       - RO:0002326
     narrow_mappings:
       - CTD:marker_mechanism
       - MONDO:predisposes_towards
-       # RTX mapped this to 'biolink:related_to' but this term seems a more precise mapping
+        # RTX mapped this to 'biolink:related_to' but this term seems a more precise mapping
       - RO:0002255
-       # RTX term 'contributes to condition' mapped to 'biolink:causes' seems more suitable here
+        # RTX term 'contributes to condition' mapped to 'biolink:causes' seems more suitable here
       - RO:0003304
 
   contribution from:
@@ -3914,7 +3924,7 @@ slots:
       - NCIT:allele_has_abnormality
       - NCIT:biological_process_has_result_biological_process
       - NCIT:chemical_or_drug_has_physiologic_effect
-       # RTX mapped terms as 'biolink:part_of' but implied sequence of causality suggests 'biolink:causes'?
+        # RTX mapped terms as 'biolink:part_of' but implied sequence of causality suggests 'biolink:causes'?
       - NCIT:chemical_or_drug_initiates_biological_process
       - NCIT:process_initiates_biological_process
       - NCIT:chromosome_mapped_to_disease
@@ -3925,7 +3935,7 @@ slots:
       - orphanet:317346
       - orphanet:410295
       - orphanet:410296
-       # RTX mapped this term to 'biolink:related_to' but this term seems a more precise mapping
+        # RTX mapped this term to 'biolink:related_to' but this term seems a more precise mapping
       - RO:0002256
       - RO:0002315
       - RO:0002507
@@ -3940,8 +3950,13 @@ slots:
       holds between two entities where the occurrence, existence,
       or activity of one is caused by the occurrence or generation of the other
     is_a: contribution from
-    aliases: ['disease caused by disruption of', 'disease has basis in dysfunction of',
-              'realized in response to', 'realized in response to stimulus']
+    aliases:
+      [
+        "disease caused by disruption of",
+        "disease has basis in dysfunction of",
+        "realized in response to",
+        "realized in response to stimulus",
+      ]
     in_subset:
       - translator_minimal
     inverse: causes
@@ -3955,9 +3970,10 @@ slots:
       - RO:0004028
       - RO:0009501
 
-   # TODO: ameliorates and exacerbates inverses.
+    # TODO: ameliorates and exacerbates inverses.
   ameliorates condition:
-    aliases: ['ameliorates', 'beneficial for condition', 'therapeutic for condition']
+    aliases:
+      ["ameliorates", "beneficial for condition", "therapeutic for condition"]
     is_a: affects
     description: >-
       Holds between an entity and an existing medical condition (disease or phenotypic feature) where the entity is
@@ -3983,7 +3999,7 @@ slots:
     range: chemical or drug or treatment
 
   preventative for condition:
-    aliases: ['prophylactic for', 'prevents']
+    aliases: ["prophylactic for", "prevents"]
     is_a: affects likelihood of
     mixins:
       - treats
@@ -4028,7 +4044,7 @@ slots:
     range: chemical or drug or treatment
 
   predisposes to condition:
-    aliases: ['risk factor for']
+    aliases: ["risk factor for"]
     is_a: affects likelihood of
     mixins:
       - promotes condition
@@ -4051,11 +4067,11 @@ slots:
     range: chemical or drug or treatment
 
   exacerbates condition:
-    aliases: ['exacerbates', 'detrimental for condition']
+    aliases: ["exacerbates", "detrimental for condition"]
     is_a: affects
     description: >-
-       Holds between a substance, procedure, or activity and an existing medical condition (disease or phenotypic
-        feature) where the substance, procedure, or activity worsens some or all aspects of the condition.
+      Holds between a substance, procedure, or activity and an existing medical condition (disease or phenotypic
+       feature) where the substance, procedure, or activity worsens some or all aspects of the condition.
     mixins:
       - promotes condition
     domain: chemical or drug or treatment
@@ -4079,7 +4095,12 @@ slots:
   treats:
     is_a: treats or applied or studied to treat
     mixin: true
-    aliases: ['is substance that treats', 'indicated for', 'ameliorates or prevents condition']
+    aliases:
+      [
+        "is substance that treats",
+        "indicated for",
+        "ameliorates or prevents condition",
+      ]
     description: >-
       Holds between an intervention (substance, procedure, or activity) and a medical condition
       (disease or phenotypic feature), and states that the intervention is, in some population(s),
@@ -4106,11 +4127,11 @@ slots:
       - DRUGBANK:treats
       - WIKIDATA_PROPERTY:P2175
     narrow_mappings:
-       # "is substance that treats" constrains statements to
-       # a subset of the universe of all possible treatments
+      # "is substance that treats" constrains statements to
+      # a subset of the universe of all possible treatments
       - RO:0002606
       - NCIT:regimen_has_accepted_use_for_disease
-       # RTX mapped REPODB terms
+        # RTX mapped REPODB terms
       - REPODB:clinically_tested_approved_unknown_phase
       - REPODB:clinically_tested_suspended_phase_0
       - REPODB:clinically_tested_suspended_phase_1
@@ -4269,7 +4290,7 @@ slots:
     range: chemical or drug or treatment
 
   applied to treat:
-    aliases: ['administered to treat', 'used to treat', 'given to treat']
+    aliases: ["administered to treat", "used to treat", "given to treat"]
     is_a: related to at instance level
     description: >-
       Holds between an  substance, procedure, or activity and a medical condition, and reports that the  substance,
@@ -4290,7 +4311,7 @@ slots:
       canonical_predicate: true
     in_subset:
       - translator_minimal
-   # TODO: need an inverse for taken to treat
+    # TODO: need an inverse for taken to treat
 
   treatment applications from:
     is_a: related to at instance level
@@ -4353,7 +4374,7 @@ slots:
       - RO:0002610
       - PATO:correlates_with
 
-   # proposed positive and negative semantic extensions to the general "correlated with" predicate
+    # proposed positive and negative semantic extensions to the general "correlated with" predicate
 
   positively correlated with:
     is_a: correlated with
@@ -4426,7 +4447,7 @@ slots:
       - translator_minimal
     inverse: biomarker for
     narrow_mappings:
-       # some RTX terms contributed as inverses of 'biolink:biomarker_for'
+      # some RTX terms contributed as inverses of 'biolink:biomarker_for'
       - NCIT:disease_has_molecular_abnormality
       - NCIT:disease_is_marked_by_gene
 
@@ -4445,18 +4466,18 @@ slots:
     exact_mappings:
       - NCIT:R39
     broad_mappings:
-       # Generic marker definition not specific to biomarkers per say
+      # Generic marker definition not specific to biomarkers per say
       - RO:0002607
     narrow_mappings:
       - NCIT:R47
-       # RTX term was tagged as 'biolink:actively_involved_in' but maps better here?
+        # RTX term was tagged as 'biolink:actively_involved_in' but maps better here?
       - NCIT:genetic_biomarker_related_to
       - NCIT:is_molecular_abnormality_of_disease
       - orphanet:465410
 
-   # It may be helpful to introduce an intermediate predicate in between 'related_to' and 'expressed in'
-   # which would have a domain of 'biological entity' and range of 'anatomical entity', to map predicates
-   # which are biological which have manifestation in an anatomical site, e.g. RO:0004026, RO:0004027 and others
+    # It may be helpful to introduce an intermediate predicate in between 'related_to' and 'expressed in'
+    # which would have a domain of 'biological entity' and range of 'anatomical entity', to map predicates
+    # which are biological which have manifestation in an anatomical site, e.g. RO:0004026, RO:0004027 and others
   expressed in:
     is_a: located in
     description: >-
@@ -4476,7 +4497,7 @@ slots:
 
   expresses:
     is_a: location of
-    aliases: ['anatomy expresses gene']
+    aliases: ["anatomy expresses gene"]
     description: >-
       holds between an anatomical entity and gene or gene product that is expressed there
     domain: anatomical entity
@@ -4490,7 +4511,7 @@ slots:
 
   has phenotype:
     is_a: related to at instance level
-    aliases: ['disease presents symptom']
+    aliases: ["disease presents symptom"]
     description: >-
       holds between a biological entity and a phenotype, where a phenotype
       is construed broadly as any kind of quality of an organism part,
@@ -4524,7 +4545,7 @@ slots:
     multivalued: true
     inverse: has phenotype
 
-   # TODO: predicate inverse for occurs in
+    # TODO: predicate inverse for occurs in
   occurs in:
     is_a: related to at instance level
     description: >-
@@ -4534,7 +4555,7 @@ slots:
     annotations:
       canonical_predicate: true
     close_mappings:
-       # These RTX mapped terms tagged as the inverse of "biolink:occurs_in", i.e. Entity/Site contains Process
+      # These RTX mapped terms tagged as the inverse of "biolink:occurs_in", i.e. Entity/Site contains Process
       - BFO:0000067
       - SNOMED:has_occurrence
       - UBERON:site_of
@@ -4543,11 +4564,11 @@ slots:
       - PathWhiz:has_location
       - SNOMED:occurs_in
     narrow_mappings:
-       # SemMedDb term 'OCCURS_IN' constrained to something (other than process) occurring in a group or population
+      # SemMedDb term 'OCCURS_IN' constrained to something (other than process) occurring in a group or population
       - SEMMEDDB:OCCURS_IN
-       # SemMedDb term 'PROCESS_IN' constrained specifically to a process occurring in the object concept entity
+        # SemMedDb term 'PROCESS_IN' constrained specifically to a process occurring in the object concept entity
       - SEMMEDDB:PROCESS_OF
-       # Uberon term constrained to a 'site' as object concept
+        # Uberon term constrained to a 'site' as object concept
       - UBERON_CORE:site_of
       - LOINC:has_imaged_location
       - PathWhiz:in_species
@@ -4620,7 +4641,7 @@ slots:
 
   location of:
     is_a: related to at instance level
-    aliases: ['site of']
+    aliases: ["site of"]
     domain: named thing
     range: named thing
     description: >-
@@ -4633,7 +4654,7 @@ slots:
       - RO:0001015
       - SEMMEDDB:LOCATION_OF
       - WIKIDATA_PROPERTY:P276
-       # RTX tagged this as an inverse of biolink:located_in
+        # RTX tagged this as an inverse of biolink:located_in
       - FMA:location_of
     narrow_mappings:
       - SNOMED:inherent_location_of
@@ -4677,12 +4698,12 @@ slots:
     annotations:
       canonical_predicate: true
     narrow_mappings:
-      - CHEBI:has_parent_hydride     # subproperty
-      - CHEBI:has_functional_parent  # subproperty
-      - CHEBI:is_conjugate_acid_of   # subproperty
-      - CHEBI:is_conjugate_base_of   # subproperty
-      - CHEBI:is_enantiomer_of       # subproperty
-      - CHEBI:is_tautomer_of         # subproperty
+      - CHEBI:has_parent_hydride # subproperty
+      - CHEBI:has_functional_parent # subproperty
+      - CHEBI:is_conjugate_acid_of # subproperty
+      - CHEBI:is_conjugate_base_of # subproperty
+      - CHEBI:is_enantiomer_of # subproperty
+      - CHEBI:is_tautomer_of # subproperty
       - NCIT:has_salt_form
 
   has sequence location:
@@ -4752,23 +4773,23 @@ slots:
       - translator_minimal
     exact_mappings:
       - BFO:0000051
-       # term name seems to be 'realizes' but RTX maps this term here
+        # term name seems to be 'realizes' but RTX maps this term here
       - BFO:0000055
       - WIKIDATA_PROPERTY:P527
       - RO:0001019
       - RXNORM:consists_of
       - RXNORM:has_part
     broad_mappings:
-       # To 'contain' is 'to have something inside or include something as a part'; slightly broader?
+      # To 'contain' is 'to have something inside or include something as a part'; slightly broader?
       - RO:0001019
       - FMA:contains
       - RXNORM:contains
     narrow_mappings:
       - BFO:0000117
-       # RTX term originally mapped to 'biolink:coexists_with'?
+        # RTX term originally mapped to 'biolink:coexists_with'?
       - FMA:has_constitutional_part
       - FMA:has_part
-       # Several of the following RTX terms were originally mapped as inverses to 'biolink:part_of'?
+        # Several of the following RTX terms were originally mapped as inverses to 'biolink:part_of'?
       - FMA:has_member
       - FOODON:00001563
       - FOODON:00002420
@@ -4779,7 +4800,7 @@ slots:
       - NCIT:complex_has_physical_part
       - NDDF:has_ingredient
       - PathWhiz:has_element_in_bound
-       # This RTX contributed term was tagged as 'biolink:has_gene_product' but seems more compositional in nature
+        # This RTX contributed term was tagged as 'biolink:has_gene_product' but seems more compositional in nature
       - NCIT:R50
       - PathWhiz:has_protein_in_complex
       - RO:0002104
@@ -4838,7 +4859,7 @@ slots:
       - RXNORM:constitutes
       - RXNORM:part_of
     broad_mappings:
-       # To 'contain' is 'to have something inside or include something as a part'
+      # To 'contain' is 'to have something inside or include something as a part'
       - RO:0001018
       - FMA:contained_in
       - RXNORM:contained_in
@@ -4985,7 +5006,7 @@ slots:
       - RO:has_participant
     narrow_mappings:
       - BFO:0000167
-       # Several of the following RTX terms tagged as inverse to 'biolink:participates_in'
+        # Several of the following RTX terms tagged as inverse to 'biolink:participates_in'
       - LOINC:has_subject
       - NCIT:process_involves_gene
       - NBO-PROPERTY:has_participant
@@ -5065,7 +5086,7 @@ slots:
 
   actively involved in:
     is_a: participates in
-    aliases: ['involved in']
+    aliases: ["involved in"]
     description: >-
       holds between a continuant and a process or function, where
       the continuant actively contributes to part or all of
@@ -5145,7 +5166,11 @@ slots:
 
   derives into:
     is_a: related to at instance level
-    aliases: ['is normal cell origin of disease', 'may be normal cell origin of disease']
+    aliases:
+      [
+        "is normal cell origin of disease",
+        "may be normal cell origin of disease",
+      ]
     description: >-
       holds between two distinct material entities, the old entity and
       the new entity, in which the new entity begins to exist when
@@ -5157,7 +5182,7 @@ slots:
     exact_mappings:
       - RO:0001001
       - SEMMEDDB:CONVERTS_TO
-       # RTX posted terms as inverse of 'biolink:derives_from'
+        # RTX posted terms as inverse of 'biolink:derives_from'
       - FMA:derives
 
   derives from:
@@ -5329,7 +5354,7 @@ slots:
       - SEMMEDDB:MANIFESTATION_OF
       - OMIM:manifestation_of
     broad_mappings:
-       # Wikidata's definition is slightly broader: "inherent and characteristic embodiment of a given concept"
+      # Wikidata's definition is slightly broader: "inherent and characteristic embodiment of a given concept"
       - WIKIDATA_PROPERTY:P1557
     narrow_mappings:
       - SNOMED:has_definitional_manifestation
@@ -5353,8 +5378,8 @@ slots:
     domain: disease or phenotypic feature
     range: genetic inheritance
     annotations:
-       # This canonical order reverses that of its parent 'has manifestation' class
-       # but seems a more natural direction in the pertinent edge relationships.
+      # This canonical order reverses that of its parent 'has manifestation' class
+      # but seems a more natural direction in the pertinent edge relationships.
       canonical_predicate: true
     in_subset:
       - translator_minimal
@@ -5415,7 +5440,7 @@ slots:
     exact_mappings:
       - SNOMED:temporally_related_to
     narrow_mappings:
-       # The These RTX mappings are temporal in nature, but not with precedes ordering, so mapped here
+      # The These RTX mappings are temporal in nature, but not with precedes ordering, so mapped here
       - RO:0002082
       - RO:0002083
       - RO:0002092
@@ -5442,8 +5467,8 @@ slots:
     in_subset:
       - translator_minimal
     close_mappings:
-       # the subject of these terms is a material entity, not a process,
-       # but affects a process which causes a second process to occur
+      # the subject of these terms is a material entity, not a process,
+      # but affects a process which causes a second process to occur
       - RO:0002263
       - RO:0002264
     exact_mappings:
@@ -5451,7 +5476,7 @@ slots:
       - SEMMEDDB:PRECEDES
       - SNOMED:occurs_before
     broad_mappings:
-       # the Wikidata definition is subtly broader, focusing on a series not strictly temporal in nature
+      # the Wikidata definition is subtly broader, focusing on a series not strictly temporal in nature
       - WIKIDATA_PROPERTY:P156
     narrow_mappings:
       - FMA:transforms_into
@@ -5471,10 +5496,10 @@ slots:
     exact_mappings:
       - BFO:0000062
     broad_mappings:
-       # Contributed by RTX as inverse of 'precedes'. Seems more generic to just processes, so we tag it as 'broad'?
+      # Contributed by RTX as inverse of 'precedes'. Seems more generic to just processes, so we tag it as 'broad'?
       - GENEPIO:0001739
     narrow_mappings:
-       # RTX contributed mapping was given as the inverse of 'biolink:precedes'
+      # RTX contributed mapping was given as the inverse of 'biolink:precedes'
       - FMA:transforms_from
       - RO:0002087
       - RO:0002285
@@ -5502,11 +5527,16 @@ slots:
     exact_mappings:
       - GENO:0000790
 
-   ## Predicates relating variants to genes
+    ## Predicates relating variants to genes
 
   is sequence variant of:
     is_a: related to at instance level
-    aliases: ['gene product sequence variation encoded by gene mutant', 'allelic variant of', 'gene product variant of gene product']
+    aliases:
+      [
+        "gene product sequence variation encoded by gene mutant",
+        "allelic variant of",
+        "gene product variant of gene product",
+      ]
     description: holds between a sequence variant and a nucleic acid entity
     domain: sequence variant
     range: genomic entity
@@ -5523,7 +5553,8 @@ slots:
 
   is missense variant of:
     is_a: is sequence variant of
-    description: holds between a gene  and a sequence variant, such the sequence variant
+    description:
+      holds between a gene  and a sequence variant, such the sequence variant
       results in a different amino acid sequence but where the length is preserved.
     domain: sequence variant
     range: genomic entity
@@ -5540,7 +5571,8 @@ slots:
 
   is synonymous variant of:
     is_a: is sequence variant of
-    description: holds between a sequence variant and a gene, such the sequence variant
+    description:
+      holds between a sequence variant and a gene, such the sequence variant
       is in the coding sequence of the gene, but results in the same amino acid sequence
     domain: sequence variant
     range: genomic entity
@@ -5554,19 +5586,20 @@ slots:
     domain: genomic entity
     range: sequence variant
     inverse: is synonymous variant of
-    aliases: ['stop gained']
+    aliases: ["stop gained"]
 
   is nonsense variant of:
     is_a: is sequence variant of
-    description: holds between a sequence variant and a gene, such the sequence variant
+    description:
+      holds between a sequence variant and a gene, such the sequence variant
       results in a premature stop codon
     domain: sequence variant
     range: genomic entity
     annotations:
       canonical_predicate: true
     broad_mappings:
-       # Term definition broader than nonsense codon: A sequence variant whereby
-       # the gene product has diminished or abolished function.
+      # Term definition broader than nonsense codon: A sequence variant whereby
+      # the gene product has diminished or abolished function.
       - SO:0002054
 
   has nonsense variant:
@@ -5577,7 +5610,8 @@ slots:
 
   is frameshift variant of:
     is_a: is sequence variant of
-    description: holds between a sequence variant and a gene, such the sequence variant
+    description:
+      holds between a sequence variant and a gene, such the sequence variant
       causes a disruption of the translational reading frame, because the number of
       nucleotides inserted or deleted is not a multiple of three.
     domain: sequence variant
@@ -5586,18 +5620,24 @@ slots:
       canonical_predicate: true
     exact_mappings:
       - SO:0001589
-    aliases: ['frameshift variant', 'start lost', 'stop lost']
+    aliases: ["frameshift variant", "start lost", "stop lost"]
 
   has frameshift variant:
     is_a: has sequence variant
     inverse: is frameshift variant of
     domain: genomic entity
     range: sequence variant
-    aliases: ['splice region variant', 'splice acceptor variant', 'splice donor variant']
+    aliases:
+      [
+        "splice region variant",
+        "splice acceptor variant",
+        "splice donor variant",
+      ]
 
   is splice site variant of:
     is_a: is sequence variant of
-    description: holds between a sequence variant and a gene, such the sequence variant
+    description:
+      holds between a sequence variant and a gene, such the sequence variant
       is in the canonical splice site of one of the gene's exons.
     domain: sequence variant
     range: genomic entity
@@ -5606,17 +5646,17 @@ slots:
     exact_mappings:
       - SO:0001629
 
-
   has splice site variant:
     is_a: has sequence variant
     domain: genomic entity
     range: sequence variant
     inverse: is splice site variant of
-    aliases: ['downstream gene variant', 'upstream gene variant']
+    aliases: ["downstream gene variant", "upstream gene variant"]
 
   is nearby variant of:
     is_a: is sequence variant of
-    description: holds between a sequence variant and a gene sequence that the variant
+    description:
+      holds between a sequence variant and a gene sequence that the variant
       is genomically close to.
     domain: sequence variant
     range: genomic entity
@@ -5628,11 +5668,19 @@ slots:
     domain: genomic entity
     range: sequence variant
     inverse: is nearby variant of
-    aliases: ['intron variant', '3 prime UTR variant', '5 prime UTR variant', '5 prime UTR premature start codon gain variant', 'non coding transcript exon variant']
+    aliases:
+      [
+        "intron variant",
+        "3 prime UTR variant",
+        "5 prime UTR variant",
+        "5 prime UTR premature start codon gain variant",
+        "non coding transcript exon variant",
+      ]
 
   is non coding variant of:
     is_a: is sequence variant of
-    description: holds between a sequence variant and a gene, where the variant does
+    description:
+      holds between a sequence variant and a gene, where the variant does
       not affect the coding sequence
     domain: sequence variant
     range: genomic entity
@@ -5645,16 +5693,17 @@ slots:
     range: sequence variant
     inverse: is non coding variant of
 
-   # relating disease to process
+    # relating disease to process
 
   disease has basis in:
-    description: A relation that holds between a disease and an entity where the state
+    description:
+      A relation that holds between a disease and an entity where the state
       of the entity has contribution to the disease.
     is_a: related to at instance level
     annotations:
       canonical_predicate: true
     narrow_mappings:
-       # These two MONDO terms seem more particular than the predicate
+      # These two MONDO terms seem more particular than the predicate
       - MONDO:disease_has_basis_in_development_of
       - MONDO:disease_has_basis_in_accumulation_of
 
@@ -5662,10 +5711,9 @@ slots:
     is_a: related to at instance level
     inverse: disease has basis in
 
-
   has adverse event:
     is_a: affects
-    aliases: ['adverse effect']
+    aliases: ["adverse effect"]
     description: >-
       An untoward medical occurrence in a patient or clinical investigation subject that happens during treatment
       with a therapeutic agent. Adverse events may be caused by something
@@ -5684,7 +5732,7 @@ slots:
     inverse: has adverse event
 
   has side effect:
-    aliases: ['adverse drug reaction']
+    aliases: ["adverse drug reaction"]
     is_a: affects
     description: >-
       An unintended, but predictable, secondary effect shown to be correlated with a therapeutic agent, drug or treatment.
@@ -5699,7 +5747,7 @@ slots:
     annotations:
       canonical_predicate: true
     exact_mappings:
-      - NCIT:C2861  # side effect
+      - NCIT:C2861 # side effect
 
   is side effect of:
     is_a: affected by
@@ -5740,12 +5788,13 @@ slots:
     range: chemical or drug or treatment
     inverse: contraindicated in
 
-   # The remaining new slots are here because we ran across them somewhere and
-   # they didn't seem to map well to anything else.
+    # The remaining new slots are here because we ran across them somewhere and
+    # they didn't seem to map well to anything else.
 
   has not completed:
     is_a: related to at instance level
-    description: holds between an entity and a process that the entity is capable of,
+    description:
+      holds between an entity and a process that the entity is capable of,
       but has not completed
     exact_mappings:
       - CL:has_not_completed
@@ -5759,7 +5808,8 @@ slots:
 
   has completed:
     is_a: related to at instance level
-    description: holds between an entity and a process that the entity is capable of
+    description:
+      holds between an entity and a process that the entity is capable of
       and has completed
     annotations:
       canonical_predicate: true
@@ -5771,10 +5821,10 @@ slots:
     is_a: related to at instance level
     inverse: has completed
 
-
   in linkage disequilibrium with:
     is_a: related to at instance level
-    description: holds between two sequence variants, the presence of which are correlated
+    description:
+      holds between two sequence variants, the presence of which are correlated
       in a population
     symmetric: true
     annotations:
@@ -5840,7 +5890,7 @@ slots:
     annotations:
       canonical_predicate: true
     close_mappings:
-       # RTX mapping seems to be inverse of 'biolink:develops_from'
+      # RTX mapping seems to be inverse of 'biolink:develops_from'
       - RO:0002203
       - FMA:develops_into
     exact_mappings:
@@ -5850,8 +5900,8 @@ slots:
       - RO:0002202
     narrow_mappings:
       - RO:0002207
-      - RO:0002225  # x develops from part of y if and only if there exists some z such that x develops from z and z is part of y
-      - RO:0002226  # x develops_in y if x is located in y whilst x is developing
+      - RO:0002225 # x develops from part of y if and only if there exists some z such that x develops from z and z is part of y
+      - RO:0002226 # x develops_in y if x is located in y whilst x is developing
 
   develops into:
     is_a: related to at instance level
@@ -5873,7 +5923,14 @@ slots:
     range: uriorcurie
 
   in taxon:
-    aliases: ['instance of', 'is organism source of gene product', 'organism has gene', 'gene found in organism', 'gene product has organism source']
+    aliases:
+      [
+        "instance of",
+        "is organism source of gene product",
+        "organism has gene",
+        "gene found in organism",
+        "gene product has organism source",
+      ]
     is_a: related to at instance level
     domain: thing with taxon
     range: organism taxon
@@ -5911,7 +5968,7 @@ slots:
 
   has molecular consequence:
     is_a: related to at instance level
-    aliases: ['allele has activity']
+    aliases: ["allele has activity"]
     description: >-
       connects a sequence variant to a class describing the molecular
       consequence. E.g.  SO:0001583
@@ -5926,14 +5983,21 @@ slots:
     domain: ontology class
     inverse: has molecular consequence
 
-   ## --------------------
-   ## ASSOCIATION SLOTS
-   ## --------------------
+    ## --------------------
+    ## ASSOCIATION SLOTS
+    ## --------------------
 
   association slot:
     abstract: true
     domain: association
-    aliases: ['edge property', 'statement property', 'node qualifier', 'edge qualifier', 'statement qualifier']
+    aliases:
+      [
+        "edge property",
+        "statement property",
+        "node qualifier",
+        "edge qualifier",
+        "statement qualifier",
+      ]
     description: >-
       any slot that relates an association to another entity
 
@@ -5957,7 +6021,7 @@ slots:
       source uses before transformation to match the biolink-model specification.
 
   original predicate:
-    aliases: ['original relation', 'relation']
+    aliases: ["original relation", "relation"]
     is_a: association slot
     description: >-
       used to hold the original relation/predicate that an external knowledge
@@ -6037,8 +6101,8 @@ slots:
     examples:
       - value: "biolink:Disease"
         description: >-
-            The object category of the association between the gene
-            'BRCA1' and the disease 'breast cancer' is 'biolink:Disease'.
+          The object category of the association between the gene
+          'BRCA1' and the disease 'breast cancer' is 'biolink:Disease'.
     annotations:
       denormalized: true
 
@@ -6394,8 +6458,8 @@ slots:
   chi squared dof:
     is_a: association slot
     description: >-
-       Degrees of freedom (dof) in a chi-squared test referring to the
-       number of values in the final calculation of a statistic that are free to vary
+      Degrees of freedom (dof) in a chi-squared test referring to the
+      number of values in the final calculation of a statistic that are free to vary
     range: integer
     examples:
       - value: "1"
@@ -6403,8 +6467,8 @@ slots:
   chi squared p:
     is_a: association slot
     description: >-
-       The chi-square p-value tells you the probability that the observed differences
-       (or associations) in your data occurred by random chance, assuming the null hypothesis is true.
+      The chi-square p-value tells you the probability that the observed differences
+      (or associations) in your data occurred by random chance, assuming the null hypothesis is true.
     range: float
     examples:
       - value: "2.7967079822744063e-07"
@@ -6412,12 +6476,12 @@ slots:
   fisher exact odds ratio:
     is_a: association slot
     description: >-
-       The Fisher Exact Test is used to determine whether there is a non-random association between
-       two categorical variables in a 2×2 contingency table, especially when sample sizes are small.
-       The odds ratio (OR) quantifies the strength of that association.
-          OR = 1 implies No association
-          OR > 1 implies Positive association (Group A more likely to have Outcome 1)
-          OR < 1 implies Negative association (Group A less likely to have Outcome 1)
+      The Fisher Exact Test is used to determine whether there is a non-random association between
+      two categorical variables in a 2×2 contingency table, especially when sample sizes are small.
+      The odds ratio (OR) quantifies the strength of that association.
+         OR = 1 implies No association
+         OR > 1 implies Positive association (Group A more likely to have Outcome 1)
+         OR < 1 implies Negative association (Group A less likely to have Outcome 1)
     range: float
     examples:
       - value: "3.226188583240579"
@@ -6435,7 +6499,7 @@ slots:
       - value: "2.8581244515361156e-06"
 
   z score:
-    aliases: ['z-score', 'z-value', 'standard score', 'normal score']
+    aliases: ["z-score", "z-value", "standard score", "normal score"]
     is_a: association slot
     range: float
     description: >-
@@ -6448,7 +6512,7 @@ slots:
       - EDAM-DATA:1668
 
   p value:
-    aliases: ['unadjusted p value']
+    aliases: ["unadjusted p value"]
     is_a: association slot
     range: float
     description: >-
@@ -6700,22 +6764,22 @@ slots:
         regardless of the specific genetic variant that is present in an individual or instance).
 
   publications:
-    aliases: ['supporting publications', 'supporting documents']
+    aliases: ["supporting publications", "supporting documents"]
     description: >-
       One or more publications that report the statement expressed in an
       Association, or provide information used as evidence supporting this statement.
     comments:
       - >-
-          The notion of a ‘Publication’ is considered broadly to include any
-          document made available for public consumption. It covers journal issues,
-          individual articles, and books - and also things like article pre-prints,
-          white papers, patents, drug labels, web pages, protocol documents, etc.
+        The notion of a ‘Publication’ is considered broadly to include any
+        document made available for public consumption. It covers journal issues,
+        individual articles, and books - and also things like article pre-prints,
+        white papers, patents, drug labels, web pages, protocol documents, etc.
     is_a: association slot
     multivalued: true
     range: publication
 
   sources:
-    aliases: ['source retrieval provenance']
+    aliases: ["source retrieval provenance"]
     description: >-
       A set of RetrievalSources, which traces where the statement expressed in an
       Association came from. For example, the provenance of a Gene-Chemical Edge
@@ -6753,7 +6817,7 @@ slots:
 
   interbase coordinate:
     is_a: sequence localization attribute
-    aliases: ['zero-based', 'half-open', 'space-based']
+    aliases: ["zero-based", "half-open", "space-based"]
     description: >-
       A position in interbase coordinates. Interbase coordinates start at position 0 instead of position 1.
       This is applied to a sequence localization edge.
@@ -6782,7 +6846,7 @@ slots:
 
   start coordinate:
     is_a: base coordinate
-    aliases: ['start']
+    aliases: ["start"]
     description: >-
       The position at which the subject genomic entity starts
       on the chromosome or other entity to which it is located on.
@@ -6794,7 +6858,7 @@ slots:
 
   end coordinate:
     is_a: base coordinate
-    aliases: ['end']
+    aliases: ["end"]
     description: >-
       The position at which the subject genomic entity ends
       on the chromosome or other entity to which it is located on.
@@ -6916,7 +6980,7 @@ slots:
     range: string
 
   knowledge level:
-    aliases: ['knowledge type']
+    aliases: ["knowledge type"]
     is_a: association slot
     description: >-
       Describes the level of knowledge expressed in a statement, based on the
@@ -6947,22 +7011,22 @@ slots:
   agent type:
     is_a: association slot
     description: >-
-        Describes the high-level category of agent who originally generated a
-        statement of knowledge or other type of information.
+      Describes the high-level category of agent who originally generated a
+      statement of knowledge or other type of information.
     notes:
       - >-
-          Note that this property indicates the type of agent who produced a
-          final statement of knowledge, which is often different from the
-          agent oragents who produced information used as evidence to
-          support generation of this knowledge. For example, if a human curator
-          concludes that a particular gene variant causes a medical condition -
-          based on their interpretation of information produced by computational
-          modeling tools, automated data analysis pipelines, and robotic laboratory
-          assay systems - the agent_type for this statement is 'manual agent' -
-          despite all of the evidence being created by automated agents. But if any
-          of these systems is programmed to generate knowledge statements
-          directly and without human assistance, the statement would be attributed
-          to an 'automated_agent'.
+        Note that this property indicates the type of agent who produced a
+        final statement of knowledge, which is often different from the
+        agent oragents who produced information used as evidence to
+        support generation of this knowledge. For example, if a human curator
+        concludes that a particular gene variant causes a medical condition -
+        based on their interpretation of information produced by computational
+        modeling tools, automated data analysis pipelines, and robotic laboratory
+        assay systems - the agent_type for this statement is 'manual agent' -
+        despite all of the evidence being created by automated agents. But if any
+        of these systems is programmed to generate knowledge statements
+        directly and without human assistance, the statement would be attributed
+        to an 'automated_agent'.
     domain: association
     range: AgentTypeEnum
     multivalued: false
@@ -7058,12 +7122,11 @@ classes:
       - narrow match
       - broad match
 
+    ## ----------
+    ## ATTRIBUTES
+    ## ----------
 
-   ## ----------
-   ## ATTRIBUTES
-   ## ----------
-
-   ## Ontology Classes
+    ## Ontology Classes
 
   ontology class:
     mixin: true
@@ -7098,7 +7161,7 @@ classes:
     id_prefixes:
       - MESH
       - UMLS
-      - KEGG.BRITE  ## br/ko number
+      - KEGG.BRITE ## br/ko number
 
   annotation:
     description: >-
@@ -7123,13 +7186,13 @@ classes:
       For example, an apple may have properties such as color, shape, age, crispiness.
       An environmental sample may have attributes such as depth, lat, long, material.
     slots:
-      - name                    # 'attribute_name'
-      - has attribute type      # 'attribute_type'
-       # 'value', 'value_type', 'value_type_name'
-       # extracted from either of the next two slots
+      - name # 'attribute_name'
+      - has attribute type # 'attribute_type'
+        # 'value', 'value_type', 'value_type_name'
+        # extracted from either of the next two slots
       - has quantitative value
       - has qualitative value
-      - iri                     # 'url'
+      - iri # 'url'
     slot_usage:
       name:
         description: >-
@@ -7247,9 +7310,9 @@ classes:
       - CHEBI
       - MAXO
 
-   ## ------
-   ## THINGS
-   ## ------
+    ## ------
+    ## THINGS
+    ## ------
 
   entity:
     description: >-
@@ -7259,12 +7322,12 @@ classes:
       - id
       - iri
       - category
-      - type    # rdf:type
+      - type # rdf:type
       - name
       - description
       - has attribute
       - deprecated
-       # evidence code(s)?
+        # evidence code(s)?
 
   named thing:
     is_a: entity
@@ -7287,9 +7350,9 @@ classes:
     exact_mappings:
       - BFO:0000001
       - WIKIDATA:Q35120
-       # UMLS Semantic Group "Objects"
+        # UMLS Semantic Group "Objects"
       - UMLSSG:OBJC
-       # Entity
+        # Entity
       - STY:T071
       - dcid:Thing
 
@@ -7309,7 +7372,7 @@ classes:
       - WIKIDATA:Q427626
 
   organism taxon:
-    aliases: ['taxon', 'taxonomic classification']
+    aliases: ["taxon", "taxonomic classification"]
     description: >-
       A classification of a set of organisms. Example instances:
       NCBITaxon:9606 (Homo sapiens), NCBITaxon:2 (Bacteria).
@@ -7338,7 +7401,7 @@ classes:
     in_subset:
       - model_organism_database
 
-   ## Temporal Entities
+    ## Temporal Entities
 
   event:
     is_a: named thing
@@ -7346,10 +7409,10 @@ classes:
       Something that happens at a given place and time.
     exact_mappings:
       - NCIT:C25499
-       # UMLS "Event"
+        # UMLS "Event"
       - STY:T051
 
-   ## Administrative Entities
+    ## Administrative Entities
 
   administrative entity:
     description: >-
@@ -7372,7 +7435,7 @@ classes:
         scale that is aimed at generating knowledge or hypotheses. This may include a single assay or computational
         analyses, or a larger scale clinical trial or experimental research investigation.
 
-   ## epc result sets
+    ## epc result sets
   concept count analysis result:
     is_a: study result
     description: >-
@@ -7460,7 +7523,7 @@ classes:
     is_a: information content entity
     description: a variable that is used as a measure in the investigation of a study
     narrow_mappings:
-      - NCIT:C142192  # specifies clinical study
+      - NCIT:C142192 # specifies clinical study
     close_mappings:
       - STATO:0000258
       - SIO:000367
@@ -7477,7 +7540,7 @@ classes:
 
   agent:
     is_a: administrative entity
-    aliases: ['group']
+    aliases: ["group"]
     description: >-
       person, group, organization or project that provides
       a piece of information (i.e. a knowledge association)
@@ -7488,16 +7551,16 @@ classes:
       - prov:Agent
       - dct:Agent
     narrow_mappings:
-       # Organization
+      # Organization
       - UMLSSG:ORGA
       - STY:T092
-       # Health Care Related Organization
+        # Health Care Related Organization
       - STY:T093
-       # Professional Society
+        # Professional Society
       - STY:T094
-       # Self-help or Relief Organization
+        # Self-help or Relief Organization
       - STY:T095
-       # Group
+        # Group
       - STY:T096
     slot_usage:
       id:
@@ -7512,14 +7575,14 @@ classes:
           Institutional agents could be identified by an
           International Standard Name Identifier ('ISNI') code.
         values_from:
-           # CURIE space for publishers
+          # CURIE space for publishers
           - isbn
-           # CURIE space for authors
+            # CURIE space for authors
           - ORCID
           - ScopusID
           - ResearchID
           - GSID
-           # Institutional agents
+            # Institutional agents
           - isni
       name:
         description: >-
@@ -7533,10 +7596,10 @@ classes:
       - GSID
       - isni
 
-   ## General Information Entities
+    ## General Information Entities
 
   information content entity:
-    aliases: ['information', 'information artefact', 'information entity']
+    aliases: ["information", "information artefact", "information entity"]
     abstract: true
     is_a: named thing
     description: >-
@@ -7552,29 +7615,29 @@ classes:
     exact_mappings:
       - IAO:0000030
     narrow_mappings:
-       # UMLS Semantic Group "Concepts & Ideas"
+      # UMLS Semantic Group "Concepts & Ideas"
       - UMLSSG:CONC
-       # Conceptual Entity
+        # Conceptual Entity
       - STY:T077
-       # Idea or Concept
+        # Idea or Concept
       - STY:T078
-       # Temporal Concept
+        # Temporal Concept
       - STY:T079
-       # Qualitative Concept
+        # Qualitative Concept
       - STY:T080
-       # Quantitative Concept
+        # Quantitative Concept
       - STY:T081
-       # Spatial Concept
+        # Spatial Concept
       - STY:T082
-       # Regulation or Law
+        # Regulation or Law
       - STY:T089
-       # Group Attribute
+        # Group Attribute
       - STY:T102
-       # Functional Concept
+        # Functional Concept
       - STY:T169
-       # Language
+        # Language
       - STY:T171
-       # Classification
+        # Classification
       - STY:T185
 
   dataset:
@@ -7621,17 +7684,17 @@ classes:
       - cio
     exact_mappings:
       - CIO:0000028
-       # statement confidence
+        # statement confidence
       - SEPIO:0000187
     close_mappings:
-       # assertion confidence levels
+      # assertion confidence levels
       - SEPIO:0000167
 
   evidence type:
     is_a: named thing
     mixins:
       - ontology class
-    aliases: ['evidence code']
+    aliases: ["evidence code"]
     description: >-
       Class of evidence that supports an association
     values_from:
@@ -7646,7 +7709,7 @@ classes:
 
     ## Publications
 
-   # TODO: to review additional ontology relating to Publications, such as http://www.sparontologies.net/ontologies
+    # TODO: to review additional ontology relating to Publications, such as http://www.sparontologies.net/ontologies
   publication:
     is_a: information content entity
     description: >-
@@ -7664,8 +7727,8 @@ classes:
       - mesh terms
       - xref
       - publication type
-     # In addition to embedded slots, instances of 'contributor association'
-     # may be used to more extensively document publisher, editor and author details
+      # In addition to embedded slots, instances of 'contributor association'
+      # may be used to more extensively document publisher, editor and author details
     slot_usage:
       id:
         description: >-
@@ -7692,7 +7755,7 @@ classes:
       - IAO:0000311
     narrow_mappings:
       - IAO:0000013
-       # UMLS Semantic Type "Intellectual Product"
+        # UMLS Semantic Type "Intellectual Product"
       - STY:T170
     id_prefixes:
       - PMID
@@ -7740,7 +7803,7 @@ classes:
       - model_organism_database
 
   serial:
-    aliases: ['journal']
+    aliases: ["journal"]
     is_a: publication
     description: >-
       This class may rarely be instantiated except if use cases
@@ -7787,7 +7850,7 @@ classes:
       - SIO:000154
       - fabio:article
     id_prefixes:
-       # By inheritance, a DOI may be used as a publication identifier; there may be other relevant namespaces
+      # By inheritance, a DOI may be used as a publication identifier; there may be other relevant namespaces
       - PMID
     in_subset:
       - model_organism_database
@@ -7887,7 +7950,7 @@ classes:
           upstream_resource_ids:
             - infores:pubmed
 
-   ## Top Level Abstractions of Material & Process Entities
+    ## Top Level Abstractions of Material & Process Entities
 
   physical essence or occurrent:
     description: >-
@@ -7908,17 +7971,17 @@ classes:
     description: >-
       An entity that has material reality (a.k.a. physical essence).
     exact_mappings:
-       # Physical Object
+      # Physical Object
       - STY:T072
     narrow_mappings:
-       # Manufactured Object
+      # Manufactured Object
       - STY:T073
 
   occurrent:
     description: >-
       A processual entity.
-     # biolink:Occurrent is most consistently used as a mixin thus it should
-     # be declared as such and cannot inherit from the non-mixin biolink:NamedThing
+    # biolink:Occurrent is most consistently used as a mixin thus it should
+    # be declared as such and cannot inherit from the non-mixin biolink:NamedThing
     is_a: physical essence or occurrent
     mixin: true
     exact_mappings:
@@ -7931,7 +7994,7 @@ classes:
       Activity or behavior of any independent integral living,
       organization or mechanical actor in the world
     exact_mappings:
-       # Activities & Behaviors
+      # Activities & Behaviors
       - UMLSSG:ACTI
 
   activity:
@@ -7945,22 +8008,22 @@ classes:
     exact_mappings:
       - prov:Activity
       - NCIT:C43431
-       # Activity
+        # Activity
       - STY:T052
     narrow_mappings:
-       # Daily or Recreational Activity
+      # Daily or Recreational Activity
       - STY:T056
-       # Occupational Activity
+        # Occupational Activity
       - STY:T057
-       # Governmental or Regulatory Activity
+        # Governmental or Regulatory Activity
       - STY:T064
-       # Machine Activity
+        # Machine Activity
       - STY:T066
-       # Research Activity
+        # Research Activity
       - STY:T062
-       # Educational Activity
+        # Educational Activity
       - STY:T065
-       # Health Care Activity
+        # Health Care Activity
       - STY:T058
 
   procedure:
@@ -7970,17 +8033,17 @@ classes:
     description: >-
       A series of actions conducted in a certain order or manner
     exact_mappings:
-       # Procedures
+      # Procedures
       - UMLSSG:PROC
       - dcid:MedicalProcedure
     narrow_mappings:
-       # Laboratory Procedure
+      # Laboratory Procedure
       - STY:T059
-       # Diagnostic Procedure
+        # Diagnostic Procedure
       - STY:T060
-       # Therapeutic or Preventive Procedure
+        # Therapeutic or Preventive Procedure
       - STY:T061
-       # Molecular Biology Research Technique
+        # Molecular Biology Research Technique
       - STY:T063
       - MAXO:0000001
     id_prefixes:
@@ -7995,23 +8058,23 @@ classes:
       a fact or situation that is observed to exist or happen,
       especially one whose cause or explanation is in question
     broad_mappings:
-       # the inclusion of 'process' in the definition of these
-       # terms broadens them, relative to 'phenomenon'
-       # Phenomenon or Process
+      # the inclusion of 'process' in the definition of these
+      # terms broadens them, relative to 'phenomenon'
+      # Phenomenon or Process
       - STY:T067
-       # Human-caused Phenomenon or Process
+        # Human-caused Phenomenon or Process
       - STY:T068
-       # Natural Phenomenon or Process
+        # Natural Phenomenon or Process
       - STY:T070
     exact_mappings:
-       # Phenomena
+      # Phenomena
       - UMLSSG:PHEN
     narrow_mappings:
-       # Laboratory or Test Result
+      # Laboratory or Test Result
       - STY:T034
-       # Biologic Function
+        # Biologic Function
       - STY:T038
-       # Environmental Effect of Humans
+        # Environmental Effect of Humans
       - STY:T069
 
   device:
@@ -8034,10 +8097,10 @@ classes:
     description: >-
       A device or substance used to help diagnose disease or injury
     exact_mappings:
-      - STY:T130  # Diagnostic Aid
-      - SNOMED:2949005  # Diagnostic aid
+      - STY:T130 # Diagnostic Aid
+      - SNOMED:2949005 # Diagnostic aid
 
-   ## Scientific Studies
+    ## Scientific Studies
 
   study population:
     is_a: population of individual organisms
@@ -8052,7 +8115,7 @@ classes:
       An entity that has the role of being studied in an investigation, study, or experiment
 
   material sample:
-    aliases: ['biospecimen', 'sample', 'biosample', 'physical sample']
+    aliases: ["biospecimen", "sample", "biosample", "physical sample"]
     is_a: physical entity
     mixins:
       - subject of investigation
@@ -8067,7 +8130,7 @@ classes:
       - BIOSAMPLE
       - GOLD.META
 
-   ## Earth Sciences
+    ## Earth Sciences
 
   planetary entity:
     is_a: named thing
@@ -8100,9 +8163,9 @@ classes:
       - latitude
       - longitude
     exact_mappings:
-       # Geographic Areas
+      # Geographic Areas
       - UMLSSG:GEOG
-       # Geographic Area
+        # Geographic Area
       - STY:T083
 
   geographic location at time:
@@ -8112,7 +8175,7 @@ classes:
     slots:
       - timepoint
 
-   ## Biological Sciences
+    ## Biological Sciences
 
   thing with taxon:
     mixin: true
@@ -8129,17 +8192,17 @@ classes:
       A heterogeneous substance that contains genomic material or is the
       product of a biological process.
     is_a: named thing
-    aliases: ['bioentity']
+    aliases: ["bioentity"]
     abstract: true
     mixins:
       - thing with taxon
     narrow_mappings:
       - WIKIDATA:Q28845870
-       # UMLS Semantic Type "Experimental Model of Disease"
+        # UMLS Semantic Type "Experimental Model of Disease"
       - STY:T050
-       # SIO term is 'biological entity' but less inclusive than the Biolink scope
+        # SIO term is 'biological entity' but less inclusive than the Biolink scope
       - SIO:010046
-      - STY:T129  # (imft, full name: Immunologic Factor
+      - STY:T129 # (imft, full name: Immunologic Factor
 
   genomic entity:
     description: >-
@@ -8151,8 +8214,8 @@ classes:
     in_subset:
       - translator_minimal
     narrow_mappings:
-      - STY:T028    # Gene or Genome
-      - GENO:0000897   # Genomic Entity
+      - STY:T028 # Gene or Genome
+      - GENO:0000897 # Genomic Entity
 
   epigenomic entity:
     description: >-
@@ -8176,10 +8239,10 @@ classes:
     slots:
       - is metabolite
     narrow_mappings:
-      - STY:T088  # Carbohydrate
-      - STY:T085  # Molecular Sequence
-      - CHEBI:23367  # Any constitutionally or isotopically distinct atom, molecule, ion, ion pair, radical,
-       # radical ion, complex, conformer etc., identifiable as a separately distinguishable entity.
+      - STY:T088 # Carbohydrate
+      - STY:T085 # Molecular Sequence
+      - CHEBI:23367 # Any constitutionally or isotopically distinct atom, molecule, ion, ion pair, radical,
+        # radical ion, complex, conformer etc., identifiable as a separately distinguishable entity.
       - bioschemas:MolecularEntity
     in_subset:
       - translator_minimal
@@ -8213,7 +8276,7 @@ classes:
     is_a: named thing
     mixins:
       - physical essence
-      - chemical or drug or treatment  # issue 701
+      - chemical or drug or treatment # issue 701
       - chemical entity or gene or gene product
       - chemical entity or protein or polypeptide
     description: >-
@@ -8234,15 +8297,15 @@ classes:
       - chembl drug warning
     exact_mappings:
       - CHEBI:24431
-      - SIO:010004  # Chemical entity
-      - WIKIDATA:Q79529  # Chemical substance
-      - STY:T103  # Chemical
+      - SIO:010004 # Chemical entity
+      - WIKIDATA:Q79529 # Chemical substance
+      - STY:T103 # Chemical
     broad_mappings:
-      - STY:T167  # Substance, children include food, body substance, chemical.
+      - STY:T167 # Substance, children include food, body substance, chemical.
     narrow_mappings:
       - WIKIDATA:Q43460564
-      - STY:T123  # (bacs, full name: Biologically Active Substance)
-      - STY:T131  # (hops, full name: Hazardous or Poisonous Substance)
+      - STY:T123 # (bacs, full name: Biologically Active Substance)
+      - STY:T131 # (hops, full name: Hazardous or Poisonous Substance)
     in_subset:
       - translator_minimal
     id_prefixes:
@@ -8285,7 +8348,7 @@ classes:
 
   small molecule:
     is_a: molecular entity
-    aliases: ['chemical substance']
+    aliases: ["chemical substance"]
     description: >-
       A small molecule entity is a molecular entity characterized by availability
       in small-molecule databases of SMILES, InChI, IUPAC, or other
@@ -8293,19 +8356,19 @@ classes:
       convenience of representation, any valid chemical representation is
       included, even if it is not strictly molecular (e.g., sodium ion).
     narrow_mappings:
-      - STY:T196  # Element, Ion, or Isotope
+      - STY:T196 # Element, Ion, or Isotope
       - CHEBI:59999
       - bioschemas:ChemicalSubstance
-      - STY:T125  # (horm, full name: Hormone)
-      - STY:T197  # (inch, full name: Inorganic Chemical)
-      - STY:T109  # (orch, full name: Organic Chemical)
-      - STY:T118  # (carb, full name: Carbohydrate) - note that this term is missing from newer SRDEF files (depreciated?), but is still used by the SEMMEDDB data files)
-      - STY:T111  # (eico, full name: Eicosanoid) - same note as above
-      - STY:T119  # (lipd, full name: Lipid) - same note as above
-      - STY:T124  # (nsba, full name: Neuroreactive Substance or Biogenic Amine) - same note as above
-      - STY:T115  # (opco, full name: Organophosphorus Compound) - same note as above
-      - STY:T110  # (strd, full name: Steroid) - same note as above
-      - STY:T127  # vitamin
+      - STY:T125 # (horm, full name: Hormone)
+      - STY:T197 # (inch, full name: Inorganic Chemical)
+      - STY:T109 # (orch, full name: Organic Chemical)
+      - STY:T118 # (carb, full name: Carbohydrate) - note that this term is missing from newer SRDEF files (depreciated?), but is still used by the SEMMEDDB data files)
+      - STY:T111 # (eico, full name: Eicosanoid) - same note as above
+      - STY:T119 # (lipd, full name: Lipid) - same note as above
+      - STY:T124 # (nsba, full name: Neuroreactive Substance or Biogenic Amine) - same note as above
+      - STY:T115 # (opco, full name: Organophosphorus Compound) - same note as above
+      - STY:T110 # (strd, full name: Steroid) - same note as above
+      - STY:T127 # vitamin
     id_prefixes:
       - CHEBI
       - UNII
@@ -8376,8 +8439,8 @@ classes:
     close_mappings:
       - dcid:ChemicalCompound
     narrow_mappings:
-      - NCIT:C20401  # monoclonal antibody
-      - SNOMEDCT:49616005  # monoclonal antibody (substance)
+      - NCIT:C20401 # monoclonal antibody
+      - SNOMEDCT:49616005 # monoclonal antibody (substance)
 
   nucleic acid entity:
     is_a: molecular entity
@@ -8386,7 +8449,7 @@ classes:
       availability in gene databases of nucleotide-based sequence
       representations of its precise sequence; for convenience of
       representation, partial sequences of various kinds are included.
-    aliases: ['sequence feature', 'genomic entity']
+    aliases: ["sequence feature", "genomic entity"]
     mixins:
       - genomic entity
       - thing with taxon
@@ -8395,8 +8458,8 @@ classes:
     exact_mappings:
       - SO:0000110
     narrow_mappings:
-      - STY:T086    # Nucleotide Sequence
-      - STY:T114    # Nucleic Acid, Nucleoside, or Nucleotide
+      - STY:T086 # Nucleotide Sequence
+      - STY:T114 # Nucleic Acid, Nucleoside, or Nucleotide
     in_subset:
       - model_organism_database
       - translator_minimal
@@ -8415,10 +8478,10 @@ classes:
       - PUBCHEM.SUBSTANCE
       - INCHI
       - INCHIKEY
-       # - iupac  # is not actually a CURIE namespace but only a naming convention for chemistry
-       # - SMILES   # is not actually a CURIE namespace but only a query language for chemistry
-      - KEGG.GLYCAN   # G number
-      - KEGG.ENVIRON  # E number
+        # - iupac  # is not actually a CURIE namespace but only a naming convention for chemistry
+        # - SMILES   # is not actually a CURIE namespace but only a query language for chemistry
+      - KEGG.GLYCAN # G number
+      - KEGG.ENVIRON # E number
       - ChemBank
       - SIDER.DRUG
       - BIGG.METABOLITE
@@ -8426,7 +8489,7 @@ classes:
       - UMLS
 
   regulatory region:
-    aliases: ['regulatory element']
+    aliases: ["regulatory element"]
     description: >-
       A region (or regions) of the genome that contains known or putative regulatory elements
       that act in cis- or trans- to affect the transcription of gene
@@ -8442,7 +8505,7 @@ classes:
       - WIKIDATA:Q3238407
 
   accessible dna region:
-    aliases: ['dnase-seq accessible region', 'atac-seq accessible region']
+    aliases: ["dnase-seq accessible region", "atac-seq accessible region"]
     description: >-
       A region (or regions) of a chromatinized genome that has been measured to be more
       accessible to an enzyme such as DNase-I or Tn5 Transpose
@@ -8456,7 +8519,7 @@ classes:
       - SO:0002231
 
   transcription factor binding site:
-    aliases: ['tf binding site', 'binding site']
+    aliases: ["tf binding site", "binding site"]
     description: >-
       A region (or regions) of the genome that contains a region of DNA known or predicted
       to bind a protein that modulates gene transcription
@@ -8526,12 +8589,12 @@ classes:
       - SIDER.DRUG
       - INCHI
       - INCHIKEY
-       # - iupac  # is not actually a CURIE namespace but only a naming convention for chemistry
-       # - SMILES   # is not actually a CURIE namespace but only a query language for chemistry
-      - KEGG.GLYCAN   ## G number
-      - KEGG.DRUG     ## D number
+        # - iupac  # is not actually a CURIE namespace but only a naming convention for chemistry
+        # - SMILES   # is not actually a CURIE namespace but only a query language for chemistry
+      - KEGG.GLYCAN ## G number
+      - KEGG.DRUG ## D number
       - KEGG
-      - KEGG.ENVIRON  ## E number
+      - KEGG.ENVIRON ## E number
       - UMLS
 
   biological process or activity:
@@ -8555,7 +8618,7 @@ classes:
       An execution of a molecular function carried out by a
       gene product or macromolecular complex.
     is_a: biological process or activity
-    aliases: ['molecular function', 'molecular event', 'reaction']
+    aliases: ["molecular function", "molecular event", "reaction"]
     mixins:
       - occurrent
       - ontology class
@@ -8577,7 +8640,7 @@ classes:
       # UMLS Semantic Type "Molecular Function"
       - STY:T044
     broad_mappings:
-      - STY:T045  # Genetic Function
+      - STY:T045 # Genetic Function
     id_prefixes:
       - GO
       - REACT
@@ -8585,9 +8648,9 @@ classes:
       - metacyc.reaction
       - EC
       - TCDB
-      - KEGG.REACTION   ## R number
+      - KEGG.REACTION ## R number
       - KEGG
-      - KEGG.ORTHOLOGY  ## in particular for gut microbiome use case in issue  #888
+      - KEGG.ORTHOLOGY ## in particular for gut microbiome use case in issue  #888
       - UMLS
       - BIGG.REACTION
       - SEED.REACTION
@@ -8610,7 +8673,7 @@ classes:
       - GO
       - REACT
       - metacyc.reaction
-      - KEGG.MODULE  ## M number
+      - KEGG.MODULE ## M number
       - KEGG
       - UMLS
 
@@ -8636,7 +8699,7 @@ classes:
       - MSigDB
       - PHARMGKB.PATHWAYS
       - WIKIPATHWAYS
-      - FB   # FlyBase FBgg*
+      - FB # FlyBase FBgg*
       - PANTHER.PATHWAY
       - KEGG.PATHWAY
       - ncats.bioplanet
@@ -8644,23 +8707,23 @@ classes:
   physiological process:
     description: >-
       A biological or chemical function within a living organism.
-    aliases: ['physiology']
+    aliases: ["physiology"]
     is_a: biological process
     mixins:
       - ontology class
     close_mappings:
     exact_mappings:
-       # Physiologic Function
+      # Physiologic Function
       - STY:T039
       - WIKIDATA:Q30892994
     narrow_mappings:
-       # Organism Function
+      # Organism Function
       - STY:T040
-       # Organ or Tissue Function
+        # Organ or Tissue Function
       - STY:T042
-       # Cell Function
+        # Cell Function
       - STY:T043
-       # Genetic Function
+        # Genetic Function
       - STY:T045
     id_prefixes:
       - GO
@@ -8677,17 +8740,17 @@ classes:
       - activity and behavior
     exact_mappings:
       - GO:0007610
-       # Behavior
+        # Behavior
       - STY:T053
     narrow_mappings:
-       # Mental Process
+      # Mental Process
       - STY:T041
-       # Social Behavior
+        # Social Behavior
       - STY:T054
-       # Individual Behavior
+        # Individual Behavior
       - STY:T055
 
-   ## (Bio)chemistry
+    ## (Bio)chemistry
 
   processed material:
     is_a: chemical mixture
@@ -8735,17 +8798,17 @@ classes:
     comments:
       - The CHEBI ID represents a role rather than a substance
     broad_mappings:
-       # Pharmacologic Substance: Any natural, endogenously-derived,
-       # synthetic or semi synthetic compound with pharmacologic activity.
+      # Pharmacologic Substance: Any natural, endogenously-derived,
+      # synthetic or semi synthetic compound with pharmacologic activity.
       - STY:T121
     exact_mappings:
       - WIKIDATA:Q12140
       - CHEBI:23888
-       # UMLS Semantic Type "Clinical Drug"
+        # UMLS Semantic Type "Clinical Drug"
       - STY:T200
       - dcid:Drug
     narrow_mappings:
-       # Antibiotic
+      # Antibiotic
       - STY:T195
     id_prefixes:
       - ncats.drug
@@ -8776,7 +8839,7 @@ classes:
       - KEGG.ENVIRON
       - KEGG
 
-   ## Food
+    ## Food
 
   environmental food contaminant:
     description: >-
@@ -8786,7 +8849,7 @@ classes:
     exact_mappings:
       - CHEBI:78299
     related_mappings:
-       # substance role
+      # substance role
       - CHEBI:78299
     id_prefixes:
       - CHEBI
@@ -8822,7 +8885,7 @@ classes:
     exact_mappings:
       - CHEBI:64047
     related_mappings:
-       # substance role
+      # substance role
       - CHEBI:64047
     id_prefixes:
       - CHEBI
@@ -8888,20 +8951,20 @@ classes:
       - KEGG
       - UMLS
 
-   ## Biology and Biomedical Sciences
+    ## Biology and Biomedical Sciences
 
-   ## Biological Attributes
+    ## Biological Attributes
 
   organism attribute:
     is_a: attribute
     description: >-
       describes a characteristic of an organismal entity.
     exact_mappings:
-       # Organism Attribute
+      # Organism Attribute
       - STY:T032
 
   phenotypic quality:
-    aliases: ['phenotypic properties']
+    aliases: ["phenotypic properties"]
     is_a: organism attribute
     description: >-
       A characteristic of a phenotype (e.g., weight, size, shape, color) that can be observed, measured, or
@@ -8912,7 +8975,7 @@ classes:
       - PATO:0001995
 
   genetic inheritance:
-    aliases: ['inheritance']
+    aliases: ["inheritance"]
     is_a: biological entity
     description: >-
       The pattern or 'mode' in which a particular genetic trait or disorder is passed from one
@@ -8950,7 +9013,7 @@ classes:
       - UMLSSG:LIVB
       - CARO:0001010
     narrow_mappings:
-      - STY:T008  # animal
+      - STY:T008 # animal
 
   bacterium:
     is_a: organismal entity
@@ -8959,7 +9022,7 @@ classes:
       that reproduce by binary fission and are often motile.
     exact_mappings:
       - NCBITaxon:1869227
-      - STY:T007  # Bacterium
+      - STY:T007 # Bacterium
 
   virus:
     is_a: organismal entity
@@ -8973,7 +9036,7 @@ classes:
         see: https://github.com/OBOFoundry/COB/pull/211
     exact_mappings:
       - NCBITaxon:10239
-      - STY:T005  # Virus
+      - STY:T005 # Virus
 
   cellular organism:
     is_a: organismal entity
@@ -8995,10 +9058,10 @@ classes:
     mixins:
       - subject of investigation
     exact_mappings:
-      - NCBITaxon:40674  # mammal
-      - STY:T015  # mammal
-      - NCIT:C14234  # Mamalia
-      - FOODON:03411134  # mammal
+      - NCBITaxon:40674 # mammal
+      - STY:T015 # mammal
+      - NCIT:C14234 # Mamalia
+      - FOODON:03411134 # mammal
 
   human:
     deprecated: "true"
@@ -9015,31 +9078,31 @@ classes:
     deprecated: "true"
     is_a: cellular organism
     exact_mappings:
-      - NCIT:C14258  # plant
-      - STY:T002  # plant
-      - PO:0000003  # whole plant
-      - NCIT:C79659  # plant, whole
+      - NCIT:C14258 # plant
+      - STY:T002 # plant
+      - PO:0000003 # whole plant
+      - NCIT:C79659 # plant, whole
 
   invertebrate:
     deprecated: "true"
     is_a: cellular organism
     exact_mappings:
-      - NCIT:C14228  # invertebrate
-      - OMIT:0008565  # invertebrates
-      - FOODON:00002452  # invertebrate animals
+      - NCIT:C14228 # invertebrate
+      - OMIT:0008565 # invertebrates
+      - FOODON:00002452 # invertebrate animals
       - STY:T011
     related_mappings:
-      - NCBITaxon:1767184  # unidentified invertebrate
+      - NCBITaxon:1767184 # unidentified invertebrate
 
   vertebrate:
     deprecated: "true"
     is_a: cellular organism
     exact_mappings:
       - STY:T010
-      - NCBITaxon:7742  # vertebrata
-      - OMIT:0015545  # vertebrates
+      - NCBITaxon:7742 # vertebrata
+      - OMIT:0015545 # vertebrates
     related_mappings:
-      - NCBITaxon:2662825  # unclassified vertebrata (in:vertebrates)
+      - NCBITaxon:2662825 # unclassified vertebrata (in:vertebrates)
 
   fungus:
     deprecated: "true"
@@ -9049,8 +9112,8 @@ classes:
       - NCIT:C14209
       - FOODON:03411261
     narrow_mappings:
-      - FOODON:03315605  # fungus (edible)
-      - NCBITaxon:1670606  # fungus metagenome
+      - FOODON:03315605 # fungus (edible)
+      - NCBITaxon:1670606 # fungus metagenome
 
   life stage:
     is_a: organismal entity
@@ -9075,7 +9138,7 @@ classes:
       - UBERON
 
   individual organism:
-    aliases: ['organism']
+    aliases: ["organism"]
     description: >-
       An instance of an organism. For example, Charles Darwin, my pet cat.
     examples:
@@ -9117,7 +9180,7 @@ classes:
       - model_organism_database
 
   disease or phenotypic feature:
-    aliases: ['phenome']
+    aliases: ["phenome"]
     is_a: biological entity
     mixins:
       - ontology class
@@ -9132,7 +9195,7 @@ classes:
       - STY:T033
 
   disease:
-    aliases: ['condition', 'disorder', 'medical condition']
+    aliases: ["condition", "disorder", "medical condition"]
     description: >-
       A disease is a disposition to undergo pathological processes that exists in an organism because of one or
       more disorders in that organism. A disorder of structure or function, especially one that produces specific
@@ -9150,9 +9213,9 @@ classes:
       - dcid:Disease
     narrow_mappings:
       - STY:T019
-       # Acquired Abnormality
+        # Acquired Abnormality
       - STY:T020
-       # Mental or behavioral disfunction
+        # Mental or behavioral disfunction
       - STY:T048
       # (Cell or Molecular Dysfunction)
       - STY:T049
@@ -9177,7 +9240,7 @@ classes:
       - icd11.foundation
       - ICD10
       - ICD9
-      - KEGG.DISEASE  ## H number
+      - KEGG.DISEASE ## H number
       - HP
       - MP
       - PHARMGKB.DISEASE
@@ -9186,7 +9249,7 @@ classes:
       - translator_minimal
 
   phenotypic feature:
-    aliases: ['sign', 'symptom', 'phenotype', 'trait', 'endophenotype']
+    aliases: ["sign", "symptom", "phenotype", "trait", "endophenotype"]
     is_a: disease or phenotypic feature
     description: >-
       A combination of entity and quality that makes up a phenotyping statement. An observable characteristic of an
@@ -9200,32 +9263,32 @@ classes:
       - WIKIDATA:Q104053
       - UMLS:C4021819
       - NCIT:C16977
-      - SNOMEDCT:8116006  # documented as phenotypic finding and phenotype, also referred to as "SCTID:8116006" at SNOMEDCT
-      - MESH:D010641  # phenotype
+      - SNOMEDCT:8116006 # documented as phenotypic finding and phenotype, also referred to as "SCTID:8116006" at SNOMEDCT
+      - MESH:D010641 # phenotype
     narrow_mappings:
-      - STY:T184  # Sign or Symptom
-      - WIKIDATA:Q169872  # Sign or Symptom
-       # presentation of a disease in clinical medicine
+      - STY:T184 # Sign or Symptom
+      - WIKIDATA:Q169872 # Sign or Symptom
+        # presentation of a disease in clinical medicine
       - WIKIDATA:Q25203551
-      - ZP:00000000  # zebrafish phenotype
-      - FBcv:0001347  # fly phenotype
-      - HP:0000118  # human phenotype
-      - MP:0000001  # mouse phenotype
-      - WBPhenotype:0000886  # worm phenotype
-      - XPO:00000000  # frog phenotype
-      - FYPO:0000001  # fission yeast phenotype
-      - APO:0000017  # phenotype
-      - TO:0000387  # more narrowly defined here for plants; our definition conflates trait and phenotype.
+      - ZP:00000000 # zebrafish phenotype
+      - FBcv:0001347 # fly phenotype
+      - HP:0000118 # human phenotype
+      - MP:0000001 # mouse phenotype
+      - WBPhenotype:0000886 # worm phenotype
+      - XPO:00000000 # frog phenotype
+      - FYPO:0000001 # fission yeast phenotype
+      - APO:0000017 # phenotype
+      - TO:0000387 # more narrowly defined here for plants; our definition conflates trait and phenotype.
       - STY:T190
     broad_mappings:
-      - BFO:0000019  # quality
-      - PATO:0000001  # quality
+      - BFO:0000019 # quality
+      - PATO:0000001 # quality
     id_prefixes:
       - HP
-      - EFO  # covered by BFO quality mapping
+      - EFO # covered by BFO quality mapping
       - NCIT
       - UMLS
-      - MEDDRA  # can not find a mapping
+      - MEDDRA # can not find a mapping
       - MP
       - ZP
       - UPHENO
@@ -9266,27 +9329,27 @@ classes:
     exact_mappings:
       - UBERON:0001062
       - WIKIDATA:Q4936952
-       # UMLS Semantic Group "Anatomy"
+        # UMLS Semantic Group "Anatomy"
       - UMLSSG:ANAT
-       # UMLS Semantic Type "Anatomical Structure"
+        # UMLS Semantic Type "Anatomical Structure"
       - STY:T017
-      - FMA:62955  # anatomical entity
-      - CARO:0000000   # anatomical entity
-      - SIO:001262  # anatomical entity
-      - STY:T029  # Body Location or Region
-      - STY:T030  # Body Space or Junction
+      - FMA:62955 # anatomical entity
+      - CARO:0000000 # anatomical entity
+      - SIO:001262 # anatomical entity
+      - STY:T029 # Body Location or Region
+      - STY:T030 # Body Space or Junction
     narrow_mappings:
-      - ZFA:0100000  # zebrafish anatomical entity
-      - FBbt:10000000  # fly anatomical entity
-      - EMAPA:0  # mouse anatomical entity
-      - MA:0000001  # mouse anatomical entity
-      - XAO:0000000  # frog anatomical entity
-      - WBbt:0000100  # c. elegans anatomical entity
-      - NCIT:C12219  # human anatomical entity
-      - GO:0110165  # cellular anatomical entity, also used directly in CL
-      - STY:T031  # Body Substance
+      - ZFA:0100000 # zebrafish anatomical entity
+      - FBbt:10000000 # fly anatomical entity
+      - EMAPA:0 # mouse anatomical entity
+      - MA:0000001 # mouse anatomical entity
+      - XAO:0000000 # frog anatomical entity
+      - WBbt:0000100 # c. elegans anatomical entity
+      - NCIT:C12219 # human anatomical entity
+      - GO:0110165 # cellular anatomical entity, also used directly in CL
+      - STY:T031 # Body Substance
     related_mappings:
-      - SNOMEDCT:123037004  # body structure
+      - SNOMEDCT:123037004 # body structure
     id_prefixes:
       - UBERON
       - GO
@@ -9303,7 +9366,7 @@ classes:
       - model_organism_database
 
   cellular component:
-    aliases: ['cell component', 'cell part']
+    aliases: ["cell component", "cell part"]
     is_a: anatomical entity
     description: >-
       A location in or around a cell
@@ -9322,7 +9385,7 @@ classes:
       - GO:0005575
       - SIO:001400
       - WIKIDATA:Q5058355
-       # Cell Component
+        # Cell Component
       - STY:T026
     broad_mappings:
       - WIKIDATA:P681
@@ -9351,9 +9414,9 @@ classes:
       - CL:0000000
       - SIO:010001
       - WIKIDATA:Q7868
-       # UMLS Semantic Type "Cell"
+        # UMLS Semantic Type "Cell"
       - STY:T025
-      - MESH:D002477  # cells
+      - MESH:D002477 # cells
     id_prefixes:
       - CL
       - PO
@@ -9380,7 +9443,7 @@ classes:
   gross anatomical structure:
     description: >-
       An anatomical structure that has more than one cell as a part.
-    aliases: ['tissue', 'organ']
+    aliases: ["tissue", "organ"]
     is_a: anatomical entity
     examples:
       - value: UBERON:0000955
@@ -9399,11 +9462,11 @@ classes:
       - UBERON:0010000
       - WIKIDATA:Q4936952
     narrow_mappings:
-       # UMLS Semantic Type "Body Part, Organ, or Organ Component"
+      # UMLS Semantic Type "Body Part, Organ, or Organ Component"
       - STY:T023
-       # UMLS Semantic Type "Tissue"
+        # UMLS Semantic Type "Tissue"
       - STY:T024
-       # Embryonic Structure
+        # Embryonic Structure
       - STY:T018
     id_prefixes:
       - UBERON
@@ -9414,13 +9477,12 @@ classes:
       - FAO
       # model organism anatomy ontologies that include gross structures (organs, tissues),
       # mirroring the model-organism prefixes on anatomical entity (see #1746)
-      - EMAPA  # mouse, e.g. subclasses of EMAPA:35949 "organ" and EMAPA:35868 "tissue"
-      - MA     # mouse adult anatomy
-      - ZFA    # zebrafish
-      - FBbt   # fly
-      - WBbt   # c. elegans
-      - XAO    # frog
-
+      - EMAPA # mouse, e.g. subclasses of EMAPA:35949 "organ" and EMAPA:35868 "tissue"
+      - MA # mouse adult anatomy
+      - ZFA # zebrafish
+      - FBbt # fly
+      - WBbt # c. elegans
+      - XAO # frog
 
   ## entity mixins
 
@@ -9504,14 +9566,14 @@ classes:
       - ZFIN
       - dictyBase
       - WB
-      - WormBase  # we have two prefixes here as wormbase supports WormBase:WBGene00000898
-       # and alliancegenome.org and identifiers.org supports WB:WBGene00000898.
+      - WormBase # we have two prefixes here as wormbase supports WormBase:WBGene00000898
+        # and alliancegenome.org and identifiers.org supports WB:WBGene00000898.
       - FB
       - RGD
       - SGD
       - PomBase
       - OMIM
-      - KEGG.GENES  ## org:gene
+      - KEGG.GENES ## org:gene
       - UMLS
       - Xenbase
       - AspGD
@@ -9523,7 +9585,6 @@ classes:
       - bioschemas:gene
     broad_mappings:
       - NCIT:C45822
-
 
   gene product mixin:
     description: >-
@@ -9574,7 +9635,7 @@ classes:
     in_subset:
       - model_organism_database
 
-   ## Genomic Classes
+    ## Genomic Classes
   nucleosome modification:
     is_a: biological entity
     description: >-
@@ -9622,8 +9683,8 @@ classes:
       - WIKIDATA:Q7243183
       - dcid:RNATranscript
     id_prefixes:
-      - ENSEMBL  # ENSEMBL:ENST for human
-      - FB       # FlyBase:FBtr
+      - ENSEMBL # ENSEMBL:ENST for human
+      - FB # FlyBase:FBtr
     in_subset:
       - model_organism_database
 
@@ -9639,7 +9700,7 @@ classes:
       - SIO:001390
 
   polypeptide:
-    aliases: ['amino acid entity']
+    aliases: ["amino acid entity"]
     is_a: biological entity
     description: >-
       A polypeptide is a molecular entity characterized by availability
@@ -9653,16 +9714,16 @@ classes:
     id_prefixes:
       - UniProtKB
       - PR
-      - ENSEMBL  # ENSEMBL:ENSP*
-      - FB       # FlyBase FBpp*
+      - ENSEMBL # ENSEMBL:ENSP*
+      - FB # FlyBase FBpp*
       - UMLS
     in_subset:
       - model_organism_database
     narrow_mappings:
-      - SO:0000104  # polypeptide defined in SO conflates protein and polypeptide
-       # Amino Acid, Peptide, or Protein
+      - SO:0000104 # polypeptide defined in SO conflates protein and polypeptide
+        # Amino Acid, Peptide, or Protein
       - STY:T116
-       # Amino Acid Sequence
+        # Amino Acid Sequence
       - STY:T087
 
   protein:
@@ -9675,8 +9736,8 @@ classes:
     id_prefixes:
       - UniProtKB
       - PR
-      - ENSEMBL  # ENSEMBL:ENSP*
-      - FB       # FlyBase FBpp*
+      - ENSEMBL # ENSEMBL:ENSP*
+      - FB # FlyBase FBpp*
       - UMLS
       - NCIT
       - MESH
@@ -9688,13 +9749,13 @@ classes:
       - SIO:010043
       - WIKIDATA:Q8054
     narrow_mappings:
-       # Enzyme
+      # Enzyme
       - STY:T126
-       # Receptor
+        # Receptor
       - STY:T192
 
   protein isoform:
-    aliases: ['proteoform']
+    aliases: ["proteoform"]
     is_a: protein
     description: >-
       Represents a protein that is a specific isoform of the canonical or
@@ -9705,7 +9766,7 @@ classes:
     mixins:
       - gene product isoform mixin
     id_prefixes:
-      - UniProtKB  # UniProtKB:([A-Z0-9]+-\d+)
+      - UniProtKB # UniProtKB:([A-Z0-9]+-\d+)
       - UNIPROT.ISOFORM
       - PR
       - ENSEMBL
@@ -9735,7 +9796,7 @@ classes:
       - MOD
       - UNIMOD
     exact_mappings:
-      - MOD:00000          # protein modification (PSI-MOD root)
+      - MOD:00000 # protein modification (PSI-MOD root)
     examples:
       - value: MOD:00696
         description: phosphorylated residue
@@ -9760,7 +9821,7 @@ classes:
       - chemical entity or gene or gene product
 
   nucleic acid sequence motif:
-    aliases: ['consensus sequence']
+    aliases: ["consensus sequence"]
     is_a: biological entity
     description: >-
       A linear nucleotide sequence pattern that is widespread and has, or is conjectured to have,
@@ -9780,8 +9841,8 @@ classes:
     mixins:
       - gene product mixin
     exact_mappings:
-      - CHEBI:33697        # ribonucleic acid
-      - WIKIDATA:Q11053    # RNA
+      - CHEBI:33697 # ribonucleic acid
+      - WIKIDATA:Q11053 # RNA
     id_prefixes:
       - RNACENTRAL
       - mirbase
@@ -9830,7 +9891,7 @@ classes:
       - model_organism_database
 
   siRNA:
-    aliases: ['small interfering RNA', 'RNAi']
+    aliases: ["small interfering RNA", "RNAi"]
     description: >-
       A small RNA molecule that is the product of a longer exogenous or
       endogenous dsRNA, which is either a bimolecular duplex or very long
@@ -9856,15 +9917,15 @@ classes:
       - has gene or gene product
 
   gene family:
-    aliases: ['orthogroup', 'protein family']
+    aliases: ["orthogroup", "protein family"]
     is_a: biological entity
     exact_mappings:
       - NCIT:C26004
       - WIKIDATA:Q2278983
     narrow_mappings:
-       # These term definitions focus only on proteins;
-       # the 'biolink:GeneFamily' term would be more inclusive
-       # to describe gene loci, non-coding RNA, etc.
+      # These term definitions focus only on proteins;
+      # the 'biolink:GeneFamily' term would be more inclusive
+      # to describe gene loci, non-coding RNA, etc.
       - SIO:001380
       - NCIT:C20130
       - WIKIDATA:Q417841
@@ -9877,8 +9938,8 @@ classes:
     id_prefixes:
       - PANTHER.FAMILY
       - HGNC.FAMILY
-      - FB        # FlyBase FBgg*
-      - interpro  # note: may be better to introduce a protein domain/family
+      - FB # FlyBase FBgg*
+      - interpro # note: may be better to introduce a protein domain/family
       - CATH
       - CDD
       - HAMAP
@@ -9891,8 +9952,8 @@ classes:
       - SUPFAM
       - TIGRFAM
       - CATH.SUPERFAMILY
-      - RFAM  ## RNAs only
-      - KEGG.ORTHOLOGY  ## aka KEGG.KO: K number
+      - RFAM ## RNAs only
+      - KEGG.ORTHOLOGY ## aka KEGG.KO: K number
       - EGGNOG
       - COG
     in_subset:
@@ -9926,7 +9987,7 @@ classes:
       - SIO:001079
     id_prefixes:
       - ZFIN
-      - FB    # FlyBase FBba*
+      - FB # FlyBase FBba*
     in_subset:
       - model_organism_database
 
@@ -9938,15 +9999,15 @@ classes:
       - ontology class
     description: >-
       A set of zero or more Alleles on a single instance of a Sequence[VMC]
-     #    slots:
-     #      - completeness
+    #    slots:
+    #      - completeness
     exact_mappings:
       - GENO:0000871
       - SO:0001024
       - VMC:Haplotype
 
   sequence variant:
-    aliases: ['allele']
+    aliases: ["allele"]
     local_names:
       agr: allele
     is_a: biological entity
@@ -9961,8 +10022,8 @@ classes:
         A single DBSNP rs ID could correspond to more than one sequence variants
         (e.g CIViC:1252 and CIViC:1253, two distinct BRCA2 alleles for rs28897743)
     exact_mappings:
-       # slightly broader semantics than SO:0001059 - 'sequence alteration'
-       # describes a sequence feature that may have 1..* sequence alterations
+      # slightly broader semantics than SO:0001059 - 'sequence alteration'
+      # describes a sequence feature that may have 1..* sequence alterations
       - WIKIDATA:Q15304597
     close_mappings:
       - dcid:Allele
@@ -9972,10 +10033,10 @@ classes:
       - SIO:010277
       - SO:0001060
     id_prefixes:
-      - CAID  # ClinGen Allele Registry
+      - CAID # ClinGen Allele Registry
       - CLINVAR
       - WIKIDATA
-       # - CIViC needs IRI mapping
+        # - CIViC needs IRI mapping
       - DBSNP
       - MGI
       - ZFIN
@@ -10012,7 +10073,8 @@ classes:
       - model_organism_database
 
   snv:
-    aliases: ['single nucleotide variant', 'single nucleotide polymorphism', 'snp']
+    aliases:
+      ["single nucleotide variant", "single nucleotide polymorphism", "snp"]
     is_a: sequence variant
     description: >-
       SNVs are single nucleotide positions in genomic DNA at
@@ -10021,7 +10083,7 @@ classes:
       - SO:0001483
 
   reagent targeted gene:
-    aliases: ['sequence targeting reagent']
+    aliases: ["sequence targeting reagent"]
     is_a: biological entity
     description: >-
       A gene altered in its expression level in the context of some
@@ -10036,20 +10098,20 @@ classes:
     in_subset:
       - model_organism_database
 
-   ## --------------------
-   ## Clinical
-   ## Attributes, Cohort,
-   ## Exposures & Outcomes
-   ## --------------------
+    ## --------------------
+    ## Clinical
+    ## Attributes, Cohort,
+    ## Exposures & Outcomes
+    ## --------------------
 
-   ## Clinical Attributes
+    ## Clinical Attributes
 
   clinical attribute:
     is_a: attribute
     description: >-
       Attributes relating to a clinical manifestation
     exact_mappings:
-       # Clinical Attribute
+      # Clinical Attribute
       - STY:T201
 
   clinical measurement:
@@ -10075,7 +10137,6 @@ classes:
       defined in the phenotypic abnormality sub-ontology, with respect
       to severity, laterality, and other aspects
     exact_mappings:
-
 
   clinical course:
     is_a: clinical attribute
@@ -10163,10 +10224,10 @@ classes:
     description: >-
       Attributes relating to a socioeconomic manifestation
 
-   ## Cohorts
+    ## Cohorts
 
   case:
-    aliases: ['patient', 'proband']
+    aliases: ["patient", "proband"]
     is_a: individual organism
     description: >-
       An individual (human) organism that has a patient role in some clinical context.
@@ -10186,22 +10247,22 @@ classes:
     exact_mappings:
       - WIKIDATA:Q1303415
     narrow_mappings:
-       # Professional or Occupational Group
+      # Professional or Occupational Group
       - STY:T097
-       # Family Group
+        # Family Group
       - STY:T099
-       # Age Group
+        # Age Group
       - STY:T100
-       # Patient or Disabled Group
+        # Patient or Disabled Group
       - STY:T101
 
-   ## Exposures
+    ## Exposures
 
   exposure event:
     is_a: named thing
     mixins:
       - ontology class
-    aliases: ['exposure', 'experimental condition']
+    aliases: ["exposure", "experimental condition"]
     slots:
       - timepoint
       - exposure type
@@ -10224,7 +10285,7 @@ classes:
     in_subset:
       - model_organism_database
 
-   # TODO - confirm that genomic backgrounds are exposures
+    # TODO - confirm that genomic backgrounds are exposures
   genomic background exposure:
     is_a: exposure event
     mixins:
@@ -10259,7 +10320,7 @@ classes:
       - NCIT:C16956
       - MPATH:596
     narrow_mappings:
-       # metastasis
+      # metastasis
       - NCIT:C19151
       - EFO:0009708
       - STY:T046
@@ -10303,9 +10364,9 @@ classes:
       A chemical exposure is an intake of a particular
       chemical entity.
     exact_mappings:
-       # this ECTO term is not visibly defined but
-       # the 9000000-series identifiers seems to be the
-       # numeric space of chemical exposure definitions
+      # this ECTO term is not visibly defined but
+      # the 9000000-series identifiers seems to be the
+      # numeric space of chemical exposure definitions
       - ECTO:9000000
       - SIO:001399
 
@@ -10317,16 +10378,16 @@ classes:
 
   drug exposure:
     is_a: chemical exposure
-    aliases: ['drug intake', 'drug dose', 'medication intake']
+    aliases: ["drug intake", "drug dose", "medication intake"]
     description: >-
       A drug exposure is an intake of a particular drug.
     broad_mappings:
-       # slightly broader than just drug effects on a biological system
+      # slightly broader than just drug effects on a biological system
       - SIO:001005
     exact_mappings:
       - ECTO:0000509
 
-   # TODO: deprecate?
+    # TODO: deprecate?
   drug to gene interaction exposure:
     description: >-
       drug to gene interaction exposure is a drug exposure is where the
@@ -10337,8 +10398,9 @@ classes:
       - gene grouping mixin
 
   treatment:
-    aliases: ['medical action', 'medical intervention']
-     # 'named thing' seems too generic here but not sure what applies better here
+    aliases:
+      ["medical action", "medical intervention"]
+      # 'named thing' seems too generic here but not sure what applies better here
     is_a: exposure event
     mixins:
       - chemical or drug or treatment
@@ -10357,7 +10419,7 @@ classes:
 
   biotic exposure:
     is_a: exposure event
-    aliases: ['viral exposure', 'bacterial exposure']
+    aliases: ["viral exposure", "bacterial exposure"]
     description: >-
       An external biotic exposure is an intake of (sometimes pathological)
       biological organisms (including viruses).
@@ -10407,7 +10469,7 @@ classes:
         range: socioeconomic attribute
         required: true
 
-   ## Outcomes
+    ## Outcomes
 
   outcome:
     mixin: true
@@ -10474,9 +10536,9 @@ classes:
       An general social or economic outcome, such as
       healthcare costs, utilization, etc., resulting from an exposure event
 
-   ## ------------
-   ## ASSOCIATIONS
-   ## ------------
+    ## ------------
+    ## ASSOCIATIONS
+    ## ------------
 
   association:
     is_a: entity
@@ -10490,7 +10552,7 @@ classes:
       - object
       - negated
       - qualifier
-      - qualifiers  # deprecated
+      - qualifiers # deprecated
       - publications
       - sources
       - has evidence of type
@@ -10506,7 +10568,7 @@ classes:
       - original object
       - subject feature name
       - object feature name
-       # denormalized fields
+        # denormalized fields
       - subject category
       - object category
       - subject closure
@@ -10543,25 +10605,25 @@ classes:
       - owl:Axiom
     examples:
       - object:
-          subject: NCBIGene:6910  # TBX5
+          subject: NCBIGene:6910 # TBX5
           predicate: biolink:acts_upstream_of
-          object: GO:1901846  # positive regulation of cell communication by electrical coupling involved in cardiac conduction
+          object: GO:1901846 # positive regulation of cell communication by electrical coupling involved in cardiac conduction
           category: biolink:Association
           knowledge_level: knowledge_assertion
           agent_type: manual_agent
           publications: ["PMID:15289437"]
       - object:
-          subject: NCBIGene:4357  # MPST
+          subject: NCBIGene:4357 # MPST
           predicate: biolink:enables
-          object: GO:0005515  # protein binding
+          object: GO:0005515 # protein binding
           category: biolink:Association
           knowledge_level: knowledge_assertion
           agent_type: manual_agent
           publications: ["PMID:32296183"]
       - object:
-          subject: CHEBI:114566  # 2-imino-N,8-dimethyl-5-oxo-1-propan-2-yl-3-dipyrido[1,2-d:3',4'-f]pyrimidinecarboxamide
+          subject: CHEBI:114566 # 2-imino-N,8-dimethyl-5-oxo-1-propan-2-yl-3-dipyrido[1,2-d:3',4'-f]pyrimidinecarboxamide
           predicate: biolink:subclass_of
-          object: CHEBI:38166  # organic heteropolycyclic compound
+          object: CHEBI:38166 # organic heteropolycyclic compound
           category: biolink:Association
           knowledge_level: knowledge_assertion
           agent_type: manual_agent
@@ -10588,7 +10650,6 @@ classes:
         range: chemical entity
       predicate:
         subproperty_of: associated with response to
-
 
   chemical entity assesses named thing association:
     deprecated: "true"
@@ -10691,7 +10752,7 @@ classes:
           gene implicated in genotype
 
   gene to gene association:
-    aliases: ['molecular or genetic interaction']
+    aliases: ["molecular or genetic interaction"]
     description: >-
       parent class for different kinds of gene-gene or gene product
       to gene product relationships. Includes homology and interaction.
@@ -10969,7 +11030,7 @@ classes:
       subject:
         range: cell line
 
-   # TODO: figure out what gives with subject range
+    # TODO: figure out what gives with subject range
   cell line to disease or phenotypic feature association:
     is_a: association
     mixins:
@@ -10980,8 +11041,8 @@ classes:
       the cell line is derived from an individual with that disease or phenotype.
     slot_usage:
       subject:
-         #        - range: cell line
-         #        - range: disease or phenotypic feature
+        #        - range: cell line
+        #        - range: disease or phenotypic feature
         range: disease or phenotypic feature
 
   chemical entity to entity association mixin:
@@ -11066,16 +11127,16 @@ classes:
         description: "the chemical element that is the target of the statement"
     examples:
       - object:
-          subject: CHEBI:85990  # panobinostat
+          subject: CHEBI:85990 # panobinostat
           predicate: biolink:has_metabolite
-          object: PUBCHEM.COMPOUND:155543741  # (E)-3-[4-[[2-(1a-methyl-2H-oxireno[2,3-b]indol-6b-yl)ethylamino]methyl]phenyl]-N-hydroxyprop-2-enamide
+          object: PUBCHEM.COMPOUND:155543741 # (E)-3-[4-[[2-(1a-methyl-2H-oxireno[2,3-b]indol-6b-yl)ethylamino]methyl]phenyl]-N-hydroxyprop-2-enamide
           category: biolink:ChemicalEntityToChemicalEntityAssociation
           knowledge_level: knowledge_assertion
           agent_type: manual_agent
           publications: ["PMID:22344701"]
           species_context_qualifier: NCBITaxon:9606
       - object:
-          subject: CHEBI:85973  # edoxaban
+          subject: CHEBI:85973 # edoxaban
           predicate: biolink:has_metabolite
           object: UNII:9O1PTP64VA
           category: biolink:ChemicalEntityToChemicalEntityAssociation
@@ -11165,44 +11226,44 @@ classes:
         description: "the disease or phenotype that is affected by the chemical"
     examples:
       - object:
-          subject: CHEBI:167638  # 2-hydroxy-5-{1-hydroxy-2-[(4-phenylbutan-2-yl)amino]ethyl}benzamide
+          subject: CHEBI:167638 # 2-hydroxy-5-{1-hydroxy-2-[(4-phenylbutan-2-yl)amino]ethyl}benzamide
           predicate: biolink:contraindicated_in
-          object: UMLS:C0271149  # Secondary angle-closure glaucoma
+          object: UMLS:C0271149 # Secondary angle-closure glaucoma
           category: biolink:ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation
           knowledge_level: knowledge_assertion
           agent_type: manual_validation_of_automated_agent
       - object:
-          subject: CHEBI:25879  # pentaerythritol tetranitrate
+          subject: CHEBI:25879 # pentaerythritol tetranitrate
           predicate: biolink:contraindicated_in
-          object: UMLS:C0234976  # Lowered convulsive threshold
+          object: UMLS:C0234976 # Lowered convulsive threshold
           category: biolink:ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation
           knowledge_level: knowledge_assertion
           agent_type: manual_validation_of_automated_agent
       - object:
-          subject: PUBCHEM.COMPOUND:134612761  # macimorelin
+          subject: PUBCHEM.COMPOUND:134612761 # macimorelin
           predicate: biolink:diagnoses
-          object: UMLS:C1720505  # Adult growth hormone deficiency
+          object: UMLS:C1720505 # Adult growth hormone deficiency
           category: biolink:ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation
           knowledge_level: knowledge_assertion
           agent_type: manual_validation_of_automated_agent
       - object:
-          subject: CHEBI:82720  # empagliflozin
+          subject: CHEBI:82720 # empagliflozin
           predicate: biolink:preventative_for_condition
-          object: UMLS:C1320716  # Cardiovascular event
+          object: UMLS:C1320716 # Cardiovascular event
           category: biolink:ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation
           knowledge_level: knowledge_assertion
           agent_type: manual_validation_of_automated_agent
       - object:
-          subject: CHEBI:6919  # mezlocillin
+          subject: CHEBI:6919 # mezlocillin
           predicate: biolink:treats
-          object: EFO:1001421  # Serratia Infections
+          object: EFO:1001421 # Serratia Infections
           category: biolink:ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation
           knowledge_level: knowledge_assertion
           agent_type: manual_validation_of_automated_agent
       - object:
-          subject: CHEBI:135361  # methscopolamine
+          subject: CHEBI:135361 # methscopolamine
           predicate: biolink:treats
-          object: MONDO:0005324  # seasonal allergic rhinitis
+          object: MONDO:0005324 # seasonal allergic rhinitis
           category: biolink:ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation
           knowledge_level: knowledge_assertion
           agent_type: manual_validation_of_automated_agent
@@ -11325,7 +11386,7 @@ classes:
         subproperty_of: related to at instance level
 
   named thing associated with likelihood of named thing association:
-     # TODO: better name
+    # TODO: better name
     description: >-
       An association in which the subject entity is linked to the likelihood
       of the object entity occurring, manifesting, or being observed.
@@ -11354,11 +11415,11 @@ classes:
       predicate:
         subproperty_of: associated with
       subject aspect qualifier:
-       # TODO: range
+        # TODO: range
       subject context qualifier:
         range: ontology class
       object aspect qualifier:
-       # TODO: range
+        # TODO: range
       object context qualifier:
         range: ontology class
 
@@ -11369,7 +11430,7 @@ classes:
       (e.g. impact of a chemical on the abundance, activity, structure, etc, of either participant in the interaction)
     is_a: association
     broad_mappings:
-      - SIO:001257    ## chemical-gene association
+      - SIO:001257 ## chemical-gene association
     slots:
       - has affinity
       - subject form or variant qualifier
@@ -11418,28 +11479,34 @@ classes:
         range: CausalMechanismQualifierEnum
     examples:
       - object:
-          subject: CHEBI:135370  # aprindine
+          subject: CHEBI:135370 # aprindine
           predicate: biolink:directly_physically_interacts_with
-          object: UniProtKB:P0DP23  # CALM1_HUMAN Calmodulin-1 (sprot)
+          object: UniProtKB:P0DP23 # CALM1_HUMAN Calmodulin-1 (sprot)
           category: biolink:ChemicalGeneInteractionAssociation
           knowledge_level: knowledge_assertion
           agent_type: manual_agent
       - object:
-          subject: CHEBI:4779  # emedastine
+          subject: CHEBI:4779 # emedastine
           predicate: biolink:directly_physically_interacts_with
-          object: NCBIGene:3269  # HRH1
+          object: NCBIGene:3269 # HRH1
           category: biolink:ChemicalGeneInteractionAssociation
           knowledge_level: knowledge_assertion
           agent_type: manual_agent
-          publications: ["http://www.accessdata.fda.gov/drugsatfda_docs/label/2003/20706slr011_emadine_lbl.pdf"]
+          publications:
+            [
+              "http://www.accessdata.fda.gov/drugsatfda_docs/label/2003/20706slr011_emadine_lbl.pdf",
+            ]
       - object:
-          subject: UNII:OP35X9610Y  # ACP-001
+          subject: UNII:OP35X9610Y # ACP-001
           predicate: biolink:interacts_with
-          object: NCBIGene:2690  # GHR
+          object: NCBIGene:2690 # GHR
           category: biolink:ChemicalGeneInteractionAssociation
           knowledge_level: knowledge_assertion
           agent_type: manual_agent
-          publications: ["https://www.accessdata.fda.gov/drugsatfda_docs/label/2021/761177Orig1s000lbl.pdf"]
+          publications:
+            [
+              "https://www.accessdata.fda.gov/drugsatfda_docs/label/2021/761177Orig1s000lbl.pdf",
+            ]
 
   macromolecular machine has substrate association:
     is_a: association
@@ -11475,16 +11542,16 @@ classes:
         range: chemical entity or protein or polypeptide
     examples:
       - object:
-          subject: NCBIGene:6530  # SLC6A2
+          subject: NCBIGene:6530 # SLC6A2
           predicate: biolink:has_substrate
-          object: CHEBI:5557  # guanethidine
+          object: CHEBI:5557 # guanethidine
           category: biolink:MacromolecularMachineHasSubstrateAssociation
           knowledge_level: knowledge_assertion
           agent_type: manual_agent
       - object:
-          subject: NCBIGene:50719  # Slc7a5
+          subject: NCBIGene:50719 # Slc7a5
           predicate: biolink:has_substrate
-          object: UNII:UID84303EL  # borofalan (10B)
+          object: UNII:UID84303EL # borofalan (10B)
           category: biolink:MacromolecularMachineHasSubstrateAssociation
           knowledge_level: knowledge_assertion
           agent_type: manual_agent
@@ -11608,9 +11675,9 @@ classes:
       - supporting documents
     examples:
       - object:
-          subject: PUBCHEM.COMPOUND:168290237  # 1-[4-(4-ethoxyphenyl)-4-(2H-tetrazol-5-yl)piperidin-1-yl]prop-2-en-1-one
+          subject: PUBCHEM.COMPOUND:168290237 # 1-[4-(4-ethoxyphenyl)-4-(2H-tetrazol-5-yl)piperidin-1-yl]prop-2-en-1-one
           predicate: biolink:affects
-          object: NCBIGene:200424  # TET3
+          object: NCBIGene:200424 # TET3
           category: biolink:ChemicalAffectsGeneAssociation
           knowledge_level: knowledge_assertion
           agent_type: automated_agent
@@ -11621,9 +11688,9 @@ classes:
           qualified_predicate: biolink:causes
           species_context_qualifier: NCBITaxon:9606
       - object:
-          subject: CHEBI:91447  # 4-methyl-3-[[1-methyl-6-(3-pyridinyl)-4-pyrazolo[3,4-d]pyrimidinyl]amino]-N-[3-(trifluoromethyl)phenyl]benzamide
+          subject: CHEBI:91447 # 4-methyl-3-[[1-methyl-6-(3-pyridinyl)-4-pyrazolo[3,4-d]pyrimidinyl]amino]-N-[3-(trifluoromethyl)phenyl]benzamide
           predicate: biolink:directly_physically_interacts_with
-          object: NCBIGene:3313  # HSPA9
+          object: NCBIGene:3313 # HSPA9
           category: biolink:ChemicalAffectsGeneAssociation
           knowledge_level: knowledge_assertion
           agent_type: automated_agent
@@ -11631,27 +11698,31 @@ classes:
           causal_mechanism_qualifier: binding
           species_context_qualifier: NCBITaxon:9606
       - object:
-          subject: UNII:5V9KLZ54CY  # Vinblastine
+          subject: UNII:5V9KLZ54CY # Vinblastine
           predicate: biolink:has_substrate
-          object: NCBIGene:5244  # ABCB4
+          object: NCBIGene:5244 # ABCB4
           category: biolink:ChemicalAffectsGeneAssociation
           knowledge_level: knowledge_assertion
           agent_type: manual_agent
           publications: ["PMID:20190787"]
           species_context_qualifier: NCBITaxon:9606
       - object:
-          subject: CHEMBL.COMPOUND:CHEMBL1743027  # GIRENTUXIMAB
+          subject: CHEMBL.COMPOUND:CHEMBL1743027 # GIRENTUXIMAB
           predicate: biolink:interacts_with
-          object: NCBIGene:768  # CA9
+          object: NCBIGene:768 # CA9
           category: biolink:ChemicalAffectsGeneAssociation
           knowledge_level: knowledge_assertion
           agent_type: manual_agent
-          publications: ["http://www.wilex.de/portfolio-english/rencarex/therapeutic-target/", "PMID:11941456"]
+          publications:
+            [
+              "http://www.wilex.de/portfolio-english/rencarex/therapeutic-target/",
+              "PMID:11941456",
+            ]
           species_context_qualifier: NCBITaxon:9606
       - object:
-          subject: CHEBI:3546  # cepharanthine
+          subject: CHEBI:3546 # cepharanthine
           predicate: biolink:affects
-          object: NCBIGene:4790  # NFKB1
+          object: NCBIGene:4790 # NFKB1
           category: biolink:ChemicalAffectsGeneAssociation
           knowledge_level: knowledge_assertion
           agent_type: manual_agent
@@ -11669,7 +11740,7 @@ classes:
       to the abundance/activity/processing effects covered by ChemicalAffectsGeneAssociation.
     is_a: association
     broad_mappings:
-      - SIO:001257    ## chemical-gene association
+      - SIO:001257 ## chemical-gene association
     slots:
       - subject form or variant qualifier
       - subject part qualifier
@@ -11724,17 +11795,17 @@ classes:
         range: organism taxon
     examples:
       - object:
-          subject: CHEBI:28748  # doxorubicin
+          subject: CHEBI:28748 # doxorubicin
           predicate: biolink:increases_sensitivity_to
-          object: NCBIGene:7157  # TP53
+          object: NCBIGene:7157 # TP53
           category: biolink:ChemicalGeneSensitivityAssociation
           knowledge_level: knowledge_assertion
           agent_type: manual_agent
           species_context_qualifier: NCBITaxon:9606
       - object:
-          subject: CHEBI:45863  # paclitaxel
+          subject: CHEBI:45863 # paclitaxel
           predicate: biolink:decreases_sensitivity_to
-          object: NCBIGene:5243  # ABCB1
+          object: NCBIGene:5243 # ABCB1
           category: biolink:ChemicalGeneSensitivityAssociation
           knowledge_level: knowledge_assertion
           agent_type: manual_agent
@@ -11746,25 +11817,30 @@ classes:
       of on its abundance, activity, localization, processing, transport, etc.)
     examples:
       - object:
-          subject: NCBIGene:6616  # SNAP25
+          subject: NCBIGene:6616 # SNAP25
           predicate: biolink:affects
-          object: CHEMBL.COMPOUND:CHEMBL3707322  # LETIBOTULINUMTOXINA
+          object: CHEMBL.COMPOUND:CHEMBL3707322 # LETIBOTULINUMTOXINA
           category: biolink:GeneAffectsChemicalAssociation
           knowledge_level: knowledge_assertion
           agent_type: manual_agent
-          publications: ["CHEMBL.DOCUMENT:CHEMBL2107839", "https://www.accessdata.fda.gov/drugsatfda_docs/label/2024/761225s000lbl.pdf"]
+          publications:
+            [
+              "CHEMBL.DOCUMENT:CHEMBL2107839",
+              "https://www.accessdata.fda.gov/drugsatfda_docs/label/2024/761225s000lbl.pdf",
+            ]
           subject_aspect_qualifier: hydrolysis
           subject_direction_qualifier: increased
           qualified_predicate: biolink:causes
           species_context_qualifier: NCBITaxon:9606
       - object:
-          subject: CHEBI:3172  # bretylium
+          subject: CHEBI:3172 # bretylium
           predicate: biolink:has_substrate
-          object: NCBIGene:6530  # SLC6A2
+          object: NCBIGene:6530 # SLC6A2
           category: biolink:GeneAffectsChemicalAssociation
           knowledge_level: knowledge_assertion
           agent_type: manual_agent
-          publications: ["ISBN:9780702034718 PP. 190-191", "PMID:18071295", "PMID:9142404"]
+          publications:
+            ["ISBN:9780702034718 PP. 190-191", "PMID:18071295", "PMID:9142404"]
           species_context_qualifier: NCBITaxon:9606
     is_a: association
     slots:
@@ -11907,7 +11983,7 @@ classes:
       subject:
         range: disease
         description: "disease class"
-        values_from: ['mondo', 'omim', 'orphanet', 'ncit', 'doid']
+        values_from: ["mondo", "omim", "orphanet", "ncit", "doid"]
         examples:
           - value: MONDO:0017314
             description: "Ehlers-Danlos syndrome, vascular type"
@@ -11936,7 +12012,6 @@ classes:
     defining_slots:
       - subject
       - object
-
 
   entity to outcome association mixin:
     description: >-
@@ -12044,7 +12119,7 @@ classes:
     slot_usage:
       object:
         range: phenotypic feature
-        values_from: ['upheno', 'hp', 'mp', 'wbphenotype']
+        values_from: ["upheno", "hp", "mp", "wbphenotype"]
         examples:
           - value: HP:0002487
             description: Hyperkinesis
@@ -12066,7 +12141,7 @@ classes:
     slot_usage:
       subject:
         range: phenotypic feature
-        values_from: ['upheno', 'hp', 'mp', 'wbphenotype']
+        values_from: ["upheno", "hp", "mp", "wbphenotype"]
         examples:
           - value: HP:0002487
             description: Hyperkinesis
@@ -12237,7 +12312,7 @@ classes:
         description: >-
           genotype that is associated with the phenotypic feature
 
-   # ie: smoke exposure to coughing phenotype? is this a denormalization?
+    # ie: smoke exposure to coughing phenotype? is this a denormalization?
   exposure event to phenotypic feature association:
     is_a: association
     defining_slots:
@@ -12366,7 +12441,6 @@ classes:
       - predicate
       - object
 
-
   behavior to behavioral feature association:
     description: >-
       An association between an mixture behavior and
@@ -12473,16 +12547,16 @@ classes:
       where variation in the gene is correlated with the disease.
     examples:
       - object:
-          subject: NCBIGene:60  # ACTB
+          subject: NCBIGene:60 # ACTB
           predicate: biolink:associated_with
-          object: MONDO:0017579  # Baraitser-Winter cerebrofrontofacial syndrome
+          object: MONDO:0017579 # Baraitser-Winter cerebrofrontofacial syndrome
           category: biolink:GeneToDiseaseAssociation
           knowledge_level: knowledge_assertion
           agent_type: manual_agent
       - object:
-          subject: UniProtKB:P11274-1  # breakpoint cluster region protein isoform h1 (human)
+          subject: UniProtKB:P11274-1 # breakpoint cluster region protein isoform h1 (human)
           predicate: biolink:associated_with
-          object: MONDO:0011996  # chronic myelogenous leukemia, BCR-ABL1 positive
+          object: MONDO:0011996 # chronic myelogenous leukemia, BCR-ABL1 positive
           category: biolink:GeneToDiseaseAssociation
           knowledge_level: knowledge_assertion
           agent_type: manual_agent
@@ -12581,16 +12655,16 @@ classes:
         subproperty_of: correlated with
     examples:
       - object:
-          subject: NCBIGene:8506  # CNTNAP1
+          subject: NCBIGene:8506 # CNTNAP1
           predicate: biolink:occurs_together_in_literature_with
-          object: MONDO:0004585  # polyhydramnios
+          object: MONDO:0004585 # polyhydramnios
           category: biolink:CorrelatedGeneToDiseaseAssociation
           knowledge_level: text_co_occurrence
           agent_type: data_analysis_pipeline
       - object:
-          subject: UniProtKB:Q2KHT3-1  # protein CLEC16A isoform h1 (human)
+          subject: UniProtKB:Q2KHT3-1 # protein CLEC16A isoform h1 (human)
           predicate: biolink:occurs_together_in_literature_with
-          object: MONDO:0005578  # arthritic joint disease
+          object: MONDO:0005578 # arthritic joint disease
           category: biolink:CorrelatedGeneToDiseaseAssociation
           knowledge_level: text_co_occurrence
           agent_type: data_analysis_pipeline
@@ -12731,7 +12805,7 @@ classes:
         description: >-
           the population that form the object of the association
       predicate:
-         # subproperty_of: ???
+        # subproperty_of: ???
         description: >-
           A relationship type that holds between the subject and object
           populations. Standard mereological relations can be used.
@@ -13163,14 +13237,13 @@ classes:
       object:
         range: molecular activity
 
-
   gene to go term association:
     description: >-
       A functional association between a gene (or gene product or
       macromolecular complex) and a Gene Ontology (GO) term describing the
       molecular function, biological process, or cellular component in which
       it participates.
-    aliases: ['functional association']
+    aliases: ["functional association"]
     is_a: functional association
     exact_mappings:
       - WBVocab:Gene-GO-Association
@@ -13198,66 +13271,66 @@ classes:
             description: kinase activity
     examples:
       - object:
-          subject: NCBIGene:25595  # Map2
+          subject: NCBIGene:25595 # Map2
           predicate: biolink:active_in
-          object: GO:0015630  # microtubule cytoskeleton
+          object: GO:0015630 # microtubule cytoskeleton
           category: biolink:GeneToGoTermAssociation
           knowledge_level: prediction
           agent_type: manual_validation_of_automated_agent
       - object:
-          subject: NCBIGene:20502  # Slc16a2
+          subject: NCBIGene:20502 # Slc16a2
           predicate: biolink:acts_upstream_of
-          object: GO:0042403  # thyroid hormone metabolic process
+          object: GO:0042403 # thyroid hormone metabolic process
           category: biolink:GeneToGoTermAssociation
           knowledge_level: prediction
           agent_type: manual_validation_of_automated_agent
       - object:
-          subject: NCBIGene:308911  # Rrp8
+          subject: NCBIGene:308911 # Rrp8
           predicate: biolink:acts_upstream_of_negative_effect
-          object: GO:1903450  # regulation of G1 to G0 transition
+          object: GO:1903450 # regulation of G1 to G0 transition
           category: biolink:GeneToGoTermAssociation
           knowledge_level: prediction
           agent_type: manual_validation_of_automated_agent
       - object:
-          subject: NCBIGene:101148  # Samtor
+          subject: NCBIGene:101148 # Samtor
           predicate: biolink:acts_upstream_of_or_within
-          object: GO:0031669  # cellular response to nutrient levels
+          object: GO:0031669 # cellular response to nutrient levels
           category: biolink:GeneToGoTermAssociation
           knowledge_level: prediction
           agent_type: manual_validation_of_automated_agent
       - object:
-          subject: NCBIGene:18072  # Nhlh2
+          subject: NCBIGene:18072 # Nhlh2
           predicate: biolink:acts_upstream_of_or_within_positive_effect
-          object: GO:0006915  # apoptotic process
+          object: GO:0006915 # apoptotic process
           category: biolink:GeneToGoTermAssociation
           knowledge_level: knowledge_assertion
           agent_type: manual_agent
           publications: ["PMID:17573818"]
       - object:
-          subject: NCBIGene:12168  # Bmpr2
+          subject: NCBIGene:12168 # Bmpr2
           predicate: biolink:colocalizes_with
-          object: GO:0005901  # caveola
+          object: GO:0005901 # caveola
           category: biolink:GeneToGoTermAssociation
           knowledge_level: prediction
           agent_type: automated_agent
       - object:
-          subject: NCBIGene:303888  # Osbpl11
+          subject: NCBIGene:303888 # Osbpl11
           predicate: biolink:contributes_to
-          object: GO:0160270  # phosphatidylserine-phosphatidylinositol-4-phosphate exchange activity
+          object: GO:0160270 # phosphatidylserine-phosphatidylinositol-4-phosphate exchange activity
           category: biolink:GeneToGoTermAssociation
           knowledge_level: prediction
           agent_type: manual_validation_of_automated_agent
       - object:
-          subject: NCBIGene:12193  # Zfp36l2
+          subject: NCBIGene:12193 # Zfp36l2
           predicate: biolink:enables
-          object: GO:0046872  # metal ion binding
+          object: GO:0046872 # metal ion binding
           category: biolink:GeneToGoTermAssociation
           knowledge_level: prediction
           agent_type: automated_agent
       - object:
-          subject: NCBIGene:258177  # Or4c117
+          subject: NCBIGene:258177 # Or4c117
           predicate: biolink:located_in
-          object: GO:0016020  # membrane
+          object: GO:0016020 # membrane
           category: biolink:GeneToGoTermAssociation
           knowledge_level: prediction
           agent_type: automated_agent
@@ -13280,30 +13353,30 @@ classes:
       - object
     examples:
       - object:
-          subject: CHEBI:50681  # methotrexate(2-)
+          subject: CHEBI:50681 # methotrexate(2-)
           predicate: biolink:in_clinical_trials_for
-          object: MONDO:0971091  # acute megakaryoblastic leukemia in adult
+          object: MONDO:0971091 # acute megakaryoblastic leukemia in adult
           category: biolink:EntityToDiseaseAssociation
           knowledge_level: knowledge_assertion
           agent_type: manual_agent
       - object:
-          subject: CHEBI:9150  # simvastatin
+          subject: CHEBI:9150 # simvastatin
           predicate: biolink:treats
-          object: UMLS:C0520863  # Diastolic dysfunction
+          object: UMLS:C0520863 # Diastolic dysfunction
           category: biolink:EntityToDiseaseAssociation
           knowledge_level: knowledge_assertion
           agent_type: manual_agent
       - object:
-          subject: CHEBI:28077  # rifampicin
+          subject: CHEBI:28077 # rifampicin
           predicate: biolink:applied_to_treat
-          object: MONDO:0005011  # Crohn disease
+          object: MONDO:0005011 # Crohn disease
           category: biolink:EntityToDiseaseAssociation
           knowledge_level: observation
           agent_type: manual_validation_of_automated_agent
       - object:
-          subject: RXCUI:1367436  # 21 DAY ethinyl estradiol 0.000625 MG/HR / etonogestrel 0.005 MG/HR Vaginal System
+          subject: RXCUI:1367436 # 21 DAY ethinyl estradiol 0.000625 MG/HR / etonogestrel 0.005 MG/HR Vaginal System
           predicate: biolink:contraindicated_in
-          object: MONDO:0004981  # atrial fibrillation
+          object: MONDO:0004981 # atrial fibrillation
           category: biolink:EntityToDiseaseAssociation
           knowledge_level: knowledge_assertion
           agent_type: manual_validation_of_automated_agent
@@ -13326,30 +13399,30 @@ classes:
       - object
     examples:
       - object:
-          subject: GTOPDB:13663  # ponsegromab
+          subject: GTOPDB:13663 # ponsegromab
           predicate: biolink:in_clinical_trials_for
-          object: NCIT:C146753  # Fatigue, CTCAE 5.0
+          object: NCIT:C146753 # Fatigue, CTCAE 5.0
           category: biolink:EntityToPhenotypicFeatureAssociation
           knowledge_level: knowledge_assertion
           agent_type: manual_agent
       - object:
-          subject: CHEBI:6339  # etoricoxib
+          subject: CHEBI:6339 # etoricoxib
           predicate: biolink:treats
-          object: HP:0001822  # Hallux valgus
+          object: HP:0001822 # Hallux valgus
           category: biolink:EntityToPhenotypicFeatureAssociation
           knowledge_level: knowledge_assertion
           agent_type: manual_agent
       - object:
-          subject: CHEBI:78538  # tafamidis
+          subject: CHEBI:78538 # tafamidis
           predicate: biolink:applied_to_treat
-          object: MONDO:0005294  # peripheral vascular disease
+          object: MONDO:0005294 # peripheral vascular disease
           category: biolink:EntityToPhenotypicFeatureAssociation
           knowledge_level: observation
           agent_type: manual_validation_of_automated_agent
       - object:
-          subject: RXCUI:617430  # amoxicillin 80 MG/ML / clavulanate 11.4 MG/ML Oral Suspension
+          subject: RXCUI:617430 # amoxicillin 80 MG/ML / clavulanate 11.4 MG/ML Oral Suspension
           predicate: biolink:contraindicated_in
-          object: HP:0001410  # Decreased liver function
+          object: HP:0001410 # Decreased liver function
           category: biolink:EntityToPhenotypicFeatureAssociation
           knowledge_level: knowledge_assertion
           agent_type: manual_validation_of_automated_agent
@@ -13360,9 +13433,9 @@ classes:
             - "babf3b8d-f2ce-407d-9407-728c45eb19ee"
             - "d74e93e5-11c9-434e-a60c-4a4f911dd0f8"
 
-   ## -----------------
-   ## SEQUENCE FEATURES
-   ## -----------------
+    ## -----------------
+    ## SEQUENCE FEATURES
+    ## -----------------
 
   sequence association:
     is_a: association
@@ -13377,11 +13450,11 @@ classes:
       chromosome region or information entity such as a contig.
     slot_usage:
       subject:
-        aliases: ['sequence feature']
+        aliases: ["sequence feature"]
         range: nucleic acid entity
       object:
-        aliases: ['reference']
-        range: nucleic acid entity   # typically a chromosome use monochrom
+        aliases: ["reference"]
+        range: nucleic acid entity # typically a chromosome use monochrom
       predicate:
         subproperty_of: has sequence location
     slots:
@@ -13406,7 +13479,7 @@ classes:
       subject:
         range: nucleic acid entity
       object:
-        range: nucleic acid entity   # typically a chromosome
+        range: nucleic acid entity # typically a chromosome
     exact_mappings:
       - CHADO:feature_relationship
 
@@ -13488,7 +13561,7 @@ classes:
         range: anatomical entity
 
   anatomical entity has part anatomical entity association:
-     # schema: gocam
+    # schema: gocam
     is_a: anatomical entity to anatomical entity association
     description: >-
       A relationship between two anatomical entities where the relationship
@@ -13513,7 +13586,7 @@ classes:
         subproperty_of: has part
 
   anatomical entity part of anatomical entity association:
-     # schema: gocam
+    # schema: gocam
     is_a: anatomical entity to anatomical entity association
     description: >-
       A relationship between two anatomical entities where the relationship
@@ -13687,9 +13760,7 @@ classes:
         description: >-
           predicate describing the relationship between the taxon and the environment
 
-
 enums:
-
   BinaryRelationEnum:
     description: >-
       Mathematical binary relation qualifiers of a value in its context.
@@ -14141,6 +14212,27 @@ enums:
         is_a: molecular_modification
       carboxylation:
         is_a: molecular_modification
+
+  StatisticalSignificanceQualifierEnum:
+    description: >-
+      An enumeration used as a qualifier to indicate whether an association's
+      supporting evidence has been assessed for statistical significance and,
+      if so, whether it meets the stated significance threshold.
+    permissible_values:
+      significant:
+        description: >-
+          The association's supporting evidence meets the statistical-significance
+          threshold (e.g., p-value at or below the stated alpha, after correction).
+      not_significant:
+        description: >-
+          The association's supporting evidence was assessed for statistical
+          significance and does not meet the stated threshold.
+      inconclusive:
+        description: >-
+          The association's supporting evidence was assessed but the result is
+          borderline or ambiguous (e.g., p-value near the threshold, or conflicting
+          results across multiple-testing correction methods), so a clear
+          significant / not-significant determination cannot be made.
 
   CausalMechanismQualifierEnum:
     description: >-
@@ -14710,8 +14802,7 @@ enums:
         description: >-
           chemical entity is available over the counter without a prescription.
       "prescription":
-        description:
-          chemical entity is available by prescription.
+        description: chemical entity is available by prescription.
 
   DrugDeliveryEnum:
     description: >-
@@ -14803,10 +14894,10 @@ enums:
           hospitalization, or the development of drug dependency or drug abuse.
       "suspected_adverse_reaction":
         description: >-
-           means any adverse event for which there is a reasonable possibility that the drug caused the adverse event.
-           For the purposes of IND safety reporting, 'reasonable possibility' means there is evidence to suggest a
-           causal relationship between the drug and the adverse event. Suspected adverse reaction implies a lesser
-           degree of certainty about causality than adverse reaction, which means any adverse event caused by a drug.
+          means any adverse event for which there is a reasonable possibility that the drug caused the adverse event.
+          For the purposes of IND safety reporting, 'reasonable possibility' means there is evidence to suggest a
+          causal relationship between the drug and the adverse event. Suspected adverse reaction implies a lesser
+          degree of certainty about causality than adverse reaction, which means any adverse event caused by a drug.
       "unexpected_adverse_event":
         description: >-
           An adverse event or suspected adverse reaction is considered 'unexpected' if it is not listed in the
@@ -14937,7 +15028,7 @@ enums:
       observation, and not-provided.
     permissible_values:
       knowledge_assertion:
-        aliases: ['assertion']
+        aliases: ["assertion"]
         description: >-
           A statement of purported fact that is put forth by an agent as true,
           based on assessment of direct evidence. Assertions are likely but not
@@ -14948,7 +15039,7 @@ enums:
             by some agent to support a confidence assertion of truth. Our certainty
             in this truth is not absolute, but is typically higher than for Predictions.
       logical_entailment:
-        aliases: ['deductive_inference']
+        aliases: ["deductive_inference"]
         description: >-
           A statement reporting a conclusion that follows logically from premises
           representing established facts or knowledge assertions (e.g. fingernail
@@ -14963,7 +15054,7 @@ enums:
             across paths through a graph constructed from transitive relationships, or sets of
             relationships that support property chain inference.
       prediction:
-        aliases: ['hypothesis']
+        aliases: ["hypothesis"]
         description: >-
           A statement of a possible fact based on probabilistic forms of reasoning over
           more indirect forms of evidence, that lead to more speculative conclusions.
