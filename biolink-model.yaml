@@ -2161,6 +2161,21 @@ slots:
     in_subset:
       - translator_minimal
 
+  statistical significance qualifier:
+    is_a: statement qualifier
+    description: >-
+      A statement qualifier categorizing an association's evidence by
+      statistical significance, banded against conventional p-value (or
+      adjusted p-value) thresholds. A coarse categorical companion to the
+      numeric 'p value' and 'adjusted p value' slots.
+    examples:
+      - value: significant
+      - value: not_significant
+      - value: inconclusive
+    range: StatisticalSignificanceQualifierEnum
+    in_subset:
+      - translator_minimal
+
   qualifiers:
     deprecated: "true"
     description: >-
@@ -14141,6 +14156,27 @@ enums:
         is_a: molecular_modification
       carboxylation:
         is_a: molecular_modification
+
+  StatisticalSignificanceQualifierEnum:
+    description: >-
+      Qualifies an association by the magnitude of its statistical-significance
+      statistic (raw p-value, multiple-testing-adjusted p-value, or q-value/FDR),
+      banded against two conventional thresholds: alpha = 0.05 and a wider
+      'suggestive' threshold = 0.10. The numeric value itself lives in the
+      'p value' and 'adjusted p value' slots.
+    permissible_values:
+      significant:
+        description: >-
+          Significance statistic <= 0.05 (e.g. p-value or adjusted p-value at or
+          below alpha), indicating the association is unlikely to be due to chance.
+      not_significant:
+        description: >-
+          Significance statistic > 0.10, indicating no statistically credible
+          evidence for the association at either threshold.
+      inconclusive:
+        description: >-
+          Significance statistic in (0.05, 0.10] — a borderline 'trend' that is
+          suggestive of an association but does not meet the 0.05 threshold.
 
   CausalMechanismQualifierEnum:
     description: >-
