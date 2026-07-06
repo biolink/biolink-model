@@ -2164,14 +2164,22 @@ slots:
   statistical significance qualifier:
     is_a: statement qualifier
     description: >-
-      A statement qualifier categorizing an association's evidence by
-      statistical significance, banded against conventional p-value (or
-      adjusted p-value) thresholds. A coarse categorical companion to the
-      numeric 'p value' and 'adjusted p value' slots.
+      A statement qualifier that categorizes an association's evidence by
+      statistical significance into coarse bands, as a categorical companion to
+      the numeric 'p value' and 'adjusted p value' slots. It applies only to
+      assessments derived from a quantitative significance statistic (raw p-value,
+      multiple-testing-adjusted p-value, or q-value/FDR), and MUST NOT encode
+      ordinal study-stage, evidence-tier, or confidence-level labels (e.g. clinical
+      trial phases) that are not statistical-significance statements.
+    notes:
+      - Enforced via a class rule on `association`: this qualifier may only be set when 'p value' or 'adjusted p value' is also populated (the numeric slots remain authoritative).
+      - Bands use conventional defaults (alpha = 0.05); when a source's cutoffs differ, place the value in the closest band and always also populate the numeric slot(s).
     examples:
+      - value: very_strongly_significant
+      - value: strongly_significant
       - value: significant
+      - value: suggestive
       - value: not_significant
-      - value: inconclusive
     range: StatisticalSignificanceQualifierEnum
     in_subset:
       - translator_minimal
@@ -10535,6 +10543,7 @@ classes:
       - retrieval source ids
       - p value
       - adjusted p value
+      - statistical significance qualifier
       - supporting text
       - has supporting studies
       - update date
@@ -10552,6 +10561,19 @@ classes:
         inlined_as_list: true
       has supporting studies:
         inlined: true
+    rules:
+      - description: >-
+          A statistical significance qualifier may only be set when at least one
+          numeric p-value slot (p value or adjusted p value) is also populated.
+        preconditions:
+          slot_conditions:
+            statistical significance qualifier: {}
+        postconditions:
+          any_of:
+            - slot_conditions:
+                p value: {}
+            - slot_conditions:
+                adjusted p value: {}
     exact_mappings:
       - OBAN:association
       - rdf:Statement
@@ -14159,24 +14181,38 @@ enums:
 
   StatisticalSignificanceQualifierEnum:
     description: >-
-      Qualifies an association by the magnitude of its statistical-significance
-      statistic (raw p-value, multiple-testing-adjusted p-value, or q-value/FDR),
-      banded against two conventional thresholds: alpha = 0.05 and a wider
-      'suggestive' threshold = 0.10. The numeric value itself lives in the
-      'p value' and 'adjusted p value' slots.
+      An enumeration used as a qualifier to categorize the statistical significance
+      of an association's supporting evidence into coarse bands (e.g., very strongly
+      significant, strongly significant, significant, suggestive, not significant),
+      conventionally anchored to alpha = 0.05. The underlying numeric value lives in
+      the 'p value' and 'adjusted p value' slots, which remain authoritative.
     permissible_values:
+      very_strongly_significant:
+        description: >-
+          A significance band denoting that the association meets the most stringent
+          conventional threshold (significance statistic at or below 0.001), such that,
+          under the null hypothesis of no association, an effect at least this large would
+          be expected in no more than about one in a thousand comparable studies.
+      strongly_significant:
+        description: >-
+          A significance band denoting that the association meets a stringent conventional
+          threshold (significance statistic at or below 0.01).
       significant:
         description: >-
-          Significance statistic <= 0.05 (e.g. p-value or adjusted p-value at or
-          below alpha), indicating the association is unlikely to be due to chance.
+          A significance band denoting that the association meets the standard conventional
+          threshold (significance statistic at or below alpha = 0.05), such that, under the
+          null hypothesis, an effect at least this large would be expected in no more than
+          about one in twenty comparable studies.
+      suggestive:
+        description: >-
+          A significance band denoting a borderline result (significance statistic above
+          0.05 but at or below roughly 0.10, sometimes extended to 0.20 in fields such as
+          genetics) that is suggestive of, but does not conclusively support, an association.
       not_significant:
         description: >-
-          Significance statistic > 0.10, indicating no statistically credible
-          evidence for the association at either threshold.
-      inconclusive:
-        description: >-
-          Significance statistic in (0.05, 0.10] — a borderline 'trend' that is
-          suggestive of an association but does not meet the 0.05 threshold.
+          A significance band denoting that the association does not meet the conventional
+          threshold (significance statistic above 0.05), such that there is insufficient
+          evidence to rule out the null hypothesis of no association.
 
   CausalMechanismQualifierEnum:
     description: >-
