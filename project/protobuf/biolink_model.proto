@@ -169,6 +169,7 @@ message AnatomicalEntityHasPartAnatomicalEntityAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+  statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -222,6 +223,7 @@ message AnatomicalEntityPartOfAnatomicalEntityAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+  statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -275,6 +277,7 @@ message AnatomicalEntityToAnatomicalEntityOntogenicAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+  statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -368,6 +371,7 @@ message Association
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+  statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -500,6 +504,7 @@ message BehaviorToBehavioralFeatureAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+  statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -683,6 +688,7 @@ message BiologicalProcessOrActivityToAnatomicalEntityAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+  statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -735,6 +741,7 @@ message BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+  statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -788,6 +795,7 @@ message BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+  statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -996,6 +1004,7 @@ message CaseToDiseaseAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+  statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -1050,6 +1059,7 @@ message CaseToGeneAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+  statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -1105,6 +1115,7 @@ message CaseToPhenotypicFeatureAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+  statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -1169,6 +1180,7 @@ message CaseToVariantAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+  statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -1224,6 +1236,7 @@ message CausalGeneToDiseaseAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+  statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -1334,6 +1347,7 @@ message CellLineAsAModelOfDiseaseAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+  statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -1397,6 +1411,7 @@ message CellLineToDiseaseOrPhenotypicFeatureAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+  statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -1503,6 +1518,7 @@ message ChemicalAffectsBiologicalEntityAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+  statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -1571,6 +1587,7 @@ message ChemicalAffectsGeneAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+  statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -1676,6 +1693,7 @@ message ChemicalEntityAssessesNamedThingAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+  statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -1729,6 +1747,7 @@ message ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+  statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -1783,6 +1802,7 @@ message ChemicalEntityToBiologicalProcessAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+  statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -1840,6 +1860,7 @@ message ChemicalEntityToChemicalDerivationAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+  statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -1895,6 +1916,7 @@ message ChemicalEntityToChemicalEntityAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+  statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -1951,6 +1973,7 @@ message ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+  statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -2009,6 +2032,7 @@ message ChemicalEntityToPathwayAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+  statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -2095,6 +2119,7 @@ message ChemicalGeneInteractionAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+  statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -2164,6 +2189,7 @@ message ChemicalGeneSensitivityAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+  statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -2272,6 +2298,7 @@ message ChemicalOrDrugOrTreatmentAdverseEventAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+  statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -2336,6 +2363,7 @@ message ChemicalOrDrugOrTreatmentSideEffectAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+  statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -2399,6 +2427,7 @@ message ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+  statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -2928,6 +2957,7 @@ message ContributorAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+  statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -2982,6 +3012,7 @@ message CorrelatedGeneToDiseaseAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+  statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -3233,6 +3264,7 @@ message DiseaseAssociatedWithResponseToChemicalEntityAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+  statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -3349,6 +3381,7 @@ message DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+  statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -3403,6 +3436,7 @@ message DiseaseOrPhenotypicFeatureToLocationAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+  statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -3454,6 +3488,7 @@ message DiseaseToDiseaseAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+  statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -3517,6 +3552,7 @@ message DiseaseToExposureEventAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+  statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -3568,6 +3604,7 @@ message DiseaseToPhenotypicFeatureAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+  statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -3741,6 +3778,7 @@ message DrugToGeneAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+  statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -3827,6 +3865,7 @@ message DruggableGeneToDiseaseAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+  statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -3895,6 +3934,7 @@ message EntityToDiseaseAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+  statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -3952,6 +3992,7 @@ message EntityToPhenotypicFeatureAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+  statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -4220,6 +4261,7 @@ message ExonToTranscriptRelationship
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+  statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -4308,6 +4350,7 @@ message ExposureEventToOutcomeAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+  statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -4362,6 +4405,7 @@ message ExposureEventToPhenotypicFeatureAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+  statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -4500,6 +4544,7 @@ message FunctionalAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+  statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -4604,6 +4649,7 @@ message GeneAffectsChemicalAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+  statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -4673,6 +4719,7 @@ message GeneAsAModelOfDiseaseAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+  statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -4763,6 +4810,7 @@ message GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+  statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -4816,6 +4864,7 @@ message GeneHasVariantThatContributesToDiseaseAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+  statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -4877,6 +4926,7 @@ message GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+  statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -4929,6 +4979,7 @@ message GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+  statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -4982,6 +5033,7 @@ message GeneRegulatesGeneAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+  statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -5040,6 +5092,7 @@ message GeneToDiseaseAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+  statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -5100,6 +5153,7 @@ message GeneToExpressionSiteAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+  statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -5156,6 +5210,7 @@ message GeneToGeneAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+  statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -5222,6 +5277,7 @@ message GeneToGeneCoexpressionAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+  statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -5292,6 +5348,7 @@ message GeneToGeneFamilyAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+  statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -5345,6 +5402,7 @@ message GeneToGeneHomologyAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+  statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -5411,6 +5469,7 @@ message GeneToGeneProductRelationship
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+  statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -5465,6 +5524,7 @@ message GeneToGoTermAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+  statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -5518,6 +5578,7 @@ message GeneToPathwayAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+  statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -5570,6 +5631,7 @@ message GeneToPhenotypicFeatureAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+  statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -5726,6 +5788,7 @@ message GenomicSequenceLocalization
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+  statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -5812,6 +5875,7 @@ message GenotypeAsAModelOfDiseaseAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+  statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -5872,6 +5936,7 @@ message GenotypeToDiseaseAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+  statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -5932,6 +5997,7 @@ message GenotypeToGeneAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+  statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -5985,6 +6051,7 @@ message GenotypeToGenotypePartAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+  statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -6039,6 +6106,7 @@ message GenotypeToPhenotypicFeatureAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+  statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -6103,6 +6171,7 @@ message GenotypeToVariantAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+  statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -6423,6 +6492,7 @@ message InformationContentEntityToNamedThingAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+  statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -6617,6 +6687,7 @@ message MacromolecularMachineHasSubstrateAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+  statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -6686,6 +6757,7 @@ message MacromolecularMachineToBiologicalProcessAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+  statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -6740,6 +6812,7 @@ message MacromolecularMachineToCellularComponentAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+  statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -6794,6 +6867,7 @@ message MacromolecularMachineToMolecularActivityAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+  statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -6894,6 +6968,7 @@ message MaterialSampleDerivationAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+  statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -6950,6 +7025,7 @@ message MaterialSampleToDiseaseOrPhenotypicFeatureAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+  statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -7059,6 +7135,7 @@ message MolecularActivityToChemicalEntityAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+  statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -7112,6 +7189,7 @@ message MolecularActivityToMolecularActivityAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+  statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -7164,6 +7242,7 @@ message MolecularActivityToPathwayAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+  statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -7316,6 +7395,7 @@ message NamedThingAssociatedWithLikelihoodOfNamedThingAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+  statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -7591,6 +7671,7 @@ message OrganismTaxonToOrganismTaxonInteraction
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+  statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -7645,6 +7726,7 @@ message OrganismTaxonToOrganismTaxonSpecialization
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+  statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -7699,6 +7781,7 @@ message OrganismToOrganismAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+  statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -7753,6 +7836,7 @@ message OrganismalEntityAsAModelOfDiseaseAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+  statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -7811,6 +7895,7 @@ message PairwiseGeneToGeneInteraction
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+  statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -7876,6 +7961,7 @@ message PairwiseMolecularInteraction
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+  statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -8179,6 +8265,7 @@ message PhenotypicFeatureToDiseaseAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+  statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -8245,6 +8332,7 @@ message PhenotypicFeatureToPhenotypicFeatureAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+  statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -8510,6 +8598,7 @@ message PopulationToPopulationAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+  statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -8669,6 +8758,7 @@ message ProcessRegulatesProcessAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+  statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -8902,6 +8992,7 @@ message ReactionToCatalystAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+  statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -8959,6 +9050,7 @@ message ReactionToParticipantAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+  statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -9183,6 +9275,7 @@ message SequenceAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+  statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -9234,6 +9327,7 @@ message SequenceFeatureRelationship
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+  statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -9606,6 +9700,7 @@ message TaxonToTaxonAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+  statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -9720,6 +9815,7 @@ message TranscriptToGeneRelationship
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+  statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -9835,6 +9931,7 @@ message VariantAsAModelOfDiseaseAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+  statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -9895,6 +9992,7 @@ message VariantToDiseaseAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+  statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -9956,6 +10054,7 @@ message VariantToGeneAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+  statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -10009,6 +10108,7 @@ message VariantToGeneExpressionAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+  statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -10067,6 +10167,7 @@ message VariantToPhenotypicFeatureAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+  statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -10131,6 +10232,7 @@ message VariantToPopulationAssociation
  repeated  retrievalSource retrievalSourceIds = 0
   float pValue = 0
   float adjustedPValue = 0
+  statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
