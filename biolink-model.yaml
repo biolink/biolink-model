@@ -2161,6 +2161,16 @@ slots:
     in_subset:
       - translator_minimal
 
+  association_basis_qualifier: 
+    is_a: statement qualifier
+    description: >-
+      A statement-level qualifier used with the associated with predicate (or one of its subpredicates) to indicate the biological,
+      clinical, or statistical basis of the asserted association. Use this qualifier when no more specific predicate exists to capture
+      the intended meaning of the association. 
+    range: AssociationBasisEnum      
+    in_subset:
+      - translator_minimal
+      
   qualifiers:
     deprecated: "true"
     description: >-
@@ -2412,15 +2422,12 @@ slots:
 
   associated with:
     is_a: related to at instance level
-    description: >-
-      Expresses a relationship between two named things where the relationship is typically generated statistically
-      (though not in all cases), and is weaker than its child, 'correlated with', but stronger than its parent,
-      'related to'. This relationship holds between two concepts represented by variables for which a statistical
-      dependence is demonstrated.  E.g. the statement “Atrial Fibrillation (Afib) is associated with Myocardial
-      Infraction (MI)” asserts that having Afib is not statistically independent from whether a patient
-      will also have MI. Note that in Translator associations, the subject and object concepts may map exactly to
-      the statistical variables, or represent related entities for which the variables serve as proxies in an
-      Association (e.g. diseases, chemical entities or processes).
+    description: >- 
+      Indicates a non-causal association between two entities. Such associations are most commonly established through
+      statistical analysis demonstrating that observations of the entities are not statistically independent, but may also 
+      e supported by other forms of evidence that establish a meaningful association. When representing a statistical association,
+      the subject and object may correspond directly to the variables analyzed, or to the biological or clinical entities
+      represented/described by those variables (e.g., diseases, genes, chemical entities, biological processes, or phenotypes).
     annotations:
       canonical_predicate: true
     symmetric: true
@@ -3810,6 +3817,7 @@ slots:
     symmetric: true
 
   genetically associated with:
+    deprecated: "true"         # indicating the "genetic" basis of an association will now be done using the more general "associated with" predicate plus a association_basis_qualifier with the value "genetic".
     is_a: associated with
     description: >-
       A statistical association, observed in genetic studies, between a genetic entity such as a gene, locus, or
@@ -15048,3 +15056,36 @@ enums:
       "biolink:contributes_to":
       "biolink:associated_with":
       "biolink:affects":
+
+  AssociationBasisEnum:
+    description: >-
+      Permissible values for the association_basis_qualifier, indicating the
+      nature or basis of an association asserted using the "associated with"
+      predicate or one of its subpredicates.
+    permissible_values:
+      statistical:
+        description: >-
+          An association based on statistical dependence (i.e., non-independence),
+          derived from analysis of observational or experimental data using an
+          appropriate statistical method.
+      functional:
+        description: >-
+          An association based on the participation of two biological entities in
+          a common biological function, process, pathway, reaction, molecular
+          complex, interaction, gene expression program, or other functional
+          system. Functionally associated entities need not interact directly or
+          contribute in the same direction to the shared function; they are
+          related by their involvement in the same biological phenomenon.
+      genetic:
+        description: >-
+          An association based on the relationship of two biological entities
+          through inherited genetic variation. Examples include associations
+          between genetic variants and phenotypes, diseases, traits, gene
+          expression levels, protein abundance, or other molecular or organismal
+          phenotypes. Such associations do not necessarily imply causation or
+          direct biological function and are typically identified through genetic
+          association studies, including genome-wide association studies (GWAS),
+          phenome-wide association studies (PheWAS), and quantitative trait locus
+          (QTL) mapping (e.g., eQTL and pQTL analyses).
+    in_subset:
+      - translator_minimal          
