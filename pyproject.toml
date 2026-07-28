@@ -70,6 +70,13 @@ packages = ["src/biolink_model"]
 # reducing cross-branch merge conflicts (see astral-sh/uv#18708). Requires uv >= 0.9.17.
 exclude-newer = "7 days"
 
+# linkml 1.10.0 pins `click<8.2`, but click <8.3.3 has a known vulnerability (PYSEC-2026-2132,
+# fixed in 8.3.3) flagged by `uv audit`. Override linkml's cap so the lock can carry a patched
+# click while keeping linkml/linkml-runtime pinned at 1.10.0 (generation output is version-sensitive).
+# The `<8.4` bound preserves this project's existing click ceiling (an override replaces the
+# project's own constraint, so we restate the upper bound here).
+override-dependencies = ["click>=8.3.3,<8.4"]
+
 [tool.codespell]
 skip = '.idea,.git,SEMMEDDB*,semmed*,*.svg,docs,./src/docs/registry.md,./.venv'
 ignore-words-list = 'amination,ehr,mor,brite,nin,mirgate'
