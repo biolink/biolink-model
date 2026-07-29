@@ -7152,11 +7152,11 @@ classes:
       - log odds ratio
       - log odds ratio 95 ci
 
-  affinity study result:
+  protein ligand assay result:
     is_a: study result
     description: >-
-      The type of study result describing the strength of interaction affinity between two entities,
-      typically, a chemical ligand and a target protein. The values are generally stated as the
+      The type of study result describing the strength of interaction affinity - or enzymatic interaction -
+      between a ligand and a target protein. Measured binding or enzymatic assay values are generally stated as the
       negative base 10 logarithm of the raw measurements. For instance (i.e., in a molecular interaction
       database like BindingDb) if a ligand inhibits a target protein with a pIC50 of 8.6, then the
       affinity parameter is pIC50 and the affinity value is 8.6.
