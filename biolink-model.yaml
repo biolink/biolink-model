@@ -261,6 +261,15 @@ types:
     exact_mappings:
       - qud:Unit
 
+  unit_prefix:
+    typeof: string
+    uri: UO:0000046
+    id_prefixes:
+      - UO
+    description: >-
+      A prefix to a unit indicative of the scaling of the unit,
+      e.g., 'nano' with unit 'meter' implies a unit of 10e-9 meters
+
   time type:
     uri: xsd:string
     typeof: time
@@ -472,6 +481,12 @@ slots:
       - SNOMED:has_unit_of_presentation
     in_subset:
       - samples
+
+  has unit prefix:
+    description: >-
+      relates to scaling of the associated quantitative unit
+    domain: quantity value
+    range: unit prefix
 
   base coordinate:
     is_a: sequence localization attribute
@@ -6854,15 +6869,24 @@ classes:
     is_a: annotation
     description: >-
       A value of an attribute that is quantitative and measurable,
-      expressed as a combination of a unit and a numeric value. 
-      An optional binary relation qualifier may also be given,
-      to allow capture of relative values, e.g., <1000.0 meaning "less than 1000"
+      expressed as a combination of a unit, (optional) unit prefix
+      and a numeric value. An optional binary relation qualifier
+      may also be given, to allow capture of relative values,
+      e.g., <1000.0 nM meaning "less than 1000 nanometers"
     slots:
       - has unit
+      - has unit prefix
       - has numeric value
       - has binary relation
+    examples:
+      # Encoding for <1000.0 nM, meaning "less than 1000 nanometers"
+      - has_binary_relation: less_than
+        has_numeric_value: 1000.00
+        has_unit_prefix: "UO:0000300"  # 'nano'
+        has_unit: "UO:0000008"  # 'meter'
 
-   # Alignment attempted of the biolink:Attribute model
+
+  # Alignment attempted of the biolink:Attribute model
    # to the proposed TRAPI Release 1.1 Attribute schema, i.e.
    #
    # attribute_name: "assertionAuthoredBy",
