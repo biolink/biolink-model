@@ -1,7 +1,7 @@
  syntax="proto3";
  package
 // metamodel_version: 1.7.0
-// version: 4.3.7
+// version: 4.4.3
 // A region (or regions) of a chromatinized genome that has been measured to be more accessible to an enzyme such as DNase-I or Tn5 Transpose
 message AccessibleDnaRegion
  {
@@ -16,6 +16,10 @@ message AccessibleDnaRegion
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -23,6 +27,7 @@ message AccessibleDnaRegion
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
   biologicalSequence hasBiologicalSequence = 0
+ repeated  string subsets = 0
  }
 // An activity is something that occurs over a period of time and acts upon or with entities; it may include consuming, processing, transforming, modifying, relocating, using, or generating entities.
 message Activity
@@ -38,6 +43,10 @@ message Activity
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -57,6 +66,10 @@ message AffinityMeasurement
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -77,6 +90,10 @@ message Agent
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -86,7 +103,7 @@ message Agent
   string id = 0
   labelType name = 0
  }
-// A subcellular location, cell type or gross anatomical part
+// A part of a cellular organism at or above the granularity of a protein complex. This is a grouping class with three concrete subclasses that should be preferred when applicable: "biolink:Cell" for whole cells, "biolink:CellularComponent" for subcellular and intracellular structures (organelles, membranes, bacterial flagella, etc.), and "biolink:GrossAnatomcialStructure" for multicellular parts (tissues, organs, body parts). Excludes viral and other acellular biological entities.
 message AnatomicalEntity
  {
   string id = 0
@@ -99,6 +116,10 @@ message AnatomicalEntity
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -106,6 +127,7 @@ message AnatomicalEntity
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
  repeated  attribute hasAttribute = 0
+ repeated  string subsets = 0
  }
 // A relationship between two anatomical entities where the relationship is mereological, i.e the two entities are related by parthood, that is, the subject is has the object entity as a part (the expected predicate is "biolink:has_part" or suitable predicate slots inheriting from it, i.e., "biolink:has_plasma_membrane_part",  "biolink:has_variant_part", etc.). This includes relationships between cells and cellular components, between issues and cells, whole organisms and tissues.
 message AnatomicalEntityHasPartAnatomicalEntityAssociation
@@ -277,6 +299,10 @@ message Article
  repeated  string providedBy = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -364,6 +390,10 @@ message Attribute
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -373,6 +403,7 @@ message Attribute
  repeated  quantityValue hasQuantitativeValue = 0
   namedThing hasQualitativeValue = 0
   iriType iri = 0
+ repeated  string subsets = 0
  }
 // A member of a group of unicellular microorganisms lacking a nuclear membrane, that reproduce by binary fission and are often motile.
 message Bacterium
@@ -387,6 +418,10 @@ message Bacterium
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -395,6 +430,7 @@ message Bacterium
   labelType inTaxonLabel = 0
  repeated  attribute hasAttribute = 0
  }
+// The internally coordinated responses (actions or inactions) of organisms (individuals or groups) to internal or external stimuli, via a mechanism that involves nervous system activity.
 message Behavior
  {
   string id = 0
@@ -408,6 +444,10 @@ message Behavior
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -417,6 +457,7 @@ message Behavior
  repeated  namedThing hasInput = 0
  repeated  namedThing hasOutput = 0
  repeated  physicalEntity enabledBy = 0
+ repeated  string subsets = 0
  }
 // An association between an mixture behavior and a behavioral feature manifested by the individual exhibited or has exhibited the behavior.
 message BehaviorToBehavioralFeatureAssociation
@@ -471,9 +512,9 @@ message BehaviorToBehavioralFeatureAssociation
   behavior subject = 0
   behavioralFeature object = 0
   frequencyValue frequencyQualifier = 0
-  string subjectAspectQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
   directionQualifierEnum subjectDirectionQualifier = 0
-  string objectAspectQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum objectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
   uriorcurie qualifiedPredicate = 0
   disease diseaseContextQualifier = 0
@@ -496,6 +537,10 @@ message BehavioralExposure
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -510,6 +555,7 @@ message BehavioralExposure
   string exposureMagnitude = 0
   string exposureAdditionalCondition = 0
   string id = 0
+ repeated  string subsets = 0
  }
 // A phenotypic feature which is behavioral in nature.
 message BehavioralFeature
@@ -525,6 +571,10 @@ message BehavioralFeature
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -532,6 +582,7 @@ message BehavioralFeature
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
   geneticInheritance inheritance = 0
+ repeated  string subsets = 0
  }
 // One or more causally connected executions of molecular functions
 message BiologicalProcess
@@ -547,6 +598,10 @@ message BiologicalProcess
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -556,6 +611,7 @@ message BiologicalProcess
  repeated  namedThing hasInput = 0
  repeated  namedThing hasOutput = 0
  repeated  physicalEntity enabledBy = 0
+ repeated  string subsets = 0
  }
 // Either an individual molecular activity, or a collection of causally connected molecular activities in a biological system.
 message BiologicalProcessOrActivity
@@ -571,6 +627,10 @@ message BiologicalProcessOrActivity
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -580,6 +640,7 @@ message BiologicalProcessOrActivity
  repeated  namedThing hasInput = 0
  repeated  namedThing hasOutput = 0
  repeated  physicalEntity enabledBy = 0
+ repeated  string subsets = 0
  }
 // An association between a biological process or activity and an anatomical entity.
 message BiologicalProcessOrActivityToAnatomicalEntityAssociation
@@ -740,6 +801,7 @@ message BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation
   geneOrGeneProductOrGeneFamily object = 0
   uriorcurie predicate = 0
  }
+// An organismal quality inhering in a bearer by virtue of the bearer's ability to undergo sexual reproduction in order to differentiate the individuals or types involved.
 message BiologicalSex
  {
   string id = 0
@@ -751,6 +813,10 @@ message BiologicalSex
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -760,6 +826,7 @@ message BiologicalSex
  repeated  quantityValue hasQuantitativeValue = 0
   namedThing hasQualitativeValue = 0
   iriType iri = 0
+ repeated  string subsets = 0
  }
 // An external biotic exposure is an intake of (sometimes pathological) biological organisms (including viruses).
 message BioticExposure
@@ -774,6 +841,10 @@ message BioticExposure
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -788,6 +859,7 @@ message BioticExposure
   string exposureMagnitude = 0
   string exposureAdditionalCondition = 0
   string id = 0
+ repeated  string subsets = 0
  }
 // This class may rarely be instantiated except if use cases of a given knowledge graph support its utility.
 message Book
@@ -799,6 +871,10 @@ message Book
  repeated  string providedBy = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -818,6 +894,7 @@ message Book
   string id = 0
  repeated  string type = 0
  }
+// A section of a book that forms a discrete unit of a larger published work and may be independently authored or cited.
 message BookChapter
  {
   iriType iri = 0
@@ -828,6 +905,10 @@ message BookChapter
  repeated  string providedBy = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -862,6 +943,10 @@ message Case
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -1032,9 +1117,9 @@ message CaseToPhenotypicFeatureAssociation
   boolean negated = 0
   onset onsetQualifier = 0
   frequencyValue frequencyQualifier = 0
-  string subjectAspectQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
   directionQualifierEnum subjectDirectionQualifier = 0
-  string objectAspectQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum objectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
   uriorcurie qualifiedPredicate = 0
   disease diseaseContextQualifier = 0
@@ -1098,6 +1183,7 @@ message CaseToVariantAssociation
   sequenceVariant object = 0
   zygosity hasZygosity = 0
  }
+// An association between a gene and a disease where variation in the gene has been shown to have a causal role in the disease.
 message CausalGeneToDiseaseAssociation
  {
   string id = 0
@@ -1148,13 +1234,14 @@ message CausalGeneToDiseaseAssociation
  repeated  string type = 0
  repeated  uriorcurie category = 0
   string subjectFormOrVariantQualifier = 0
-  string subjectAspectQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
   string allelicRequirement = 0
   uriorcurie qualifiedPredicate = 0
   geneOrGeneProduct subject = 0
   disease object = 0
  }
+// The basic structural and functional unit of all organisms. Includes the plasma membrane and any external encapsulating structures such as the cell wall and cell envelope.
 message Cell
  {
   string id = 0
@@ -1167,6 +1254,10 @@ message Cell
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -1174,7 +1265,9 @@ message Cell
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
  repeated  attribute hasAttribute = 0
+ repeated  string subsets = 0
  }
+// A cultured cell population that is genetically stable and homogeneous, sharing a common propagation history through successive passages in culture.
 message CellLine
  {
   string id = 0
@@ -1187,6 +1280,10 @@ message CellLine
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -1195,6 +1292,7 @@ message CellLine
   labelType inTaxonLabel = 0
  repeated  attribute hasAttribute = 0
  }
+// An association in which a cell line - typically derived from an organismal entity with a disease state - serves as a model for that disease in experimental settings.
 message CellLineAsAModelOfDiseaseAssociation
  {
   string id = 0
@@ -1251,9 +1349,9 @@ message CellLineAsAModelOfDiseaseAssociation
  repeated  string anatomicalContextQualifier = 0
   cellLine subject = 0
   frequencyValue frequencyQualifier = 0
-  string subjectAspectQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
   directionQualifierEnum subjectDirectionQualifier = 0
-  string objectAspectQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum objectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
   uriorcurie qualifiedPredicate = 0
  }
@@ -1327,6 +1425,10 @@ message CellularComponent
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -1334,7 +1436,9 @@ message CellularComponent
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
  repeated  attribute hasAttribute = 0
+ repeated  string subsets = 0
  }
+// An organism that contains one or more cells belonging to the cellular lineages of life (Archaea, Bacteria, or Eukaryota), whose body consists of one or more cells. Distinguished from acellular biological entities such as viruses and viroids.
 message CellularOrganism
  {
   string id = 0
@@ -1347,6 +1451,10 @@ message CellularOrganism
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -1508,6 +1616,10 @@ message ChemicalEntity
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -1922,6 +2034,10 @@ message ChemicalExposure
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -1936,6 +2052,7 @@ message ChemicalExposure
   string exposureMagnitude = 0
   string exposureAdditionalCondition = 0
   string id = 0
+ repeated  string subsets = 0
  repeated  quantityValue hasQuantitativeValue = 0
  }
 // describes an interaction between a chemical entity and a gene or gene product. Any biological or chemical effect resulting from such an interaction are out of scope, and covered by the ChemicalAffectsGeneAssociation type (e.g. impact of a chemical on the abundance, activity, structure, etc, of either participant in the interaction)
@@ -1999,9 +2116,77 @@ message ChemicalGeneInteractionAssociation
   geneOrGeneProductOrChemicalPartQualifierEnum objectPartQualifier = 0
   anatomicalEntity objectContextQualifier = 0
  repeated  anatomicalEntity anatomicalContextQualifier = 0
+  organismTaxon speciesContextQualifier = 0
   causalMechanismQualifierEnum causalMechanismQualifier = 0
   float dgidbInteractionScore = 0
   integer dgidbEvidenceScore = 0
+  chemicalEntity subject = 0
+  geneOrGeneProduct object = 0
+  uriorcurie predicate = 0
+ }
+// Describes a relationship in which a chemical entity affects the sensitivity or susceptibility of a biological system to a gene or gene product (e.g. a chemical that increases or decreases the response to a gene or gene product). This covers 'response to substance' style interactions from sources such as CTD that map to the 'affects sensitivity to' predicate hierarchy, as opposed to the abundance/activity/processing effects covered by ChemicalAffectsGeneAssociation.
+message ChemicalGeneSensitivityAssociation
+ {
+  string id = 0
+  iriType iri = 0
+  labelType name = 0
+  narrativeText description = 0
+ repeated  attribute hasAttribute = 0
+  boolean deprecated = 0
+  boolean negated = 0
+  string qualifier = 0
+ repeated  ontologyClass qualifiers = 0
+ repeated  publication publications = 0
+ repeated  retrievalSource sources = 0
+ repeated  evidenceType hasEvidenceOfType = 0
+ repeated  informationContentEntity hasEvidence = 0
+  string knowledgeSource = 0
+  string primaryKnowledgeSource = 0
+ repeated  string aggregatorKnowledgeSource = 0
+  knowledgeLevelEnum knowledgeLevel = 0
+  agentTypeEnum agentType = 0
+  timeType timepoint = 0
+  string originalSubject = 0
+  uriorcurie originalPredicate = 0
+  string originalObject = 0
+  string subjectFeatureName = 0
+  string objectFeatureName = 0
+  ontologyClass subjectCategory = 0
+  ontologyClass objectCategory = 0
+ repeated  string subjectClosure = 0
+ repeated  string objectClosure = 0
+ repeated  ontologyClass subjectCategoryClosure = 0
+ repeated  ontologyClass objectCategoryClosure = 0
+  string subjectNamespace = 0
+  string objectNamespace = 0
+ repeated  string subjectLabelClosure = 0
+ repeated  string objectLabelClosure = 0
+ repeated  retrievalSource retrievalSourceIds = 0
+  float pValue = 0
+  float adjustedPValue = 0
+ repeated  string supportingText = 0
+ repeated  study hasSupportingStudies = 0
+  date updateDate = 0
+  float hasConfidenceScore = 0
+  boolean elevateToPrediction = 0
+  integer semmedAgreementCount = 0
+ repeated  string type = 0
+ repeated  uriorcurie category = 0
+  chemicalOrGeneOrGeneProductFormOrVariantEnum subjectFormOrVariantQualifier = 0
+  geneOrGeneProductOrChemicalPartQualifierEnum subjectPartQualifier = 0
+  chemicalEntityDerivativeEnum subjectDerivativeQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
+  directionQualifierEnum subjectDirectionQualifier = 0
+  chemicalOrGeneOrGeneProductFormOrVariantEnum objectFormOrVariantQualifier = 0
+  geneOrGeneProductOrChemicalPartQualifierEnum objectPartQualifier = 0
+  chemicalEntityDerivativeEnum objectDerivativeQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum objectAspectQualifier = 0
+  directionQualifierEnum objectDirectionQualifier = 0
+  uriorcurie qualifiedPredicate = 0
+ repeated  anatomicalEntity anatomicalContextQualifier = 0
+  organismTaxon speciesContextQualifier = 0
+  integer evidenceCount = 0
+ repeated  uriorcurie supportingDocuments = 0
   chemicalEntity subject = 0
   geneOrGeneProduct object = 0
   uriorcurie predicate = 0
@@ -2020,6 +2205,10 @@ message ChemicalMixture
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -2039,6 +2228,7 @@ message ChemicalMixture
   string isSupplement = 0
   approvalStatusEnum highestFDAApprovalStatus = 0
   approvalStatusEnum drugRegulatoryStatusWorldWide = 0
+ repeated  string subsets = 0
  }
 // This association defines a relationship between a chemical or treatment (or procedure) and a disease or phenotypic feature where the disease or phenotypic feature is an untoward medical occurrence that happens during treatment, whether or not considered related to the treatment.
 message ChemicalOrDrugOrTreatmentAdverseEventAssociation
@@ -2098,9 +2288,9 @@ message ChemicalOrDrugOrTreatmentAdverseEventAssociation
   uriorcurie objectSpecializationQualifier = 0
  repeated  string anatomicalContextQualifier = 0
   frequencyValue frequencyQualifier = 0
-  string subjectAspectQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
   directionQualifierEnum subjectDirectionQualifier = 0
-  string objectAspectQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum objectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
   uriorcurie qualifiedPredicate = 0
  }
@@ -2161,9 +2351,9 @@ message ChemicalOrDrugOrTreatmentSideEffectAssociation
   uriorcurie objectSpecializationQualifier = 0
  repeated  string anatomicalContextQualifier = 0
   frequencyValue frequencyQualifier = 0
-  string subjectAspectQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
   directionQualifierEnum subjectDirectionQualifier = 0
-  string objectAspectQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum objectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
   uriorcurie qualifiedPredicate = 0
  }
@@ -2224,9 +2414,9 @@ message ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation
   uriorcurie objectSpecializationQualifier = 0
  repeated  string anatomicalContextQualifier = 0
   frequencyValue frequencyQualifier = 0
-  string subjectAspectQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
   directionQualifierEnum subjectDirectionQualifier = 0
-  string objectAspectQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum objectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
   uriorcurie qualifiedPredicate = 0
  }
@@ -2242,6 +2432,10 @@ message ChemicalRole
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -2251,6 +2445,7 @@ message ChemicalRole
  repeated  quantityValue hasQuantitativeValue = 0
   namedThing hasQualitativeValue = 0
   iriType iri = 0
+ repeated  string subsets = 0
  }
 // A result of a chi squared analysis.
 message ChiSquaredAnalysisResult
@@ -2266,6 +2461,10 @@ message ChiSquaredAnalysisResult
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -2283,6 +2482,10 @@ message ClinicalAttribute
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -2292,6 +2495,7 @@ message ClinicalAttribute
  repeated  quantityValue hasQuantitativeValue = 0
   namedThing hasQualitativeValue = 0
   iriType iri = 0
+ repeated  string subsets = 0
  }
 // The course a disease typically takes from its onset, progression in time, and eventual resolution or death of the affected individual
 message ClinicalCourse
@@ -2305,6 +2509,10 @@ message ClinicalCourse
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -2314,6 +2522,7 @@ message ClinicalCourse
  repeated  quantityValue hasQuantitativeValue = 0
   namedThing hasQualitativeValue = 0
   iriType iri = 0
+ repeated  string subsets = 0
  }
 // Any entity or process that exists in the clinical domain and outside the biological realm. Diseases are placed under biological entities
 message ClinicalEntity
@@ -2329,6 +2538,10 @@ message ClinicalEntity
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -2347,6 +2560,10 @@ message ClinicalFinding
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -2354,8 +2571,10 @@ message ClinicalFinding
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
   geneticInheritance inheritance = 0
+ repeated  string subsets = 0
  repeated  clinicalAttribute hasAttribute = 0
  }
+// A medical procedure, treatment, or action taken by healthcare professionals to modify the course of a disease or condition.
 message ClinicalIntervention
  {
   string id = 0
@@ -2369,6 +2588,10 @@ message ClinicalIntervention
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -2386,6 +2609,10 @@ message ClinicalMeasurement
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -2394,6 +2621,7 @@ message ClinicalMeasurement
  repeated  quantityValue hasQuantitativeValue = 0
   namedThing hasQualitativeValue = 0
   iriType iri = 0
+ repeated  string subsets = 0
   ontologyClass hasAttributeType = 0
  }
 // Used to characterize and specify the phenotypic abnormalities defined in the phenotypic abnormality sub-ontology, with respect to severity, laterality, and other aspects
@@ -2408,6 +2636,10 @@ message ClinicalModifier
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -2417,6 +2649,7 @@ message ClinicalModifier
  repeated  quantityValue hasQuantitativeValue = 0
   namedThing hasQualitativeValue = 0
   iriType iri = 0
+ repeated  string subsets = 0
  }
 // A clinical trial is a research study that prospectively assigns human participants or groups of humans to one or more health-related interventions to evaluate the effects on health outcomes.
 message ClinicalTrial
@@ -2432,6 +2665,10 @@ message ClinicalTrial
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -2452,6 +2689,7 @@ message ClinicalTrial
  repeated  diseaseOrPhenotypicFeature clinicalTrialConditions = 0
   date creationDate = 0
  }
+// A contiguous sequence which begins with, and includes, a start codon and ends with, and includes, a stop codon.
 message CodingSequence
  {
   string id = 0
@@ -2465,6 +2703,10 @@ message CodingSequence
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -2486,6 +2728,10 @@ message Cohort
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -2508,6 +2754,10 @@ message CommonDataElement
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -2517,7 +2767,7 @@ message CommonDataElement
   string format = 0
   date creationDate = 0
  }
-// A complex chemical exposure is an intake of a chemical mixture (e.g. gasoline), other than a drug.
+// A complex chemical exposure is an intake of a chemical mixture, other than a drug.
 message ComplexChemicalExposure
  {
   iriType iri = 0
@@ -2530,6 +2780,10 @@ message ComplexChemicalExposure
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -2544,6 +2798,7 @@ message ComplexChemicalExposure
   string exposureMagnitude = 0
   string exposureAdditionalCondition = 0
   string id = 0
+ repeated  string subsets = 0
  }
 // A complex molecular mixture is a chemical mixture composed of two or more molecular entities with unknown concentration and stoichiometry.
 message ComplexMolecularMixture
@@ -2559,6 +2814,10 @@ message ComplexMolecularMixture
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -2578,6 +2837,7 @@ message ComplexMolecularMixture
   string isSupplement = 0
   approvalStatusEnum highestFDAApprovalStatus = 0
   approvalStatusEnum drugRegulatoryStatusWorldWide = 0
+ repeated  string subsets = 0
  }
 // A result of a concept count analysis.
 message ConceptCountAnalysisResult
@@ -2593,6 +2853,10 @@ message ConceptCountAnalysisResult
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -2612,6 +2876,10 @@ message ConfidenceLevel
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -2674,6 +2942,7 @@ message ContributorAssociation
   agent object = 0
  repeated  ontologyClass qualifiers = 0
  }
+// An association between a gene (or gene product) and a disease for which the gene is statistically correlated with the disease rather than asserted as causal. Such associations typically derive from GWAS, co-occurrence analyses, or other statistical methods, and are annotated with scores such as a z-score or a diseases confidence score.
 message CorrelatedGeneToDiseaseAssociation
  {
   string id = 0
@@ -2725,7 +2994,7 @@ message CorrelatedGeneToDiseaseAssociation
   float zScore = 0
   float diseasesConfidenceScore = 0
   string subjectFormOrVariantQualifier = 0
-  string subjectAspectQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
   string allelicRequirement = 0
   uriorcurie qualifiedPredicate = 0
@@ -2734,7 +3003,7 @@ message CorrelatedGeneToDiseaseAssociation
   uriorcurie predicate = 0
   frequencyValue frequencyQualifier = 0
   directionQualifierEnum subjectDirectionQualifier = 0
-  string objectAspectQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum objectAspectQualifier = 0
   disease diseaseContextQualifier = 0
  }
 // an item that refers to a collection of data from a data source.
@@ -2751,6 +3020,10 @@ message Dataset
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -2774,6 +3047,10 @@ message DatasetDistribution
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -2798,6 +3075,10 @@ message DatasetSummary
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -2823,6 +3104,10 @@ message DatasetVersion
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -2849,6 +3134,10 @@ message Device
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -2868,12 +3157,16 @@ message DiagnosticAid
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
  repeated  uriorcurie category = 0
  }
-// A disorder of structure or function, especially one that produces specific signs, phenotypes or symptoms or that affects a specific location and is not simply a direct result of physical injury.  A disposition to undergo pathological processes that exists in an organism because of one or more disorders in that organism.
+// A disease is a disposition to undergo pathological processes that exists in an organism because of one or more disorders in that organism. A disorder of structure or function, especially one that produces specific signs, phenotypes or symptoms or that affects a specific location and is not simply a direct result of physical injury.
 message Disease
  {
   string id = 0
@@ -2887,6 +3180,10 @@ message Disease
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -2894,6 +3191,7 @@ message Disease
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
   geneticInheritance inheritance = 0
+ repeated  string subsets = 0
  }
 // A statistical association between a disease and a chemical entity where the chemical entity has a therapeutic or adverse effect on the disease progression, symptoms or outcomes in a patient, cell line, or any model system.
 message DiseaseAssociatedWithResponseToChemicalEntityAssociation
@@ -2950,7 +3248,7 @@ message DiseaseAssociatedWithResponseToChemicalEntityAssociation
   chemicalEntity object = 0
   uriorcurie predicate = 0
  }
-// Either one of a disease or an individual phenotypic feature. Some knowledge resources such as Monarch treat these as distinct, others such as MESH conflate.  Please see definitions of phenotypic feature and disease in this model for their independent descriptions.  This class is helpful to enforce domains and ranges that may involve either a disease or a phenotypic feature.
+// A disease or an individual phenotypic feature, grouped as a single class to accommodate source vocabularies and assertions that do not distinguish the two. Prefer the more specific subclasses disease or phenotypic feature when the distinction is known.
 message DiseaseOrPhenotypicFeature
  {
   string id = 0
@@ -2964,6 +3262,10 @@ message DiseaseOrPhenotypicFeature
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -2971,8 +3273,9 @@ message DiseaseOrPhenotypicFeature
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
   geneticInheritance inheritance = 0
+ repeated  string subsets = 0
  }
-// A disease or phenotypic feature state, when viewed as an exposure, represents an precondition, leading to or influencing an outcome, e.g. HIV predisposing an individual to infections; a relative deficiency of skin pigmentation predisposing an individual to skin cancer.
+// A disease or phenotypic feature state, when viewed as an exposure, represented as a precondition, leading to or influencing an outcome,.
 message DiseaseOrPhenotypicFeatureExposure
  {
   iriType iri = 0
@@ -2985,6 +3288,10 @@ message DiseaseOrPhenotypicFeatureExposure
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -2999,6 +3306,7 @@ message DiseaseOrPhenotypicFeatureExposure
   string exposureMagnitude = 0
   string exposureAdditionalCondition = 0
   string id = 0
+ repeated  string subsets = 0
  }
 // An association between either a disease or a phenotypic feature and its mode of (genetic) inheritance.
 message DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation
@@ -3105,6 +3413,66 @@ message DiseaseOrPhenotypicFeatureToLocationAssociation
  repeated  string type = 0
  repeated  uriorcurie category = 0
   anatomicalEntity object = 0
+ }
+// An association between two diseases. Captures clinical or biological relationships such as comorbidity, sequela, post-infectious complication, shared susceptibility, or differential diagnosis. The precise relationship is carried by the predicate (e.g. ``associated with``, ``contributes to``, ``risk affected by``, ``temporally related to``); use this class whenever both ends of the association are diseases, rather than the more specific ``disease to phenotypic feature association`` (which forces the object to be a phenotypic feature) or a generic ``association``.
+message DiseaseToDiseaseAssociation
+ {
+  string id = 0
+  iriType iri = 0
+  labelType name = 0
+  narrativeText description = 0
+ repeated  attribute hasAttribute = 0
+  boolean deprecated = 0
+  boolean negated = 0
+  string qualifier = 0
+ repeated  ontologyClass qualifiers = 0
+ repeated  publication publications = 0
+ repeated  retrievalSource sources = 0
+ repeated  evidenceType hasEvidenceOfType = 0
+ repeated  informationContentEntity hasEvidence = 0
+  string knowledgeSource = 0
+  string primaryKnowledgeSource = 0
+ repeated  string aggregatorKnowledgeSource = 0
+  knowledgeLevelEnum knowledgeLevel = 0
+  agentTypeEnum agentType = 0
+  timeType timepoint = 0
+  string originalSubject = 0
+  uriorcurie originalPredicate = 0
+  string originalObject = 0
+  string subjectFeatureName = 0
+  string objectFeatureName = 0
+  ontologyClass subjectCategory = 0
+  ontologyClass objectCategory = 0
+ repeated  string subjectClosure = 0
+ repeated  string objectClosure = 0
+ repeated  ontologyClass subjectCategoryClosure = 0
+ repeated  ontologyClass objectCategoryClosure = 0
+  string subjectNamespace = 0
+  string objectNamespace = 0
+ repeated  string subjectLabelClosure = 0
+ repeated  string objectLabelClosure = 0
+ repeated  retrievalSource retrievalSourceIds = 0
+  float pValue = 0
+  float adjustedPValue = 0
+ repeated  string supportingText = 0
+ repeated  study hasSupportingStudies = 0
+  date updateDate = 0
+  float hasConfidenceScore = 0
+  boolean elevateToPrediction = 0
+  integer evidenceCount = 0
+  integer semmedAgreementCount = 0
+ repeated  string type = 0
+ repeated  uriorcurie category = 0
+  disease subject = 0
+  disease object = 0
+  uriorcurie predicate = 0
+  frequencyValue frequencyQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
+  directionQualifierEnum subjectDirectionQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum objectAspectQualifier = 0
+  directionQualifierEnum objectDirectionQualifier = 0
+  uriorcurie qualifiedPredicate = 0
+  disease diseaseContextQualifier = 0
  }
 // An association between an exposure event and a disease.
 message DiseaseToExposureEventAssociation
@@ -3217,9 +3585,9 @@ message DiseaseToPhenotypicFeatureAssociation
   double hasQuotient = 0
   double hasPercentage = 0
   frequencyValue frequencyQualifier = 0
-  string subjectAspectQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
   directionQualifierEnum subjectDirectionQualifier = 0
-  string objectAspectQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum objectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
   uriorcurie qualifiedPredicate = 0
   disease diseaseContextQualifier = 0
@@ -3239,6 +3607,10 @@ message Drug
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -3258,6 +3630,7 @@ message Drug
   string isSupplement = 0
   approvalStatusEnum highestFDAApprovalStatus = 0
   approvalStatusEnum drugRegulatoryStatusWorldWide = 0
+ repeated  string subsets = 0
  }
 // A drug exposure is an intake of a particular drug.
 message DrugExposure
@@ -3272,6 +3645,10 @@ message DrugExposure
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -3286,6 +3663,7 @@ message DrugExposure
   string exposureMagnitude = 0
   string exposureAdditionalCondition = 0
   string id = 0
+ repeated  string subsets = 0
  repeated  quantityValue hasQuantitativeValue = 0
  }
 // a document accompanying a drug or its container that provides written, printed or graphic information about the drug, including drug contents, specific instructions or warnings for administration, storage and disposal instructions, etc.
@@ -3299,6 +3677,10 @@ message DrugLabel
  repeated  string providedBy = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -3383,6 +3765,10 @@ message DrugToGeneInteractionExposure
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -3397,9 +3783,11 @@ message DrugToGeneInteractionExposure
   string exposureMagnitude = 0
   string exposureAdditionalCondition = 0
   string id = 0
+ repeated  string subsets = 0
  repeated  quantityValue hasQuantitativeValue = 0
  repeated  gene hasGeneOrGeneProduct = 0
  }
+// An association between a gene (or gene product) and a disease in which the gene is classified by its druggability (e.g., via the IDG/Pharos target development-level tiers).
 message DruggableGeneToDiseaseAssociation
  {
   string id = 0
@@ -3461,9 +3849,10 @@ message DruggableGeneToDiseaseAssociation
   geneToDiseasePredicateEnum predicate = 0
   frequencyValue frequencyQualifier = 0
   directionQualifierEnum subjectDirectionQualifier = 0
-  string objectAspectQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum objectAspectQualifier = 0
   disease diseaseContextQualifier = 0
  }
+// An association between any entity and a disease, capturing clinical context such as approval status, research phase, FDA regulatory approvals, and number of cases.
 message EntityToDiseaseAssociation
  {
   string id = 0
@@ -3520,6 +3909,7 @@ message EntityToDiseaseAssociation
  repeated  string fDARegulatoryApprovals = 0
   integer numberOfCases = 0
  }
+// An association between any entity and a phenotypic feature, capturing clinical context such as approval status, research phase, FDA regulatory approvals, and number of cases.
 message EntityToPhenotypicFeatureAssociation
  {
   string id = 0
@@ -3589,6 +3979,10 @@ message EnvironmentalExposure
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -3603,7 +3997,9 @@ message EnvironmentalExposure
   string exposureMagnitude = 0
   string exposureAdditionalCondition = 0
   string id = 0
+ repeated  string subsets = 0
  }
+// A system or entity in the natural environment that has the disposition to environ one or more material entities.
 message EnvironmentalFeature
  {
   string id = 0
@@ -3617,11 +4013,16 @@ message EnvironmentalFeature
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
  repeated  uriorcurie category = 0
  }
+// Any unwanted chemical in food. The term includes agrochemicals and industrial chemicals that may contaminate foodstuffs during their production, transportation or storage.
 message EnvironmentalFoodContaminant
  {
   string id = 0
@@ -3635,6 +4036,10 @@ message EnvironmentalFoodContaminant
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -3652,6 +4057,7 @@ message EnvironmentalFoodContaminant
   string chemblChirality = 0
   string chemblDrugWarning = 0
  }
+// A process that occurs within or involves the components of an environmental system.
 message EnvironmentalProcess
  {
   string id = 0
@@ -3665,6 +4071,10 @@ message EnvironmentalProcess
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -3684,6 +4094,10 @@ message Event
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -3703,6 +4117,10 @@ message Evidence
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -3726,10 +4144,15 @@ message EvidenceType
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
  repeated  uriorcurie category = 0
+ repeated  string subsets = 0
  }
 // A region of the transcript sequence within a gene which is not removed from the primary RNA transcript by RNA splicing.
 message Exon
@@ -3745,6 +4168,10 @@ message Exon
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -3818,6 +4245,10 @@ message ExposureEvent
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -3832,6 +4263,7 @@ message ExposureEvent
   string exposureMagnitude = 0
   string exposureAdditionalCondition = 0
   string id = 0
+ repeated  string subsets = 0
  }
 // An association between an exposure event and an outcome.
 message ExposureEventToOutcomeAssociation
@@ -3941,9 +4373,9 @@ message ExposureEventToPhenotypicFeatureAssociation
  repeated  uriorcurie category = 0
   exposureEvent subject = 0
   frequencyValue frequencyQualifier = 0
-  string subjectAspectQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
   directionQualifierEnum subjectDirectionQualifier = 0
-  string objectAspectQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum objectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
   uriorcurie qualifiedPredicate = 0
   disease diseaseContextQualifier = 0
@@ -3953,7 +4385,7 @@ message ExposureEventToPhenotypicFeatureAssociation
   double hasQuotient = 0
   double hasPercentage = 0
  }
-// A substance consumed by a living organism as a source of nutrition
+// A substance of plant, animal, or artificial origin consumed by a living organism to provide essential nutrients, energy, and support growth and the processes of life, or to satisfy other health needs or provide a social or organoleptic experience.
 message Food
  {
   string id = 0
@@ -3967,6 +4399,10 @@ message Food
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -3986,7 +4422,9 @@ message Food
   string isSupplement = 0
   approvalStatusEnum highestFDAApprovalStatus = 0
   approvalStatusEnum drugRegulatoryStatusWorldWide = 0
+ repeated  string subsets = 0
  }
+// Any substance which is added to food to preserve or enhance its flavour and/or appearance.
 message FoodAdditive
  {
   string id = 0
@@ -4000,6 +4438,10 @@ message FoodAdditive
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -4070,7 +4512,6 @@ message FunctionalAssociation
   macromolecularMachineMixin subject = 0
   ontologyClass object = 0
  }
-// A kingdom of eukaryotic, heterotrophic organisms that live as saprobes or parasites, including mushrooms, yeasts, smuts, molds, etc. They reproduce either sexually or asexually, and have life cycles that range from simple to complex. Filamentous fungi refer to those that grow as multicellular colonies (mushrooms and molds).
 message Fungus
  {
   string id = 0
@@ -4083,6 +4524,10 @@ message Fungus
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -4104,6 +4549,10 @@ message Gene
  repeated  string providedBy = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -4113,6 +4562,7 @@ message Gene
   string symbol = 0
  repeated  uriorcurie xref = 0
   biologicalSequence hasBiologicalSequence = 0
+ repeated  string subsets = 0
  }
 // Describes an effect that a gene or gene product has on a chemical entity (e.g. an impact of on its abundance, activity, localization, processing, transport, etc.)
 message GeneAffectsChemicalAssociation
@@ -4179,10 +4629,11 @@ message GeneAffectsChemicalAssociation
  repeated  anatomicalEntity anatomicalContextQualifier = 0
   uriorcurie qualifiedPredicate = 0
   organismTaxon speciesContextQualifier = 0
-  geneOrGeneProduct subject = 0
+  chemicalEntityOrGeneOrGeneProduct subject = 0
   uriorcurie predicate = 0
   chemicalEntity object = 0
  }
+// An association in which a gene (e.g., a model-organism ortholog of a known disease gene) serves as a model of a human disease - for example, because mutants of the gene recapitulate core features of the disease.
 message GeneAsAModelOfDiseaseAssociation
  {
   string id = 0
@@ -4243,7 +4694,7 @@ message GeneAsAModelOfDiseaseAssociation
   geneOrGeneProduct subject = 0
   frequencyValue frequencyQualifier = 0
   directionQualifierEnum subjectDirectionQualifier = 0
-  string objectAspectQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum objectAspectQualifier = 0
   disease diseaseContextQualifier = 0
  }
 // any grouping of multiple genes or gene products related by common descent
@@ -4260,6 +4711,10 @@ message GeneFamily
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -4317,10 +4772,11 @@ message GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation
   integer semmedAgreementCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
-  gene subject = 0
-  geneFamily object = 0
+  geneFamily subject = 0
+  geneOrGeneProduct object = 0
   uriorcurie predicate = 0
  }
+// A gene-to-disease association that is asserted on the grounds that the gene harbours a sequence variant that contributes to the disease. Qualifies the gene with the form or variant that underlies the contribution.
 message GeneHasVariantThatContributesToDiseaseAssociation
  {
   string id = 0
@@ -4539,10 +4995,12 @@ message GeneRegulatesGeneAssociation
   directionQualifierEnum objectDirectionQualifier = 0
   uriorcurie qualifiedPredicate = 0
   organismTaxon speciesContextQualifier = 0
-  geneOrGeneProduct subject = 0
+  causalMechanismQualifierEnum causalMechanismQualifier = 0
+  chemicalEntityOrGeneOrGeneProduct subject = 0
   uriorcurie predicate = 0
-  geneOrGeneProduct object = 0
+  chemicalEntityOrGeneOrGeneProduct object = 0
  }
+// An association between a gene or gene product and a disease, where variation in the gene is correlated with the disease.
 message GeneToDiseaseAssociation
  {
   string id = 0
@@ -4658,6 +5116,72 @@ message GeneToExpressionSiteAssociation
   anatomicalEntity object = 0
   uriorcurie predicate = 0
  }
+// parent class for different kinds of gene-gene or gene product to gene product relationships. Includes homology and interaction.
+message GeneToGeneAssociation
+ {
+  string id = 0
+  iriType iri = 0
+  labelType name = 0
+  narrativeText description = 0
+ repeated  attribute hasAttribute = 0
+  boolean deprecated = 0
+  boolean negated = 0
+  string qualifier = 0
+ repeated  ontologyClass qualifiers = 0
+ repeated  publication publications = 0
+ repeated  retrievalSource sources = 0
+ repeated  evidenceType hasEvidenceOfType = 0
+ repeated  informationContentEntity hasEvidence = 0
+  string knowledgeSource = 0
+  string primaryKnowledgeSource = 0
+ repeated  string aggregatorKnowledgeSource = 0
+  knowledgeLevelEnum knowledgeLevel = 0
+  agentTypeEnum agentType = 0
+  timeType timepoint = 0
+  string originalSubject = 0
+  uriorcurie originalPredicate = 0
+  string originalObject = 0
+  string subjectFeatureName = 0
+  string objectFeatureName = 0
+  ontologyClass subjectCategory = 0
+  ontologyClass objectCategory = 0
+ repeated  string subjectClosure = 0
+ repeated  string objectClosure = 0
+ repeated  ontologyClass subjectCategoryClosure = 0
+ repeated  ontologyClass objectCategoryClosure = 0
+  string subjectNamespace = 0
+  string objectNamespace = 0
+ repeated  string subjectLabelClosure = 0
+ repeated  string objectLabelClosure = 0
+ repeated  retrievalSource retrievalSourceIds = 0
+  float pValue = 0
+  float adjustedPValue = 0
+ repeated  string supportingText = 0
+ repeated  study hasSupportingStudies = 0
+  date updateDate = 0
+  float hasConfidenceScore = 0
+  boolean elevateToPrediction = 0
+  integer evidenceCount = 0
+  integer semmedAgreementCount = 0
+ repeated  string type = 0
+ repeated  uriorcurie category = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
+  directionQualifierEnum subjectDirectionQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum objectAspectQualifier = 0
+  directionQualifierEnum objectDirectionQualifier = 0
+  causalMechanismQualifierEnum causalMechanismQualifier = 0
+  uriorcurie qualifiedPredicate = 0
+  organismTaxon speciesContextQualifier = 0
+  geneOrGeneProduct subject = 0
+  molecularActivity subjectActivityQualifier = 0
+  biologicalProcess subjectProcessQualifier = 0
+  anatomicalEntity subjectContextQualifier = 0
+  uriorcurie predicate = 0
+  geneOrGeneProduct object = 0
+  molecularActivity objectActivityQualifier = 0
+  biologicalProcess objectProcessQualifier = 0
+  anatomicalEntity objectContextQualifier = 0
+ }
 // Indicates that two genes are co-expressed, generally under the same conditions.
 message GeneToGeneCoexpressionAssociation
  {
@@ -4707,8 +5231,21 @@ message GeneToGeneCoexpressionAssociation
   integer semmedAgreementCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
+  directionQualifierEnum subjectDirectionQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum objectAspectQualifier = 0
+  directionQualifierEnum objectDirectionQualifier = 0
+  causalMechanismQualifierEnum causalMechanismQualifier = 0
+  organismTaxon speciesContextQualifier = 0
   geneOrGeneProduct subject = 0
+  molecularActivity subjectActivityQualifier = 0
+  biologicalProcess subjectProcessQualifier = 0
+  anatomicalEntity subjectContextQualifier = 0
+  uriorcurie qualifiedPredicate = 0
   geneOrGeneProduct object = 0
+  molecularActivity objectActivityQualifier = 0
+  biologicalProcess objectProcessQualifier = 0
+  anatomicalEntity objectContextQualifier = 0
   uriorcurie predicate = 0
   ontologyClass quantifierQualifier = 0
   anatomicalEntity expressionSite = 0
@@ -4817,6 +5354,19 @@ message GeneToGeneHomologyAssociation
   integer semmedAgreementCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
+  directionQualifierEnum subjectDirectionQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum objectAspectQualifier = 0
+  directionQualifierEnum objectDirectionQualifier = 0
+  causalMechanismQualifierEnum causalMechanismQualifier = 0
+  organismTaxon speciesContextQualifier = 0
+  molecularActivity subjectActivityQualifier = 0
+  biologicalProcess subjectProcessQualifier = 0
+  anatomicalEntity subjectContextQualifier = 0
+  uriorcurie qualifiedPredicate = 0
+  molecularActivity objectActivityQualifier = 0
+  biologicalProcess objectProcessQualifier = 0
+  anatomicalEntity objectContextQualifier = 0
   geneOrGeneProduct subject = 0
   uriorcurie predicate = 0
   geneOrGeneProduct object = 0
@@ -4874,6 +5424,7 @@ message GeneToGeneProductRelationship
   geneProductMixin object = 0
   uriorcurie predicate = 0
  }
+// A functional association between a gene (or gene product or macromolecular complex) and a Gene Ontology (GO) term describing the molecular function, biological process, or cellular component in which it participates.
 message GeneToGoTermAssociation
  {
   string id = 0
@@ -4979,6 +5530,7 @@ message GeneToPathwayAssociation
   geneOrGeneProduct subject = 0
   pathway object = 0
  }
+// An association between a gene or gene product and a phenotypic feature, where variation in the gene is correlated with the phenotypic feature.
 message GeneToPhenotypicFeatureAssociation
  {
   string id = 0
@@ -5036,7 +5588,7 @@ message GeneToPhenotypicFeatureAssociation
   geneToPhenotypicFeaturePredicateEnum predicate = 0
   frequencyValue frequencyQualifier = 0
   directionQualifierEnum subjectDirectionQualifier = 0
-  string objectAspectQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum objectAspectQualifier = 0
   uriorcurie qualifiedPredicate = 0
   disease diseaseContextQualifier = 0
   biologicalSex sexQualifier = 0
@@ -5045,7 +5597,7 @@ message GeneToPhenotypicFeatureAssociation
   double hasQuotient = 0
   double hasPercentage = 0
  }
-// The pattern or 'mode' in which a particular genetic trait or disorder is passed from one generation to the next, e.g. autosomal dominant, autosomal recessive, etc.
+// The pattern or 'mode' in which a particular genetic trait or disorder is passed from one generation to the next.
 message GeneticInheritance
  {
   string id = 0
@@ -5059,6 +5611,10 @@ message GeneticInheritance
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -5080,6 +5636,10 @@ message Genome
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -5087,6 +5647,7 @@ message Genome
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
   biologicalSequence hasBiologicalSequence = 0
+ repeated  string subsets = 0
  }
 // A genomic background exposure is where an individual's specific genomic background of genes, sequence variants or other pre-existing genomic conditions constitute a kind of 'exposure' to the organism, leading to or influencing an outcome.
 message GenomicBackgroundExposure
@@ -5101,6 +5662,10 @@ message GenomicBackgroundExposure
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -5115,6 +5680,7 @@ message GenomicBackgroundExposure
   string exposureMagnitude = 0
   string exposureAdditionalCondition = 0
   string id = 0
+ repeated  string subsets = 0
  repeated  gene hasGeneOrGeneProduct = 0
   biologicalSequence hasBiologicalSequence = 0
  repeated  organismTaxon inTaxon = 0
@@ -5192,6 +5758,10 @@ message Genotype
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -5200,7 +5770,9 @@ message Genotype
   labelType inTaxonLabel = 0
   zygosity hasZygosity = 0
   biologicalSequence hasBiologicalSequence = 0
+ repeated  string subsets = 0
  }
+// An association in which a genotype serves as a model of a disease, recapitulating features relevant for studying the disease outside of a patient who carries it.
 message GenotypeAsAModelOfDiseaseAssociation
  {
   string id = 0
@@ -5252,14 +5824,15 @@ message GenotypeAsAModelOfDiseaseAssociation
   uriorcurie predicate = 0
   namedThing object = 0
   frequencyValue frequencyQualifier = 0
-  string subjectAspectQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
   directionQualifierEnum subjectDirectionQualifier = 0
-  string objectAspectQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum objectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
   uriorcurie qualifiedPredicate = 0
   disease diseaseContextQualifier = 0
   genotype subject = 0
  }
+// An association between a genotype and a disease, in which the genotype (typically a combination of alleles at one or more loci) is linked to the disease state.
 message GenotypeToDiseaseAssociation
  {
   string id = 0
@@ -5312,9 +5885,9 @@ message GenotypeToDiseaseAssociation
   uriorcurie predicate = 0
   namedThing object = 0
   frequencyValue frequencyQualifier = 0
-  string subjectAspectQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
   directionQualifierEnum subjectDirectionQualifier = 0
-  string objectAspectQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum objectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
   uriorcurie qualifiedPredicate = 0
   disease diseaseContextQualifier = 0
@@ -5478,9 +6051,9 @@ message GenotypeToPhenotypicFeatureAssociation
   uriorcurie predicate = 0
   genotype subject = 0
   frequencyValue frequencyQualifier = 0
-  string subjectAspectQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
   directionQualifierEnum subjectDirectionQualifier = 0
-  string objectAspectQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum objectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
   uriorcurie qualifiedPredicate = 0
   disease diseaseContextQualifier = 0
@@ -5555,6 +6128,10 @@ message GenotypicSex
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -5564,6 +6141,7 @@ message GenotypicSex
  repeated  quantityValue hasQuantitativeValue = 0
   namedThing hasQualitativeValue = 0
   iriType iri = 0
+ repeated  string subsets = 0
  }
 // A geographic exposure is a factor relating to geographic proximity to some impactful entity.
 message GeographicExposure
@@ -5578,6 +6156,10 @@ message GeographicExposure
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -5592,6 +6174,7 @@ message GeographicExposure
   string exposureMagnitude = 0
   string exposureAdditionalCondition = 0
   string id = 0
+ repeated  string subsets = 0
  }
 // a location that can be described in lat/long coordinates
 message GeographicLocation
@@ -5607,6 +6190,10 @@ message GeographicLocation
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -5628,6 +6215,10 @@ message GeographicLocationAtTime
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -5636,6 +6227,7 @@ message GeographicLocationAtTime
   float longitude = 0
   timeType timepoint = 0
  }
+// An anatomical structure that has more than one cell as a part.
 message GrossAnatomicalStructure
  {
   string id = 0
@@ -5648,6 +6240,10 @@ message GrossAnatomicalStructure
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -5655,6 +6251,7 @@ message GrossAnatomicalStructure
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
  repeated  attribute hasAttribute = 0
+ repeated  string subsets = 0
  }
 // A set of zero or more Alleles on a single instance of a Sequence[VMC]
 message Haplotype
@@ -5670,6 +6267,10 @@ message Haplotype
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -5677,7 +6278,9 @@ message Haplotype
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
   biologicalSequence hasBiologicalSequence = 0
+ repeated  string subsets = 0
  }
+// The admission and care of a patient in a hospital for observation, diagnosis, or treatment.
 message Hospitalization
  {
   string id = 0
@@ -5691,12 +6294,15 @@ message Hospitalization
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
  repeated  uriorcurie category = 0
  }
-// A member of the the species Homo sapiens.
 message Human
  {
   string id = 0
@@ -5709,6 +6315,10 @@ message Human
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -5731,6 +6341,10 @@ message IceesStudyResult
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -5744,7 +6358,7 @@ message IceesStudyResult
   float logOddsRatio = 0
  repeated  float logOddsRatio95Ci = 0
  }
-// An instance of an organism. For example, Richard Nixon, Charles Darwin, my pet cat. Example ID: ORCID:0000-0002-5355-2576
+// An instance of an organism. For example, Charles Darwin, my pet cat.
 message IndividualOrganism
  {
   string id = 0
@@ -5757,6 +6371,10 @@ message IndividualOrganism
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -5818,7 +6436,6 @@ message InformationContentEntityToNamedThingAssociation
   namedThing object = 0
   uriorcurie predicate = 0
  }
-// An animal lacking a vertebral column. This group consists of 98% of all animal species.
 message Invertebrate
  {
   string id = 0
@@ -5831,6 +6448,10 @@ message Invertebrate
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -5850,6 +6471,10 @@ message JournalArticle
  repeated  string providedBy = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -5872,7 +6497,7 @@ message JournalArticle
   string volume = 0
   string issue = 0
  }
-// A knowledge graph represented in KGX format
+// A container representing a knowledge graph serialized in KGX (Knowledge Graph Exchange) format. A KnowledgeGraph aggregates a collection of nodes (entities) and edges (relationships between entities) conforming to the KGX specification, enabling interoperable exchange of biomedical knowledge graphs across tools and systems in the Biolink ecosystem.
 message KnowledgeGraph
  {
  repeated  entity nodes = 0
@@ -5891,6 +6516,10 @@ message LifeStage
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -5898,6 +6527,7 @@ message LifeStage
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
  repeated  attribute hasAttribute = 0
+ repeated  string subsets = 0
  }
 // A result of a log odds ratio analysis.
 message LogOddsAnalysisResult
@@ -5913,6 +6543,10 @@ message LogOddsAnalysisResult
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -5932,6 +6566,10 @@ message MacromolecularComplex
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -5988,6 +6626,21 @@ message MacromolecularMachineHasSubstrateAssociation
   integer semmedAgreementCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
+  string subjectFormOrVariantQualifier = 0
+  string subjectPartQualifier = 0
+  string subjectDerivativeQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
+  string subjectContextQualifier = 0
+  directionQualifierEnum subjectDirectionQualifier = 0
+  string objectFormOrVariantQualifier = 0
+  string objectPartQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum objectAspectQualifier = 0
+  string objectContextQualifier = 0
+  directionQualifierEnum objectDirectionQualifier = 0
+  causalMechanismQualifierEnum causalMechanismQualifier = 0
+ repeated  string anatomicalContextQualifier = 0
+  uriorcurie qualifiedPredicate = 0
+  organismTaxon speciesContextQualifier = 0
   macromolecularMachineMixin subject = 0
   uriorcurie predicate = 0
   chemicalEntityOrProteinOrPolypeptide object = 0
@@ -6154,7 +6807,6 @@ message MacromolecularMachineToMolecularActivityAssociation
   molecularActivity object = 0
   organismTaxon speciesContextQualifier = 0
  }
-// A member of the class Mammalia, a clade of endothermic amniotes distinguished from reptiles and birds by the possession of hair, three middle ear bones, mammary glands, and a neocortex
 message Mammal
  {
   string id = 0
@@ -6167,6 +6819,10 @@ message Mammal
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -6189,6 +6845,10 @@ message MaterialSample
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -6304,6 +6964,7 @@ message MaterialSampleToDiseaseOrPhenotypicFeatureAssociation
   uriorcurie objectSpecializationQualifier = 0
  repeated  string anatomicalContextQualifier = 0
  }
+// A small (~22 nucleotide) RNA molecule that is the endogenous transcript of a miRNA gene. Produced from precursor molecules that form hairpin structures, which are processed (typically via the Dicer pathway) to yield a single miRNA molecule. miRNAs function by triggering cleavage of target molecules or acting as translational repressors.
 message MicroRNA
  {
   string id = 0
@@ -6317,6 +6978,10 @@ message MicroRNA
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -6338,12 +7003,17 @@ message MolecularActivity
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
  repeated  uriorcurie category = 0
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
+ repeated  string subsets = 0
  repeated  molecularEntity hasInput = 0
  repeated  molecularEntity hasOutput = 0
  repeated  macromolecularMachineMixin enabledBy = 0
@@ -6521,6 +7191,10 @@ message MolecularEntity
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -6538,6 +7212,7 @@ message MolecularEntity
   string chemblChirality = 0
   string chemblDrugWarning = 0
   boolean isMetabolite = 0
+ repeated  string subsets = 0
  }
 // A molecular mixture is a chemical mixture composed of two or more molecular entities with known concentration and stoichiometry.
 message MolecularMixture
@@ -6553,6 +7228,10 @@ message MolecularMixture
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -6572,6 +7251,7 @@ message MolecularMixture
   string isSupplement = 0
   approvalStatusEnum highestFDAApprovalStatus = 0
   approvalStatusEnum drugRegulatoryStatusWorldWide = 0
+ repeated  string subsets = 0
  }
 // a databased entity or concept/class
 message NamedThing
@@ -6587,11 +7267,16 @@ message NamedThing
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
  repeated  uriorcurie category = 0
  }
+// An association in which the subject entity is linked to the likelihood of the object entity occurring, manifesting, or being observed. Subject and object may each be qualified by aspect and context, and the association may be further qualified by a population context.
 message NamedThingAssociatedWithLikelihoodOfNamedThingAssociation
  {
   string id = 0
@@ -6641,14 +7326,15 @@ message NamedThingAssociatedWithLikelihoodOfNamedThingAssociation
  repeated  string type = 0
  repeated  uriorcurie category = 0
   namedThing subject = 0
-  string subjectAspectQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
   ontologyClass subjectContextQualifier = 0
   uriorcurie predicate = 0
   namedThing object = 0
-  string objectAspectQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum objectAspectQualifier = 0
   ontologyClass objectContextQualifier = 0
   populationOfIndividualOrganisms populationContextQualifier = 0
  }
+// An RNA transcript that does not encode for a protein rather the RNA molecule is the functional gene product.
 message NoncodingRNAProduct
  {
   string id = 0
@@ -6662,6 +7348,10 @@ message NoncodingRNAProduct
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -6683,6 +7373,10 @@ message NucleicAcidEntity
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -6700,11 +7394,12 @@ message NucleicAcidEntity
   string chemblChirality = 0
   string chemblDrugWarning = 0
   boolean isMetabolite = 0
+ repeated  string subsets = 0
   biologicalSequence hasBiologicalSequence = 0
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
  }
-// A linear nucleotide sequence pattern that is widespread and has, or is conjectured to have, a biological significance. e.g. the TATA box promoter motif, transcription factor binding consensus sequences.
+// A linear nucleotide sequence pattern that is widespread and has, or is conjectured to have, a biological significance. consensus sequences.
 message NucleicAcidSequenceMotif
  {
   string id = 0
@@ -6718,6 +7413,10 @@ message NucleicAcidSequenceMotif
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -6725,7 +7424,7 @@ message NucleicAcidSequenceMotif
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
  }
-// A chemical modification of a histone protein within a nucleosome octomer or a substitution of a histone with a variant histone isoform. e.g. Histone 4 Lysine 20 methylation (H4K20me), histone variant H2AZ substituting H2A.
+// A chemical modification of a histone protein within a nucleosome octomer or a substitution of a histone with a variant histone isoform.
 message NucleosomeModification
  {
   string id = 0
@@ -6739,6 +7438,10 @@ message NucleosomeModification
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -6761,6 +7464,10 @@ message ObservedExpectedFrequencyAnalysisResult
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -6778,6 +7485,10 @@ message Onset
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -6787,6 +7498,7 @@ message Onset
  repeated  quantityValue hasQuantitativeValue = 0
   namedThing hasQualitativeValue = 0
   iriType iri = 0
+ repeated  string subsets = 0
  }
 // describes a characteristic of an organismal entity.
 message OrganismAttribute
@@ -6800,6 +7512,10 @@ message OrganismAttribute
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -6809,6 +7525,7 @@ message OrganismAttribute
  repeated  quantityValue hasQuantitativeValue = 0
   namedThing hasQualitativeValue = 0
   iriType iri = 0
+ repeated  string subsets = 0
  }
 // A classification of a set of organisms. Example instances: NCBITaxon:9606 (Homo sapiens), NCBITaxon:2 (Bacteria). Can also be used to represent strains or subspecies.
 message OrganismTaxon
@@ -6824,6 +7541,10 @@ message OrganismTaxon
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -6937,6 +7658,7 @@ message OrganismTaxonToOrganismTaxonSpecialization
   organismTaxon object = 0
   uriorcurie predicate = 0
  }
+// An association between two individual organisms (e.g., symbiosis, parasitism, predation, or other inter-organism relationships).
 message OrganismToOrganismAssociation
  {
   string id = 0
@@ -6989,6 +7711,7 @@ message OrganismToOrganismAssociation
   individualOrganism subject = 0
   individualOrganism object = 0
  }
+// An association in which an organismal entity (e.g., a strain or breed) serves as a model of a disease, either because it has a natural predisposition to the disease or was bred or engineered specifically to recapitulate it.
 message OrganismalEntityAsAModelOfDiseaseAssociation
  {
   string id = 0
@@ -7041,9 +7764,9 @@ message OrganismalEntityAsAModelOfDiseaseAssociation
  repeated  uriorcurie category = 0
   organismalEntity subject = 0
   frequencyValue frequencyQualifier = 0
-  string subjectAspectQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
   directionQualifierEnum subjectDirectionQualifier = 0
-  string objectAspectQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum objectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
   uriorcurie qualifiedPredicate = 0
   disease diseaseContextQualifier = 0
@@ -7097,8 +7820,21 @@ message PairwiseGeneToGeneInteraction
   integer semmedAgreementCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
+  directionQualifierEnum subjectDirectionQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum objectAspectQualifier = 0
+  directionQualifierEnum objectDirectionQualifier = 0
+  causalMechanismQualifierEnum causalMechanismQualifier = 0
+  organismTaxon speciesContextQualifier = 0
   geneOrGeneProduct subject = 0
+  molecularActivity subjectActivityQualifier = 0
+  biologicalProcess subjectProcessQualifier = 0
+  anatomicalEntity subjectContextQualifier = 0
+  uriorcurie qualifiedPredicate = 0
   geneOrGeneProduct object = 0
+  molecularActivity objectActivityQualifier = 0
+  biologicalProcess objectProcessQualifier = 0
+  anatomicalEntity objectContextQualifier = 0
   uriorcurie predicate = 0
  }
 // An interaction at the molecular level between two physical entities
@@ -7149,6 +7885,19 @@ message PairwiseMolecularInteraction
   integer semmedAgreementCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
+  directionQualifierEnum subjectDirectionQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum objectAspectQualifier = 0
+  directionQualifierEnum objectDirectionQualifier = 0
+  causalMechanismQualifierEnum causalMechanismQualifier = 0
+  organismTaxon speciesContextQualifier = 0
+  molecularActivity subjectActivityQualifier = 0
+  biologicalProcess subjectProcessQualifier = 0
+  anatomicalEntity subjectContextQualifier = 0
+  uriorcurie qualifiedPredicate = 0
+  molecularActivity objectActivityQualifier = 0
+  biologicalProcess objectProcessQualifier = 0
+  anatomicalEntity objectContextQualifier = 0
   ontologyClass interactingMoleculesCategory = 0
   molecularEntity subject = 0
   string id = 0
@@ -7166,6 +7915,10 @@ message Patent
  repeated  string providedBy = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -7184,7 +7937,7 @@ message Patent
   string id = 0
   labelType name = 0
  }
-// An abnormal anatomical structure, when viewed as an exposure, representing an precondition, leading to or influencing an outcome, e.g. thrombosis leading to an ischemic disease outcome.
+// An abnormal anatomical structure, when viewed as an exposure, represented as a precondition, leading to or influencing an outcome.
 message PathologicalAnatomicalExposure
  {
   iriType iri = 0
@@ -7197,6 +7950,10 @@ message PathologicalAnatomicalExposure
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -7211,6 +7968,7 @@ message PathologicalAnatomicalExposure
   string exposureMagnitude = 0
   string exposureAdditionalCondition = 0
   string id = 0
+ repeated  string subsets = 0
  }
 // An anatomical structure with the potential of have an abnormal or deleterious effect at the subcellular, cellular, multicellular, or organismal level.
 message PathologicalAnatomicalStructure
@@ -7225,6 +7983,10 @@ message PathologicalAnatomicalStructure
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -7232,6 +7994,7 @@ message PathologicalAnatomicalStructure
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
  repeated  attribute hasAttribute = 0
+ repeated  string subsets = 0
  }
 // A biologic function or a process having an abnormal or deleterious effect at the subcellular, cellular, multicellular, or organismal level.
 message PathologicalProcess
@@ -7247,6 +8010,10 @@ message PathologicalProcess
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -7256,8 +8023,9 @@ message PathologicalProcess
  repeated  namedThing hasInput = 0
  repeated  namedThing hasOutput = 0
  repeated  physicalEntity enabledBy = 0
+ repeated  string subsets = 0
  }
-// A pathological process, when viewed as an exposure, representing a precondition, leading to or influencing an outcome, e.g. autoimmunity leading to disease.
+// A pathological process, when viewed as an exposure, representing a precondition, leading to or influencing an outcome.
 message PathologicalProcessExposure
  {
   iriType iri = 0
@@ -7270,6 +8038,10 @@ message PathologicalProcessExposure
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -7284,7 +8056,9 @@ message PathologicalProcessExposure
   string exposureMagnitude = 0
   string exposureAdditionalCondition = 0
   string id = 0
+ repeated  string subsets = 0
  }
+// A hierarchical ordering of connected molecular reactions (steps) that represent a specific biological process, such as signaling or metabolism.
 message Pathway
  {
   string id = 0
@@ -7298,6 +8072,10 @@ message Pathway
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -7307,6 +8085,7 @@ message Pathway
  repeated  namedThing hasInput = 0
  repeated  namedThing hasOutput = 0
  repeated  physicalEntity enabledBy = 0
+ repeated  string subsets = 0
  }
 // a fact or situation that is observed to exist or happen, especially one whose cause or explanation is in question
 message Phenomenon
@@ -7322,12 +8101,16 @@ message Phenomenon
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
  repeated  uriorcurie category = 0
  }
-// A combination of entity and quality that makes up a phenotyping statement. An observable characteristic of an individual resulting from the interaction of its genotype with its molecular and physical environment.
+// A combination of entity and quality that makes up a phenotyping statement. An observable characteristic of an individual often resulting from the interaction of its genotype with its molecular and physical environment.
 message PhenotypicFeature
  {
   string id = 0
@@ -7341,6 +8124,10 @@ message PhenotypicFeature
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -7348,7 +8135,9 @@ message PhenotypicFeature
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
   geneticInheritance inheritance = 0
+ repeated  string subsets = 0
  }
+// An association between a phenotypic feature (sign or symptom) and a disease, where the phenotypic feature is a manifestation or clinical indicator of the disease.
 message PhenotypicFeatureToDiseaseAssociation
  {
   string id = 0
@@ -7401,9 +8190,9 @@ message PhenotypicFeatureToDiseaseAssociation
  repeated  uriorcurie category = 0
   uriorcurie predicate = 0
   frequencyValue frequencyQualifier = 0
-  string subjectAspectQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
   directionQualifierEnum subjectDirectionQualifier = 0
-  string objectAspectQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum objectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
   uriorcurie qualifiedPredicate = 0
   disease diseaseContextQualifier = 0
@@ -7466,9 +8255,9 @@ message PhenotypicFeatureToPhenotypicFeatureAssociation
  repeated  string type = 0
  repeated  uriorcurie category = 0
   frequencyValue frequencyQualifier = 0
-  string subjectAspectQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
   directionQualifierEnum subjectDirectionQualifier = 0
-  string objectAspectQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum objectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
   uriorcurie qualifiedPredicate = 0
   biologicalSex sexQualifier = 0
@@ -7478,7 +8267,7 @@ message PhenotypicFeatureToPhenotypicFeatureAssociation
   double hasPercentage = 0
   disease diseaseContextQualifier = 0
  }
-// A property of a phenotype
+// A characteristic of a phenotype (e.g., weight, size, shape, color) that can be observed, measured, or compared across organisms or conditions.
 message PhenotypicQuality
  {
   string id = 0
@@ -7490,6 +8279,10 @@ message PhenotypicQuality
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -7499,6 +8292,7 @@ message PhenotypicQuality
  repeated  quantityValue hasQuantitativeValue = 0
   namedThing hasQualitativeValue = 0
   iriType iri = 0
+ repeated  string subsets = 0
  }
 // An attribute corresponding to the phenotypic sex of the individual, based upon the reproductive organs present.
 message PhenotypicSex
@@ -7512,6 +8306,10 @@ message PhenotypicSex
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -7521,6 +8319,7 @@ message PhenotypicSex
  repeated  quantityValue hasQuantitativeValue = 0
   namedThing hasQualitativeValue = 0
   iriType iri = 0
+ repeated  string subsets = 0
  }
 // An entity that has material reality (a.k.a. physical essence).
 message PhysicalEntity
@@ -7536,11 +8335,16 @@ message PhysicalEntity
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
  repeated  uriorcurie category = 0
  }
+// A biological or chemical function within a living organism.
 message PhysiologicalProcess
  {
   string id = 0
@@ -7554,6 +8358,10 @@ message PhysiologicalProcess
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -7563,6 +8371,7 @@ message PhysiologicalProcess
  repeated  namedThing hasInput = 0
  repeated  namedThing hasOutput = 0
  repeated  physicalEntity enabledBy = 0
+ repeated  string subsets = 0
  }
 // Any entity or process that exists at the level of the whole planet
 message PlanetaryEntity
@@ -7578,6 +8387,10 @@ message PlanetaryEntity
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -7595,6 +8408,10 @@ message Plant
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -7617,6 +8434,10 @@ message Polypeptide
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -7637,6 +8458,10 @@ message PopulationOfIndividualOrganisms
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -7698,7 +8523,7 @@ message PopulationToPopulationAssociation
   populationOfIndividualOrganisms object = 0
   uriorcurie predicate = 0
  }
-// A chemical modification of a polypeptide or protein that occurs after translation. e.g. polypeptide cleavage to form separate proteins, methylation or acetylation of histone tail amino acids, protein ubiquitination.
+// A chemical modification of a polypeptide or protein that occurs after translation, altering its structure, activity, localization, or interactions.
 message PosttranslationalModification
  {
   string id = 0
@@ -7712,6 +8537,10 @@ message PosttranslationalModification
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -7723,7 +8552,7 @@ message PosttranslationalModification
 message PredicateMapping
  {
   string mappedPredicate = 0
-  string subjectAspectQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
   directionQualifierEnum subjectDirectionQualifier = 0
   string subjectFormOrVariantQualifier = 0
   string subjectPartQualifier = 0
@@ -7731,7 +8560,7 @@ message PredicateMapping
   string subjectContextQualifier = 0
   uriorcurie predicate = 0
   uriorcurie qualifiedPredicate = 0
-  string objectAspectQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum objectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
   string objectFormOrVariantQualifier = 0
   string objectPartQualifier = 0
@@ -7755,6 +8584,10 @@ message PreprintPublication
  repeated  string providedBy = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -7787,6 +8620,10 @@ message Procedure
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -7859,6 +8696,10 @@ message ProcessedMaterial
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -7878,6 +8719,7 @@ message ProcessedMaterial
   string isSupplement = 0
   approvalStatusEnum highestFDAApprovalStatus = 0
   approvalStatusEnum drugRegulatoryStatusWorldWide = 0
+ repeated  string subsets = 0
  }
 // A gene product that is composed of a chain of amino acid sequences and is produced by ribosome-mediated translation of mRNA
 message Protein
@@ -7893,6 +8735,10 @@ message Protein
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -7900,7 +8746,7 @@ message Protein
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
  }
-// A conserved part of protein sequence and (tertiary) structure that can evolve, function, and exist independently of the rest of the protein chain. Protein domains maintain their structure and function independently of the proteins in which they are found. e.g. an SH3 domain.
+// A conserved part of protein sequence and (tertiary) structure that can evolve, function, and exist independently of the rest of the protein chain. Protein domains maintain their structure and function independently of the proteins in which they are found.
 message ProteinDomain
  {
   string id = 0
@@ -7914,6 +8760,10 @@ message ProteinDomain
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -7922,6 +8772,7 @@ message ProteinDomain
   labelType inTaxonLabel = 0
  repeated  gene hasGeneOrGeneProduct = 0
  }
+// A set of proteins coding for diverse functions which, by virtue of their high degree of sequence similarity, are believed to have evolved from a single ancestral gene.
 message ProteinFamily
  {
   string id = 0
@@ -7935,6 +8786,10 @@ message ProteinFamily
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -7943,7 +8798,7 @@ message ProteinFamily
   labelType inTaxonLabel = 0
  repeated  gene hasGeneOrGeneProduct = 0
  }
-// Represents a protein that is a specific isoform of the canonical or reference protein. See https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4114032/
+// Represents a protein that is a specific isoform of the canonical or reference protein.
 message ProteinIsoform
  {
   string id = 0
@@ -7957,6 +8812,10 @@ message ProteinIsoform
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -7964,7 +8823,7 @@ message ProteinIsoform
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
  }
-// Any ‘published’ piece of information. Publications are considered broadly to include any document or document part made available in print or on the web - which may include scientific journal issues, individual articles, and books - as well as things like pre-prints, white papers, patents, drug labels, web pages, protocol documents,  and even a part of a publication if of significant knowledge scope (e.g. a figure, figure legend, or section highlighted by NLP).
+// Any ‘published’ piece of information. Publications are considered broadly to include any document or document part made available in print or on the web - which may include scientific journal issues, individual articles, and books - as well as things like pre-prints, white papers, patents, drug labels, web pages, protocol documents,  and even a part of a publication if of significant knowledge scope.
 message Publication
  {
   iriType iri = 0
@@ -7975,6 +8834,10 @@ message Publication
  repeated  string providedBy = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -7999,6 +8862,7 @@ message QuantityValue
   unit hasUnit = 0
   double hasNumericValue = 0
  }
+// A specialization of reaction-to-participant association in which the participant is a gene or gene product (e.g., an enzyme) that catalyses the reaction.
 message ReactionToCatalystAssociation
  {
   string id = 0
@@ -8055,6 +8919,7 @@ message ReactionToCatalystAssociation
   molecularEntity subject = 0
   geneOrGeneProduct object = 0
  }
+// An association between a biochemical reaction and a participating molecular entity, qualified by the stoichiometry, the side (reactant vs. product) on which the participant appears, and the direction of the reaction.
 message ReactionToParticipantAssociation
  {
   string id = 0
@@ -8125,6 +8990,10 @@ message ReagentTargetedGene
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -8132,6 +9001,7 @@ message ReagentTargetedGene
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
   biologicalSequence hasBiologicalSequence = 0
+ repeated  string subsets = 0
  }
 // A region (or regions) of the genome that contains known or putative regulatory elements that act in cis- or trans- to affect the transcription of gene
 message RegulatoryRegion
@@ -8147,6 +9017,10 @@ message RegulatoryRegion
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -8154,11 +9028,13 @@ message RegulatoryRegion
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
   biologicalSequence hasBiologicalSequence = 0
+ repeated  string subsets = 0
  }
 // An OWL property used as an edge label
 message RelationshipType
  {
   string id = 0
+ repeated  string subsets = 0
  }
 // A result of a relative frequency analysis.
 message RelativeFrequencyAnalysisResult
@@ -8174,6 +9050,10 @@ message RelativeFrequencyAnalysisResult
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -8192,6 +9072,10 @@ message RetrievalSource
  repeated  string providedBy = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -8206,6 +9090,7 @@ message RetrievalSource
  repeated  uriorcurie sourceRecordUrls = 0
  repeated  uriorcurie xref = 0
  }
+// High molecular weight, linear polymers, composed of nucleotides containing ribose and linked by phosphodiester bonds typically synthesized by a DNA- or RNA-dependent RNA polymerase that constitutes the product of a gene. Distinct in emphasis from `biolink:Transcript`, which denotes the informational output of transcription at the gene-model level rather than the chemical species itself.
 message RNAProduct
  {
   string id = 0
@@ -8219,6 +9104,10 @@ message RNAProduct
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -8240,6 +9129,10 @@ message RNAProductIsoform
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -8366,6 +9259,10 @@ message SequenceVariant
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -8376,6 +9273,7 @@ message SequenceVariant
  repeated  string hgvsNomenclature = 0
   biologicalSequence hasBiologicalSequence = 0
   string id = 0
+ repeated  string subsets = 0
  }
 // This class may rarely be instantiated except if use cases of a given knowledge graph support its utility.
 message Serial
@@ -8387,6 +9285,10 @@ message Serial
  repeated  string providedBy = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -8421,6 +9323,10 @@ message SeverityValue
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -8430,6 +9336,7 @@ message SeverityValue
  repeated  quantityValue hasQuantitativeValue = 0
   namedThing hasQualitativeValue = 0
   iriType iri = 0
+ repeated  string subsets = 0
  }
 // A small RNA molecule that is the product of a longer exogenous or endogenous dsRNA, which is either a bimolecular duplex or very long hairpin, processed (via the Dicer pathway) such that numerous siRNAs accumulate from both strands of the dsRNA. SRNAs trigger the cleavage of their target molecules.
 message SiRNA
@@ -8445,6 +9352,10 @@ message SiRNA
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -8466,6 +9377,10 @@ message SmallMolecule
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -8483,6 +9398,7 @@ message SmallMolecule
   string chemblChirality = 0
   string chemblDrugWarning = 0
   boolean isMetabolite = 0
+ repeated  string subsets = 0
  }
 // SNVs are single nucleotide positions in genomic DNA at which different sequence alternatives exist
 message Snv
@@ -8497,6 +9413,10 @@ message Snv
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -8507,6 +9427,7 @@ message Snv
  repeated  string hgvsNomenclature = 0
   biologicalSequence hasBiologicalSequence = 0
   string id = 0
+ repeated  string subsets = 0
  }
 // Attributes relating to a socioeconomic manifestation
 message SocioeconomicAttribute
@@ -8520,6 +9441,10 @@ message SocioeconomicAttribute
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -8529,8 +9454,9 @@ message SocioeconomicAttribute
  repeated  quantityValue hasQuantitativeValue = 0
   namedThing hasQualitativeValue = 0
   iriType iri = 0
+ repeated  string subsets = 0
  }
-// A socioeconomic exposure is a factor relating to social and financial status of an affected individual (e.g. poverty).
+// A socioeconomic exposure is a factor relating to social and financial status of an affected individual.
 message SocioeconomicExposure
  {
   iriType iri = 0
@@ -8542,6 +9468,10 @@ message SocioeconomicExposure
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -8556,6 +9486,7 @@ message SocioeconomicExposure
   string exposureMagnitude = 0
   string exposureAdditionalCondition = 0
   string id = 0
+ repeated  string subsets = 0
  repeated  socioeconomicAttribute hasAttribute = 0
  }
 // a detailed investigation and/or analysis
@@ -8572,6 +9503,10 @@ message Study
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -8591,6 +9526,10 @@ message StudyPopulation
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -8613,6 +9552,10 @@ message StudyVariable
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -8622,6 +9565,7 @@ message StudyVariable
   string format = 0
   date creationDate = 0
  }
+// An association between two organism taxa, capturing ecological or evolutionary relationships between the taxa (e.g., a host-pathogen relationship or shared habitat).
 message TaxonToTaxonAssociation
  {
   string id = 0
@@ -8678,6 +9622,7 @@ message TaxonToTaxonAssociation
 message TaxonomicRank
  {
   string id = 0
+ repeated  string subsets = 0
  }
 // A study result that represents information extracted from text using natural language processing techniques. This includes the extracted text, location offsets within the source document, confidence scores, and other metadata related to the text mining process.
 message TextMiningStudyResult
@@ -8693,6 +9638,10 @@ message TextMiningStudyResult
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -8719,6 +9668,10 @@ message Transcript
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -8793,6 +9746,10 @@ message TranscriptionFactorBindingSite
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -8800,6 +9757,7 @@ message TranscriptionFactorBindingSite
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
   biologicalSequence hasBiologicalSequence = 0
+ repeated  string subsets = 0
  }
 // A treatment is targeted at a disease or phenotype and may involve multiple drug 'exposures', medical devices and/or procedures
 message Treatment
@@ -8814,6 +9772,10 @@ message Treatment
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -8828,10 +9790,12 @@ message Treatment
   string exposureMagnitude = 0
   string exposureAdditionalCondition = 0
   string id = 0
+ repeated  string subsets = 0
  repeated  drug hasDrug = 0
  repeated  device hasDevice = 0
  repeated  procedure hasProcedure = 0
  }
+// An association in which a sequence variant serves as a model of a disease, recapitulating features relevant for studying the disease outside of a patient who carries it.
 message VariantAsAModelOfDiseaseAssociation
  {
   string id = 0
@@ -8883,14 +9847,15 @@ message VariantAsAModelOfDiseaseAssociation
   uriorcurie predicate = 0
   namedThing object = 0
   frequencyValue frequencyQualifier = 0
-  string subjectAspectQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
   directionQualifierEnum subjectDirectionQualifier = 0
-  string objectAspectQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum objectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
   uriorcurie qualifiedPredicate = 0
   disease diseaseContextQualifier = 0
   sequenceVariant subject = 0
  }
+// An association between a sequence variant and a disease, in which the allele state of the variant is linked to the disease state.
 message VariantToDiseaseAssociation
  {
   string id = 0
@@ -8943,9 +9908,9 @@ message VariantToDiseaseAssociation
   uriorcurie predicate = 0
   namedThing object = 0
   frequencyValue frequencyQualifier = 0
-  string subjectAspectQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
   directionQualifierEnum subjectDirectionQualifier = 0
-  string objectAspectQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum objectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
   uriorcurie qualifiedPredicate = 0
   disease diseaseContextQualifier = 0
@@ -9060,6 +10025,7 @@ message VariantToGeneExpressionAssociation
   lifeStage stageQualifier = 0
   diseaseOrPhenotypicFeature phenotypicState = 0
  }
+// An association between a sequence variant and a phenotypic feature, in which the allele state of the variant is linked to the manifestation of the phenotype.
 message VariantToPhenotypicFeatureAssociation
  {
   string id = 0
@@ -9112,9 +10078,9 @@ message VariantToPhenotypicFeatureAssociation
  repeated  uriorcurie category = 0
   sequenceVariant subject = 0
   frequencyValue frequencyQualifier = 0
-  string subjectAspectQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
   directionQualifierEnum subjectDirectionQualifier = 0
-  string objectAspectQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum objectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
   uriorcurie qualifiedPredicate = 0
   disease diseaseContextQualifier = 0
@@ -9182,7 +10148,6 @@ message VariantToPopulationAssociation
   double hasPercentage = 0
   frequencyValue frequencyQualifier = 0
  }
-// A sub-phylum of animals consisting of those having a bony or cartilaginous vertebral column.
 message Vertebrate
  {
   string id = 0
@@ -9195,6 +10160,10 @@ message Vertebrate
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -9216,6 +10185,10 @@ message Virus
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -9235,6 +10208,10 @@ message WebPage
  repeated  string providedBy = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -9253,6 +10230,7 @@ message WebPage
   string id = 0
   labelType name = 0
  }
+// An allelic state describing the degree of similarity between features at a single locus, specifically whether alleles at the same location on paired chromosomes are identical or different.
 message Zygosity
  {
   string id = 0
@@ -9264,6 +10242,10 @@ message Zygosity
  repeated  uriorcurie xref = 0
   labelType fullName = 0
  repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
  repeated  uriorcurie equivalentIdentifiers = 0
   float informationContent = 0
   uriorcurie taxon = 0
@@ -9273,4 +10255,5 @@ message Zygosity
  repeated  quantityValue hasQuantitativeValue = 0
   namedThing hasQualitativeValue = 0
   iriType iri = 0
+ repeated  string subsets = 0
  }
