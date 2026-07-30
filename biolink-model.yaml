@@ -7176,11 +7176,12 @@ classes:
       - has numeric value
       - has binary relation
     examples:
-      # Encoding for <1000.0 nM, meaning "less than 1000 nanometers"
-      - has_binary_relation: less_than
-        has_numeric_value: 1000.00
-        has_unit_prefix: "UO:0000300"  # 'nano'
-        has_unit: "UO:0000008"  # 'meter'
+      - object:
+          # Encoding for <1000.0 nM, meaning "less than 1000 nanometers"
+          has_binary_relation: less_than
+          has_numeric_value: 1000.00
+          has_unit_prefix: "UO:0000300"  # 'nano'
+          has_unit: "UO:0000008"  # 'meter'
 
 
   attribute:
