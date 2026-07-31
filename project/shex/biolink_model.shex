@@ -28,6 +28,8 @@ PREFIX dcterms: <http://purl.org/dc/terms/>
 
 <Unit> UO:0000000
 
+<UnitPrefix> UO:0000046
+
 <TimeType> xsd:string
 
 <BiologicalSequence> xsd:string
@@ -115,25 +117,6 @@ linkml:Sparqlpath xsd:string
        )
     } OR @<Agent>
 )
-
-<AffinityMeasurement> CLOSED {
-    (  $<AffinityMeasurement_tes> (  &<NamedThing_tes> ;
-          rdf:type [ <NamedThing> ] ? ;
-          <affinity_parameter> [ <https://w3id.org/biolink/vocab/AffinityParameterEnum#pIC50>
-             <https://w3id.org/biolink/vocab/AffinityParameterEnum#pEC50>
-             <https://w3id.org/biolink/vocab/AffinityParameterEnum#pAC50>
-             <https://w3id.org/biolink/vocab/AffinityParameterEnum#pXC50>
-             <https://w3id.org/biolink/vocab/AffinityParameterEnum#pKi> <https://w3id.org/biolink/vocab/AffinityParameterEnum#pKon>
-             <https://w3id.org/biolink/vocab/AffinityParameterEnum#pKoff>
-             <https://w3id.org/biolink/vocab/AffinityParameterEnum#pKd> ] ? ;
-          <affinity> @linkml:Float ? ;
-          <has_binary_relation> [ <https://w3id.org/biolink/vocab/BinaryRelationEnum#less_than>
-             <https://w3id.org/biolink/vocab/BinaryRelationEnum#equal_to>
-             <https://w3id.org/biolink/vocab/BinaryRelationEnum#greater_than> ] ?
-       ) ;
-       rdf:type [ <AffinityMeasurement> ]
-    )
-}
 
 <Agent> CLOSED {
     (  $<Agent_tes> (  &<AdministrativeEntity_tes> ;
@@ -1663,7 +1646,6 @@ linkml:Sparqlpath xsd:string
 <ChemicalGeneInteractionAssociation> CLOSED {
     (  $<ChemicalGeneInteractionAssociation_tes> (  &<Association_tes> ;
           rdf:type [ <Association> ] ? ;
-          <has_affinity> @<AffinityMeasurement> * ;
           <subject_form_or_variant_qualifier> [
              <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#genetic_variant_form>
              <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#modified_form>
@@ -6892,10 +6874,9 @@ linkml:Sparqlpath xsd:string
           ) ;
           rdf:type [ <NamedThing> ]
        )
-    } OR @<Activity> OR @<AdministrativeEntity> OR @<AffinityMeasurement> OR @<Attribute> OR @<BiologicalEntity> OR
-    @<ChemicalEntity> OR @<ClinicalEntity> OR @<Device> OR @<DiagnosticAid> OR @<Event> OR @<EvidenceType> OR @<ExposureEvent> OR
-    @<InformationContentEntity> OR @<OrganismTaxon> OR @<Phenomenon> OR @<PhysicalEntity> OR @<PlanetaryEntity> OR @<Procedure> OR
-    @<StudyResult>
+    } OR @<Activity> OR @<AdministrativeEntity> OR @<Attribute> OR @<BiologicalEntity> OR @<ChemicalEntity> OR @<ClinicalEntity> OR
+    @<Device> OR @<DiagnosticAid> OR @<Event> OR @<EvidenceType> OR @<ExposureEvent> OR @<InformationContentEntity> OR
+    @<OrganismTaxon> OR @<Phenomenon> OR @<PhysicalEntity> OR @<PlanetaryEntity> OR @<Procedure> OR @<StudyResult>
 )
 
 <NamedThingAssociatedWithLikelihoodOfNamedThingAssociation> CLOSED {
@@ -8274,6 +8255,22 @@ linkml:Sparqlpath xsd:string
     )
 }
 
+<ProteinLigandAssayResult> CLOSED {
+    (  $<ProteinLigandAssayResult_tes> (  &<StudyResult_tes> ;
+          rdf:type [ <StudyResult> ] ? ;
+          <pKd> @<QuantityValue> ? ;
+          <pKi> @<QuantityValue> ? ;
+          <pIC50> @<QuantityValue> ? ;
+          <pEC50> @<QuantityValue> ? ;
+          <pAC50> @<QuantityValue> ? ;
+          <pXC50> @<QuantityValue> ? ;
+          <pKon> @<QuantityValue> ? ;
+          <pKoff> @<QuantityValue> ?
+       ) ;
+       rdf:type [ <ProteinLigandAssayResult> ]
+    )
+}
+
 <Publication>  (
     CLOSED {
        (  $<Publication_tes> (  &<InformationContentEntity_tes> ;
@@ -8295,7 +8292,11 @@ linkml:Sparqlpath xsd:string
     (  $<QuantityValue_tes> (  &<Annotation_tes> ;
           rdf:type [ <Annotation> ] ? ;
           <has_unit> @<Unit> ? ;
-          <has_numeric_value> @<Double> ?
+          <has_unit_prefix> @<UnitPrefix> ? ;
+          <has_numeric_value> @<Double> ? ;
+          <has_binary_relation> [ <https://w3id.org/biolink/vocab/BinaryRelationEnum#less_than>
+             <https://w3id.org/biolink/vocab/BinaryRelationEnum#equal_to>
+             <https://w3id.org/biolink/vocab/BinaryRelationEnum#greater_than> ] ?
        ) ;
        rdf:type [ <QuantityValue> ] ?
     )
@@ -8588,7 +8589,8 @@ linkml:Sparqlpath xsd:string
 
 <StudyResult>  (
     @<ChiSquaredAnalysisResult> OR @<ConceptCountAnalysisResult> OR @<IceesStudyResult> OR @<LogOddsAnalysisResult> OR
-    @<ObservedExpectedFrequencyAnalysisResult> OR @<RelativeFrequencyAnalysisResult> OR @<TextMiningStudyResult>
+    @<ObservedExpectedFrequencyAnalysisResult> OR @<ProteinLigandAssayResult> OR @<RelativeFrequencyAnalysisResult> OR
+    @<TextMiningStudyResult>
 )
 
 <StudyResult_struct> {

@@ -52,32 +52,6 @@ message Activity
   uriorcurie taxon = 0
  repeated  uriorcurie category = 0
  }
-// The type of measurement describing the strength of an affinity between two entities. For instance, if a chemical inhibits a protein with a pIC50 of 8.6, the affinity parameter is pIC50 and the affinity value is 8.6. The binary relation, if given, qualifies the affinity as greater than, less than, or equal.
-message AffinityMeasurement
- {
-  string id = 0
-  iriType iri = 0
- repeated  string type = 0
-  labelType name = 0
-  narrativeText description = 0
- repeated  attribute hasAttribute = 0
-  boolean deprecated = 0
- repeated  string providedBy = 0
- repeated  uriorcurie xref = 0
-  labelType fullName = 0
- repeated  labelType synonym = 0
- repeated  labelType exactSynonym = 0
- repeated  labelType broadSynonym = 0
- repeated  labelType narrowSynonym = 0
- repeated  labelType relatedSynonym = 0
- repeated  uriorcurie equivalentIdentifiers = 0
-  float informationContent = 0
-  uriorcurie taxon = 0
- repeated  uriorcurie category = 0
-  affinityParameterEnum affinityParameter = 0
-  float affinity = 0
-  binaryRelationEnum hasBinaryRelation = 0
- }
 // person, group, organization or project that provides a piece of information (i.e. a knowledge association)
 message Agent
  {
@@ -2104,7 +2078,6 @@ message ChemicalGeneInteractionAssociation
   integer semmedAgreementCount = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
- repeated  affinityMeasurement hasAffinity = 0
   chemicalOrGeneOrGeneProductFormOrVariantEnum subjectFormOrVariantQualifier = 0
   geneOrGeneProductOrChemicalPartQualifierEnum subjectPartQualifier = 0
   chemicalEntityDerivativeEnum subjectDerivativeQualifier = 0
@@ -8823,6 +8796,37 @@ message ProteinIsoform
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
  }
+// The type of study result describing the strength of interaction affinity - or enzymatic interaction - between a ligand and a target protein. Measured binding or enzymatic assay values are generally stated as the negative base 10 logarithm of the raw measurements. For instance (i.e., in a molecular interaction database like BindingDb) if a ligand inhibits a target protein with a pIC50 of 8.6, then the affinity parameter is pIC50 and the affinity value is 8.6.
+message ProteinLigandAssayResult
+ {
+  string id = 0
+  iriType iri = 0
+ repeated  string type = 0
+  labelType name = 0
+  narrativeText description = 0
+ repeated  attribute hasAttribute = 0
+  boolean deprecated = 0
+ repeated  string providedBy = 0
+ repeated  uriorcurie xref = 0
+  labelType fullName = 0
+ repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
+  float informationContent = 0
+  uriorcurie taxon = 0
+ repeated  uriorcurie category = 0
+  quantityValue pKd = 0
+  quantityValue pKi = 0
+  quantityValue pIC50 = 0
+  quantityValue pEC50 = 0
+  quantityValue pAC50 = 0
+  quantityValue pXC50 = 0
+  quantityValue pKon = 0
+  quantityValue pKoff = 0
+ }
 // Any ‘published’ piece of information. Publications are considered broadly to include any document or document part made available in print or on the web - which may include scientific journal issues, individual articles, and books - as well as things like pre-prints, white papers, patents, drug labels, web pages, protocol documents,  and even a part of a publication if of significant knowledge scope.
 message Publication
  {
@@ -8856,11 +8860,13 @@ message Publication
   string id = 0
   labelType name = 0
  }
-// A value of an attribute that is quantitative and measurable, expressed as a combination of a unit and a numeric value
+// A value of an attribute that is quantitative and measurable, expressed as a combination of a unit, (optional) unit prefix and a numeric value. An optional binary relation qualifier may also be given, to allow capture of relative values, e.g., <1000.0 nM meaning "less than 1000 nanometers"
 message QuantityValue
  {
   unit hasUnit = 0
+  unitPrefix hasUnitPrefix = 0
   double hasNumericValue = 0
+  binaryRelationEnum hasBinaryRelation = 0
  }
 // A specialization of reaction-to-participant association in which the participant is a gene or gene product (e.g., an enzyme) that catalyses the reaction.
 message ReactionToCatalystAssociation
