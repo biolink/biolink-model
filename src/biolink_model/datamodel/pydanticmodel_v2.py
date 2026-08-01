@@ -29,7 +29,7 @@ from pydantic import (
 )
 
 
-metamodel_version = "1.7.0"
+metamodel_version = "1.11.0"
 version = "4.4.3"
 
 
@@ -10117,7 +10117,7 @@ class DruggableGeneToDiseaseAssociation(GeneToDiseaseAssociation, GeneToEntityAs
     """
     druggable_gene_category: Optional[DruggableGeneCategoryEnum] = Field(default=None, description="""Classification of druggable genes based on knowledge about drug or small molecule activities.""")
     subject: str = Field(default=..., description="""gene in which variation is correlated with the disease in a protective manner, or if the product produced by the gene can be targeted by a small molecule and this leads to a protective or improving disease state.""")
-    predicate: Literal["target_for"] = Field(default=..., description="""Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats""")
+    predicate: GeneToDiseasePredicateEnum = Field(default=..., description="""Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats""")
     object: str = Field(default=..., description="""disease""")
     subject_form_or_variant_qualifier: Optional[ChemicalOrGeneOrGeneProductFormOrVariantEnum] = Field(default=None, description="""A qualifier that composes with a core subject/object concept to define a specific type, variant, alternative version of this concept. The composed concept remains a subtype or instance of the core concept. For example, the qualifier ‘mutation’ combines with the core concept ‘Gene X’ to express the compose concept ‘a mutation of Gene X’.  This qualifier specifies a change in the subject of an association (aka: statement).""")
     subject_aspect_qualifier: Optional[GeneOrGeneProductOrChemicalEntityAspectEnum] = Field(default=None, description="""Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the subject of an association (aka: statement).""")
@@ -10692,7 +10692,7 @@ class GeneAsAModelOfDiseaseAssociation(ModelToDiseaseAssociationMixin, GeneToDis
     An association in which a gene (e.g., a model-organism ortholog of a known disease gene) serves as a model of a human disease - for example, because mutants of the gene recapitulate core features of the disease.
     """
     subject: str = Field(default=..., description="""A gene that has a role in modeling the disease. This may be a model organism ortholog of a known disease gene, or it may be a gene whose mutants recapitulate core features of the disease.""")
-    predicate: Literal["model_of"] = Field(default=..., description="""The relationship to the disease""")
+    predicate: GeneToDiseasePredicateEnum = Field(default=..., description="""The relationship to the disease""")
     object: str = Field(default=..., description="""disease""")
     subject_form_or_variant_qualifier: Optional[ChemicalOrGeneOrGeneProductFormOrVariantEnum] = Field(default=None, description="""A qualifier that composes with a core subject/object concept to define a specific type, variant, alternative version of this concept. The composed concept remains a subtype or instance of the core concept. For example, the qualifier ‘mutation’ combines with the core concept ‘Gene X’ to express the compose concept ‘a mutation of Gene X’.  This qualifier specifies a change in the subject of an association (aka: statement).""")
     subject_aspect_qualifier: Optional[GeneOrGeneProductOrChemicalEntityAspectEnum] = Field(default=None, description="""Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the subject of an association (aka: statement).""")
@@ -11139,7 +11139,7 @@ class GeneHasVariantThatContributesToDiseaseAssociation(GeneToDiseaseAssociation
     diseases_confidence_score: Optional[float] = Field(default=None, description="""A score defined by Jensen Lab Diseases that reports confidence level in an association on a scale of 1-5 stars.  It is based on different inputs for curated knowledge associations vs text-mined associations vs experimental/GWAS based associations, but adjusts/caps scores for these types of knowledge such that they are comparable on a single scale.""")
     gene2phenotype_confidence_category: Optional[str] = Field(default=None, description="""A term used by EBI Gene2Phenotype to describe the confidence that the association is real. GenCC confidence terms are used for different levels of confidence (enum).  See https://www.ebi.ac.uk/gene2phenotype/about/terminology#g2p-confidence-section.""")
     subject: str = Field(default=..., description="""A gene that has a role in modeling the disease. This may be a model organism ortholog of a known disease gene, or it may be a gene whose mutants recapitulate core features of the disease.""")
-    predicate: Literal["causes", "contributes_to"] = Field(default=..., description="""Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats""")
+    predicate: GeneToDiseasePredicateEnum = Field(default=..., description="""Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats""")
     object: str = Field(default=..., description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     negated: Optional[bool] = Field(default=None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifier: Optional[str] = Field(default=None, description="""grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes""")

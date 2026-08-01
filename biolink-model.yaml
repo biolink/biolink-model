@@ -6265,7 +6265,7 @@ slots:
       Connects an study to instances of its study result
 
   log odds ratio:
-    is_a: association slot
+    is_a: node property
     description: >-
       The natural logarithm of the odds ratio (OR), or the ratio of
       the odds of an event Y occurring in an exposed group versus
@@ -6273,7 +6273,7 @@ slots:
     range: float
 
   log odds ratio 95 ci:
-    is_a: association slot
+    is_a: node property
     description: >-
       The ninety-five percent confidence range in which the true log odds ratio for the sample population falls.
       To calculate the 95% confidence interval (CI) for a log odds ratio (a pair of numbers),
@@ -6381,7 +6381,7 @@ slots:
     multivalued: true
 
   chi squared statistic:
-    is_a: association slot
+    is_a: node property
     range: float
     description: >-
       The chi-squared statistic measures how much observed
@@ -6392,7 +6392,7 @@ slots:
       - value: "26.38523077566414"
 
   chi squared dof:
-    is_a: association slot
+    is_a: node property
     description: >-
        Degrees of freedom (dof) in a chi-squared test referring to the
        number of values in the final calculation of a statistic that are free to vary
@@ -6401,7 +6401,7 @@ slots:
       - value: "1"
 
   chi squared p:
-    is_a: association slot
+    is_a: node property
     description: >-
        The chi-square p-value tells you the probability that the observed differences
        (or associations) in your data occurred by random chance, assuming the null hypothesis is true.
@@ -6410,7 +6410,7 @@ slots:
       - value: "2.7967079822744063e-07"
 
   fisher exact odds ratio:
-    is_a: association slot
+    is_a: node property
     description: >-
        The Fisher Exact Test is used to determine whether there is a non-random association between
        two categorical variables in a 2×2 contingency table, especially when sample sizes are small.
@@ -6423,7 +6423,7 @@ slots:
       - value: "3.226188583240579"
 
   fisher exact p:
-    is_a: association slot
+    is_a: node property
     description: >-
       The Fisher exact p-value tells you the probability of observing a table
       as extreme as (or more extreme than) your actual data, assuming that
@@ -6560,7 +6560,7 @@ slots:
       - value: "0.018"
 
   supporting text:
-    is_a: association slot
+    is_a: node property
     description: The segment of text from a document that supports the mined assertion.
     multivalued: true
     range: string
@@ -6579,7 +6579,7 @@ slots:
       - value: PMID:12345678
 
   subject location in text:
-    is_a: association slot
+    is_a: node property
     description: >-
       Character offsets for the text span(s) in the supporting text corresponding
       to the subject concept of the extracted assertion.
@@ -6589,7 +6589,7 @@ slots:
     multivalued: true
 
   object location in text:
-    is_a: association slot
+    is_a: node property
     description: >-
       Character offsets for the text span(s) in the supporting text corresponding
       to the object concept of the extracted assertion
@@ -6599,7 +6599,7 @@ slots:
     multivalued: true
 
   extraction confidence score:
-    is_a: association slot
+    is_a: node property
     description: >-
       A quantitative confidence value that represents the probability of
       obtaining a result at least as extreme as that actually obtained,
@@ -6609,7 +6609,7 @@ slots:
       - value: "0.6188385904738642"
 
   supporting document type:
-    is_a: association slot
+    is_a: node property
     description: >-
       The document type (e.g., Journal Article, Case Study, Preprint) for
       the supporting document used in a Text Mining Result.
@@ -6618,7 +6618,7 @@ slots:
       - value: Journal Article
 
   supporting document year:
-    is_a: association slot
+    is_a: node property
     description: >-
       The document year (typically the publication year) for the supporting
       document used in a Text Mining Result.
@@ -6627,7 +6627,7 @@ slots:
       - value: "2018"
 
   supporting text section type:
-    is_a: association slot
+    is_a: node property
     description: >-
       The section of the supporting text of a Text Mining Result within
       the supporting document. This is in the form of the name of the document section
