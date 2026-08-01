@@ -2942,7 +2942,21 @@
          "@id": "CellularOrganism"
       },
       "ChemicalAffectsBiologicalEntityAssociation": {
-         "@id": "ChemicalAffectsBiologicalEntityAssociation"
+         "@id": "ChemicalAffectsBiologicalEntityAssociation",
+         "@context": {
+            "subject_context_qualifier": {
+               "@id": "subject_context_qualifier",
+               "@type": "@id"
+            },
+            "object_context_qualifier": {
+               "@id": "object_context_qualifier",
+               "@type": "@id"
+            },
+            "anatomical_context_qualifier": {
+               "@id": "anatomical_context_qualifier",
+               "@type": "@id"
+            }
+         }
       },
       "ChemicalAffectsGeneAssociation": {
          "@id": "ChemicalAffectsGeneAssociation"
@@ -2984,10 +2998,30 @@
          "@id": "ChemicalExposure"
       },
       "ChemicalGeneInteractionAssociation": {
-         "@id": "ChemicalGeneInteractionAssociation"
+         "@id": "ChemicalGeneInteractionAssociation",
+         "@context": {
+            "subject_context_qualifier": {
+               "@id": "subject_context_qualifier",
+               "@type": "@id"
+            },
+            "object_context_qualifier": {
+               "@id": "object_context_qualifier",
+               "@type": "@id"
+            },
+            "anatomical_context_qualifier": {
+               "@id": "anatomical_context_qualifier",
+               "@type": "@id"
+            }
+         }
       },
       "ChemicalGeneSensitivityAssociation": {
-         "@id": "ChemicalGeneSensitivityAssociation"
+         "@id": "ChemicalGeneSensitivityAssociation",
+         "@context": {
+            "anatomical_context_qualifier": {
+               "@id": "anatomical_context_qualifier",
+               "@type": "@id"
+            }
+         }
       },
       "ChemicalMixture": {
          "@id": "ChemicalMixture"
@@ -3242,7 +3276,21 @@
          "@id": "Gene"
       },
       "GeneAffectsChemicalAssociation": {
-         "@id": "GeneAffectsChemicalAssociation"
+         "@id": "GeneAffectsChemicalAssociation",
+         "@context": {
+            "subject_context_qualifier": {
+               "@id": "subject_context_qualifier",
+               "@type": "@id"
+            },
+            "object_context_qualifier": {
+               "@id": "object_context_qualifier",
+               "@type": "@id"
+            },
+            "anatomical_context_qualifier": {
+               "@id": "anatomical_context_qualifier",
+               "@type": "@id"
+            }
+         }
       },
       "GeneAsAModelOfDiseaseAssociation": {
          "@id": "GeneAsAModelOfDiseaseAssociation"
@@ -3284,7 +3332,12 @@
          "@id": "GeneRegulatesGeneAssociation"
       },
       "GeneToDiseaseAssociation": {
-         "@id": "GeneToDiseaseAssociation"
+         "@id": "GeneToDiseaseAssociation",
+         "@context": {
+            "predicate": {
+               "@id": "rdf:predicate"
+            }
+         }
       },
       "GeneToEntityAssociationMixin": {
          "@id": "GeneToEntityAssociationMixin"
@@ -3293,7 +3346,33 @@
          "@id": "GeneToExpressionSiteAssociation"
       },
       "GeneToGeneAssociation": {
-         "@id": "GeneToGeneAssociation"
+         "@id": "GeneToGeneAssociation",
+         "@context": {
+            "subject_activity_qualifier": {
+               "@id": "subject_activity_qualifier",
+               "@type": "@id"
+            },
+            "subject_process_qualifier": {
+               "@id": "subject_process_qualifier",
+               "@type": "@id"
+            },
+            "subject_context_qualifier": {
+               "@id": "subject_context_qualifier",
+               "@type": "@id"
+            },
+            "object_activity_qualifier": {
+               "@id": "object_activity_qualifier",
+               "@type": "@id"
+            },
+            "object_process_qualifier": {
+               "@id": "object_process_qualifier",
+               "@type": "@id"
+            },
+            "object_context_qualifier": {
+               "@id": "object_context_qualifier",
+               "@type": "@id"
+            }
+         }
       },
       "GeneToGeneCoexpressionAssociation": {
          "@id": "GeneToGeneCoexpressionAssociation"
@@ -3314,7 +3393,12 @@
          "@id": "GeneToPathwayAssociation"
       },
       "GeneToPhenotypicFeatureAssociation": {
-         "@id": "GeneToPhenotypicFeatureAssociation"
+         "@id": "GeneToPhenotypicFeatureAssociation",
+         "@context": {
+            "predicate": {
+               "@id": "rdf:predicate"
+            }
+         }
       },
       "GeneticInheritance": {
          "@id": "GeneticInheritance"
@@ -3479,7 +3563,17 @@
          "@id": "NamedThing"
       },
       "NamedThingAssociatedWithLikelihoodOfNamedThingAssociation": {
-         "@id": "NamedThingAssociatedWithLikelihoodOfNamedThingAssociation"
+         "@id": "NamedThingAssociatedWithLikelihoodOfNamedThingAssociation",
+         "@context": {
+            "subject_context_qualifier": {
+               "@id": "subject_context_qualifier",
+               "@type": "@id"
+            },
+            "object_context_qualifier": {
+               "@id": "object_context_qualifier",
+               "@type": "@id"
+            }
+         }
       },
       "Node": {
          "@id": "Node"
