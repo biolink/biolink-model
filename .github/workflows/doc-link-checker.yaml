@@ -26,7 +26,7 @@ jobs:
         # Reference: https://github.com/actions/checkout
         uses: actions/checkout@v7
       - name: Set up Python
-        uses: actions/setup-python@v6.2.0
+        uses: actions/setup-python@v7.0.0
         with:
           python-version: "3.10"
       - name: Install uv
@@ -40,7 +40,7 @@ jobs:
         # Possible exit codes: https://github.com/lycheeverse/lychee?tab=readme-ov-file#exit-codes
         # Reference: https://github.com/lycheeverse/lychee-action
         id: lychee
-        uses: lycheeverse/lychee-action@v2.8.0
+        uses: lycheeverse/lychee-action@v2.9.0
         with:
           # Reference: https://github.com/lycheeverse/lychee#commandline-parameters
           args: --base docs --verbose --no-progress --format markdown --timeout 5 'docs/*.md' 'docs/**/*.md'
