@@ -34,8 +34,7 @@ scripts = [
 docs = [
     # Must cover everything mkdocs.yml declares: `theme: material` and `plugins: [search, mermaid2]`.
     # Bounds mirror the dev group so a standalone `pip install biolink-model[docs]` builds the same
-    # site CI builds. Previously only mkdocs-material was listed and the build worked solely because
-    # `uv sync --extra docs` also installs the dev group -- it broke under `--no-dev`.
+    # site CI builds.
     "mkdocs>=1.4.2,<2",
     "mkdocs-material>=9.5.17,<10",
     "mkdocs-mermaid2-plugin>=1.1.1,<2",
