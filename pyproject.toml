@@ -45,10 +45,6 @@ all = [
 
 [dependency-groups]
 dev = [
-    # Pinned, not floating: linkml is no longer a core dependency (it moved to the `scripts`
-    # extra), so `uv sync` would otherwise resolve it by backtracking off `linkml-runtime`.
-    # Generated artifacts under project/ and src/biolink_model/datamodel/ are version-sensitive
-    # and are auto-committed by push-main-regenerate-artifacts, so this must be deterministic.
     "linkml==1.11.1",
     "mkdocs>=1.4.2,<2",
     "mkdocs-material>=9.5.17,<10",
