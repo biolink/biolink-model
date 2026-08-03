@@ -173,6 +173,9 @@ message AnatomicalEntityHasPartAnatomicalEntityAssociation
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
+  float stringdbCombinedScore = 0
+  float stringdbExperimentalScore = 0
+  float stringdbCoexpressionScore = 0
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
@@ -226,6 +229,9 @@ message AnatomicalEntityPartOfAnatomicalEntityAssociation
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
+  float stringdbCombinedScore = 0
+  float stringdbExperimentalScore = 0
+  float stringdbCoexpressionScore = 0
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
@@ -279,6 +285,9 @@ message AnatomicalEntityToAnatomicalEntityOntogenicAssociation
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
+  float stringdbCombinedScore = 0
+  float stringdbExperimentalScore = 0
+  float stringdbCoexpressionScore = 0
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
@@ -372,6 +381,9 @@ message Association
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
+  float stringdbCombinedScore = 0
+  float stringdbExperimentalScore = 0
+  float stringdbCoexpressionScore = 0
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
@@ -504,6 +516,9 @@ message BehaviorToBehavioralFeatureAssociation
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
+  float stringdbCombinedScore = 0
+  float stringdbExperimentalScore = 0
+  float stringdbCoexpressionScore = 0
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
@@ -687,6 +702,9 @@ message BiologicalProcessOrActivityToAnatomicalEntityAssociation
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
+  float stringdbCombinedScore = 0
+  float stringdbExperimentalScore = 0
+  float stringdbCoexpressionScore = 0
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
@@ -739,6 +757,9 @@ message BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
+  float stringdbCombinedScore = 0
+  float stringdbExperimentalScore = 0
+  float stringdbCoexpressionScore = 0
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
@@ -792,6 +813,9 @@ message BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
+  float stringdbCombinedScore = 0
+  float stringdbExperimentalScore = 0
+  float stringdbCoexpressionScore = 0
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
@@ -1000,6 +1024,9 @@ message CaseToDiseaseAssociation
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
+  float stringdbCombinedScore = 0
+  float stringdbExperimentalScore = 0
+  float stringdbCoexpressionScore = 0
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
@@ -1054,6 +1081,9 @@ message CaseToGeneAssociation
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
+  float stringdbCombinedScore = 0
+  float stringdbExperimentalScore = 0
+  float stringdbCoexpressionScore = 0
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
@@ -1109,6 +1139,9 @@ message CaseToPhenotypicFeatureAssociation
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
+  float stringdbCombinedScore = 0
+  float stringdbExperimentalScore = 0
+  float stringdbCoexpressionScore = 0
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
@@ -1173,6 +1206,9 @@ message CaseToVariantAssociation
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
+  float stringdbCombinedScore = 0
+  float stringdbExperimentalScore = 0
+  float stringdbCoexpressionScore = 0
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
@@ -1228,6 +1264,9 @@ message CausalGeneToDiseaseAssociation
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
+  float stringdbCombinedScore = 0
+  float stringdbExperimentalScore = 0
+  float stringdbCoexpressionScore = 0
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
@@ -1338,6 +1377,9 @@ message CellLineAsAModelOfDiseaseAssociation
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
+  float stringdbCombinedScore = 0
+  float stringdbExperimentalScore = 0
+  float stringdbCoexpressionScore = 0
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
@@ -1401,6 +1443,9 @@ message CellLineToDiseaseOrPhenotypicFeatureAssociation
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
+  float stringdbCombinedScore = 0
+  float stringdbExperimentalScore = 0
+  float stringdbCoexpressionScore = 0
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
@@ -1507,6 +1552,9 @@ message ChemicalAffectsBiologicalEntityAssociation
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
+  float stringdbCombinedScore = 0
+  float stringdbExperimentalScore = 0
+  float stringdbCoexpressionScore = 0
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
@@ -1575,6 +1623,9 @@ message ChemicalAffectsGeneAssociation
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
+  float stringdbCombinedScore = 0
+  float stringdbExperimentalScore = 0
+  float stringdbCoexpressionScore = 0
   boolean elevateToPrediction = 0
   integer semmedAgreementCount = 0
  repeated  string type = 0
@@ -1680,6 +1731,9 @@ message ChemicalEntityAssessesNamedThingAssociation
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
+  float stringdbCombinedScore = 0
+  float stringdbExperimentalScore = 0
+  float stringdbCoexpressionScore = 0
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
@@ -1733,6 +1787,9 @@ message ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
+  float stringdbCombinedScore = 0
+  float stringdbExperimentalScore = 0
+  float stringdbCoexpressionScore = 0
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
@@ -1787,6 +1844,9 @@ message ChemicalEntityToBiologicalProcessAssociation
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
+  float stringdbCombinedScore = 0
+  float stringdbExperimentalScore = 0
+  float stringdbCoexpressionScore = 0
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
@@ -1844,6 +1904,9 @@ message ChemicalEntityToChemicalDerivationAssociation
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
+  float stringdbCombinedScore = 0
+  float stringdbExperimentalScore = 0
+  float stringdbCoexpressionScore = 0
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
@@ -1899,6 +1962,9 @@ message ChemicalEntityToChemicalEntityAssociation
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
+  float stringdbCombinedScore = 0
+  float stringdbExperimentalScore = 0
+  float stringdbCoexpressionScore = 0
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
@@ -1955,6 +2021,9 @@ message ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
+  float stringdbCombinedScore = 0
+  float stringdbExperimentalScore = 0
+  float stringdbCoexpressionScore = 0
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
@@ -2013,6 +2082,9 @@ message ChemicalEntityToPathwayAssociation
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
+  float stringdbCombinedScore = 0
+  float stringdbExperimentalScore = 0
+  float stringdbCoexpressionScore = 0
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
@@ -2099,6 +2171,9 @@ message ChemicalGeneInteractionAssociation
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
+  float stringdbCombinedScore = 0
+  float stringdbExperimentalScore = 0
+  float stringdbCoexpressionScore = 0
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
@@ -2168,6 +2243,9 @@ message ChemicalGeneSensitivityAssociation
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
+  float stringdbCombinedScore = 0
+  float stringdbExperimentalScore = 0
+  float stringdbCoexpressionScore = 0
   boolean elevateToPrediction = 0
   integer semmedAgreementCount = 0
  repeated  string type = 0
@@ -2276,6 +2354,9 @@ message ChemicalOrDrugOrTreatmentAdverseEventAssociation
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
+  float stringdbCombinedScore = 0
+  float stringdbExperimentalScore = 0
+  float stringdbCoexpressionScore = 0
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
@@ -2340,6 +2421,9 @@ message ChemicalOrDrugOrTreatmentSideEffectAssociation
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
+  float stringdbCombinedScore = 0
+  float stringdbExperimentalScore = 0
+  float stringdbCoexpressionScore = 0
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
@@ -2403,6 +2487,9 @@ message ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
+  float stringdbCombinedScore = 0
+  float stringdbExperimentalScore = 0
+  float stringdbCoexpressionScore = 0
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
@@ -2932,6 +3019,9 @@ message ContributorAssociation
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
+  float stringdbCombinedScore = 0
+  float stringdbExperimentalScore = 0
+  float stringdbCoexpressionScore = 0
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
@@ -2986,6 +3076,9 @@ message CorrelatedGeneToDiseaseAssociation
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
+  float stringdbCombinedScore = 0
+  float stringdbExperimentalScore = 0
+  float stringdbCoexpressionScore = 0
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
@@ -3237,6 +3330,9 @@ message DiseaseAssociatedWithResponseToChemicalEntityAssociation
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
+  float stringdbCombinedScore = 0
+  float stringdbExperimentalScore = 0
+  float stringdbCoexpressionScore = 0
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
@@ -3353,6 +3449,9 @@ message DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
+  float stringdbCombinedScore = 0
+  float stringdbExperimentalScore = 0
+  float stringdbCoexpressionScore = 0
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
@@ -3407,6 +3506,9 @@ message DiseaseOrPhenotypicFeatureToLocationAssociation
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
+  float stringdbCombinedScore = 0
+  float stringdbExperimentalScore = 0
+  float stringdbCoexpressionScore = 0
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
@@ -3458,6 +3560,9 @@ message DiseaseToDiseaseAssociation
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
+  float stringdbCombinedScore = 0
+  float stringdbExperimentalScore = 0
+  float stringdbCoexpressionScore = 0
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
@@ -3521,6 +3626,9 @@ message DiseaseToExposureEventAssociation
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
+  float stringdbCombinedScore = 0
+  float stringdbExperimentalScore = 0
+  float stringdbCoexpressionScore = 0
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
@@ -3572,6 +3680,9 @@ message DiseaseToPhenotypicFeatureAssociation
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
+  float stringdbCombinedScore = 0
+  float stringdbExperimentalScore = 0
+  float stringdbCoexpressionScore = 0
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
@@ -3745,6 +3856,9 @@ message DrugToGeneAssociation
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
+  float stringdbCombinedScore = 0
+  float stringdbExperimentalScore = 0
+  float stringdbCoexpressionScore = 0
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
@@ -3831,6 +3945,9 @@ message DruggableGeneToDiseaseAssociation
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
+  float stringdbCombinedScore = 0
+  float stringdbExperimentalScore = 0
+  float stringdbCoexpressionScore = 0
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
@@ -3899,6 +4016,9 @@ message EntityToDiseaseAssociation
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
+  float stringdbCombinedScore = 0
+  float stringdbExperimentalScore = 0
+  float stringdbCoexpressionScore = 0
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
@@ -3956,6 +4076,9 @@ message EntityToPhenotypicFeatureAssociation
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
+  float stringdbCombinedScore = 0
+  float stringdbExperimentalScore = 0
+  float stringdbCoexpressionScore = 0
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
@@ -4224,6 +4347,9 @@ message ExonToTranscriptRelationship
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
+  float stringdbCombinedScore = 0
+  float stringdbExperimentalScore = 0
+  float stringdbCoexpressionScore = 0
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
@@ -4312,6 +4438,9 @@ message ExposureEventToOutcomeAssociation
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
+  float stringdbCombinedScore = 0
+  float stringdbExperimentalScore = 0
+  float stringdbCoexpressionScore = 0
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
@@ -4366,6 +4495,9 @@ message ExposureEventToPhenotypicFeatureAssociation
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
+  float stringdbCombinedScore = 0
+  float stringdbExperimentalScore = 0
+  float stringdbCoexpressionScore = 0
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
@@ -4504,6 +4636,9 @@ message FunctionalAssociation
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
+  float stringdbCombinedScore = 0
+  float stringdbExperimentalScore = 0
+  float stringdbCoexpressionScore = 0
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
@@ -4608,6 +4743,9 @@ message GeneAffectsChemicalAssociation
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
+  float stringdbCombinedScore = 0
+  float stringdbExperimentalScore = 0
+  float stringdbCoexpressionScore = 0
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
@@ -4677,6 +4815,9 @@ message GeneAsAModelOfDiseaseAssociation
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
+  float stringdbCombinedScore = 0
+  float stringdbExperimentalScore = 0
+  float stringdbCoexpressionScore = 0
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
@@ -4767,6 +4908,9 @@ message GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
+  float stringdbCombinedScore = 0
+  float stringdbExperimentalScore = 0
+  float stringdbCoexpressionScore = 0
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
@@ -4820,6 +4964,9 @@ message GeneHasVariantThatContributesToDiseaseAssociation
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
+  float stringdbCombinedScore = 0
+  float stringdbExperimentalScore = 0
+  float stringdbCoexpressionScore = 0
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
@@ -4881,6 +5028,9 @@ message GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
+  float stringdbCombinedScore = 0
+  float stringdbExperimentalScore = 0
+  float stringdbCoexpressionScore = 0
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
@@ -4933,6 +5083,9 @@ message GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
+  float stringdbCombinedScore = 0
+  float stringdbExperimentalScore = 0
+  float stringdbCoexpressionScore = 0
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
@@ -4986,6 +5139,9 @@ message GeneRegulatesGeneAssociation
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
+  float stringdbCombinedScore = 0
+  float stringdbExperimentalScore = 0
+  float stringdbCoexpressionScore = 0
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
@@ -5044,6 +5200,9 @@ message GeneToDiseaseAssociation
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
+  float stringdbCombinedScore = 0
+  float stringdbExperimentalScore = 0
+  float stringdbCoexpressionScore = 0
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
@@ -5104,6 +5263,9 @@ message GeneToExpressionSiteAssociation
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
+  float stringdbCombinedScore = 0
+  float stringdbExperimentalScore = 0
+  float stringdbCoexpressionScore = 0
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
@@ -5160,6 +5322,9 @@ message GeneToGeneAssociation
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
+  float stringdbCombinedScore = 0
+  float stringdbExperimentalScore = 0
+  float stringdbCoexpressionScore = 0
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
@@ -5226,6 +5391,9 @@ message GeneToGeneCoexpressionAssociation
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
+  float stringdbCombinedScore = 0
+  float stringdbExperimentalScore = 0
+  float stringdbCoexpressionScore = 0
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
@@ -5296,6 +5464,9 @@ message GeneToGeneFamilyAssociation
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
+  float stringdbCombinedScore = 0
+  float stringdbExperimentalScore = 0
+  float stringdbCoexpressionScore = 0
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
@@ -5349,6 +5520,9 @@ message GeneToGeneHomologyAssociation
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
+  float stringdbCombinedScore = 0
+  float stringdbExperimentalScore = 0
+  float stringdbCoexpressionScore = 0
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
@@ -5415,6 +5589,9 @@ message GeneToGeneProductRelationship
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
+  float stringdbCombinedScore = 0
+  float stringdbExperimentalScore = 0
+  float stringdbCoexpressionScore = 0
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
@@ -5469,6 +5646,9 @@ message GeneToGoTermAssociation
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
+  float stringdbCombinedScore = 0
+  float stringdbExperimentalScore = 0
+  float stringdbCoexpressionScore = 0
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
@@ -5522,6 +5702,9 @@ message GeneToPathwayAssociation
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
+  float stringdbCombinedScore = 0
+  float stringdbExperimentalScore = 0
+  float stringdbCoexpressionScore = 0
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
@@ -5574,6 +5757,9 @@ message GeneToPhenotypicFeatureAssociation
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
+  float stringdbCombinedScore = 0
+  float stringdbExperimentalScore = 0
+  float stringdbCoexpressionScore = 0
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
@@ -5730,6 +5916,9 @@ message GenomicSequenceLocalization
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
+  float stringdbCombinedScore = 0
+  float stringdbExperimentalScore = 0
+  float stringdbCoexpressionScore = 0
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
@@ -5816,6 +6005,9 @@ message GenotypeAsAModelOfDiseaseAssociation
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
+  float stringdbCombinedScore = 0
+  float stringdbExperimentalScore = 0
+  float stringdbCoexpressionScore = 0
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
@@ -5876,6 +6068,9 @@ message GenotypeToDiseaseAssociation
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
+  float stringdbCombinedScore = 0
+  float stringdbExperimentalScore = 0
+  float stringdbCoexpressionScore = 0
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
@@ -5936,6 +6131,9 @@ message GenotypeToGeneAssociation
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
+  float stringdbCombinedScore = 0
+  float stringdbExperimentalScore = 0
+  float stringdbCoexpressionScore = 0
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
@@ -5989,6 +6187,9 @@ message GenotypeToGenotypePartAssociation
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
+  float stringdbCombinedScore = 0
+  float stringdbExperimentalScore = 0
+  float stringdbCoexpressionScore = 0
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
@@ -6043,6 +6244,9 @@ message GenotypeToPhenotypicFeatureAssociation
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
+  float stringdbCombinedScore = 0
+  float stringdbExperimentalScore = 0
+  float stringdbCoexpressionScore = 0
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
@@ -6107,6 +6311,9 @@ message GenotypeToVariantAssociation
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
+  float stringdbCombinedScore = 0
+  float stringdbExperimentalScore = 0
+  float stringdbCoexpressionScore = 0
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
@@ -6427,6 +6634,9 @@ message InformationContentEntityToNamedThingAssociation
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
+  float stringdbCombinedScore = 0
+  float stringdbExperimentalScore = 0
+  float stringdbCoexpressionScore = 0
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
@@ -6621,6 +6831,9 @@ message MacromolecularMachineHasSubstrateAssociation
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
+  float stringdbCombinedScore = 0
+  float stringdbExperimentalScore = 0
+  float stringdbCoexpressionScore = 0
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
@@ -6690,6 +6903,9 @@ message MacromolecularMachineToBiologicalProcessAssociation
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
+  float stringdbCombinedScore = 0
+  float stringdbExperimentalScore = 0
+  float stringdbCoexpressionScore = 0
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
@@ -6744,6 +6960,9 @@ message MacromolecularMachineToCellularComponentAssociation
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
+  float stringdbCombinedScore = 0
+  float stringdbExperimentalScore = 0
+  float stringdbCoexpressionScore = 0
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
@@ -6798,6 +7017,9 @@ message MacromolecularMachineToMolecularActivityAssociation
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
+  float stringdbCombinedScore = 0
+  float stringdbExperimentalScore = 0
+  float stringdbCoexpressionScore = 0
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
@@ -6898,6 +7120,9 @@ message MaterialSampleDerivationAssociation
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
+  float stringdbCombinedScore = 0
+  float stringdbExperimentalScore = 0
+  float stringdbCoexpressionScore = 0
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
@@ -6954,6 +7179,9 @@ message MaterialSampleToDiseaseOrPhenotypicFeatureAssociation
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
+  float stringdbCombinedScore = 0
+  float stringdbExperimentalScore = 0
+  float stringdbCoexpressionScore = 0
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
@@ -7063,6 +7291,9 @@ message MolecularActivityToChemicalEntityAssociation
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
+  float stringdbCombinedScore = 0
+  float stringdbExperimentalScore = 0
+  float stringdbCoexpressionScore = 0
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
@@ -7116,6 +7347,9 @@ message MolecularActivityToMolecularActivityAssociation
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
+  float stringdbCombinedScore = 0
+  float stringdbExperimentalScore = 0
+  float stringdbCoexpressionScore = 0
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
@@ -7168,6 +7402,9 @@ message MolecularActivityToPathwayAssociation
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
+  float stringdbCombinedScore = 0
+  float stringdbExperimentalScore = 0
+  float stringdbCoexpressionScore = 0
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
@@ -7320,6 +7557,9 @@ message NamedThingAssociatedWithLikelihoodOfNamedThingAssociation
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
+  float stringdbCombinedScore = 0
+  float stringdbExperimentalScore = 0
+  float stringdbCoexpressionScore = 0
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
@@ -7595,6 +7835,9 @@ message OrganismTaxonToOrganismTaxonInteraction
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
+  float stringdbCombinedScore = 0
+  float stringdbExperimentalScore = 0
+  float stringdbCoexpressionScore = 0
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
@@ -7649,6 +7892,9 @@ message OrganismTaxonToOrganismTaxonSpecialization
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
+  float stringdbCombinedScore = 0
+  float stringdbExperimentalScore = 0
+  float stringdbCoexpressionScore = 0
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
@@ -7703,6 +7949,9 @@ message OrganismToOrganismAssociation
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
+  float stringdbCombinedScore = 0
+  float stringdbExperimentalScore = 0
+  float stringdbCoexpressionScore = 0
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
@@ -7757,6 +8006,9 @@ message OrganismalEntityAsAModelOfDiseaseAssociation
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
+  float stringdbCombinedScore = 0
+  float stringdbExperimentalScore = 0
+  float stringdbCoexpressionScore = 0
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
@@ -7815,6 +8067,9 @@ message PairwiseGeneToGeneInteraction
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
+  float stringdbCombinedScore = 0
+  float stringdbExperimentalScore = 0
+  float stringdbCoexpressionScore = 0
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
@@ -7880,6 +8135,9 @@ message PairwiseMolecularInteraction
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
+  float stringdbCombinedScore = 0
+  float stringdbExperimentalScore = 0
+  float stringdbCoexpressionScore = 0
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
@@ -8183,6 +8441,9 @@ message PhenotypicFeatureToDiseaseAssociation
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
+  float stringdbCombinedScore = 0
+  float stringdbExperimentalScore = 0
+  float stringdbCoexpressionScore = 0
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
@@ -8249,6 +8510,9 @@ message PhenotypicFeatureToPhenotypicFeatureAssociation
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
+  float stringdbCombinedScore = 0
+  float stringdbExperimentalScore = 0
+  float stringdbCoexpressionScore = 0
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
@@ -8514,6 +8778,9 @@ message PopulationToPopulationAssociation
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
+  float stringdbCombinedScore = 0
+  float stringdbExperimentalScore = 0
+  float stringdbCoexpressionScore = 0
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
@@ -8673,6 +8940,9 @@ message ProcessRegulatesProcessAssociation
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
+  float stringdbCombinedScore = 0
+  float stringdbExperimentalScore = 0
+  float stringdbCoexpressionScore = 0
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
@@ -8906,6 +9176,9 @@ message ReactionToCatalystAssociation
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
+  float stringdbCombinedScore = 0
+  float stringdbExperimentalScore = 0
+  float stringdbCoexpressionScore = 0
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
@@ -8963,6 +9236,9 @@ message ReactionToParticipantAssociation
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
+  float stringdbCombinedScore = 0
+  float stringdbExperimentalScore = 0
+  float stringdbCoexpressionScore = 0
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
@@ -9187,6 +9463,9 @@ message SequenceAssociation
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
+  float stringdbCombinedScore = 0
+  float stringdbExperimentalScore = 0
+  float stringdbCoexpressionScore = 0
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
@@ -9238,6 +9517,9 @@ message SequenceFeatureRelationship
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
+  float stringdbCombinedScore = 0
+  float stringdbExperimentalScore = 0
+  float stringdbCoexpressionScore = 0
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
@@ -9610,6 +9892,9 @@ message TaxonToTaxonAssociation
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
+  float stringdbCombinedScore = 0
+  float stringdbExperimentalScore = 0
+  float stringdbCoexpressionScore = 0
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
@@ -9724,6 +10009,9 @@ message TranscriptToGeneRelationship
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
+  float stringdbCombinedScore = 0
+  float stringdbExperimentalScore = 0
+  float stringdbCoexpressionScore = 0
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
@@ -9839,6 +10127,9 @@ message VariantAsAModelOfDiseaseAssociation
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
+  float stringdbCombinedScore = 0
+  float stringdbExperimentalScore = 0
+  float stringdbCoexpressionScore = 0
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
@@ -9899,6 +10190,9 @@ message VariantToDiseaseAssociation
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
+  float stringdbCombinedScore = 0
+  float stringdbExperimentalScore = 0
+  float stringdbCoexpressionScore = 0
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
@@ -9960,6 +10254,9 @@ message VariantToGeneAssociation
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
+  float stringdbCombinedScore = 0
+  float stringdbExperimentalScore = 0
+  float stringdbCoexpressionScore = 0
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
@@ -10013,6 +10310,9 @@ message VariantToGeneExpressionAssociation
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
+  float stringdbCombinedScore = 0
+  float stringdbExperimentalScore = 0
+  float stringdbCoexpressionScore = 0
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
@@ -10071,6 +10371,9 @@ message VariantToPhenotypicFeatureAssociation
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
+  float stringdbCombinedScore = 0
+  float stringdbExperimentalScore = 0
+  float stringdbCoexpressionScore = 0
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
@@ -10135,6 +10438,9 @@ message VariantToPopulationAssociation
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
   float hasConfidenceScore = 0
+  float stringdbCombinedScore = 0
+  float stringdbExperimentalScore = 0
+  float stringdbCoexpressionScore = 0
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0

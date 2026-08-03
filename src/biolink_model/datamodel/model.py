@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-08-01T19:32:20
+# Generation date: 2026-08-03T08:40:02
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/vocab/
@@ -8076,6 +8076,9 @@ class Association(Entity):
     has_supporting_studies: Optional[Union[dict[Union[str, StudyId], Union[dict, Study]], list[Union[dict, Study]]]] = empty_dict()
     update_date: Optional[Union[str, XSDDate]] = None
     has_confidence_score: Optional[float] = None
+    stringdb_combined_score: Optional[float] = None
+    stringdb_experimental_score: Optional[float] = None
+    stringdb_coexpression_score: Optional[float] = None
     elevate_to_prediction: Optional[Union[bool, Bool]] = None
     evidence_count: Optional[int] = None
     semmed_agreement_count: Optional[int] = None
@@ -8222,6 +8225,15 @@ class Association(Entity):
 
         if self.has_confidence_score is not None and not isinstance(self.has_confidence_score, float):
             self.has_confidence_score = float(self.has_confidence_score)
+
+        if self.stringdb_combined_score is not None and not isinstance(self.stringdb_combined_score, float):
+            self.stringdb_combined_score = float(self.stringdb_combined_score)
+
+        if self.stringdb_experimental_score is not None and not isinstance(self.stringdb_experimental_score, float):
+            self.stringdb_experimental_score = float(self.stringdb_experimental_score)
+
+        if self.stringdb_coexpression_score is not None and not isinstance(self.stringdb_coexpression_score, float):
+            self.stringdb_coexpression_score = float(self.stringdb_coexpression_score)
 
         if self.elevate_to_prediction is not None and not isinstance(self.elevate_to_prediction, Bool):
             self.elevate_to_prediction = Bool(self.elevate_to_prediction)
@@ -18085,6 +18097,15 @@ slots.gene2phenotype_confidence_category = Slot(uri=BIOLINK.gene2phenotype_confi
 
 slots.signor_confidence_score = Slot(uri=BIOLINK.signor_confidence_score, name="signor confidence score", curie=BIOLINK.curie('signor_confidence_score'),
                    model_uri=BIOLINK.signor_confidence_score, domain=None, range=Optional[float])
+
+slots.stringdb_combined_score = Slot(uri=BIOLINK.stringdb_combined_score, name="stringdb combined score", curie=BIOLINK.curie('stringdb_combined_score'),
+                   model_uri=BIOLINK.stringdb_combined_score, domain=None, range=Optional[float])
+
+slots.stringdb_experimental_score = Slot(uri=BIOLINK.stringdb_experimental_score, name="stringdb experimental score", curie=BIOLINK.curie('stringdb_experimental_score'),
+                   model_uri=BIOLINK.stringdb_experimental_score, domain=None, range=Optional[float])
+
+slots.stringdb_coexpression_score = Slot(uri=BIOLINK.stringdb_coexpression_score, name="stringdb coexpression score", curie=BIOLINK.curie('stringdb_coexpression_score'),
+                   model_uri=BIOLINK.stringdb_coexpression_score, domain=None, range=Optional[float])
 
 slots.attribute_name = Slot(uri=RDFS.label, name="attribute_name", curie=RDFS.curie('label'),
                    model_uri=BIOLINK.attribute_name, domain=Attribute, range=Optional[Union[str, LabelType]])
