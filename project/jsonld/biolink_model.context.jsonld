@@ -2523,6 +2523,14 @@
       "statement_qualifier": {
          "@id": "statement_qualifier"
       },
+      "statistical_significance_qualifier": {
+         "@context": {
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "statistical_significance_qualifier"
+      },
       "stoichiometry": {
          "@type": "xsd:integer",
          "@id": "stoichiometry"

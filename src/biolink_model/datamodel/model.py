@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-08-03T18:19:51
+# Generation date: 2026-08-03T19:32:00
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/vocab/
@@ -8072,6 +8072,7 @@ class Association(Entity):
     retrieval_source_ids: Optional[Union[Union[str, RetrievalSourceId], list[Union[str, RetrievalSourceId]]]] = empty_list()
     p_value: Optional[float] = None
     adjusted_p_value: Optional[float] = None
+    statistical_significance_qualifier: Optional[Union[str, "StatisticalSignificanceQualifierEnum"]] = None
     supporting_text: Optional[Union[str, list[str]]] = empty_list()
     has_supporting_studies: Optional[Union[dict[Union[str, StudyId], Union[dict, Study]], list[Union[dict, Study]]]] = empty_dict()
     update_date: Optional[Union[str, XSDDate]] = None
@@ -8213,6 +8214,9 @@ class Association(Entity):
 
         if self.adjusted_p_value is not None and not isinstance(self.adjusted_p_value, float):
             self.adjusted_p_value = float(self.adjusted_p_value)
+
+        if self.statistical_significance_qualifier is not None and not isinstance(self.statistical_significance_qualifier, StatisticalSignificanceQualifierEnum):
+            self.statistical_significance_qualifier = StatisticalSignificanceQualifierEnum(self.statistical_significance_qualifier)
 
         if not isinstance(self.supporting_text, list):
             self.supporting_text = [self.supporting_text] if self.supporting_text is not None else []
@@ -15799,6 +15803,34 @@ class GeneOrGeneProductOrChemicalEntityAspectEnum(EnumDefinitionImpl):
         setattr(cls, "ADP-ribosylation",
             PermissibleValue(text="ADP-ribosylation"))
 
+class StatisticalSignificanceQualifierEnum(EnumDefinitionImpl):
+    """
+    An enumeration used as a qualifier to categorize the statistical significance of an association's supporting
+    evidence into coarse bands (e.g., very strongly significant, strongly significant, significant, suggestive, not
+    significant), conventionally anchored to alpha = 0.05. The underlying numeric value lives in the 'p value' and
+    'adjusted p value' slots, which remain authoritative.
+    """
+    very_strongly_significant = PermissibleValue(
+        text="very_strongly_significant",
+        description="""A significance band denoting that the association meets the most stringent conventional threshold (significance statistic at or below 0.001), such that, under the null hypothesis of no association, an effect at least this large would be expected in no more than about one in a thousand comparable studies.""")
+    strongly_significant = PermissibleValue(
+        text="strongly_significant",
+        description="""A significance band denoting that the association meets a stringent conventional threshold (significance statistic at or below 0.01).""")
+    significant = PermissibleValue(
+        text="significant",
+        description="""A significance band denoting that the association meets the standard conventional threshold (significance statistic at or below alpha = 0.05), such that, under the null hypothesis, an effect at least this large would be expected in no more than about one in twenty comparable studies.""")
+    suggestive = PermissibleValue(
+        text="suggestive",
+        description="""A significance band denoting a borderline result (significance statistic above 0.05 but at or below roughly 0.10, sometimes extended to 0.20 in fields such as genetics) that is suggestive of, but does not conclusively support, an association.""")
+    not_significant = PermissibleValue(
+        text="not_significant",
+        description="""A significance band denoting that the association does not meet the conventional threshold (significance statistic above 0.05), such that there is insufficient evidence to rule out the null hypothesis of no association.""")
+
+    _defn = EnumDefinition(
+        name="StatisticalSignificanceQualifierEnum",
+        description="""An enumeration used as a qualifier to categorize the statistical significance of an association's supporting evidence into coarse bands (e.g., very strongly significant, strongly significant, significant, suggestive, not significant), conventionally anchored to alpha = 0.05. The underlying numeric value lives in the 'p value' and 'adjusted p value' slots, which remain authoritative.""",
+    )
+
 class CausalMechanismQualifierEnum(EnumDefinitionImpl):
     """
     An enumeration used as a qualifier to specify the causal or pharmacologic mechanism by which an effect is exerted
@@ -16944,6 +16976,9 @@ slots.species_context_qualifier = Slot(uri=BIOLINK.species_context_qualifier, na
 
 slots.disease_context_qualifier = Slot(uri=BIOLINK.disease_context_qualifier, name="disease context qualifier", curie=BIOLINK.curie('disease_context_qualifier'),
                    model_uri=BIOLINK.disease_context_qualifier, domain=Association, range=Optional[Union[str, DiseaseId]])
+
+slots.statistical_significance_qualifier = Slot(uri=BIOLINK.statistical_significance_qualifier, name="statistical significance qualifier", curie=BIOLINK.curie('statistical_significance_qualifier'),
+                   model_uri=BIOLINK.statistical_significance_qualifier, domain=Association, range=Optional[Union[str, "StatisticalSignificanceQualifierEnum"]])
 
 slots.qualifiers = Slot(uri=BIOLINK.qualifiers, name="qualifiers", curie=BIOLINK.curie('qualifiers'),
                    model_uri=BIOLINK.qualifiers, domain=Association, range=Optional[Union[Union[str, OntologyClassId], list[Union[str, OntologyClassId]]]])
