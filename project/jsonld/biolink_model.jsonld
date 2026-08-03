@@ -722,7 +722,7 @@
       "definition_uri": "https://w3id.org/linkml/String",
       "description": "A character string",
       "notes": [
-        "In RDF serializations, a slot with range of string is treated as a literal or type xsd:string.   If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"string\"."
+        "In RDF serializations, a slot with range of string is treated as a literal or type xsd:string. If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"string\"."
       ],
       "from_schema": "https://w3id.org/linkml/types",
       "imported_from": "linkml:types",
@@ -13855,8 +13855,8 @@
       "definition_uri": "https://w3id.org/biolink/vocab/log_odds_ratio",
       "description": "The natural logarithm of the odds ratio (OR), or the ratio of the odds of an event Y occurring in an exposed group versus the odds of an event Y occurring in a non-exposed group.",
       "from_schema": "https://w3id.org/biolink/vocab/",
-      "is_a": "association_slot",
-      "domain": "Association",
+      "is_a": "node_property",
+      "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/log_odds_ratio",
       "owner": "IceesStudyResult",
       "domain_of": [
@@ -13876,8 +13876,8 @@
         }
       ],
       "from_schema": "https://w3id.org/biolink/vocab/",
-      "is_a": "association_slot",
-      "domain": "Association",
+      "is_a": "node_property",
+      "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/log_odds_ratio_95_ci",
       "owner": "IceesStudyResult",
       "domain_of": [
@@ -14033,8 +14033,8 @@
       "exact_mappings": [
         "http://purl.obolibrary.org/obo/STATO_0000030"
       ],
-      "is_a": "association_slot",
-      "domain": "Association",
+      "is_a": "node_property",
+      "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/chi_squared_statistic",
       "owner": "IceesStudyResult",
       "domain_of": [
@@ -14054,8 +14054,8 @@
         }
       ],
       "from_schema": "https://w3id.org/biolink/vocab/",
-      "is_a": "association_slot",
-      "domain": "Association",
+      "is_a": "node_property",
+      "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/chi_squared_dof",
       "owner": "IceesStudyResult",
       "domain_of": [
@@ -14075,8 +14075,8 @@
         }
       ],
       "from_schema": "https://w3id.org/biolink/vocab/",
-      "is_a": "association_slot",
-      "domain": "Association",
+      "is_a": "node_property",
+      "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/chi_squared_p",
       "owner": "IceesStudyResult",
       "domain_of": [
@@ -14096,8 +14096,8 @@
         }
       ],
       "from_schema": "https://w3id.org/biolink/vocab/",
-      "is_a": "association_slot",
-      "domain": "Association",
+      "is_a": "node_property",
+      "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/fisher_exact_odds_ratio",
       "owner": "IceesStudyResult",
       "domain_of": [
@@ -14117,8 +14117,8 @@
         }
       ],
       "from_schema": "https://w3id.org/biolink/vocab/",
-      "is_a": "association_slot",
-      "domain": "Association",
+      "is_a": "node_property",
+      "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/fisher_exact_p",
       "owner": "IceesStudyResult",
       "domain_of": [
@@ -14369,8 +14369,8 @@
         }
       ],
       "from_schema": "https://w3id.org/biolink/vocab/",
-      "is_a": "association_slot",
-      "domain": "Association",
+      "is_a": "node_property",
+      "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/supporting_text",
       "owner": "Association",
       "domain_of": [
@@ -14416,8 +14416,8 @@
         }
       ],
       "from_schema": "https://w3id.org/biolink/vocab/",
-      "is_a": "association_slot",
-      "domain": "Association",
+      "is_a": "node_property",
+      "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/subject_location_in_text",
       "owner": "TextMiningStudyResult",
       "domain_of": [
@@ -14438,8 +14438,8 @@
         }
       ],
       "from_schema": "https://w3id.org/biolink/vocab/",
-      "is_a": "association_slot",
-      "domain": "Association",
+      "is_a": "node_property",
+      "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/object_location_in_text",
       "owner": "TextMiningStudyResult",
       "domain_of": [
@@ -14460,8 +14460,8 @@
         }
       ],
       "from_schema": "https://w3id.org/biolink/vocab/",
-      "is_a": "association_slot",
-      "domain": "Association",
+      "is_a": "node_property",
+      "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/extraction_confidence_score",
       "owner": "TextMiningStudyResult",
       "domain_of": [
@@ -14481,8 +14481,8 @@
         }
       ],
       "from_schema": "https://w3id.org/biolink/vocab/",
-      "is_a": "association_slot",
-      "domain": "Association",
+      "is_a": "node_property",
+      "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/supporting_document_type",
       "owner": "TextMiningStudyResult",
       "domain_of": [
@@ -14502,8 +14502,8 @@
         }
       ],
       "from_schema": "https://w3id.org/biolink/vocab/",
-      "is_a": "association_slot",
-      "domain": "Association",
+      "is_a": "node_property",
+      "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/supporting_document_year",
       "owner": "TextMiningStudyResult",
       "domain_of": [
@@ -14523,8 +14523,8 @@
         }
       ],
       "from_schema": "https://w3id.org/biolink/vocab/",
-      "is_a": "association_slot",
-      "domain": "Association",
+      "is_a": "node_property",
+      "domain": "NamedThing",
       "slot_uri": "https://w3id.org/biolink/vocab/supporting_text_section_type",
       "owner": "TextMiningStudyResult",
       "domain_of": [
@@ -45477,11 +45477,11 @@
       "@type": "ClassDefinition"
     }
   ],
-  "metamodel_version": "1.7.0",
+  "metamodel_version": "1.11.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2026-08-03T08:31:11",
-  "source_file_size": 518545,
-  "generation_date": "2026-08-03T08:31:19",
+  "source_file_date": "2026-08-03T08:39:13",
+  "source_file_size": 518503,
+  "generation_date": "2026-08-03T08:39:31",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",

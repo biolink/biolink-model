@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-08-03T08:31:50
+# Generation date: 2026-08-03T08:40:02
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/vocab/
@@ -59,7 +59,7 @@ from rdflib import (
 from linkml_runtime.linkml_model.types import Boolean, Date, Double, Float, Integer, String, Time, Uriorcurie
 from linkml_runtime.utils.metamodelcore import Bool, URIorCURIE, XSDDate, XSDTime
 
-metamodel_version = "1.7.0"
+metamodel_version = "1.11.0"
 version = "4.4.3"
 
 # Namespaces
@@ -17810,10 +17810,10 @@ slots.has_study_results = Slot(uri=BIOLINK.has_study_results, name="has study re
                    model_uri=BIOLINK.has_study_results, domain=Study, range=Optional[Union[dict[Union[str, StudyResultId], Union[dict, StudyResult]], list[Union[dict, StudyResult]]]])
 
 slots.log_odds_ratio = Slot(uri=BIOLINK.log_odds_ratio, name="log odds ratio", curie=BIOLINK.curie('log_odds_ratio'),
-                   model_uri=BIOLINK.log_odds_ratio, domain=Association, range=Optional[float])
+                   model_uri=BIOLINK.log_odds_ratio, domain=NamedThing, range=Optional[float])
 
 slots.log_odds_ratio_95_ci = Slot(uri=BIOLINK.log_odds_ratio_95_ci, name="log odds ratio 95 ci", curie=BIOLINK.curie('log_odds_ratio_95_ci'),
-                   model_uri=BIOLINK.log_odds_ratio_95_ci, domain=Association, range=Optional[Union[float, list[float]]])
+                   model_uri=BIOLINK.log_odds_ratio_95_ci, domain=NamedThing, range=Optional[Union[float, list[float]]])
 
 slots.total_sample_size = Slot(uri=BIOLINK.total_sample_size, name="total sample size", curie=BIOLINK.curie('total_sample_size'),
                    model_uri=BIOLINK.total_sample_size, domain=Association, range=Optional[int])
@@ -17840,19 +17840,19 @@ slots.supporting_data_set = Slot(uri=BIOLINK.supporting_data_set, name="supporti
                    model_uri=BIOLINK.supporting_data_set, domain=Association, range=Optional[Union[str, list[str]]])
 
 slots.chi_squared_statistic = Slot(uri=BIOLINK.chi_squared_statistic, name="chi squared statistic", curie=BIOLINK.curie('chi_squared_statistic'),
-                   model_uri=BIOLINK.chi_squared_statistic, domain=Association, range=Optional[float])
+                   model_uri=BIOLINK.chi_squared_statistic, domain=NamedThing, range=Optional[float])
 
 slots.chi_squared_dof = Slot(uri=BIOLINK.chi_squared_dof, name="chi squared dof", curie=BIOLINK.curie('chi_squared_dof'),
-                   model_uri=BIOLINK.chi_squared_dof, domain=Association, range=Optional[int])
+                   model_uri=BIOLINK.chi_squared_dof, domain=NamedThing, range=Optional[int])
 
 slots.chi_squared_p = Slot(uri=BIOLINK.chi_squared_p, name="chi squared p", curie=BIOLINK.curie('chi_squared_p'),
-                   model_uri=BIOLINK.chi_squared_p, domain=Association, range=Optional[float])
+                   model_uri=BIOLINK.chi_squared_p, domain=NamedThing, range=Optional[float])
 
 slots.fisher_exact_odds_ratio = Slot(uri=BIOLINK.fisher_exact_odds_ratio, name="fisher exact odds ratio", curie=BIOLINK.curie('fisher_exact_odds_ratio'),
-                   model_uri=BIOLINK.fisher_exact_odds_ratio, domain=Association, range=Optional[float])
+                   model_uri=BIOLINK.fisher_exact_odds_ratio, domain=NamedThing, range=Optional[float])
 
 slots.fisher_exact_p = Slot(uri=BIOLINK.fisher_exact_p, name="fisher exact p", curie=BIOLINK.curie('fisher_exact_p'),
-                   model_uri=BIOLINK.fisher_exact_p, domain=Association, range=Optional[float])
+                   model_uri=BIOLINK.fisher_exact_p, domain=NamedThing, range=Optional[float])
 
 slots.z_score = Slot(uri=BIOLINK.z_score, name="z score", curie=BIOLINK.curie('z_score'),
                    model_uri=BIOLINK.z_score, domain=Association, range=Optional[float])
@@ -17897,28 +17897,28 @@ slots.bonferonni_adjusted_p_value = Slot(uri=BIOLINK.bonferonni_adjusted_p_value
                    model_uri=BIOLINK.bonferonni_adjusted_p_value, domain=Association, range=Optional[float])
 
 slots.supporting_text = Slot(uri=BIOLINK.supporting_text, name="supporting text", curie=BIOLINK.curie('supporting_text'),
-                   model_uri=BIOLINK.supporting_text, domain=Association, range=Optional[Union[str, list[str]]])
+                   model_uri=BIOLINK.supporting_text, domain=NamedThing, range=Optional[Union[str, list[str]]])
 
 slots.supporting_documents = Slot(uri=BIOLINK.supporting_documents, name="supporting documents", curie=BIOLINK.curie('supporting_documents'),
                    model_uri=BIOLINK.supporting_documents, domain=Association, range=Optional[Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]]])
 
 slots.subject_location_in_text = Slot(uri=BIOLINK.subject_location_in_text, name="subject location in text", curie=BIOLINK.curie('subject_location_in_text'),
-                   model_uri=BIOLINK.subject_location_in_text, domain=Association, range=Optional[Union[int, list[int]]])
+                   model_uri=BIOLINK.subject_location_in_text, domain=NamedThing, range=Optional[Union[int, list[int]]])
 
 slots.object_location_in_text = Slot(uri=BIOLINK.object_location_in_text, name="object location in text", curie=BIOLINK.curie('object_location_in_text'),
-                   model_uri=BIOLINK.object_location_in_text, domain=Association, range=Optional[Union[int, list[int]]])
+                   model_uri=BIOLINK.object_location_in_text, domain=NamedThing, range=Optional[Union[int, list[int]]])
 
 slots.extraction_confidence_score = Slot(uri=BIOLINK.extraction_confidence_score, name="extraction confidence score", curie=BIOLINK.curie('extraction_confidence_score'),
-                   model_uri=BIOLINK.extraction_confidence_score, domain=Association, range=Optional[float])
+                   model_uri=BIOLINK.extraction_confidence_score, domain=NamedThing, range=Optional[float])
 
 slots.supporting_document_type = Slot(uri=BIOLINK.supporting_document_type, name="supporting document type", curie=BIOLINK.curie('supporting_document_type'),
-                   model_uri=BIOLINK.supporting_document_type, domain=Association, range=Optional[str])
+                   model_uri=BIOLINK.supporting_document_type, domain=NamedThing, range=Optional[str])
 
 slots.supporting_document_year = Slot(uri=BIOLINK.supporting_document_year, name="supporting document year", curie=BIOLINK.curie('supporting_document_year'),
-                   model_uri=BIOLINK.supporting_document_year, domain=Association, range=Optional[int])
+                   model_uri=BIOLINK.supporting_document_year, domain=NamedThing, range=Optional[int])
 
 slots.supporting_text_section_type = Slot(uri=BIOLINK.supporting_text_section_type, name="supporting text section type", curie=BIOLINK.curie('supporting_text_section_type'),
-                   model_uri=BIOLINK.supporting_text_section_type, domain=Association, range=Optional[str])
+                   model_uri=BIOLINK.supporting_text_section_type, domain=NamedThing, range=Optional[str])
 
 slots.ln_ratio = Slot(uri=BIOLINK.ln_ratio, name="ln ratio", curie=BIOLINK.curie('ln_ratio'),
                    model_uri=BIOLINK.ln_ratio, domain=Association, range=Optional[float])
