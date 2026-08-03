@@ -36,7 +36,7 @@ jobs:
       - name: Install dependencies
         run: |
           rm -rf uv.lock
-          uv sync
+          uv sync --extra scripts
 
       - name: Run tests
         run: |
