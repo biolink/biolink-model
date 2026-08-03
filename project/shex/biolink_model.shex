@@ -1,4 +1,4 @@
-# metamodel_version: 1.7.0
+# metamodel_version: 1.11.0
 # version: 4.4.3
 BASE <https://w3id.org/biolink/vocab/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
@@ -284,10 +284,19 @@ linkml:Sparqlpath xsd:string
              <retrieval_source_ids> @<RetrievalSource> * ;
              <p_value> @<Float> ? ;
              <adjusted_p_value> @<Float> ? ;
+             <statistical_significance_qualifier> [
+                <https://w3id.org/biolink/vocab/StatisticalSignificanceQualifierEnum#very_strongly_significant>
+                <https://w3id.org/biolink/vocab/StatisticalSignificanceQualifierEnum#strongly_significant>
+                <https://w3id.org/biolink/vocab/StatisticalSignificanceQualifierEnum#significant>
+                <https://w3id.org/biolink/vocab/StatisticalSignificanceQualifierEnum#suggestive>
+                <https://w3id.org/biolink/vocab/StatisticalSignificanceQualifierEnum#not_significant> ] ? ;
              <supporting_text> @<String> * ;
              <has_supporting_studies> @<Study> * ;
              <update_date> @<Date> ? ;
              <has_confidence_score> @<Float> ? ;
+             <stringdb_combined_score> @<Float> ? ;
+             <stringdb_experimental_score> @<Float> ? ;
+             <stringdb_coexpression_score> @<Float> ? ;
              <elevate_to_prediction> @<Boolean> ? ;
              <evidence_count> @<Integer> ? ;
              <semmed_agreement_count> @<Integer> ? ;

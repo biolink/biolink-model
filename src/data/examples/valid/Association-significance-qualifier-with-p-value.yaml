@@ -1,0 +1,14 @@
+# Positive example: 'statistical significance qualifier' is populated alongside a
+# numeric 'p value', satisfying the class rule on `association`.
+#
+# NOTE: `category` is deliberately omitted. It is `designates_type: true` and
+# multivalued, which linkml 1.10.0's JSON-Schema generator cannot express (it
+# emits a scalar constraint a list can never satisfy). It is not required here.
+id: "test:association-significance-with-p-value"
+subject: NCBIGene:1401          # CRP
+predicate: biolink:associated_with
+object: MONDO:0005148           # type 2 diabetes mellitus
+knowledge_level: statistical_association
+agent_type: computational_model
+statistical_significance_qualifier: very_strongly_significant
+p_value: 0.0004

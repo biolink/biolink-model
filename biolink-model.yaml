@@ -2161,6 +2161,35 @@ slots:
     in_subset:
       - translator_minimal
 
+  statistical significance qualifier:
+    is_a: statement qualifier
+    description: >-
+      A statement qualifier that categorizes an association's evidence by
+      statistical significance into coarse bands, as a categorical companion to
+      the numeric 'p value' and 'adjusted p value' slots. It applies only to
+      assessments derived from a quantitative significance statistic (raw p-value,
+      multiple-testing-adjusted p-value, or q-value/FDR), and MUST NOT encode
+      ordinal study-stage, evidence-tier, or confidence-level labels (e.g. clinical
+      trial phases) that are not statistical-significance statements.
+    notes:
+      - >-
+        Enforced via a class rule on `association`: this qualifier may only be set
+        when 'p value' or 'adjusted p value' is also populated (the numeric slots
+        remain authoritative).
+      - >-
+        Bands use conventional defaults (alpha = 0.05); when a source's cutoffs
+        differ, place the value in the closest band and always also populate the
+        numeric slot(s).
+    examples:
+      - value: very_strongly_significant
+      - value: strongly_significant
+      - value: significant
+      - value: suggestive
+      - value: not_significant
+    range: StatisticalSignificanceQualifierEnum
+    in_subset:
+      - translator_minimal
+
   qualifiers:
     deprecated: "true"
     description: >-
@@ -6265,7 +6294,7 @@ slots:
       Connects an study to instances of its study result
 
   log odds ratio:
-    is_a: association slot
+    is_a: node property
     description: >-
       The natural logarithm of the odds ratio (OR), or the ratio of
       the odds of an event Y occurring in an exposed group versus
@@ -6273,7 +6302,7 @@ slots:
     range: float
 
   log odds ratio 95 ci:
-    is_a: association slot
+    is_a: node property
     description: >-
       The ninety-five percent confidence range in which the true log odds ratio for the sample population falls.
       To calculate the 95% confidence interval (CI) for a log odds ratio (a pair of numbers),
@@ -6381,7 +6410,7 @@ slots:
     multivalued: true
 
   chi squared statistic:
-    is_a: association slot
+    is_a: node property
     range: float
     description: >-
       The chi-squared statistic measures how much observed
@@ -6392,7 +6421,7 @@ slots:
       - value: "26.38523077566414"
 
   chi squared dof:
-    is_a: association slot
+    is_a: node property
     description: >-
        Degrees of freedom (dof) in a chi-squared test referring to the
        number of values in the final calculation of a statistic that are free to vary
@@ -6401,7 +6430,7 @@ slots:
       - value: "1"
 
   chi squared p:
-    is_a: association slot
+    is_a: node property
     description: >-
        The chi-square p-value tells you the probability that the observed differences
        (or associations) in your data occurred by random chance, assuming the null hypothesis is true.
@@ -6410,7 +6439,7 @@ slots:
       - value: "2.7967079822744063e-07"
 
   fisher exact odds ratio:
-    is_a: association slot
+    is_a: node property
     description: >-
        The Fisher Exact Test is used to determine whether there is a non-random association between
        two categorical variables in a 2×2 contingency table, especially when sample sizes are small.
@@ -6423,7 +6452,7 @@ slots:
       - value: "3.226188583240579"
 
   fisher exact p:
-    is_a: association slot
+    is_a: node property
     description: >-
       The Fisher exact p-value tells you the probability of observing a table
       as extreme as (or more extreme than) your actual data, assuming that
@@ -6595,7 +6624,7 @@ slots:
       - value: pearsons_r
 
   supporting text:
-    is_a: association slot
+    is_a: node property
     description: The segment of text from a document that supports the mined assertion.
     multivalued: true
     range: string
@@ -6614,7 +6643,7 @@ slots:
       - value: PMID:12345678
 
   subject location in text:
-    is_a: association slot
+    is_a: node property
     description: >-
       Character offsets for the text span(s) in the supporting text corresponding
       to the subject concept of the extracted assertion.
@@ -6624,7 +6653,7 @@ slots:
     multivalued: true
 
   object location in text:
-    is_a: association slot
+    is_a: node property
     description: >-
       Character offsets for the text span(s) in the supporting text corresponding
       to the object concept of the extracted assertion
@@ -6634,7 +6663,7 @@ slots:
     multivalued: true
 
   extraction confidence score:
-    is_a: association slot
+    is_a: node property
     description: >-
       A quantitative confidence value that represents the probability of
       obtaining a result at least as extreme as that actually obtained,
@@ -6644,7 +6673,7 @@ slots:
       - value: "0.6188385904738642"
 
   supporting document type:
-    is_a: association slot
+    is_a: node property
     description: >-
       The document type (e.g., Journal Article, Case Study, Preprint) for
       the supporting document used in a Text Mining Result.
@@ -6653,7 +6682,7 @@ slots:
       - value: Journal Article
 
   supporting document year:
-    is_a: association slot
+    is_a: node property
     description: >-
       The document year (typically the publication year) for the supporting
       document used in a Text Mining Result.
@@ -6662,7 +6691,7 @@ slots:
       - value: "2018"
 
   supporting text section type:
-    is_a: association slot
+    is_a: node property
     description: >-
       The section of the supporting text of a Text Mining Result within
       the supporting document. This is in the form of the name of the document section
@@ -10555,12 +10584,16 @@ classes:
       - retrieval source ids
       - p value
       - adjusted p value
+      - statistical significance qualifier
       - effect size
       - effect type
       - supporting text
       - has supporting studies
       - update date
       - has confidence score
+      - stringdb combined score
+      - stringdb experimental score
+      - stringdb coexpression score
       - elevate to prediction
       - evidence count
       - semmed agreement count
@@ -10575,6 +10608,18 @@ classes:
       has supporting studies:
         inlined: true
     rules:
+      - description: >-
+          A statistical significance qualifier may only be set when at least one
+          numeric p-value slot (p value or adjusted p value) is also populated.
+        preconditions:
+          slot_conditions:
+            statistical significance qualifier: {}
+        postconditions:
+          any_of:
+            - slot_conditions:
+                p value: {}
+            - slot_conditions:
+                adjusted p value: {}
       - description: >-
           An effect type may only be set when the companion effect size slot
           is also populated, because the effect type disambiguates the numeric
@@ -14374,6 +14419,41 @@ enums:
           an analysis of variance context (RMSSE, Psi).
         close_mappings:
           - STATO:0000316
+
+  StatisticalSignificanceQualifierEnum:
+    description: >-
+      An enumeration used as a qualifier to categorize the statistical significance
+      of an association's supporting evidence into coarse bands (e.g., very strongly
+      significant, strongly significant, significant, suggestive, not significant),
+      conventionally anchored to alpha = 0.05. The underlying numeric value lives in
+      the 'p value' and 'adjusted p value' slots, which remain authoritative.
+    permissible_values:
+      very_strongly_significant:
+        description: >-
+          A significance band denoting that the association meets the most stringent
+          conventional threshold (significance statistic at or below 0.001), such that,
+          under the null hypothesis of no association, an effect at least this large would
+          be expected in no more than about one in a thousand comparable studies.
+      strongly_significant:
+        description: >-
+          A significance band denoting that the association meets a stringent conventional
+          threshold (significance statistic at or below 0.01).
+      significant:
+        description: >-
+          A significance band denoting that the association meets the standard conventional
+          threshold (significance statistic at or below alpha = 0.05), such that, under the
+          null hypothesis, an effect at least this large would be expected in no more than
+          about one in twenty comparable studies.
+      suggestive:
+        description: >-
+          A significance band denoting a borderline result (significance statistic above
+          0.05 but at or below roughly 0.10, sometimes extended to 0.20 in fields such as
+          genetics) that is suggestive of, but does not conclusively support, an association.
+      not_significant:
+        description: >-
+          A significance band denoting that the association does not meet the conventional
+          threshold (significance statistic above 0.05), such that there is insufficient
+          evidence to rule out the null hypothesis of no association.
 
   CausalMechanismQualifierEnum:
     description: >-
