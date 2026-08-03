@@ -2172,8 +2172,14 @@ slots:
       ordinal study-stage, evidence-tier, or confidence-level labels (e.g. clinical
       trial phases) that are not statistical-significance statements.
     notes:
-      - Enforced via a class rule on `association`: this qualifier may only be set when 'p value' or 'adjusted p value' is also populated (the numeric slots remain authoritative).
-      - Bands use conventional defaults (alpha = 0.05); when a source's cutoffs differ, place the value in the closest band and always also populate the numeric slot(s).
+      - >-
+        Enforced via a class rule on `association`: this qualifier may only be set
+        when 'p value' or 'adjusted p value' is also populated (the numeric slots
+        remain authoritative).
+      - >-
+        Bands use conventional defaults (alpha = 0.05); when a source's cutoffs
+        differ, place the value in the closest band and always also populate the
+        numeric slot(s).
     examples:
       - value: very_strongly_significant
       - value: strongly_significant
