@@ -25,7 +25,8 @@ jobs:
         uses: astral-sh/setup-uv@v7
 
       - name: Install dependencies
-        run: uv sync --extra docs
+        # `make gendoc` runs gen-doc + generate_viz_json, which need the `scripts` extra.
+        run: uv sync --extra docs --extra scripts
 
       - name: Build documentation.
         run: |

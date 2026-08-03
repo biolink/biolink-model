@@ -19,7 +19,7 @@ classifiers = [
 ]
 dependencies = [
     "pydantic>=2,<3",
-    "linkml-runtime==1.10.0",
+    "linkml-runtime==1.11.1",
 ]
 
 [project.scripts]
@@ -27,12 +27,18 @@ generate_viz_json = "biolink_model.scripts.generate_json:generate_viz_json"
 
 [project.optional-dependencies]
 scripts = [
-    "linkml==1.10.0",
+    "linkml==1.11.1",
     "rdflib",
     "curies",
 ]
 docs = [
-    "mkdocs-material",
+    # Must cover everything mkdocs.yml declares: `theme: material` and `plugins: [search, mermaid2]`.
+    # Bounds mirror the dev group so a standalone `pip install biolink-model[docs]` builds the same
+    # site CI builds. Previously only mkdocs-material was listed and the build worked solely because
+    # `uv sync --extra docs` also installs the dev group -- it broke under `--no-dev`.
+    "mkdocs>=1.4.2,<2",
+    "mkdocs-material>=9.5.17,<10",
+    "mkdocs-mermaid2-plugin>=1.1.1,<2",
 ]
 all = [
     "biolink-model[scripts,docs]",
@@ -40,7 +46,11 @@ all = [
 
 [dependency-groups]
 dev = [
-    "linkml>=1.6.3",
+    # Pinned, not floating: linkml is no longer a core dependency (it moved to the `scripts`
+    # extra), so `uv sync` would otherwise resolve it by backtracking off `linkml-runtime`.
+    # Generated artifacts under project/ and src/biolink_model/datamodel/ are version-sensitive
+    # and are auto-committed by push-main-regenerate-artifacts, so this must be deterministic.
+    "linkml==1.11.1",
     "mkdocs>=1.4.2,<2",
     "mkdocs-material>=9.5.17,<10",
     "mkdocs-mermaid2-plugin>=1.1.1,<2",
@@ -71,13 +81,6 @@ packages = ["src/biolink_model"]
 # `exclude-newer` timestamp for backwards compatibility), avoiding per-relock absolute timestamps and
 # reducing cross-branch merge conflicts (see astral-sh/uv#18708). Requires uv >= 0.9.17.
 exclude-newer = "7 days"
-
-# linkml 1.10.0 pins `click<8.2`, but click <8.3.3 has a known vulnerability (PYSEC-2026-2132,
-# fixed in 8.3.3) flagged by `uv audit`. Override linkml's cap so the lock can carry a patched
-# click while keeping linkml/linkml-runtime pinned at 1.10.0 (generation output is version-sensitive).
-# The `<8.4` bound preserves this project's existing click ceiling (an override replaces the
-# project's own constraint, so we restate the upper bound here).
-override-dependencies = ["click>=8.3.3,<8.4"]
 
 [tool.codespell]
 skip = '.idea,.git,SEMMEDDB*,semmed*,*.svg,docs,./src/docs/registry.md,./.venv'

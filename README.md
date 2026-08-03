@@ -45,7 +45,7 @@ Additional functionality is available through extras:
 | Extra | Adds | Use it for |
 |---|---|---|
 | `scripts` | `linkml`, `rdflib`, `curies` | The model generation/maintenance scripts under `src/biolink_model/scripts/` (invoked via the Makefile) |
-| `docs` | `mkdocs-material` | Building the documentation site |
+| `docs` | `mkdocs`, `mkdocs-material`, `mkdocs-mermaid2-plugin` | Building the documentation site |
 | `all` | all of the above | Everything |
 
 ```bash
