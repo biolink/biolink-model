@@ -311,7 +311,6 @@ slots:
     range: float
 
   stringdb combined score:
-    is_a: association_slot
     description: >-
       A confidence score assigned by STRING representing the estimated
       likelihood that two proteins are functionally associated, based on the
@@ -322,7 +321,6 @@ slots:
     range: float
 
   stringdb experimental score:
-    is_a: association_slot
     description: >-
       A confidence score assigned by STRING representing the estimated
       likelihood that two proteins are functionally associated based solely on
@@ -332,7 +330,6 @@ slots:
     range: float
 
   stringdb coexpression score:
-    is_a: association_slot
     description: >-
       A confidence score assigned by STRING representing the estimated
       likelihood that two proteins are functionally associated based solely on

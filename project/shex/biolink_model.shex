@@ -288,6 +288,9 @@ linkml:Sparqlpath xsd:string
              <has_supporting_studies> @<Study> * ;
              <update_date> @<Date> ? ;
              <has_confidence_score> @<Float> ? ;
+             <stringdb_combined_score> @<Float> ? ;
+             <stringdb_experimental_score> @<Float> ? ;
+             <stringdb_coexpression_score> @<Float> ? ;
              <elevate_to_prediction> @<Boolean> ? ;
              <evidence_count> @<Integer> ? ;
              <semmed_agreement_count> @<Integer> ? ;
