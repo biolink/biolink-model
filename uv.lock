@@ -101,21 +101,28 @@ wheels = [
 name = "biolink-model"
 source = { editable = "." }
 dependencies = [
-    { name = "beautifulsoup4" },
-    { name = "click" },
-    { name = "curies" },
-    { name = "linkml" },
     { name = "linkml-runtime" },
-    { name = "path" },
-    { name = "prefixmaps" },
-    { name = "pyyaml" },
-    { name = "requests" },
-    { name = "stringcase" },
+    { name = "pydantic" },
 ]
 
 [package.optional-dependencies]
-docs = [
+all = [
+    { name = "curies" },
+    { name = "linkml" },
+    { name = "mkdocs" },
     { name = "mkdocs-material" },
+    { name = "mkdocs-mermaid2-plugin" },
+    { name = "rdflib" },
+]
+docs = [
+    { name = "mkdocs" },
+    { name = "mkdocs-material" },
+    { name = "mkdocs-mermaid2-plugin" },
+]
+scripts = [
+    { name = "curies" },
+    { name = "linkml" },
+    { name = "rdflib" },
 ]
 
 [package.dev-dependencies]
@@ -132,24 +139,27 @@ dev = [
 
 [package.metadata]
 requires-dist = [
-    { name = "beautifulsoup4", specifier = ">=4.0.0" },
-    { name = "click", specifier = ">8.0.0,<8.4" },
-    { name = "curies", specifier = ">=0.9.0,<1" },
-    { name = "linkml", specifier = "==1.10.0" },
-    { name = "linkml-runtime", specifier = "==1.10.0" },
-    { name = "mkdocs-material", marker = "extra == 'docs'" },
-    { name = "path", specifier = ">=17.0.0,<18" },
-    { name = "prefixmaps", specifier = ">=0.2.3,<1" },
-    { name = "pyyaml", specifier = ">=6.0.1,<7" },
-    { name = "requests", specifier = ">=2.32.3" },
-    { name = "stringcase", specifier = ">=1.2.0,<2" },
+    { name = "curies", marker = "extra == 'all'" },
+    { name = "curies", marker = "extra == 'scripts'" },
+    { name = "linkml", marker = "extra == 'all'", specifier = "==1.11.1" },
+    { name = "linkml", marker = "extra == 'scripts'", specifier = "==1.11.1" },
+    { name = "linkml-runtime", specifier = "==1.11.1" },
+    { name = "mkdocs", marker = "extra == 'all'", specifier = ">=1.4.2,<2" },
+    { name = "mkdocs", marker = "extra == 'docs'", specifier = ">=1.4.2,<2" },
+    { name = "mkdocs-material", marker = "extra == 'all'", specifier = ">=9.5.17,<10" },
+    { name = "mkdocs-material", marker = "extra == 'docs'", specifier = ">=9.5.17,<10" },
+    { name = "mkdocs-mermaid2-plugin", marker = "extra == 'all'", specifier = ">=1.1.1,<2" },
+    { name = "mkdocs-mermaid2-plugin", marker = "extra == 'docs'", specifier = ">=1.1.1,<2" },
+    { name = "pydantic", specifier = ">=2,<3" },
+    { name = "rdflib", marker = "extra == 'all'" },
+    { name = "rdflib", marker = "extra == 'scripts'" },
 ]
-provides-extras = ["docs"]
+provides-extras = ["all", "docs", "scripts"]
 
 [package.metadata.requires-dev]
 dev = [
     { name = "codespell", specifier = ">=2.2.6,<3" },
-    { name = "linkml", specifier = ">=1.6.3" },
+    { name = "linkml", specifier = "==1.11.1" },
     { name = "mkdocs", specifier = ">=1.4.2,<2" },
     { name = "mkdocs-material", specifier = ">=9.5.17,<10" },
     { name = "mkdocs-mermaid2-plugin", specifier = ">=1.1.1,<2" },
@@ -1006,7 +1016,7 @@ wheels = [
 
 [[package]]
 name = "linkml"
-version = "1.10.0"
+version = "1.11.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "antlr4-python3-runtime" },
@@ -1035,14 +1045,14 @@ dependencies = [
     { name = "typing-extensions", marker = "python_full_version < '3.12'" },
     { name = "watchdog" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/f3/57/e480d016c94ac1dcfeccde3fd751fa1464545e3de2446c9ebf9fe66dd393/linkml-1.10.0.tar.gz", hash = "sha256:ca70bba1474bc7de37edd33005a8a556d4718190584ab2c88f7c46d090477d55", size = 334216, upload-time = "2026-02-25T17:13:32.086Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/b4/26/38e7340959cd4a87bfe5403cfcf5311d9fe2ff4382fa00e96008a1342760/linkml-1.11.1.tar.gz", hash = "sha256:2f6774e13628270cadaeecda3313db0437ecc15cd44ee35c6c2655dbe31c8524", size = 374853, upload-time = "2026-05-20T17:05:42.359Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/b3/54/0d01e407b3b8657cb1a58031e3f23e7039d26338173a130a3be30fdd8e0b/linkml-1.10.0-py3-none-any.whl", hash = "sha256:2d4934f000977489352307336267a8a4270de3156187c3394d542a0a4b8130e5", size = 434438, upload-time = "2026-02-25T17:13:29.068Z" },
+    { url = "https://files.pythonhosted.org/packages/1f/fb/3068f649cc436be915f51b2f5ac0656c83dc9bcc6d4f8940633e295042c0/linkml-1.11.1-py3-none-any.whl", hash = "sha256:d1bbb97a8b1ea4a99b145007875733a5e5e89b3acfe3e9d1e369fa4a582990ed", size = 483751, upload-time = "2026-05-20T17:05:38.663Z" },
 ]
 
 [[package]]
 name = "linkml-runtime"
-version = "1.10.0"
+version = "1.11.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "click" },
@@ -1060,9 +1070,9 @@ dependencies = [
     { name = "rdflib" },
     { name = "requests" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/36/3d/031e2e8ef7ca872340fb7b7102cfd1fe4a0b329dc04ff694ad9ec6ccaddc/linkml_runtime-1.10.0.tar.gz", hash = "sha256:899889d584ce8056c5c44512b2d247bdc84a8484c3aa228aeb2db283e3a9d2ec", size = 589957, upload-time = "2026-02-25T17:13:34.034Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/d0/7c/36332b49226f37d05d0dbfa4fb1c8017963d62ae722102c9c11c1f530696/linkml_runtime-1.11.1.tar.gz", hash = "sha256:e71300b596c4f35aeccd9dca096806678402213dbdb2c5e8e68f507e21320754", size = 556549, upload-time = "2026-05-20T17:05:43.633Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/1c/2d/6ab4127bb9aa6e3b54ad5d81fd0c0c12e4d1a80300f2bfdac8f2e18f9d17/linkml_runtime-1.10.0-py3-none-any.whl", hash = "sha256:b7caf806e1b49bf62005d8f398b070c282742c5f6626469fdc1660add0c9da58", size = 584001, upload-time = "2026-02-25T17:13:30.603Z" },
+    { url = "https://files.pythonhosted.org/packages/63/1d/600b0dd24aa61f03d35293a2e9a4695add1e94c03d8701436fb52d5daf4f/linkml_runtime-1.11.1-py3-none-any.whl", hash = "sha256:b22c77d8fd920d0f4f43a6ece31393dc0b28bb47790f3e1c114210318c36b3da", size = 654566, upload-time = "2026-05-20T17:05:40.526Z" },
 ]
 
 [[package]]
@@ -1331,15 +1341,6 @@ source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/fd/18/0bea374e5ec3c8ba15365570002187f3fef9d7265ffbc2f649529878cc80/parse-1.21.1.tar.gz", hash = "sha256:825e1a88e9d9fb481b8d2ca709c6195558b6eaa97c559ad3a9a20aa2d12815a3", size = 29105, upload-time = "2026-02-19T02:20:07.645Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/c3/13/114daf766c33aec6c5a3954e7ea653f8a7ade9602c5c5a2228281698c490/parse-1.21.1-py2.py3-none-any.whl", hash = "sha256:55339ca698019815df3b8e8b550e5933933527e623b0cdf1ca2f404da35ffb47", size = 19693, upload-time = "2026-02-19T02:20:06.575Z" },
-]
-
-[[package]]
-name = "path"
-version = "17.1.1"
-source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/dd/52/a7bdd5ef8488977d354b7915d1e75009bebbd04f73eff14e52372d5e9435/path-17.1.1.tar.gz", hash = "sha256:2dfcbfec8b4d960f3469c52acf133113c2a8bf12ac7b98d629fa91af87248d42", size = 50528, upload-time = "2025-07-27T20:40:23.79Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/7c/50/11c9ee1ede64b45d687fd36eb8768dafc57afc78b4d83396920cfd69ed30/path-17.1.1-py3-none-any.whl", hash = "sha256:ec7e136df29172e5030dd07e037d55f676bdb29d15bfa09b80da29d07d3b9303", size = 23936, upload-time = "2025-07-27T20:40:22.453Z" },
 ]
 
 [[package]]
@@ -2362,12 +2363,6 @@ sdist = { url = "https://files.pythonhosted.org/packages/7a/20/44529486b179672b7
 wheels = [
     { url = "https://files.pythonhosted.org/packages/a2/fb/c674d0f22288d181201c2d23ab99d070a2d445457cdafdec5dcc46a6e930/sssom_pydantic-0.4.2-py3-none-any.whl", hash = "sha256:f84e29fa1a2f65664e921eb559afdecd9afa930746e30a8660bb63b508f2dcbc", size = 66291, upload-time = "2026-04-12T07:15:04.657Z" },
 ]
-
-[[package]]
-name = "stringcase"
-version = "1.2.0"
-source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/f3/1f/1241aa3d66e8dc1612427b17885f5fcd9c9ee3079fc0d28e9a3aeeb36fa3/stringcase-1.2.0.tar.gz", hash = "sha256:48a06980661908efe8d9d34eab2b6c13aefa2163b3ced26972902e3bdfd87008", size = 2958, upload-time = "2017-08-06T01:40:57.021Z" }
 
 [[package]]
 name = "tabulate"
