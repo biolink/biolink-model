@@ -98,21 +98,28 @@ wheels = [
 name = "biolink-model"
 source = { editable = "." }
 dependencies = [
-    { name = "beautifulsoup4" },
-    { name = "click" },
-    { name = "curies" },
-    { name = "linkml" },
     { name = "linkml-runtime" },
-    { name = "path" },
-    { name = "prefixmaps" },
-    { name = "pyyaml" },
-    { name = "requests" },
-    { name = "stringcase" },
+    { name = "pydantic" },
 ]
 
 [package.optional-dependencies]
-docs = [
+all = [
+    { name = "curies" },
+    { name = "linkml" },
+    { name = "mkdocs" },
     { name = "mkdocs-material" },
+    { name = "mkdocs-mermaid2-plugin" },
+    { name = "rdflib" },
+]
+docs = [
+    { name = "mkdocs" },
+    { name = "mkdocs-material" },
+    { name = "mkdocs-mermaid2-plugin" },
+]
+scripts = [
+    { name = "curies" },
+    { name = "linkml" },
+    { name = "rdflib" },
 ]
 
 [package.dev-dependencies]
@@ -129,24 +136,27 @@ dev = [
 
 [package.metadata]
 requires-dist = [
-    { name = "beautifulsoup4", specifier = ">=4.0.0" },
-    { name = "click", specifier = ">8.0.0,<8.4" },
-    { name = "curies", specifier = ">=0.9.0,<1" },
-    { name = "linkml", specifier = "==1.11.1" },
+    { name = "curies", marker = "extra == 'all'" },
+    { name = "curies", marker = "extra == 'scripts'" },
+    { name = "linkml", marker = "extra == 'all'", specifier = "==1.11.1" },
+    { name = "linkml", marker = "extra == 'scripts'", specifier = "==1.11.1" },
     { name = "linkml-runtime", specifier = "==1.11.1" },
-    { name = "mkdocs-material", marker = "extra == 'docs'" },
-    { name = "path", specifier = ">=17.0.0,<18" },
-    { name = "prefixmaps", specifier = ">=0.2.3,<1" },
-    { name = "pyyaml", specifier = ">=6.0.1,<7" },
-    { name = "requests", specifier = ">=2.32.3" },
-    { name = "stringcase", specifier = ">=1.2.0,<2" },
+    { name = "mkdocs", marker = "extra == 'all'", specifier = ">=1.4.2,<2" },
+    { name = "mkdocs", marker = "extra == 'docs'", specifier = ">=1.4.2,<2" },
+    { name = "mkdocs-material", marker = "extra == 'all'", specifier = ">=9.5.17,<10" },
+    { name = "mkdocs-material", marker = "extra == 'docs'", specifier = ">=9.5.17,<10" },
+    { name = "mkdocs-mermaid2-plugin", marker = "extra == 'all'", specifier = ">=1.1.1,<2" },
+    { name = "mkdocs-mermaid2-plugin", marker = "extra == 'docs'", specifier = ">=1.1.1,<2" },
+    { name = "pydantic", specifier = ">=2,<3" },
+    { name = "rdflib", marker = "extra == 'all'" },
+    { name = "rdflib", marker = "extra == 'scripts'" },
 ]
-provides-extras = ["docs"]
+provides-extras = ["all", "docs", "scripts"]
 
 [package.metadata.requires-dev]
 dev = [
     { name = "codespell", specifier = ">=2.2.6,<3" },
-    { name = "linkml", specifier = ">=1.6.3" },
+    { name = "linkml", specifier = "==1.11.1" },
     { name = "mkdocs", specifier = ">=1.4.2,<2" },
     { name = "mkdocs-material", specifier = ">=9.5.17,<10" },
     { name = "mkdocs-mermaid2-plugin", specifier = ">=1.1.1,<2" },
@@ -1331,15 +1341,6 @@ wheels = [
 ]
 
 [[package]]
-name = "path"
-version = "17.1.1"
-source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/dd/52/a7bdd5ef8488977d354b7915d1e75009bebbd04f73eff14e52372d5e9435/path-17.1.1.tar.gz", hash = "sha256:2dfcbfec8b4d960f3469c52acf133113c2a8bf12ac7b98d629fa91af87248d42", size = 50528, upload-time = "2025-07-27T20:40:23.79Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/7c/50/11c9ee1ede64b45d687fd36eb8768dafc57afc78b4d83396920cfd69ed30/path-17.1.1-py3-none-any.whl", hash = "sha256:ec7e136df29172e5030dd07e037d55f676bdb29d15bfa09b80da29d07d3b9303", size = 23936, upload-time = "2025-07-27T20:40:22.453Z" },
-]
-
-[[package]]
 name = "pathspec"
 version = "1.0.4"
 source = { registry = "https://pypi.org/simple" }
@@ -2359,12 +2360,6 @@ sdist = { url = "https://files.pythonhosted.org/packages/7a/20/44529486b179672b7
 wheels = [
     { url = "https://files.pythonhosted.org/packages/a2/fb/c674d0f22288d181201c2d23ab99d070a2d445457cdafdec5dcc46a6e930/sssom_pydantic-0.4.2-py3-none-any.whl", hash = "sha256:f84e29fa1a2f65664e921eb559afdecd9afa930746e30a8660bb63b508f2dcbc", size = 66291, upload-time = "2026-04-12T07:15:04.657Z" },
 ]
-
-[[package]]
-name = "stringcase"
-version = "1.2.0"
-source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/f3/1f/1241aa3d66e8dc1612427b17885f5fcd9c9ee3079fc0d28e9a3aeeb36fa3/stringcase-1.2.0.tar.gz", hash = "sha256:48a06980661908efe8d9d34eab2b6c13aefa2163b3ced26972902e3bdfd87008", size = 2958, upload-time = "2017-08-06T01:40:57.021Z" }
 
 [[package]]
 name = "tabulate"

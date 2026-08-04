@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-08-04T11:31:12
+# Generation date: 2026-08-04T11:34:28
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/vocab/
@@ -8111,10 +8111,16 @@ class Association(Entity):
     retrieval_source_ids: Optional[Union[Union[str, RetrievalSourceId], list[Union[str, RetrievalSourceId]]]] = empty_list()
     p_value: Optional[float] = None
     adjusted_p_value: Optional[float] = None
+    statistical_significance_qualifier: Optional[Union[str, "StatisticalSignificanceQualifierEnum"]] = None
+    effect_size: Optional[float] = None
+    effect_type: Optional[Union[str, "EffectTypeEnum"]] = None
     supporting_text: Optional[Union[str, list[str]]] = empty_list()
     has_supporting_studies: Optional[Union[dict[Union[str, StudyId], Union[dict, Study]], list[Union[dict, Study]]]] = empty_dict()
     update_date: Optional[Union[str, XSDDate]] = None
     has_confidence_score: Optional[float] = None
+    stringdb_combined_score: Optional[float] = None
+    stringdb_experimental_score: Optional[float] = None
+    stringdb_coexpression_score: Optional[float] = None
     elevate_to_prediction: Optional[Union[bool, Bool]] = None
     evidence_count: Optional[int] = None
     semmed_agreement_count: Optional[int] = None
@@ -8250,6 +8256,15 @@ class Association(Entity):
         if self.adjusted_p_value is not None and not isinstance(self.adjusted_p_value, float):
             self.adjusted_p_value = float(self.adjusted_p_value)
 
+        if self.statistical_significance_qualifier is not None and not isinstance(self.statistical_significance_qualifier, StatisticalSignificanceQualifierEnum):
+            self.statistical_significance_qualifier = StatisticalSignificanceQualifierEnum(self.statistical_significance_qualifier)
+
+        if self.effect_size is not None and not isinstance(self.effect_size, float):
+            self.effect_size = float(self.effect_size)
+
+        if self.effect_type is not None and not isinstance(self.effect_type, EffectTypeEnum):
+            self.effect_type = EffectTypeEnum(self.effect_type)
+
         if not isinstance(self.supporting_text, list):
             self.supporting_text = [self.supporting_text] if self.supporting_text is not None else []
         self.supporting_text = [v if isinstance(v, str) else str(v) for v in self.supporting_text]
@@ -8261,6 +8276,15 @@ class Association(Entity):
 
         if self.has_confidence_score is not None and not isinstance(self.has_confidence_score, float):
             self.has_confidence_score = float(self.has_confidence_score)
+
+        if self.stringdb_combined_score is not None and not isinstance(self.stringdb_combined_score, float):
+            self.stringdb_combined_score = float(self.stringdb_combined_score)
+
+        if self.stringdb_experimental_score is not None and not isinstance(self.stringdb_experimental_score, float):
+            self.stringdb_experimental_score = float(self.stringdb_experimental_score)
+
+        if self.stringdb_coexpression_score is not None and not isinstance(self.stringdb_coexpression_score, float):
+            self.stringdb_coexpression_score = float(self.stringdb_coexpression_score)
 
         if self.elevate_to_prediction is not None and not isinstance(self.elevate_to_prediction, Bool):
             self.elevate_to_prediction = Bool(self.elevate_to_prediction)
@@ -15823,6 +15847,121 @@ class GeneOrGeneProductOrChemicalEntityAspectEnum(EnumDefinitionImpl):
         setattr(cls, "ADP-ribosylation",
             PermissibleValue(text="ADP-ribosylation"))
 
+class EffectTypeEnum(EnumDefinitionImpl):
+    """
+    An enumeration of statistical metrics and estimators used to quantify the magnitude and direction of an effect or
+    association between the subject and object of an edge. The numeric result is stored in the companion 'effect size'
+    slot.
+    """
+    regression_coefficient = PermissibleValue(
+        text="regression_coefficient",
+        description="""The coefficient of an independent variable in a regression model, representing the expected change in the dependent variable per unit change in the predictor. Commonly reported as a beta coefficient in eQTL, pQTL, mQTL, and GWAS analyses.""")
+    log2_fold_change = PermissibleValue(
+        text="log2_fold_change",
+        description="""The base-2 logarithm of the ratio of a quantity (e.g. gene expression, protein abundance, metabolite concentration) between two conditions. The standard effect size in differential expression and differential abundance analyses across transcriptomics, proteomics, and metabolomics.""")
+    wald_ratio = PermissibleValue(
+        text="wald_ratio",
+        description="""A single-variant Mendelian randomization estimator computed as the ratio of the genetic variant-outcome association to the genetic variant-exposure association.""")
+    inverse_variance_weighted = PermissibleValue(
+        text="inverse_variance_weighted",
+        description="""A Mendelian randomization estimator that combines per-variant Wald ratios using inverse-variance weighting, assuming all instruments are valid (no horizontal pleiotropy).""")
+    mr_egger = PermissibleValue(
+        text="mr_egger",
+        description="""A Mendelian randomization estimator based on Egger regression that allows for directional horizontal pleiotropy by fitting an intercept term; a non-zero intercept indicates pleiotropic bias.""")
+    weighted_median = PermissibleValue(
+        text="weighted_median",
+        description="""A robust Mendelian randomization estimator that provides a consistent causal estimate when at least 50% of the instrument weight comes from valid variants.""")
+    standardized_mean_difference = PermissibleValue(
+        text="standardized_mean_difference",
+        description="""The difference between two group means divided by a pooled standard deviation, used when the predictor is categorical and the outcome is continuous.""")
+    cohens_d = PermissibleValue(
+        text="cohens_d",
+        description="""A standardized mean difference using the square root of the average of the two group variances as the denominator, with a small-sample correction for n < 50.""")
+    hedges_g = PermissibleValue(
+        text="hedges_g",
+        description="""A standardized mean difference with a Gamma-function correction on the pooled standard deviation to reduce small-sample bias.""")
+    glasss_delta = PermissibleValue(
+        text="glasss_delta",
+        description="""A standardized mean difference using only the control group's standard deviation as the denominator, preferred when group variances differ substantially.""")
+    strictly_standardized_mean_difference = PermissibleValue(
+        text="strictly_standardized_mean_difference",
+        description="""The ratio of the mean difference to the standard deviation of the difference between two groups (SSMD), widely used in high-content screening for hit selection and quality control.""")
+    correlation_coefficient = PermissibleValue(
+        text="correlation_coefficient",
+        description="""A normalized measure of association between two variables, ranging from -1 to +1, computed as covariance divided by the product of standard deviations.""")
+    pearsons_r = PermissibleValue(
+        text="pearsons_r",
+        description="""A parametric correlation coefficient for two continuous, normally distributed variables with a linear relationship.""")
+    spearmans_rho = PermissibleValue(
+        text="spearmans_rho",
+        description="""A nonparametric rank correlation coefficient measuring monotonic dependence between two variables.""")
+    kendalls_tau = PermissibleValue(
+        text="kendalls_tau",
+        description="""A rank correlation coefficient based on concordant and discordant pairs, suitable for ordinal data.""")
+    polychoric_correlation = PermissibleValue(
+        text="polychoric_correlation",
+        description="""A correlation coefficient estimating the association between two latent continuous variables from observed ordinal data.""")
+    matthews_correlation_coefficient = PermissibleValue(
+        text="matthews_correlation_coefficient",
+        description="""A correlation-based measure of binary classification quality (also known as the phi coefficient), ranging from -1 to +1.""")
+    goodman_kruskal_gamma = PermissibleValue(
+        text="goodman_kruskal_gamma",
+        description="""A rank correlation measure for ordinal or continuous variables based on the difference between concordant and discordant pairs, excluding ties.""")
+    r2_linkage_disequilibrium = PermissibleValue(
+        text="r2_linkage_disequilibrium",
+        description="""A squared correlation coefficient over two dichotomous variables used as a measure of linkage disequilibrium.""")
+    odds_ratio = PermissibleValue(
+        text="odds_ratio",
+        description="""The ratio of the odds of an outcome in an exposed group to the odds in an unexposed group, measuring association strength between two binary variables.""")
+    relative_risk = PermissibleValue(
+        text="relative_risk",
+        description="""The ratio of event probability in an exposed group to event probability in an unexposed group (also called risk ratio).""")
+    hazard_ratio = PermissibleValue(
+        text="hazard_ratio",
+        description="""The ratio of hazard rates between two groups over time, commonly reported in survival analysis and time-to-event omics studies.""")
+    eta_squared = PermissibleValue(
+        text="eta_squared",
+        description="""The proportion of total variance in the dependent variable attributable to a predictor in the sample (a biased estimator analogous to R-squared).""")
+    omega_squared = PermissibleValue(
+        text="omega_squared",
+        description="""A less biased estimator of the proportion of variance explained by a predictor, providing a better population-level estimate than eta-squared.""")
+    root_mean_square_standardized_effect = PermissibleValue(
+        text="root_mean_square_standardized_effect",
+        description="""The square root of the average of squared standardized effects in an analysis of variance context (RMSSE, Psi).""")
+
+    _defn = EnumDefinition(
+        name="EffectTypeEnum",
+        description="""An enumeration of statistical metrics and estimators used to quantify the magnitude and direction of an effect or association between the subject and object of an edge. The numeric result is stored in the companion 'effect size' slot.""",
+    )
+
+class StatisticalSignificanceQualifierEnum(EnumDefinitionImpl):
+    """
+    An enumeration used as a qualifier to categorize the statistical significance of an association's supporting
+    evidence into coarse bands (e.g., very strongly significant, strongly significant, significant, suggestive, not
+    significant), conventionally anchored to alpha = 0.05. The underlying numeric value lives in the 'p value' and
+    'adjusted p value' slots, which remain authoritative.
+    """
+    very_strongly_significant = PermissibleValue(
+        text="very_strongly_significant",
+        description="""A significance band denoting that the association meets the most stringent conventional threshold (significance statistic at or below 0.001), such that, under the null hypothesis of no association, an effect at least this large would be expected in no more than about one in a thousand comparable studies.""")
+    strongly_significant = PermissibleValue(
+        text="strongly_significant",
+        description="""A significance band denoting that the association meets a stringent conventional threshold (significance statistic at or below 0.01).""")
+    significant = PermissibleValue(
+        text="significant",
+        description="""A significance band denoting that the association meets the standard conventional threshold (significance statistic at or below alpha = 0.05), such that, under the null hypothesis, an effect at least this large would be expected in no more than about one in twenty comparable studies.""")
+    suggestive = PermissibleValue(
+        text="suggestive",
+        description="""A significance band denoting a borderline result (significance statistic above 0.05 but at or below roughly 0.10, sometimes extended to 0.20 in fields such as genetics) that is suggestive of, but does not conclusively support, an association.""")
+    not_significant = PermissibleValue(
+        text="not_significant",
+        description="""A significance band denoting that the association does not meet the conventional threshold (significance statistic above 0.05), such that there is insufficient evidence to rule out the null hypothesis of no association.""")
+
+    _defn = EnumDefinition(
+        name="StatisticalSignificanceQualifierEnum",
+        description="""An enumeration used as a qualifier to categorize the statistical significance of an association's supporting evidence into coarse bands (e.g., very strongly significant, strongly significant, significant, suggestive, not significant), conventionally anchored to alpha = 0.05. The underlying numeric value lives in the 'p value' and 'adjusted p value' slots, which remain authoritative.""",
+    )
+
 class CausalMechanismQualifierEnum(EnumDefinitionImpl):
     """
     An enumeration used as a qualifier to specify the causal or pharmacologic mechanism by which an effect is exerted
@@ -16932,6 +17071,9 @@ slots.species_context_qualifier = Slot(uri=BIOLINK.species_context_qualifier, na
 slots.disease_context_qualifier = Slot(uri=BIOLINK.disease_context_qualifier, name="disease context qualifier", curie=BIOLINK.curie('disease_context_qualifier'),
                    model_uri=BIOLINK.disease_context_qualifier, domain=Association, range=Optional[Union[str, DiseaseId]])
 
+slots.statistical_significance_qualifier = Slot(uri=BIOLINK.statistical_significance_qualifier, name="statistical significance qualifier", curie=BIOLINK.curie('statistical_significance_qualifier'),
+                   model_uri=BIOLINK.statistical_significance_qualifier, domain=Association, range=Optional[Union[str, "StatisticalSignificanceQualifierEnum"]])
+
 slots.qualifiers = Slot(uri=BIOLINK.qualifiers, name="qualifiers", curie=BIOLINK.curie('qualifiers'),
                    model_uri=BIOLINK.qualifiers, domain=Association, range=Optional[Union[Union[str, OntologyClassId], list[Union[str, OntologyClassId]]]])
 
@@ -17883,6 +18025,12 @@ slots.adjusted_p_value = Slot(uri=BIOLINK.adjusted_p_value, name="adjusted p val
 slots.bonferonni_adjusted_p_value = Slot(uri=BIOLINK.bonferonni_adjusted_p_value, name="bonferonni adjusted p value", curie=BIOLINK.curie('bonferonni_adjusted_p_value'),
                    model_uri=BIOLINK.bonferonni_adjusted_p_value, domain=Association, range=Optional[float])
 
+slots.effect_size = Slot(uri=BIOLINK.effect_size, name="effect size", curie=BIOLINK.curie('effect_size'),
+                   model_uri=BIOLINK.effect_size, domain=Association, range=Optional[float])
+
+slots.effect_type = Slot(uri=BIOLINK.effect_type, name="effect type", curie=BIOLINK.curie('effect_type'),
+                   model_uri=BIOLINK.effect_type, domain=Association, range=Optional[Union[str, "EffectTypeEnum"]])
+
 slots.supporting_text = Slot(uri=BIOLINK.supporting_text, name="supporting text", curie=BIOLINK.curie('supporting_text'),
                    model_uri=BIOLINK.supporting_text, domain=NamedThing, range=Optional[Union[str, list[str]]])
 
@@ -18108,6 +18256,15 @@ slots.gene2phenotype_confidence_category = Slot(uri=BIOLINK.gene2phenotype_confi
 
 slots.signor_confidence_score = Slot(uri=BIOLINK.signor_confidence_score, name="signor confidence score", curie=BIOLINK.curie('signor_confidence_score'),
                    model_uri=BIOLINK.signor_confidence_score, domain=None, range=Optional[float])
+
+slots.stringdb_combined_score = Slot(uri=BIOLINK.stringdb_combined_score, name="stringdb combined score", curie=BIOLINK.curie('stringdb_combined_score'),
+                   model_uri=BIOLINK.stringdb_combined_score, domain=None, range=Optional[float])
+
+slots.stringdb_experimental_score = Slot(uri=BIOLINK.stringdb_experimental_score, name="stringdb experimental score", curie=BIOLINK.curie('stringdb_experimental_score'),
+                   model_uri=BIOLINK.stringdb_experimental_score, domain=None, range=Optional[float])
+
+slots.stringdb_coexpression_score = Slot(uri=BIOLINK.stringdb_coexpression_score, name="stringdb coexpression score", curie=BIOLINK.curie('stringdb_coexpression_score'),
+                   model_uri=BIOLINK.stringdb_coexpression_score, domain=None, range=Optional[float])
 
 slots.attribute_name = Slot(uri=RDFS.label, name="attribute_name", curie=RDFS.curie('label'),
                    model_uri=BIOLINK.attribute_name, domain=Attribute, range=Optional[Union[str, LabelType]])

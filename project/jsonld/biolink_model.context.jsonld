@@ -1200,6 +1200,18 @@
          "@type": "@id",
          "@id": "editor"
       },
+      "effect_size": {
+         "@type": "xsd:float",
+         "@id": "effect_size"
+      },
+      "effect_type": {
+         "@context": {
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "effect_type"
+      },
       "elevate_to_prediction": {
          "@type": "xsd:boolean",
          "@id": "elevate_to_prediction"
@@ -2543,6 +2555,14 @@
       "statement_qualifier": {
          "@id": "statement_qualifier"
       },
+      "statistical_significance_qualifier": {
+         "@context": {
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "statistical_significance_qualifier"
+      },
       "stoichiometry": {
          "@type": "xsd:integer",
          "@id": "stoichiometry"
@@ -2554,6 +2574,18 @@
             "meaning": "@id"
          },
          "@id": "strand"
+      },
+      "stringdb_coexpression_score": {
+         "@type": "xsd:float",
+         "@id": "stringdb_coexpression_score"
+      },
+      "stringdb_combined_score": {
+         "@type": "xsd:float",
+         "@id": "stringdb_combined_score"
+      },
+      "stringdb_experimental_score": {
+         "@type": "xsd:float",
+         "@id": "stringdb_experimental_score"
       },
       "studied_to_treat": {
          "@type": "@id",

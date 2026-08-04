@@ -18,27 +18,34 @@ classifiers = [
     "Programming Language :: Python :: 3.13",
 ]
 dependencies = [
-    "curies>=0.9.0,<1",
-    "prefixmaps>=0.2.3,<1",
-    "pyyaml>=6.0.1,<7",
-    "stringcase>=1.2.0,<2",
-    "beautifulsoup4>=4.0.0",
-    "path>=17.0.0,<18",
+    "pydantic>=2,<3",
     "linkml-runtime==1.11.1",
-    "requests>=2.32.3",
-    "linkml==1.11.1",
-    "click>8.0.0,<8.4",
 ]
 
 [project.scripts]
 generate_viz_json = "biolink_model.scripts.generate_json:generate_viz_json"
 
 [project.optional-dependencies]
-docs = ["mkdocs-material"]
+scripts = [
+    "linkml==1.11.1",
+    "rdflib",
+    "curies",
+]
+docs = [
+    # Must cover everything mkdocs.yml declares: `theme: material` and `plugins: [search, mermaid2]`.
+    # Bounds mirror the dev group so a standalone `pip install biolink-model[docs]` builds the same
+    # site CI builds.
+    "mkdocs>=1.4.2,<2",
+    "mkdocs-material>=9.5.17,<10",
+    "mkdocs-mermaid2-plugin>=1.1.1,<2",
+]
+all = [
+    "biolink-model[scripts,docs]",
+]
 
 [dependency-groups]
 dev = [
-    "linkml>=1.6.3",
+    "linkml==1.11.1",
     "mkdocs>=1.4.2,<2",
     "mkdocs-material>=9.5.17,<10",
     "mkdocs-mermaid2-plugin>=1.1.1,<2",
