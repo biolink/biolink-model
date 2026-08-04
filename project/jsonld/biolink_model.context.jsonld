@@ -1212,6 +1212,18 @@
          "@type": "@id",
          "@id": "editor"
       },
+      "effect_size": {
+         "@type": "xsd:float",
+         "@id": "effect_size"
+      },
+      "effect_type": {
+         "@context": {
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "effect_type"
+      },
       "elevate_to_prediction": {
          "@type": "xsd:boolean",
          "@id": "elevate_to_prediction"

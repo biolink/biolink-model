@@ -170,6 +170,8 @@ message AnatomicalEntityHasPartAnatomicalEntityAssociation
   float pValue = 0
   float adjustedPValue = 0
   statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
+  float effectSize = 0
+  effectTypeEnum effectType = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -227,6 +229,8 @@ message AnatomicalEntityPartOfAnatomicalEntityAssociation
   float pValue = 0
   float adjustedPValue = 0
   statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
+  float effectSize = 0
+  effectTypeEnum effectType = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -284,6 +288,8 @@ message AnatomicalEntityToAnatomicalEntityOntogenicAssociation
   float pValue = 0
   float adjustedPValue = 0
   statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
+  float effectSize = 0
+  effectTypeEnum effectType = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -381,6 +387,8 @@ message Association
   float pValue = 0
   float adjustedPValue = 0
   statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
+  float effectSize = 0
+  effectTypeEnum effectType = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -517,6 +525,8 @@ message BehaviorToBehavioralFeatureAssociation
   float pValue = 0
   float adjustedPValue = 0
   statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
+  float effectSize = 0
+  effectTypeEnum effectType = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -704,6 +714,8 @@ message BiologicalProcessOrActivityToAnatomicalEntityAssociation
   float pValue = 0
   float adjustedPValue = 0
   statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
+  float effectSize = 0
+  effectTypeEnum effectType = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -760,6 +772,8 @@ message BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation
   float pValue = 0
   float adjustedPValue = 0
   statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
+  float effectSize = 0
+  effectTypeEnum effectType = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -817,6 +831,8 @@ message BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation
   float pValue = 0
   float adjustedPValue = 0
   statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
+  float effectSize = 0
+  effectTypeEnum effectType = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -1029,6 +1045,8 @@ message CaseToDiseaseAssociation
   float pValue = 0
   float adjustedPValue = 0
   statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
+  float effectSize = 0
+  effectTypeEnum effectType = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -1087,6 +1105,8 @@ message CaseToGeneAssociation
   float pValue = 0
   float adjustedPValue = 0
   statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
+  float effectSize = 0
+  effectTypeEnum effectType = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -1146,6 +1166,8 @@ message CaseToPhenotypicFeatureAssociation
   float pValue = 0
   float adjustedPValue = 0
   statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
+  float effectSize = 0
+  effectTypeEnum effectType = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -1214,6 +1236,8 @@ message CaseToVariantAssociation
   float pValue = 0
   float adjustedPValue = 0
   statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
+  float effectSize = 0
+  effectTypeEnum effectType = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -1273,6 +1297,8 @@ message CausalGeneToDiseaseAssociation
   float pValue = 0
   float adjustedPValue = 0
   statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
+  float effectSize = 0
+  effectTypeEnum effectType = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -1387,6 +1413,8 @@ message CellLineAsAModelOfDiseaseAssociation
   float pValue = 0
   float adjustedPValue = 0
   statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
+  float effectSize = 0
+  effectTypeEnum effectType = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -1454,6 +1482,8 @@ message CellLineToDiseaseOrPhenotypicFeatureAssociation
   float pValue = 0
   float adjustedPValue = 0
   statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
+  float effectSize = 0
+  effectTypeEnum effectType = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -1564,6 +1594,8 @@ message ChemicalAffectsBiologicalEntityAssociation
   float pValue = 0
   float adjustedPValue = 0
   statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
+  float effectSize = 0
+  effectTypeEnum effectType = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -1636,6 +1668,8 @@ message ChemicalAffectsGeneAssociation
   float pValue = 0
   float adjustedPValue = 0
   statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
+  float effectSize = 0
+  effectTypeEnum effectType = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -1745,6 +1779,8 @@ message ChemicalEntityAssessesNamedThingAssociation
   float pValue = 0
   float adjustedPValue = 0
   statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
+  float effectSize = 0
+  effectTypeEnum effectType = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -1802,6 +1838,8 @@ message ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation
   float pValue = 0
   float adjustedPValue = 0
   statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
+  float effectSize = 0
+  effectTypeEnum effectType = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -1860,6 +1898,8 @@ message ChemicalEntityToBiologicalProcessAssociation
   float pValue = 0
   float adjustedPValue = 0
   statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
+  float effectSize = 0
+  effectTypeEnum effectType = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -1921,6 +1961,8 @@ message ChemicalEntityToChemicalDerivationAssociation
   float pValue = 0
   float adjustedPValue = 0
   statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
+  float effectSize = 0
+  effectTypeEnum effectType = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -1980,6 +2022,8 @@ message ChemicalEntityToChemicalEntityAssociation
   float pValue = 0
   float adjustedPValue = 0
   statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
+  float effectSize = 0
+  effectTypeEnum effectType = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -2040,6 +2084,8 @@ message ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation
   float pValue = 0
   float adjustedPValue = 0
   statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
+  float effectSize = 0
+  effectTypeEnum effectType = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -2102,6 +2148,8 @@ message ChemicalEntityToPathwayAssociation
   float pValue = 0
   float adjustedPValue = 0
   statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
+  float effectSize = 0
+  effectTypeEnum effectType = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -2192,6 +2240,8 @@ message ChemicalGeneInteractionAssociation
   float pValue = 0
   float adjustedPValue = 0
   statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
+  float effectSize = 0
+  effectTypeEnum effectType = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -2265,6 +2315,8 @@ message ChemicalGeneSensitivityAssociation
   float pValue = 0
   float adjustedPValue = 0
   statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
+  float effectSize = 0
+  effectTypeEnum effectType = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -2377,6 +2429,8 @@ message ChemicalOrDrugOrTreatmentAdverseEventAssociation
   float pValue = 0
   float adjustedPValue = 0
   statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
+  float effectSize = 0
+  effectTypeEnum effectType = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -2445,6 +2499,8 @@ message ChemicalOrDrugOrTreatmentSideEffectAssociation
   float pValue = 0
   float adjustedPValue = 0
   statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
+  float effectSize = 0
+  effectTypeEnum effectType = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -2512,6 +2568,8 @@ message ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation
   float pValue = 0
   float adjustedPValue = 0
   statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
+  float effectSize = 0
+  effectTypeEnum effectType = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -3045,6 +3103,8 @@ message ContributorAssociation
   float pValue = 0
   float adjustedPValue = 0
   statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
+  float effectSize = 0
+  effectTypeEnum effectType = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -3103,6 +3163,8 @@ message CorrelatedGeneToDiseaseAssociation
   float pValue = 0
   float adjustedPValue = 0
   statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
+  float effectSize = 0
+  effectTypeEnum effectType = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -3358,6 +3420,8 @@ message DiseaseAssociatedWithResponseToChemicalEntityAssociation
   float pValue = 0
   float adjustedPValue = 0
   statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
+  float effectSize = 0
+  effectTypeEnum effectType = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -3478,6 +3542,8 @@ message DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation
   float pValue = 0
   float adjustedPValue = 0
   statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
+  float effectSize = 0
+  effectTypeEnum effectType = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -3536,6 +3602,8 @@ message DiseaseOrPhenotypicFeatureToLocationAssociation
   float pValue = 0
   float adjustedPValue = 0
   statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
+  float effectSize = 0
+  effectTypeEnum effectType = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -3591,6 +3659,8 @@ message DiseaseToDiseaseAssociation
   float pValue = 0
   float adjustedPValue = 0
   statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
+  float effectSize = 0
+  effectTypeEnum effectType = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -3658,6 +3728,8 @@ message DiseaseToExposureEventAssociation
   float pValue = 0
   float adjustedPValue = 0
   statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
+  float effectSize = 0
+  effectTypeEnum effectType = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -3713,6 +3785,8 @@ message DiseaseToPhenotypicFeatureAssociation
   float pValue = 0
   float adjustedPValue = 0
   statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
+  float effectSize = 0
+  effectTypeEnum effectType = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -3890,6 +3964,8 @@ message DrugToGeneAssociation
   float pValue = 0
   float adjustedPValue = 0
   statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
+  float effectSize = 0
+  effectTypeEnum effectType = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -3980,6 +4056,8 @@ message DruggableGeneToDiseaseAssociation
   float pValue = 0
   float adjustedPValue = 0
   statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
+  float effectSize = 0
+  effectTypeEnum effectType = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -4052,6 +4130,8 @@ message EntityToDiseaseAssociation
   float pValue = 0
   float adjustedPValue = 0
   statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
+  float effectSize = 0
+  effectTypeEnum effectType = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -4113,6 +4193,8 @@ message EntityToPhenotypicFeatureAssociation
   float pValue = 0
   float adjustedPValue = 0
   statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
+  float effectSize = 0
+  effectTypeEnum effectType = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -4385,6 +4467,8 @@ message ExonToTranscriptRelationship
   float pValue = 0
   float adjustedPValue = 0
   statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
+  float effectSize = 0
+  effectTypeEnum effectType = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -4477,6 +4561,8 @@ message ExposureEventToOutcomeAssociation
   float pValue = 0
   float adjustedPValue = 0
   statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
+  float effectSize = 0
+  effectTypeEnum effectType = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -4535,6 +4621,8 @@ message ExposureEventToPhenotypicFeatureAssociation
   float pValue = 0
   float adjustedPValue = 0
   statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
+  float effectSize = 0
+  effectTypeEnum effectType = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -4677,6 +4765,8 @@ message FunctionalAssociation
   float pValue = 0
   float adjustedPValue = 0
   statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
+  float effectSize = 0
+  effectTypeEnum effectType = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -4785,6 +4875,8 @@ message GeneAffectsChemicalAssociation
   float pValue = 0
   float adjustedPValue = 0
   statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
+  float effectSize = 0
+  effectTypeEnum effectType = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -4858,6 +4950,8 @@ message GeneAsAModelOfDiseaseAssociation
   float pValue = 0
   float adjustedPValue = 0
   statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
+  float effectSize = 0
+  effectTypeEnum effectType = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -4952,6 +5046,8 @@ message GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation
   float pValue = 0
   float adjustedPValue = 0
   statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
+  float effectSize = 0
+  effectTypeEnum effectType = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -5009,6 +5105,8 @@ message GeneHasVariantThatContributesToDiseaseAssociation
   float pValue = 0
   float adjustedPValue = 0
   statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
+  float effectSize = 0
+  effectTypeEnum effectType = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -5074,6 +5172,8 @@ message GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation
   float pValue = 0
   float adjustedPValue = 0
   statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
+  float effectSize = 0
+  effectTypeEnum effectType = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -5130,6 +5230,8 @@ message GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation
   float pValue = 0
   float adjustedPValue = 0
   statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
+  float effectSize = 0
+  effectTypeEnum effectType = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -5187,6 +5289,8 @@ message GeneRegulatesGeneAssociation
   float pValue = 0
   float adjustedPValue = 0
   statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
+  float effectSize = 0
+  effectTypeEnum effectType = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -5249,6 +5353,8 @@ message GeneToDiseaseAssociation
   float pValue = 0
   float adjustedPValue = 0
   statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
+  float effectSize = 0
+  effectTypeEnum effectType = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -5313,6 +5419,8 @@ message GeneToExpressionSiteAssociation
   float pValue = 0
   float adjustedPValue = 0
   statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
+  float effectSize = 0
+  effectTypeEnum effectType = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -5373,6 +5481,8 @@ message GeneToGeneAssociation
   float pValue = 0
   float adjustedPValue = 0
   statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
+  float effectSize = 0
+  effectTypeEnum effectType = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -5443,6 +5553,8 @@ message GeneToGeneCoexpressionAssociation
   float pValue = 0
   float adjustedPValue = 0
   statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
+  float effectSize = 0
+  effectTypeEnum effectType = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -5517,6 +5629,8 @@ message GeneToGeneFamilyAssociation
   float pValue = 0
   float adjustedPValue = 0
   statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
+  float effectSize = 0
+  effectTypeEnum effectType = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -5574,6 +5688,8 @@ message GeneToGeneHomologyAssociation
   float pValue = 0
   float adjustedPValue = 0
   statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
+  float effectSize = 0
+  effectTypeEnum effectType = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -5644,6 +5760,8 @@ message GeneToGeneProductRelationship
   float pValue = 0
   float adjustedPValue = 0
   statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
+  float effectSize = 0
+  effectTypeEnum effectType = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -5702,6 +5820,8 @@ message GeneToGoTermAssociation
   float pValue = 0
   float adjustedPValue = 0
   statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
+  float effectSize = 0
+  effectTypeEnum effectType = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -5759,6 +5879,8 @@ message GeneToPathwayAssociation
   float pValue = 0
   float adjustedPValue = 0
   statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
+  float effectSize = 0
+  effectTypeEnum effectType = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -5815,6 +5937,8 @@ message GeneToPhenotypicFeatureAssociation
   float pValue = 0
   float adjustedPValue = 0
   statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
+  float effectSize = 0
+  effectTypeEnum effectType = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -5975,6 +6099,8 @@ message GenomicSequenceLocalization
   float pValue = 0
   float adjustedPValue = 0
   statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
+  float effectSize = 0
+  effectTypeEnum effectType = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -6065,6 +6191,8 @@ message GenotypeAsAModelOfDiseaseAssociation
   float pValue = 0
   float adjustedPValue = 0
   statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
+  float effectSize = 0
+  effectTypeEnum effectType = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -6129,6 +6257,8 @@ message GenotypeToDiseaseAssociation
   float pValue = 0
   float adjustedPValue = 0
   statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
+  float effectSize = 0
+  effectTypeEnum effectType = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -6193,6 +6323,8 @@ message GenotypeToGeneAssociation
   float pValue = 0
   float adjustedPValue = 0
   statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
+  float effectSize = 0
+  effectTypeEnum effectType = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -6250,6 +6382,8 @@ message GenotypeToGenotypePartAssociation
   float pValue = 0
   float adjustedPValue = 0
   statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
+  float effectSize = 0
+  effectTypeEnum effectType = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -6308,6 +6442,8 @@ message GenotypeToPhenotypicFeatureAssociation
   float pValue = 0
   float adjustedPValue = 0
   statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
+  float effectSize = 0
+  effectTypeEnum effectType = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -6376,6 +6512,8 @@ message GenotypeToVariantAssociation
   float pValue = 0
   float adjustedPValue = 0
   statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
+  float effectSize = 0
+  effectTypeEnum effectType = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -6700,6 +6838,8 @@ message InformationContentEntityToNamedThingAssociation
   float pValue = 0
   float adjustedPValue = 0
   statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
+  float effectSize = 0
+  effectTypeEnum effectType = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -6898,6 +7038,8 @@ message MacromolecularMachineHasSubstrateAssociation
   float pValue = 0
   float adjustedPValue = 0
   statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
+  float effectSize = 0
+  effectTypeEnum effectType = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -6971,6 +7113,8 @@ message MacromolecularMachineToBiologicalProcessAssociation
   float pValue = 0
   float adjustedPValue = 0
   statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
+  float effectSize = 0
+  effectTypeEnum effectType = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -7029,6 +7173,8 @@ message MacromolecularMachineToCellularComponentAssociation
   float pValue = 0
   float adjustedPValue = 0
   statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
+  float effectSize = 0
+  effectTypeEnum effectType = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -7087,6 +7233,8 @@ message MacromolecularMachineToMolecularActivityAssociation
   float pValue = 0
   float adjustedPValue = 0
   statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
+  float effectSize = 0
+  effectTypeEnum effectType = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -7191,6 +7339,8 @@ message MaterialSampleDerivationAssociation
   float pValue = 0
   float adjustedPValue = 0
   statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
+  float effectSize = 0
+  effectTypeEnum effectType = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -7251,6 +7401,8 @@ message MaterialSampleToDiseaseOrPhenotypicFeatureAssociation
   float pValue = 0
   float adjustedPValue = 0
   statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
+  float effectSize = 0
+  effectTypeEnum effectType = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -7364,6 +7516,8 @@ message MolecularActivityToChemicalEntityAssociation
   float pValue = 0
   float adjustedPValue = 0
   statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
+  float effectSize = 0
+  effectTypeEnum effectType = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -7421,6 +7575,8 @@ message MolecularActivityToMolecularActivityAssociation
   float pValue = 0
   float adjustedPValue = 0
   statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
+  float effectSize = 0
+  effectTypeEnum effectType = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -7477,6 +7633,8 @@ message MolecularActivityToPathwayAssociation
   float pValue = 0
   float adjustedPValue = 0
   statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
+  float effectSize = 0
+  effectTypeEnum effectType = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -7633,6 +7791,8 @@ message NamedThingAssociatedWithLikelihoodOfNamedThingAssociation
   float pValue = 0
   float adjustedPValue = 0
   statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
+  float effectSize = 0
+  effectTypeEnum effectType = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -7912,6 +8072,8 @@ message OrganismTaxonToOrganismTaxonInteraction
   float pValue = 0
   float adjustedPValue = 0
   statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
+  float effectSize = 0
+  effectTypeEnum effectType = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -7970,6 +8132,8 @@ message OrganismTaxonToOrganismTaxonSpecialization
   float pValue = 0
   float adjustedPValue = 0
   statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
+  float effectSize = 0
+  effectTypeEnum effectType = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -8028,6 +8192,8 @@ message OrganismToOrganismAssociation
   float pValue = 0
   float adjustedPValue = 0
   statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
+  float effectSize = 0
+  effectTypeEnum effectType = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -8086,6 +8252,8 @@ message OrganismalEntityAsAModelOfDiseaseAssociation
   float pValue = 0
   float adjustedPValue = 0
   statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
+  float effectSize = 0
+  effectTypeEnum effectType = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -8148,6 +8316,8 @@ message PairwiseGeneToGeneInteraction
   float pValue = 0
   float adjustedPValue = 0
   statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
+  float effectSize = 0
+  effectTypeEnum effectType = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -8217,6 +8387,8 @@ message PairwiseMolecularInteraction
   float pValue = 0
   float adjustedPValue = 0
   statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
+  float effectSize = 0
+  effectTypeEnum effectType = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -8524,6 +8696,8 @@ message PhenotypicFeatureToDiseaseAssociation
   float pValue = 0
   float adjustedPValue = 0
   statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
+  float effectSize = 0
+  effectTypeEnum effectType = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -8594,6 +8768,8 @@ message PhenotypicFeatureToPhenotypicFeatureAssociation
   float pValue = 0
   float adjustedPValue = 0
   statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
+  float effectSize = 0
+  effectTypeEnum effectType = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -8863,6 +9039,8 @@ message PopulationToPopulationAssociation
   float pValue = 0
   float adjustedPValue = 0
   statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
+  float effectSize = 0
+  effectTypeEnum effectType = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -9026,6 +9204,8 @@ message ProcessRegulatesProcessAssociation
   float pValue = 0
   float adjustedPValue = 0
   statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
+  float effectSize = 0
+  effectTypeEnum effectType = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -9263,6 +9443,8 @@ message ReactionToCatalystAssociation
   float pValue = 0
   float adjustedPValue = 0
   statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
+  float effectSize = 0
+  effectTypeEnum effectType = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -9324,6 +9506,8 @@ message ReactionToParticipantAssociation
   float pValue = 0
   float adjustedPValue = 0
   statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
+  float effectSize = 0
+  effectTypeEnum effectType = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -9552,6 +9736,8 @@ message SequenceAssociation
   float pValue = 0
   float adjustedPValue = 0
   statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
+  float effectSize = 0
+  effectTypeEnum effectType = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -9607,6 +9793,8 @@ message SequenceFeatureRelationship
   float pValue = 0
   float adjustedPValue = 0
   statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
+  float effectSize = 0
+  effectTypeEnum effectType = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -9983,6 +10171,8 @@ message TaxonToTaxonAssociation
   float pValue = 0
   float adjustedPValue = 0
   statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
+  float effectSize = 0
+  effectTypeEnum effectType = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -10101,6 +10291,8 @@ message TranscriptToGeneRelationship
   float pValue = 0
   float adjustedPValue = 0
   statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
+  float effectSize = 0
+  effectTypeEnum effectType = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -10220,6 +10412,8 @@ message VariantAsAModelOfDiseaseAssociation
   float pValue = 0
   float adjustedPValue = 0
   statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
+  float effectSize = 0
+  effectTypeEnum effectType = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -10284,6 +10478,8 @@ message VariantToDiseaseAssociation
   float pValue = 0
   float adjustedPValue = 0
   statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
+  float effectSize = 0
+  effectTypeEnum effectType = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -10349,6 +10545,8 @@ message VariantToGeneAssociation
   float pValue = 0
   float adjustedPValue = 0
   statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
+  float effectSize = 0
+  effectTypeEnum effectType = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -10406,6 +10604,8 @@ message VariantToGeneExpressionAssociation
   float pValue = 0
   float adjustedPValue = 0
   statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
+  float effectSize = 0
+  effectTypeEnum effectType = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -10468,6 +10668,8 @@ message VariantToPhenotypicFeatureAssociation
   float pValue = 0
   float adjustedPValue = 0
   statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
+  float effectSize = 0
+  effectTypeEnum effectType = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0
@@ -10536,6 +10738,8 @@ message VariantToPopulationAssociation
   float pValue = 0
   float adjustedPValue = 0
   statisticalSignificanceQualifierEnum statisticalSignificanceQualifier = 0
+  float effectSize = 0
+  effectTypeEnum effectType = 0
  repeated  string supportingText = 0
  repeated  study hasSupportingStudies = 0
   date updateDate = 0

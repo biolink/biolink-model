@@ -1666,6 +1666,188 @@
       ]
     },
     {
+      "name": "EffectTypeEnum",
+      "definition_uri": "https://w3id.org/biolink/vocab/EffectTypeEnum",
+      "description": "An enumeration of statistical metrics and estimators used to quantify the magnitude and direction of an effect or association between the subject and object of an edge. The numeric result is stored in the companion 'effect size' slot.",
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "permissible_values": [
+        {
+          "text": "regression_coefficient",
+          "description": "The coefficient of an independent variable in a regression model, representing the expected change in the dependent variable per unit change in the predictor. Commonly reported as a beta coefficient in eQTL, pQTL, mQTL, and GWAS analyses.",
+          "close_mappings": [
+            "STATO:0000565"
+          ]
+        },
+        {
+          "text": "log2_fold_change",
+          "description": "The base-2 logarithm of the ratio of a quantity (e.g. gene expression, protein abundance, metabolite concentration) between two conditions. The standard effect size in differential expression and differential abundance analyses across transcriptomics, proteomics, and metabolomics.",
+          "close_mappings": [
+            "STATO:0000169"
+          ]
+        },
+        {
+          "text": "wald_ratio",
+          "description": "A single-variant Mendelian randomization estimator computed as the ratio of the genetic variant-outcome association to the genetic variant-exposure association."
+        },
+        {
+          "text": "inverse_variance_weighted",
+          "description": "A Mendelian randomization estimator that combines per-variant Wald ratios using inverse-variance weighting, assuming all instruments are valid (no horizontal pleiotropy)."
+        },
+        {
+          "text": "mr_egger",
+          "description": "A Mendelian randomization estimator based on Egger regression that allows for directional horizontal pleiotropy by fitting an intercept term; a non-zero intercept indicates pleiotropic bias."
+        },
+        {
+          "text": "weighted_median",
+          "description": "A robust Mendelian randomization estimator that provides a consistent causal estimate when at least 50% of the instrument weight comes from valid variants."
+        },
+        {
+          "text": "standardized_mean_difference",
+          "description": "The difference between two group means divided by a pooled standard deviation, used when the predictor is categorical and the outcome is continuous.",
+          "close_mappings": [
+            "STATO:0000100"
+          ]
+        },
+        {
+          "text": "cohens_d",
+          "description": "A standardized mean difference using the square root of the average of the two group variances as the denominator, with a small-sample correction for n < 50.",
+          "is_a": "standardized_mean_difference",
+          "close_mappings": [
+            "STATO:0000618"
+          ]
+        },
+        {
+          "text": "hedges_g",
+          "description": "A standardized mean difference with a Gamma-function correction on the pooled standard deviation to reduce small-sample bias.",
+          "is_a": "standardized_mean_difference",
+          "close_mappings": [
+            "STATO:0000319"
+          ]
+        },
+        {
+          "text": "glasss_delta",
+          "description": "A standardized mean difference using only the control group's standard deviation as the denominator, preferred when group variances differ substantially.",
+          "is_a": "standardized_mean_difference",
+          "close_mappings": [
+            "STATO:0000320"
+          ]
+        },
+        {
+          "text": "strictly_standardized_mean_difference",
+          "description": "The ratio of the mean difference to the standard deviation of the difference between two groups (SSMD), widely used in high-content screening for hit selection and quality control.",
+          "is_a": "standardized_mean_difference",
+          "close_mappings": [
+            "STATO:0000135"
+          ]
+        },
+        {
+          "text": "correlation_coefficient",
+          "description": "A normalized measure of association between two variables, ranging from -1 to +1, computed as covariance divided by the product of standard deviations.",
+          "close_mappings": [
+            "STATO:0000142"
+          ]
+        },
+        {
+          "text": "pearsons_r",
+          "description": "A parametric correlation coefficient for two continuous, normally distributed variables with a linear relationship.",
+          "is_a": "correlation_coefficient",
+          "close_mappings": [
+            "STATO:0000280"
+          ]
+        },
+        {
+          "text": "spearmans_rho",
+          "description": "A nonparametric rank correlation coefficient measuring monotonic dependence between two variables.",
+          "is_a": "correlation_coefficient",
+          "close_mappings": [
+            "STATO:0000201"
+          ]
+        },
+        {
+          "text": "kendalls_tau",
+          "description": "A rank correlation coefficient based on concordant and discordant pairs, suitable for ordinal data.",
+          "is_a": "correlation_coefficient",
+          "close_mappings": [
+            "STATO:0000240"
+          ]
+        },
+        {
+          "text": "polychoric_correlation",
+          "description": "A correlation coefficient estimating the association between two latent continuous variables from observed ordinal data.",
+          "is_a": "correlation_coefficient",
+          "close_mappings": [
+            "STATO:0000269"
+          ]
+        },
+        {
+          "text": "matthews_correlation_coefficient",
+          "description": "A correlation-based measure of binary classification quality (also known as the phi coefficient), ranging from -1 to +1.",
+          "is_a": "correlation_coefficient",
+          "close_mappings": [
+            "STATO:0000524"
+          ]
+        },
+        {
+          "text": "goodman_kruskal_gamma",
+          "description": "A rank correlation measure for ordinal or continuous variables based on the difference between concordant and discordant pairs, excluding ties.",
+          "is_a": "correlation_coefficient",
+          "close_mappings": [
+            "STATO:0000612"
+          ]
+        },
+        {
+          "text": "r2_linkage_disequilibrium",
+          "description": "A squared correlation coefficient over two dichotomous variables used as a measure of linkage disequilibrium.",
+          "is_a": "correlation_coefficient",
+          "close_mappings": [
+            "STATO:0000123"
+          ]
+        },
+        {
+          "text": "odds_ratio",
+          "description": "The ratio of the odds of an outcome in an exposed group to the odds in an unexposed group, measuring association strength between two binary variables.",
+          "close_mappings": [
+            "STATO:0000182"
+          ]
+        },
+        {
+          "text": "relative_risk",
+          "description": "The ratio of event probability in an exposed group to event probability in an unexposed group (also called risk ratio).",
+          "close_mappings": [
+            "STATO:0000245"
+          ]
+        },
+        {
+          "text": "hazard_ratio",
+          "description": "The ratio of hazard rates between two groups over time, commonly reported in survival analysis and time-to-event omics studies.",
+          "close_mappings": [
+            "STATO:0000677"
+          ]
+        },
+        {
+          "text": "eta_squared",
+          "description": "The proportion of total variance in the dependent variable attributable to a predictor in the sample (a biased estimator analogous to R-squared).",
+          "close_mappings": [
+            "STATO:0000317"
+          ]
+        },
+        {
+          "text": "omega_squared",
+          "description": "A less biased estimator of the proportion of variance explained by a predictor, providing a better population-level estimate than eta-squared.",
+          "close_mappings": [
+            "STATO:0000318"
+          ]
+        },
+        {
+          "text": "root_mean_square_standardized_effect",
+          "description": "The square root of the average of squared standardized effects in an analysis of variance context (RMSSE, Psi).",
+          "close_mappings": [
+            "STATO:0000316"
+          ]
+        }
+      ]
+    },
+    {
       "name": "StatisticalSignificanceQualifierEnum",
       "definition_uri": "https://w3id.org/biolink/vocab/StatisticalSignificanceQualifierEnum",
       "description": "An enumeration used as a qualifier to categorize the statistical significance of an association's supporting evidence into coarse bands (e.g., very strongly significant, strongly significant, significant, suggestive, not significant), conventionally anchored to alpha = 0.05. The underlying numeric value lives in the 'p value' and 'adjusted p value' slots, which remain authoritative.",
@@ -14428,6 +14610,59 @@
       "slot_uri": "https://w3id.org/biolink/vocab/bonferonni_adjusted_p_value",
       "owner": "bonferonni_adjusted_p_value",
       "range": "float",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "effect_size",
+      "definition_uri": "https://w3id.org/biolink/vocab/effect_size",
+      "description": "A quantitative measure of the magnitude and direction of an effect or association between the subject and object of an edge, as estimated by a statistical method. The specific metric used (e.g. Cohen's d, odds ratio, Pearson's r) is indicated by the companion 'effect type' slot.",
+      "notes": [
+        "The numeric value here is metric-dependent and should always be interpreted together with 'effect type'. For example, an effect size of 0.8 with effect type 'cohens_d' means a large standardized mean difference, whereas 0.8 with effect type 'pearsons_r' means a strong positive linear correlation."
+      ],
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "exact_mappings": [
+        "http://purl.obolibrary.org/obo/STATO_0000085"
+      ],
+      "is_a": "association_slot",
+      "domain": "Association",
+      "slot_uri": "https://w3id.org/biolink/vocab/effect_size",
+      "owner": "Association",
+      "domain_of": [
+        "Association"
+      ],
+      "range": "float",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "effect_type",
+      "definition_uri": "https://w3id.org/biolink/vocab/effect_type",
+      "description": "Specifies the statistical metric or method used to compute the numeric value in the companion 'effect size' slot. This disambiguates the effect size value, which is otherwise uninterpretable without knowing the metric (e.g. Cohen's d vs. odds ratio vs. Pearson's r).",
+      "notes": [
+        "This slot should only be populated when 'effect size' is also populated. Enforced via a class rule on `association`."
+      ],
+      "examples": [
+        {
+          "value": "cohens_d",
+          "@type": "Example"
+        },
+        {
+          "value": "odds_ratio",
+          "@type": "Example"
+        },
+        {
+          "value": "pearsons_r",
+          "@type": "Example"
+        }
+      ],
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "is_a": "association_slot",
+      "domain": "Association",
+      "slot_uri": "https://w3id.org/biolink/vocab/effect_type",
+      "owner": "Association",
+      "domain_of": [
+        "Association"
+      ],
+      "range": "EffectTypeEnum",
       "@type": "SlotDefinition"
     },
     {
@@ -36627,6 +36862,8 @@
         "p_value",
         "adjusted_p_value",
         "statistical_significance_qualifier",
+        "effect_size",
+        "effect_type",
         "supporting_text",
         "association_has_supporting_studies",
         "update_date",
@@ -36678,6 +36915,28 @@
           },
           "description": "A statistical significance qualifier may only be set when at least one numeric p-value slot (p value or adjusted p value) is also populated.",
           "@type": "ClassRule"
+        },
+        {
+          "preconditions": {
+            "slot_conditions": [
+              {
+                "name": "effect_type",
+                "@type": "SlotDefinition"
+              }
+            ],
+            "@type": "AnonymousClassExpression"
+          },
+          "postconditions": {
+            "slot_conditions": [
+              {
+                "name": "effect_size",
+                "@type": "SlotDefinition"
+              }
+            ],
+            "@type": "AnonymousClassExpression"
+          },
+          "description": "An effect type may only be set when the companion effect size slot is also populated, because the effect type disambiguates the numeric value and is meaningless without it.",
+          "@type": "ClassRule"
         }
       ],
       "@type": "ClassDefinition"
@@ -36727,6 +36986,8 @@
         "p_value",
         "adjusted_p_value",
         "statistical_significance_qualifier",
+        "effect_size",
+        "effect_type",
         "supporting_text",
         "association_has_supporting_studies",
         "update_date",
@@ -36801,6 +37062,8 @@
         "p_value",
         "adjusted_p_value",
         "statistical_significance_qualifier",
+        "effect_size",
+        "effect_type",
         "supporting_text",
         "association_has_supporting_studies",
         "update_date",
@@ -36865,6 +37128,8 @@
         "p_value",
         "adjusted_p_value",
         "statistical_significance_qualifier",
+        "effect_size",
+        "effect_type",
         "supporting_text",
         "association_has_supporting_studies",
         "update_date",
@@ -36936,6 +37201,8 @@
         "p_value",
         "adjusted_p_value",
         "statistical_significance_qualifier",
+        "effect_size",
+        "effect_type",
         "supporting_text",
         "association_has_supporting_studies",
         "update_date",
@@ -37005,6 +37272,8 @@
         "p_value",
         "adjusted_p_value",
         "statistical_significance_qualifier",
+        "effect_size",
+        "effect_type",
         "supporting_text",
         "association_has_supporting_studies",
         "update_date",
@@ -37074,6 +37343,8 @@
         "p_value",
         "adjusted_p_value",
         "statistical_significance_qualifier",
+        "effect_size",
+        "effect_type",
         "supporting_text",
         "association_has_supporting_studies",
         "update_date",
@@ -37146,6 +37417,8 @@
         "p_value",
         "adjusted_p_value",
         "statistical_significance_qualifier",
+        "effect_size",
+        "effect_type",
         "supporting_text",
         "association_has_supporting_studies",
         "update_date",
@@ -37229,6 +37502,8 @@
         "p_value",
         "adjusted_p_value",
         "statistical_significance_qualifier",
+        "effect_size",
+        "effect_type",
         "supporting_text",
         "association_has_supporting_studies",
         "update_date",
@@ -37312,6 +37587,8 @@
         "p_value",
         "adjusted_p_value",
         "statistical_significance_qualifier",
+        "effect_size",
+        "effect_type",
         "supporting_text",
         "association_has_supporting_studies",
         "update_date",
@@ -37382,6 +37659,8 @@
         "p_value",
         "adjusted_p_value",
         "statistical_significance_qualifier",
+        "effect_size",
+        "effect_type",
         "supporting_text",
         "association_has_supporting_studies",
         "update_date",
@@ -37452,6 +37731,8 @@
         "p_value",
         "adjusted_p_value",
         "statistical_significance_qualifier",
+        "effect_size",
+        "effect_type",
         "supporting_text",
         "association_has_supporting_studies",
         "update_date",
@@ -37522,6 +37803,8 @@
         "p_value",
         "adjusted_p_value",
         "statistical_significance_qualifier",
+        "effect_size",
+        "effect_type",
         "supporting_text",
         "association_has_supporting_studies",
         "update_date",
@@ -37592,6 +37875,8 @@
         "p_value",
         "adjusted_p_value",
         "statistical_significance_qualifier",
+        "effect_size",
+        "effect_type",
         "supporting_text",
         "association_has_supporting_studies",
         "update_date",
@@ -37681,6 +37966,8 @@
         "p_value",
         "adjusted_p_value",
         "statistical_significance_qualifier",
+        "effect_size",
+        "effect_type",
         "supporting_text",
         "association_has_supporting_studies",
         "update_date",
@@ -37771,6 +38058,8 @@
         "p_value",
         "adjusted_p_value",
         "statistical_significance_qualifier",
+        "effect_size",
+        "effect_type",
         "supporting_text",
         "association_has_supporting_studies",
         "update_date",
@@ -37853,6 +38142,8 @@
         "p_value",
         "adjusted_p_value",
         "statistical_significance_qualifier",
+        "effect_size",
+        "effect_type",
         "supporting_text",
         "association_has_supporting_studies",
         "update_date",
@@ -37962,6 +38253,8 @@
         "p_value",
         "adjusted_p_value",
         "statistical_significance_qualifier",
+        "effect_size",
+        "effect_type",
         "supporting_text",
         "association_has_supporting_studies",
         "update_date",
@@ -38138,6 +38431,8 @@
         "p_value",
         "adjusted_p_value",
         "statistical_significance_qualifier",
+        "effect_size",
+        "effect_type",
         "supporting_text",
         "association_has_supporting_studies",
         "update_date",
@@ -38208,6 +38503,8 @@
         "p_value",
         "adjusted_p_value",
         "statistical_significance_qualifier",
+        "effect_size",
+        "effect_type",
         "supporting_text",
         "association_has_supporting_studies",
         "update_date",
@@ -38282,6 +38579,8 @@
         "p_value",
         "adjusted_p_value",
         "statistical_significance_qualifier",
+        "effect_size",
+        "effect_type",
         "supporting_text",
         "association_has_supporting_studies",
         "update_date",
@@ -38351,6 +38650,8 @@
         "p_value",
         "adjusted_p_value",
         "statistical_significance_qualifier",
+        "effect_size",
+        "effect_type",
         "supporting_text",
         "association_has_supporting_studies",
         "update_date",
@@ -38499,6 +38800,8 @@
         "p_value",
         "adjusted_p_value",
         "statistical_significance_qualifier",
+        "effect_size",
+        "effect_type",
         "supporting_text",
         "association_has_supporting_studies",
         "update_date",
@@ -38578,6 +38881,8 @@
         "p_value",
         "adjusted_p_value",
         "statistical_significance_qualifier",
+        "effect_size",
+        "effect_type",
         "supporting_text",
         "association_has_supporting_studies",
         "update_date",
@@ -38662,6 +38967,8 @@
         "p_value",
         "adjusted_p_value",
         "statistical_significance_qualifier",
+        "effect_size",
+        "effect_type",
         "supporting_text",
         "association_has_supporting_studies",
         "update_date",
@@ -38747,6 +39054,8 @@
         "p_value",
         "adjusted_p_value",
         "statistical_significance_qualifier",
+        "effect_size",
+        "effect_type",
         "supporting_text",
         "association_has_supporting_studies",
         "update_date",
@@ -38829,6 +39138,8 @@
         "p_value",
         "adjusted_p_value",
         "statistical_significance_qualifier",
+        "effect_size",
+        "effect_type",
         "supporting_text",
         "association_has_supporting_studies",
         "update_date",
@@ -38897,6 +39208,8 @@
         "p_value",
         "adjusted_p_value",
         "statistical_significance_qualifier",
+        "effect_size",
+        "effect_type",
         "supporting_text",
         "association_has_supporting_studies",
         "update_date",
@@ -38966,6 +39279,8 @@
         "p_value",
         "adjusted_p_value",
         "statistical_significance_qualifier",
+        "effect_size",
+        "effect_type",
         "supporting_text",
         "association_has_supporting_studies",
         "update_date",
@@ -39034,6 +39349,8 @@
         "p_value",
         "adjusted_p_value",
         "statistical_significance_qualifier",
+        "effect_size",
+        "effect_type",
         "supporting_text",
         "association_has_supporting_studies",
         "update_date",
@@ -39103,6 +39420,8 @@
         "p_value",
         "adjusted_p_value",
         "statistical_significance_qualifier",
+        "effect_size",
+        "effect_type",
         "supporting_text",
         "association_has_supporting_studies",
         "update_date",
@@ -39227,6 +39546,8 @@
         "p_value",
         "adjusted_p_value",
         "statistical_significance_qualifier",
+        "effect_size",
+        "effect_type",
         "supporting_text",
         "association_has_supporting_studies",
         "update_date",
@@ -39335,6 +39656,8 @@
         "p_value",
         "adjusted_p_value",
         "statistical_significance_qualifier",
+        "effect_size",
+        "effect_type",
         "supporting_text",
         "association_has_supporting_studies",
         "update_date",
@@ -39422,6 +39745,8 @@
         "p_value",
         "adjusted_p_value",
         "statistical_significance_qualifier",
+        "effect_size",
+        "effect_type",
         "supporting_text",
         "association_has_supporting_studies",
         "update_date",
@@ -39492,6 +39817,8 @@
         "p_value",
         "adjusted_p_value",
         "statistical_significance_qualifier",
+        "effect_size",
+        "effect_type",
         "supporting_text",
         "association_has_supporting_studies",
         "update_date",
@@ -39557,6 +39884,8 @@
         "p_value",
         "adjusted_p_value",
         "statistical_significance_qualifier",
+        "effect_size",
+        "effect_type",
         "supporting_text",
         "association_has_supporting_studies",
         "update_date",
@@ -39720,6 +40049,8 @@
         "p_value",
         "adjusted_p_value",
         "statistical_significance_qualifier",
+        "effect_size",
+        "effect_type",
         "supporting_text",
         "association_has_supporting_studies",
         "update_date",
@@ -39832,6 +40163,8 @@
         "p_value",
         "adjusted_p_value",
         "statistical_significance_qualifier",
+        "effect_size",
+        "effect_type",
         "supporting_text",
         "association_has_supporting_studies",
         "update_date",
@@ -39949,6 +40282,8 @@
         "p_value",
         "adjusted_p_value",
         "statistical_significance_qualifier",
+        "effect_size",
+        "effect_type",
         "supporting_text",
         "association_has_supporting_studies",
         "update_date",
@@ -40038,6 +40373,8 @@
         "p_value",
         "adjusted_p_value",
         "statistical_significance_qualifier",
+        "effect_size",
+        "effect_type",
         "supporting_text",
         "association_has_supporting_studies",
         "update_date",
@@ -40123,6 +40460,8 @@
         "p_value",
         "adjusted_p_value",
         "statistical_significance_qualifier",
+        "effect_size",
+        "effect_type",
         "supporting_text",
         "association_has_supporting_studies",
         "update_date",
@@ -40199,6 +40538,8 @@
         "p_value",
         "adjusted_p_value",
         "statistical_significance_qualifier",
+        "effect_size",
+        "effect_type",
         "supporting_text",
         "association_has_supporting_studies",
         "update_date",
@@ -40312,6 +40653,8 @@
         "p_value",
         "adjusted_p_value",
         "statistical_significance_qualifier",
+        "effect_size",
+        "effect_type",
         "supporting_text",
         "association_has_supporting_studies",
         "update_date",
@@ -40402,6 +40745,8 @@
         "p_value",
         "adjusted_p_value",
         "statistical_significance_qualifier",
+        "effect_size",
+        "effect_type",
         "supporting_text",
         "association_has_supporting_studies",
         "update_date",
@@ -40651,6 +40996,8 @@
         "p_value",
         "adjusted_p_value",
         "statistical_significance_qualifier",
+        "effect_size",
+        "effect_type",
         "supporting_text",
         "association_has_supporting_studies",
         "update_date",
@@ -40733,6 +41080,8 @@
         "p_value",
         "adjusted_p_value",
         "statistical_significance_qualifier",
+        "effect_size",
+        "effect_type",
         "supporting_text",
         "association_has_supporting_studies",
         "update_date",
@@ -40850,6 +41199,8 @@
         "p_value",
         "adjusted_p_value",
         "statistical_significance_qualifier",
+        "effect_size",
+        "effect_type",
         "supporting_text",
         "association_has_supporting_studies",
         "update_date",
@@ -40917,6 +41268,8 @@
         "p_value",
         "adjusted_p_value",
         "statistical_significance_qualifier",
+        "effect_size",
+        "effect_type",
         "supporting_text",
         "association_has_supporting_studies",
         "update_date",
@@ -41026,6 +41379,8 @@
         "p_value",
         "adjusted_p_value",
         "statistical_significance_qualifier",
+        "effect_size",
+        "effect_type",
         "supporting_text",
         "association_has_supporting_studies",
         "update_date",
@@ -41111,6 +41466,8 @@
         "p_value",
         "adjusted_p_value",
         "statistical_significance_qualifier",
+        "effect_size",
+        "effect_type",
         "supporting_text",
         "association_has_supporting_studies",
         "update_date",
@@ -41199,6 +41556,8 @@
         "p_value",
         "adjusted_p_value",
         "statistical_significance_qualifier",
+        "effect_size",
+        "effect_type",
         "supporting_text",
         "association_has_supporting_studies",
         "update_date",
@@ -41284,6 +41643,8 @@
         "p_value",
         "adjusted_p_value",
         "statistical_significance_qualifier",
+        "effect_size",
+        "effect_type",
         "supporting_text",
         "association_has_supporting_studies",
         "update_date",
@@ -41366,6 +41727,8 @@
         "p_value",
         "adjusted_p_value",
         "statistical_significance_qualifier",
+        "effect_size",
+        "effect_type",
         "supporting_text",
         "association_has_supporting_studies",
         "update_date",
@@ -41450,6 +41813,8 @@
         "p_value",
         "adjusted_p_value",
         "statistical_significance_qualifier",
+        "effect_size",
+        "effect_type",
         "supporting_text",
         "association_has_supporting_studies",
         "update_date",
@@ -41519,6 +41884,8 @@
         "p_value",
         "adjusted_p_value",
         "statistical_significance_qualifier",
+        "effect_size",
+        "effect_type",
         "supporting_text",
         "association_has_supporting_studies",
         "update_date",
@@ -41588,6 +41955,8 @@
         "p_value",
         "adjusted_p_value",
         "statistical_significance_qualifier",
+        "effect_size",
+        "effect_type",
         "supporting_text",
         "association_has_supporting_studies",
         "update_date",
@@ -41657,6 +42026,8 @@
         "p_value",
         "adjusted_p_value",
         "statistical_significance_qualifier",
+        "effect_size",
+        "effect_type",
         "supporting_text",
         "association_has_supporting_studies",
         "update_date",
@@ -41794,6 +42165,8 @@
         "p_value",
         "adjusted_p_value",
         "statistical_significance_qualifier",
+        "effect_size",
+        "effect_type",
         "supporting_text",
         "association_has_supporting_studies",
         "update_date",
@@ -41915,6 +42288,8 @@
         "p_value",
         "adjusted_p_value",
         "statistical_significance_qualifier",
+        "effect_size",
+        "effect_type",
         "supporting_text",
         "association_has_supporting_studies",
         "update_date",
@@ -41995,6 +42370,8 @@
         "p_value",
         "adjusted_p_value",
         "statistical_significance_qualifier",
+        "effect_size",
+        "effect_type",
         "supporting_text",
         "association_has_supporting_studies",
         "update_date",
@@ -42096,6 +42473,8 @@
         "p_value",
         "adjusted_p_value",
         "statistical_significance_qualifier",
+        "effect_size",
+        "effect_type",
         "supporting_text",
         "association_has_supporting_studies",
         "update_date",
@@ -42181,6 +42560,8 @@
         "p_value",
         "adjusted_p_value",
         "statistical_significance_qualifier",
+        "effect_size",
+        "effect_type",
         "supporting_text",
         "association_has_supporting_studies",
         "update_date",
@@ -42269,6 +42650,8 @@
         "p_value",
         "adjusted_p_value",
         "statistical_significance_qualifier",
+        "effect_size",
+        "effect_type",
         "supporting_text",
         "association_has_supporting_studies",
         "update_date",
@@ -42353,6 +42736,8 @@
         "p_value",
         "adjusted_p_value",
         "statistical_significance_qualifier",
+        "effect_size",
+        "effect_type",
         "supporting_text",
         "association_has_supporting_studies",
         "update_date",
@@ -42426,6 +42811,8 @@
         "p_value",
         "adjusted_p_value",
         "statistical_significance_qualifier",
+        "effect_size",
+        "effect_type",
         "supporting_text",
         "association_has_supporting_studies",
         "update_date",
@@ -42505,6 +42892,8 @@
         "p_value",
         "adjusted_p_value",
         "statistical_significance_qualifier",
+        "effect_size",
+        "effect_type",
         "supporting_text",
         "association_has_supporting_studies",
         "update_date",
@@ -42578,6 +42967,8 @@
         "p_value",
         "adjusted_p_value",
         "statistical_significance_qualifier",
+        "effect_size",
+        "effect_type",
         "supporting_text",
         "association_has_supporting_studies",
         "update_date",
@@ -42653,6 +43044,8 @@
         "p_value",
         "adjusted_p_value",
         "statistical_significance_qualifier",
+        "effect_size",
+        "effect_type",
         "supporting_text",
         "association_has_supporting_studies",
         "update_date",
@@ -42739,6 +43132,8 @@
         "p_value",
         "adjusted_p_value",
         "statistical_significance_qualifier",
+        "effect_size",
+        "effect_type",
         "supporting_text",
         "association_has_supporting_studies",
         "update_date",
@@ -42822,6 +43217,8 @@
         "p_value",
         "adjusted_p_value",
         "statistical_significance_qualifier",
+        "effect_size",
+        "effect_type",
         "supporting_text",
         "association_has_supporting_studies",
         "update_date",
@@ -42917,6 +43314,8 @@
         "p_value",
         "adjusted_p_value",
         "statistical_significance_qualifier",
+        "effect_size",
+        "effect_type",
         "supporting_text",
         "association_has_supporting_studies",
         "update_date",
@@ -43002,6 +43401,8 @@
         "p_value",
         "adjusted_p_value",
         "statistical_significance_qualifier",
+        "effect_size",
+        "effect_type",
         "supporting_text",
         "association_has_supporting_studies",
         "update_date",
@@ -43083,6 +43484,8 @@
         "p_value",
         "adjusted_p_value",
         "statistical_significance_qualifier",
+        "effect_size",
+        "effect_type",
         "supporting_text",
         "association_has_supporting_studies",
         "update_date",
@@ -43166,6 +43569,8 @@
         "p_value",
         "adjusted_p_value",
         "statistical_significance_qualifier",
+        "effect_size",
+        "effect_type",
         "supporting_text",
         "association_has_supporting_studies",
         "update_date",
@@ -43250,6 +43655,8 @@
         "p_value",
         "adjusted_p_value",
         "statistical_significance_qualifier",
+        "effect_size",
+        "effect_type",
         "supporting_text",
         "association_has_supporting_studies",
         "update_date",
@@ -43326,6 +43733,8 @@
         "p_value",
         "adjusted_p_value",
         "statistical_significance_qualifier",
+        "effect_size",
+        "effect_type",
         "supporting_text",
         "association_has_supporting_studies",
         "update_date",
@@ -43396,6 +43805,8 @@
         "p_value",
         "adjusted_p_value",
         "statistical_significance_qualifier",
+        "effect_size",
+        "effect_type",
         "supporting_text",
         "association_has_supporting_studies",
         "update_date",
@@ -43465,6 +43876,8 @@
         "p_value",
         "adjusted_p_value",
         "statistical_significance_qualifier",
+        "effect_size",
+        "effect_type",
         "supporting_text",
         "association_has_supporting_studies",
         "update_date",
@@ -43548,6 +43961,8 @@
         "p_value",
         "adjusted_p_value",
         "statistical_significance_qualifier",
+        "effect_size",
+        "effect_type",
         "supporting_text",
         "association_has_supporting_studies",
         "update_date",
@@ -43626,6 +44041,8 @@
         "p_value",
         "adjusted_p_value",
         "statistical_significance_qualifier",
+        "effect_size",
+        "effect_type",
         "supporting_text",
         "association_has_supporting_studies",
         "update_date",
@@ -43695,6 +44112,8 @@
         "p_value",
         "adjusted_p_value",
         "statistical_significance_qualifier",
+        "effect_size",
+        "effect_type",
         "supporting_text",
         "association_has_supporting_studies",
         "update_date",
@@ -43779,6 +44198,8 @@
         "p_value",
         "adjusted_p_value",
         "statistical_significance_qualifier",
+        "effect_size",
+        "effect_type",
         "supporting_text",
         "association_has_supporting_studies",
         "update_date",
@@ -43848,6 +44269,8 @@
         "p_value",
         "adjusted_p_value",
         "statistical_significance_qualifier",
+        "effect_size",
+        "effect_type",
         "supporting_text",
         "association_has_supporting_studies",
         "update_date",
@@ -43917,6 +44340,8 @@
         "p_value",
         "adjusted_p_value",
         "statistical_significance_qualifier",
+        "effect_size",
+        "effect_type",
         "supporting_text",
         "association_has_supporting_studies",
         "update_date",
@@ -43983,6 +44408,8 @@
         "p_value",
         "adjusted_p_value",
         "statistical_significance_qualifier",
+        "effect_size",
+        "effect_type",
         "supporting_text",
         "association_has_supporting_studies",
         "update_date",
@@ -44048,6 +44475,8 @@
         "p_value",
         "adjusted_p_value",
         "statistical_significance_qualifier",
+        "effect_size",
+        "effect_type",
         "supporting_text",
         "association_has_supporting_studies",
         "update_date",
@@ -44226,6 +44655,8 @@
         "p_value",
         "adjusted_p_value",
         "statistical_significance_qualifier",
+        "effect_size",
+        "effect_type",
         "supporting_text",
         "association_has_supporting_studies",
         "update_date",
@@ -44346,6 +44777,8 @@
         "p_value",
         "adjusted_p_value",
         "statistical_significance_qualifier",
+        "effect_size",
+        "effect_type",
         "supporting_text",
         "association_has_supporting_studies",
         "update_date",
@@ -44472,6 +44905,8 @@
         "p_value",
         "adjusted_p_value",
         "statistical_significance_qualifier",
+        "effect_size",
+        "effect_type",
         "supporting_text",
         "association_has_supporting_studies",
         "update_date",
@@ -44545,6 +44980,8 @@
         "p_value",
         "adjusted_p_value",
         "statistical_significance_qualifier",
+        "effect_size",
+        "effect_type",
         "supporting_text",
         "association_has_supporting_studies",
         "update_date",
@@ -44613,6 +45050,8 @@
         "p_value",
         "adjusted_p_value",
         "statistical_significance_qualifier",
+        "effect_size",
+        "effect_type",
         "supporting_text",
         "association_has_supporting_studies",
         "update_date",
@@ -44687,6 +45126,8 @@
         "p_value",
         "adjusted_p_value",
         "statistical_significance_qualifier",
+        "effect_size",
+        "effect_type",
         "supporting_text",
         "association_has_supporting_studies",
         "update_date",
@@ -44756,6 +45197,8 @@
         "p_value",
         "adjusted_p_value",
         "statistical_significance_qualifier",
+        "effect_size",
+        "effect_type",
         "supporting_text",
         "association_has_supporting_studies",
         "update_date",
@@ -44824,6 +45267,8 @@
         "p_value",
         "adjusted_p_value",
         "statistical_significance_qualifier",
+        "effect_size",
+        "effect_type",
         "supporting_text",
         "association_has_supporting_studies",
         "update_date",
@@ -44894,6 +45339,8 @@
         "p_value",
         "adjusted_p_value",
         "statistical_significance_qualifier",
+        "effect_size",
+        "effect_type",
         "supporting_text",
         "association_has_supporting_studies",
         "update_date",
@@ -44962,6 +45409,8 @@
         "p_value",
         "adjusted_p_value",
         "statistical_significance_qualifier",
+        "effect_size",
+        "effect_type",
         "supporting_text",
         "association_has_supporting_studies",
         "update_date",
@@ -45030,6 +45479,8 @@
         "p_value",
         "adjusted_p_value",
         "statistical_significance_qualifier",
+        "effect_size",
+        "effect_type",
         "supporting_text",
         "association_has_supporting_studies",
         "update_date",
@@ -45098,6 +45549,8 @@
         "p_value",
         "adjusted_p_value",
         "statistical_significance_qualifier",
+        "effect_size",
+        "effect_type",
         "supporting_text",
         "association_has_supporting_studies",
         "update_date",
@@ -45166,6 +45619,8 @@
         "p_value",
         "adjusted_p_value",
         "statistical_significance_qualifier",
+        "effect_size",
+        "effect_type",
         "supporting_text",
         "association_has_supporting_studies",
         "update_date",
@@ -45234,6 +45689,8 @@
         "p_value",
         "adjusted_p_value",
         "statistical_significance_qualifier",
+        "effect_size",
+        "effect_type",
         "supporting_text",
         "association_has_supporting_studies",
         "update_date",
@@ -45303,6 +45760,8 @@
         "p_value",
         "adjusted_p_value",
         "statistical_significance_qualifier",
+        "effect_size",
+        "effect_type",
         "supporting_text",
         "association_has_supporting_studies",
         "update_date",
@@ -45372,6 +45831,8 @@
         "p_value",
         "adjusted_p_value",
         "statistical_significance_qualifier",
+        "effect_size",
+        "effect_type",
         "supporting_text",
         "association_has_supporting_studies",
         "update_date",
@@ -45463,6 +45924,8 @@
         "p_value",
         "adjusted_p_value",
         "statistical_significance_qualifier",
+        "effect_size",
+        "effect_type",
         "supporting_text",
         "association_has_supporting_studies",
         "update_date",
@@ -45531,6 +45994,8 @@
         "p_value",
         "adjusted_p_value",
         "statistical_significance_qualifier",
+        "effect_size",
+        "effect_type",
         "supporting_text",
         "association_has_supporting_studies",
         "update_date",
@@ -45599,6 +46064,8 @@
         "p_value",
         "adjusted_p_value",
         "statistical_significance_qualifier",
+        "effect_size",
+        "effect_type",
         "supporting_text",
         "association_has_supporting_studies",
         "update_date",
@@ -45672,6 +46139,8 @@
         "p_value",
         "adjusted_p_value",
         "statistical_significance_qualifier",
+        "effect_size",
+        "effect_type",
         "supporting_text",
         "association_has_supporting_studies",
         "update_date",
@@ -45695,9 +46164,9 @@
   ],
   "metamodel_version": "1.11.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2026-08-03T21:01:50",
-  "source_file_size": 522417,
-  "generation_date": "2026-08-03T21:01:55",
+  "source_file_date": "2026-08-04T14:48:26",
+  "source_file_size": 531984,
+  "generation_date": "2026-08-04T14:48:30",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",
