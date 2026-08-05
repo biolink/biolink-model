@@ -565,211 +565,6 @@
             "title": "AdministrativeEntity",
             "type": "object"
         },
-        "AffinityMeasurement": {
-            "additionalProperties": false,
-            "description": "The type of measurement describing the strength of an affinity between two entities. For instance, if a chemical inhibits a protein with a pIC50 of 8.6, the affinity parameter is pIC50 and the affinity value is 8.6. The binary relation, if given, qualifies the affinity as greater than, less than, or equal.",
-            "properties": {
-                "affinity": {
-                    "description": "The numerical value describing the strength of an affinity between two entities.  For instance, if a chemical inhibits a protein with a pIC50 of 8.6, the affinity is 8.6. Used in conjunction with the affinity parameter slot.",
-                    "type": [
-                        "number",
-                        "null"
-                    ]
-                },
-                "affinity_parameter": {
-                    "$ref": "#/$defs/AffinityParameterEnum",
-                    "description": "The type of parameter describing the strength of an affinity between two entities.  For instance, if a chemical inhibits a protein with a pIC50 of 8.6, the 'affinity parameter' is pIC50. Used in conjunction with the 'affinity' slot, within an 'affinity measurement'."
-                },
-                "broad_synonym": {
-                    "description": "An alternate label for an entity whose meaning is broader (more general) than the primary label but is still useful as a lexical alternative.",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": [
-                        "array",
-                        "null"
-                    ]
-                },
-                "category": {
-                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
-                    "enum": [
-                        "biolink:AffinityMeasurement"
-                    ],
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                },
-                "deprecated": {
-                    "description": "A boolean flag indicating that an entity is no longer considered current or valid.",
-                    "type": [
-                        "boolean",
-                        "null"
-                    ]
-                },
-                "description": {
-                    "description": "a human-readable description of an entity",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "equivalent_identifiers": {
-                    "description": "A set of identifiers that are considered equivalent to the primary identifier of the entity. This attribute is used to represent a collection of identifiers that are considered equivalent to the primary identifier of an entity. These equivalent identifiers may come from different databases, ontologies, or naming conventions, but they all refer to the same underlying concept or entity. This attribute is particularly useful in data integration and interoperability scenarios, where it is important to recognize and link different representations of the same entity across various sources.",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": [
-                        "array",
-                        "null"
-                    ]
-                },
-                "exact_synonym": {
-                    "description": "An alternate label for an entity that denotes exactly the same meaning as the primary label and is interchangeable with it in all contexts.",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": [
-                        "array",
-                        "null"
-                    ]
-                },
-                "full_name": {
-                    "description": "a long-form human readable name for a thing",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "has_attribute": {
-                    "description": "connects any entity to an attribute",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": [
-                        "array",
-                        "null"
-                    ]
-                },
-                "has_binary_relation": {
-                    "$ref": "#/$defs/BinaryRelationEnum",
-                    "description": "Qualifies a value context with a mathematical binary relation."
-                },
-                "id": {
-                    "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
-                    "type": "string"
-                },
-                "information_content": {
-                    "description": "Information content (IC) value for a term, primarily from Automats.",
-                    "type": [
-                        "number",
-                        "null"
-                    ]
-                },
-                "iri": {
-                    "description": "An IRI for an entity. This is determined by the id using expansion rules.",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "name": {
-                    "description": "A human-readable name for an attribute or entity.",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "narrow_synonym": {
-                    "description": "An alternate label for an entity whose meaning is narrower (more specific) than the primary label, for example naming a particular sub-type.",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": [
-                        "array",
-                        "null"
-                    ]
-                },
-                "provided_by": {
-                    "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": [
-                        "array",
-                        "null"
-                    ]
-                },
-                "related_synonym": {
-                    "description": "An alternate label that is related to the primary label but is neither exactly synonymous nor cleanly broader or narrower; useful as a lexical pointer but not for strict equivalence. Corresponds to oboInOwl:hasRelatedSynonym.",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": [
-                        "array",
-                        "null"
-                    ]
-                },
-                "synonym": {
-                    "description": "Alternate human-readable names for a thing",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": [
-                        "array",
-                        "null"
-                    ]
-                },
-                "taxon": {
-                    "description": "A property that indicates the taxonomic classification of an entity. Values for this slot should be from the NCBITaxon ontology.",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "type": {
-                    "description": "An rdf:type property asserting that an entity is an instance of a particular class. In Biolink the value is typically used to indicate the most specific category of which the entity is an instance.",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": [
-                        "array",
-                        "null"
-                    ]
-                },
-                "xref": {
-                    "description": "A database cross reference or alternative identifier for a NamedThing or edge between two NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": [
-                        "array",
-                        "null"
-                    ]
-                }
-            },
-            "required": [
-                "id",
-                "category"
-            ],
-            "title": "AffinityMeasurement",
-            "type": "object"
-        },
-        "AffinityParameterEnum": {
-            "description": "The types of parameters that can be used to describe the affinity between two entities, characteristically chemicals and proteins. The values are generally stated as the negative base 10 logarithm of the raw measurements.",
-            "enum": [
-                "pIC50",
-                "pEC50",
-                "pAC50",
-                "pXC50",
-                "pKi",
-                "pKon",
-                "pKoff",
-                "pKd"
-            ],
-            "title": "AffinityParameterEnum",
-            "type": "string"
-        },
         "Agent": {
             "additionalProperties": false,
             "description": "person, group, organization or project that provides a piece of information (i.e. a knowledge association)",
@@ -19584,16 +19379,6 @@
                         "null"
                     ]
                 },
-                "has_affinity": {
-                    "description": "Set of measurements documenting the strength of chemical entity to gene or gene product interactions.",
-                    "items": {
-                        "$ref": "#/$defs/AffinityMeasurement"
-                    },
-                    "type": [
-                        "array",
-                        "null"
-                    ]
-                },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
                     "items": {
@@ -24665,6 +24450,9 @@
                             },
                             {
                                 "$ref": "#/$defs/IceesStudyResult"
+                            },
+                            {
+                                "$ref": "#/$defs/ProteinLigandAssayResult"
                             }
                         ]
                     },
@@ -25004,6 +24792,9 @@
                             },
                             {
                                 "$ref": "#/$defs/IceesStudyResult"
+                            },
+                            {
+                                "$ref": "#/$defs/ProteinLigandAssayResult"
                             }
                         ]
                     },
@@ -60050,9 +59841,6 @@
                                 "$ref": "#/$defs/ChemicalEntity"
                             },
                             {
-                                "$ref": "#/$defs/AffinityMeasurement"
-                            },
-                            {
                                 "$ref": "#/$defs/ClinicalEntity"
                             },
                             {
@@ -60423,6 +60211,9 @@
                             },
                             {
                                 "$ref": "#/$defs/IceesStudyResult"
+                            },
+                            {
+                                "$ref": "#/$defs/ProteinLigandAssayResult"
                             },
                             {
                                 "$ref": "#/$defs/Agent"
@@ -81750,6 +81541,269 @@
             "title": "ProteinIsoform",
             "type": "object"
         },
+        "ProteinLigandAssayResult": {
+            "additionalProperties": false,
+            "description": "The type of study result describing the strength of interaction affinity - or enzymatic interaction - between a ligand and a target protein. Measured binding or enzymatic assay values are generally stated as the negative base 10 logarithm of the raw measurements. For instance (i.e., in a molecular interaction database like BindingDb) if a ligand inhibits a target protein with a pIC50 of 8.6, then the affinity parameter is pIC50 and the affinity value is 8.6.",
+            "properties": {
+                "broad_synonym": {
+                    "description": "An alternate label for an entity whose meaning is broader (more general) than the primary label but is still useful as a lexical alternative.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
+                    "enum": [
+                        "biolink:ProteinLigandAssayResult"
+                    ],
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "deprecated": {
+                    "description": "A boolean flag indicating that an entity is no longer considered current or valid.",
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                },
+                "description": {
+                    "description": "a human-readable description of an entity",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "equivalent_identifiers": {
+                    "description": "A set of identifiers that are considered equivalent to the primary identifier of the entity. This attribute is used to represent a collection of identifiers that are considered equivalent to the primary identifier of an entity. These equivalent identifiers may come from different databases, ontologies, or naming conventions, but they all refer to the same underlying concept or entity. This attribute is particularly useful in data integration and interoperability scenarios, where it is important to recognize and link different representations of the same entity across various sources.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "exact_synonym": {
+                    "description": "An alternate label for an entity that denotes exactly the same meaning as the primary label and is interchangeable with it in all contexts.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "has_attribute": {
+                    "description": "connects any entity to an attribute",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "id": {
+                    "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+                    "type": "string"
+                },
+                "information_content": {
+                    "description": "Information content (IC) value for a term, primarily from Automats.",
+                    "type": [
+                        "number",
+                        "null"
+                    ]
+                },
+                "iri": {
+                    "description": "An IRI for an entity. This is determined by the id using expansion rules.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "A human-readable name for an attribute or entity.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "narrow_synonym": {
+                    "description": "An alternate label for an entity whose meaning is narrower (more specific) than the primary label, for example naming a particular sub-type.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "pAC50": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/QuantityValue"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "pAC50 is a base 10 negative logarithmic measure of potency for an activating (agonist) interaction between a molecule (such as a drug or ligand) and a biological target (such as a receptor or enzyme), where AC50 is the concentration (in molar units) of a compound that produces 50% of its maximal activation in a functional assay."
+                },
+                "pEC50": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/QuantityValue"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Negative base 10 logarithm of the molar concentration of a chemical that produces a 50% excitation of a function"
+                },
+                "pIC50": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/QuantityValue"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Negative base 10 logarithm of the the inhibitory concentration 50% (IC50) measures the concentration needed to block or inhibit a biological response."
+                },
+                "pKd": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/QuantityValue"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Negative base 10 logarithm of the equilibrium dissociation constant (KD) which is a measure of the binding affinity and is defined as the ratio of koff to kon."
+                },
+                "pKi": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/QuantityValue"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Negative base 10 logarithm of the equilibrium binding affinity for a ligand that reduces the activity of its binding partner. Ki represents the concentration at which the inhibitor ligand occupies 50% of the receptor sites when no competing ligand is present"
+                },
+                "pKoff": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/QuantityValue"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Negative base 10 logarithm of the dissociation rate constant (koff) describes the rate at which they dissociate."
+                },
+                "pKon": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/QuantityValue"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Negative base 10 logarithm of the association rate constant (Kon) describes the rate at which molecules bind to each other."
+                },
+                "pXC50": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/QuantityValue"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "In the context of molecular interactions and drug discovery, pXC50 is a generic,  base 10 negative logarithmic measure of compound potency that unifies different types of half\u2011maximal concentration values into a single notation, where XC50 means  \u201cthe concentration at which 50% of the maximal effect is observed\u201d, and X is a placeholder for the type of effect being measured (e.g., inhibition or activation). The X in pXC50 is intentionally generic and can represent different assay endpoints."
+                },
+                "provided_by": {
+                    "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "related_synonym": {
+                    "description": "An alternate label that is related to the primary label but is neither exactly synonymous nor cleanly broader or narrower; useful as a lexical pointer but not for strict equivalence. Corresponds to oboInOwl:hasRelatedSynonym.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "taxon": {
+                    "description": "A property that indicates the taxonomic classification of an entity. Values for this slot should be from the NCBITaxon ontology.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "type": {
+                    "description": "An rdf:type property asserting that an entity is an instance of a particular class. In Biolink the value is typically used to indicate the most specific category of which the entity is an instance.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "xref": {
+                    "description": "A database cross reference or alternative identifier for a NamedThing or edge between two NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "id",
+                "category"
+            ],
+            "title": "ProteinLigandAssayResult",
+            "type": "object"
+        },
         "Publication": {
             "additionalProperties": false,
             "description": "Any \u2018published\u2019 piece of information. Publications are considered broadly to include any document or document part made available in print or on the web - which may include scientific journal issues, individual articles, and books - as well as things like pre-prints, white papers, patents, drug labels, web pages, protocol documents,  and even a part of a publication if of significant knowledge scope.",
@@ -82011,8 +82065,12 @@
         },
         "QuantityValue": {
             "additionalProperties": false,
-            "description": "A value of an attribute that is quantitative and measurable, expressed as a combination of a unit and a numeric value",
+            "description": "A value of an attribute that is quantitative and measurable, expressed as a combination of a unit, (optional) unit prefix and a numeric value. An optional binary relation qualifier may also be given, to allow capture of relative values, e.g., <1000.0 nM meaning \"less than 1000 nanometers\"",
             "properties": {
+                "has_binary_relation": {
+                    "$ref": "#/$defs/BinaryRelationEnum",
+                    "description": "Qualifies a value context with a mathematical binary relation."
+                },
                 "has_numeric_value": {
                     "description": "connects a quantity value to a number",
                     "type": [
@@ -82022,6 +82080,13 @@
                 },
                 "has_unit": {
                     "description": "connects a quantity value to a unit",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "has_unit_prefix": {
+                    "description": "relates to scaling of the associated quantitative unit",
                     "type": [
                         "string",
                         "null"
@@ -87929,6 +87994,9 @@
                             },
                             {
                                 "$ref": "#/$defs/IceesStudyResult"
+                            },
+                            {
+                                "$ref": "#/$defs/ProteinLigandAssayResult"
                             }
                         ]
                     },
@@ -88707,6 +88775,9 @@
                             },
                             {
                                 "$ref": "#/$defs/IceesStudyResult"
+                            },
+                            {
+                                "$ref": "#/$defs/ProteinLigandAssayResult"
                             }
                         ]
                     },
@@ -95593,9 +95664,6 @@
                         "$ref": "#/$defs/ChemicalEntity"
                     },
                     {
-                        "$ref": "#/$defs/AffinityMeasurement"
-                    },
-                    {
                         "$ref": "#/$defs/ClinicalEntity"
                     },
                     {
@@ -95966,6 +96034,9 @@
                     },
                     {
                         "$ref": "#/$defs/IceesStudyResult"
+                    },
+                    {
+                        "$ref": "#/$defs/ProteinLigandAssayResult"
                     },
                     {
                         "$ref": "#/$defs/Agent"

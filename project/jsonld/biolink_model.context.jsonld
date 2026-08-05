@@ -652,18 +652,6 @@
          "@type": "xsd:anyURI",
          "@id": "affiliation"
       },
-      "affinity": {
-         "@type": "xsd:float",
-         "@id": "affinity"
-      },
-      "affinity_parameter": {
-         "@context": {
-            "text": "skos:notation",
-            "description": "skos:prefLabel",
-            "meaning": "@id"
-         },
-         "@id": "affinity_parameter"
-      },
       "agent_type": {
          "@context": {
             "text": "skos:notation",
@@ -1399,10 +1387,6 @@
          "@type": "@id",
          "@id": "has_adverse_event"
       },
-      "has_affinity": {
-         "@type": "@id",
-         "@id": "has_affinity"
-      },
       "has_attribute": {
          "@type": "@id",
          "@id": "has_attribute"
@@ -1713,6 +1697,10 @@
       "has_unit": {
          "@type": "UO:0000000",
          "@id": "has_unit"
+      },
+      "has_unit_prefix": {
+         "@type": "UO:0000046",
+         "@id": "has_unit_prefix"
       },
       "has_upstream_actor": {
          "@type": "@id",
@@ -2193,6 +2181,10 @@
          "@type": "xsd:float",
          "@id": "p_value"
       },
+      "pAC50": {
+         "@type": "@id",
+         "@id": "pAC50"
+      },
       "pages": {
          "@id": "pages"
       },
@@ -2210,6 +2202,10 @@
       "participates_in": {
          "@type": "@id",
          "@id": "participates_in"
+      },
+      "pEC50": {
+         "@type": "@id",
+         "@id": "pEC50"
       },
       "pharmacologically_interacts_with": {
          "@type": "@id",
@@ -2234,6 +2230,26 @@
       "physically_interacts_with": {
          "@type": "@id",
          "@id": "physically_interacts_with"
+      },
+      "pIC50": {
+         "@type": "@id",
+         "@id": "pIC50"
+      },
+      "pKd": {
+         "@type": "@id",
+         "@id": "pKd"
+      },
+      "pKi": {
+         "@type": "@id",
+         "@id": "pKi"
+      },
+      "pKoff": {
+         "@type": "@id",
+         "@id": "pKoff"
+      },
+      "pKon": {
+         "@type": "@id",
+         "@id": "pKon"
       },
       "plasma_membrane_part_of": {
          "@type": "@id",
@@ -2314,6 +2330,10 @@
       "publisher": {
          "@type": "@id",
          "@id": "publisher"
+      },
+      "pXC50": {
+         "@type": "@id",
+         "@id": "pXC50"
       },
       "qualified_predicate": {
          "@type": "xsd:anyURI",
@@ -2849,9 +2869,6 @@
       },
       "AdministrativeEntity": {
          "@id": "AdministrativeEntity"
-      },
-      "AffinityMeasurement": {
-         "@id": "AffinityMeasurement"
       },
       "Agent": {
          "@id": "Agent"
@@ -3780,6 +3797,9 @@
       },
       "ProteinIsoform": {
          "@id": "ProteinIsoform"
+      },
+      "ProteinLigandAssayResult": {
+         "@id": "ProteinLigandAssayResult"
       },
       "Publication": {
          "@id": "Publication"

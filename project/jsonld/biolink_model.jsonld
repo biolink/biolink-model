@@ -697,6 +697,19 @@
       "@type": "TypeDefinition"
     },
     {
+      "name": "unit_prefix",
+      "id_prefixes": [
+        "UO"
+      ],
+      "definition_uri": "https://w3id.org/biolink/vocab/UnitPrefix",
+      "description": "A prefix to a unit indicative of the scaling of the unit, e.g., 'nano' with unit 'meter' implies a unit of 10e-9 meters",
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "typeof": "string",
+      "base": "str",
+      "uri": "http://purl.obolibrary.org/obo/UO_0000046",
+      "@type": "TypeDefinition"
+    },
+    {
       "name": "time_type",
       "definition_uri": "https://w3id.org/biolink/vocab/TimeType",
       "description": "A value representing a point in time, serialised as a lexical representation of xsd:time.",
@@ -2631,44 +2644,6 @@
       ]
     },
     {
-      "name": "AffinityParameterEnum",
-      "definition_uri": "https://w3id.org/biolink/vocab/AffinityParameterEnum",
-      "description": "The types of parameters that can be used to describe the affinity between two entities, characteristically chemicals and proteins. The values are generally stated as the negative base 10 logarithm of the raw measurements.",
-      "from_schema": "https://w3id.org/biolink/vocab/",
-      "permissible_values": [
-        {
-          "text": "pIC50",
-          "description": "Negative base 10 logarithm of the the inhibitory concentration 50% (IC50) measures the concentration needed to block or inhibit a biological response."
-        },
-        {
-          "text": "pEC50",
-          "description": "Negative base 10 logarithm of the molar concentration of a chemical that produces a 50% excitation of a function"
-        },
-        {
-          "text": "pAC50"
-        },
-        {
-          "text": "pXC50"
-        },
-        {
-          "text": "pKi",
-          "description": "Negative base 10 logarithm of the equilibrium binding affinity for a ligand that reduces the activity of its binding partner. Ki represents the concentration at which the inhibitor ligand occupies 50% of the receptor sites when no competing ligand is present"
-        },
-        {
-          "text": "pKon",
-          "description": "Negative base 10 logarithm of the association rate constant (Kon) describes the rate at which molecules bind to each other."
-        },
-        {
-          "text": "pKoff",
-          "description": "Negative base 10 logarithm of the dissociation rate constant (koff) describes the rate at which they dissociate."
-        },
-        {
-          "text": "pKd",
-          "description": "Negative base 10 logarithm of the equilibrium dissociation constant (KD) which is a measure of the binding affinity and is defined as the ratio of koff to kon."
-        }
-      ]
-    },
-    {
       "name": "FDAIDAAdverseEventEnum",
       "definition_uri": "https://w3id.org/biolink/vocab/FDAIDAAdverseEventEnum",
       "description": "please consult with the FDA guidelines as proposed in this document: https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfcfr/cfrsearch.cfm?fr=312.32",
@@ -3101,9 +3076,9 @@
       "description": "Qualifies a value context with a mathematical binary relation.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "slot_uri": "https://w3id.org/biolink/vocab/has_binary_relation",
-      "owner": "AffinityMeasurement",
+      "owner": "QuantityValue",
       "domain_of": [
-        "AffinityMeasurement"
+        "QuantityValue"
       ],
       "range": "BinaryRelationEnum",
       "@type": "SlotDefinition"
@@ -3138,6 +3113,20 @@
         "QuantityValue"
       ],
       "range": "unit",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "has_unit_prefix",
+      "definition_uri": "https://w3id.org/biolink/vocab/has_unit_prefix",
+      "description": "relates to scaling of the associated quantitative unit",
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "domain": "QuantityValue",
+      "slot_uri": "https://w3id.org/biolink/vocab/has_unit_prefix",
+      "owner": "QuantityValue",
+      "domain_of": [
+        "QuantityValue"
+      ],
+      "range": "unit_prefix",
       "@type": "SlotDefinition"
     },
     {
@@ -5255,54 +5244,6 @@
       "owner": "animal_model_available_from",
       "range": "DiseaseOrPhenotypicFeature",
       "multivalued": true,
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "affinity",
-      "definition_uri": "https://w3id.org/biolink/vocab/affinity",
-      "description": "The numerical value describing the strength of an affinity between two entities.  For instance, if a chemical inhibits a protein with a pIC50 of 8.6, the affinity is 8.6. Used in conjunction with the affinity parameter slot.",
-      "from_schema": "https://w3id.org/biolink/vocab/",
-      "is_a": "node_property",
-      "domain": "NamedThing",
-      "slot_uri": "https://w3id.org/biolink/vocab/affinity",
-      "owner": "AffinityMeasurement",
-      "domain_of": [
-        "AffinityMeasurement"
-      ],
-      "range": "float",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "affinity_parameter",
-      "definition_uri": "https://w3id.org/biolink/vocab/affinity_parameter",
-      "description": "The type of parameter describing the strength of an affinity between two entities.  For instance, if a chemical inhibits a protein with a pIC50 of 8.6, the 'affinity parameter' is pIC50. Used in conjunction with the 'affinity' slot, within an 'affinity measurement'.",
-      "from_schema": "https://w3id.org/biolink/vocab/",
-      "is_a": "node_property",
-      "domain": "NamedThing",
-      "slot_uri": "https://w3id.org/biolink/vocab/affinity_parameter",
-      "owner": "AffinityMeasurement",
-      "domain_of": [
-        "AffinityMeasurement"
-      ],
-      "range": "AffinityParameterEnum",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "has_affinity",
-      "definition_uri": "https://w3id.org/biolink/vocab/has_affinity",
-      "description": "Set of measurements documenting the strength of chemical entity to gene or gene product interactions.",
-      "from_schema": "https://w3id.org/biolink/vocab/",
-      "is_a": "association_slot",
-      "domain": "Association",
-      "slot_uri": "https://w3id.org/biolink/vocab/has_affinity",
-      "owner": "ChemicalGeneInteractionAssociation",
-      "domain_of": [
-        "ChemicalGeneInteractionAssociation"
-      ],
-      "range": "AffinityMeasurement",
-      "multivalued": true,
-      "inlined": true,
-      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -14960,6 +14901,142 @@
       ],
       "range": "string",
       "pattern": "^HP:\\d{7}$",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "pIC50",
+      "definition_uri": "https://w3id.org/biolink/vocab/pIC50",
+      "description": "Negative base 10 logarithm of the the inhibitory concentration 50% (IC50) measures the concentration needed to block or inhibit a biological response.",
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "is_a": "node_property",
+      "domain": "NamedThing",
+      "slot_uri": "https://w3id.org/biolink/vocab/pIC50",
+      "owner": "ProteinLigandAssayResult",
+      "domain_of": [
+        "ProteinLigandAssayResult"
+      ],
+      "range": "QuantityValue",
+      "inlined": true,
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "pEC50",
+      "definition_uri": "https://w3id.org/biolink/vocab/pEC50",
+      "description": "Negative base 10 logarithm of the molar concentration of a chemical that produces a 50% excitation of a function",
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "is_a": "node_property",
+      "domain": "NamedThing",
+      "slot_uri": "https://w3id.org/biolink/vocab/pEC50",
+      "owner": "ProteinLigandAssayResult",
+      "domain_of": [
+        "ProteinLigandAssayResult"
+      ],
+      "range": "QuantityValue",
+      "inlined": true,
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "pAC50",
+      "definition_uri": "https://w3id.org/biolink/vocab/pAC50",
+      "description": "pAC50 is a base 10 negative logarithmic measure of potency for an activating (agonist) interaction between a molecule (such as a drug or ligand) and a biological target (such as a receptor or enzyme), where AC50 is the concentration (in molar units) of a compound that produces 50% of its maximal activation in a functional assay.",
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "is_a": "node_property",
+      "domain": "NamedThing",
+      "slot_uri": "https://w3id.org/biolink/vocab/pAC50",
+      "owner": "ProteinLigandAssayResult",
+      "domain_of": [
+        "ProteinLigandAssayResult"
+      ],
+      "range": "QuantityValue",
+      "inlined": true,
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "pXC50",
+      "definition_uri": "https://w3id.org/biolink/vocab/pXC50",
+      "description": "In the context of molecular interactions and drug discovery, pXC50 is a generic,  base 10 negative logarithmic measure of compound potency that unifies different types of half\u2011maximal concentration values into a single notation, where XC50 means  \u201cthe concentration at which 50% of the maximal effect is observed\u201d, and X is a placeholder for the type of effect being measured (e.g., inhibition or activation). The X in pXC50 is intentionally generic and can represent different assay endpoints.",
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "is_a": "node_property",
+      "domain": "NamedThing",
+      "slot_uri": "https://w3id.org/biolink/vocab/pXC50",
+      "owner": "ProteinLigandAssayResult",
+      "domain_of": [
+        "ProteinLigandAssayResult"
+      ],
+      "range": "QuantityValue",
+      "inlined": true,
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "pKi",
+      "definition_uri": "https://w3id.org/biolink/vocab/pKi",
+      "description": "Negative base 10 logarithm of the equilibrium binding affinity for a ligand that reduces the activity of its binding partner. Ki represents the concentration at which the inhibitor ligand occupies 50% of the receptor sites when no competing ligand is present",
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "is_a": "node_property",
+      "domain": "NamedThing",
+      "slot_uri": "https://w3id.org/biolink/vocab/pKi",
+      "owner": "ProteinLigandAssayResult",
+      "domain_of": [
+        "ProteinLigandAssayResult"
+      ],
+      "range": "QuantityValue",
+      "inlined": true,
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "pKon",
+      "definition_uri": "https://w3id.org/biolink/vocab/pKon",
+      "description": "Negative base 10 logarithm of the association rate constant (Kon) describes the rate at which molecules bind to each other.",
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "is_a": "node_property",
+      "domain": "NamedThing",
+      "slot_uri": "https://w3id.org/biolink/vocab/pKon",
+      "owner": "ProteinLigandAssayResult",
+      "domain_of": [
+        "ProteinLigandAssayResult"
+      ],
+      "range": "QuantityValue",
+      "inlined": true,
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "pKoff",
+      "definition_uri": "https://w3id.org/biolink/vocab/pKoff",
+      "description": "Negative base 10 logarithm of the dissociation rate constant (koff) describes the rate at which they dissociate.",
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "is_a": "node_property",
+      "domain": "NamedThing",
+      "slot_uri": "https://w3id.org/biolink/vocab/pKoff",
+      "owner": "ProteinLigandAssayResult",
+      "domain_of": [
+        "ProteinLigandAssayResult"
+      ],
+      "range": "QuantityValue",
+      "inlined": true,
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "pKd",
+      "definition_uri": "https://w3id.org/biolink/vocab/pKd",
+      "description": "Negative base 10 logarithm of the equilibrium dissociation constant (KD) which is a measure of the binding affinity and is defined as the ratio of koff to kon.",
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "is_a": "node_property",
+      "domain": "NamedThing",
+      "slot_uri": "https://w3id.org/biolink/vocab/pKd",
+      "owner": "ProteinLigandAssayResult",
+      "domain_of": [
+        "ProteinLigandAssayResult"
+      ],
+      "range": "QuantityValue",
+      "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -28446,12 +28523,25 @@
     {
       "name": "QuantityValue",
       "definition_uri": "https://w3id.org/biolink/vocab/QuantityValue",
-      "description": "A value of an attribute that is quantitative and measurable, expressed as a combination of a unit and a numeric value",
+      "description": "A value of an attribute that is quantitative and measurable, expressed as a combination of a unit, (optional) unit prefix and a numeric value. An optional binary relation qualifier may also be given, to allow capture of relative values, e.g., <1000.0 nM meaning \"less than 1000 nanometers\"",
+      "examples": [
+        {
+          "object": {
+            "has_binary_relation": "less_than",
+            "has_numeric_value": 1000.0,
+            "has_unit_prefix": "UO:0000300",
+            "has_unit": "UO:0000008"
+          },
+          "@type": "Example"
+        }
+      ],
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "Annotation",
       "slots": [
         "has_unit",
-        "has_numeric_value"
+        "has_unit_prefix",
+        "has_numeric_value",
+        "has_binary_relation"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/QuantityValue",
@@ -29294,6 +29384,45 @@
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/IceesStudyResult",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "ProteinLigandAssayResult",
+      "definition_uri": "https://w3id.org/biolink/vocab/ProteinLigandAssayResult",
+      "description": "The type of study result describing the strength of interaction affinity - or enzymatic interaction - between a ligand and a target protein. Measured binding or enzymatic assay values are generally stated as the negative base 10 logarithm of the raw measurements. For instance (i.e., in a molecular interaction database like BindingDb) if a ligand inhibits a target protein with a pIC50 of 8.6, then the affinity parameter is pIC50 and the affinity value is 8.6.",
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "is_a": "StudyResult",
+      "slots": [
+        "id",
+        "iri",
+        "type",
+        "name",
+        "description",
+        "has_attribute",
+        "deprecated",
+        "provided_by",
+        "xref",
+        "full_name",
+        "synonym",
+        "exact_synonym",
+        "broad_synonym",
+        "narrow_synonym",
+        "related_synonym",
+        "equivalent_identifiers",
+        "information_content",
+        "taxon",
+        "named_thing_category",
+        "pKd",
+        "pKi",
+        "pIC50",
+        "pEC50",
+        "pAC50",
+        "pXC50",
+        "pKon",
+        "pKoff"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/biolink/vocab/ProteinLigandAssayResult",
       "@type": "ClassDefinition"
     },
     {
@@ -31204,40 +31333,6 @@
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/ChemicalEntity",
-      "@type": "ClassDefinition"
-    },
-    {
-      "name": "AffinityMeasurement",
-      "definition_uri": "https://w3id.org/biolink/vocab/AffinityMeasurement",
-      "description": "The type of measurement describing the strength of an affinity between two entities. For instance, if a chemical inhibits a protein with a pIC50 of 8.6, the affinity parameter is pIC50 and the affinity value is 8.6. The binary relation, if given, qualifies the affinity as greater than, less than, or equal.",
-      "from_schema": "https://w3id.org/biolink/vocab/",
-      "is_a": "NamedThing",
-      "slots": [
-        "id",
-        "iri",
-        "type",
-        "name",
-        "description",
-        "has_attribute",
-        "deprecated",
-        "provided_by",
-        "xref",
-        "full_name",
-        "synonym",
-        "exact_synonym",
-        "broad_synonym",
-        "narrow_synonym",
-        "related_synonym",
-        "equivalent_identifiers",
-        "information_content",
-        "taxon",
-        "named_thing_category",
-        "affinity_parameter",
-        "affinity",
-        "has_binary_relation"
-      ],
-      "slot_usage": {},
-      "class_uri": "https://w3id.org/biolink/vocab/AffinityMeasurement",
       "@type": "ClassDefinition"
     },
     {
@@ -39560,7 +39655,6 @@
         "semmed_agreement_count",
         "association_type",
         "association_category",
-        "has_affinity",
         "chemical_gene_interaction_association_subject_form_or_variant_qualifier",
         "chemical_gene_interaction_association_subject_part_qualifier",
         "chemical_gene_interaction_association_subject_derivative_qualifier",
@@ -46164,9 +46258,9 @@
   ],
   "metamodel_version": "1.11.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2026-08-04T14:48:26",
-  "source_file_size": 531984,
-  "generation_date": "2026-08-04T14:48:30",
+  "source_file_date": "2026-08-04T11:33:41",
+  "source_file_size": 533117,
+  "generation_date": "2026-08-04T11:33:54",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",
