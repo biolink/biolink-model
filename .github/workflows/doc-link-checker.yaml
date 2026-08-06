@@ -31,8 +31,9 @@ jobs:
           python-version: "3.10"
       - name: Install uv
         uses: astral-sh/setup-uv@v7
-      - name: Install Python dependencies (including "docs" extras)
-        run: uv sync --extra docs
+      - name: Install Python dependencies (including "docs" and "scripts" extras)
+        # `make gendoc` runs gen-doc + generate_viz_json, which need the `scripts` extra.
+        run: uv sync --extra docs --extra scripts
       - name: Build docs
         run: make gendoc
       - name: Use Lychee to check for broken links

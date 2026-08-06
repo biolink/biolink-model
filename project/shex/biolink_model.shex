@@ -1,4 +1,4 @@
-# metamodel_version: 1.7.0
+# metamodel_version: 1.11.0
 # version: 4.4.3
 BASE <https://w3id.org/biolink/vocab/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
@@ -284,10 +284,44 @@ linkml:Sparqlpath xsd:string
              <retrieval_source_ids> @<RetrievalSource> * ;
              <p_value> @<Float> ? ;
              <adjusted_p_value> @<Float> ? ;
+             <statistical_significance_qualifier> [
+                <https://w3id.org/biolink/vocab/StatisticalSignificanceQualifierEnum#very_strongly_significant>
+                <https://w3id.org/biolink/vocab/StatisticalSignificanceQualifierEnum#strongly_significant>
+                <https://w3id.org/biolink/vocab/StatisticalSignificanceQualifierEnum#significant>
+                <https://w3id.org/biolink/vocab/StatisticalSignificanceQualifierEnum#suggestive>
+                <https://w3id.org/biolink/vocab/StatisticalSignificanceQualifierEnum#not_significant> ] ? ;
+             <effect_size> @<Float> ? ;
+             <effect_type> [ <https://w3id.org/biolink/vocab/EffectTypeEnum#regression_coefficient>
+                <https://w3id.org/biolink/vocab/EffectTypeEnum#log2_fold_change>
+                <https://w3id.org/biolink/vocab/EffectTypeEnum#wald_ratio>
+                <https://w3id.org/biolink/vocab/EffectTypeEnum#inverse_variance_weighted>
+                <https://w3id.org/biolink/vocab/EffectTypeEnum#mr_egger>
+                <https://w3id.org/biolink/vocab/EffectTypeEnum#weighted_median>
+                <https://w3id.org/biolink/vocab/EffectTypeEnum#standardized_mean_difference>
+                <https://w3id.org/biolink/vocab/EffectTypeEnum#cohens_d> <https://w3id.org/biolink/vocab/EffectTypeEnum#hedges_g>
+                <https://w3id.org/biolink/vocab/EffectTypeEnum#glasss_delta>
+                <https://w3id.org/biolink/vocab/EffectTypeEnum#strictly_standardized_mean_difference>
+                <https://w3id.org/biolink/vocab/EffectTypeEnum#correlation_coefficient>
+                <https://w3id.org/biolink/vocab/EffectTypeEnum#pearsons_r>
+                <https://w3id.org/biolink/vocab/EffectTypeEnum#spearmans_rho>
+                <https://w3id.org/biolink/vocab/EffectTypeEnum#kendalls_tau>
+                <https://w3id.org/biolink/vocab/EffectTypeEnum#polychoric_correlation>
+                <https://w3id.org/biolink/vocab/EffectTypeEnum#matthews_correlation_coefficient>
+                <https://w3id.org/biolink/vocab/EffectTypeEnum#goodman_kruskal_gamma>
+                <https://w3id.org/biolink/vocab/EffectTypeEnum#r2_linkage_disequilibrium>
+                <https://w3id.org/biolink/vocab/EffectTypeEnum#odds_ratio>
+                <https://w3id.org/biolink/vocab/EffectTypeEnum#relative_risk>
+                <https://w3id.org/biolink/vocab/EffectTypeEnum#hazard_ratio>
+                <https://w3id.org/biolink/vocab/EffectTypeEnum#eta_squared>
+                <https://w3id.org/biolink/vocab/EffectTypeEnum#omega_squared>
+                <https://w3id.org/biolink/vocab/EffectTypeEnum#root_mean_square_standardized_effect> ] ? ;
              <supporting_text> @<String> * ;
              <has_supporting_studies> @<Study> * ;
              <update_date> @<Date> ? ;
              <has_confidence_score> @<Float> ? ;
+             <stringdb_combined_score> @<Float> ? ;
+             <stringdb_experimental_score> @<Float> ? ;
+             <stringdb_coexpression_score> @<Float> ? ;
              <elevate_to_prediction> @<Boolean> ? ;
              <evidence_count> @<Integer> ? ;
              <semmed_agreement_count> @<Integer> ? ;
