@@ -2161,12 +2161,12 @@ slots:
     in_subset:
       - translator_minimal
 
-  association_basis_qualifier: 
+  association basis qualifier:
     is_a: statement qualifier
     description: >-
-      A statement-level qualifier used with the associated with predicate (or one of its subpredicates) to indicate the biological,
-      clinical, or statistical basis of the asserted association. Use this qualifier when no more specific predicate exists to capture
-      the intended meaning of the association. 
+      A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates)
+      to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier
+      when no more specific predicate exists to capture the intended meaning of the association.
     range: AssociationBasisEnum      
     in_subset:
       - translator_minimal
@@ -2423,11 +2423,14 @@ slots:
   associated with:
     is_a: related to at instance level
     description: >- 
-      Indicates a non-causal association between two entities. Such associations are most commonly established through
-      statistical analysis demonstrating that observations of the entities are not statistically independent, but may also 
-      e supported by other forms of evidence that establish a meaningful association. When representing a statistical association,
-      the subject and object may correspond directly to the variables analyzed, or to the biological or clinical entities
-      represented/described by those variables (e.g., diseases, genes, chemical entities, biological processes, or phenotypes).
+      Indicates a non-causal association between two entities. Such associations are most commonly established
+      through statistical analysis demonstrating that observations of the entities are not statistically independent,
+      but may also be supported by other forms of evidence that establish a meaningful association. When representing
+      a statistical association, the subject and object may correspond directly to the variables analyzed, or
+      to the biological or clinical entities represented/described by those variables (e.g., diseases, genes,
+      chemical entities, biological processes, or phenotypes).  The 'association basis qualifier' may be used to
+      constrain the scope of this predicate within a statement if no more specific child predicate provides a more
+      precise semantic context for the association.
     annotations:
       canonical_predicate: true
     symmetric: true
@@ -3778,10 +3781,12 @@ slots:
     annotations:
       canonical_predicate: true
     related_mappings:
-       # generally pertains to membership of a (subject) protein in an (object) protein complex (doesn't cover RNA-Protein, Lipid-Protein, etc complexes though)
+      # generally pertains to membership of a (subject) protein in an (object) protein complex
+      # (doesn't cover RNA-Protein, Lipid-Protein, etc complexes though)
       - SIO:010497
     broad_mappings:
-       # generally pertains to membership of any (subject) constituent molecule in an (object) molecular complex (might also generically cover RNA-Protein, Lipid-Protein, etc complexes)
+      # generally pertains to membership of any (subject) constituent molecule in an (object)
+      # molecular complex (might also generically cover RNA-Protein, Lipid-Protein, etc complexes)
       - SIO:010285
 
   in cell population with:
@@ -3817,11 +3822,13 @@ slots:
     symmetric: true
 
   genetically associated with:
-    deprecated: "true"         # indicating the "genetic" basis of an association will now be done using the more general "associated with" predicate plus a association_basis_qualifier with the value "genetic".
+    # indicating the "genetic" basis of an association will now be done using the more general
+    # "associated with" predicate plus a 'association basis qualifier' with the value "genetic".
+    deprecated: "true"
     is_a: associated with
     description: >-
-      A statistical association, observed in genetic studies, between a genetic entity such as a gene, locus, or
-      variant and a phenotype, disease, or trait.
+      A statistical association, observed in genetic studies, between a genetic entity
+      such as a gene, locus, or variant and a phenotype, disease, or trait.
     symmetric: true
     annotations:
       canonical_predicate: true
@@ -11527,7 +11534,14 @@ classes:
         subproperty_of: causes
         required: true
     examples:
-      - value: "{subject: NCBIGene:551, predicate: regulates, qualified_predicate: causes, object: NCBIGene:1636, object_aspect_qualifier: activity_or_abundance, object_direction_qualifier: downregulated}"
+      - value: >-
+          {
+            subject: NCBIGene:551,
+            predicate: regulates, qualified_predicate: causes,
+            object: NCBIGene:1636,
+            object_aspect_qualifier: activity_or_abundance,
+            object_direction_qualifier: downregulated
+          }
         description: >-
           AVP (NCBIGene:551) regulates ACE (NCBIGene:1636), with qualified predicate
           'causes', object aspect qualifier 'activity_or_abundance', and object
@@ -15059,8 +15073,8 @@ enums:
 
   AssociationBasisEnum:
     description: >-
-      Permissible values for the association_basis_qualifier, indicating the
-      nature or basis of an association asserted using the "associated with"
+      Permissible values for the 'association basis qualifier', indicating the
+      nature or basis of an association asserted using the 'associated with'
       predicate or one of its subpredicates.
     permissible_values:
       statistical:
