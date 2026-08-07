@@ -6,7 +6,7 @@ authors = [
     {name = "Chris Mungall", email = "cjm@berkeleybop.org"},
     {name = "Deepak Unni", email = "deepak.unni3@gmail.com"},
     {name = "Sierra Moxon", email = "smoxon@lbl.gov"},
-    {name = "Richard Bruskiewich", email = "richard@starinformatics.com"},
+    {name = "Richard Bruskiewich", email = "richard@delphinai.ca"},
 ]
 license = {text = "MIT"}
 readme = "README.md"
@@ -18,27 +18,34 @@ classifiers = [
     "Programming Language :: Python :: 3.13",
 ]
 dependencies = [
-    "curies>=0.9.0,<1",
-    "prefixmaps>=0.2.3,<1",
-    "pyyaml>=6.0.1,<7",
-    "stringcase>=1.2.0,<2",
-    "beautifulsoup4>=4.0.0",
-    "path>=17.0.0,<18",
-    "linkml-runtime==1.10.0",
-    "requests>=2.32.3",
-    "linkml==1.10.0",
-    "click>8.0.0,<8.4",
+    "pydantic>=2,<3",
+    "linkml-runtime==1.11.1",
 ]
 
 [project.scripts]
 generate_viz_json = "biolink_model.scripts.generate_json:generate_viz_json"
 
 [project.optional-dependencies]
-docs = ["mkdocs-material"]
+scripts = [
+    "linkml==1.11.1",
+    "rdflib",
+    "curies",
+]
+docs = [
+    # Must cover everything mkdocs.yml declares: `theme: material` and `plugins: [search, mermaid2]`.
+    # Bounds mirror the dev group so a standalone `pip install biolink-model[docs]` builds the same
+    # site CI builds.
+    "mkdocs>=1.4.2,<2",
+    "mkdocs-material>=9.5.17,<10",
+    "mkdocs-mermaid2-plugin>=1.1.1,<2",
+]
+all = [
+    "biolink-model[scripts,docs]",
+]
 
 [dependency-groups]
 dev = [
-    "linkml>=1.6.3",
+    "linkml==1.11.1",
     "mkdocs>=1.4.2,<2",
     "mkdocs-material>=9.5.17,<10",
     "mkdocs-mermaid2-plugin>=1.1.1,<2",
@@ -69,6 +76,14 @@ packages = ["src/biolink_model"]
 # `exclude-newer` timestamp for backwards compatibility), avoiding per-relock absolute timestamps and
 # reducing cross-branch merge conflicts (see astral-sh/uv#18708). Requires uv >= 0.9.17.
 exclude-newer = "7 days"
+
+# Cooldown exception: cryptography 50.0.0 (2026-07-31) fixes GHSA-g6cj-pr64-35w5 /
+# PYSEC-2026-3552 (Bleichenbacher oracle in PKCS#7 EnvelopedData decryption). It is a
+# transitive dependency via google-auth, so the floor is also constrained below to keep a
+# from-scratch relock (pr-check-dependencies) from falling back to the vulnerable 49.0.0.
+# Both entries can be dropped once the release clears the 7-day window (after 2026-08-07).
+exclude-newer-package = { cryptography = "2026-08-04T00:00:00Z" }
+constraint-dependencies = ["cryptography>=50.0.0"]
 
 [tool.codespell]
 skip = '.idea,.git,SEMMEDDB*,semmed*,*.svg,docs,./src/docs/registry.md,./.venv'

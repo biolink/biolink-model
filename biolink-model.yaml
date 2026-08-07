@@ -279,6 +279,15 @@ types:
       is expressed (UO:0000000). Typically drawn from the Units of Measurement
       Ontology (UO).
 
+  unit prefix:
+    typeof: string
+    uri: UO:0000046
+    id_prefixes:
+      - UO
+    description: >-
+      A prefix to a unit indicative of the scaling of the unit,
+      e.g., 'nano' with unit 'meter' implies a unit of 10e-9 meters
+
   time type:
     uri: xsd:string
     typeof: time
@@ -497,6 +506,12 @@ slots:
       - SNOMED:has_unit_of_presentation
     in_subset:
       - samples
+
+  has unit prefix:
+    description: >-
+      relates to scaling of the associated quantitative unit
+    domain: quantity value
+    range: unit prefix
 
   base coordinate:
     is_a: sequence localization attribute
@@ -1617,30 +1632,6 @@ slots:
     multivalued: true
     range: disease or phenotypic feature
 
-  affinity:
-    description: >-
-      The numerical value describing the strength of an affinity between two entities.  For instance, if a chemical inhibits a protein with a pIC50 of 8.6,
-      the affinity is 8.6. Used in conjunction with the affinity parameter slot.
-    is_a: node property
-    range: float
-
-  affinity parameter:
-    description: >-
-      The type of parameter describing the strength of an affinity
-      between two entities.  For instance, if a chemical inhibits
-      a protein with a pIC50 of 8.6, the 'affinity parameter' is pIC50.
-      Used in conjunction with the 'affinity' slot, within an 'affinity measurement'.
-    is_a: node property
-    range: AffinityParameterEnum
-
-  has affinity:
-    is_a: association slot
-    description: >-
-      Set of measurements documenting the strength of chemical entity to gene or gene product interactions.
-    range: affinity measurement
-    multivalued: true
-    inlined_as_list: true
-
   FDA adverse event level:
     description: >-
       The level or severity grade of an adverse event as classified by FDA adverse-event terminology,
@@ -1654,7 +1645,6 @@ slots:
       disease, condition or phenotype it is currently being reviewed to treat.  For specific levels of FDA
       approval for a specific condition, disease, phenotype, etc., see the association slot, 'clinical approval status.'
     range: ApprovalStatusEnum
-
 
   FDA regulatory approvals:
     description: >-
@@ -2171,6 +2161,35 @@ slots:
     in_subset:
       - translator_minimal
       
+  statistical significance qualifier:
+    is_a: statement qualifier
+    description: >-
+      A statement qualifier that categorizes an association's evidence by
+      statistical significance into coarse bands, as a categorical companion to
+      the numeric 'p value' and 'adjusted p value' slots. It applies only to
+      assessments derived from a quantitative significance statistic (raw p-value,
+      multiple-testing-adjusted p-value, or q-value/FDR), and MUST NOT encode
+      ordinal study-stage, evidence-tier, or confidence-level labels (e.g. clinical
+      trial phases) that are not statistical-significance statements.
+    notes:
+      - >-
+        Enforced via a class rule on `association`: this qualifier may only be set
+        when 'p value' or 'adjusted p value' is also populated (the numeric slots
+        remain authoritative).
+      - >-
+        Bands use conventional defaults (alpha = 0.05); when a source's cutoffs
+        differ, place the value in the closest band and always also populate the
+        numeric slot(s).
+    examples:
+      - value: very_strongly_significant
+      - value: strongly_significant
+      - value: significant
+      - value: suggestive
+      - value: not_significant
+    range: StatisticalSignificanceQualifierEnum
+    in_subset:
+      - translator_minimal
+
   qualifiers:
     deprecated: "true"
     description: >-
@@ -6280,7 +6299,7 @@ slots:
       Connects an study to instances of its study result
 
   log odds ratio:
-    is_a: association slot
+    is_a: node property
     description: >-
       The natural logarithm of the odds ratio (OR), or the ratio of
       the odds of an event Y occurring in an exposed group versus
@@ -6288,7 +6307,7 @@ slots:
     range: float
 
   log odds ratio 95 ci:
-    is_a: association slot
+    is_a: node property
     description: >-
       The ninety-five percent confidence range in which the true log odds ratio for the sample population falls.
       To calculate the 95% confidence interval (CI) for a log odds ratio (a pair of numbers),
@@ -6396,7 +6415,7 @@ slots:
     multivalued: true
 
   chi squared statistic:
-    is_a: association slot
+    is_a: node property
     range: float
     description: >-
       The chi-squared statistic measures how much observed
@@ -6407,7 +6426,7 @@ slots:
       - value: "26.38523077566414"
 
   chi squared dof:
-    is_a: association slot
+    is_a: node property
     description: >-
        Degrees of freedom (dof) in a chi-squared test referring to the
        number of values in the final calculation of a statistic that are free to vary
@@ -6416,7 +6435,7 @@ slots:
       - value: "1"
 
   chi squared p:
-    is_a: association slot
+    is_a: node property
     description: >-
        The chi-square p-value tells you the probability that the observed differences
        (or associations) in your data occurred by random chance, assuming the null hypothesis is true.
@@ -6425,7 +6444,7 @@ slots:
       - value: "2.7967079822744063e-07"
 
   fisher exact odds ratio:
-    is_a: association slot
+    is_a: node property
     description: >-
        The Fisher Exact Test is used to determine whether there is a non-random association between
        two categorical variables in a 2×2 contingency table, especially when sample sizes are small.
@@ -6438,7 +6457,7 @@ slots:
       - value: "3.226188583240579"
 
   fisher exact p:
-    is_a: association slot
+    is_a: node property
     description: >-
       The Fisher exact p-value tells you the probability of observing a table
       as extreme as (or more extreme than) your actual data, assuming that
@@ -6574,8 +6593,43 @@ slots:
     examples:
       - value: "0.018"
 
-  supporting text:
+  effect size:
     is_a: association slot
+    range: float
+    description: >-
+      A quantitative measure of the magnitude and direction of an effect or
+      association between the subject and object of an edge, as estimated by a
+      statistical method. The specific metric used (e.g. Cohen's d, odds ratio,
+      Pearson's r) is indicated by the companion 'effect type' slot.
+    notes:
+      - >-
+        The numeric value here is metric-dependent and should always be
+        interpreted together with 'effect type'. For example, an effect size of
+        0.8 with effect type 'cohens_d' means a large standardized mean
+        difference, whereas 0.8 with effect type 'pearsons_r' means a strong
+        positive linear correlation.
+    exact_mappings:
+      - STATO:0000085
+
+  effect type:
+    is_a: association slot
+    range: EffectTypeEnum
+    description: >-
+      Specifies the statistical metric or method used to compute the numeric
+      value in the companion 'effect size' slot. This disambiguates the effect
+      size value, which is otherwise uninterpretable without knowing the metric
+      (e.g. Cohen's d vs. odds ratio vs. Pearson's r).
+    notes:
+      - >-
+        This slot should only be populated when 'effect size' is also populated.
+        Enforced via a class rule on `association`.
+    examples:
+      - value: cohens_d
+      - value: odds_ratio
+      - value: pearsons_r
+
+  supporting text:
+    is_a: node property
     description: The segment of text from a document that supports the mined assertion.
     multivalued: true
     range: string
@@ -6594,7 +6648,7 @@ slots:
       - value: PMID:12345678
 
   subject location in text:
-    is_a: association slot
+    is_a: node property
     description: >-
       Character offsets for the text span(s) in the supporting text corresponding
       to the subject concept of the extracted assertion.
@@ -6604,7 +6658,7 @@ slots:
     multivalued: true
 
   object location in text:
-    is_a: association slot
+    is_a: node property
     description: >-
       Character offsets for the text span(s) in the supporting text corresponding
       to the object concept of the extracted assertion
@@ -6614,7 +6668,7 @@ slots:
     multivalued: true
 
   extraction confidence score:
-    is_a: association slot
+    is_a: node property
     description: >-
       A quantitative confidence value that represents the probability of
       obtaining a result at least as extreme as that actually obtained,
@@ -6624,7 +6678,7 @@ slots:
       - value: "0.6188385904738642"
 
   supporting document type:
-    is_a: association slot
+    is_a: node property
     description: >-
       The document type (e.g., Journal Article, Case Study, Preprint) for
       the supporting document used in a Text Mining Result.
@@ -6633,7 +6687,7 @@ slots:
       - value: Journal Article
 
   supporting document year:
-    is_a: association slot
+    is_a: node property
     description: >-
       The document year (typically the publication year) for the supporting
       document used in a Text Mining Result.
@@ -6642,7 +6696,7 @@ slots:
       - value: "2018"
 
   supporting text section type:
-    is_a: association slot
+    is_a: node property
     description: >-
       The section of the supporting text of a Text Mining Result within
       the supporting document. This is in the form of the name of the document section
@@ -6713,6 +6767,73 @@ slots:
         in that the predicate is used to link a disease or phenotype with its general
         inheritance pattern (how it is typically transmitted from one generation to the next,
         regardless of the specific genetic variant that is present in an individual or instance).
+
+  # Affinity Study Result slot definitions
+
+  pIC50:
+    description: >-
+      Negative base 10 logarithm of the the inhibitory concentration 50% (IC50)
+      measures the concentration needed to block or inhibit a biological response.
+    is_a: node property
+    range: quantity value
+
+  pEC50:
+    description: >-
+      Negative base 10 logarithm of the molar concentration of
+      a chemical that produces a 50% excitation of a function
+    is_a: node property
+    range: quantity value
+
+  pAC50:
+    description: >-
+      pAC50 is a base 10 negative logarithmic measure of potency for an activating (agonist) interaction
+      between a molecule (such as a drug or ligand) and a biological target (such as a receptor or enzyme),
+      where AC50 is the concentration (in molar units) of a compound that produces 50% of its
+      maximal activation in a functional assay.
+    is_a: node property
+    range: quantity value
+
+  pXC50:
+    description: >-
+      In the context of molecular interactions and drug discovery, pXC50 is a generic, 
+      base 10 negative logarithmic measure of compound potency that unifies different types of
+      half‑maximal concentration values into a single notation, where XC50 means 
+      “the concentration at which 50% of the maximal effect is observed”, and X is a placeholder
+      for the type of effect being measured (e.g., inhibition or activation). The X in pXC50 is
+      intentionally generic and can represent different assay endpoints.
+    is_a: node property
+    range: quantity value
+
+  pKi:
+    description: >-
+      Negative base 10 logarithm of the equilibrium binding affinity for a ligand that reduces
+      the activity of its binding partner. Ki represents the concentration at which the
+      inhibitor ligand occupies 50% of the receptor sites when no competing ligand is present
+    is_a: node property
+    range: quantity value
+
+  pKon:
+    description: >-
+      Negative base 10 logarithm of the association rate constant (Kon) describes
+      the rate at which molecules bind to each other.
+    is_a: node property
+    range: quantity value
+
+  pKoff:
+    description: >-
+      Negative base 10 logarithm of the dissociation rate constant (koff) describes
+      the rate at which they dissociate.
+    is_a: node property
+    range: quantity value
+
+  pKd:
+    description: >-
+      Negative base 10 logarithm of the equilibrium dissociation constant (KD) which
+      is a measure of the binding affinity and is defined as the ratio of koff to kon.
+    is_a: node property
+    range: quantity value
+
+  # End of Affinity Study Result slot definitions
 
   publications:
     aliases: ['supporting publications', 'supporting documents']
@@ -7124,10 +7245,23 @@ classes:
     is_a: annotation
     description: >-
       A value of an attribute that is quantitative and measurable,
-      expressed as a combination of a unit and a numeric value
+      expressed as a combination of a unit, (optional) unit prefix
+      and a numeric value. An optional binary relation qualifier
+      may also be given, to allow capture of relative values,
+      e.g., <1000.0 nM meaning "less than 1000 nanometers"
     slots:
       - has unit
+      - has unit prefix
       - has numeric value
+      - has binary relation
+    examples:
+      - object:
+          # Encoding for <1000.0 nM, meaning "less than 1000 nanometers"
+          has_binary_relation: less_than
+          has_numeric_value: 1000.00
+          has_unit_prefix: "UO:0000300"  # 'nano'
+          has_unit: "UO:0000008"  # 'meter'
+
 
   attribute:
     is_a: named thing
@@ -7457,6 +7591,24 @@ classes:
       - fisher exact p
       - log odds ratio
       - log odds ratio 95 ci
+
+  protein ligand assay result:
+    is_a: study result
+    description: >-
+      The type of study result describing the strength of interaction affinity - or enzymatic interaction -
+      between a ligand and a target protein. Measured binding or enzymatic assay values are generally stated as the
+      negative base 10 logarithm of the raw measurements. For instance (i.e., in a molecular interaction
+      database like BindingDb) if a ligand inhibits a target protein with a pIC50 of 8.6, then the
+      affinity parameter is pIC50 and the affinity value is 8.6.
+    slots:
+      - pKd
+      - pKi
+      - pIC50
+      - pEC50
+      - pAC50
+      - pXC50
+      - pKon
+      - pKoff
 
   study:
     is_a: activity
@@ -8285,18 +8437,6 @@ classes:
       - KEGG.ENVIRON
       - KEGG
       - UMLS
-
-  affinity measurement:
-    is_a: named thing
-    description: >-
-      The type of measurement describing the strength of an affinity between two entities.
-      For instance, if a chemical inhibits a protein with a pIC50 of 8.6,
-      the affinity parameter is pIC50 and the affinity value is 8.6.
-      The binary relation, if given, qualifies the affinity as greater than, less than, or equal.
-    slots:
-      - affinity parameter
-      - affinity
-      - has binary relation
 
   small molecule:
     is_a: molecular entity
@@ -10535,10 +10675,16 @@ classes:
       - retrieval source ids
       - p value
       - adjusted p value
+      - statistical significance qualifier
+      - effect size
+      - effect type
       - supporting text
       - has supporting studies
       - update date
       - has confidence score
+      - stringdb combined score
+      - stringdb experimental score
+      - stringdb coexpression score
       - elevate to prediction
       - evidence count
       - semmed agreement count
@@ -10552,6 +10698,29 @@ classes:
         inlined_as_list: true
       has supporting studies:
         inlined: true
+    rules:
+      - description: >-
+          A statistical significance qualifier may only be set when at least one
+          numeric p-value slot (p value or adjusted p value) is also populated.
+        preconditions:
+          slot_conditions:
+            statistical significance qualifier: {}
+        postconditions:
+          any_of:
+            - slot_conditions:
+                p value: {}
+            - slot_conditions:
+                adjusted p value: {}
+      - description: >-
+          An effect type may only be set when the companion effect size slot
+          is also populated, because the effect type disambiguates the numeric
+          value and is meaningless without it.
+        preconditions:
+          slot_conditions:
+            effect type: {}
+        postconditions:
+          slot_conditions:
+            effect size: {}
     exact_mappings:
       - OBAN:association
       - rdf:Statement
@@ -11386,7 +11555,6 @@ classes:
     broad_mappings:
       - SIO:001257    ## chemical-gene association
     slots:
-      - has affinity
       - subject form or variant qualifier
       - subject part qualifier
       - subject derivative qualifier
@@ -14164,6 +14332,226 @@ enums:
       carboxylation:
         is_a: molecular_modification
 
+  EffectTypeEnum:
+    description: >-
+      An enumeration of statistical metrics and estimators used to quantify
+      the magnitude and direction of an effect or association between the
+      subject and object of an edge. The numeric result is stored in the
+      companion 'effect size' slot.
+    permissible_values:
+      # --- Regression / omics coefficients ---
+      regression_coefficient:
+        description: >-
+          The coefficient of an independent variable in a regression model,
+          representing the expected change in the dependent variable per unit
+          change in the predictor. Commonly reported as a beta coefficient
+          in eQTL, pQTL, mQTL, and GWAS analyses.
+        close_mappings:
+          - STATO:0000565
+      log2_fold_change:
+        description: >-
+          The base-2 logarithm of the ratio of a quantity (e.g. gene
+          expression, protein abundance, metabolite concentration) between
+          two conditions. The standard effect size in differential expression
+          and differential abundance analyses across transcriptomics,
+          proteomics, and metabolomics.
+        close_mappings:
+          - STATO:0000169
+      # --- Mendelian randomization estimators ---
+      wald_ratio:
+        description: >-
+          A single-variant Mendelian randomization estimator computed as the
+          ratio of the genetic variant-outcome association to the genetic
+          variant-exposure association.
+      inverse_variance_weighted:
+        description: >-
+          A Mendelian randomization estimator that combines per-variant Wald
+          ratios using inverse-variance weighting, assuming all instruments
+          are valid (no horizontal pleiotropy).
+      mr_egger:
+        description: >-
+          A Mendelian randomization estimator based on Egger regression that
+          allows for directional horizontal pleiotropy by fitting an
+          intercept term; a non-zero intercept indicates pleiotropic bias.
+      weighted_median:
+        description: >-
+          A robust Mendelian randomization estimator that provides a
+          consistent causal estimate when at least 50% of the instrument
+          weight comes from valid variants.
+      # --- Standardized mean differences ---
+      standardized_mean_difference:
+        description: >-
+          The difference between two group means divided by a pooled standard
+          deviation, used when the predictor is categorical and the outcome is
+          continuous.
+        close_mappings:
+          - STATO:0000100
+      cohens_d:
+        is_a: standardized_mean_difference
+        description: >-
+          A standardized mean difference using the square root of the average
+          of the two group variances as the denominator, with a small-sample
+          correction for n < 50.
+        close_mappings:
+          - STATO:0000618
+      hedges_g:
+        is_a: standardized_mean_difference
+        description: >-
+          A standardized mean difference with a Gamma-function correction on
+          the pooled standard deviation to reduce small-sample bias.
+        close_mappings:
+          - STATO:0000319
+      glasss_delta:
+        is_a: standardized_mean_difference
+        description: >-
+          A standardized mean difference using only the control group's
+          standard deviation as the denominator, preferred when group
+          variances differ substantially.
+        close_mappings:
+          - STATO:0000320
+      strictly_standardized_mean_difference:
+        is_a: standardized_mean_difference
+        description: >-
+          The ratio of the mean difference to the standard deviation of the
+          difference between two groups (SSMD), widely used in high-content
+          screening for hit selection and quality control.
+        close_mappings:
+          - STATO:0000135
+      # --- Correlation coefficients ---
+      correlation_coefficient:
+        description: >-
+          A normalized measure of association between two variables, ranging
+          from -1 to +1, computed as covariance divided by the product of
+          standard deviations.
+        close_mappings:
+          - STATO:0000142
+      pearsons_r:
+        is_a: correlation_coefficient
+        description: >-
+          A parametric correlation coefficient for two continuous, normally
+          distributed variables with a linear relationship.
+        close_mappings:
+          - STATO:0000280
+      spearmans_rho:
+        is_a: correlation_coefficient
+        description: >-
+          A nonparametric rank correlation coefficient measuring monotonic
+          dependence between two variables.
+        close_mappings:
+          - STATO:0000201
+      kendalls_tau:
+        is_a: correlation_coefficient
+        description: >-
+          A rank correlation coefficient based on concordant and discordant
+          pairs, suitable for ordinal data.
+        close_mappings:
+          - STATO:0000240
+      polychoric_correlation:
+        is_a: correlation_coefficient
+        description: >-
+          A correlation coefficient estimating the association between two
+          latent continuous variables from observed ordinal data.
+        close_mappings:
+          - STATO:0000269
+      matthews_correlation_coefficient:
+        is_a: correlation_coefficient
+        description: >-
+          A correlation-based measure of binary classification quality
+          (also known as the phi coefficient), ranging from -1 to +1.
+        close_mappings:
+          - STATO:0000524
+      goodman_kruskal_gamma:
+        is_a: correlation_coefficient
+        description: >-
+          A rank correlation measure for ordinal or continuous variables
+          based on the difference between concordant and discordant pairs,
+          excluding ties.
+        close_mappings:
+          - STATO:0000612
+      r2_linkage_disequilibrium:
+        is_a: correlation_coefficient
+        description: >-
+          A squared correlation coefficient over two dichotomous variables
+          used as a measure of linkage disequilibrium.
+        close_mappings:
+          - STATO:0000123
+      # --- Risk / ratio measures ---
+      odds_ratio:
+        description: >-
+          The ratio of the odds of an outcome in an exposed group to the
+          odds in an unexposed group, measuring association strength between
+          two binary variables.
+        close_mappings:
+          - STATO:0000182
+      relative_risk:
+        description: >-
+          The ratio of event probability in an exposed group to event
+          probability in an unexposed group (also called risk ratio).
+        close_mappings:
+          - STATO:0000245
+      hazard_ratio:
+        description: >-
+          The ratio of hazard rates between two groups over time, commonly
+          reported in survival analysis and time-to-event omics studies.
+        close_mappings:
+          - STATO:0000677
+      # --- Variance-explained measures ---
+      eta_squared:
+        description: >-
+          The proportion of total variance in the dependent variable
+          attributable to a predictor in the sample (a biased estimator
+          analogous to R-squared).
+        close_mappings:
+          - STATO:0000317
+      omega_squared:
+        description: >-
+          A less biased estimator of the proportion of variance explained
+          by a predictor, providing a better population-level estimate than
+          eta-squared.
+        close_mappings:
+          - STATO:0000318
+      root_mean_square_standardized_effect:
+        description: >-
+          The square root of the average of squared standardized effects in
+          an analysis of variance context (RMSSE, Psi).
+        close_mappings:
+          - STATO:0000316
+
+  StatisticalSignificanceQualifierEnum:
+    description: >-
+      An enumeration used as a qualifier to categorize the statistical significance
+      of an association's supporting evidence into coarse bands (e.g., very strongly
+      significant, strongly significant, significant, suggestive, not significant),
+      conventionally anchored to alpha = 0.05. The underlying numeric value lives in
+      the 'p value' and 'adjusted p value' slots, which remain authoritative.
+    permissible_values:
+      very_strongly_significant:
+        description: >-
+          A significance band denoting that the association meets the most stringent
+          conventional threshold (significance statistic at or below 0.001), such that,
+          under the null hypothesis of no association, an effect at least this large would
+          be expected in no more than about one in a thousand comparable studies.
+      strongly_significant:
+        description: >-
+          A significance band denoting that the association meets a stringent conventional
+          threshold (significance statistic at or below 0.01).
+      significant:
+        description: >-
+          A significance band denoting that the association meets the standard conventional
+          threshold (significance statistic at or below alpha = 0.05), such that, under the
+          null hypothesis, an effect at least this large would be expected in no more than
+          about one in twenty comparable studies.
+      suggestive:
+        description: >-
+          A significance band denoting a borderline result (significance statistic above
+          0.05 but at or below roughly 0.10, sometimes extended to 0.20 in fields such as
+          genetics) that is suggestive of, but does not conclusively support, an association.
+      not_significant:
+        description: >-
+          A significance band denoting that the association does not meet the conventional
+          threshold (significance statistic above 0.05), such that there is insufficient
+          evidence to rule out the null hypothesis of no association.
+
   CausalMechanismQualifierEnum:
     description: >-
       An enumeration used as a qualifier to specify the causal or pharmacologic
@@ -14765,40 +15153,6 @@ enums:
       "supporting_data_source":
     in_subset:
       - translator_minimal
-
-  AffinityParameterEnum:
-    description: >-
-      The types of parameters that can be used to describe the affinity between two entities,
-      characteristically chemicals and proteins. The values are generally
-      stated as the negative base 10 logarithm of the raw measurements.
-    permissible_values:
-      "pIC50":
-        description: >-
-          Negative base 10 logarithm of the the inhibitory concentration 50% (IC50)
-          measures the concentration needed to block or inhibit a biological response.
-      "pEC50":
-        description: >-
-          Negative base 10 logarithm of the molar concentration of
-          a chemical that produces a 50% excitation of a function
-      "pAC50":
-      "pXC50":
-      "pKi":
-        description: >-
-          Negative base 10 logarithm of the equilibrium binding affinity for a ligand that reduces
-          the activity of its binding partner. Ki represents the concentration at which the
-          inhibitor ligand occupies 50% of the receptor sites when no competing ligand is present
-      "pKon":
-        description: >-
-          Negative base 10 logarithm of the association rate constant (Kon) describes
-          the rate at which molecules bind to each other.
-      "pKoff":
-        description: >-
-          Negative base 10 logarithm of the dissociation rate constant (koff) describes
-          the rate at which they dissociate.
-      "pKd":
-        description: >-
-          Negative base 10 logarithm of the equilibrium dissociation constant (KD) which
-          is a measure of the binding affinity and is defined as the ratio of koff to kon.
 
   FDAIDAAdverseEventEnum:
     description: >-
