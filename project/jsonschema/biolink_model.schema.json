@@ -1049,6 +1049,10 @@
                         "null"
                     ]
                 },
+                "association_basis_qualifier": {
+                    "$ref": "#/$defs/AssociationBasisEnum",
+                    "description": "A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates) to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier when no more specific predicate exists to capture the intended meaning of the association."
+                },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
                     "enum": [
@@ -1561,6 +1565,10 @@
                         "array",
                         "null"
                     ]
+                },
+                "association_basis_qualifier": {
+                    "$ref": "#/$defs/AssociationBasisEnum",
+                    "description": "A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates) to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier when no more specific predicate exists to capture the intended meaning of the association."
                 },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
@@ -2075,6 +2083,10 @@
                         "null"
                     ]
                 },
+                "association_basis_qualifier": {
+                    "$ref": "#/$defs/AssociationBasisEnum",
+                    "description": "A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates) to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier when no more specific predicate exists to capture the intended meaning of the association."
+                },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
                     "enum": [
@@ -2578,6 +2590,10 @@
                         "array",
                         "null"
                     ]
+                },
+                "association_basis_qualifier": {
+                    "$ref": "#/$defs/AssociationBasisEnum",
+                    "description": "A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates) to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier when no more specific predicate exists to capture the intended meaning of the association."
                 },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
@@ -3399,6 +3415,10 @@
                         "null"
                     ]
                 },
+                "association_basis_qualifier": {
+                    "$ref": "#/$defs/AssociationBasisEnum",
+                    "description": "A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates) to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier when no more specific predicate exists to capture the intended meaning of the association."
+                },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
                     "enum": [
@@ -3827,6 +3847,16 @@
             ],
             "title": "Association",
             "type": "object"
+        },
+        "AssociationBasisEnum": {
+            "description": "Permissible values for the 'association basis qualifier', indicating the nature or basis of an association asserted using the 'associated with' predicate or one of its subpredicates.",
+            "enum": [
+                "statistical",
+                "functional",
+                "genetic"
+            ],
+            "title": "AssociationBasisEnum",
+            "type": "string"
         },
         "Attribute": {
             "additionalProperties": false,
@@ -4533,6 +4563,10 @@
                         "array",
                         "null"
                     ]
+                },
+                "association_basis_qualifier": {
+                    "$ref": "#/$defs/AssociationBasisEnum",
+                    "description": "A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates) to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier when no more specific predicate exists to capture the intended meaning of the association."
                 },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
@@ -6240,6 +6274,10 @@
                         "null"
                     ]
                 },
+                "association_basis_qualifier": {
+                    "$ref": "#/$defs/AssociationBasisEnum",
+                    "description": "A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates) to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier when no more specific predicate exists to capture the intended meaning of the association."
+                },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
                     "enum": [
@@ -6743,6 +6781,10 @@
                         "array",
                         "null"
                     ]
+                },
+                "association_basis_qualifier": {
+                    "$ref": "#/$defs/AssociationBasisEnum",
+                    "description": "A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates) to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier when no more specific predicate exists to capture the intended meaning of the association."
                 },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
@@ -7250,6 +7292,10 @@
                         "array",
                         "null"
                     ]
+                },
+                "association_basis_qualifier": {
+                    "$ref": "#/$defs/AssociationBasisEnum",
+                    "description": "A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates) to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier when no more specific predicate exists to capture the intended meaning of the association."
                 },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
@@ -8959,6 +9005,10 @@
                         "null"
                     ]
                 },
+                "association_basis_qualifier": {
+                    "$ref": "#/$defs/AssociationBasisEnum",
+                    "description": "A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates) to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier when no more specific predicate exists to capture the intended meaning of the association."
+                },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
                     "enum": [
@@ -9495,6 +9545,10 @@
                         "null"
                     ]
                 },
+                "association_basis_qualifier": {
+                    "$ref": "#/$defs/AssociationBasisEnum",
+                    "description": "A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates) to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier when no more specific predicate exists to capture the intended meaning of the association."
+                },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
                     "enum": [
@@ -9998,6 +10052,10 @@
                         "array",
                         "null"
                     ]
+                },
+                "association_basis_qualifier": {
+                    "$ref": "#/$defs/AssociationBasisEnum",
+                    "description": "A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates) to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier when no more specific predicate exists to capture the intended meaning of the association."
                 },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
@@ -10581,6 +10639,10 @@
                         "null"
                     ]
                 },
+                "association_basis_qualifier": {
+                    "$ref": "#/$defs/AssociationBasisEnum",
+                    "description": "A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates) to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier when no more specific predicate exists to capture the intended meaning of the association."
+                },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
                     "enum": [
@@ -11099,6 +11161,10 @@
                         "string",
                         "null"
                     ]
+                },
+                "association_basis_qualifier": {
+                    "$ref": "#/$defs/AssociationBasisEnum",
+                    "description": "A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates) to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier when no more specific predicate exists to capture the intended meaning of the association."
                 },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
@@ -12137,6 +12203,10 @@
                         "null"
                     ]
                 },
+                "association_basis_qualifier": {
+                    "$ref": "#/$defs/AssociationBasisEnum",
+                    "description": "A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates) to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier when no more specific predicate exists to capture the intended meaning of the association."
+                },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
                     "enum": [
@@ -12704,6 +12774,10 @@
                         "array",
                         "null"
                     ]
+                },
+                "association_basis_qualifier": {
+                    "$ref": "#/$defs/AssociationBasisEnum",
+                    "description": "A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates) to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier when no more specific predicate exists to capture the intended meaning of the association."
                 },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
@@ -13659,6 +13733,10 @@
                         "null"
                     ]
                 },
+                "association_basis_qualifier": {
+                    "$ref": "#/$defs/AssociationBasisEnum",
+                    "description": "A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates) to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier when no more specific predicate exists to capture the intended meaning of the association."
+                },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
                     "enum": [
@@ -14252,6 +14330,10 @@
                         "array",
                         "null"
                     ]
+                },
+                "association_basis_qualifier": {
+                    "$ref": "#/$defs/AssociationBasisEnum",
+                    "description": "A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates) to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier when no more specific predicate exists to capture the intended meaning of the association."
                 },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
@@ -15129,6 +15211,10 @@
                         "null"
                     ]
                 },
+                "association_basis_qualifier": {
+                    "$ref": "#/$defs/AssociationBasisEnum",
+                    "description": "A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates) to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier when no more specific predicate exists to capture the intended meaning of the association."
+                },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
                     "enum": [
@@ -15649,6 +15735,10 @@
                         "array",
                         "null"
                     ]
+                },
+                "association_basis_qualifier": {
+                    "$ref": "#/$defs/AssociationBasisEnum",
+                    "description": "A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates) to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier when no more specific predicate exists to capture the intended meaning of the association."
                 },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
@@ -16176,6 +16266,10 @@
                         "array",
                         "null"
                     ]
+                },
+                "association_basis_qualifier": {
+                    "$ref": "#/$defs/AssociationBasisEnum",
+                    "description": "A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates) to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier when no more specific predicate exists to capture the intended meaning of the association."
                 },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
@@ -16931,6 +17025,10 @@
                         "null"
                     ]
                 },
+                "association_basis_qualifier": {
+                    "$ref": "#/$defs/AssociationBasisEnum",
+                    "description": "A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates) to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier when no more specific predicate exists to capture the intended meaning of the association."
+                },
                 "catalyst_qualifier": {
                     "description": "this connects the derivation edge to the chemical entity that catalyzes the reaction that causes the subject chemical to transform into the object chemical.",
                     "items": {
@@ -17456,6 +17554,10 @@
                         "null"
                     ]
                 },
+                "association_basis_qualifier": {
+                    "$ref": "#/$defs/AssociationBasisEnum",
+                    "description": "A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates) to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier when no more specific predicate exists to capture the intended meaning of the association."
+                },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
                     "enum": [
@@ -17976,6 +18078,10 @@
                         "array",
                         "null"
                     ]
+                },
+                "association_basis_qualifier": {
+                    "$ref": "#/$defs/AssociationBasisEnum",
+                    "description": "A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates) to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier when no more specific predicate exists to capture the intended meaning of the association."
                 },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
@@ -18534,6 +18640,10 @@
                         "array",
                         "null"
                     ]
+                },
+                "association_basis_qualifier": {
+                    "$ref": "#/$defs/AssociationBasisEnum",
+                    "description": "A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates) to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier when no more specific predicate exists to capture the intended meaning of the association."
                 },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
@@ -19309,6 +19419,10 @@
                         "null"
                     ]
                 },
+                "association_basis_qualifier": {
+                    "$ref": "#/$defs/AssociationBasisEnum",
+                    "description": "A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates) to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier when no more specific predicate exists to capture the intended meaning of the association."
+                },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
                     "enum": [
@@ -19908,6 +20022,10 @@
                         "array",
                         "null"
                     ]
+                },
+                "association_basis_qualifier": {
+                    "$ref": "#/$defs/AssociationBasisEnum",
+                    "description": "A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates) to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier when no more specific predicate exists to capture the intended meaning of the association."
                 },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
@@ -20798,6 +20916,10 @@
                         "null"
                     ]
                 },
+                "association_basis_qualifier": {
+                    "$ref": "#/$defs/AssociationBasisEnum",
+                    "description": "A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates) to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier when no more specific predicate exists to capture the intended meaning of the association."
+                },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
                     "enum": [
@@ -21366,6 +21488,10 @@
                         "null"
                     ]
                 },
+                "association_basis_qualifier": {
+                    "$ref": "#/$defs/AssociationBasisEnum",
+                    "description": "A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates) to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier when no more specific predicate exists to capture the intended meaning of the association."
+                },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
                     "enum": [
@@ -21933,6 +22059,10 @@
                         "array",
                         "null"
                     ]
+                },
+                "association_basis_qualifier": {
+                    "$ref": "#/$defs/AssociationBasisEnum",
+                    "description": "A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates) to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier when no more specific predicate exists to capture the intended meaning of the association."
                 },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
@@ -26494,6 +26624,10 @@
                         "null"
                     ]
                 },
+                "association_basis_qualifier": {
+                    "$ref": "#/$defs/AssociationBasisEnum",
+                    "description": "A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates) to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier when no more specific predicate exists to capture the intended meaning of the association."
+                },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
                     "enum": [
@@ -27012,6 +27146,10 @@
                         "string",
                         "null"
                     ]
+                },
+                "association_basis_qualifier": {
+                    "$ref": "#/$defs/AssociationBasisEnum",
+                    "description": "A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates) to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier when no more specific predicate exists to capture the intended meaning of the association."
                 },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
@@ -29012,6 +29150,10 @@
                         "null"
                     ]
                 },
+                "association_basis_qualifier": {
+                    "$ref": "#/$defs/AssociationBasisEnum",
+                    "description": "A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates) to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier when no more specific predicate exists to capture the intended meaning of the association."
+                },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
                     "enum": [
@@ -30019,6 +30161,10 @@
                         "null"
                     ]
                 },
+                "association_basis_qualifier": {
+                    "$ref": "#/$defs/AssociationBasisEnum",
+                    "description": "A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates) to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier when no more specific predicate exists to capture the intended meaning of the association."
+                },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
                     "enum": [
@@ -30526,6 +30672,10 @@
                         "null"
                     ]
                 },
+                "association_basis_qualifier": {
+                    "$ref": "#/$defs/AssociationBasisEnum",
+                    "description": "A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates) to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier when no more specific predicate exists to capture the intended meaning of the association."
+                },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
                     "enum": [
@@ -31029,6 +31179,10 @@
                         "array",
                         "null"
                     ]
+                },
+                "association_basis_qualifier": {
+                    "$ref": "#/$defs/AssociationBasisEnum",
+                    "description": "A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates) to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier when no more specific predicate exists to capture the intended meaning of the association."
                 },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
@@ -31622,6 +31776,10 @@
                         "null"
                     ]
                 },
+                "association_basis_qualifier": {
+                    "$ref": "#/$defs/AssociationBasisEnum",
+                    "description": "A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates) to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier when no more specific predicate exists to capture the intended meaning of the association."
+                },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
                     "enum": [
@@ -32125,6 +32283,10 @@
                         "array",
                         "null"
                     ]
+                },
+                "association_basis_qualifier": {
+                    "$ref": "#/$defs/AssociationBasisEnum",
+                    "description": "A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates) to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier when no more specific predicate exists to capture the intended meaning of the association."
                 },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
@@ -33568,6 +33730,10 @@
                         "null"
                     ]
                 },
+                "association_basis_qualifier": {
+                    "$ref": "#/$defs/AssociationBasisEnum",
+                    "description": "A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates) to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier when no more specific predicate exists to capture the intended meaning of the association."
+                },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
                     "enum": [
@@ -34361,6 +34527,10 @@
                         "null"
                     ]
                 },
+                "association_basis_qualifier": {
+                    "$ref": "#/$defs/AssociationBasisEnum",
+                    "description": "A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates) to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier when no more specific predicate exists to capture the intended meaning of the association."
+                },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
                     "enum": [
@@ -35050,6 +35220,10 @@
                         "array",
                         "null"
                     ]
+                },
+                "association_basis_qualifier": {
+                    "$ref": "#/$defs/AssociationBasisEnum",
+                    "description": "A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates) to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier when no more specific predicate exists to capture the intended meaning of the association."
                 },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
@@ -35919,6 +36093,10 @@
                         "array",
                         "null"
                     ]
+                },
+                "association_basis_qualifier": {
+                    "$ref": "#/$defs/AssociationBasisEnum",
+                    "description": "A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates) to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier when no more specific predicate exists to capture the intended meaning of the association."
                 },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
@@ -38180,6 +38358,10 @@
                         "null"
                     ]
                 },
+                "association_basis_qualifier": {
+                    "$ref": "#/$defs/AssociationBasisEnum",
+                    "description": "A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates) to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier when no more specific predicate exists to capture the intended meaning of the association."
+                },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
                     "enum": [
@@ -38934,6 +39116,10 @@
                         "null"
                     ]
                 },
+                "association_basis_qualifier": {
+                    "$ref": "#/$defs/AssociationBasisEnum",
+                    "description": "A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates) to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier when no more specific predicate exists to capture the intended meaning of the association."
+                },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
                     "enum": [
@@ -39452,6 +39638,10 @@
                         "array",
                         "null"
                     ]
+                },
+                "association_basis_qualifier": {
+                    "$ref": "#/$defs/AssociationBasisEnum",
+                    "description": "A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates) to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier when no more specific predicate exists to capture the intended meaning of the association."
                 },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
@@ -40722,6 +40912,10 @@
                         "null"
                     ]
                 },
+                "association_basis_qualifier": {
+                    "$ref": "#/$defs/AssociationBasisEnum",
+                    "description": "A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates) to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier when no more specific predicate exists to capture the intended meaning of the association."
+                },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
                     "enum": [
@@ -41644,6 +41838,10 @@
                         "null"
                     ]
                 },
+                "association_basis_qualifier": {
+                    "$ref": "#/$defs/AssociationBasisEnum",
+                    "description": "A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates) to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier when no more specific predicate exists to capture the intended meaning of the association."
+                },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
                     "enum": [
@@ -42242,6 +42440,10 @@
                         "string",
                         "null"
                     ]
+                },
+                "association_basis_qualifier": {
+                    "$ref": "#/$defs/AssociationBasisEnum",
+                    "description": "A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates) to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier when no more specific predicate exists to capture the intended meaning of the association."
                 },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
@@ -43043,6 +43245,10 @@
                         "null"
                     ]
                 },
+                "association_basis_qualifier": {
+                    "$ref": "#/$defs/AssociationBasisEnum",
+                    "description": "A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates) to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier when no more specific predicate exists to capture the intended meaning of the association."
+                },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
                     "enum": [
@@ -43581,6 +43787,10 @@
                         "string",
                         "null"
                     ]
+                },
+                "association_basis_qualifier": {
+                    "$ref": "#/$defs/AssociationBasisEnum",
+                    "description": "A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates) to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier when no more specific predicate exists to capture the intended meaning of the association."
                 },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
@@ -44231,6 +44441,10 @@
                         "null"
                     ]
                 },
+                "association_basis_qualifier": {
+                    "$ref": "#/$defs/AssociationBasisEnum",
+                    "description": "A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates) to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier when no more specific predicate exists to capture the intended meaning of the association."
+                },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
                     "enum": [
@@ -44734,6 +44948,10 @@
                         "array",
                         "null"
                     ]
+                },
+                "association_basis_qualifier": {
+                    "$ref": "#/$defs/AssociationBasisEnum",
+                    "description": "A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates) to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier when no more specific predicate exists to capture the intended meaning of the association."
                 },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
@@ -45320,6 +45538,10 @@
                         "null"
                     ]
                 },
+                "association_basis_qualifier": {
+                    "$ref": "#/$defs/AssociationBasisEnum",
+                    "description": "A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates) to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier when no more specific predicate exists to capture the intended meaning of the association."
+                },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
                     "enum": [
@@ -45863,6 +46085,10 @@
                         "string",
                         "null"
                     ]
+                },
+                "association_basis_qualifier": {
+                    "$ref": "#/$defs/AssociationBasisEnum",
+                    "description": "A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates) to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier when no more specific predicate exists to capture the intended meaning of the association."
                 },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
@@ -46436,6 +46662,10 @@
                         "null"
                     ]
                 },
+                "association_basis_qualifier": {
+                    "$ref": "#/$defs/AssociationBasisEnum",
+                    "description": "A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates) to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier when no more specific predicate exists to capture the intended meaning of the association."
+                },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
                     "enum": [
@@ -46963,6 +47193,10 @@
                         "array",
                         "null"
                     ]
+                },
+                "association_basis_qualifier": {
+                    "$ref": "#/$defs/AssociationBasisEnum",
+                    "description": "A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates) to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier when no more specific predicate exists to capture the intended meaning of the association."
                 },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
@@ -47539,6 +47773,10 @@
                         "array",
                         "null"
                     ]
+                },
+                "association_basis_qualifier": {
+                    "$ref": "#/$defs/AssociationBasisEnum",
+                    "description": "A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates) to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier when no more specific predicate exists to capture the intended meaning of the association."
                 },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
@@ -48147,6 +48385,10 @@
                         "null"
                     ]
                 },
+                "association_basis_qualifier": {
+                    "$ref": "#/$defs/AssociationBasisEnum",
+                    "description": "A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates) to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier when no more specific predicate exists to capture the intended meaning of the association."
+                },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
                     "enum": [
@@ -48653,6 +48895,10 @@
                         "array",
                         "null"
                     ]
+                },
+                "association_basis_qualifier": {
+                    "$ref": "#/$defs/AssociationBasisEnum",
+                    "description": "A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates) to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier when no more specific predicate exists to capture the intended meaning of the association."
                 },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
@@ -49236,6 +49482,10 @@
                         "null"
                     ]
                 },
+                "association_basis_qualifier": {
+                    "$ref": "#/$defs/AssociationBasisEnum",
+                    "description": "A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates) to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier when no more specific predicate exists to capture the intended meaning of the association."
+                },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
                     "enum": [
@@ -49743,6 +49993,10 @@
                         "null"
                     ]
                 },
+                "association_basis_qualifier": {
+                    "$ref": "#/$defs/AssociationBasisEnum",
+                    "description": "A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates) to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier when no more specific predicate exists to capture the intended meaning of the association."
+                },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
                     "enum": [
@@ -50246,6 +50500,10 @@
                         "array",
                         "null"
                     ]
+                },
+                "association_basis_qualifier": {
+                    "$ref": "#/$defs/AssociationBasisEnum",
+                    "description": "A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates) to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier when no more specific predicate exists to capture the intended meaning of the association."
                 },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
@@ -50758,6 +51016,10 @@
                         "string",
                         "null"
                     ]
+                },
+                "association_basis_qualifier": {
+                    "$ref": "#/$defs/AssociationBasisEnum",
+                    "description": "A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates) to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier when no more specific predicate exists to capture the intended meaning of the association."
                 },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
@@ -52049,6 +52311,10 @@
                         "null"
                     ]
                 },
+                "association_basis_qualifier": {
+                    "$ref": "#/$defs/AssociationBasisEnum",
+                    "description": "A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates) to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier when no more specific predicate exists to capture the intended meaning of the association."
+                },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
                     "enum": [
@@ -52798,6 +53064,10 @@
                         "null"
                     ]
                 },
+                "association_basis_qualifier": {
+                    "$ref": "#/$defs/AssociationBasisEnum",
+                    "description": "A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates) to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier when no more specific predicate exists to capture the intended meaning of the association."
+                },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
                     "enum": [
@@ -53341,6 +53611,10 @@
                         "array",
                         "null"
                     ]
+                },
+                "association_basis_qualifier": {
+                    "$ref": "#/$defs/AssociationBasisEnum",
+                    "description": "A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates) to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier when no more specific predicate exists to capture the intended meaning of the association."
                 },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
@@ -53911,6 +54185,10 @@
                         "null"
                     ]
                 },
+                "association_basis_qualifier": {
+                    "$ref": "#/$defs/AssociationBasisEnum",
+                    "description": "A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates) to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier when no more specific predicate exists to capture the intended meaning of the association."
+                },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
                     "enum": [
@@ -54414,6 +54692,10 @@
                         "array",
                         "null"
                     ]
+                },
+                "association_basis_qualifier": {
+                    "$ref": "#/$defs/AssociationBasisEnum",
+                    "description": "A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates) to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier when no more specific predicate exists to capture the intended meaning of the association."
                 },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
@@ -54921,6 +55203,10 @@
                         "array",
                         "null"
                     ]
+                },
+                "association_basis_qualifier": {
+                    "$ref": "#/$defs/AssociationBasisEnum",
+                    "description": "A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates) to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier when no more specific predicate exists to capture the intended meaning of the association."
                 },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
@@ -55499,6 +55785,10 @@
                         "array",
                         "null"
                     ]
+                },
+                "association_basis_qualifier": {
+                    "$ref": "#/$defs/AssociationBasisEnum",
+                    "description": "A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates) to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier when no more specific predicate exists to capture the intended meaning of the association."
                 },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
@@ -58261,6 +58551,10 @@
                         "null"
                     ]
                 },
+                "association_basis_qualifier": {
+                    "$ref": "#/$defs/AssociationBasisEnum",
+                    "description": "A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates) to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier when no more specific predicate exists to capture the intended meaning of the association."
+                },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
                     "enum": [
@@ -60949,6 +61243,10 @@
                         "null"
                     ]
                 },
+                "association_basis_qualifier": {
+                    "$ref": "#/$defs/AssociationBasisEnum",
+                    "description": "A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates) to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier when no more specific predicate exists to capture the intended meaning of the association."
+                },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
                     "enum": [
@@ -61554,6 +61852,10 @@
                         "null"
                     ]
                 },
+                "association_basis_qualifier": {
+                    "$ref": "#/$defs/AssociationBasisEnum",
+                    "description": "A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates) to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier when no more specific predicate exists to capture the intended meaning of the association."
+                },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
                     "enum": [
@@ -62064,6 +62366,10 @@
                         "array",
                         "null"
                     ]
+                },
+                "association_basis_qualifier": {
+                    "$ref": "#/$defs/AssociationBasisEnum",
+                    "description": "A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates) to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier when no more specific predicate exists to capture the intended meaning of the association."
                 },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
@@ -62607,6 +62913,10 @@
                         "array",
                         "null"
                     ]
+                },
+                "association_basis_qualifier": {
+                    "$ref": "#/$defs/AssociationBasisEnum",
+                    "description": "A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates) to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier when no more specific predicate exists to capture the intended meaning of the association."
                 },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
@@ -63504,6 +63814,10 @@
                         "null"
                     ]
                 },
+                "association_basis_qualifier": {
+                    "$ref": "#/$defs/AssociationBasisEnum",
+                    "description": "A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates) to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier when no more specific predicate exists to capture the intended meaning of the association."
+                },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
                     "enum": [
@@ -64021,6 +64335,10 @@
                         "array",
                         "null"
                     ]
+                },
+                "association_basis_qualifier": {
+                    "$ref": "#/$defs/AssociationBasisEnum",
+                    "description": "A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates) to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier when no more specific predicate exists to capture the intended meaning of the association."
                 },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
@@ -65024,6 +65342,10 @@
                         "null"
                     ]
                 },
+                "association_basis_qualifier": {
+                    "$ref": "#/$defs/AssociationBasisEnum",
+                    "description": "A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates) to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier when no more specific predicate exists to capture the intended meaning of the association."
+                },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
                     "enum": [
@@ -65528,6 +65850,10 @@
                         "null"
                     ]
                 },
+                "association_basis_qualifier": {
+                    "$ref": "#/$defs/AssociationBasisEnum",
+                    "description": "A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates) to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier when no more specific predicate exists to capture the intended meaning of the association."
+                },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
                     "enum": [
@@ -66031,6 +66357,10 @@
                         "array",
                         "null"
                     ]
+                },
+                "association_basis_qualifier": {
+                    "$ref": "#/$defs/AssociationBasisEnum",
+                    "description": "A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates) to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier when no more specific predicate exists to capture the intended meaning of the association."
                 },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
@@ -67303,6 +67633,10 @@
                         "array",
                         "null"
                     ]
+                },
+                "association_basis_qualifier": {
+                    "$ref": "#/$defs/AssociationBasisEnum",
+                    "description": "A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates) to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier when no more specific predicate exists to capture the intended meaning of the association."
                 },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
@@ -69588,6 +69922,10 @@
                         "null"
                     ]
                 },
+                "association_basis_qualifier": {
+                    "$ref": "#/$defs/AssociationBasisEnum",
+                    "description": "A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates) to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier when no more specific predicate exists to capture the intended meaning of the association."
+                },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
                     "enum": [
@@ -70091,6 +70429,10 @@
                         "array",
                         "null"
                     ]
+                },
+                "association_basis_qualifier": {
+                    "$ref": "#/$defs/AssociationBasisEnum",
+                    "description": "A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates) to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier when no more specific predicate exists to capture the intended meaning of the association."
                 },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
@@ -70602,6 +70944,10 @@
                         "string",
                         "null"
                     ]
+                },
+                "association_basis_qualifier": {
+                    "$ref": "#/$defs/AssociationBasisEnum",
+                    "description": "A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates) to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier when no more specific predicate exists to capture the intended meaning of the association."
                 },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
@@ -71119,6 +71465,10 @@
                         "null"
                     ]
                 },
+                "association_basis_qualifier": {
+                    "$ref": "#/$defs/AssociationBasisEnum",
+                    "description": "A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates) to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier when no more specific predicate exists to capture the intended meaning of the association."
+                },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
                     "enum": [
@@ -71625,6 +71975,10 @@
                         "array",
                         "null"
                     ]
+                },
+                "association_basis_qualifier": {
+                    "$ref": "#/$defs/AssociationBasisEnum",
+                    "description": "A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates) to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier when no more specific predicate exists to capture the intended meaning of the association."
                 },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
@@ -72322,6 +72676,10 @@
                         "null"
                     ]
                 },
+                "association_basis_qualifier": {
+                    "$ref": "#/$defs/AssociationBasisEnum",
+                    "description": "A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates) to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier when no more specific predicate exists to capture the intended meaning of the association."
+                },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
                     "enum": [
@@ -72871,6 +73229,10 @@
                         "array",
                         "null"
                     ]
+                },
+                "association_basis_qualifier": {
+                    "$ref": "#/$defs/AssociationBasisEnum",
+                    "description": "A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates) to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier when no more specific predicate exists to capture the intended meaning of the association."
                 },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
@@ -73459,6 +73821,10 @@
                         "array",
                         "null"
                     ]
+                },
+                "association_basis_qualifier": {
+                    "$ref": "#/$defs/AssociationBasisEnum",
+                    "description": "A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates) to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier when no more specific predicate exists to capture the intended meaning of the association."
                 },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
@@ -75897,6 +76263,10 @@
                         "null"
                     ]
                 },
+                "association_basis_qualifier": {
+                    "$ref": "#/$defs/AssociationBasisEnum",
+                    "description": "A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates) to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier when no more specific predicate exists to capture the intended meaning of the association."
+                },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
                     "enum": [
@@ -76586,6 +76956,10 @@
                         "array",
                         "null"
                     ]
+                },
+                "association_basis_qualifier": {
+                    "$ref": "#/$defs/AssociationBasisEnum",
+                    "description": "A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates) to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier when no more specific predicate exists to capture the intended meaning of the association."
                 },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
@@ -78746,6 +79120,10 @@
                         "null"
                     ]
                 },
+                "association_basis_qualifier": {
+                    "$ref": "#/$defs/AssociationBasisEnum",
+                    "description": "A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates) to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier when no more specific predicate exists to capture the intended meaning of the association."
+                },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
                     "enum": [
@@ -80027,6 +80405,10 @@
                         "array",
                         "null"
                     ]
+                },
+                "association_basis_qualifier": {
+                    "$ref": "#/$defs/AssociationBasisEnum",
+                    "description": "A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates) to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier when no more specific predicate exists to capture the intended meaning of the association."
                 },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
@@ -82575,6 +82957,10 @@
                         "null"
                     ]
                 },
+                "association_basis_qualifier": {
+                    "$ref": "#/$defs/AssociationBasisEnum",
+                    "description": "A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates) to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier when no more specific predicate exists to capture the intended meaning of the association."
+                },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
                     "enum": [
@@ -83100,6 +83486,10 @@
                         "array",
                         "null"
                     ]
+                },
+                "association_basis_qualifier": {
+                    "$ref": "#/$defs/AssociationBasisEnum",
+                    "description": "A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates) to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier when no more specific predicate exists to capture the intended meaning of the association."
                 },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
@@ -84537,6 +84927,10 @@
                         "null"
                     ]
                 },
+                "association_basis_qualifier": {
+                    "$ref": "#/$defs/AssociationBasisEnum",
+                    "description": "A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates) to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier when no more specific predicate exists to capture the intended meaning of the association."
+                },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
                     "enum": [
@@ -85049,6 +85443,10 @@
                         "array",
                         "null"
                     ]
+                },
+                "association_basis_qualifier": {
+                    "$ref": "#/$defs/AssociationBasisEnum",
+                    "description": "A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates) to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier when no more specific predicate exists to capture the intended meaning of the association."
                 },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
@@ -85782,6 +86180,10 @@
                         "array",
                         "null"
                     ]
+                },
+                "association_basis_qualifier": {
+                    "$ref": "#/$defs/AssociationBasisEnum",
+                    "description": "A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates) to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier when no more specific predicate exists to capture the intended meaning of the association."
                 },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
@@ -88966,6 +89368,10 @@
                         "null"
                     ]
                 },
+                "association_basis_qualifier": {
+                    "$ref": "#/$defs/AssociationBasisEnum",
+                    "description": "A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates) to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier when no more specific predicate exists to capture the intended meaning of the association."
+                },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
                     "enum": [
@@ -89944,6 +90350,10 @@
                         "array",
                         "null"
                     ]
+                },
+                "association_basis_qualifier": {
+                    "$ref": "#/$defs/AssociationBasisEnum",
+                    "description": "A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates) to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier when no more specific predicate exists to capture the intended meaning of the association."
                 },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
@@ -90938,6 +91348,10 @@
                         "null"
                     ]
                 },
+                "association_basis_qualifier": {
+                    "$ref": "#/$defs/AssociationBasisEnum",
+                    "description": "A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates) to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier when no more specific predicate exists to capture the intended meaning of the association."
+                },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
                     "enum": [
@@ -91481,6 +91895,10 @@
                         "array",
                         "null"
                     ]
+                },
+                "association_basis_qualifier": {
+                    "$ref": "#/$defs/AssociationBasisEnum",
+                    "description": "A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates) to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier when no more specific predicate exists to capture the intended meaning of the association."
                 },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
@@ -92051,6 +92469,10 @@
                         "null"
                     ]
                 },
+                "association_basis_qualifier": {
+                    "$ref": "#/$defs/AssociationBasisEnum",
+                    "description": "A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates) to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier when no more specific predicate exists to capture the intended meaning of the association."
+                },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
                     "enum": [
@@ -92559,6 +92981,10 @@
                         "array",
                         "null"
                     ]
+                },
+                "association_basis_qualifier": {
+                    "$ref": "#/$defs/AssociationBasisEnum",
+                    "description": "A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates) to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier when no more specific predicate exists to capture the intended meaning of the association."
                 },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
@@ -93100,6 +93526,10 @@
                         "array",
                         "null"
                     ]
+                },
+                "association_basis_qualifier": {
+                    "$ref": "#/$defs/AssociationBasisEnum",
+                    "description": "A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates) to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier when no more specific predicate exists to capture the intended meaning of the association."
                 },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
@@ -93675,6 +94105,10 @@
                         "array",
                         "null"
                     ]
+                },
+                "association_basis_qualifier": {
+                    "$ref": "#/$defs/AssociationBasisEnum",
+                    "description": "A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates) to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier when no more specific predicate exists to capture the intended meaning of the association."
                 },
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag. In an RDF database it should be a biolink model class URI. This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`. In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",

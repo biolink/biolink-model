@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-08-05T05:13:49
+# Generation date: 2026-08-07T03:06:44
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/vocab/
@@ -8124,6 +8124,7 @@ class Association(Entity):
     elevate_to_prediction: Optional[Union[bool, Bool]] = None
     evidence_count: Optional[int] = None
     semmed_agreement_count: Optional[int] = None
+    association_basis_qualifier: Optional[Union[str, "AssociationBasisEnum"]] = None
     type: Optional[Union[str, list[str]]] = empty_list()
     category: Optional[Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]]] = empty_list()
 
@@ -8294,6 +8295,9 @@ class Association(Entity):
 
         if self.semmed_agreement_count is not None and not isinstance(self.semmed_agreement_count, int):
             self.semmed_agreement_count = int(self.semmed_agreement_count)
+
+        if self.association_basis_qualifier is not None and not isinstance(self.association_basis_qualifier, AssociationBasisEnum):
+            self.association_basis_qualifier = AssociationBasisEnum(self.association_basis_qualifier)
 
         if not isinstance(self.type, list):
             self.type = [self.type] if self.type is not None else []
@@ -16542,6 +16546,26 @@ class GeneToDiseasePredicateEnum(EnumDefinitionImpl):
         setattr(cls, "biolink:affects",
             PermissibleValue(text="biolink:affects"))
 
+class AssociationBasisEnum(EnumDefinitionImpl):
+    """
+    Permissible values for the 'association basis qualifier', indicating the nature or basis of an association
+    asserted using the 'associated with' predicate or one of its subpredicates.
+    """
+    statistical = PermissibleValue(
+        text="statistical",
+        description="""An association based on statistical dependence (i.e., non-independence), derived from analysis of observational or experimental data using an appropriate statistical method.""")
+    functional = PermissibleValue(
+        text="functional",
+        description="""An association based on the participation of two biological entities in a common biological function, process, pathway, reaction, molecular complex, interaction, gene expression program, or other functional system. Functionally associated entities need not interact directly or contribute in the same direction to the shared function; they are related by their involvement in the same biological phenomenon.""")
+    genetic = PermissibleValue(
+        text="genetic",
+        description="""An association based on the relationship of two biological entities through inherited genetic variation. Examples include associations between genetic variants and phenotypes, diseases, traits, gene expression levels, protein abundance, or other molecular or organismal phenotypes. Such associations do not necessarily imply causation or direct biological function and are typically identified through genetic association studies, including genome-wide association studies (GWAS), phenome-wide association studies (PheWAS), and quantitative trait locus (QTL) mapping (e.g., eQTL and pQTL analyses).""")
+
+    _defn = EnumDefinition(
+        name="AssociationBasisEnum",
+        description="""Permissible values for the 'association basis qualifier', indicating the nature or basis of an association asserted using the 'associated with' predicate or one of its subpredicates.""",
+    )
+
 # Slots
 class slots:
     pass
@@ -17070,6 +17094,9 @@ slots.species_context_qualifier = Slot(uri=BIOLINK.species_context_qualifier, na
 
 slots.disease_context_qualifier = Slot(uri=BIOLINK.disease_context_qualifier, name="disease context qualifier", curie=BIOLINK.curie('disease_context_qualifier'),
                    model_uri=BIOLINK.disease_context_qualifier, domain=Association, range=Optional[Union[str, DiseaseId]])
+
+slots.association_basis_qualifier = Slot(uri=BIOLINK.association_basis_qualifier, name="association basis qualifier", curie=BIOLINK.curie('association_basis_qualifier'),
+                   model_uri=BIOLINK.association_basis_qualifier, domain=Association, range=Optional[Union[str, "AssociationBasisEnum"]])
 
 slots.statistical_significance_qualifier = Slot(uri=BIOLINK.statistical_significance_qualifier, name="statistical significance qualifier", curie=BIOLINK.curie('statistical_significance_qualifier'),
                    model_uri=BIOLINK.statistical_significance_qualifier, domain=Association, range=Optional[Union[str, "StatisticalSignificanceQualifierEnum"]])
