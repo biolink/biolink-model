@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-08-04T14:48:48
+# Generation date: 2026-08-07T03:06:44
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/vocab/
@@ -406,6 +406,14 @@ class Unit(String):
     type_model_uri = BIOLINK.Unit
 
 
+class UnitPrefix(String):
+    """ A prefix to a unit indicative of the scaling of the unit, e.g., 'nano' with unit 'meter' implies a unit of 10e-9 meters """
+    type_class_uri = UO["0000046"]
+    type_class_curie = "UO:0000046"
+    type_name = "unit prefix"
+    type_model_uri = BIOLINK.UnitPrefix
+
+
 class TimeType(Time):
     """ A value representing a point in time, serialised as a lexical representation of xsd:time. """
     type_class_uri = XSD["string"]
@@ -508,6 +516,10 @@ class TextMiningStudyResultId(StudyResultId):
 
 
 class IceesStudyResultId(StudyResultId):
+    pass
+
+
+class ProteinLigandAssayResultId(StudyResultId):
     pass
 
 
@@ -660,10 +672,6 @@ class ChemicalEntityId(NamedThingId):
 
 
 class MolecularEntityId(ChemicalEntityId):
-    pass
-
-
-class AffinityMeasurementId(NamedThingId):
     pass
 
 
@@ -1753,8 +1761,9 @@ class Annotation(YAMLRoot):
 @dataclass(repr=False)
 class QuantityValue(Annotation):
     """
-    A value of an attribute that is quantitative and measurable, expressed as a combination of a unit and a numeric
-    value
+    A value of an attribute that is quantitative and measurable, expressed as a combination of a unit, (optional) unit
+    prefix and a numeric value. An optional binary relation qualifier may also be given, to allow capture of relative
+    values, e.g., <1000.0 nM meaning "less than 1000 nanometers"
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -1764,14 +1773,22 @@ class QuantityValue(Annotation):
     class_model_uri: ClassVar[URIRef] = BIOLINK.QuantityValue
 
     has_unit: Optional[Union[str, Unit]] = None
+    has_unit_prefix: Optional[Union[str, UnitPrefix]] = None
     has_numeric_value: Optional[float] = None
+    has_binary_relation: Optional[Union[str, "BinaryRelationEnum"]] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self.has_unit is not None and not isinstance(self.has_unit, Unit):
             self.has_unit = Unit(self.has_unit)
 
+        if self.has_unit_prefix is not None and not isinstance(self.has_unit_prefix, UnitPrefix):
+            self.has_unit_prefix = UnitPrefix(self.has_unit_prefix)
+
         if self.has_numeric_value is not None and not isinstance(self.has_numeric_value, float):
             self.has_numeric_value = float(self.has_numeric_value)
+
+        if self.has_binary_relation is not None and not isinstance(self.has_binary_relation, BinaryRelationEnum):
+            self.has_binary_relation = BinaryRelationEnum(self.has_binary_relation)
 
         super().__post_init__(**kwargs)
 
@@ -2696,6 +2713,71 @@ class IceesStudyResult(StudyResult):
         if not isinstance(self.log_odds_ratio_95_ci, list):
             self.log_odds_ratio_95_ci = [self.log_odds_ratio_95_ci] if self.log_odds_ratio_95_ci is not None else []
         self.log_odds_ratio_95_ci = [v if isinstance(v, float) else float(v) for v in self.log_odds_ratio_95_ci]
+
+        super().__post_init__(**kwargs)
+        if self._is_empty(self.category):
+            self.MissingRequiredField("category")
+        if not isinstance(self.category, list):
+            self.category = [self.category] if self.category is not None else []
+        self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
+
+
+@dataclass(repr=False)
+class ProteinLigandAssayResult(StudyResult):
+    """
+    The type of study result describing the strength of interaction affinity - or enzymatic interaction - between a
+    ligand and a target protein. Measured binding or enzymatic assay values are generally stated as the negative base
+    10 logarithm of the raw measurements. For instance (i.e., in a molecular interaction database like BindingDb) if a
+    ligand inhibits a target protein with a pIC50 of 8.6, then the affinity parameter is pIC50 and the affinity value
+    is 8.6.
+    """
+    _inherited_slots: ClassVar[list[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK["ProteinLigandAssayResult"]
+    class_class_curie: ClassVar[str] = "biolink:ProteinLigandAssayResult"
+    class_name: ClassVar[str] = "protein ligand assay result"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.ProteinLigandAssayResult
+
+    id: Union[str, ProteinLigandAssayResultId] = None
+    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
+    pKd: Optional[Union[dict, QuantityValue]] = None
+    pKi: Optional[Union[dict, QuantityValue]] = None
+    pIC50: Optional[Union[dict, QuantityValue]] = None
+    pEC50: Optional[Union[dict, QuantityValue]] = None
+    pAC50: Optional[Union[dict, QuantityValue]] = None
+    pXC50: Optional[Union[dict, QuantityValue]] = None
+    pKon: Optional[Union[dict, QuantityValue]] = None
+    pKoff: Optional[Union[dict, QuantityValue]] = None
+
+    def __post_init__(self, *_: str, **kwargs: Any):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, ProteinLigandAssayResultId):
+            self.id = ProteinLigandAssayResultId(self.id)
+
+        if self.pKd is not None and not isinstance(self.pKd, QuantityValue):
+            self.pKd = QuantityValue(**as_dict(self.pKd))
+
+        if self.pKi is not None and not isinstance(self.pKi, QuantityValue):
+            self.pKi = QuantityValue(**as_dict(self.pKi))
+
+        if self.pIC50 is not None and not isinstance(self.pIC50, QuantityValue):
+            self.pIC50 = QuantityValue(**as_dict(self.pIC50))
+
+        if self.pEC50 is not None and not isinstance(self.pEC50, QuantityValue):
+            self.pEC50 = QuantityValue(**as_dict(self.pEC50))
+
+        if self.pAC50 is not None and not isinstance(self.pAC50, QuantityValue):
+            self.pAC50 = QuantityValue(**as_dict(self.pAC50))
+
+        if self.pXC50 is not None and not isinstance(self.pXC50, QuantityValue):
+            self.pXC50 = QuantityValue(**as_dict(self.pXC50))
+
+        if self.pKon is not None and not isinstance(self.pKon, QuantityValue):
+            self.pKon = QuantityValue(**as_dict(self.pKon))
+
+        if self.pKoff is not None and not isinstance(self.pKoff, QuantityValue):
+            self.pKoff = QuantityValue(**as_dict(self.pKoff))
 
         super().__post_init__(**kwargs)
         if self._is_empty(self.category):
@@ -4206,49 +4288,6 @@ class MolecularEntity(ChemicalEntity):
         if not isinstance(self.subsets, list):
             self.subsets = [self.subsets] if self.subsets is not None else []
         self.subsets = [v if isinstance(v, str) else str(v) for v in self.subsets]
-
-        super().__post_init__(**kwargs)
-        if self._is_empty(self.category):
-            self.MissingRequiredField("category")
-        if not isinstance(self.category, list):
-            self.category = [self.category] if self.category is not None else []
-        self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
-
-
-@dataclass(repr=False)
-class AffinityMeasurement(NamedThing):
-    """
-    The type of measurement describing the strength of an affinity between two entities. For instance, if a chemical
-    inhibits a protein with a pIC50 of 8.6, the affinity parameter is pIC50 and the affinity value is 8.6. The binary
-    relation, if given, qualifies the affinity as greater than, less than, or equal.
-    """
-    _inherited_slots: ClassVar[list[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = BIOLINK["AffinityMeasurement"]
-    class_class_curie: ClassVar[str] = "biolink:AffinityMeasurement"
-    class_name: ClassVar[str] = "affinity measurement"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.AffinityMeasurement
-
-    id: Union[str, AffinityMeasurementId] = None
-    category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
-    affinity_parameter: Optional[Union[str, "AffinityParameterEnum"]] = None
-    affinity: Optional[float] = None
-    has_binary_relation: Optional[Union[str, "BinaryRelationEnum"]] = None
-
-    def __post_init__(self, *_: str, **kwargs: Any):
-        if self._is_empty(self.id):
-            self.MissingRequiredField("id")
-        if not isinstance(self.id, AffinityMeasurementId):
-            self.id = AffinityMeasurementId(self.id)
-
-        if self.affinity_parameter is not None and not isinstance(self.affinity_parameter, AffinityParameterEnum):
-            self.affinity_parameter = AffinityParameterEnum(self.affinity_parameter)
-
-        if self.affinity is not None and not isinstance(self.affinity, float):
-            self.affinity = float(self.affinity)
-
-        if self.has_binary_relation is not None and not isinstance(self.has_binary_relation, BinaryRelationEnum):
-            self.has_binary_relation = BinaryRelationEnum(self.has_binary_relation)
 
         super().__post_init__(**kwargs)
         if self._is_empty(self.category):
@@ -8085,6 +8124,7 @@ class Association(Entity):
     elevate_to_prediction: Optional[Union[bool, Bool]] = None
     evidence_count: Optional[int] = None
     semmed_agreement_count: Optional[int] = None
+    association_basis_qualifier: Optional[Union[str, "AssociationBasisEnum"]] = None
     type: Optional[Union[str, list[str]]] = empty_list()
     category: Optional[Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]]] = empty_list()
 
@@ -8255,6 +8295,9 @@ class Association(Entity):
 
         if self.semmed_agreement_count is not None and not isinstance(self.semmed_agreement_count, int):
             self.semmed_agreement_count = int(self.semmed_agreement_count)
+
+        if self.association_basis_qualifier is not None and not isinstance(self.association_basis_qualifier, AssociationBasisEnum):
+            self.association_basis_qualifier = AssociationBasisEnum(self.association_basis_qualifier)
 
         if not isinstance(self.type, list):
             self.type = [self.type] if self.type is not None else []
@@ -10208,7 +10251,6 @@ class ChemicalGeneInteractionAssociation(Association):
     subject: Union[str, ChemicalEntityId] = None
     object: Union[dict, GeneOrGeneProduct] = None
     predicate: Union[str, URIorCURIE] = None
-    has_affinity: Optional[Union[dict[Union[str, AffinityMeasurementId], Union[dict, AffinityMeasurement]], list[Union[dict, AffinityMeasurement]]]] = empty_dict()
     subject_form_or_variant_qualifier: Optional[Union[str, "ChemicalOrGeneOrGeneProductFormOrVariantEnum"]] = None
     subject_part_qualifier: Optional[Union[str, "GeneOrGeneProductOrChemicalPartQualifierEnum"]] = None
     subject_derivative_qualifier: Optional[Union[str, "ChemicalEntityDerivativeEnum"]] = None
@@ -10245,8 +10287,6 @@ class ChemicalGeneInteractionAssociation(Association):
             self.MissingRequiredField("predicate")
         if not isinstance(self.predicate, URIorCURIE):
             self.predicate = URIorCURIE(self.predicate)
-
-        self._normalize_inlined_as_list(slot_name="has_affinity", slot_type=AffinityMeasurement, key_name="id", keyed=True)
 
         if self.subject_form_or_variant_qualifier is not None and not isinstance(self.subject_form_or_variant_qualifier, ChemicalOrGeneOrGeneProductFormOrVariantEnum):
             self.subject_form_or_variant_qualifier = ChemicalOrGeneOrGeneProductFormOrVariantEnum(self.subject_form_or_variant_qualifier)
@@ -16372,37 +16412,6 @@ class ResourceRoleEnum(EnumDefinitionImpl):
         description="""The role played by the information reource in serving as a source for an edge in a TRAPI message. Note that a given Edge should have one and only one 'primary' source, and may have any number of 'aggregator' or 'supporting data' sources.  This enumeration is found in Biolink Model, but is repeated here for convenience.""",
     )
 
-class AffinityParameterEnum(EnumDefinitionImpl):
-    """
-    The types of parameters that can be used to describe the affinity between two entities, characteristically
-    chemicals and proteins. The values are generally stated as the negative base 10 logarithm of the raw measurements.
-    """
-    pIC50 = PermissibleValue(
-        text="pIC50",
-        description="""Negative base 10 logarithm of the the inhibitory concentration 50% (IC50) measures the concentration needed to block or inhibit a biological response.""")
-    pEC50 = PermissibleValue(
-        text="pEC50",
-        description="""Negative base 10 logarithm of the molar concentration of a chemical that produces a 50% excitation of a function""")
-    pAC50 = PermissibleValue(text="pAC50")
-    pXC50 = PermissibleValue(text="pXC50")
-    pKi = PermissibleValue(
-        text="pKi",
-        description="""Negative base 10 logarithm of the equilibrium binding affinity for a ligand that reduces the activity of its binding partner. Ki represents the concentration at which the inhibitor ligand occupies 50% of the receptor sites when no competing ligand is present""")
-    pKon = PermissibleValue(
-        text="pKon",
-        description="""Negative base 10 logarithm of the association rate constant (Kon) describes the rate at which molecules bind to each other.""")
-    pKoff = PermissibleValue(
-        text="pKoff",
-        description="""Negative base 10 logarithm of the dissociation rate constant (koff) describes the rate at which they dissociate.""")
-    pKd = PermissibleValue(
-        text="pKd",
-        description="""Negative base 10 logarithm of the equilibrium dissociation constant (KD) which is a measure of the binding affinity and is defined as the ratio of koff to kon.""")
-
-    _defn = EnumDefinition(
-        name="AffinityParameterEnum",
-        description="""The types of parameters that can be used to describe the affinity between two entities, characteristically chemicals and proteins. The values are generally stated as the negative base 10 logarithm of the raw measurements.""",
-    )
-
 class FDAIDAAdverseEventEnum(EnumDefinitionImpl):
     """
     please consult with the FDA guidelines as proposed in this document:
@@ -16537,6 +16546,26 @@ class GeneToDiseasePredicateEnum(EnumDefinitionImpl):
         setattr(cls, "biolink:affects",
             PermissibleValue(text="biolink:affects"))
 
+class AssociationBasisEnum(EnumDefinitionImpl):
+    """
+    Permissible values for the 'association basis qualifier', indicating the nature or basis of an association
+    asserted using the 'associated with' predicate or one of its subpredicates.
+    """
+    statistical = PermissibleValue(
+        text="statistical",
+        description="""An association based on statistical dependence (i.e., non-independence), derived from analysis of observational or experimental data using an appropriate statistical method.""")
+    functional = PermissibleValue(
+        text="functional",
+        description="""An association based on the participation of two biological entities in a common biological function, process, pathway, reaction, molecular complex, interaction, gene expression program, or other functional system. Functionally associated entities need not interact directly or contribute in the same direction to the shared function; they are related by their involvement in the same biological phenomenon.""")
+    genetic = PermissibleValue(
+        text="genetic",
+        description="""An association based on the relationship of two biological entities through inherited genetic variation. Examples include associations between genetic variants and phenotypes, diseases, traits, gene expression levels, protein abundance, or other molecular or organismal phenotypes. Such associations do not necessarily imply causation or direct biological function and are typically identified through genetic association studies, including genome-wide association studies (GWAS), phenome-wide association studies (PheWAS), and quantitative trait locus (QTL) mapping (e.g., eQTL and pQTL analyses).""")
+
+    _defn = EnumDefinition(
+        name="AssociationBasisEnum",
+        description="""Permissible values for the 'association basis qualifier', indicating the nature or basis of an association asserted using the 'associated with' predicate or one of its subpredicates.""",
+    )
+
 # Slots
 class slots:
     pass
@@ -16570,6 +16599,9 @@ slots.has_binary_relation = Slot(uri=BIOLINK.has_binary_relation, name="has bina
 
 slots.has_unit = Slot(uri=BIOLINK.has_unit, name="has unit", curie=BIOLINK.curie('has_unit'),
                    model_uri=BIOLINK.has_unit, domain=QuantityValue, range=Optional[Union[str, Unit]])
+
+slots.has_unit_prefix = Slot(uri=BIOLINK.has_unit_prefix, name="has unit prefix", curie=BIOLINK.curie('has_unit_prefix'),
+                   model_uri=BIOLINK.has_unit_prefix, domain=QuantityValue, range=Optional[Union[str, UnitPrefix]])
 
 slots.base_coordinate = Slot(uri=BIOLINK.base_coordinate, name="base coordinate", curie=BIOLINK.curie('base_coordinate'),
                    model_uri=BIOLINK.base_coordinate, domain=GenomicSequenceLocalization, range=Optional[int])
@@ -16937,15 +16969,6 @@ slots.max_tolerated_dose = Slot(uri=BIOLINK.max_tolerated_dose, name="max tolera
 slots.animal_model_available_from = Slot(uri=BIOLINK.animal_model_available_from, name="animal model available from", curie=BIOLINK.curie('animal_model_available_from'),
                    model_uri=BIOLINK.animal_model_available_from, domain=NamedThing, range=Optional[Union[Union[str, DiseaseOrPhenotypicFeatureId], list[Union[str, DiseaseOrPhenotypicFeatureId]]]])
 
-slots.affinity = Slot(uri=BIOLINK.affinity, name="affinity", curie=BIOLINK.curie('affinity'),
-                   model_uri=BIOLINK.affinity, domain=NamedThing, range=Optional[float])
-
-slots.affinity_parameter = Slot(uri=BIOLINK.affinity_parameter, name="affinity parameter", curie=BIOLINK.curie('affinity_parameter'),
-                   model_uri=BIOLINK.affinity_parameter, domain=NamedThing, range=Optional[Union[str, "AffinityParameterEnum"]])
-
-slots.has_affinity = Slot(uri=BIOLINK.has_affinity, name="has affinity", curie=BIOLINK.curie('has_affinity'),
-                   model_uri=BIOLINK.has_affinity, domain=Association, range=Optional[Union[dict[Union[str, AffinityMeasurementId], Union[dict, AffinityMeasurement]], list[Union[dict, AffinityMeasurement]]]])
-
 slots.FDA_adverse_event_level = Slot(uri=BIOLINK.FDA_adverse_event_level, name="FDA adverse event level", curie=BIOLINK.curie('FDA_adverse_event_level'),
                    model_uri=BIOLINK.FDA_adverse_event_level, domain=Association, range=Optional[Union[str, "FDAIDAAdverseEventEnum"]])
 
@@ -17071,6 +17094,9 @@ slots.species_context_qualifier = Slot(uri=BIOLINK.species_context_qualifier, na
 
 slots.disease_context_qualifier = Slot(uri=BIOLINK.disease_context_qualifier, name="disease context qualifier", curie=BIOLINK.curie('disease_context_qualifier'),
                    model_uri=BIOLINK.disease_context_qualifier, domain=Association, range=Optional[Union[str, DiseaseId]])
+
+slots.association_basis_qualifier = Slot(uri=BIOLINK.association_basis_qualifier, name="association basis qualifier", curie=BIOLINK.curie('association_basis_qualifier'),
+                   model_uri=BIOLINK.association_basis_qualifier, domain=Association, range=Optional[Union[str, "AssociationBasisEnum"]])
 
 slots.statistical_significance_qualifier = Slot(uri=BIOLINK.statistical_significance_qualifier, name="statistical significance qualifier", curie=BIOLINK.curie('statistical_significance_qualifier'),
                    model_uri=BIOLINK.statistical_significance_qualifier, domain=Association, range=Optional[Union[str, "StatisticalSignificanceQualifierEnum"]])
@@ -18074,6 +18100,30 @@ slots.phenotypic_state = Slot(uri=BIOLINK.phenotypic_state, name="phenotypic sta
 slots.allelic_requirement = Slot(uri=BIOLINK.allelic_requirement, name="allelic requirement", curie=BIOLINK.curie('allelic_requirement'),
                    model_uri=BIOLINK.allelic_requirement, domain=Association, range=Optional[str],
                    pattern=re.compile(r'^HP:\d{7}$'))
+
+slots.pIC50 = Slot(uri=BIOLINK.pIC50, name="pIC50", curie=BIOLINK.curie('pIC50'),
+                   model_uri=BIOLINK.pIC50, domain=NamedThing, range=Optional[Union[dict, QuantityValue]])
+
+slots.pEC50 = Slot(uri=BIOLINK.pEC50, name="pEC50", curie=BIOLINK.curie('pEC50'),
+                   model_uri=BIOLINK.pEC50, domain=NamedThing, range=Optional[Union[dict, QuantityValue]])
+
+slots.pAC50 = Slot(uri=BIOLINK.pAC50, name="pAC50", curie=BIOLINK.curie('pAC50'),
+                   model_uri=BIOLINK.pAC50, domain=NamedThing, range=Optional[Union[dict, QuantityValue]])
+
+slots.pXC50 = Slot(uri=BIOLINK.pXC50, name="pXC50", curie=BIOLINK.curie('pXC50'),
+                   model_uri=BIOLINK.pXC50, domain=NamedThing, range=Optional[Union[dict, QuantityValue]])
+
+slots.pKi = Slot(uri=BIOLINK.pKi, name="pKi", curie=BIOLINK.curie('pKi'),
+                   model_uri=BIOLINK.pKi, domain=NamedThing, range=Optional[Union[dict, QuantityValue]])
+
+slots.pKon = Slot(uri=BIOLINK.pKon, name="pKon", curie=BIOLINK.curie('pKon'),
+                   model_uri=BIOLINK.pKon, domain=NamedThing, range=Optional[Union[dict, QuantityValue]])
+
+slots.pKoff = Slot(uri=BIOLINK.pKoff, name="pKoff", curie=BIOLINK.curie('pKoff'),
+                   model_uri=BIOLINK.pKoff, domain=NamedThing, range=Optional[Union[dict, QuantityValue]])
+
+slots.pKd = Slot(uri=BIOLINK.pKd, name="pKd", curie=BIOLINK.curie('pKd'),
+                   model_uri=BIOLINK.pKd, domain=NamedThing, range=Optional[Union[dict, QuantityValue]])
 
 slots.publications = Slot(uri=BIOLINK.publications, name="publications", curie=BIOLINK.curie('publications'),
                    model_uri=BIOLINK.publications, domain=Association, range=Optional[Union[Union[str, PublicationId], list[Union[str, PublicationId]]]])

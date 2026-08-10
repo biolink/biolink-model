@@ -52,32 +52,6 @@ message Activity
   uriorcurie taxon = 0
  repeated  uriorcurie category = 0
  }
-// The type of measurement describing the strength of an affinity between two entities. For instance, if a chemical inhibits a protein with a pIC50 of 8.6, the affinity parameter is pIC50 and the affinity value is 8.6. The binary relation, if given, qualifies the affinity as greater than, less than, or equal.
-message AffinityMeasurement
- {
-  string id = 0
-  iriType iri = 0
- repeated  string type = 0
-  labelType name = 0
-  narrativeText description = 0
- repeated  attribute hasAttribute = 0
-  boolean deprecated = 0
- repeated  string providedBy = 0
- repeated  uriorcurie xref = 0
-  labelType fullName = 0
- repeated  labelType synonym = 0
- repeated  labelType exactSynonym = 0
- repeated  labelType broadSynonym = 0
- repeated  labelType narrowSynonym = 0
- repeated  labelType relatedSynonym = 0
- repeated  uriorcurie equivalentIdentifiers = 0
-  float informationContent = 0
-  uriorcurie taxon = 0
- repeated  uriorcurie category = 0
-  affinityParameterEnum affinityParameter = 0
-  float affinity = 0
-  binaryRelationEnum hasBinaryRelation = 0
- }
 // person, group, organization or project that provides a piece of information (i.e. a knowledge association)
 message Agent
  {
@@ -182,6 +156,7 @@ message AnatomicalEntityHasPartAnatomicalEntityAssociation
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
+  associationBasisEnum associationBasisQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   anatomicalEntity subject = 0
@@ -241,6 +216,7 @@ message AnatomicalEntityPartOfAnatomicalEntityAssociation
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
+  associationBasisEnum associationBasisQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   anatomicalEntity subject = 0
@@ -300,6 +276,7 @@ message AnatomicalEntityToAnatomicalEntityOntogenicAssociation
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
+  associationBasisEnum associationBasisQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   anatomicalEntity subject = 0
@@ -399,6 +376,7 @@ message Association
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
+  associationBasisEnum associationBasisQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
  }
@@ -537,6 +515,7 @@ message BehaviorToBehavioralFeatureAssociation
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
+  associationBasisEnum associationBasisQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   behavior subject = 0
@@ -726,6 +705,7 @@ message BiologicalProcessOrActivityToAnatomicalEntityAssociation
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
+  associationBasisEnum associationBasisQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   biologicalProcessOrActivity subject = 0
@@ -784,6 +764,7 @@ message BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
+  associationBasisEnum associationBasisQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   biologicalProcessOrActivity subject = 0
@@ -843,6 +824,7 @@ message BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
+  associationBasisEnum associationBasisQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   biologicalProcessOrActivity subject = 0
@@ -1057,6 +1039,7 @@ message CaseToDiseaseAssociation
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
+  associationBasisEnum associationBasisQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   namedThing subject = 0
@@ -1117,6 +1100,7 @@ message CaseToGeneAssociation
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
+  associationBasisEnum associationBasisQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   namedThing subject = 0
@@ -1178,6 +1162,7 @@ message CaseToPhenotypicFeatureAssociation
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
+  associationBasisEnum associationBasisQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   boolean negated = 0
@@ -1248,6 +1233,7 @@ message CaseToVariantAssociation
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
+  associationBasisEnum associationBasisQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   namedThing subject = 0
@@ -1309,6 +1295,7 @@ message CausalGeneToDiseaseAssociation
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
+  associationBasisEnum associationBasisQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   string subjectFormOrVariantQualifier = 0
@@ -1425,6 +1412,7 @@ message CellLineAsAModelOfDiseaseAssociation
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
+  associationBasisEnum associationBasisQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   disease diseaseContextQualifier = 0
@@ -1494,6 +1482,7 @@ message CellLineToDiseaseOrPhenotypicFeatureAssociation
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
+  associationBasisEnum associationBasisQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   diseaseOrPhenotypicFeature subject = 0
@@ -1606,6 +1595,7 @@ message ChemicalAffectsBiologicalEntityAssociation
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
+  associationBasisEnum associationBasisQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   chemicalOrGeneOrGeneProductFormOrVariantEnum subjectFormOrVariantQualifier = 0
@@ -1679,6 +1669,7 @@ message ChemicalAffectsGeneAssociation
   float stringdbCoexpressionScore = 0
   boolean elevateToPrediction = 0
   integer semmedAgreementCount = 0
+  associationBasisEnum associationBasisQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   chemicalOrGeneOrGeneProductFormOrVariantEnum subjectFormOrVariantQualifier = 0
@@ -1791,6 +1782,7 @@ message ChemicalEntityAssessesNamedThingAssociation
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
+  associationBasisEnum associationBasisQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   chemicalEntity subject = 0
@@ -1850,6 +1842,7 @@ message ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
+  associationBasisEnum associationBasisQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   directionQualifierEnum objectDirectionQualifier = 0
@@ -1910,6 +1903,7 @@ message ChemicalEntityToBiologicalProcessAssociation
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
+  associationBasisEnum associationBasisQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   organismTaxon speciesContextQualifier = 0
@@ -1973,6 +1967,7 @@ message ChemicalEntityToChemicalDerivationAssociation
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
+  associationBasisEnum associationBasisQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   organismTaxon speciesContextQualifier = 0
@@ -2034,6 +2029,7 @@ message ChemicalEntityToChemicalEntityAssociation
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
+  associationBasisEnum associationBasisQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   namedThing subject = 0
@@ -2096,6 +2092,7 @@ message ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
+  associationBasisEnum associationBasisQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   clinicalApprovalStatusEnum clinicalApprovalStatus = 0
@@ -2160,6 +2157,7 @@ message ChemicalEntityToPathwayAssociation
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
+  associationBasisEnum associationBasisQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   chemicalEntity subject = 0
@@ -2252,9 +2250,9 @@ message ChemicalGeneInteractionAssociation
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
+  associationBasisEnum associationBasisQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
- repeated  affinityMeasurement hasAffinity = 0
   chemicalOrGeneOrGeneProductFormOrVariantEnum subjectFormOrVariantQualifier = 0
   geneOrGeneProductOrChemicalPartQualifierEnum subjectPartQualifier = 0
   chemicalEntityDerivativeEnum subjectDerivativeQualifier = 0
@@ -2326,6 +2324,7 @@ message ChemicalGeneSensitivityAssociation
   float stringdbCoexpressionScore = 0
   boolean elevateToPrediction = 0
   integer semmedAgreementCount = 0
+  associationBasisEnum associationBasisQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   chemicalOrGeneOrGeneProductFormOrVariantEnum subjectFormOrVariantQualifier = 0
@@ -2441,6 +2440,7 @@ message ChemicalOrDrugOrTreatmentAdverseEventAssociation
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
+  associationBasisEnum associationBasisQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   fDAIDAAdverseEventEnum fDAAdverseEventLevel = 0
@@ -2511,6 +2511,7 @@ message ChemicalOrDrugOrTreatmentSideEffectAssociation
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
+  associationBasisEnum associationBasisQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   uriorcurie predicate = 0
@@ -2580,6 +2581,7 @@ message ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
+  associationBasisEnum associationBasisQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   uriorcurie predicate = 0
@@ -3115,6 +3117,7 @@ message ContributorAssociation
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
+  associationBasisEnum associationBasisQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   informationContentEntity subject = 0
@@ -3175,6 +3178,7 @@ message CorrelatedGeneToDiseaseAssociation
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
+  associationBasisEnum associationBasisQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   float zScore = 0
@@ -3432,6 +3436,7 @@ message DiseaseAssociatedWithResponseToChemicalEntityAssociation
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
+  associationBasisEnum associationBasisQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   responseEnum responseContextQualifier = 0
@@ -3554,6 +3559,7 @@ message DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
+  associationBasisEnum associationBasisQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   uriorcurie predicate = 0
@@ -3614,6 +3620,7 @@ message DiseaseOrPhenotypicFeatureToLocationAssociation
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
+  associationBasisEnum associationBasisQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   anatomicalEntity object = 0
@@ -3671,6 +3678,7 @@ message DiseaseToDiseaseAssociation
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
+  associationBasisEnum associationBasisQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   disease subject = 0
@@ -3740,6 +3748,7 @@ message DiseaseToExposureEventAssociation
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
+  associationBasisEnum associationBasisQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
  }
@@ -3797,6 +3806,7 @@ message DiseaseToPhenotypicFeatureAssociation
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
+  associationBasisEnum associationBasisQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   onset onsetQualifier = 0
@@ -3976,6 +3986,7 @@ message DrugToGeneAssociation
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
+  associationBasisEnum associationBasisQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   geneOrGeneProduct object = 0
@@ -4068,6 +4079,7 @@ message DruggableGeneToDiseaseAssociation
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
+  associationBasisEnum associationBasisQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   chemicalOrGeneOrGeneProductFormOrVariantEnum subjectFormOrVariantQualifier = 0
@@ -4142,6 +4154,7 @@ message EntityToDiseaseAssociation
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
+  associationBasisEnum associationBasisQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   clinicalApprovalStatusEnum clinicalApprovalStatus = 0
@@ -4205,6 +4218,7 @@ message EntityToPhenotypicFeatureAssociation
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
+  associationBasisEnum associationBasisQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   clinicalApprovalStatusEnum clinicalApprovalStatus = 0
@@ -4479,6 +4493,7 @@ message ExonToTranscriptRelationship
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
+  associationBasisEnum associationBasisQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   exon subject = 0
@@ -4573,6 +4588,7 @@ message ExposureEventToOutcomeAssociation
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
+  associationBasisEnum associationBasisQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   populationOfIndividualOrganisms populationContextQualifier = 0
@@ -4633,6 +4649,7 @@ message ExposureEventToPhenotypicFeatureAssociation
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
+  associationBasisEnum associationBasisQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   exposureEvent subject = 0
@@ -4777,6 +4794,7 @@ message FunctionalAssociation
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
+  associationBasisEnum associationBasisQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   macromolecularMachineMixin subject = 0
@@ -4887,6 +4905,7 @@ message GeneAffectsChemicalAssociation
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
+  associationBasisEnum associationBasisQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   chemicalOrGeneOrGeneProductFormOrVariantEnum subjectFormOrVariantQualifier = 0
@@ -4962,6 +4981,7 @@ message GeneAsAModelOfDiseaseAssociation
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
+  associationBasisEnum associationBasisQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   chemicalOrGeneOrGeneProductFormOrVariantEnum subjectFormOrVariantQualifier = 0
@@ -5058,6 +5078,7 @@ message GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
+  associationBasisEnum associationBasisQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   geneFamily subject = 0
@@ -5117,6 +5138,7 @@ message GeneHasVariantThatContributesToDiseaseAssociation
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
+  associationBasisEnum associationBasisQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
@@ -5184,6 +5206,7 @@ message GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
+  associationBasisEnum associationBasisQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   geneOrGeneProductOrGeneFamily subject = 0
@@ -5242,6 +5265,7 @@ message GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
+  associationBasisEnum associationBasisQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   geneOrGeneProductOrGeneFamily subject = 0
@@ -5301,6 +5325,7 @@ message GeneRegulatesGeneAssociation
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
+  associationBasisEnum associationBasisQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   geneOrGeneProductOrChemicalEntityAspectEnum objectAspectQualifier = 0
@@ -5365,6 +5390,7 @@ message GeneToDiseaseAssociation
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
+  associationBasisEnum associationBasisQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   chemicalOrGeneOrGeneProductFormOrVariantEnum subjectFormOrVariantQualifier = 0
@@ -5431,6 +5457,7 @@ message GeneToExpressionSiteAssociation
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
+  associationBasisEnum associationBasisQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   lifeStage stageQualifier = 0
@@ -5493,6 +5520,7 @@ message GeneToGeneAssociation
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
+  associationBasisEnum associationBasisQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
@@ -5565,6 +5593,7 @@ message GeneToGeneCoexpressionAssociation
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
+  associationBasisEnum associationBasisQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
@@ -5641,6 +5670,7 @@ message GeneToGeneFamilyAssociation
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
+  associationBasisEnum associationBasisQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   gene subject = 0
@@ -5700,6 +5730,7 @@ message GeneToGeneHomologyAssociation
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
+  associationBasisEnum associationBasisQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
@@ -5772,6 +5803,7 @@ message GeneToGeneProductRelationship
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
+  associationBasisEnum associationBasisQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   gene subject = 0
@@ -5832,6 +5864,7 @@ message GeneToGoTermAssociation
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
+  associationBasisEnum associationBasisQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   gene subject = 0
@@ -5891,6 +5924,7 @@ message GeneToPathwayAssociation
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
+  associationBasisEnum associationBasisQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   geneOrGeneProduct subject = 0
@@ -5949,6 +5983,7 @@ message GeneToPhenotypicFeatureAssociation
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
+  associationBasisEnum associationBasisQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   chemicalOrGeneOrGeneProductFormOrVariantEnum subjectFormOrVariantQualifier = 0
@@ -6111,6 +6146,7 @@ message GenomicSequenceLocalization
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
+  associationBasisEnum associationBasisQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   integer startInterbaseCoordinate = 0
@@ -6203,6 +6239,7 @@ message GenotypeAsAModelOfDiseaseAssociation
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
+  associationBasisEnum associationBasisQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   uriorcurie predicate = 0
@@ -6269,6 +6306,7 @@ message GenotypeToDiseaseAssociation
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
+  associationBasisEnum associationBasisQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   namedThing subject = 0
@@ -6335,6 +6373,7 @@ message GenotypeToGeneAssociation
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
+  associationBasisEnum associationBasisQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   uriorcurie predicate = 0
@@ -6394,6 +6433,7 @@ message GenotypeToGenotypePartAssociation
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
+  associationBasisEnum associationBasisQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   uriorcurie predicate = 0
@@ -6454,6 +6494,7 @@ message GenotypeToPhenotypicFeatureAssociation
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
+  associationBasisEnum associationBasisQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   uriorcurie predicate = 0
@@ -6524,6 +6565,7 @@ message GenotypeToVariantAssociation
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
+  associationBasisEnum associationBasisQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   uriorcurie predicate = 0
@@ -6850,6 +6892,7 @@ message InformationContentEntityToNamedThingAssociation
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
+  associationBasisEnum associationBasisQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   namedThing subject = 0
@@ -7050,6 +7093,7 @@ message MacromolecularMachineHasSubstrateAssociation
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
+  associationBasisEnum associationBasisQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   string subjectFormOrVariantQualifier = 0
@@ -7125,6 +7169,7 @@ message MacromolecularMachineToBiologicalProcessAssociation
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
+  associationBasisEnum associationBasisQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   macromolecularMachineMixin subject = 0
@@ -7185,6 +7230,7 @@ message MacromolecularMachineToCellularComponentAssociation
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
+  associationBasisEnum associationBasisQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   macromolecularMachineMixin subject = 0
@@ -7245,6 +7291,7 @@ message MacromolecularMachineToMolecularActivityAssociation
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
+  associationBasisEnum associationBasisQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   macromolecularMachineMixin subject = 0
@@ -7351,6 +7398,7 @@ message MaterialSampleDerivationAssociation
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
+  associationBasisEnum associationBasisQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   materialSample subject = 0
@@ -7413,6 +7461,7 @@ message MaterialSampleToDiseaseOrPhenotypicFeatureAssociation
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
+  associationBasisEnum associationBasisQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   disease diseaseContextQualifier = 0
@@ -7528,6 +7577,7 @@ message MolecularActivityToChemicalEntityAssociation
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
+  associationBasisEnum associationBasisQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   molecularActivity subject = 0
@@ -7587,6 +7637,7 @@ message MolecularActivityToMolecularActivityAssociation
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
+  associationBasisEnum associationBasisQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   molecularActivity subject = 0
@@ -7645,6 +7696,7 @@ message MolecularActivityToPathwayAssociation
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
+  associationBasisEnum associationBasisQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   molecularActivity subject = 0
@@ -7803,6 +7855,7 @@ message NamedThingAssociatedWithLikelihoodOfNamedThingAssociation
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
+  associationBasisEnum associationBasisQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   namedThing subject = 0
@@ -8084,6 +8137,7 @@ message OrganismTaxonToOrganismTaxonInteraction
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
+  associationBasisEnum associationBasisQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   string associatedEnvironmentalContext = 0
@@ -8144,6 +8198,7 @@ message OrganismTaxonToOrganismTaxonSpecialization
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
+  associationBasisEnum associationBasisQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   organismTaxon subject = 0
@@ -8204,6 +8259,7 @@ message OrganismToOrganismAssociation
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
+  associationBasisEnum associationBasisQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   individualOrganism subject = 0
@@ -8264,6 +8320,7 @@ message OrganismalEntityAsAModelOfDiseaseAssociation
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
+  associationBasisEnum associationBasisQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   organismalEntity subject = 0
@@ -8328,6 +8385,7 @@ message PairwiseGeneToGeneInteraction
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
+  associationBasisEnum associationBasisQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
@@ -8399,6 +8457,7 @@ message PairwiseMolecularInteraction
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
+  associationBasisEnum associationBasisQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
@@ -8708,6 +8767,7 @@ message PhenotypicFeatureToDiseaseAssociation
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
+  associationBasisEnum associationBasisQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   uriorcurie predicate = 0
@@ -8780,6 +8840,7 @@ message PhenotypicFeatureToPhenotypicFeatureAssociation
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
+  associationBasisEnum associationBasisQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   frequencyValue frequencyQualifier = 0
@@ -9051,6 +9112,7 @@ message PopulationToPopulationAssociation
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
+  associationBasisEnum associationBasisQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   populationOfIndividualOrganisms subject = 0
@@ -9216,6 +9278,7 @@ message ProcessRegulatesProcessAssociation
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
+  associationBasisEnum associationBasisQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   biologicalProcess subject = 0
@@ -9363,6 +9426,37 @@ message ProteinIsoform
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
  }
+// The type of study result describing the strength of interaction affinity - or enzymatic interaction - between a ligand and a target protein. Measured binding or enzymatic assay values are generally stated as the negative base 10 logarithm of the raw measurements. For instance (i.e., in a molecular interaction database like BindingDb) if a ligand inhibits a target protein with a pIC50 of 8.6, then the affinity parameter is pIC50 and the affinity value is 8.6.
+message ProteinLigandAssayResult
+ {
+  string id = 0
+  iriType iri = 0
+ repeated  string type = 0
+  labelType name = 0
+  narrativeText description = 0
+ repeated  attribute hasAttribute = 0
+  boolean deprecated = 0
+ repeated  string providedBy = 0
+ repeated  uriorcurie xref = 0
+  labelType fullName = 0
+ repeated  labelType synonym = 0
+ repeated  labelType exactSynonym = 0
+ repeated  labelType broadSynonym = 0
+ repeated  labelType narrowSynonym = 0
+ repeated  labelType relatedSynonym = 0
+ repeated  uriorcurie equivalentIdentifiers = 0
+  float informationContent = 0
+  uriorcurie taxon = 0
+ repeated  uriorcurie category = 0
+  quantityValue pKd = 0
+  quantityValue pKi = 0
+  quantityValue pIC50 = 0
+  quantityValue pEC50 = 0
+  quantityValue pAC50 = 0
+  quantityValue pXC50 = 0
+  quantityValue pKon = 0
+  quantityValue pKoff = 0
+ }
 // Any ‘published’ piece of information. Publications are considered broadly to include any document or document part made available in print or on the web - which may include scientific journal issues, individual articles, and books - as well as things like pre-prints, white papers, patents, drug labels, web pages, protocol documents,  and even a part of a publication if of significant knowledge scope.
 message Publication
  {
@@ -9396,11 +9490,13 @@ message Publication
   string id = 0
   labelType name = 0
  }
-// A value of an attribute that is quantitative and measurable, expressed as a combination of a unit and a numeric value
+// A value of an attribute that is quantitative and measurable, expressed as a combination of a unit, (optional) unit prefix and a numeric value. An optional binary relation qualifier may also be given, to allow capture of relative values, e.g., <1000.0 nM meaning "less than 1000 nanometers"
 message QuantityValue
  {
   unit hasUnit = 0
+  unitPrefix hasUnitPrefix = 0
   double hasNumericValue = 0
+  binaryRelationEnum hasBinaryRelation = 0
  }
 // A specialization of reaction-to-participant association in which the participant is a gene or gene product (e.g., an enzyme) that catalyses the reaction.
 message ReactionToCatalystAssociation
@@ -9455,6 +9551,7 @@ message ReactionToCatalystAssociation
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
+  associationBasisEnum associationBasisQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   uriorcurie predicate = 0
@@ -9518,6 +9615,7 @@ message ReactionToParticipantAssociation
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
+  associationBasisEnum associationBasisQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   uriorcurie predicate = 0
@@ -9748,6 +9846,7 @@ message SequenceAssociation
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
+  associationBasisEnum associationBasisQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
  }
@@ -9805,6 +9904,7 @@ message SequenceFeatureRelationship
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
+  associationBasisEnum associationBasisQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   nucleicAcidEntity subject = 0
@@ -10183,6 +10283,7 @@ message TaxonToTaxonAssociation
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
+  associationBasisEnum associationBasisQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   organismTaxon subject = 0
@@ -10303,6 +10404,7 @@ message TranscriptToGeneRelationship
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
+  associationBasisEnum associationBasisQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   transcript subject = 0
@@ -10424,6 +10526,7 @@ message VariantAsAModelOfDiseaseAssociation
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
+  associationBasisEnum associationBasisQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   uriorcurie predicate = 0
@@ -10490,6 +10593,7 @@ message VariantToDiseaseAssociation
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
+  associationBasisEnum associationBasisQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   namedThing subject = 0
@@ -10557,6 +10661,7 @@ message VariantToGeneAssociation
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
+  associationBasisEnum associationBasisQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   gene object = 0
@@ -10616,6 +10721,7 @@ message VariantToGeneExpressionAssociation
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
+  associationBasisEnum associationBasisQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   gene object = 0
@@ -10680,6 +10786,7 @@ message VariantToPhenotypicFeatureAssociation
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
+  associationBasisEnum associationBasisQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   sequenceVariant subject = 0
@@ -10750,6 +10857,7 @@ message VariantToPopulationAssociation
   boolean elevateToPrediction = 0
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
+  associationBasisEnum associationBasisQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   sequenceVariant subject = 0

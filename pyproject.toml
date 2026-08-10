@@ -6,7 +6,7 @@ authors = [
     {name = "Chris Mungall", email = "cjm@berkeleybop.org"},
     {name = "Deepak Unni", email = "deepak.unni3@gmail.com"},
     {name = "Sierra Moxon", email = "smoxon@lbl.gov"},
-    {name = "Richard Bruskiewich", email = "richard@starinformatics.com"},
+    {name = "Richard Bruskiewich", email = "richard@delphinai.ca"},
 ]
 license = {text = "MIT"}
 readme = "README.md"
@@ -76,15 +76,6 @@ packages = ["src/biolink_model"]
 # `exclude-newer` timestamp for backwards compatibility), avoiding per-relock absolute timestamps and
 # reducing cross-branch merge conflicts (see astral-sh/uv#18708). Requires uv >= 0.9.17.
 exclude-newer = "7 days"
-
-# Per-package cooldown exemption. cryptography 49.0.0 carries GHSA-g6cj-pr64-35w5 / PYSEC-2026-3552
-# (Bleichenbacher oracle in PKCS#7 EnvelopedData decryption), fixed in 50.0.0. The fix landed inside
-# the 7-day window, so the global cooldown would pin us to the vulnerable release and `uv audit` fails.
-# A "0 days" span opts cryptography alone out of the cooldown; it is recorded in uv.lock as a relative
-# span (`PT0S`), not an absolute timestamp, so it does not churn on relock. cryptography reaches us only
-# as a transitive dev dependency (schemasheets -> google-api-python-client -> google-auth).
-# Remove this entry once a cryptography release >= 50.0.0 is older than the cooldown window.
-exclude-newer-package = { cryptography = "0 days" }
 
 [tool.codespell]
 skip = '.idea,.git,SEMMEDDB*,semmed*,*.svg,docs,./src/docs/registry.md,./.venv'
