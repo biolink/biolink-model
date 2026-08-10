@@ -1,5 +1,30 @@
 CHANGES
 =======
+4.4.4
+-----
+## What's Changed
+* Converted several slots used in a StudyResult context, from association_slot into node_property by @RichardBruskiewich in https://github.com/biolink/biolink-model/pull/1782
+* Add STRING confidence scores for protein associations by @mbrush in https://github.com/biolink/biolink-model/pull/1772
+* feat: statistical significance qualifier on associations by @SkyeAv in https://github.com/biolink/biolink-model/pull/1766
+* feat: trim core dependencies to pydantic and add structured extras by @SkyeAv in https://github.com/biolink/biolink-model/pull/1779
+* feat: add effect size and effect type edge attributes by @SkyeAv in https://github.com/biolink/biolink-model/pull/1774
+* convert-affinity-measurement-to-study-result-model by @RichardBruskiewich in https://github.com/biolink/biolink-model/pull/1718
+* Updates to association representation to support StringDB ingest by @mbrush in https://github.com/biolink/biolink-model/pull/1771
+* Created a node property analogous to the association slot 'has supporting studies' to tie studies into a publication (there may be other node categories which could use it but this one is the initial one where it sort of makes sense) by @RichardBruskiewich in https://github.com/biolink/biolink-model/pull/1715
+* Bump curies from 0.13.13 to 0.14.1 by @dependabot[bot] in https://github.com/biolink/biolink-model/pull/1768
+* feat: wire supporting study metadata slots into root association by @SkyeAv in https://github.com/biolink/biolink-model/pull/1770
+* Update descriptions for interacts with and affects by @mbrush in https://github.com/biolink/biolink-model/pull/1776
+* sensitivity_associated_with and resistance_associated_with children of  response_associated_with by @mbrush in https://github.com/biolink/biolink-model/pull/1786
+* Bump the github-actions group across 1 directory with 4 updates by @dependabot[bot] in https://github.com/biolink/biolink-model/pull/1783
+* Bump the patch-updates group across 1 directory with 4 updates by @dependabot[bot] in https://github.com/biolink/biolink-model/pull/1790
+* Fix dangling whitespace on descriptions and notes by @vladistan in https://github.com/biolink/biolink-model/pull/1584
+
+## New Contributors
+* @SkyeAv made their first contribution in https://github.com/biolink/biolink-model/pull/1766
+* @vladistan made their first contribution in https://github.com/biolink/biolink-model/pull/1584
+
+**Full Changelog**: https://github.com/biolink/biolink-model/compare/v4.4.3...v4.4.4
+
 4.4.3
 -----
 ## What's Changed
