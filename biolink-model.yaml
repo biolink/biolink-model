@@ -2976,16 +2976,7 @@ slots:
     range: named thing
     description: >-
       holds between any two entities that directly or indirectly interact with each other in a physical or
-      functional way. 
-    notes:
-      - >-
-        A note on 'interacts with' vs 'affects': These are related but separate relationships. An interaction
-        may or may not involve one interactor exerting an effect on the other. It simply indicates that two
-        entities participate in a physical or functional relationship (e.g. molecular binding, genetic interactions
-       such as epistasis, or pharmacological interactions in which the combined behavior of two drugs differs from
-        that of either drug alone). An 'effect' may be mediated by an interaction or may arise without any direct
-        interaction, through a chain of intermediary events. Any effect or causal influence must be asserted using a
-        predicate in the affects or causes hierarchy. 
+      functional way.
     is_a: related to at instance level
     in_subset:
       - translator_minimal
@@ -2994,6 +2985,14 @@ slots:
     exact_mappings:
       - SEMMEDDB:INTERACTS_WITH
     notes:
+      - >-
+        A note on 'interacts with' vs 'affects': These are related but separate relationships. An interaction
+        may or may not involve one interactor exerting an effect on the other. It simply indicates that two
+        entities participate in a physical or functional relationship (e.g. molecular binding, genetic interactions
+        such as epistasis, or pharmacological interactions in which the combined behavior of two drugs differs from
+        that of either drug alone). An 'effect' may be mediated by an interaction or may arise without any direct
+        interaction, through a chain of intermediary events. Any effect or causal influence must be asserted using a
+        predicate in the affects or causes hierarchy.
       - >-
         Please use a more specific child predicate of interacts with, either physically interacts with
         or genetically interacts with or pharmacologically interacts with.
@@ -3135,7 +3134,7 @@ slots:
         function, or properties of another entity. Unlike an interaction, an effect is directional:
         the subject changes, modulates, perturbs, regulates, or otherwise influences the object, even
         if no direct physical interaction occurs. Use interacts_with only when the relationship describes
-        an interaction or association without asserting that one entity exerts an effect on the other. 
+        an interaction or association without asserting that one entity exerts an effect on the other.
       - >-
         Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as
         'affects likelihood of' and 'prevents' where the effect concerns whether or when something may or
