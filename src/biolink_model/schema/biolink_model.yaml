@@ -2157,10 +2157,10 @@ slots:
       A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates)
       to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier
       when no more specific predicate exists to capture the intended meaning of the association.
-    range: AssociationBasisEnum      
+    range: AssociationBasisEnum
     in_subset:
       - translator_minimal
-      
+
   statistical significance qualifier:
     is_a: statement qualifier
     description: >-
@@ -2441,7 +2441,7 @@ slots:
 
   associated with:
     is_a: related to at instance level
-    description: >- 
+    description: >-
       Indicates a non-causal association between two entities. Such associations are most commonly established
       through statistical analysis demonstrating that observations of the entities are not statistically independent,
       but may also be supported by other forms of evidence that establish a meaningful association. When representing
@@ -6814,9 +6814,9 @@ slots:
 
   pXC50:
     description: >-
-      In the context of molecular interactions and drug discovery, pXC50 is a generic, 
+      In the context of molecular interactions and drug discovery, pXC50 is a generic,
       base 10 negative logarithmic measure of compound potency that unifies different types of
-      half‑maximal concentration values into a single notation, where XC50 means 
+      half‑maximal concentration values into a single notation, where XC50 means
       “the concentration at which 50% of the maximal effect is observed”, and X is a placeholder
       for the type of effect being measured (e.g., inhibition or activation). The X in pXC50 is
       intentionally generic and can represent different assay endpoints.
@@ -15555,4 +15555,4 @@ enums:
           phenome-wide association studies (PheWAS), and quantitative trait locus
           (QTL) mapping (e.g., eQTL and pQTL analyses).
     in_subset:
-      - translator_minimal          
+      - translator_minimal
