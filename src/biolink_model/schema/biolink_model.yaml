@@ -7006,20 +7006,73 @@ slots:
     close_mappings:
       - OBAN:has_study_id
 
+  study metadata:
+    is_a: node property
+    description: >-
+      Information describing how a study was designed and carried out. In practice, data creators should use one of
+      the more specific subtypes of this property.
+    comments:
+      - This is an abstract slot that groups a set of concrete slots that describe a Study itself. Because each of
+        these properties describes a single study, they are node properties of the Study class rather than
+        association slots. An Association links to the studies that supported it via 'has supporting studies', and
+        the metadata for each of those studies is read off the Study node.
+    abstract: true
+
+  study method types:
+    is_a: study metadata
+    description: >-
+      Type(s) of methods that were applied in a study (e.g. a type of experimental assay, or statistical calculation,
+      or computational analysis).
+    range: uriorcurie
+    multivalued: true
+
+  study method description:
+    is_a: study metadata
+    description: >-
+      A uri or curie pointing to information about the methodology used to generate the data produced by a study.
+    range: uriorcurie
+
+  study size:
+    is_a: study metadata
+    description: >-
+      The sample size used in a study (e.g. 'n' of a cohort for a clinical study).
+    range: integer
+
+  study cohort:
+    is_a: study metadata
+    description: >-
+      A description of the study population/cohort that was interrogated by a study.
+    range: string
+
+  study date range:
+    is_a: study metadata
+    description: >-
+      The date range over which data was collected in a study.
+    range: string
+
+  study context:
+    is_a: study metadata
+    description: >-
+      A term or terms describing the experimental setting/context in which a study was carried out ('context' may be
+      defined by many factors, including taxon, model system, tissue type, disease, etc.).
+    range: string
+
+   ## Deprecated 'supporting study *' association slots. Each of these describes a single study, but an Association
+   ## may cite several studies via the multivalued 'has supporting studies' slot, leaving no way to say which value
+   ## belongs to which study. They have been replaced by the 'study metadata' node properties above, which hang off
+   ## the Study node itself. None of these slots were ever listed under a class, so none were usable as attributes.
   supporting study metadata:
+    deprecated: "true"
+    deprecated_element_has_exact_replacement: biolink:study_metadata
     is_a: association slot
     description: >-
       Information about a study used to generate information used as evidence to support the knowledge expressed in an
       Association. In practice, data creators should use one of the more specific subtypes of this property.
-    comments:
-      - This is an abstract slot that groups a set of concrete slots used to directly attach to an association information
-        about a study that produced evidence used to generate the knowledge expressed in the edge.
-      - Note that these concrete 'supporting study metadata' slots are used only when a more normalized model that leverages
-        the 'supporting studdies' slot and 'Study' class to link to and describe the Study itself are not possible or preferred,
-        such that this study metadata must be captured directly on the edge.
     abstract: true
 
   supporting study method types:
+    deprecated: "true"
+    deprecated_element_has_exact_replacement: biolink:study_method_types
     is_a: supporting study metadata
     description: >-
       Type(s) of methods that were applied in a study used to generate the information used as evidence (e.g. a type of
@@ -7028,12 +7081,16 @@ slots:
     multivalued: true
 
   supporting study method description:
+    deprecated: "true"
+    deprecated_element_has_exact_replacement: biolink:study_method_description
     is_a: supporting study metadata
     description: >-
       A uri or curie pointing to information about the methodology used to generate data supporting an Association.
     range: uriorcurie
 
   supporting study size:
+    deprecated: "true"
+    deprecated_element_has_exact_replacement: biolink:study_size
     is_a: supporting study metadata
     description: >-
       The sample size used in a study that provided evidence for the association (e.g. 'n' of a cohort for a
@@ -7041,18 +7098,24 @@ slots:
     range: integer
 
   supporting study cohort:
+    deprecated: "true"
+    deprecated_element_has_exact_replacement: biolink:study_cohort
     is_a: supporting study metadata
     description: >-
       A description of a study population/cohort that was interrogated to provide evidence for the association.
     range: string
 
   supporting study date range:
+    deprecated: "true"
+    deprecated_element_has_exact_replacement: biolink:study_date_range
     is_a: supporting study metadata
     description: >-
       The date range over which data was collected in a study that provided evidence for an Association.
     range: string
 
   supporting study context:
+    deprecated: "true"
+    deprecated_element_has_exact_replacement: biolink:study_context
     is_a: supporting study metadata
     description: >-
       A term or terms describing the experimental setting/context in which evidence supporting the Association was
@@ -7624,6 +7687,12 @@ classes:
     description: a detailed investigation and/or analysis
     slots:
       - has study results
+      - study method types
+      - study method description
+      - study size
+      - study cohort
+      - study date range
+      - study context
     exact_mappings:
       - NCIT:C63536
     close_mappings:

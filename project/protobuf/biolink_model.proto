@@ -2853,6 +2853,12 @@ message ClinicalTrial
   uriorcurie taxon = 0
  repeated  uriorcurie category = 0
  repeated  studyResult hasStudyResults = 0
+ repeated  uriorcurie studyMethodTypes = 0
+  uriorcurie studyMethodDescription = 0
+  integer studySize = 0
+  string studyCohort = 0
+  string studyDateRange = 0
+  string studyContext = 0
   researchPhaseEnum clinicalTrialPhase = 0
   string clinicalTrialPrimaryPurpose = 0
   string clinicalTrialInterventionModel = 0
@@ -10185,6 +10191,12 @@ message Study
   uriorcurie taxon = 0
  repeated  uriorcurie category = 0
  repeated  studyResult hasStudyResults = 0
+ repeated  uriorcurie studyMethodTypes = 0
+  uriorcurie studyMethodDescription = 0
+  integer studySize = 0
+  string studyCohort = 0
+  string studyDateRange = 0
+  string studyContext = 0
  }
 // A group of people banded together or treated as a group as participants in a research study.
 message StudyPopulation

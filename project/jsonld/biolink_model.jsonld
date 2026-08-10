@@ -15405,14 +15405,119 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "study_metadata",
+      "definition_uri": "https://w3id.org/biolink/vocab/study_metadata",
+      "description": "Information describing how a study was designed and carried out. In practice, data creators should use one of the more specific subtypes of this property.",
+      "comments": [
+        "This is an abstract slot that groups a set of concrete slots that describe a Study itself. Because each of these properties describes a single study, they are node properties of the Study class rather than association slots. An Association links to the studies that supported it via 'has supporting studies', and the metadata for each of those studies is read off the Study node."
+      ],
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "is_a": "node_property",
+      "abstract": true,
+      "domain": "NamedThing",
+      "slot_uri": "https://w3id.org/biolink/vocab/study_metadata",
+      "owner": "study_metadata",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "study_method_types",
+      "definition_uri": "https://w3id.org/biolink/vocab/study_method_types",
+      "description": "Type(s) of methods that were applied in a study (e.g. a type of experimental assay, or statistical calculation, or computational analysis).",
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "is_a": "study_metadata",
+      "domain": "NamedThing",
+      "slot_uri": "https://w3id.org/biolink/vocab/study_method_types",
+      "owner": "Study",
+      "domain_of": [
+        "Study"
+      ],
+      "range": "uriorcurie",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "study_method_description",
+      "definition_uri": "https://w3id.org/biolink/vocab/study_method_description",
+      "description": "A uri or curie pointing to information about the methodology used to generate the data produced by a study.",
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "is_a": "study_metadata",
+      "domain": "NamedThing",
+      "slot_uri": "https://w3id.org/biolink/vocab/study_method_description",
+      "owner": "Study",
+      "domain_of": [
+        "Study"
+      ],
+      "range": "uriorcurie",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "study_size",
+      "definition_uri": "https://w3id.org/biolink/vocab/study_size",
+      "description": "The sample size used in a study (e.g. 'n' of a cohort for a clinical study).",
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "is_a": "study_metadata",
+      "domain": "NamedThing",
+      "slot_uri": "https://w3id.org/biolink/vocab/study_size",
+      "owner": "Study",
+      "domain_of": [
+        "Study"
+      ],
+      "range": "integer",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "study_cohort",
+      "definition_uri": "https://w3id.org/biolink/vocab/study_cohort",
+      "description": "A description of the study population/cohort that was interrogated by a study.",
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "is_a": "study_metadata",
+      "domain": "NamedThing",
+      "slot_uri": "https://w3id.org/biolink/vocab/study_cohort",
+      "owner": "Study",
+      "domain_of": [
+        "Study"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "study_date_range",
+      "definition_uri": "https://w3id.org/biolink/vocab/study_date_range",
+      "description": "The date range over which data was collected in a study.",
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "is_a": "study_metadata",
+      "domain": "NamedThing",
+      "slot_uri": "https://w3id.org/biolink/vocab/study_date_range",
+      "owner": "Study",
+      "domain_of": [
+        "Study"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "study_context",
+      "definition_uri": "https://w3id.org/biolink/vocab/study_context",
+      "description": "A term or terms describing the experimental setting/context in which a study was carried out ('context' may be defined by many factors, including taxon, model system, tissue type, disease, etc.).",
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "is_a": "study_metadata",
+      "domain": "NamedThing",
+      "slot_uri": "https://w3id.org/biolink/vocab/study_context",
+      "owner": "Study",
+      "domain_of": [
+        "Study"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "supporting_study_metadata",
       "definition_uri": "https://w3id.org/biolink/vocab/supporting_study_metadata",
       "description": "Information about a study used to generate information used as evidence to support the knowledge expressed in an Association. In practice, data creators should use one of the more specific subtypes of this property.",
-      "comments": [
-        "This is an abstract slot that groups a set of concrete slots used to directly attach to an association information about a study that produced evidence used to generate the knowledge expressed in the edge.",
-        "Note that these concrete 'supporting study metadata' slots are used only when a more normalized model that leverages the 'supporting studdies' slot and 'Study' class to link to and describe the Study itself are not possible or preferred, such that this study metadata must be captured directly on the edge."
-      ],
+      "deprecated": "true",
       "from_schema": "https://w3id.org/biolink/vocab/",
+      "deprecated_element_has_exact_replacement": "biolink:study_metadata",
       "is_a": "association_slot",
       "abstract": true,
       "domain": "Association",
@@ -15425,7 +15530,9 @@
       "name": "supporting_study_method_types",
       "definition_uri": "https://w3id.org/biolink/vocab/supporting_study_method_types",
       "description": "Type(s) of methods that were applied in a study used to generate the information used as evidence (e.g. a type of experimental assay, or statistical calculation, or computational analysis).",
+      "deprecated": "true",
       "from_schema": "https://w3id.org/biolink/vocab/",
+      "deprecated_element_has_exact_replacement": "biolink:study_method_types",
       "is_a": "supporting_study_metadata",
       "domain": "Association",
       "slot_uri": "https://w3id.org/biolink/vocab/supporting_study_method_types",
@@ -15438,7 +15545,9 @@
       "name": "supporting_study_method_description",
       "definition_uri": "https://w3id.org/biolink/vocab/supporting_study_method_description",
       "description": "A uri or curie pointing to information about the methodology used to generate data supporting an Association.",
+      "deprecated": "true",
       "from_schema": "https://w3id.org/biolink/vocab/",
+      "deprecated_element_has_exact_replacement": "biolink:study_method_description",
       "is_a": "supporting_study_metadata",
       "domain": "Association",
       "slot_uri": "https://w3id.org/biolink/vocab/supporting_study_method_description",
@@ -15450,7 +15559,9 @@
       "name": "supporting_study_size",
       "definition_uri": "https://w3id.org/biolink/vocab/supporting_study_size",
       "description": "The sample size used in a study that provided evidence for the association (e.g. 'n' of a cohort for a clinical study).",
+      "deprecated": "true",
       "from_schema": "https://w3id.org/biolink/vocab/",
+      "deprecated_element_has_exact_replacement": "biolink:study_size",
       "is_a": "supporting_study_metadata",
       "domain": "Association",
       "slot_uri": "https://w3id.org/biolink/vocab/supporting_study_size",
@@ -15462,7 +15573,9 @@
       "name": "supporting_study_cohort",
       "definition_uri": "https://w3id.org/biolink/vocab/supporting_study_cohort",
       "description": "A description of a study population/cohort that was interrogated to provide evidence for the association.",
+      "deprecated": "true",
       "from_schema": "https://w3id.org/biolink/vocab/",
+      "deprecated_element_has_exact_replacement": "biolink:study_cohort",
       "is_a": "supporting_study_metadata",
       "domain": "Association",
       "slot_uri": "https://w3id.org/biolink/vocab/supporting_study_cohort",
@@ -15474,7 +15587,9 @@
       "name": "supporting_study_date_range",
       "definition_uri": "https://w3id.org/biolink/vocab/supporting_study_date_range",
       "description": "The date range over which data was collected in a study that provided evidence for an Association.",
+      "deprecated": "true",
       "from_schema": "https://w3id.org/biolink/vocab/",
+      "deprecated_element_has_exact_replacement": "biolink:study_date_range",
       "is_a": "supporting_study_metadata",
       "domain": "Association",
       "slot_uri": "https://w3id.org/biolink/vocab/supporting_study_date_range",
@@ -15486,7 +15601,9 @@
       "name": "supporting_study_context",
       "definition_uri": "https://w3id.org/biolink/vocab/supporting_study_context",
       "description": "A term or terms describing the experimental setting/context in which evidence supporting the Association was generated ('context' may be defined by many factors, including taxon, model system, tissue type, disease, etc.).",
+      "deprecated": "true",
       "from_schema": "https://w3id.org/biolink/vocab/",
+      "deprecated_element_has_exact_replacement": "biolink:study_context",
       "is_a": "supporting_study_metadata",
       "domain": "Association",
       "slot_uri": "https://w3id.org/biolink/vocab/supporting_study_context",
@@ -29522,7 +29639,13 @@
         "information_content",
         "taxon",
         "named_thing_category",
-        "has_study_results"
+        "has_study_results",
+        "study_method_types",
+        "study_method_description",
+        "study_size",
+        "study_cohort",
+        "study_date_range",
+        "study_context"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/Study",
@@ -35765,6 +35888,12 @@
         "taxon",
         "named_thing_category",
         "has_study_results",
+        "study_method_types",
+        "study_method_description",
+        "study_size",
+        "study_cohort",
+        "study_date_range",
+        "study_context",
         "clinical_trial_phase",
         "clinical_trial_primary_purpose",
         "clinical_trial_intervention_model",
@@ -46435,9 +46564,9 @@
   ],
   "metamodel_version": "1.11.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2026-08-10T21:48:20",
-  "source_file_size": 535995,
-  "generation_date": "2026-08-10T21:48:25",
+  "source_file_date": "2026-08-10T22:40:22",
+  "source_file_size": 538604,
+  "generation_date": "2026-08-10T22:40:27",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",

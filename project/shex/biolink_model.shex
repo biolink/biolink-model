@@ -8608,7 +8608,13 @@ linkml:Sparqlpath xsd:string
     CLOSED {
        (  $<Study_tes> (  &<Activity_tes> ;
              rdf:type [ <Activity> ] ? ;
-             <has_study_results> @<StudyResult> *
+             <has_study_results> @<StudyResult> * ;
+             <study_method_types> @<Uriorcurie> * ;
+             <study_method_description> @<Uriorcurie> ? ;
+             <study_size> @<Integer> ? ;
+             <study_cohort> @<String> ? ;
+             <study_date_range> @<String> ? ;
+             <study_context> @<String> ?
           ) ;
           rdf:type [ <Study> ]
        )

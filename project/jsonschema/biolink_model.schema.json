@@ -24676,6 +24676,51 @@
                         "null"
                     ]
                 },
+                "study_cohort": {
+                    "description": "A description of the study population/cohort that was interrogated by a study.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "study_context": {
+                    "description": "A term or terms describing the experimental setting/context in which a study was carried out ('context' may be defined by many factors, including taxon, model system, tissue type, disease, etc.).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "study_date_range": {
+                    "description": "The date range over which data was collected in a study.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "study_method_description": {
+                    "description": "A uri or curie pointing to information about the methodology used to generate the data produced by a study.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "study_method_types": {
+                    "description": "Type(s) of methods that were applied in a study (e.g. a type of experimental assay, or statistical calculation, or computational analysis).",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "study_size": {
+                    "description": "The sample size used in a study (e.g. 'n' of a cohort for a clinical study).",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
                 "synonym": {
                     "description": "Alternate human-readable names for a thing",
                     "items": {
@@ -25015,6 +25060,51 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "study_cohort": {
+                    "description": "A description of the study population/cohort that was interrogated by a study.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "study_context": {
+                    "description": "A term or terms describing the experimental setting/context in which a study was carried out ('context' may be defined by many factors, including taxon, model system, tissue type, disease, etc.).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "study_date_range": {
+                    "description": "The date range over which data was collected in a study.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "study_method_description": {
+                    "description": "A uri or curie pointing to information about the methodology used to generate the data produced by a study.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "study_method_types": {
+                    "description": "Type(s) of methods that were applied in a study (e.g. a type of experimental assay, or statistical calculation, or computational analysis).",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "study_size": {
+                    "description": "The sample size used in a study (e.g. 'n' of a cohort for a clinical study).",
+                    "type": [
+                        "integer",
                         "null"
                     ]
                 },
@@ -88552,6 +88642,51 @@
                         "null"
                     ]
                 },
+                "study_cohort": {
+                    "description": "A description of the study population/cohort that was interrogated by a study.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "study_context": {
+                    "description": "A term or terms describing the experimental setting/context in which a study was carried out ('context' may be defined by many factors, including taxon, model system, tissue type, disease, etc.).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "study_date_range": {
+                    "description": "The date range over which data was collected in a study.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "study_method_description": {
+                    "description": "A uri or curie pointing to information about the methodology used to generate the data produced by a study.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "study_method_types": {
+                    "description": "Type(s) of methods that were applied in a study (e.g. a type of experimental assay, or statistical calculation, or computational analysis).",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "study_size": {
+                    "description": "The sample size used in a study (e.g. 'n' of a cohort for a clinical study).",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
                 "synonym": {
                     "description": "Alternate human-readable names for a thing",
                     "items": {
@@ -89330,6 +89465,51 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "study_cohort": {
+                    "description": "A description of the study population/cohort that was interrogated by a study.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "study_context": {
+                    "description": "A term or terms describing the experimental setting/context in which a study was carried out ('context' may be defined by many factors, including taxon, model system, tissue type, disease, etc.).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "study_date_range": {
+                    "description": "The date range over which data was collected in a study.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "study_method_description": {
+                    "description": "A uri or curie pointing to information about the methodology used to generate the data produced by a study.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "study_method_types": {
+                    "description": "Type(s) of methods that were applied in a study (e.g. a type of experimental assay, or statistical calculation, or computational analysis).",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "study_size": {
+                    "description": "The sample size used in a study (e.g. 'n' of a cohort for a clinical study).",
+                    "type": [
+                        "integer",
                         "null"
                     ]
                 },

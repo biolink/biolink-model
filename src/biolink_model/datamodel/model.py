@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-08-10T21:48:43
+# Generation date: 2026-08-10T22:40:45
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/vocab/
@@ -3748,6 +3748,12 @@ class Study(Activity):
     id: Union[str, StudyId] = None
     category: Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]] = None
     has_study_results: Optional[Union[dict[Union[str, StudyResultId], Union[dict, StudyResult]], list[Union[dict, StudyResult]]]] = empty_dict()
+    study_method_types: Optional[Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]]] = empty_list()
+    study_method_description: Optional[Union[str, URIorCURIE]] = None
+    study_size: Optional[int] = None
+    study_cohort: Optional[str] = None
+    study_date_range: Optional[str] = None
+    study_context: Optional[str] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
@@ -3756,6 +3762,25 @@ class Study(Activity):
             self.id = StudyId(self.id)
 
         self._normalize_inlined_as_list(slot_name="has_study_results", slot_type=StudyResult, key_name="id", keyed=True)
+
+        if not isinstance(self.study_method_types, list):
+            self.study_method_types = [self.study_method_types] if self.study_method_types is not None else []
+        self.study_method_types = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.study_method_types]
+
+        if self.study_method_description is not None and not isinstance(self.study_method_description, URIorCURIE):
+            self.study_method_description = URIorCURIE(self.study_method_description)
+
+        if self.study_size is not None and not isinstance(self.study_size, int):
+            self.study_size = int(self.study_size)
+
+        if self.study_cohort is not None and not isinstance(self.study_cohort, str):
+            self.study_cohort = str(self.study_cohort)
+
+        if self.study_date_range is not None and not isinstance(self.study_date_range, str):
+            self.study_date_range = str(self.study_date_range)
+
+        if self.study_context is not None and not isinstance(self.study_context, str):
+            self.study_context = str(self.study_context)
 
         super().__post_init__(**kwargs)
         if self._is_empty(self.category):
@@ -18180,6 +18205,27 @@ slots.has_studies = Slot(uri=BIOLINK.has_studies, name="has studies", curie=BIOL
 
 slots.has_supporting_studies = Slot(uri=BIOLINK.has_supporting_studies, name="has supporting studies", curie=BIOLINK.curie('has_supporting_studies'),
                    model_uri=BIOLINK.has_supporting_studies, domain=Association, range=Optional[Union[Union[str, StudyId], list[Union[str, StudyId]]]])
+
+slots.study_metadata = Slot(uri=BIOLINK.study_metadata, name="study metadata", curie=BIOLINK.curie('study_metadata'),
+                   model_uri=BIOLINK.study_metadata, domain=NamedThing, range=Optional[str])
+
+slots.study_method_types = Slot(uri=BIOLINK.study_method_types, name="study method types", curie=BIOLINK.curie('study_method_types'),
+                   model_uri=BIOLINK.study_method_types, domain=NamedThing, range=Optional[Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]]])
+
+slots.study_method_description = Slot(uri=BIOLINK.study_method_description, name="study method description", curie=BIOLINK.curie('study_method_description'),
+                   model_uri=BIOLINK.study_method_description, domain=NamedThing, range=Optional[Union[str, URIorCURIE]])
+
+slots.study_size = Slot(uri=BIOLINK.study_size, name="study size", curie=BIOLINK.curie('study_size'),
+                   model_uri=BIOLINK.study_size, domain=NamedThing, range=Optional[int])
+
+slots.study_cohort = Slot(uri=BIOLINK.study_cohort, name="study cohort", curie=BIOLINK.curie('study_cohort'),
+                   model_uri=BIOLINK.study_cohort, domain=NamedThing, range=Optional[str])
+
+slots.study_date_range = Slot(uri=BIOLINK.study_date_range, name="study date range", curie=BIOLINK.curie('study_date_range'),
+                   model_uri=BIOLINK.study_date_range, domain=NamedThing, range=Optional[str])
+
+slots.study_context = Slot(uri=BIOLINK.study_context, name="study context", curie=BIOLINK.curie('study_context'),
+                   model_uri=BIOLINK.study_context, domain=NamedThing, range=Optional[str])
 
 slots.supporting_study_metadata = Slot(uri=BIOLINK.supporting_study_metadata, name="supporting study metadata", curie=BIOLINK.curie('supporting_study_metadata'),
                    model_uri=BIOLINK.supporting_study_metadata, domain=Association, range=Optional[str])
