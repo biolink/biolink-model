@@ -7,9 +7,9 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="https://biolink.github.io/biolink-model/ClinicalTrial/" rel="canonical"/>
 <link href="../assets/images/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.6.1, mkdocs-material-9.7.6" name="generator"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.7.7" name="generator"/>
 <title>Class: ClinicalTrial - Biolink Model Documentation</title>
-<link href="../assets/stylesheets/main.484c7ddc.min.css" rel="stylesheet"/>
+<link href="../assets/stylesheets/main.ec1eaa64.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
@@ -462,6 +462,18 @@
 
       ClinicalTrial : related_synonym
 
+      ClinicalTrial : study_cohort
+
+      ClinicalTrial : study_context
+
+      ClinicalTrial : study_date_range
+
+      ClinicalTrial : study_method_description
+
+      ClinicalTrial : study_method_types
+
+      ClinicalTrial : study_size
+
       ClinicalTrial : synonym
 
       ClinicalTrial : taxon
@@ -586,6 +598,42 @@
 <tr>
 <td><a href="../has_study_results/">has_study_results</a>: <br/> <i> Connects an study to instances of its study result </i></td>
 <td>* <br/> <a href="../StudyResult/">StudyResult</a></td>
+<td><a href="../Study/">Study</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../study_method_types/">study_method_types</a>: <br/> <i> Type(s) of methods that were applied in a study (e.g. a type of experimental assay, or statistical calculation, or computational analysis). </i></td>
+<td>* <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
+<td><a href="../Study/">Study</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../study_method_description/">study_method_description</a>: <br/> <i> A uri or curie pointing to information about the methodology used to generate the data produced by a study. </i></td>
+<td>0..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
+<td><a href="../Study/">Study</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../study_size/">study_size</a>: <br/> <i> The sample size used in a study (e.g. 'n' of a cohort for a clinical study). </i></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
+<td><a href="../Study/">Study</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../study_cohort/">study_cohort</a>: <br/> <i> A description of the study population/cohort that was interrogated by a study. </i></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td><a href="../Study/">Study</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../study_date_range/">study_date_range</a>: <br/> <i> The date range over which data was collected in a study. </i></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td><a href="../Study/">Study</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../study_context/">study_context</a>: <br/> <i> A term or terms describing the experimental setting/context in which a study was carried out ('context' may be defined by many factors, including taxon, model system, tissue type, disease, etc.). </i></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td><a href="../Study/">Study</a></td>
 <td></td>
 </tr>
@@ -862,7 +910,7 @@ slots:
 <div class="md-dialog__inner md-typeset"></div>
 </div>
 <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.tabs.link"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
-<script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+<script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
 <script type="module">import mermaid from "https://unpkg.com/mermaid@10.4.0/dist/mermaid.esm.min.mjs";
 mermaid.initialize({});</script></body>
 </html>

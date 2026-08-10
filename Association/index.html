@@ -7,9 +7,9 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="https://biolink.github.io/biolink-model/Association/" rel="canonical"/>
 <link href="../assets/images/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.6.1, mkdocs-material-9.7.6" name="generator"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.7.7" name="generator"/>
 <title>Class: Association - Biolink Model Documentation</title>
-<link href="../assets/stylesheets/main.484c7ddc.min.css" rel="stylesheet"/>
+<link href="../assets/stylesheets/main.ec1eaa64.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
@@ -476,11 +476,21 @@
 
       Association : aggregator_knowledge_source
 
+      Association : association_basis_qualifier
+
+          Association --|&gt; AssociationBasisEnum : association_basis_qualifier
+
       Association : category
 
       Association : deprecated
 
       Association : description
+
+      Association : effect_size
+
+      Association : effect_type
+
+          Association --|&gt; EffectTypeEnum : effect_type
 
       Association : elevate_to_prediction
 
@@ -569,6 +579,16 @@
       Association : sources
 
           Association --|&gt; RetrievalSource : sources
+
+      Association : statistical_significance_qualifier
+
+          Association --|&gt; StatisticalSignificanceQualifierEnum : statistical_significance_qualifier
+
+      Association : stringdb_coexpression_score
+
+      Association : stringdb_combined_score
+
+      Association : stringdb_experimental_score
 
       Association : subject
 
@@ -902,6 +922,24 @@
 <td></td>
 </tr>
 <tr>
+<td><a href="../statistical_significance_qualifier/">statistical_significance_qualifier</a>: <br/> <i> A statement qualifier that categorizes an association's evidence by statistical significance into coarse bands, as a categorical companion to the numeric 'p value' and 'adjusted p value' slots. It applies only to assessments derived from a quantitative significance statistic (raw p-value, multiple-testing-adjusted p-value, or q-value/FDR), and MUST NOT encode ordinal study-stage, evidence-tier, or confidence-level labels (e.g. clinical trial phases) that are not statistical-significance statements. </i></td>
+<td>0..1 <br/> <a href="../StatisticalSignificanceQualifierEnum/">StatisticalSignificanceQualifierEnum</a></td>
+<td>direct</td>
+<td>very_strongly_significant, strongly_significant, significant, suggestive, not_significant</td>
+</tr>
+<tr>
+<td><a href="../effect_size/">effect_size</a>: <br/> <i> A quantitative measure of the magnitude and direction of an effect or association between the subject and object of an edge, as estimated by a statistical method. The specific metric used (e.g. Cohen's d, odds ratio, Pearson's r) is indicated by the companion 'effect type' slot. </i></td>
+<td>0..1 <br/> <a href="../Float/">Float</a></td>
+<td>direct</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../effect_type/">effect_type</a>: <br/> <i> Specifies the statistical metric or method used to compute the numeric value in the companion 'effect size' slot. This disambiguates the effect size value, which is otherwise uninterpretable without knowing the metric (e.g. Cohen's d vs. odds ratio vs. Pearson's r). </i></td>
+<td>0..1 <br/> <a href="../EffectTypeEnum/">EffectTypeEnum</a></td>
+<td>direct</td>
+<td>cohens_d, odds_ratio, pearsons_r</td>
+</tr>
+<tr>
 <td><a href="../supporting_text/">supporting_text</a>: <br/> <i> The segment of text from a document that supports the mined assertion. </i></td>
 <td>* <br/> <a href="../String/">String</a></td>
 <td>direct</td>
@@ -926,6 +964,24 @@
 <td></td>
 </tr>
 <tr>
+<td><a href="../stringdb_combined_score/">stringdb_combined_score</a>: <br/> <i> A confidence score assigned by STRING representing the estimated likelihood that two proteins are functionally associated, based on the probabilistic integration of all available evidence channels (e.g., curated databases, experiments, co-expression, evolutionary evidence, and text mining). Higher scores indicate greater confidence in the existence of a biologically meaningful functional association. </i></td>
+<td>0..1 <br/> <a href="../Float/">Float</a></td>
+<td>direct</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../stringdb_experimental_score/">stringdb_experimental_score</a>: <br/> <i> A confidence score assigned by STRING representing the estimated likelihood that two proteins are functionally associated based solely on experimental evidence, including laboratory measurements of physical interactions or protein associations. Higher scores indicate stronger experimental support for a biological association between the proteins. </i></td>
+<td>0..1 <br/> <a href="../Float/">Float</a></td>
+<td>direct</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../stringdb_coexpression_score/">stringdb_coexpression_score</a>: <br/> <i> A confidence score assigned by STRING representing the estimated likelihood that two proteins are functionally associated based solely on evidence that their encoding genes exhibit correlated expression patterns across one or more transcriptomic datasets. Higher scores indicate stronger support for a biological association inferred from gene co-expression. </i></td>
+<td>0..1 <br/> <a href="../Float/">Float</a></td>
+<td>direct</td>
+<td></td>
+</tr>
+<tr>
 <td><a href="../elevate_to_prediction/">elevate_to_prediction</a>: <br/> <i> A boolean flag indicating whether a clinical trial finding should be elevated to a prediction. </i></td>
 <td>0..1 <br/> <a href="../Boolean/">Boolean</a></td>
 <td>direct</td>
@@ -940,6 +996,12 @@
 <tr>
 <td><a href="../semmed_agreement_count/">semmed_agreement_count</a>: <br/> <i> The number of times this concept has been asserted in the SemMedDB literature database. </i></td>
 <td>0..1 <br/> <a href="../Integer/">Integer</a></td>
+<td>direct</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../association_basis_qualifier/">association_basis_qualifier</a>: <br/> <i> A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates) to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier when no more specific predicate exists to capture the intended meaning of the association. </i></td>
+<td>0..1 <br/> <a href="../AssociationBasisEnum/">AssociationBasisEnum</a></td>
 <td>direct</td>
 <td></td>
 </tr>
@@ -1119,92 +1181,8 @@
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../TextMiningStudyResult/">TextMiningStudyResult</a></td>
-<td><a href="../supporting_text/">supporting_text</a></td>
-<td>domain</td>
-<td><a href="./">Association</a></td>
-</tr>
-<tr>
-<td><a href="../TextMiningStudyResult/">TextMiningStudyResult</a></td>
-<td><a href="../subject_location_in_text/">subject_location_in_text</a></td>
-<td>domain</td>
-<td><a href="./">Association</a></td>
-</tr>
-<tr>
-<td><a href="../TextMiningStudyResult/">TextMiningStudyResult</a></td>
-<td><a href="../object_location_in_text/">object_location_in_text</a></td>
-<td>domain</td>
-<td><a href="./">Association</a></td>
-</tr>
-<tr>
-<td><a href="../TextMiningStudyResult/">TextMiningStudyResult</a></td>
-<td><a href="../extraction_confidence_score/">extraction_confidence_score</a></td>
-<td>domain</td>
-<td><a href="./">Association</a></td>
-</tr>
-<tr>
-<td><a href="../TextMiningStudyResult/">TextMiningStudyResult</a></td>
-<td><a href="../supporting_document_type/">supporting_document_type</a></td>
-<td>domain</td>
-<td><a href="./">Association</a></td>
-</tr>
-<tr>
-<td><a href="../TextMiningStudyResult/">TextMiningStudyResult</a></td>
-<td><a href="../supporting_document_year/">supporting_document_year</a></td>
-<td>domain</td>
-<td><a href="./">Association</a></td>
-</tr>
-<tr>
-<td><a href="../TextMiningStudyResult/">TextMiningStudyResult</a></td>
-<td><a href="../supporting_text_section_type/">supporting_text_section_type</a></td>
-<td>domain</td>
-<td><a href="./">Association</a></td>
-</tr>
-<tr>
-<td><a href="../IceesStudyResult/">IceesStudyResult</a></td>
-<td><a href="../chi_squared_statistic/">chi_squared_statistic</a></td>
-<td>domain</td>
-<td><a href="./">Association</a></td>
-</tr>
-<tr>
-<td><a href="../IceesStudyResult/">IceesStudyResult</a></td>
-<td><a href="../chi_squared_dof/">chi_squared_dof</a></td>
-<td>domain</td>
-<td><a href="./">Association</a></td>
-</tr>
-<tr>
-<td><a href="../IceesStudyResult/">IceesStudyResult</a></td>
-<td><a href="../chi_squared_p/">chi_squared_p</a></td>
-<td>domain</td>
-<td><a href="./">Association</a></td>
-</tr>
-<tr>
 <td><a href="../IceesStudyResult/">IceesStudyResult</a></td>
 <td><a href="../total_sample_size/">total_sample_size</a></td>
-<td>domain</td>
-<td><a href="./">Association</a></td>
-</tr>
-<tr>
-<td><a href="../IceesStudyResult/">IceesStudyResult</a></td>
-<td><a href="../fisher_exact_odds_ratio/">fisher_exact_odds_ratio</a></td>
-<td>domain</td>
-<td><a href="./">Association</a></td>
-</tr>
-<tr>
-<td><a href="../IceesStudyResult/">IceesStudyResult</a></td>
-<td><a href="../fisher_exact_p/">fisher_exact_p</a></td>
-<td>domain</td>
-<td><a href="./">Association</a></td>
-</tr>
-<tr>
-<td><a href="../IceesStudyResult/">IceesStudyResult</a></td>
-<td><a href="../log_odds_ratio/">log_odds_ratio</a></td>
-<td>domain</td>
-<td><a href="./">Association</a></td>
-</tr>
-<tr>
-<td><a href="../IceesStudyResult/">IceesStudyResult</a></td>
-<td><a href="../log_odds_ratio_95_ci/">log_odds_ratio_95_ci</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -1402,7 +1380,19 @@
 </tr>
 <tr>
 <td><a href="./">Association</a></td>
-<td><a href="../supporting_text/">supporting_text</a></td>
+<td><a href="../statistical_significance_qualifier/">statistical_significance_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="./">Association</a></td>
+<td><a href="../effect_size/">effect_size</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="./">Association</a></td>
+<td><a href="../effect_type/">effect_type</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -1427,6 +1417,12 @@
 <tr>
 <td><a href="./">Association</a></td>
 <td><a href="../semmed_agreement_count/">semmed_agreement_count</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="./">Association</a></td>
+<td><a href="../association_basis_qualifier/">association_basis_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -1636,7 +1632,19 @@
 </tr>
 <tr>
 <td><a href="../DiseaseAssociatedWithResponseToChemicalEntityAssociation/">DiseaseAssociatedWithResponseToChemicalEntityAssociation</a></td>
-<td><a href="../supporting_text/">supporting_text</a></td>
+<td><a href="../statistical_significance_qualifier/">statistical_significance_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../DiseaseAssociatedWithResponseToChemicalEntityAssociation/">DiseaseAssociatedWithResponseToChemicalEntityAssociation</a></td>
+<td><a href="../effect_size/">effect_size</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../DiseaseAssociatedWithResponseToChemicalEntityAssociation/">DiseaseAssociatedWithResponseToChemicalEntityAssociation</a></td>
+<td><a href="../effect_type/">effect_type</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -1665,6 +1673,12 @@
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
+<td><a href="../DiseaseAssociatedWithResponseToChemicalEntityAssociation/">DiseaseAssociatedWithResponseToChemicalEntityAssociation</a></td>
+<td><a href="../association_basis_qualifier/">association_basis_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
 <td><a href="../ChemicalEntityAssessesNamedThingAssociation/">ChemicalEntityAssessesNamedThingAssociation</a></td>
 <td><a href="../subject/">subject</a></td>
 <td>domain</td>
@@ -1858,7 +1872,19 @@
 </tr>
 <tr>
 <td><a href="../ChemicalEntityAssessesNamedThingAssociation/">ChemicalEntityAssessesNamedThingAssociation</a></td>
-<td><a href="../supporting_text/">supporting_text</a></td>
+<td><a href="../statistical_significance_qualifier/">statistical_significance_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalEntityAssessesNamedThingAssociation/">ChemicalEntityAssessesNamedThingAssociation</a></td>
+<td><a href="../effect_size/">effect_size</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalEntityAssessesNamedThingAssociation/">ChemicalEntityAssessesNamedThingAssociation</a></td>
+<td><a href="../effect_type/">effect_type</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -1883,6 +1909,12 @@
 <tr>
 <td><a href="../ChemicalEntityAssessesNamedThingAssociation/">ChemicalEntityAssessesNamedThingAssociation</a></td>
 <td><a href="../semmed_agreement_count/">semmed_agreement_count</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalEntityAssessesNamedThingAssociation/">ChemicalEntityAssessesNamedThingAssociation</a></td>
+<td><a href="../association_basis_qualifier/">association_basis_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -2080,7 +2112,19 @@
 </tr>
 <tr>
 <td><a href="../ContributorAssociation/">ContributorAssociation</a></td>
-<td><a href="../supporting_text/">supporting_text</a></td>
+<td><a href="../statistical_significance_qualifier/">statistical_significance_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ContributorAssociation/">ContributorAssociation</a></td>
+<td><a href="../effect_size/">effect_size</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ContributorAssociation/">ContributorAssociation</a></td>
+<td><a href="../effect_type/">effect_type</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -2105,6 +2149,12 @@
 <tr>
 <td><a href="../ContributorAssociation/">ContributorAssociation</a></td>
 <td><a href="../semmed_agreement_count/">semmed_agreement_count</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ContributorAssociation/">ContributorAssociation</a></td>
+<td><a href="../association_basis_qualifier/">association_basis_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -2302,7 +2352,19 @@
 </tr>
 <tr>
 <td><a href="../GenotypeToGenotypePartAssociation/">GenotypeToGenotypePartAssociation</a></td>
-<td><a href="../supporting_text/">supporting_text</a></td>
+<td><a href="../statistical_significance_qualifier/">statistical_significance_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GenotypeToGenotypePartAssociation/">GenotypeToGenotypePartAssociation</a></td>
+<td><a href="../effect_size/">effect_size</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GenotypeToGenotypePartAssociation/">GenotypeToGenotypePartAssociation</a></td>
+<td><a href="../effect_type/">effect_type</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -2327,6 +2389,12 @@
 <tr>
 <td><a href="../GenotypeToGenotypePartAssociation/">GenotypeToGenotypePartAssociation</a></td>
 <td><a href="../semmed_agreement_count/">semmed_agreement_count</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GenotypeToGenotypePartAssociation/">GenotypeToGenotypePartAssociation</a></td>
+<td><a href="../association_basis_qualifier/">association_basis_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -2524,7 +2592,19 @@
 </tr>
 <tr>
 <td><a href="../GenotypeToGeneAssociation/">GenotypeToGeneAssociation</a></td>
-<td><a href="../supporting_text/">supporting_text</a></td>
+<td><a href="../statistical_significance_qualifier/">statistical_significance_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GenotypeToGeneAssociation/">GenotypeToGeneAssociation</a></td>
+<td><a href="../effect_size/">effect_size</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GenotypeToGeneAssociation/">GenotypeToGeneAssociation</a></td>
+<td><a href="../effect_type/">effect_type</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -2549,6 +2629,12 @@
 <tr>
 <td><a href="../GenotypeToGeneAssociation/">GenotypeToGeneAssociation</a></td>
 <td><a href="../semmed_agreement_count/">semmed_agreement_count</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GenotypeToGeneAssociation/">GenotypeToGeneAssociation</a></td>
+<td><a href="../association_basis_qualifier/">association_basis_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -2746,7 +2832,19 @@
 </tr>
 <tr>
 <td><a href="../GenotypeToVariantAssociation/">GenotypeToVariantAssociation</a></td>
-<td><a href="../supporting_text/">supporting_text</a></td>
+<td><a href="../statistical_significance_qualifier/">statistical_significance_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GenotypeToVariantAssociation/">GenotypeToVariantAssociation</a></td>
+<td><a href="../effect_size/">effect_size</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GenotypeToVariantAssociation/">GenotypeToVariantAssociation</a></td>
+<td><a href="../effect_type/">effect_type</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -2771,6 +2869,12 @@
 <tr>
 <td><a href="../GenotypeToVariantAssociation/">GenotypeToVariantAssociation</a></td>
 <td><a href="../semmed_agreement_count/">semmed_agreement_count</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GenotypeToVariantAssociation/">GenotypeToVariantAssociation</a></td>
+<td><a href="../association_basis_qualifier/">association_basis_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -3046,7 +3150,19 @@
 </tr>
 <tr>
 <td><a href="../GeneToGeneAssociation/">GeneToGeneAssociation</a></td>
-<td><a href="../supporting_text/">supporting_text</a></td>
+<td><a href="../statistical_significance_qualifier/">statistical_significance_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneToGeneAssociation/">GeneToGeneAssociation</a></td>
+<td><a href="../effect_size/">effect_size</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneToGeneAssociation/">GeneToGeneAssociation</a></td>
+<td><a href="../effect_type/">effect_type</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -3071,6 +3187,12 @@
 <tr>
 <td><a href="../GeneToGeneAssociation/">GeneToGeneAssociation</a></td>
 <td><a href="../semmed_agreement_count/">semmed_agreement_count</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneToGeneAssociation/">GeneToGeneAssociation</a></td>
+<td><a href="../association_basis_qualifier/">association_basis_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -3346,7 +3468,19 @@
 </tr>
 <tr>
 <td><a href="../GeneToGeneHomologyAssociation/">GeneToGeneHomologyAssociation</a></td>
-<td><a href="../supporting_text/">supporting_text</a></td>
+<td><a href="../statistical_significance_qualifier/">statistical_significance_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneToGeneHomologyAssociation/">GeneToGeneHomologyAssociation</a></td>
+<td><a href="../effect_size/">effect_size</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneToGeneHomologyAssociation/">GeneToGeneHomologyAssociation</a></td>
+<td><a href="../effect_type/">effect_type</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -3375,6 +3509,12 @@
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
+<td><a href="../GeneToGeneHomologyAssociation/">GeneToGeneHomologyAssociation</a></td>
+<td><a href="../association_basis_qualifier/">association_basis_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
 <td><a href="../GeneToGeneFamilyAssociation/">GeneToGeneFamilyAssociation</a></td>
 <td><a href="../subject/">subject</a></td>
 <td>domain</td>
@@ -3568,7 +3708,19 @@
 </tr>
 <tr>
 <td><a href="../GeneToGeneFamilyAssociation/">GeneToGeneFamilyAssociation</a></td>
-<td><a href="../supporting_text/">supporting_text</a></td>
+<td><a href="../statistical_significance_qualifier/">statistical_significance_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneToGeneFamilyAssociation/">GeneToGeneFamilyAssociation</a></td>
+<td><a href="../effect_size/">effect_size</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneToGeneFamilyAssociation/">GeneToGeneFamilyAssociation</a></td>
+<td><a href="../effect_type/">effect_type</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -3593,6 +3745,12 @@
 <tr>
 <td><a href="../GeneToGeneFamilyAssociation/">GeneToGeneFamilyAssociation</a></td>
 <td><a href="../semmed_agreement_count/">semmed_agreement_count</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneToGeneFamilyAssociation/">GeneToGeneFamilyAssociation</a></td>
+<td><a href="../association_basis_qualifier/">association_basis_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -3790,7 +3948,19 @@
 </tr>
 <tr>
 <td><a href="../GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation/">GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation</a></td>
-<td><a href="../supporting_text/">supporting_text</a></td>
+<td><a href="../statistical_significance_qualifier/">statistical_significance_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation/">GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation</a></td>
+<td><a href="../effect_size/">effect_size</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation/">GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation</a></td>
+<td><a href="../effect_type/">effect_type</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -3815,6 +3985,12 @@
 <tr>
 <td><a href="../GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation/">GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation</a></td>
 <td><a href="../semmed_agreement_count/">semmed_agreement_count</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation/">GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation</a></td>
+<td><a href="../association_basis_qualifier/">association_basis_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -4012,7 +4188,19 @@
 </tr>
 <tr>
 <td><a href="../GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation/">GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation</a></td>
-<td><a href="../supporting_text/">supporting_text</a></td>
+<td><a href="../statistical_significance_qualifier/">statistical_significance_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation/">GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation</a></td>
+<td><a href="../effect_size/">effect_size</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation/">GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation</a></td>
+<td><a href="../effect_type/">effect_type</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -4037,6 +4225,12 @@
 <tr>
 <td><a href="../GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation/">GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation</a></td>
 <td><a href="../semmed_agreement_count/">semmed_agreement_count</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation/">GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation</a></td>
+<td><a href="../association_basis_qualifier/">association_basis_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -4234,7 +4428,19 @@
 </tr>
 <tr>
 <td><a href="../BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation/">BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation</a></td>
-<td><a href="../supporting_text/">supporting_text</a></td>
+<td><a href="../statistical_significance_qualifier/">statistical_significance_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation/">BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation</a></td>
+<td><a href="../effect_size/">effect_size</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation/">BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation</a></td>
+<td><a href="../effect_type/">effect_type</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -4259,6 +4465,12 @@
 <tr>
 <td><a href="../BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation/">BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation</a></td>
 <td><a href="../semmed_agreement_count/">semmed_agreement_count</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation/">BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation</a></td>
+<td><a href="../association_basis_qualifier/">association_basis_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -4456,7 +4668,19 @@
 </tr>
 <tr>
 <td><a href="../BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation/">BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation</a></td>
-<td><a href="../supporting_text/">supporting_text</a></td>
+<td><a href="../statistical_significance_qualifier/">statistical_significance_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation/">BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation</a></td>
+<td><a href="../effect_size/">effect_size</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation/">BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation</a></td>
+<td><a href="../effect_type/">effect_type</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -4481,6 +4705,12 @@
 <tr>
 <td><a href="../BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation/">BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation</a></td>
 <td><a href="../semmed_agreement_count/">semmed_agreement_count</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation/">BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation</a></td>
+<td><a href="../association_basis_qualifier/">association_basis_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -4804,7 +5034,19 @@
 </tr>
 <tr>
 <td><a href="../GeneToGeneCoexpressionAssociation/">GeneToGeneCoexpressionAssociation</a></td>
-<td><a href="../supporting_text/">supporting_text</a></td>
+<td><a href="../statistical_significance_qualifier/">statistical_significance_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneToGeneCoexpressionAssociation/">GeneToGeneCoexpressionAssociation</a></td>
+<td><a href="../effect_size/">effect_size</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneToGeneCoexpressionAssociation/">GeneToGeneCoexpressionAssociation</a></td>
+<td><a href="../effect_type/">effect_type</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -4829,6 +5071,12 @@
 <tr>
 <td><a href="../GeneToGeneCoexpressionAssociation/">GeneToGeneCoexpressionAssociation</a></td>
 <td><a href="../semmed_agreement_count/">semmed_agreement_count</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneToGeneCoexpressionAssociation/">GeneToGeneCoexpressionAssociation</a></td>
+<td><a href="../association_basis_qualifier/">association_basis_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -5104,7 +5352,19 @@
 </tr>
 <tr>
 <td><a href="../PairwiseGeneToGeneInteraction/">PairwiseGeneToGeneInteraction</a></td>
-<td><a href="../supporting_text/">supporting_text</a></td>
+<td><a href="../statistical_significance_qualifier/">statistical_significance_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../PairwiseGeneToGeneInteraction/">PairwiseGeneToGeneInteraction</a></td>
+<td><a href="../effect_size/">effect_size</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../PairwiseGeneToGeneInteraction/">PairwiseGeneToGeneInteraction</a></td>
+<td><a href="../effect_type/">effect_type</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -5129,6 +5389,12 @@
 <tr>
 <td><a href="../PairwiseGeneToGeneInteraction/">PairwiseGeneToGeneInteraction</a></td>
 <td><a href="../semmed_agreement_count/">semmed_agreement_count</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../PairwiseGeneToGeneInteraction/">PairwiseGeneToGeneInteraction</a></td>
+<td><a href="../association_basis_qualifier/">association_basis_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -5410,7 +5676,19 @@
 </tr>
 <tr>
 <td><a href="../PairwiseMolecularInteraction/">PairwiseMolecularInteraction</a></td>
-<td><a href="../supporting_text/">supporting_text</a></td>
+<td><a href="../statistical_significance_qualifier/">statistical_significance_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../PairwiseMolecularInteraction/">PairwiseMolecularInteraction</a></td>
+<td><a href="../effect_size/">effect_size</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../PairwiseMolecularInteraction/">PairwiseMolecularInteraction</a></td>
+<td><a href="../effect_type/">effect_type</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -5435,6 +5713,12 @@
 <tr>
 <td><a href="../PairwiseMolecularInteraction/">PairwiseMolecularInteraction</a></td>
 <td><a href="../semmed_agreement_count/">semmed_agreement_count</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../PairwiseMolecularInteraction/">PairwiseMolecularInteraction</a></td>
+<td><a href="../association_basis_qualifier/">association_basis_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -5674,7 +5958,19 @@
 </tr>
 <tr>
 <td><a href="../CellLineToDiseaseOrPhenotypicFeatureAssociation/">CellLineToDiseaseOrPhenotypicFeatureAssociation</a></td>
-<td><a href="../supporting_text/">supporting_text</a></td>
+<td><a href="../statistical_significance_qualifier/">statistical_significance_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../CellLineToDiseaseOrPhenotypicFeatureAssociation/">CellLineToDiseaseOrPhenotypicFeatureAssociation</a></td>
+<td><a href="../effect_size/">effect_size</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../CellLineToDiseaseOrPhenotypicFeatureAssociation/">CellLineToDiseaseOrPhenotypicFeatureAssociation</a></td>
+<td><a href="../effect_type/">effect_type</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -5699,6 +5995,12 @@
 <tr>
 <td><a href="../CellLineToDiseaseOrPhenotypicFeatureAssociation/">CellLineToDiseaseOrPhenotypicFeatureAssociation</a></td>
 <td><a href="../semmed_agreement_count/">semmed_agreement_count</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../CellLineToDiseaseOrPhenotypicFeatureAssociation/">CellLineToDiseaseOrPhenotypicFeatureAssociation</a></td>
+<td><a href="../association_basis_qualifier/">association_basis_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -5974,7 +6276,19 @@
 </tr>
 <tr>
 <td><a href="../ChemicalEntityToChemicalEntityAssociation/">ChemicalEntityToChemicalEntityAssociation</a></td>
-<td><a href="../supporting_text/">supporting_text</a></td>
+<td><a href="../statistical_significance_qualifier/">statistical_significance_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalEntityToChemicalEntityAssociation/">ChemicalEntityToChemicalEntityAssociation</a></td>
+<td><a href="../effect_size/">effect_size</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalEntityToChemicalEntityAssociation/">ChemicalEntityToChemicalEntityAssociation</a></td>
+<td><a href="../effect_type/">effect_type</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -5999,6 +6313,12 @@
 <tr>
 <td><a href="../ChemicalEntityToChemicalEntityAssociation/">ChemicalEntityToChemicalEntityAssociation</a></td>
 <td><a href="../semmed_agreement_count/">semmed_agreement_count</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalEntityToChemicalEntityAssociation/">ChemicalEntityToChemicalEntityAssociation</a></td>
+<td><a href="../association_basis_qualifier/">association_basis_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -6220,7 +6540,19 @@
 </tr>
 <tr>
 <td><a href="../ReactionToParticipantAssociation/">ReactionToParticipantAssociation</a></td>
-<td><a href="../supporting_text/">supporting_text</a></td>
+<td><a href="../statistical_significance_qualifier/">statistical_significance_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ReactionToParticipantAssociation/">ReactionToParticipantAssociation</a></td>
+<td><a href="../effect_size/">effect_size</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ReactionToParticipantAssociation/">ReactionToParticipantAssociation</a></td>
+<td><a href="../effect_type/">effect_type</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -6245,6 +6577,12 @@
 <tr>
 <td><a href="../ReactionToParticipantAssociation/">ReactionToParticipantAssociation</a></td>
 <td><a href="../semmed_agreement_count/">semmed_agreement_count</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ReactionToParticipantAssociation/">ReactionToParticipantAssociation</a></td>
+<td><a href="../association_basis_qualifier/">association_basis_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -6466,7 +6804,19 @@
 </tr>
 <tr>
 <td><a href="../ReactionToCatalystAssociation/">ReactionToCatalystAssociation</a></td>
-<td><a href="../supporting_text/">supporting_text</a></td>
+<td><a href="../statistical_significance_qualifier/">statistical_significance_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ReactionToCatalystAssociation/">ReactionToCatalystAssociation</a></td>
+<td><a href="../effect_size/">effect_size</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ReactionToCatalystAssociation/">ReactionToCatalystAssociation</a></td>
+<td><a href="../effect_type/">effect_type</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -6491,6 +6841,12 @@
 <tr>
 <td><a href="../ReactionToCatalystAssociation/">ReactionToCatalystAssociation</a></td>
 <td><a href="../semmed_agreement_count/">semmed_agreement_count</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ReactionToCatalystAssociation/">ReactionToCatalystAssociation</a></td>
+<td><a href="../association_basis_qualifier/">association_basis_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -6700,7 +7056,19 @@
 </tr>
 <tr>
 <td><a href="../ChemicalEntityToChemicalDerivationAssociation/">ChemicalEntityToChemicalDerivationAssociation</a></td>
-<td><a href="../supporting_text/">supporting_text</a></td>
+<td><a href="../statistical_significance_qualifier/">statistical_significance_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalEntityToChemicalDerivationAssociation/">ChemicalEntityToChemicalDerivationAssociation</a></td>
+<td><a href="../effect_size/">effect_size</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalEntityToChemicalDerivationAssociation/">ChemicalEntityToChemicalDerivationAssociation</a></td>
+<td><a href="../effect_type/">effect_type</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -6725,6 +7093,12 @@
 <tr>
 <td><a href="../ChemicalEntityToChemicalDerivationAssociation/">ChemicalEntityToChemicalDerivationAssociation</a></td>
 <td><a href="../semmed_agreement_count/">semmed_agreement_count</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalEntityToChemicalDerivationAssociation/">ChemicalEntityToChemicalDerivationAssociation</a></td>
+<td><a href="../association_basis_qualifier/">association_basis_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -6958,7 +7332,19 @@
 </tr>
 <tr>
 <td><a href="../ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation/">ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation</a></td>
-<td><a href="../supporting_text/">supporting_text</a></td>
+<td><a href="../statistical_significance_qualifier/">statistical_significance_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation/">ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation</a></td>
+<td><a href="../effect_size/">effect_size</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation/">ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation</a></td>
+<td><a href="../effect_type/">effect_type</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -6983,6 +7369,12 @@
 <tr>
 <td><a href="../ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation/">ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation</a></td>
 <td><a href="../semmed_agreement_count/">semmed_agreement_count</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation/">ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation</a></td>
+<td><a href="../association_basis_qualifier/">association_basis_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -7234,7 +7626,19 @@
 </tr>
 <tr>
 <td><a href="../ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation/">ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation</a></td>
-<td><a href="../supporting_text/">supporting_text</a></td>
+<td><a href="../statistical_significance_qualifier/">statistical_significance_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation/">ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation</a></td>
+<td><a href="../effect_size/">effect_size</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation/">ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation</a></td>
+<td><a href="../effect_type/">effect_type</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -7259,6 +7663,12 @@
 <tr>
 <td><a href="../ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation/">ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation</a></td>
 <td><a href="../semmed_agreement_count/">semmed_agreement_count</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation/">ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation</a></td>
+<td><a href="../association_basis_qualifier/">association_basis_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -7522,7 +7932,19 @@
 </tr>
 <tr>
 <td><a href="../ChemicalOrDrugOrTreatmentAdverseEventAssociation/">ChemicalOrDrugOrTreatmentAdverseEventAssociation</a></td>
-<td><a href="../supporting_text/">supporting_text</a></td>
+<td><a href="../statistical_significance_qualifier/">statistical_significance_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalOrDrugOrTreatmentAdverseEventAssociation/">ChemicalOrDrugOrTreatmentAdverseEventAssociation</a></td>
+<td><a href="../effect_size/">effect_size</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalOrDrugOrTreatmentAdverseEventAssociation/">ChemicalOrDrugOrTreatmentAdverseEventAssociation</a></td>
+<td><a href="../effect_type/">effect_type</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -7547,6 +7969,12 @@
 <tr>
 <td><a href="../ChemicalOrDrugOrTreatmentAdverseEventAssociation/">ChemicalOrDrugOrTreatmentAdverseEventAssociation</a></td>
 <td><a href="../semmed_agreement_count/">semmed_agreement_count</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalOrDrugOrTreatmentAdverseEventAssociation/">ChemicalOrDrugOrTreatmentAdverseEventAssociation</a></td>
+<td><a href="../association_basis_qualifier/">association_basis_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -7804,7 +8232,19 @@
 </tr>
 <tr>
 <td><a href="../ChemicalOrDrugOrTreatmentSideEffectAssociation/">ChemicalOrDrugOrTreatmentSideEffectAssociation</a></td>
-<td><a href="../supporting_text/">supporting_text</a></td>
+<td><a href="../statistical_significance_qualifier/">statistical_significance_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalOrDrugOrTreatmentSideEffectAssociation/">ChemicalOrDrugOrTreatmentSideEffectAssociation</a></td>
+<td><a href="../effect_size/">effect_size</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalOrDrugOrTreatmentSideEffectAssociation/">ChemicalOrDrugOrTreatmentSideEffectAssociation</a></td>
+<td><a href="../effect_type/">effect_type</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -7829,6 +8269,12 @@
 <tr>
 <td><a href="../ChemicalOrDrugOrTreatmentSideEffectAssociation/">ChemicalOrDrugOrTreatmentSideEffectAssociation</a></td>
 <td><a href="../semmed_agreement_count/">semmed_agreement_count</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalOrDrugOrTreatmentSideEffectAssociation/">ChemicalOrDrugOrTreatmentSideEffectAssociation</a></td>
+<td><a href="../association_basis_qualifier/">association_basis_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -8032,7 +8478,19 @@
 </tr>
 <tr>
 <td><a href="../GeneToPathwayAssociation/">GeneToPathwayAssociation</a></td>
-<td><a href="../supporting_text/">supporting_text</a></td>
+<td><a href="../statistical_significance_qualifier/">statistical_significance_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneToPathwayAssociation/">GeneToPathwayAssociation</a></td>
+<td><a href="../effect_size/">effect_size</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneToPathwayAssociation/">GeneToPathwayAssociation</a></td>
+<td><a href="../effect_type/">effect_type</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -8057,6 +8515,12 @@
 <tr>
 <td><a href="../GeneToPathwayAssociation/">GeneToPathwayAssociation</a></td>
 <td><a href="../semmed_agreement_count/">semmed_agreement_count</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneToPathwayAssociation/">GeneToPathwayAssociation</a></td>
+<td><a href="../association_basis_qualifier/">association_basis_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -8254,7 +8718,19 @@
 </tr>
 <tr>
 <td><a href="../MolecularActivityToPathwayAssociation/">MolecularActivityToPathwayAssociation</a></td>
-<td><a href="../supporting_text/">supporting_text</a></td>
+<td><a href="../statistical_significance_qualifier/">statistical_significance_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../MolecularActivityToPathwayAssociation/">MolecularActivityToPathwayAssociation</a></td>
+<td><a href="../effect_size/">effect_size</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../MolecularActivityToPathwayAssociation/">MolecularActivityToPathwayAssociation</a></td>
+<td><a href="../effect_type/">effect_type</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -8279,6 +8755,12 @@
 <tr>
 <td><a href="../MolecularActivityToPathwayAssociation/">MolecularActivityToPathwayAssociation</a></td>
 <td><a href="../semmed_agreement_count/">semmed_agreement_count</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../MolecularActivityToPathwayAssociation/">MolecularActivityToPathwayAssociation</a></td>
+<td><a href="../association_basis_qualifier/">association_basis_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -8476,7 +8958,19 @@
 </tr>
 <tr>
 <td><a href="../ChemicalEntityToPathwayAssociation/">ChemicalEntityToPathwayAssociation</a></td>
-<td><a href="../supporting_text/">supporting_text</a></td>
+<td><a href="../statistical_significance_qualifier/">statistical_significance_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalEntityToPathwayAssociation/">ChemicalEntityToPathwayAssociation</a></td>
+<td><a href="../effect_size/">effect_size</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalEntityToPathwayAssociation/">ChemicalEntityToPathwayAssociation</a></td>
+<td><a href="../effect_type/">effect_type</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -8501,6 +8995,12 @@
 <tr>
 <td><a href="../ChemicalEntityToPathwayAssociation/">ChemicalEntityToPathwayAssociation</a></td>
 <td><a href="../semmed_agreement_count/">semmed_agreement_count</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalEntityToPathwayAssociation/">ChemicalEntityToPathwayAssociation</a></td>
+<td><a href="../association_basis_qualifier/">association_basis_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -8722,7 +9222,19 @@
 </tr>
 <tr>
 <td><a href="../ChemicalEntityToBiologicalProcessAssociation/">ChemicalEntityToBiologicalProcessAssociation</a></td>
-<td><a href="../supporting_text/">supporting_text</a></td>
+<td><a href="../statistical_significance_qualifier/">statistical_significance_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalEntityToBiologicalProcessAssociation/">ChemicalEntityToBiologicalProcessAssociation</a></td>
+<td><a href="../effect_size/">effect_size</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalEntityToBiologicalProcessAssociation/">ChemicalEntityToBiologicalProcessAssociation</a></td>
+<td><a href="../effect_type/">effect_type</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -8747,6 +9259,12 @@
 <tr>
 <td><a href="../ChemicalEntityToBiologicalProcessAssociation/">ChemicalEntityToBiologicalProcessAssociation</a></td>
 <td><a href="../semmed_agreement_count/">semmed_agreement_count</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalEntityToBiologicalProcessAssociation/">ChemicalEntityToBiologicalProcessAssociation</a></td>
+<td><a href="../association_basis_qualifier/">association_basis_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -8974,7 +9492,19 @@
 </tr>
 <tr>
 <td><a href="../NamedThingAssociatedWithLikelihoodOfNamedThingAssociation/">NamedThingAssociatedWithLikelihoodOfNamedThingAssociation</a></td>
-<td><a href="../supporting_text/">supporting_text</a></td>
+<td><a href="../statistical_significance_qualifier/">statistical_significance_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../NamedThingAssociatedWithLikelihoodOfNamedThingAssociation/">NamedThingAssociatedWithLikelihoodOfNamedThingAssociation</a></td>
+<td><a href="../effect_size/">effect_size</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../NamedThingAssociatedWithLikelihoodOfNamedThingAssociation/">NamedThingAssociatedWithLikelihoodOfNamedThingAssociation</a></td>
+<td><a href="../effect_type/">effect_type</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -9003,8 +9533,8 @@
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
-<td><a href="../ChemicalGeneInteractionAssociation/">ChemicalGeneInteractionAssociation</a></td>
-<td><a href="../has_affinity/">has_affinity</a></td>
+<td><a href="../NamedThingAssociatedWithLikelihoodOfNamedThingAssociation/">NamedThingAssociatedWithLikelihoodOfNamedThingAssociation</a></td>
+<td><a href="../association_basis_qualifier/">association_basis_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -9280,7 +9810,19 @@
 </tr>
 <tr>
 <td><a href="../ChemicalGeneInteractionAssociation/">ChemicalGeneInteractionAssociation</a></td>
-<td><a href="../supporting_text/">supporting_text</a></td>
+<td><a href="../statistical_significance_qualifier/">statistical_significance_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalGeneInteractionAssociation/">ChemicalGeneInteractionAssociation</a></td>
+<td><a href="../effect_size/">effect_size</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalGeneInteractionAssociation/">ChemicalGeneInteractionAssociation</a></td>
+<td><a href="../effect_type/">effect_type</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -9305,6 +9847,12 @@
 <tr>
 <td><a href="../ChemicalGeneInteractionAssociation/">ChemicalGeneInteractionAssociation</a></td>
 <td><a href="../semmed_agreement_count/">semmed_agreement_count</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalGeneInteractionAssociation/">ChemicalGeneInteractionAssociation</a></td>
+<td><a href="../association_basis_qualifier/">association_basis_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -9592,7 +10140,19 @@
 </tr>
 <tr>
 <td><a href="../MacromolecularMachineHasSubstrateAssociation/">MacromolecularMachineHasSubstrateAssociation</a></td>
-<td><a href="../supporting_text/">supporting_text</a></td>
+<td><a href="../statistical_significance_qualifier/">statistical_significance_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../MacromolecularMachineHasSubstrateAssociation/">MacromolecularMachineHasSubstrateAssociation</a></td>
+<td><a href="../effect_size/">effect_size</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../MacromolecularMachineHasSubstrateAssociation/">MacromolecularMachineHasSubstrateAssociation</a></td>
+<td><a href="../effect_type/">effect_type</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -9617,6 +10177,12 @@
 <tr>
 <td><a href="../MacromolecularMachineHasSubstrateAssociation/">MacromolecularMachineHasSubstrateAssociation</a></td>
 <td><a href="../semmed_agreement_count/">semmed_agreement_count</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../MacromolecularMachineHasSubstrateAssociation/">MacromolecularMachineHasSubstrateAssociation</a></td>
+<td><a href="../association_basis_qualifier/">association_basis_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -9844,7 +10410,19 @@
 </tr>
 <tr>
 <td><a href="../GeneRegulatesGeneAssociation/">GeneRegulatesGeneAssociation</a></td>
-<td><a href="../supporting_text/">supporting_text</a></td>
+<td><a href="../statistical_significance_qualifier/">statistical_significance_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneRegulatesGeneAssociation/">GeneRegulatesGeneAssociation</a></td>
+<td><a href="../effect_size/">effect_size</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneRegulatesGeneAssociation/">GeneRegulatesGeneAssociation</a></td>
+<td><a href="../effect_type/">effect_type</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -9869,6 +10447,12 @@
 <tr>
 <td><a href="../GeneRegulatesGeneAssociation/">GeneRegulatesGeneAssociation</a></td>
 <td><a href="../semmed_agreement_count/">semmed_agreement_count</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneRegulatesGeneAssociation/">GeneRegulatesGeneAssociation</a></td>
+<td><a href="../association_basis_qualifier/">association_basis_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -10066,7 +10650,19 @@
 </tr>
 <tr>
 <td><a href="../ProcessRegulatesProcessAssociation/">ProcessRegulatesProcessAssociation</a></td>
-<td><a href="../supporting_text/">supporting_text</a></td>
+<td><a href="../statistical_significance_qualifier/">statistical_significance_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ProcessRegulatesProcessAssociation/">ProcessRegulatesProcessAssociation</a></td>
+<td><a href="../effect_size/">effect_size</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ProcessRegulatesProcessAssociation/">ProcessRegulatesProcessAssociation</a></td>
+<td><a href="../effect_type/">effect_type</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -10091,6 +10687,12 @@
 <tr>
 <td><a href="../ProcessRegulatesProcessAssociation/">ProcessRegulatesProcessAssociation</a></td>
 <td><a href="../semmed_agreement_count/">semmed_agreement_count</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ProcessRegulatesProcessAssociation/">ProcessRegulatesProcessAssociation</a></td>
+<td><a href="../association_basis_qualifier/">association_basis_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -10378,7 +10980,19 @@
 </tr>
 <tr>
 <td><a href="../ChemicalAffectsBiologicalEntityAssociation/">ChemicalAffectsBiologicalEntityAssociation</a></td>
-<td><a href="../supporting_text/">supporting_text</a></td>
+<td><a href="../statistical_significance_qualifier/">statistical_significance_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalAffectsBiologicalEntityAssociation/">ChemicalAffectsBiologicalEntityAssociation</a></td>
+<td><a href="../effect_size/">effect_size</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalAffectsBiologicalEntityAssociation/">ChemicalAffectsBiologicalEntityAssociation</a></td>
+<td><a href="../effect_type/">effect_type</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -10403,6 +11017,12 @@
 <tr>
 <td><a href="../ChemicalAffectsBiologicalEntityAssociation/">ChemicalAffectsBiologicalEntityAssociation</a></td>
 <td><a href="../semmed_agreement_count/">semmed_agreement_count</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalAffectsBiologicalEntityAssociation/">ChemicalAffectsBiologicalEntityAssociation</a></td>
+<td><a href="../association_basis_qualifier/">association_basis_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -10702,7 +11322,19 @@
 </tr>
 <tr>
 <td><a href="../ChemicalAffectsGeneAssociation/">ChemicalAffectsGeneAssociation</a></td>
-<td><a href="../supporting_text/">supporting_text</a></td>
+<td><a href="../statistical_significance_qualifier/">statistical_significance_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalAffectsGeneAssociation/">ChemicalAffectsGeneAssociation</a></td>
+<td><a href="../effect_size/">effect_size</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalAffectsGeneAssociation/">ChemicalAffectsGeneAssociation</a></td>
+<td><a href="../effect_type/">effect_type</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -10721,6 +11353,12 @@
 <tr>
 <td><a href="../ChemicalAffectsGeneAssociation/">ChemicalAffectsGeneAssociation</a></td>
 <td><a href="../semmed_agreement_count/">semmed_agreement_count</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalAffectsGeneAssociation/">ChemicalAffectsGeneAssociation</a></td>
+<td><a href="../association_basis_qualifier/">association_basis_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -11008,7 +11646,19 @@
 </tr>
 <tr>
 <td><a href="../ChemicalGeneSensitivityAssociation/">ChemicalGeneSensitivityAssociation</a></td>
-<td><a href="../supporting_text/">supporting_text</a></td>
+<td><a href="../statistical_significance_qualifier/">statistical_significance_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalGeneSensitivityAssociation/">ChemicalGeneSensitivityAssociation</a></td>
+<td><a href="../effect_size/">effect_size</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalGeneSensitivityAssociation/">ChemicalGeneSensitivityAssociation</a></td>
+<td><a href="../effect_type/">effect_type</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -11027,6 +11677,12 @@
 <tr>
 <td><a href="../ChemicalGeneSensitivityAssociation/">ChemicalGeneSensitivityAssociation</a></td>
 <td><a href="../semmed_agreement_count/">semmed_agreement_count</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalGeneSensitivityAssociation/">ChemicalGeneSensitivityAssociation</a></td>
+<td><a href="../association_basis_qualifier/">association_basis_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -11320,7 +11976,19 @@
 </tr>
 <tr>
 <td><a href="../GeneAffectsChemicalAssociation/">GeneAffectsChemicalAssociation</a></td>
-<td><a href="../supporting_text/">supporting_text</a></td>
+<td><a href="../statistical_significance_qualifier/">statistical_significance_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneAffectsChemicalAssociation/">GeneAffectsChemicalAssociation</a></td>
+<td><a href="../effect_size/">effect_size</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneAffectsChemicalAssociation/">GeneAffectsChemicalAssociation</a></td>
+<td><a href="../effect_type/">effect_type</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -11345,6 +12013,12 @@
 <tr>
 <td><a href="../GeneAffectsChemicalAssociation/">GeneAffectsChemicalAssociation</a></td>
 <td><a href="../semmed_agreement_count/">semmed_agreement_count</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneAffectsChemicalAssociation/">GeneAffectsChemicalAssociation</a></td>
+<td><a href="../association_basis_qualifier/">association_basis_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -11542,7 +12216,19 @@
 </tr>
 <tr>
 <td><a href="../DrugToGeneAssociation/">DrugToGeneAssociation</a></td>
-<td><a href="../supporting_text/">supporting_text</a></td>
+<td><a href="../statistical_significance_qualifier/">statistical_significance_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../DrugToGeneAssociation/">DrugToGeneAssociation</a></td>
+<td><a href="../effect_size/">effect_size</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../DrugToGeneAssociation/">DrugToGeneAssociation</a></td>
+<td><a href="../effect_type/">effect_type</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -11567,6 +12253,12 @@
 <tr>
 <td><a href="../DrugToGeneAssociation/">DrugToGeneAssociation</a></td>
 <td><a href="../semmed_agreement_count/">semmed_agreement_count</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../DrugToGeneAssociation/">DrugToGeneAssociation</a></td>
+<td><a href="../association_basis_qualifier/">association_basis_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -11782,7 +12474,19 @@
 </tr>
 <tr>
 <td><a href="../MaterialSampleDerivationAssociation/">MaterialSampleDerivationAssociation</a></td>
-<td><a href="../supporting_text/">supporting_text</a></td>
+<td><a href="../statistical_significance_qualifier/">statistical_significance_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../MaterialSampleDerivationAssociation/">MaterialSampleDerivationAssociation</a></td>
+<td><a href="../effect_size/">effect_size</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../MaterialSampleDerivationAssociation/">MaterialSampleDerivationAssociation</a></td>
+<td><a href="../effect_type/">effect_type</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -11807,6 +12511,12 @@
 <tr>
 <td><a href="../MaterialSampleDerivationAssociation/">MaterialSampleDerivationAssociation</a></td>
 <td><a href="../semmed_agreement_count/">semmed_agreement_count</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../MaterialSampleDerivationAssociation/">MaterialSampleDerivationAssociation</a></td>
+<td><a href="../association_basis_qualifier/">association_basis_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -12028,7 +12738,19 @@
 </tr>
 <tr>
 <td><a href="../MaterialSampleToDiseaseOrPhenotypicFeatureAssociation/">MaterialSampleToDiseaseOrPhenotypicFeatureAssociation</a></td>
-<td><a href="../supporting_text/">supporting_text</a></td>
+<td><a href="../statistical_significance_qualifier/">statistical_significance_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../MaterialSampleToDiseaseOrPhenotypicFeatureAssociation/">MaterialSampleToDiseaseOrPhenotypicFeatureAssociation</a></td>
+<td><a href="../effect_size/">effect_size</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../MaterialSampleToDiseaseOrPhenotypicFeatureAssociation/">MaterialSampleToDiseaseOrPhenotypicFeatureAssociation</a></td>
+<td><a href="../effect_type/">effect_type</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -12053,6 +12775,12 @@
 <tr>
 <td><a href="../MaterialSampleToDiseaseOrPhenotypicFeatureAssociation/">MaterialSampleToDiseaseOrPhenotypicFeatureAssociation</a></td>
 <td><a href="../semmed_agreement_count/">semmed_agreement_count</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../MaterialSampleToDiseaseOrPhenotypicFeatureAssociation/">MaterialSampleToDiseaseOrPhenotypicFeatureAssociation</a></td>
+<td><a href="../association_basis_qualifier/">association_basis_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -12286,7 +13014,19 @@
 </tr>
 <tr>
 <td><a href="../DiseaseToExposureEventAssociation/">DiseaseToExposureEventAssociation</a></td>
-<td><a href="../supporting_text/">supporting_text</a></td>
+<td><a href="../statistical_significance_qualifier/">statistical_significance_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../DiseaseToExposureEventAssociation/">DiseaseToExposureEventAssociation</a></td>
+<td><a href="../effect_size/">effect_size</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../DiseaseToExposureEventAssociation/">DiseaseToExposureEventAssociation</a></td>
+<td><a href="../effect_type/">effect_type</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -12311,6 +13051,12 @@
 <tr>
 <td><a href="../DiseaseToExposureEventAssociation/">DiseaseToExposureEventAssociation</a></td>
 <td><a href="../semmed_agreement_count/">semmed_agreement_count</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../DiseaseToExposureEventAssociation/">DiseaseToExposureEventAssociation</a></td>
+<td><a href="../association_basis_qualifier/">association_basis_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -12538,7 +13284,19 @@
 </tr>
 <tr>
 <td><a href="../ExposureEventToOutcomeAssociation/">ExposureEventToOutcomeAssociation</a></td>
-<td><a href="../supporting_text/">supporting_text</a></td>
+<td><a href="../statistical_significance_qualifier/">statistical_significance_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ExposureEventToOutcomeAssociation/">ExposureEventToOutcomeAssociation</a></td>
+<td><a href="../effect_size/">effect_size</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ExposureEventToOutcomeAssociation/">ExposureEventToOutcomeAssociation</a></td>
+<td><a href="../effect_type/">effect_type</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -12563,6 +13321,12 @@
 <tr>
 <td><a href="../ExposureEventToOutcomeAssociation/">ExposureEventToOutcomeAssociation</a></td>
 <td><a href="../semmed_agreement_count/">semmed_agreement_count</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ExposureEventToOutcomeAssociation/">ExposureEventToOutcomeAssociation</a></td>
+<td><a href="../association_basis_qualifier/">association_basis_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -13138,7 +13902,19 @@
 </tr>
 <tr>
 <td><a href="../PhenotypicFeatureToPhenotypicFeatureAssociation/">PhenotypicFeatureToPhenotypicFeatureAssociation</a></td>
-<td><a href="../supporting_text/">supporting_text</a></td>
+<td><a href="../statistical_significance_qualifier/">statistical_significance_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../PhenotypicFeatureToPhenotypicFeatureAssociation/">PhenotypicFeatureToPhenotypicFeatureAssociation</a></td>
+<td><a href="../effect_size/">effect_size</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../PhenotypicFeatureToPhenotypicFeatureAssociation/">PhenotypicFeatureToPhenotypicFeatureAssociation</a></td>
+<td><a href="../effect_type/">effect_type</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -13163,6 +13939,12 @@
 <tr>
 <td><a href="../PhenotypicFeatureToPhenotypicFeatureAssociation/">PhenotypicFeatureToPhenotypicFeatureAssociation</a></td>
 <td><a href="../semmed_agreement_count/">semmed_agreement_count</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../PhenotypicFeatureToPhenotypicFeatureAssociation/">PhenotypicFeatureToPhenotypicFeatureAssociation</a></td>
+<td><a href="../association_basis_qualifier/">association_basis_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -13396,7 +14178,19 @@
 </tr>
 <tr>
 <td><a href="../InformationContentEntityToNamedThingAssociation/">InformationContentEntityToNamedThingAssociation</a></td>
-<td><a href="../supporting_text/">supporting_text</a></td>
+<td><a href="../statistical_significance_qualifier/">statistical_significance_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../InformationContentEntityToNamedThingAssociation/">InformationContentEntityToNamedThingAssociation</a></td>
+<td><a href="../effect_size/">effect_size</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../InformationContentEntityToNamedThingAssociation/">InformationContentEntityToNamedThingAssociation</a></td>
+<td><a href="../effect_type/">effect_type</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -13421,6 +14215,12 @@
 <tr>
 <td><a href="../InformationContentEntityToNamedThingAssociation/">InformationContentEntityToNamedThingAssociation</a></td>
 <td><a href="../semmed_agreement_count/">semmed_agreement_count</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../InformationContentEntityToNamedThingAssociation/">InformationContentEntityToNamedThingAssociation</a></td>
+<td><a href="../association_basis_qualifier/">association_basis_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -13696,7 +14496,19 @@
 </tr>
 <tr>
 <td><a href="../DiseaseOrPhenotypicFeatureToLocationAssociation/">DiseaseOrPhenotypicFeatureToLocationAssociation</a></td>
-<td><a href="../supporting_text/">supporting_text</a></td>
+<td><a href="../statistical_significance_qualifier/">statistical_significance_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../DiseaseOrPhenotypicFeatureToLocationAssociation/">DiseaseOrPhenotypicFeatureToLocationAssociation</a></td>
+<td><a href="../effect_size/">effect_size</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../DiseaseOrPhenotypicFeatureToLocationAssociation/">DiseaseOrPhenotypicFeatureToLocationAssociation</a></td>
+<td><a href="../effect_type/">effect_type</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -13721,6 +14533,12 @@
 <tr>
 <td><a href="../DiseaseOrPhenotypicFeatureToLocationAssociation/">DiseaseOrPhenotypicFeatureToLocationAssociation</a></td>
 <td><a href="../semmed_agreement_count/">semmed_agreement_count</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../DiseaseOrPhenotypicFeatureToLocationAssociation/">DiseaseOrPhenotypicFeatureToLocationAssociation</a></td>
+<td><a href="../association_basis_qualifier/">association_basis_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -13918,7 +14736,19 @@
 </tr>
 <tr>
 <td><a href="../DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation/">DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation</a></td>
-<td><a href="../supporting_text/">supporting_text</a></td>
+<td><a href="../statistical_significance_qualifier/">statistical_significance_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation/">DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation</a></td>
+<td><a href="../effect_size/">effect_size</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation/">DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation</a></td>
+<td><a href="../effect_type/">effect_type</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -13943,6 +14773,12 @@
 <tr>
 <td><a href="../DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation/">DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation</a></td>
 <td><a href="../semmed_agreement_count/">semmed_agreement_count</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation/">DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation</a></td>
+<td><a href="../association_basis_qualifier/">association_basis_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -14206,7 +15042,19 @@
 </tr>
 <tr>
 <td><a href="../GenotypeToPhenotypicFeatureAssociation/">GenotypeToPhenotypicFeatureAssociation</a></td>
-<td><a href="../supporting_text/">supporting_text</a></td>
+<td><a href="../statistical_significance_qualifier/">statistical_significance_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GenotypeToPhenotypicFeatureAssociation/">GenotypeToPhenotypicFeatureAssociation</a></td>
+<td><a href="../effect_size/">effect_size</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GenotypeToPhenotypicFeatureAssociation/">GenotypeToPhenotypicFeatureAssociation</a></td>
+<td><a href="../effect_type/">effect_type</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -14231,6 +15079,12 @@
 <tr>
 <td><a href="../GenotypeToPhenotypicFeatureAssociation/">GenotypeToPhenotypicFeatureAssociation</a></td>
 <td><a href="../semmed_agreement_count/">semmed_agreement_count</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GenotypeToPhenotypicFeatureAssociation/">GenotypeToPhenotypicFeatureAssociation</a></td>
+<td><a href="../association_basis_qualifier/">association_basis_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -14476,7 +15330,19 @@
 </tr>
 <tr>
 <td><a href="../ExposureEventToPhenotypicFeatureAssociation/">ExposureEventToPhenotypicFeatureAssociation</a></td>
-<td><a href="../supporting_text/">supporting_text</a></td>
+<td><a href="../statistical_significance_qualifier/">statistical_significance_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ExposureEventToPhenotypicFeatureAssociation/">ExposureEventToPhenotypicFeatureAssociation</a></td>
+<td><a href="../effect_size/">effect_size</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ExposureEventToPhenotypicFeatureAssociation/">ExposureEventToPhenotypicFeatureAssociation</a></td>
+<td><a href="../effect_type/">effect_type</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -14501,6 +15367,12 @@
 <tr>
 <td><a href="../ExposureEventToPhenotypicFeatureAssociation/">ExposureEventToPhenotypicFeatureAssociation</a></td>
 <td><a href="../semmed_agreement_count/">semmed_agreement_count</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ExposureEventToPhenotypicFeatureAssociation/">ExposureEventToPhenotypicFeatureAssociation</a></td>
+<td><a href="../association_basis_qualifier/">association_basis_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -14752,7 +15624,19 @@
 </tr>
 <tr>
 <td><a href="../DiseaseToPhenotypicFeatureAssociation/">DiseaseToPhenotypicFeatureAssociation</a></td>
-<td><a href="../supporting_text/">supporting_text</a></td>
+<td><a href="../statistical_significance_qualifier/">statistical_significance_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../DiseaseToPhenotypicFeatureAssociation/">DiseaseToPhenotypicFeatureAssociation</a></td>
+<td><a href="../effect_size/">effect_size</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../DiseaseToPhenotypicFeatureAssociation/">DiseaseToPhenotypicFeatureAssociation</a></td>
+<td><a href="../effect_type/">effect_type</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -14777,6 +15661,12 @@
 <tr>
 <td><a href="../DiseaseToPhenotypicFeatureAssociation/">DiseaseToPhenotypicFeatureAssociation</a></td>
 <td><a href="../semmed_agreement_count/">semmed_agreement_count</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../DiseaseToPhenotypicFeatureAssociation/">DiseaseToPhenotypicFeatureAssociation</a></td>
+<td><a href="../association_basis_qualifier/">association_basis_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -15016,7 +15906,19 @@
 </tr>
 <tr>
 <td><a href="../DiseaseToDiseaseAssociation/">DiseaseToDiseaseAssociation</a></td>
-<td><a href="../supporting_text/">supporting_text</a></td>
+<td><a href="../statistical_significance_qualifier/">statistical_significance_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../DiseaseToDiseaseAssociation/">DiseaseToDiseaseAssociation</a></td>
+<td><a href="../effect_size/">effect_size</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../DiseaseToDiseaseAssociation/">DiseaseToDiseaseAssociation</a></td>
+<td><a href="../effect_type/">effect_type</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -15041,6 +15943,12 @@
 <tr>
 <td><a href="../DiseaseToDiseaseAssociation/">DiseaseToDiseaseAssociation</a></td>
 <td><a href="../semmed_agreement_count/">semmed_agreement_count</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../DiseaseToDiseaseAssociation/">DiseaseToDiseaseAssociation</a></td>
+<td><a href="../association_basis_qualifier/">association_basis_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -15292,7 +16200,19 @@
 </tr>
 <tr>
 <td><a href="../CaseToPhenotypicFeatureAssociation/">CaseToPhenotypicFeatureAssociation</a></td>
-<td><a href="../supporting_text/">supporting_text</a></td>
+<td><a href="../statistical_significance_qualifier/">statistical_significance_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../CaseToPhenotypicFeatureAssociation/">CaseToPhenotypicFeatureAssociation</a></td>
+<td><a href="../effect_size/">effect_size</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../CaseToPhenotypicFeatureAssociation/">CaseToPhenotypicFeatureAssociation</a></td>
+<td><a href="../effect_type/">effect_type</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -15317,6 +16237,12 @@
 <tr>
 <td><a href="../CaseToPhenotypicFeatureAssociation/">CaseToPhenotypicFeatureAssociation</a></td>
 <td><a href="../semmed_agreement_count/">semmed_agreement_count</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../CaseToPhenotypicFeatureAssociation/">CaseToPhenotypicFeatureAssociation</a></td>
+<td><a href="../association_basis_qualifier/">association_basis_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -15562,7 +16488,19 @@
 </tr>
 <tr>
 <td><a href="../CaseToDiseaseAssociation/">CaseToDiseaseAssociation</a></td>
-<td><a href="../supporting_text/">supporting_text</a></td>
+<td><a href="../statistical_significance_qualifier/">statistical_significance_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../CaseToDiseaseAssociation/">CaseToDiseaseAssociation</a></td>
+<td><a href="../effect_size/">effect_size</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../CaseToDiseaseAssociation/">CaseToDiseaseAssociation</a></td>
+<td><a href="../effect_type/">effect_type</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -15587,6 +16525,12 @@
 <tr>
 <td><a href="../CaseToDiseaseAssociation/">CaseToDiseaseAssociation</a></td>
 <td><a href="../semmed_agreement_count/">semmed_agreement_count</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../CaseToDiseaseAssociation/">CaseToDiseaseAssociation</a></td>
+<td><a href="../association_basis_qualifier/">association_basis_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -15784,7 +16728,19 @@
 </tr>
 <tr>
 <td><a href="../CaseToVariantAssociation/">CaseToVariantAssociation</a></td>
-<td><a href="../supporting_text/">supporting_text</a></td>
+<td><a href="../statistical_significance_qualifier/">statistical_significance_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../CaseToVariantAssociation/">CaseToVariantAssociation</a></td>
+<td><a href="../effect_size/">effect_size</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../CaseToVariantAssociation/">CaseToVariantAssociation</a></td>
+<td><a href="../effect_type/">effect_type</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -15809,6 +16765,12 @@
 <tr>
 <td><a href="../CaseToVariantAssociation/">CaseToVariantAssociation</a></td>
 <td><a href="../semmed_agreement_count/">semmed_agreement_count</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../CaseToVariantAssociation/">CaseToVariantAssociation</a></td>
+<td><a href="../association_basis_qualifier/">association_basis_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -16006,7 +16968,19 @@
 </tr>
 <tr>
 <td><a href="../CaseToGeneAssociation/">CaseToGeneAssociation</a></td>
-<td><a href="../supporting_text/">supporting_text</a></td>
+<td><a href="../statistical_significance_qualifier/">statistical_significance_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../CaseToGeneAssociation/">CaseToGeneAssociation</a></td>
+<td><a href="../effect_size/">effect_size</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../CaseToGeneAssociation/">CaseToGeneAssociation</a></td>
+<td><a href="../effect_type/">effect_type</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -16031,6 +17005,12 @@
 <tr>
 <td><a href="../CaseToGeneAssociation/">CaseToGeneAssociation</a></td>
 <td><a href="../semmed_agreement_count/">semmed_agreement_count</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../CaseToGeneAssociation/">CaseToGeneAssociation</a></td>
+<td><a href="../association_basis_qualifier/">association_basis_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -16234,7 +17214,19 @@
 </tr>
 <tr>
 <td><a href="../BehaviorToBehavioralFeatureAssociation/">BehaviorToBehavioralFeatureAssociation</a></td>
-<td><a href="../supporting_text/">supporting_text</a></td>
+<td><a href="../statistical_significance_qualifier/">statistical_significance_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../BehaviorToBehavioralFeatureAssociation/">BehaviorToBehavioralFeatureAssociation</a></td>
+<td><a href="../effect_size/">effect_size</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../BehaviorToBehavioralFeatureAssociation/">BehaviorToBehavioralFeatureAssociation</a></td>
+<td><a href="../effect_type/">effect_type</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -16259,6 +17251,12 @@
 <tr>
 <td><a href="../BehaviorToBehavioralFeatureAssociation/">BehaviorToBehavioralFeatureAssociation</a></td>
 <td><a href="../semmed_agreement_count/">semmed_agreement_count</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../BehaviorToBehavioralFeatureAssociation/">BehaviorToBehavioralFeatureAssociation</a></td>
+<td><a href="../association_basis_qualifier/">association_basis_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -16564,7 +17562,19 @@
 </tr>
 <tr>
 <td><a href="../GeneToPhenotypicFeatureAssociation/">GeneToPhenotypicFeatureAssociation</a></td>
-<td><a href="../supporting_text/">supporting_text</a></td>
+<td><a href="../statistical_significance_qualifier/">statistical_significance_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneToPhenotypicFeatureAssociation/">GeneToPhenotypicFeatureAssociation</a></td>
+<td><a href="../effect_size/">effect_size</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneToPhenotypicFeatureAssociation/">GeneToPhenotypicFeatureAssociation</a></td>
+<td><a href="../effect_type/">effect_type</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -16589,6 +17599,12 @@
 <tr>
 <td><a href="../GeneToPhenotypicFeatureAssociation/">GeneToPhenotypicFeatureAssociation</a></td>
 <td><a href="../semmed_agreement_count/">semmed_agreement_count</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneToPhenotypicFeatureAssociation/">GeneToPhenotypicFeatureAssociation</a></td>
+<td><a href="../association_basis_qualifier/">association_basis_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -16846,7 +17862,19 @@
 </tr>
 <tr>
 <td><a href="../GeneToDiseaseAssociation/">GeneToDiseaseAssociation</a></td>
-<td><a href="../supporting_text/">supporting_text</a></td>
+<td><a href="../statistical_significance_qualifier/">statistical_significance_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneToDiseaseAssociation/">GeneToDiseaseAssociation</a></td>
+<td><a href="../effect_size/">effect_size</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneToDiseaseAssociation/">GeneToDiseaseAssociation</a></td>
+<td><a href="../effect_type/">effect_type</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -16871,6 +17899,12 @@
 <tr>
 <td><a href="../GeneToDiseaseAssociation/">GeneToDiseaseAssociation</a></td>
 <td><a href="../semmed_agreement_count/">semmed_agreement_count</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneToDiseaseAssociation/">GeneToDiseaseAssociation</a></td>
+<td><a href="../association_basis_qualifier/">association_basis_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -17098,7 +18132,19 @@
 </tr>
 <tr>
 <td><a href="../CausalGeneToDiseaseAssociation/">CausalGeneToDiseaseAssociation</a></td>
-<td><a href="../supporting_text/">supporting_text</a></td>
+<td><a href="../statistical_significance_qualifier/">statistical_significance_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../CausalGeneToDiseaseAssociation/">CausalGeneToDiseaseAssociation</a></td>
+<td><a href="../effect_size/">effect_size</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../CausalGeneToDiseaseAssociation/">CausalGeneToDiseaseAssociation</a></td>
+<td><a href="../effect_type/">effect_type</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -17123,6 +18169,12 @@
 <tr>
 <td><a href="../CausalGeneToDiseaseAssociation/">CausalGeneToDiseaseAssociation</a></td>
 <td><a href="../semmed_agreement_count/">semmed_agreement_count</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../CausalGeneToDiseaseAssociation/">CausalGeneToDiseaseAssociation</a></td>
+<td><a href="../association_basis_qualifier/">association_basis_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -17356,7 +18408,19 @@
 </tr>
 <tr>
 <td><a href="../CorrelatedGeneToDiseaseAssociation/">CorrelatedGeneToDiseaseAssociation</a></td>
-<td><a href="../supporting_text/">supporting_text</a></td>
+<td><a href="../statistical_significance_qualifier/">statistical_significance_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../CorrelatedGeneToDiseaseAssociation/">CorrelatedGeneToDiseaseAssociation</a></td>
+<td><a href="../effect_size/">effect_size</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../CorrelatedGeneToDiseaseAssociation/">CorrelatedGeneToDiseaseAssociation</a></td>
+<td><a href="../effect_type/">effect_type</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -17381,6 +18445,12 @@
 <tr>
 <td><a href="../CorrelatedGeneToDiseaseAssociation/">CorrelatedGeneToDiseaseAssociation</a></td>
 <td><a href="../semmed_agreement_count/">semmed_agreement_count</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../CorrelatedGeneToDiseaseAssociation/">CorrelatedGeneToDiseaseAssociation</a></td>
+<td><a href="../association_basis_qualifier/">association_basis_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -17632,7 +18702,19 @@
 </tr>
 <tr>
 <td><a href="../DruggableGeneToDiseaseAssociation/">DruggableGeneToDiseaseAssociation</a></td>
-<td><a href="../supporting_text/">supporting_text</a></td>
+<td><a href="../statistical_significance_qualifier/">statistical_significance_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../DruggableGeneToDiseaseAssociation/">DruggableGeneToDiseaseAssociation</a></td>
+<td><a href="../effect_size/">effect_size</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../DruggableGeneToDiseaseAssociation/">DruggableGeneToDiseaseAssociation</a></td>
+<td><a href="../effect_type/">effect_type</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -17657,6 +18739,12 @@
 <tr>
 <td><a href="../DruggableGeneToDiseaseAssociation/">DruggableGeneToDiseaseAssociation</a></td>
 <td><a href="../semmed_agreement_count/">semmed_agreement_count</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../DruggableGeneToDiseaseAssociation/">DruggableGeneToDiseaseAssociation</a></td>
+<td><a href="../association_basis_qualifier/">association_basis_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -17884,7 +18972,19 @@
 </tr>
 <tr>
 <td><a href="../PhenotypicFeatureToDiseaseAssociation/">PhenotypicFeatureToDiseaseAssociation</a></td>
-<td><a href="../supporting_text/">supporting_text</a></td>
+<td><a href="../statistical_significance_qualifier/">statistical_significance_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../PhenotypicFeatureToDiseaseAssociation/">PhenotypicFeatureToDiseaseAssociation</a></td>
+<td><a href="../effect_size/">effect_size</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../PhenotypicFeatureToDiseaseAssociation/">PhenotypicFeatureToDiseaseAssociation</a></td>
+<td><a href="../effect_type/">effect_type</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -17909,6 +19009,12 @@
 <tr>
 <td><a href="../PhenotypicFeatureToDiseaseAssociation/">PhenotypicFeatureToDiseaseAssociation</a></td>
 <td><a href="../semmed_agreement_count/">semmed_agreement_count</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../PhenotypicFeatureToDiseaseAssociation/">PhenotypicFeatureToDiseaseAssociation</a></td>
+<td><a href="../association_basis_qualifier/">association_basis_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -18148,7 +19254,19 @@
 </tr>
 <tr>
 <td><a href="../VariantToGeneAssociation/">VariantToGeneAssociation</a></td>
-<td><a href="../supporting_text/">supporting_text</a></td>
+<td><a href="../statistical_significance_qualifier/">statistical_significance_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../VariantToGeneAssociation/">VariantToGeneAssociation</a></td>
+<td><a href="../effect_size/">effect_size</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../VariantToGeneAssociation/">VariantToGeneAssociation</a></td>
+<td><a href="../effect_type/">effect_type</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -18173,6 +19291,12 @@
 <tr>
 <td><a href="../VariantToGeneAssociation/">VariantToGeneAssociation</a></td>
 <td><a href="../semmed_agreement_count/">semmed_agreement_count</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../VariantToGeneAssociation/">VariantToGeneAssociation</a></td>
+<td><a href="../association_basis_qualifier/">association_basis_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -18394,7 +19518,19 @@
 </tr>
 <tr>
 <td><a href="../VariantToGeneExpressionAssociation/">VariantToGeneExpressionAssociation</a></td>
-<td><a href="../supporting_text/">supporting_text</a></td>
+<td><a href="../statistical_significance_qualifier/">statistical_significance_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../VariantToGeneExpressionAssociation/">VariantToGeneExpressionAssociation</a></td>
+<td><a href="../effect_size/">effect_size</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../VariantToGeneExpressionAssociation/">VariantToGeneExpressionAssociation</a></td>
+<td><a href="../effect_type/">effect_type</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -18419,6 +19555,12 @@
 <tr>
 <td><a href="../VariantToGeneExpressionAssociation/">VariantToGeneExpressionAssociation</a></td>
 <td><a href="../semmed_agreement_count/">semmed_agreement_count</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../VariantToGeneExpressionAssociation/">VariantToGeneExpressionAssociation</a></td>
+<td><a href="../association_basis_qualifier/">association_basis_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -18622,7 +19764,19 @@
 </tr>
 <tr>
 <td><a href="../VariantToPopulationAssociation/">VariantToPopulationAssociation</a></td>
-<td><a href="../supporting_text/">supporting_text</a></td>
+<td><a href="../statistical_significance_qualifier/">statistical_significance_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../VariantToPopulationAssociation/">VariantToPopulationAssociation</a></td>
+<td><a href="../effect_size/">effect_size</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../VariantToPopulationAssociation/">VariantToPopulationAssociation</a></td>
+<td><a href="../effect_type/">effect_type</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -18647,6 +19801,12 @@
 <tr>
 <td><a href="../VariantToPopulationAssociation/">VariantToPopulationAssociation</a></td>
 <td><a href="../semmed_agreement_count/">semmed_agreement_count</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../VariantToPopulationAssociation/">VariantToPopulationAssociation</a></td>
+<td><a href="../association_basis_qualifier/">association_basis_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -18844,7 +20004,19 @@
 </tr>
 <tr>
 <td><a href="../PopulationToPopulationAssociation/">PopulationToPopulationAssociation</a></td>
-<td><a href="../supporting_text/">supporting_text</a></td>
+<td><a href="../statistical_significance_qualifier/">statistical_significance_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../PopulationToPopulationAssociation/">PopulationToPopulationAssociation</a></td>
+<td><a href="../effect_size/">effect_size</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../PopulationToPopulationAssociation/">PopulationToPopulationAssociation</a></td>
+<td><a href="../effect_type/">effect_type</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -18869,6 +20041,12 @@
 <tr>
 <td><a href="../PopulationToPopulationAssociation/">PopulationToPopulationAssociation</a></td>
 <td><a href="../semmed_agreement_count/">semmed_agreement_count</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../PopulationToPopulationAssociation/">PopulationToPopulationAssociation</a></td>
+<td><a href="../association_basis_qualifier/">association_basis_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -19072,7 +20250,19 @@
 </tr>
 <tr>
 <td><a href="../VariantToPhenotypicFeatureAssociation/">VariantToPhenotypicFeatureAssociation</a></td>
-<td><a href="../supporting_text/">supporting_text</a></td>
+<td><a href="../statistical_significance_qualifier/">statistical_significance_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../VariantToPhenotypicFeatureAssociation/">VariantToPhenotypicFeatureAssociation</a></td>
+<td><a href="../effect_size/">effect_size</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../VariantToPhenotypicFeatureAssociation/">VariantToPhenotypicFeatureAssociation</a></td>
+<td><a href="../effect_type/">effect_type</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -19097,6 +20287,12 @@
 <tr>
 <td><a href="../VariantToPhenotypicFeatureAssociation/">VariantToPhenotypicFeatureAssociation</a></td>
 <td><a href="../semmed_agreement_count/">semmed_agreement_count</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../VariantToPhenotypicFeatureAssociation/">VariantToPhenotypicFeatureAssociation</a></td>
+<td><a href="../association_basis_qualifier/">association_basis_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -19336,7 +20532,19 @@
 </tr>
 <tr>
 <td><a href="../VariantToDiseaseAssociation/">VariantToDiseaseAssociation</a></td>
-<td><a href="../supporting_text/">supporting_text</a></td>
+<td><a href="../statistical_significance_qualifier/">statistical_significance_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../VariantToDiseaseAssociation/">VariantToDiseaseAssociation</a></td>
+<td><a href="../effect_size/">effect_size</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../VariantToDiseaseAssociation/">VariantToDiseaseAssociation</a></td>
+<td><a href="../effect_type/">effect_type</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -19361,6 +20569,12 @@
 <tr>
 <td><a href="../VariantToDiseaseAssociation/">VariantToDiseaseAssociation</a></td>
 <td><a href="../semmed_agreement_count/">semmed_agreement_count</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../VariantToDiseaseAssociation/">VariantToDiseaseAssociation</a></td>
+<td><a href="../association_basis_qualifier/">association_basis_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -19600,7 +20814,19 @@
 </tr>
 <tr>
 <td><a href="../GenotypeToDiseaseAssociation/">GenotypeToDiseaseAssociation</a></td>
-<td><a href="../supporting_text/">supporting_text</a></td>
+<td><a href="../statistical_significance_qualifier/">statistical_significance_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GenotypeToDiseaseAssociation/">GenotypeToDiseaseAssociation</a></td>
+<td><a href="../effect_size/">effect_size</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GenotypeToDiseaseAssociation/">GenotypeToDiseaseAssociation</a></td>
+<td><a href="../effect_type/">effect_type</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -19625,6 +20851,12 @@
 <tr>
 <td><a href="../GenotypeToDiseaseAssociation/">GenotypeToDiseaseAssociation</a></td>
 <td><a href="../semmed_agreement_count/">semmed_agreement_count</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GenotypeToDiseaseAssociation/">GenotypeToDiseaseAssociation</a></td>
+<td><a href="../association_basis_qualifier/">association_basis_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -19912,7 +21144,19 @@
 </tr>
 <tr>
 <td><a href="../GeneAsAModelOfDiseaseAssociation/">GeneAsAModelOfDiseaseAssociation</a></td>
-<td><a href="../supporting_text/">supporting_text</a></td>
+<td><a href="../statistical_significance_qualifier/">statistical_significance_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneAsAModelOfDiseaseAssociation/">GeneAsAModelOfDiseaseAssociation</a></td>
+<td><a href="../effect_size/">effect_size</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneAsAModelOfDiseaseAssociation/">GeneAsAModelOfDiseaseAssociation</a></td>
+<td><a href="../effect_type/">effect_type</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -19937,6 +21181,12 @@
 <tr>
 <td><a href="../GeneAsAModelOfDiseaseAssociation/">GeneAsAModelOfDiseaseAssociation</a></td>
 <td><a href="../semmed_agreement_count/">semmed_agreement_count</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneAsAModelOfDiseaseAssociation/">GeneAsAModelOfDiseaseAssociation</a></td>
+<td><a href="../association_basis_qualifier/">association_basis_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -20158,7 +21408,19 @@
 </tr>
 <tr>
 <td><a href="../VariantAsAModelOfDiseaseAssociation/">VariantAsAModelOfDiseaseAssociation</a></td>
-<td><a href="../supporting_text/">supporting_text</a></td>
+<td><a href="../statistical_significance_qualifier/">statistical_significance_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../VariantAsAModelOfDiseaseAssociation/">VariantAsAModelOfDiseaseAssociation</a></td>
+<td><a href="../effect_size/">effect_size</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../VariantAsAModelOfDiseaseAssociation/">VariantAsAModelOfDiseaseAssociation</a></td>
+<td><a href="../effect_type/">effect_type</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -20183,6 +21445,12 @@
 <tr>
 <td><a href="../VariantAsAModelOfDiseaseAssociation/">VariantAsAModelOfDiseaseAssociation</a></td>
 <td><a href="../semmed_agreement_count/">semmed_agreement_count</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../VariantAsAModelOfDiseaseAssociation/">VariantAsAModelOfDiseaseAssociation</a></td>
+<td><a href="../association_basis_qualifier/">association_basis_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -20422,7 +21690,19 @@
 </tr>
 <tr>
 <td><a href="../GenotypeAsAModelOfDiseaseAssociation/">GenotypeAsAModelOfDiseaseAssociation</a></td>
-<td><a href="../supporting_text/">supporting_text</a></td>
+<td><a href="../statistical_significance_qualifier/">statistical_significance_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GenotypeAsAModelOfDiseaseAssociation/">GenotypeAsAModelOfDiseaseAssociation</a></td>
+<td><a href="../effect_size/">effect_size</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GenotypeAsAModelOfDiseaseAssociation/">GenotypeAsAModelOfDiseaseAssociation</a></td>
+<td><a href="../effect_type/">effect_type</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -20447,6 +21727,12 @@
 <tr>
 <td><a href="../GenotypeAsAModelOfDiseaseAssociation/">GenotypeAsAModelOfDiseaseAssociation</a></td>
 <td><a href="../semmed_agreement_count/">semmed_agreement_count</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GenotypeAsAModelOfDiseaseAssociation/">GenotypeAsAModelOfDiseaseAssociation</a></td>
+<td><a href="../association_basis_qualifier/">association_basis_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -20710,7 +21996,19 @@
 </tr>
 <tr>
 <td><a href="../CellLineAsAModelOfDiseaseAssociation/">CellLineAsAModelOfDiseaseAssociation</a></td>
-<td><a href="../supporting_text/">supporting_text</a></td>
+<td><a href="../statistical_significance_qualifier/">statistical_significance_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../CellLineAsAModelOfDiseaseAssociation/">CellLineAsAModelOfDiseaseAssociation</a></td>
+<td><a href="../effect_size/">effect_size</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../CellLineAsAModelOfDiseaseAssociation/">CellLineAsAModelOfDiseaseAssociation</a></td>
+<td><a href="../effect_type/">effect_type</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -20735,6 +22033,12 @@
 <tr>
 <td><a href="../CellLineAsAModelOfDiseaseAssociation/">CellLineAsAModelOfDiseaseAssociation</a></td>
 <td><a href="../semmed_agreement_count/">semmed_agreement_count</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../CellLineAsAModelOfDiseaseAssociation/">CellLineAsAModelOfDiseaseAssociation</a></td>
+<td><a href="../association_basis_qualifier/">association_basis_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -20968,7 +22272,19 @@
 </tr>
 <tr>
 <td><a href="../OrganismalEntityAsAModelOfDiseaseAssociation/">OrganismalEntityAsAModelOfDiseaseAssociation</a></td>
-<td><a href="../supporting_text/">supporting_text</a></td>
+<td><a href="../statistical_significance_qualifier/">statistical_significance_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../OrganismalEntityAsAModelOfDiseaseAssociation/">OrganismalEntityAsAModelOfDiseaseAssociation</a></td>
+<td><a href="../effect_size/">effect_size</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../OrganismalEntityAsAModelOfDiseaseAssociation/">OrganismalEntityAsAModelOfDiseaseAssociation</a></td>
+<td><a href="../effect_type/">effect_type</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -20993,6 +22309,12 @@
 <tr>
 <td><a href="../OrganismalEntityAsAModelOfDiseaseAssociation/">OrganismalEntityAsAModelOfDiseaseAssociation</a></td>
 <td><a href="../semmed_agreement_count/">semmed_agreement_count</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../OrganismalEntityAsAModelOfDiseaseAssociation/">OrganismalEntityAsAModelOfDiseaseAssociation</a></td>
+<td><a href="../association_basis_qualifier/">association_basis_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -21232,7 +22554,19 @@
 </tr>
 <tr>
 <td><a href="../OrganismToOrganismAssociation/">OrganismToOrganismAssociation</a></td>
-<td><a href="../supporting_text/">supporting_text</a></td>
+<td><a href="../statistical_significance_qualifier/">statistical_significance_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../OrganismToOrganismAssociation/">OrganismToOrganismAssociation</a></td>
+<td><a href="../effect_size/">effect_size</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../OrganismToOrganismAssociation/">OrganismToOrganismAssociation</a></td>
+<td><a href="../effect_type/">effect_type</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -21257,6 +22591,12 @@
 <tr>
 <td><a href="../OrganismToOrganismAssociation/">OrganismToOrganismAssociation</a></td>
 <td><a href="../semmed_agreement_count/">semmed_agreement_count</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../OrganismToOrganismAssociation/">OrganismToOrganismAssociation</a></td>
+<td><a href="../association_basis_qualifier/">association_basis_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -21454,7 +22794,19 @@
 </tr>
 <tr>
 <td><a href="../TaxonToTaxonAssociation/">TaxonToTaxonAssociation</a></td>
-<td><a href="../supporting_text/">supporting_text</a></td>
+<td><a href="../statistical_significance_qualifier/">statistical_significance_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../TaxonToTaxonAssociation/">TaxonToTaxonAssociation</a></td>
+<td><a href="../effect_size/">effect_size</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../TaxonToTaxonAssociation/">TaxonToTaxonAssociation</a></td>
+<td><a href="../effect_type/">effect_type</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -21479,6 +22831,12 @@
 <tr>
 <td><a href="../TaxonToTaxonAssociation/">TaxonToTaxonAssociation</a></td>
 <td><a href="../semmed_agreement_count/">semmed_agreement_count</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../TaxonToTaxonAssociation/">TaxonToTaxonAssociation</a></td>
+<td><a href="../association_basis_qualifier/">association_basis_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -21706,7 +23064,19 @@
 </tr>
 <tr>
 <td><a href="../GeneHasVariantThatContributesToDiseaseAssociation/">GeneHasVariantThatContributesToDiseaseAssociation</a></td>
-<td><a href="../supporting_text/">supporting_text</a></td>
+<td><a href="../statistical_significance_qualifier/">statistical_significance_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneHasVariantThatContributesToDiseaseAssociation/">GeneHasVariantThatContributesToDiseaseAssociation</a></td>
+<td><a href="../effect_size/">effect_size</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneHasVariantThatContributesToDiseaseAssociation/">GeneHasVariantThatContributesToDiseaseAssociation</a></td>
+<td><a href="../effect_type/">effect_type</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -21731,6 +23101,12 @@
 <tr>
 <td><a href="../GeneHasVariantThatContributesToDiseaseAssociation/">GeneHasVariantThatContributesToDiseaseAssociation</a></td>
 <td><a href="../semmed_agreement_count/">semmed_agreement_count</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneHasVariantThatContributesToDiseaseAssociation/">GeneHasVariantThatContributesToDiseaseAssociation</a></td>
+<td><a href="../association_basis_qualifier/">association_basis_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -21946,7 +23322,19 @@
 </tr>
 <tr>
 <td><a href="../GeneToExpressionSiteAssociation/">GeneToExpressionSiteAssociation</a></td>
-<td><a href="../supporting_text/">supporting_text</a></td>
+<td><a href="../statistical_significance_qualifier/">statistical_significance_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneToExpressionSiteAssociation/">GeneToExpressionSiteAssociation</a></td>
+<td><a href="../effect_size/">effect_size</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneToExpressionSiteAssociation/">GeneToExpressionSiteAssociation</a></td>
+<td><a href="../effect_type/">effect_type</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -21971,6 +23359,12 @@
 <tr>
 <td><a href="../GeneToExpressionSiteAssociation/">GeneToExpressionSiteAssociation</a></td>
 <td><a href="../semmed_agreement_count/">semmed_agreement_count</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneToExpressionSiteAssociation/">GeneToExpressionSiteAssociation</a></td>
+<td><a href="../association_basis_qualifier/">association_basis_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -22168,7 +23562,19 @@
 </tr>
 <tr>
 <td><a href="../SequenceVariantModulatesTreatmentAssociation/">SequenceVariantModulatesTreatmentAssociation</a></td>
-<td><a href="../supporting_text/">supporting_text</a></td>
+<td><a href="../statistical_significance_qualifier/">statistical_significance_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../SequenceVariantModulatesTreatmentAssociation/">SequenceVariantModulatesTreatmentAssociation</a></td>
+<td><a href="../effect_size/">effect_size</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../SequenceVariantModulatesTreatmentAssociation/">SequenceVariantModulatesTreatmentAssociation</a></td>
+<td><a href="../effect_type/">effect_type</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -22193,6 +23599,12 @@
 <tr>
 <td><a href="../SequenceVariantModulatesTreatmentAssociation/">SequenceVariantModulatesTreatmentAssociation</a></td>
 <td><a href="../semmed_agreement_count/">semmed_agreement_count</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../SequenceVariantModulatesTreatmentAssociation/">SequenceVariantModulatesTreatmentAssociation</a></td>
+<td><a href="../association_basis_qualifier/">association_basis_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -22390,7 +23802,19 @@
 </tr>
 <tr>
 <td><a href="../FunctionalAssociation/">FunctionalAssociation</a></td>
-<td><a href="../supporting_text/">supporting_text</a></td>
+<td><a href="../statistical_significance_qualifier/">statistical_significance_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../FunctionalAssociation/">FunctionalAssociation</a></td>
+<td><a href="../effect_size/">effect_size</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../FunctionalAssociation/">FunctionalAssociation</a></td>
+<td><a href="../effect_type/">effect_type</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -22415,6 +23839,12 @@
 <tr>
 <td><a href="../FunctionalAssociation/">FunctionalAssociation</a></td>
 <td><a href="../semmed_agreement_count/">semmed_agreement_count</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../FunctionalAssociation/">FunctionalAssociation</a></td>
+<td><a href="../association_basis_qualifier/">association_basis_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -22630,7 +24060,19 @@
 </tr>
 <tr>
 <td><a href="../MacromolecularMachineToMolecularActivityAssociation/">MacromolecularMachineToMolecularActivityAssociation</a></td>
-<td><a href="../supporting_text/">supporting_text</a></td>
+<td><a href="../statistical_significance_qualifier/">statistical_significance_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../MacromolecularMachineToMolecularActivityAssociation/">MacromolecularMachineToMolecularActivityAssociation</a></td>
+<td><a href="../effect_size/">effect_size</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../MacromolecularMachineToMolecularActivityAssociation/">MacromolecularMachineToMolecularActivityAssociation</a></td>
+<td><a href="../effect_type/">effect_type</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -22655,6 +24097,12 @@
 <tr>
 <td><a href="../MacromolecularMachineToMolecularActivityAssociation/">MacromolecularMachineToMolecularActivityAssociation</a></td>
 <td><a href="../semmed_agreement_count/">semmed_agreement_count</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../MacromolecularMachineToMolecularActivityAssociation/">MacromolecularMachineToMolecularActivityAssociation</a></td>
+<td><a href="../association_basis_qualifier/">association_basis_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -22852,7 +24300,19 @@
 </tr>
 <tr>
 <td><a href="../MacromolecularMachineToBiologicalProcessAssociation/">MacromolecularMachineToBiologicalProcessAssociation</a></td>
-<td><a href="../supporting_text/">supporting_text</a></td>
+<td><a href="../statistical_significance_qualifier/">statistical_significance_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../MacromolecularMachineToBiologicalProcessAssociation/">MacromolecularMachineToBiologicalProcessAssociation</a></td>
+<td><a href="../effect_size/">effect_size</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../MacromolecularMachineToBiologicalProcessAssociation/">MacromolecularMachineToBiologicalProcessAssociation</a></td>
+<td><a href="../effect_type/">effect_type</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -22877,6 +24337,12 @@
 <tr>
 <td><a href="../MacromolecularMachineToBiologicalProcessAssociation/">MacromolecularMachineToBiologicalProcessAssociation</a></td>
 <td><a href="../semmed_agreement_count/">semmed_agreement_count</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../MacromolecularMachineToBiologicalProcessAssociation/">MacromolecularMachineToBiologicalProcessAssociation</a></td>
+<td><a href="../association_basis_qualifier/">association_basis_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -23074,7 +24540,19 @@
 </tr>
 <tr>
 <td><a href="../MacromolecularMachineToCellularComponentAssociation/">MacromolecularMachineToCellularComponentAssociation</a></td>
-<td><a href="../supporting_text/">supporting_text</a></td>
+<td><a href="../statistical_significance_qualifier/">statistical_significance_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../MacromolecularMachineToCellularComponentAssociation/">MacromolecularMachineToCellularComponentAssociation</a></td>
+<td><a href="../effect_size/">effect_size</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../MacromolecularMachineToCellularComponentAssociation/">MacromolecularMachineToCellularComponentAssociation</a></td>
+<td><a href="../effect_type/">effect_type</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -23099,6 +24577,12 @@
 <tr>
 <td><a href="../MacromolecularMachineToCellularComponentAssociation/">MacromolecularMachineToCellularComponentAssociation</a></td>
 <td><a href="../semmed_agreement_count/">semmed_agreement_count</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../MacromolecularMachineToCellularComponentAssociation/">MacromolecularMachineToCellularComponentAssociation</a></td>
+<td><a href="../association_basis_qualifier/">association_basis_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -23296,7 +24780,19 @@
 </tr>
 <tr>
 <td><a href="../MolecularActivityToChemicalEntityAssociation/">MolecularActivityToChemicalEntityAssociation</a></td>
-<td><a href="../supporting_text/">supporting_text</a></td>
+<td><a href="../statistical_significance_qualifier/">statistical_significance_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../MolecularActivityToChemicalEntityAssociation/">MolecularActivityToChemicalEntityAssociation</a></td>
+<td><a href="../effect_size/">effect_size</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../MolecularActivityToChemicalEntityAssociation/">MolecularActivityToChemicalEntityAssociation</a></td>
+<td><a href="../effect_type/">effect_type</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -23321,6 +24817,12 @@
 <tr>
 <td><a href="../MolecularActivityToChemicalEntityAssociation/">MolecularActivityToChemicalEntityAssociation</a></td>
 <td><a href="../semmed_agreement_count/">semmed_agreement_count</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../MolecularActivityToChemicalEntityAssociation/">MolecularActivityToChemicalEntityAssociation</a></td>
+<td><a href="../association_basis_qualifier/">association_basis_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -23518,7 +25020,19 @@
 </tr>
 <tr>
 <td><a href="../MolecularActivityToMolecularActivityAssociation/">MolecularActivityToMolecularActivityAssociation</a></td>
-<td><a href="../supporting_text/">supporting_text</a></td>
+<td><a href="../statistical_significance_qualifier/">statistical_significance_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../MolecularActivityToMolecularActivityAssociation/">MolecularActivityToMolecularActivityAssociation</a></td>
+<td><a href="../effect_size/">effect_size</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../MolecularActivityToMolecularActivityAssociation/">MolecularActivityToMolecularActivityAssociation</a></td>
+<td><a href="../effect_type/">effect_type</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -23543,6 +25057,12 @@
 <tr>
 <td><a href="../MolecularActivityToMolecularActivityAssociation/">MolecularActivityToMolecularActivityAssociation</a></td>
 <td><a href="../semmed_agreement_count/">semmed_agreement_count</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../MolecularActivityToMolecularActivityAssociation/">MolecularActivityToMolecularActivityAssociation</a></td>
+<td><a href="../association_basis_qualifier/">association_basis_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -23740,7 +25260,19 @@
 </tr>
 <tr>
 <td><a href="../GeneToGoTermAssociation/">GeneToGoTermAssociation</a></td>
-<td><a href="../supporting_text/">supporting_text</a></td>
+<td><a href="../statistical_significance_qualifier/">statistical_significance_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneToGoTermAssociation/">GeneToGoTermAssociation</a></td>
+<td><a href="../effect_size/">effect_size</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneToGoTermAssociation/">GeneToGoTermAssociation</a></td>
+<td><a href="../effect_type/">effect_type</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -23765,6 +25297,12 @@
 <tr>
 <td><a href="../GeneToGoTermAssociation/">GeneToGoTermAssociation</a></td>
 <td><a href="../semmed_agreement_count/">semmed_agreement_count</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneToGoTermAssociation/">GeneToGoTermAssociation</a></td>
+<td><a href="../association_basis_qualifier/">association_basis_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -23974,7 +25512,19 @@
 </tr>
 <tr>
 <td><a href="../EntityToDiseaseAssociation/">EntityToDiseaseAssociation</a></td>
-<td><a href="../supporting_text/">supporting_text</a></td>
+<td><a href="../statistical_significance_qualifier/">statistical_significance_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../EntityToDiseaseAssociation/">EntityToDiseaseAssociation</a></td>
+<td><a href="../effect_size/">effect_size</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../EntityToDiseaseAssociation/">EntityToDiseaseAssociation</a></td>
+<td><a href="../effect_type/">effect_type</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -23999,6 +25549,12 @@
 <tr>
 <td><a href="../EntityToDiseaseAssociation/">EntityToDiseaseAssociation</a></td>
 <td><a href="../semmed_agreement_count/">semmed_agreement_count</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../EntityToDiseaseAssociation/">EntityToDiseaseAssociation</a></td>
+<td><a href="../association_basis_qualifier/">association_basis_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -24208,7 +25764,19 @@
 </tr>
 <tr>
 <td><a href="../EntityToPhenotypicFeatureAssociation/">EntityToPhenotypicFeatureAssociation</a></td>
-<td><a href="../supporting_text/">supporting_text</a></td>
+<td><a href="../statistical_significance_qualifier/">statistical_significance_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../EntityToPhenotypicFeatureAssociation/">EntityToPhenotypicFeatureAssociation</a></td>
+<td><a href="../effect_size/">effect_size</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../EntityToPhenotypicFeatureAssociation/">EntityToPhenotypicFeatureAssociation</a></td>
+<td><a href="../effect_type/">effect_type</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -24237,6 +25805,12 @@
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
+<td><a href="../EntityToPhenotypicFeatureAssociation/">EntityToPhenotypicFeatureAssociation</a></td>
+<td><a href="../association_basis_qualifier/">association_basis_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
 <td><a href="../SequenceAssociation/">SequenceAssociation</a></td>
 <td><a href="../subject/">subject</a></td>
 <td>domain</td>
@@ -24430,7 +26004,19 @@
 </tr>
 <tr>
 <td><a href="../SequenceAssociation/">SequenceAssociation</a></td>
-<td><a href="../supporting_text/">supporting_text</a></td>
+<td><a href="../statistical_significance_qualifier/">statistical_significance_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../SequenceAssociation/">SequenceAssociation</a></td>
+<td><a href="../effect_size/">effect_size</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../SequenceAssociation/">SequenceAssociation</a></td>
+<td><a href="../effect_type/">effect_type</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -24459,6 +26045,12 @@
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
+<td><a href="../SequenceAssociation/">SequenceAssociation</a></td>
+<td><a href="../association_basis_qualifier/">association_basis_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
 <td><a href="../GenomicSequenceLocalization/">GenomicSequenceLocalization</a></td>
 <td><a href="../subject/">subject</a></td>
 <td>domain</td>
@@ -24652,7 +26244,19 @@
 </tr>
 <tr>
 <td><a href="../GenomicSequenceLocalization/">GenomicSequenceLocalization</a></td>
-<td><a href="../supporting_text/">supporting_text</a></td>
+<td><a href="../statistical_significance_qualifier/">statistical_significance_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GenomicSequenceLocalization/">GenomicSequenceLocalization</a></td>
+<td><a href="../effect_size/">effect_size</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GenomicSequenceLocalization/">GenomicSequenceLocalization</a></td>
+<td><a href="../effect_type/">effect_type</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -24677,6 +26281,12 @@
 <tr>
 <td><a href="../GenomicSequenceLocalization/">GenomicSequenceLocalization</a></td>
 <td><a href="../semmed_agreement_count/">semmed_agreement_count</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GenomicSequenceLocalization/">GenomicSequenceLocalization</a></td>
+<td><a href="../association_basis_qualifier/">association_basis_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -24874,7 +26484,19 @@
 </tr>
 <tr>
 <td><a href="../SequenceFeatureRelationship/">SequenceFeatureRelationship</a></td>
-<td><a href="../supporting_text/">supporting_text</a></td>
+<td><a href="../statistical_significance_qualifier/">statistical_significance_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../SequenceFeatureRelationship/">SequenceFeatureRelationship</a></td>
+<td><a href="../effect_size/">effect_size</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../SequenceFeatureRelationship/">SequenceFeatureRelationship</a></td>
+<td><a href="../effect_type/">effect_type</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -24899,6 +26521,12 @@
 <tr>
 <td><a href="../SequenceFeatureRelationship/">SequenceFeatureRelationship</a></td>
 <td><a href="../semmed_agreement_count/">semmed_agreement_count</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../SequenceFeatureRelationship/">SequenceFeatureRelationship</a></td>
+<td><a href="../association_basis_qualifier/">association_basis_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -25096,7 +26724,19 @@
 </tr>
 <tr>
 <td><a href="../TranscriptToGeneRelationship/">TranscriptToGeneRelationship</a></td>
-<td><a href="../supporting_text/">supporting_text</a></td>
+<td><a href="../statistical_significance_qualifier/">statistical_significance_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../TranscriptToGeneRelationship/">TranscriptToGeneRelationship</a></td>
+<td><a href="../effect_size/">effect_size</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../TranscriptToGeneRelationship/">TranscriptToGeneRelationship</a></td>
+<td><a href="../effect_type/">effect_type</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -25121,6 +26761,12 @@
 <tr>
 <td><a href="../TranscriptToGeneRelationship/">TranscriptToGeneRelationship</a></td>
 <td><a href="../semmed_agreement_count/">semmed_agreement_count</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../TranscriptToGeneRelationship/">TranscriptToGeneRelationship</a></td>
+<td><a href="../association_basis_qualifier/">association_basis_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -25318,7 +26964,19 @@
 </tr>
 <tr>
 <td><a href="../GeneToGeneProductRelationship/">GeneToGeneProductRelationship</a></td>
-<td><a href="../supporting_text/">supporting_text</a></td>
+<td><a href="../statistical_significance_qualifier/">statistical_significance_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneToGeneProductRelationship/">GeneToGeneProductRelationship</a></td>
+<td><a href="../effect_size/">effect_size</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneToGeneProductRelationship/">GeneToGeneProductRelationship</a></td>
+<td><a href="../effect_type/">effect_type</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -25343,6 +27001,12 @@
 <tr>
 <td><a href="../GeneToGeneProductRelationship/">GeneToGeneProductRelationship</a></td>
 <td><a href="../semmed_agreement_count/">semmed_agreement_count</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneToGeneProductRelationship/">GeneToGeneProductRelationship</a></td>
+<td><a href="../association_basis_qualifier/">association_basis_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -25540,7 +27204,19 @@
 </tr>
 <tr>
 <td><a href="../ExonToTranscriptRelationship/">ExonToTranscriptRelationship</a></td>
-<td><a href="../supporting_text/">supporting_text</a></td>
+<td><a href="../statistical_significance_qualifier/">statistical_significance_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ExonToTranscriptRelationship/">ExonToTranscriptRelationship</a></td>
+<td><a href="../effect_size/">effect_size</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ExonToTranscriptRelationship/">ExonToTranscriptRelationship</a></td>
+<td><a href="../effect_type/">effect_type</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -25565,6 +27241,12 @@
 <tr>
 <td><a href="../ExonToTranscriptRelationship/">ExonToTranscriptRelationship</a></td>
 <td><a href="../semmed_agreement_count/">semmed_agreement_count</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ExonToTranscriptRelationship/">ExonToTranscriptRelationship</a></td>
+<td><a href="../association_basis_qualifier/">association_basis_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -25768,7 +27450,19 @@
 </tr>
 <tr>
 <td><a href="../ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation/">ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation</a></td>
-<td><a href="../supporting_text/">supporting_text</a></td>
+<td><a href="../statistical_significance_qualifier/">statistical_significance_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation/">ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation</a></td>
+<td><a href="../effect_size/">effect_size</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation/">ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation</a></td>
+<td><a href="../effect_type/">effect_type</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -25797,6 +27491,12 @@
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
+<td><a href="../ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation/">ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation</a></td>
+<td><a href="../association_basis_qualifier/">association_basis_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
 <td><a href="../AnatomicalEntityToAnatomicalEntityAssociation/">AnatomicalEntityToAnatomicalEntityAssociation</a></td>
 <td><a href="../subject/">subject</a></td>
 <td>domain</td>
@@ -25990,7 +27690,19 @@
 </tr>
 <tr>
 <td><a href="../AnatomicalEntityToAnatomicalEntityAssociation/">AnatomicalEntityToAnatomicalEntityAssociation</a></td>
-<td><a href="../supporting_text/">supporting_text</a></td>
+<td><a href="../statistical_significance_qualifier/">statistical_significance_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../AnatomicalEntityToAnatomicalEntityAssociation/">AnatomicalEntityToAnatomicalEntityAssociation</a></td>
+<td><a href="../effect_size/">effect_size</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../AnatomicalEntityToAnatomicalEntityAssociation/">AnatomicalEntityToAnatomicalEntityAssociation</a></td>
+<td><a href="../effect_type/">effect_type</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -26019,6 +27731,12 @@
 <td><a href="./">Association</a></td>
 </tr>
 <tr>
+<td><a href="../AnatomicalEntityToAnatomicalEntityAssociation/">AnatomicalEntityToAnatomicalEntityAssociation</a></td>
+<td><a href="../association_basis_qualifier/">association_basis_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
 <td><a href="../AnatomicalEntityHasPartAnatomicalEntityAssociation/">AnatomicalEntityHasPartAnatomicalEntityAssociation</a></td>
 <td><a href="../subject/">subject</a></td>
 <td>domain</td>
@@ -26212,7 +27930,19 @@
 </tr>
 <tr>
 <td><a href="../AnatomicalEntityHasPartAnatomicalEntityAssociation/">AnatomicalEntityHasPartAnatomicalEntityAssociation</a></td>
-<td><a href="../supporting_text/">supporting_text</a></td>
+<td><a href="../statistical_significance_qualifier/">statistical_significance_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../AnatomicalEntityHasPartAnatomicalEntityAssociation/">AnatomicalEntityHasPartAnatomicalEntityAssociation</a></td>
+<td><a href="../effect_size/">effect_size</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../AnatomicalEntityHasPartAnatomicalEntityAssociation/">AnatomicalEntityHasPartAnatomicalEntityAssociation</a></td>
+<td><a href="../effect_type/">effect_type</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -26237,6 +27967,12 @@
 <tr>
 <td><a href="../AnatomicalEntityHasPartAnatomicalEntityAssociation/">AnatomicalEntityHasPartAnatomicalEntityAssociation</a></td>
 <td><a href="../semmed_agreement_count/">semmed_agreement_count</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../AnatomicalEntityHasPartAnatomicalEntityAssociation/">AnatomicalEntityHasPartAnatomicalEntityAssociation</a></td>
+<td><a href="../association_basis_qualifier/">association_basis_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -26434,7 +28170,19 @@
 </tr>
 <tr>
 <td><a href="../AnatomicalEntityPartOfAnatomicalEntityAssociation/">AnatomicalEntityPartOfAnatomicalEntityAssociation</a></td>
-<td><a href="../supporting_text/">supporting_text</a></td>
+<td><a href="../statistical_significance_qualifier/">statistical_significance_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../AnatomicalEntityPartOfAnatomicalEntityAssociation/">AnatomicalEntityPartOfAnatomicalEntityAssociation</a></td>
+<td><a href="../effect_size/">effect_size</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../AnatomicalEntityPartOfAnatomicalEntityAssociation/">AnatomicalEntityPartOfAnatomicalEntityAssociation</a></td>
+<td><a href="../effect_type/">effect_type</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -26459,6 +28207,12 @@
 <tr>
 <td><a href="../AnatomicalEntityPartOfAnatomicalEntityAssociation/">AnatomicalEntityPartOfAnatomicalEntityAssociation</a></td>
 <td><a href="../semmed_agreement_count/">semmed_agreement_count</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../AnatomicalEntityPartOfAnatomicalEntityAssociation/">AnatomicalEntityPartOfAnatomicalEntityAssociation</a></td>
+<td><a href="../association_basis_qualifier/">association_basis_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -26656,7 +28410,19 @@
 </tr>
 <tr>
 <td><a href="../AnatomicalEntityToAnatomicalEntityOntogenicAssociation/">AnatomicalEntityToAnatomicalEntityOntogenicAssociation</a></td>
-<td><a href="../supporting_text/">supporting_text</a></td>
+<td><a href="../statistical_significance_qualifier/">statistical_significance_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../AnatomicalEntityToAnatomicalEntityOntogenicAssociation/">AnatomicalEntityToAnatomicalEntityOntogenicAssociation</a></td>
+<td><a href="../effect_size/">effect_size</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../AnatomicalEntityToAnatomicalEntityOntogenicAssociation/">AnatomicalEntityToAnatomicalEntityOntogenicAssociation</a></td>
+<td><a href="../effect_type/">effect_type</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -26681,6 +28447,12 @@
 <tr>
 <td><a href="../AnatomicalEntityToAnatomicalEntityOntogenicAssociation/">AnatomicalEntityToAnatomicalEntityOntogenicAssociation</a></td>
 <td><a href="../semmed_agreement_count/">semmed_agreement_count</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../AnatomicalEntityToAnatomicalEntityOntogenicAssociation/">AnatomicalEntityToAnatomicalEntityOntogenicAssociation</a></td>
+<td><a href="../association_basis_qualifier/">association_basis_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -26878,7 +28650,19 @@
 </tr>
 <tr>
 <td><a href="../GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation/">GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation</a></td>
-<td><a href="../supporting_text/">supporting_text</a></td>
+<td><a href="../statistical_significance_qualifier/">statistical_significance_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation/">GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation</a></td>
+<td><a href="../effect_size/">effect_size</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation/">GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation</a></td>
+<td><a href="../effect_type/">effect_type</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -26903,6 +28687,12 @@
 <tr>
 <td><a href="../GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation/">GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation</a></td>
 <td><a href="../semmed_agreement_count/">semmed_agreement_count</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation/">GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation</a></td>
+<td><a href="../association_basis_qualifier/">association_basis_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -27100,7 +28890,19 @@
 </tr>
 <tr>
 <td><a href="../BiologicalProcessOrActivityToAnatomicalEntityAssociation/">BiologicalProcessOrActivityToAnatomicalEntityAssociation</a></td>
-<td><a href="../supporting_text/">supporting_text</a></td>
+<td><a href="../statistical_significance_qualifier/">statistical_significance_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToAnatomicalEntityAssociation/">BiologicalProcessOrActivityToAnatomicalEntityAssociation</a></td>
+<td><a href="../effect_size/">effect_size</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToAnatomicalEntityAssociation/">BiologicalProcessOrActivityToAnatomicalEntityAssociation</a></td>
+<td><a href="../effect_type/">effect_type</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -27125,6 +28927,12 @@
 <tr>
 <td><a href="../BiologicalProcessOrActivityToAnatomicalEntityAssociation/">BiologicalProcessOrActivityToAnatomicalEntityAssociation</a></td>
 <td><a href="../semmed_agreement_count/">semmed_agreement_count</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToAnatomicalEntityAssociation/">BiologicalProcessOrActivityToAnatomicalEntityAssociation</a></td>
+<td><a href="../association_basis_qualifier/">association_basis_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -27340,7 +29148,19 @@
 </tr>
 <tr>
 <td><a href="../OrganismTaxonToOrganismTaxonAssociation/">OrganismTaxonToOrganismTaxonAssociation</a></td>
-<td><a href="../supporting_text/">supporting_text</a></td>
+<td><a href="../statistical_significance_qualifier/">statistical_significance_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../OrganismTaxonToOrganismTaxonAssociation/">OrganismTaxonToOrganismTaxonAssociation</a></td>
+<td><a href="../effect_size/">effect_size</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../OrganismTaxonToOrganismTaxonAssociation/">OrganismTaxonToOrganismTaxonAssociation</a></td>
+<td><a href="../effect_type/">effect_type</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -27365,6 +29185,12 @@
 <tr>
 <td><a href="../OrganismTaxonToOrganismTaxonAssociation/">OrganismTaxonToOrganismTaxonAssociation</a></td>
 <td><a href="../semmed_agreement_count/">semmed_agreement_count</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../OrganismTaxonToOrganismTaxonAssociation/">OrganismTaxonToOrganismTaxonAssociation</a></td>
+<td><a href="../association_basis_qualifier/">association_basis_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -27562,7 +29388,19 @@
 </tr>
 <tr>
 <td><a href="../OrganismTaxonToOrganismTaxonSpecialization/">OrganismTaxonToOrganismTaxonSpecialization</a></td>
-<td><a href="../supporting_text/">supporting_text</a></td>
+<td><a href="../statistical_significance_qualifier/">statistical_significance_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../OrganismTaxonToOrganismTaxonSpecialization/">OrganismTaxonToOrganismTaxonSpecialization</a></td>
+<td><a href="../effect_size/">effect_size</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../OrganismTaxonToOrganismTaxonSpecialization/">OrganismTaxonToOrganismTaxonSpecialization</a></td>
+<td><a href="../effect_type/">effect_type</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -27587,6 +29425,12 @@
 <tr>
 <td><a href="../OrganismTaxonToOrganismTaxonSpecialization/">OrganismTaxonToOrganismTaxonSpecialization</a></td>
 <td><a href="../semmed_agreement_count/">semmed_agreement_count</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../OrganismTaxonToOrganismTaxonSpecialization/">OrganismTaxonToOrganismTaxonSpecialization</a></td>
+<td><a href="../association_basis_qualifier/">association_basis_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -27790,7 +29634,19 @@
 </tr>
 <tr>
 <td><a href="../OrganismTaxonToOrganismTaxonInteraction/">OrganismTaxonToOrganismTaxonInteraction</a></td>
-<td><a href="../supporting_text/">supporting_text</a></td>
+<td><a href="../statistical_significance_qualifier/">statistical_significance_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../OrganismTaxonToOrganismTaxonInteraction/">OrganismTaxonToOrganismTaxonInteraction</a></td>
+<td><a href="../effect_size/">effect_size</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../OrganismTaxonToOrganismTaxonInteraction/">OrganismTaxonToOrganismTaxonInteraction</a></td>
+<td><a href="../effect_type/">effect_type</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -27815,6 +29671,12 @@
 <tr>
 <td><a href="../OrganismTaxonToOrganismTaxonInteraction/">OrganismTaxonToOrganismTaxonInteraction</a></td>
 <td><a href="../semmed_agreement_count/">semmed_agreement_count</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../OrganismTaxonToOrganismTaxonInteraction/">OrganismTaxonToOrganismTaxonInteraction</a></td>
+<td><a href="../association_basis_qualifier/">association_basis_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -28012,7 +29874,19 @@
 </tr>
 <tr>
 <td><a href="../OrganismTaxonToEnvironmentAssociation/">OrganismTaxonToEnvironmentAssociation</a></td>
-<td><a href="../supporting_text/">supporting_text</a></td>
+<td><a href="../statistical_significance_qualifier/">statistical_significance_qualifier</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../OrganismTaxonToEnvironmentAssociation/">OrganismTaxonToEnvironmentAssociation</a></td>
+<td><a href="../effect_size/">effect_size</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../OrganismTaxonToEnvironmentAssociation/">OrganismTaxonToEnvironmentAssociation</a></td>
+<td><a href="../effect_type/">effect_type</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -28037,6 +29911,12 @@
 <tr>
 <td><a href="../OrganismTaxonToEnvironmentAssociation/">OrganismTaxonToEnvironmentAssociation</a></td>
 <td><a href="../semmed_agreement_count/">semmed_agreement_count</a></td>
+<td>domain</td>
+<td><a href="./">Association</a></td>
+</tr>
+<tr>
+<td><a href="../OrganismTaxonToEnvironmentAssociation/">OrganismTaxonToEnvironmentAssociation</a></td>
+<td><a href="../association_basis_qualifier/">association_basis_qualifier</a></td>
 <td>domain</td>
 <td><a href="./">Association</a></td>
 </tr>
@@ -28138,13 +30018,20 @@ slots:
 - retrieval source ids
 - p value
 - adjusted p value
+- statistical significance qualifier
+- effect size
+- effect type
 - supporting text
 - has supporting studies
 - update date
 - has confidence score
+- stringdb combined score
+- stringdb experimental score
+- stringdb coexpression score
 - elevate to prediction
 - evidence count
 - semmed agreement count
+- association basis qualifier
 slot_usage:
   type:
     name: type
@@ -28159,6 +30046,32 @@ slot_usage:
   has supporting studies:
     name: has supporting studies
     inlined: true
+rules:
+- preconditions:
+    slot_conditions:
+      statistical significance qualifier:
+        name: statistical significance qualifier
+  postconditions:
+    any_of:
+    - slot_conditions:
+        p value:
+          name: p value
+    - slot_conditions:
+        adjusted p value:
+          name: adjusted p value
+  description: A statistical significance qualifier may only be set when at least
+    one numeric p-value slot (p value or adjusted p value) is also populated.
+- preconditions:
+    slot_conditions:
+      effect type:
+        name: effect type
+  postconditions:
+    slot_conditions:
+      effect size:
+        name: effect size
+  description: An effect type may only be set when the companion effect size slot
+    is also populated, because the effect type disambiguates the numeric value and
+    is meaningless without it.
 
 </code></pre>
 </details>
@@ -28187,7 +30100,7 @@ slot_usage:
 <div class="md-dialog__inner md-typeset"></div>
 </div>
 <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.tabs.link"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
-<script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+<script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
 <script type="module">import mermaid from "https://unpkg.com/mermaid@10.4.0/dist/mermaid.esm.min.mjs";
 mermaid.initialize({});</script></body>
 </html>

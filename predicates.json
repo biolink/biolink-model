@@ -277,20 +277,6 @@
                                 ]
                             },
                             {
-                                "name": "genetically_associated_with",
-                                "parent": "associated_with",
-                                "children": [
-                                    {
-                                        "name": "condition_associated_with_gene",
-                                        "parent": "genetically_associated_with"
-                                    },
-                                    {
-                                        "name": "gene_associated_with_condition",
-                                        "parent": "genetically_associated_with"
-                                    }
-                                ]
-                            },
-                            {
                                 "name": "likelihood_associated_with",
                                 "parent": "associated_with",
                                 "children": [
@@ -305,16 +291,18 @@
                                 ]
                             },
                             {
-                                "name": "resistance_associated_with",
-                                "parent": "associated_with"
-                            },
-                            {
                                 "name": "response_associated_with",
-                                "parent": "associated_with"
-                            },
-                            {
-                                "name": "sensitivity_associated_with",
-                                "parent": "associated_with"
+                                "parent": "associated_with",
+                                "children": [
+                                    {
+                                        "name": "resistance_associated_with",
+                                        "parent": "response_associated_with"
+                                    },
+                                    {
+                                        "name": "sensitivity_associated_with",
+                                        "parent": "response_associated_with"
+                                    }
+                                ]
                             }
                         ]
                     },

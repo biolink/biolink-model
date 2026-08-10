@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://biolink.github.io/biolink-model/affinity_parameter/">
+        <link rel="canonical" href="https://biolink.github.io/biolink-model/statistical_significance_qualifier/">
       
       
       
@@ -17,15 +17,15 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
-        <title>Slot: affinity_parameter - Biolink Model Documentation</title>
+        <title>Slot: statistical_significance_qualifier - Biolink Model Documentation</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -82,7 +82,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slot-affinity_parameter" class="md-skip">
+        <a href="#slot-statistical_significance_qualifier" class="md-skip">
           Skip to content
         </a>
       
@@ -117,7 +117,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Slot: affinity_parameter
+              Slot: statistical_significance_qualifier
             
           </span>
         </div>
@@ -715,6 +715,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#example-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example values
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#linkml-source" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -745,20 +756,26 @@
   
 
 
-<h1 id="slot-affinity_parameter"><strong> Slot: affinity_parameter </strong></h1>
-<div class="highlight-box"><strong>Description:</strong><i> The type of parameter describing the strength of an affinity between two entities.  For instance, if a chemical inhibits a protein with a pIC50 of 8.6, the 'affinity parameter' is pIC50. Used in conjunction with the 'affinity' slot, within an 'affinity measurement'.</i><br>
+<h1 id="slot-statistical_significance_qualifier"><strong> Slot: statistical_significance_qualifier </strong></h1>
+<div class="highlight-box"><strong>Description:</strong><i> A statement qualifier that categorizes an association's evidence by statistical significance into coarse bands, as a categorical companion to the numeric 'p value' and 'adjusted p value' slots. It applies only to assessments derived from a quantitative significance statistic (raw p-value, multiple-testing-adjusted p-value, or q-value/FDR), and MUST NOT encode ordinal study-stage, evidence-tier, or confidence-level labels (e.g. clinical trial phases) that are not statistical-significance statements.</i><br>
 
 
 <br>
-
+ <strong> Notes:</strong> Enforced via a class rule on `association`: this qualifier may only be set when 'p value' or 'adjusted p value' is also populated (the numeric slots remain authoritative). Bands use conventional defaults (alpha = 0.05); when a source's cutoffs differ, place the value in the closest band and always also populate the numeric slot(s). 
 </div>
 
-<p><strong>Domain:</strong> <a href="../NamedThing/">NamedThing</a><br>
-<strong>Range:</strong>   <a href="../AffinityParameterEnum/">AffinityParameterEnum</a> <br></p>
+<p><strong>Domain:</strong> <a href="../Association/">Association</a><br>
+<strong>Range:</strong>   <a href="../StatisticalSignificanceQualifierEnum/">StatisticalSignificanceQualifierEnum</a> <br></p>
 <h2 id="inheritance">Inheritance</h2>
 <ul>
-<li><a href="../node_property/">node_property</a><ul>
-<li><strong>affinity_parameter</strong></li>
+<li><a href="../association_slot/">association_slot</a><ul>
+<li><a href="../qualifier/">qualifier</a><ul>
+<li><a href="../statement_qualifier/">statement_qualifier</a><ul>
+<li><strong>statistical_significance_qualifier</strong></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -773,27 +790,74 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../AffinityMeasurement/">AffinityMeasurement</a></td>
-<td>The type of measurement describing the strength of an affinity between two entities. For instance, if a chemical inhibits a protein with a pIC50 of 8.6, the affinity parameter is pIC50 and the affinity value is 8.6. The binary relation, if given, qualifies the affinity as greater than, less than, or equal.</td>
+<td><a href="../Association/">Association</a></td>
+<td>A typed association between two entities, supported by evidence</td>
 <td>no</td>
+</tr>
+</tbody>
+</table>
+<h2 id="example-values">Example values</h2>
+<table>
+<thead>
+<tr>
+<th>Slot Name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>statistical_significance_qualifier</td>
+<td>very_strongly_significant</td>
+</tr>
+<tr>
+<td>statistical_significance_qualifier</td>
+<td>strongly_significant</td>
+</tr>
+<tr>
+<td>statistical_significance_qualifier</td>
+<td>significant</td>
+</tr>
+<tr>
+<td>statistical_significance_qualifier</td>
+<td>suggestive</td>
+</tr>
+<tr>
+<td>statistical_significance_qualifier</td>
+<td>not_significant</td>
 </tr>
 </tbody>
 </table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details open>
 
-<pre><code class="language-yaml">name: affinity parameter
-description: The type of parameter describing the strength of an affinity between
-  two entities.  For instance, if a chemical inhibits a protein with a pIC50 of 8.6,
-  the 'affinity parameter' is pIC50. Used in conjunction with the 'affinity' slot,
-  within an 'affinity measurement'.
+<pre><code class="language-yaml">name: statistical significance qualifier
+description: A statement qualifier that categorizes an association's evidence by statistical
+  significance into coarse bands, as a categorical companion to the numeric 'p value'
+  and 'adjusted p value' slots. It applies only to assessments derived from a quantitative
+  significance statistic (raw p-value, multiple-testing-adjusted p-value, or q-value/FDR),
+  and MUST NOT encode ordinal study-stage, evidence-tier, or confidence-level labels
+  (e.g. clinical trial phases) that are not statistical-significance statements.
+notes:
+- 'Enforced via a class rule on `association`: this qualifier may only be set when
+  ''p value'' or ''adjusted p value'' is also populated (the numeric slots remain
+  authoritative).'
+- Bands use conventional defaults (alpha = 0.05); when a source's cutoffs differ,
+  place the value in the closest band and always also populate the numeric slot(s).
+examples:
+- value: very_strongly_significant
+- value: strongly_significant
+- value: significant
+- value: suggestive
+- value: not_significant
+in_subset:
+- translator_minimal
 from_schema: https://w3id.org/biolink/vocab/
-is_a: node property
-domain: named thing
-alias: affinity_parameter
+is_a: statement qualifier
+domain: association
+alias: statistical_significance_qualifier
 domain_of:
-- affinity measurement
-range: AffinityParameterEnum
+- association
+range: StatisticalSignificanceQualifierEnum
 
 </code></pre>
 
@@ -854,7 +918,7 @@ range: AffinityParameterEnum
       <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.tabs.link"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
       
     
   </body>

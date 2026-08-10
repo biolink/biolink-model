@@ -17,7 +17,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -25,7 +25,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -750,7 +750,7 @@
 
 
 <br>
- <strong> Notes:</strong> Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects likelihood of' and 'prevents' where the effect concerns whether or when something may or may not come into existence. 
+ <strong> Notes:</strong> A note on 'affects' vs 'interacts with': These are related but separate relationships. An interaction may or may not involve one interactor exerting an effect on the other. Effects may be mediated by an interaction or may arise without any direct interaction, through a chain of intermediary events. An affects relationship asserts that one entity directly or indirectly exerts a meaningful influence on the activity, state, abundance, function, or properties of another entity. Unlike an interaction, an effect is directional: the subject changes, modulates, perturbs, regulates, or otherwise influences the object, even if no direct physical interaction occurs. Use interacts_with only when the relationship describes an interaction or association without asserting that one entity exerts an effect on the other. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects likelihood of' and 'prevents' where the effect concerns whether or when something may or may not come into existence. 
 </div>
 
 <p><strong>Domain:</strong> <a href="../NamedThing/">NamedThing</a><br>
@@ -799,6 +799,16 @@ annotations:
 description: Describes an entity that has an effect on the state or quality of another
   existing entity.
 notes:
+- 'A note on ''affects'' vs ''interacts with'': These are related but separate relationships.
+  An interaction may or may not involve one interactor exerting an effect on the other.
+  Effects may be mediated by an interaction or may arise without any direct interaction,
+  through a chain of intermediary events. An affects relationship asserts that one
+  entity directly or indirectly exerts a meaningful influence on the activity, state,
+  abundance, function, or properties of another entity. Unlike an interaction, an
+  effect is directional: the subject changes, modulates, perturbs, regulates, or otherwise
+  influences the object, even if no direct physical interaction occurs. Use interacts_with
+  only when the relationship describes an interaction or association without asserting
+  that one entity exerts an effect on the other.'
 - Use of the 'affects' predicate implies that the affected entity already exists,
   unlike predicates such as 'affects likelihood of' and 'prevents' where the effect
   concerns whether or when something may or may not come into existence.
@@ -844,7 +854,6 @@ narrow_mappings:
 is_a: related to at instance level
 domain: named thing
 inherited: true
-alias: affects
 range: named thing
 multivalued: true
 
@@ -907,7 +916,7 @@ multivalued: true
       <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.tabs.link"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
       
     
   </body>

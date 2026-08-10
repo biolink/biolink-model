@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://biolink.github.io/biolink-model/AffinityParameterEnum/">
+        <link rel="canonical" href="https://biolink.github.io/biolink-model/StatisticalSignificanceQualifierEnum/">
       
       
       
@@ -17,15 +17,15 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
-        <title>Enum: AffinityParameterEnum - Biolink Model Documentation</title>
+        <title>Enum: StatisticalSignificanceQualifierEnum - Biolink Model Documentation</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -82,7 +82,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#enum-affinityparameterenum" class="md-skip">
+        <a href="#enum-statisticalsignificancequalifierenum" class="md-skip">
           Skip to content
         </a>
       
@@ -117,7 +117,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Enum: AffinityParameterEnum
+              Enum: StatisticalSignificanceQualifierEnum
             
           </span>
         </div>
@@ -745,8 +745,8 @@
   
 
 
-<h1 id="enum-affinityparameterenum"><strong> Enum: </strong> AffinityParameterEnum</h1>
-<p><em>The types of parameters that can be used to describe the affinity between two entities, characteristically chemicals and proteins. The values are generally stated as the negative base 10 logarithm of the raw measurements.</em></p>
+<h1 id="enum-statisticalsignificancequalifierenum"><strong> Enum: </strong> StatisticalSignificanceQualifierEnum</h1>
+<p><em>An enumeration used as a qualifier to categorize the statistical significance of an association's supporting evidence into coarse bands (e.g., very strongly significant, strongly significant, significant, suggestive, not significant), conventionally anchored to alpha = 0.05. The underlying numeric value lives in the 'p value' and 'adjusted p value' slots, which remain authoritative.</em></p>
 <h2 id="permissible-values">Permissible Values</h2>
 <table>
 <thead>
@@ -758,44 +758,29 @@
 </thead>
 <tbody>
 <tr>
-<td>pIC50</td>
+<td>very_strongly_significant</td>
 <td>None</td>
-<td>Negative base 10 logarithm of the the inhibitory concentration 50% (IC50) measures the concentration needed to block or inhibit a biological response.</td>
+<td>A significance band denoting that the association meets the most stringent conventional threshold (significance statistic at or below 0.001), such that, under the null hypothesis of no association, an effect at least this large would be expected in no more than about one in a thousand comparable studies.</td>
 </tr>
 <tr>
-<td>pEC50</td>
+<td>strongly_significant</td>
 <td>None</td>
-<td>Negative base 10 logarithm of the molar concentration of a chemical that produces a 50% excitation of a function</td>
+<td>A significance band denoting that the association meets a stringent conventional threshold (significance statistic at or below 0.01).</td>
 </tr>
 <tr>
-<td>pAC50</td>
+<td>significant</td>
 <td>None</td>
-<td>None</td>
+<td>A significance band denoting that the association meets the standard conventional threshold (significance statistic at or below alpha = 0.05), such that, under the null hypothesis, an effect at least this large would be expected in no more than about one in twenty comparable studies.</td>
 </tr>
 <tr>
-<td>pXC50</td>
+<td>suggestive</td>
 <td>None</td>
-<td>None</td>
+<td>A significance band denoting a borderline result (significance statistic above 0.05 but at or below roughly 0.10, sometimes extended to 0.20 in fields such as genetics) that is suggestive of, but does not conclusively support, an association.</td>
 </tr>
 <tr>
-<td>pKi</td>
+<td>not_significant</td>
 <td>None</td>
-<td>Negative base 10 logarithm of the equilibrium binding affinity for a ligand that reduces the activity of its binding partner. Ki represents the concentration at which the inhibitor ligand occupies 50% of the receptor sites when no competing ligand is present</td>
-</tr>
-<tr>
-<td>pKon</td>
-<td>None</td>
-<td>Negative base 10 logarithm of the association rate constant (Kon) describes the rate at which molecules bind to each other.</td>
-</tr>
-<tr>
-<td>pKoff</td>
-<td>None</td>
-<td>Negative base 10 logarithm of the dissociation rate constant (koff) describes the rate at which they dissociate.</td>
-</tr>
-<tr>
-<td>pKd</td>
-<td>None</td>
-<td>Negative base 10 logarithm of the equilibrium dissociation constant (KD) which is a measure of the binding affinity and is defined as the ratio of koff to kon.</td>
+<td>A significance band denoting that the association does not meet the conventional threshold (significance statistic above 0.05), such that there is insufficient evidence to rule out the null hypothesis of no association.</td>
 </tr>
 </tbody>
 </table>
@@ -808,50 +793,48 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../affinity_parameter/">affinity_parameter</a></td>
+<td><a href="../statistical_significance_qualifier/">statistical_significance_qualifier</a></td>
 </tr>
 </tbody>
 </table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details open>
 
-<pre><code class="language-yaml">name: AffinityParameterEnum
-description: The types of parameters that can be used to describe the affinity between
-  two entities, characteristically chemicals and proteins. The values are generally
-  stated as the negative base 10 logarithm of the raw measurements.
+<pre><code class="language-yaml">name: StatisticalSignificanceQualifierEnum
+description: An enumeration used as a qualifier to categorize the statistical significance
+  of an association's supporting evidence into coarse bands (e.g., very strongly significant,
+  strongly significant, significant, suggestive, not significant), conventionally
+  anchored to alpha = 0.05. The underlying numeric value lives in the 'p value' and
+  'adjusted p value' slots, which remain authoritative.
 from_schema: https://w3id.org/biolink/vocab/
 permissible_values:
-  pIC50:
-    text: pIC50
-    description: Negative base 10 logarithm of the the inhibitory concentration 50%
-      (IC50) measures the concentration needed to block or inhibit a biological response.
-  pEC50:
-    text: pEC50
-    description: Negative base 10 logarithm of the molar concentration of a chemical
-      that produces a 50% excitation of a function
-  pAC50:
-    text: pAC50
-  pXC50:
-    text: pXC50
-  pKi:
-    text: pKi
-    description: Negative base 10 logarithm of the equilibrium binding affinity for
-      a ligand that reduces the activity of its binding partner. Ki represents the
-      concentration at which the inhibitor ligand occupies 50% of the receptor sites
-      when no competing ligand is present
-  pKon:
-    text: pKon
-    description: Negative base 10 logarithm of the association rate constant (Kon)
-      describes the rate at which molecules bind to each other.
-  pKoff:
-    text: pKoff
-    description: Negative base 10 logarithm of the dissociation rate constant (koff)
-      describes the rate at which they dissociate.
-  pKd:
-    text: pKd
-    description: Negative base 10 logarithm of the equilibrium dissociation constant
-      (KD) which is a measure of the binding affinity and is defined as the ratio
-      of koff to kon.
+  very_strongly_significant:
+    text: very_strongly_significant
+    description: A significance band denoting that the association meets the most
+      stringent conventional threshold (significance statistic at or below 0.001),
+      such that, under the null hypothesis of no association, an effect at least this
+      large would be expected in no more than about one in a thousand comparable studies.
+  strongly_significant:
+    text: strongly_significant
+    description: A significance band denoting that the association meets a stringent
+      conventional threshold (significance statistic at or below 0.01).
+  significant:
+    text: significant
+    description: A significance band denoting that the association meets the standard
+      conventional threshold (significance statistic at or below alpha = 0.05), such
+      that, under the null hypothesis, an effect at least this large would be expected
+      in no more than about one in twenty comparable studies.
+  suggestive:
+    text: suggestive
+    description: A significance band denoting a borderline result (significance statistic
+      above 0.05 but at or below roughly 0.10, sometimes extended to 0.20 in fields
+      such as genetics) that is suggestive of, but does not conclusively support,
+      an association.
+  not_significant:
+    text: not_significant
+    description: A significance band denoting that the association does not meet the
+      conventional threshold (significance statistic above 0.05), such that there
+      is insufficient evidence to rule out the null hypothesis of no association.
 
 </code></pre>
 
@@ -912,7 +895,7 @@ permissible_values:
       <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.tabs.link"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
       
     
   </body>

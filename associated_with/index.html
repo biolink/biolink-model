@@ -17,7 +17,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -25,7 +25,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -746,7 +746,7 @@
 
 
 <h1 id="slot-associated_with-multivalued"><strong> Slot: associated_with </strong>  (multivalued)</h1>
-<div class="highlight-box"><strong>Description:</strong><i> Expresses a relationship between two named things where the relationship is typically generated statistically (though not in all cases), and is weaker than its child, 'correlated with', but stronger than its parent, 'related to'. This relationship holds between two concepts represented by variables for which a statistical dependence is demonstrated.  E.g. the statement “Atrial Fibrillation (Afib) is associated with Myocardial Infraction (MI)” asserts that having Afib is not statistically independent from whether a patient will also have MI. Note that in Translator associations, the subject and object concepts may map exactly to the statistical variables, or represent related entities for which the variables serve as proxies in an Association (e.g. diseases, chemical entities or processes).</i><br>
+<div class="highlight-box"><strong>Description:</strong><i> Indicates a non-causal association between two entities. Such associations are most commonly established through statistical analysis demonstrating that observations of the entities are not statistically independent, but may also be supported by other forms of evidence that establish a meaningful association. When representing a statistical association, the subject and object may correspond directly to the variables analyzed, or to the biological or clinical entities represented/described by those variables (e.g., diseases, genes, chemical entities, biological processes, or phenotypes).  The 'association basis qualifier' may be used to constrain the scope of this predicate within a statement if no more specific child predicate provides a more precise semantic context for the association.</i><br>
 
 
 <br>
@@ -764,8 +764,6 @@
 <li><a href="../likelihood_associated_with/">likelihood_associated_with</a></li>
 <li><a href="../associated_with_response_to/">associated_with_response_to</a></li>
 <li><a href="../response_associated_with/">response_associated_with</a></li>
-<li><a href="../sensitivity_associated_with/">sensitivity_associated_with</a></li>
-<li><a href="../resistance_associated_with/">resistance_associated_with</a></li>
 <li><a href="../genetic_association/">genetic_association</a></li>
 <li><a href="../genetically_associated_with/">genetically_associated_with</a></li>
 <li><a href="../correlated_with/">correlated_with</a></li>
@@ -799,16 +797,16 @@ annotations:
   canonical_predicate:
     tag: canonical_predicate
     value: true
-description: Expresses a relationship between two named things where the relationship
-  is typically generated statistically (though not in all cases), and is weaker than
-  its child, 'correlated with', but stronger than its parent, 'related to'. This relationship
-  holds between two concepts represented by variables for which a statistical dependence
-  is demonstrated.  E.g. the statement “Atrial Fibrillation (Afib) is associated with
-  Myocardial Infraction (MI)” asserts that having Afib is not statistically independent
-  from whether a patient will also have MI. Note that in Translator associations,
-  the subject and object concepts may map exactly to the statistical variables, or
-  represent related entities for which the variables serve as proxies in an Association
-  (e.g. diseases, chemical entities or processes).
+description: Indicates a non-causal association between two entities. Such associations
+  are most commonly established through statistical analysis demonstrating that observations
+  of the entities are not statistically independent, but may also be supported by
+  other forms of evidence that establish a meaningful association. When representing
+  a statistical association, the subject and object may correspond directly to the
+  variables analyzed, or to the biological or clinical entities represented/described
+  by those variables (e.g., diseases, genes, chemical entities, biological processes,
+  or phenotypes).  The 'association basis qualifier' may be used to constrain the
+  scope of this predicate within a statement if no more specific child predicate provides
+  a more precise semantic context for the association.
 from_schema: https://w3id.org/biolink/vocab/
 narrow_mappings:
 - RO:0004029
@@ -880,7 +878,7 @@ multivalued: true
       <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.tabs.link"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
       
     
   </body>

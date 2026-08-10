@@ -5,11 +5,11 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<link href="https://biolink.github.io/biolink-model/AffinityMeasurement/" rel="canonical"/>
+<link href="https://biolink.github.io/biolink-model/ProteinLigandAssayResult/" rel="canonical"/>
 <link href="../assets/images/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.6.1, mkdocs-material-9.7.6" name="generator"/>
-<title>Class: AffinityMeasurement - Biolink Model Documentation</title>
-<link href="../assets/stylesheets/main.484c7ddc.min.css" rel="stylesheet"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.7.7" name="generator"/>
+<title>Class: ProteinLigandAssayResult - Biolink Model Documentation</title>
+<link href="../assets/stylesheets/main.ec1eaa64.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
@@ -24,7 +24,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#class-affinitymeasurement">
+<a class="md-skip" href="#class-proteinligandassayresult">
           Skip to content
         </a>
 </div>
@@ -48,7 +48,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Class: AffinityMeasurement
+              Class: ProteinLigandAssayResult
             
           </span>
 </div>
@@ -347,15 +347,6 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#usages">
-<span class="md-ellipsis">
-      
-        Usages
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
 <a class="md-nav__link" href="#linkml-source">
 <span class="md-ellipsis">
       
@@ -371,63 +362,85 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="class-affinitymeasurement"><strong>  Class: AffinityMeasurement </strong></h1>
+<h1 id="class-proteinligandassayresult"><strong>  Class: ProteinLigandAssayResult </strong></h1>
 <div class="highlight-box">
-<strong>Description:</strong><i> The type of measurement describing the strength of an affinity between two entities. For instance, if a chemical inhibits a protein with a pIC50 of 8.6, the affinity parameter is pIC50 and the affinity value is 8.6. The binary relation, if given, qualifies the affinity as greater than, less than, or equal.</i><br/>
+<strong>Description:</strong><i> The type of study result describing the strength of interaction affinity - or enzymatic interaction - between a ligand and a target protein. Measured binding or enzymatic assay values are generally stated as the negative base 10 logarithm of the raw measurements. For instance (i.e., in a molecular interaction database like BindingDb) if a ligand inhibits a target protein with a pIC50 of 8.6, then the affinity parameter is pIC50 and the affinity value is 8.6.</i><br/>
 </div>
 <div class="mermaid"> classDiagram
-    class AffinityMeasurement
-      NamedThing &lt;|-- AffinityMeasurement
+    class ProteinLigandAssayResult
+      StudyResult &lt;|-- ProteinLigandAssayResult
 
-      AffinityMeasurement : affinity
+      ProteinLigandAssayResult : broad_synonym
 
-      AffinityMeasurement : affinity_parameter
+      ProteinLigandAssayResult : category
 
-          AffinityMeasurement --|&gt; AffinityParameterEnum : affinity_parameter
+      ProteinLigandAssayResult : deprecated
 
-      AffinityMeasurement : broad_synonym
+      ProteinLigandAssayResult : description
 
-      AffinityMeasurement : category
+      ProteinLigandAssayResult : equivalent_identifiers
 
-      AffinityMeasurement : deprecated
+      ProteinLigandAssayResult : exact_synonym
 
-      AffinityMeasurement : description
+      ProteinLigandAssayResult : full_name
 
-      AffinityMeasurement : equivalent_identifiers
+      ProteinLigandAssayResult : has_attribute
 
-      AffinityMeasurement : exact_synonym
+          ProteinLigandAssayResult --|&gt; Attribute : has_attribute
 
-      AffinityMeasurement : full_name
+      ProteinLigandAssayResult : id
 
-      AffinityMeasurement : has_attribute
+      ProteinLigandAssayResult : information_content
 
-          AffinityMeasurement --|&gt; Attribute : has_attribute
+      ProteinLigandAssayResult : iri
 
-      AffinityMeasurement : has_binary_relation
+      ProteinLigandAssayResult : name
 
-          AffinityMeasurement --|&gt; BinaryRelationEnum : has_binary_relation
+      ProteinLigandAssayResult : narrow_synonym
 
-      AffinityMeasurement : id
+      ProteinLigandAssayResult : pAC50
 
-      AffinityMeasurement : information_content
+          ProteinLigandAssayResult --|&gt; QuantityValue : pAC50
 
-      AffinityMeasurement : iri
+      ProteinLigandAssayResult : pEC50
 
-      AffinityMeasurement : name
+          ProteinLigandAssayResult --|&gt; QuantityValue : pEC50
 
-      AffinityMeasurement : narrow_synonym
+      ProteinLigandAssayResult : pIC50
 
-      AffinityMeasurement : provided_by
+          ProteinLigandAssayResult --|&gt; QuantityValue : pIC50
 
-      AffinityMeasurement : related_synonym
+      ProteinLigandAssayResult : pKd
 
-      AffinityMeasurement : synonym
+          ProteinLigandAssayResult --|&gt; QuantityValue : pKd
 
-      AffinityMeasurement : taxon
+      ProteinLigandAssayResult : pKi
 
-      AffinityMeasurement : type
+          ProteinLigandAssayResult --|&gt; QuantityValue : pKi
 
-      AffinityMeasurement : xref
+      ProteinLigandAssayResult : pKoff
+
+          ProteinLigandAssayResult --|&gt; QuantityValue : pKoff
+
+      ProteinLigandAssayResult : pKon
+
+          ProteinLigandAssayResult --|&gt; QuantityValue : pKon
+
+      ProteinLigandAssayResult : provided_by
+
+      ProteinLigandAssayResult : pXC50
+
+          ProteinLigandAssayResult --|&gt; QuantityValue : pXC50
+
+      ProteinLigandAssayResult : related_synonym
+
+      ProteinLigandAssayResult : synonym
+
+      ProteinLigandAssayResult : taxon
+
+      ProteinLigandAssayResult : type
+
+      ProteinLigandAssayResult : xref
 
 
 </div>
@@ -435,7 +448,10 @@
 <ul>
 <li><a href="../Entity/">Entity</a><ul>
 <li><a href="../NamedThing/">NamedThing</a><ul>
-<li><strong>AffinityMeasurement</strong></li>
+<li><a href="../StudyResult/">StudyResult</a><ul>
+<li><strong>ProteinLigandAssayResult</strong></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -453,20 +469,50 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../affinity_parameter/">affinity_parameter</a>: <br/> <i> The type of parameter describing the strength of an affinity between two entities.  For instance, if a chemical inhibits a protein with a pIC50 of 8.6, the 'affinity parameter' is pIC50. Used in conjunction with the 'affinity' slot, within an 'affinity measurement'. </i></td>
-<td>0..1 <br/> <a href="../AffinityParameterEnum/">AffinityParameterEnum</a></td>
+<td><a href="../pKd/">pKd</a>: <br/> <i> Negative base 10 logarithm of the equilibrium dissociation constant (KD) which is a measure of the binding affinity and is defined as the ratio of koff to kon. </i></td>
+<td>0..1 <br/> <a href="../QuantityValue/">QuantityValue</a></td>
 <td>direct</td>
 <td></td>
 </tr>
 <tr>
-<td><a href="../affinity/">affinity</a>: <br/> <i> The numerical value describing the strength of an affinity between two entities.  For instance, if a chemical inhibits a protein with a pIC50 of 8.6, the affinity is 8.6. Used in conjunction with the affinity parameter slot. </i></td>
-<td>0..1 <br/> <a href="../Float/">Float</a></td>
+<td><a href="../pKi/">pKi</a>: <br/> <i> Negative base 10 logarithm of the equilibrium binding affinity for a ligand that reduces the activity of its binding partner. Ki represents the concentration at which the inhibitor ligand occupies 50% of the receptor sites when no competing ligand is present </i></td>
+<td>0..1 <br/> <a href="../QuantityValue/">QuantityValue</a></td>
 <td>direct</td>
 <td></td>
 </tr>
 <tr>
-<td><a href="../has_binary_relation/">has_binary_relation</a>: <br/> <i> Qualifies a value context with a mathematical binary relation. </i></td>
-<td>0..1 <br/> <a href="../BinaryRelationEnum/">BinaryRelationEnum</a></td>
+<td><a href="../pIC50/">pIC50</a>: <br/> <i> Negative base 10 logarithm of the the inhibitory concentration 50% (IC50) measures the concentration needed to block or inhibit a biological response. </i></td>
+<td>0..1 <br/> <a href="../QuantityValue/">QuantityValue</a></td>
+<td>direct</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../pEC50/">pEC50</a>: <br/> <i> Negative base 10 logarithm of the molar concentration of a chemical that produces a 50% excitation of a function </i></td>
+<td>0..1 <br/> <a href="../QuantityValue/">QuantityValue</a></td>
+<td>direct</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../pAC50/">pAC50</a>: <br/> <i> pAC50 is a base 10 negative logarithmic measure of potency for an activating (agonist) interaction between a molecule (such as a drug or ligand) and a biological target (such as a receptor or enzyme), where AC50 is the concentration (in molar units) of a compound that produces 50% of its maximal activation in a functional assay. </i></td>
+<td>0..1 <br/> <a href="../QuantityValue/">QuantityValue</a></td>
+<td>direct</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../pXC50/">pXC50</a>: <br/> <i> In the context of molecular interactions and drug discovery, pXC50 is a generic, base 10 negative logarithmic measure of compound potency that unifies different types of half‑maximal concentration values into a single notation, where XC50 means “the concentration at which 50% of the maximal effect is observed”, and X is a placeholder for the type of effect being measured (e.g., inhibition or activation). The X in pXC50 is intentionally generic and can represent different assay endpoints. </i></td>
+<td>0..1 <br/> <a href="../QuantityValue/">QuantityValue</a></td>
+<td>direct</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../pKon/">pKon</a>: <br/> <i> Negative base 10 logarithm of the association rate constant (Kon) describes the rate at which molecules bind to each other. </i></td>
+<td>0..1 <br/> <a href="../QuantityValue/">QuantityValue</a></td>
+<td>direct</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../pKoff/">pKoff</a>: <br/> <i> Negative base 10 logarithm of the dissociation rate constant (koff) describes the rate at which they dissociate. </i></td>
+<td>0..1 <br/> <a href="../QuantityValue/">QuantityValue</a></td>
 <td>direct</td>
 <td></td>
 </tr>
@@ -586,38 +632,26 @@
 </tr>
 </tbody>
 </table>
-<h2 id="usages">Usages</h2>
-<table>
-<thead>
-<tr>
-<th>used by</th>
-<th>used in</th>
-<th>type</th>
-<th>used</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="../ChemicalGeneInteractionAssociation/">ChemicalGeneInteractionAssociation</a></td>
-<td><a href="../has_affinity/">has_affinity</a></td>
-<td>range</td>
-<td><a href="./">AffinityMeasurement</a></td>
-</tr>
-</tbody>
-</table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details open="">
-<pre><code class="language-yaml">name: affinity measurement
-description: The type of measurement describing the strength of an affinity between
-  two entities. For instance, if a chemical inhibits a protein with a pIC50 of 8.6,
-  the affinity parameter is pIC50 and the affinity value is 8.6. The binary relation,
-  if given, qualifies the affinity as greater than, less than, or equal.
+<pre><code class="language-yaml">name: protein ligand assay result
+description: The type of study result describing the strength of interaction affinity
+  - or enzymatic interaction - between a ligand and a target protein. Measured binding
+  or enzymatic assay values are generally stated as the negative base 10 logarithm
+  of the raw measurements. For instance (i.e., in a molecular interaction database
+  like BindingDb) if a ligand inhibits a target protein with a pIC50 of 8.6, then
+  the affinity parameter is pIC50 and the affinity value is 8.6.
 from_schema: https://w3id.org/biolink/vocab/
-is_a: named thing
+is_a: study result
 slots:
-- affinity parameter
-- affinity
-- has binary relation
+- pKd
+- pKi
+- pIC50
+- pEC50
+- pAC50
+- pXC50
+- pKon
+- pKoff
 
 </code></pre>
 </details>
@@ -646,7 +680,7 @@ slots:
 <div class="md-dialog__inner md-typeset"></div>
 </div>
 <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.tabs.link"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
-<script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+<script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
 <script type="module">import mermaid from "https://unpkg.com/mermaid@10.4.0/dist/mermaid.esm.min.mjs";
 mermaid.initialize({});</script></body>
 </html>

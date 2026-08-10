@@ -17,7 +17,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -25,7 +25,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -790,23 +790,18 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../GeneAffectsChemicalAssociation/">GeneAffectsChemicalAssociation</a></td>
-<td>Describes an effect that a gene or gene product has on a chemical entity (e.g. an impact of on its abundance, activity, localization, processing, transport, etc.)</td>
-<td>yes</td>
-</tr>
-<tr>
-<td><a href="../FeatureOrDiseaseQualifiersToEntityMixin/">FeatureOrDiseaseQualifiersToEntityMixin</a></td>
-<td>Qualifiers for disease or phenotype to entity associations.</td>
+<td><a href="../PredicateMapping/">PredicateMapping</a></td>
+<td>A deprecated predicate mapping object contains the deprecated predicate and an example of the rewiring that should be done to use a qualified statement in its place.</td>
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../ChemicalGeneSensitivityAssociation/">ChemicalGeneSensitivityAssociation</a></td>
-<td>Describes a relationship in which a chemical entity affects the sensitivity or susceptibility of a biological system to a gene or gene product (e.g. a chemical that increases or decreases the response to a gene or gene product). This covers 'response to substance' style interactions from sources such as CTD that map to the 'affects sensitivity to' predicate hierarchy, as opposed to the abundance/activity/processing effects covered by ChemicalAffectsGeneAssociation.</td>
-<td>yes</td>
+<td><a href="../GeneToGeneAssociation/">GeneToGeneAssociation</a></td>
+<td>parent class for different kinds of gene-gene or gene product to gene product relationships. Includes homology and interaction.</td>
+<td>no</td>
 </tr>
 <tr>
-<td><a href="../PredicateMapping/">PredicateMapping</a></td>
-<td>A deprecated predicate mapping object contains the deprecated predicate and an example of the rewiring that should be done to use a qualified statement in its place.</td>
+<td><a href="../MacromolecularMachineHasSubstrateAssociation/">MacromolecularMachineHasSubstrateAssociation</a></td>
+<td>Describes the relationship between an enzyme (usually a macromolecular complex or gene product) and the molecules it acts on (substrate). The substrate can be a chemical, a polypeptide, or a protein.</td>
 <td>no</td>
 </tr>
 <tr>
@@ -815,9 +810,14 @@
 <td>yes</td>
 </tr>
 <tr>
-<td><a href="../MacromolecularMachineHasSubstrateAssociation/">MacromolecularMachineHasSubstrateAssociation</a></td>
-<td>Describes the relationship between an enzyme (usually a macromolecular complex or gene product) and the molecules it acts on (substrate). The substrate can be a chemical, a polypeptide, or a protein.</td>
-<td>no</td>
+<td><a href="../ChemicalGeneSensitivityAssociation/">ChemicalGeneSensitivityAssociation</a></td>
+<td>Describes a relationship in which a chemical entity affects the sensitivity or susceptibility of a biological system to a gene or gene product (e.g. a chemical that increases or decreases the response to a gene or gene product). This covers 'response to substance' style interactions from sources such as CTD that map to the 'affects sensitivity to' predicate hierarchy, as opposed to the abundance/activity/processing effects covered by ChemicalAffectsGeneAssociation.</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><a href="../GeneAffectsChemicalAssociation/">GeneAffectsChemicalAssociation</a></td>
+<td>Describes an effect that a gene or gene product has on a chemical entity (e.g. an impact of on its abundance, activity, localization, processing, transport, etc.)</td>
+<td>yes</td>
 </tr>
 <tr>
 <td><a href="../EntityToFeatureOrDiseaseQualifiersMixin/">EntityToFeatureOrDiseaseQualifiersMixin</a></td>
@@ -830,13 +830,13 @@
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../GeneToGeneAssociation/">GeneToGeneAssociation</a></td>
-<td>parent class for different kinds of gene-gene or gene product to gene product relationships. Includes homology and interaction.</td>
+<td><a href="../EntityToFeatureOrGeneQualifiersMixin/">EntityToFeatureOrGeneQualifiersMixin</a></td>
+<td>Qualifiers for entity to gene associations.</td>
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../EntityToFeatureOrGeneQualifiersMixin/">EntityToFeatureOrGeneQualifiersMixin</a></td>
-<td>Qualifiers for entity to gene associations.</td>
+<td><a href="../FeatureOrDiseaseQualifiersToEntityMixin/">FeatureOrDiseaseQualifiersToEntityMixin</a></td>
+<td>Qualifiers for disease or phenotype to entity associations.</td>
 <td>no</td>
 </tr>
 </tbody>
@@ -948,7 +948,7 @@ range: DirectionQualifierEnum
       <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.tabs.link"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
       
     
   </body>

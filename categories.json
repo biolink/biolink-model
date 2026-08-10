@@ -30,10 +30,6 @@
                 ]
             },
             {
-                "name": "affinity_measurement",
-                "parent": "NamedThing"
-            },
-            {
                 "name": "attribute",
                 "parent": "NamedThing",
                 "children": [
@@ -675,6 +671,10 @@
                     },
                     {
                         "name": "observed_expected_frequency_analysis_result",
+                        "parent": "study_result"
+                    },
+                    {
+                        "name": "protein_ligand_assay_result",
                         "parent": "study_result"
                     },
                     {

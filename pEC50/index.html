@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://biolink.github.io/biolink-model/has_affinity/">
+        <link rel="canonical" href="https://biolink.github.io/biolink-model/pEC50/">
       
       
       
@@ -17,15 +17,15 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
-        <title>Slot: has_affinity (multivalued) - Biolink Model Documentation</title>
+        <title>Slot: pEC50 - Biolink Model Documentation</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -82,7 +82,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slot-has_affinity-multivalued" class="md-skip">
+        <a href="#slot-pec50" class="md-skip">
           Skip to content
         </a>
       
@@ -117,7 +117,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Slot: has_affinity (multivalued)
+              Slot: pEC50
             
           </span>
         </div>
@@ -745,20 +745,20 @@
   
 
 
-<h1 id="slot-has_affinity-multivalued"><strong> Slot: has_affinity </strong>  (multivalued)</h1>
-<div class="highlight-box"><strong>Description:</strong><i> Set of measurements documenting the strength of chemical entity to gene or gene product interactions.</i><br>
+<h1 id="slot-pec50"><strong> Slot: pEC50 </strong></h1>
+<div class="highlight-box"><strong>Description:</strong><i> Negative base 10 logarithm of the molar concentration of a chemical that produces a 50% excitation of a function</i><br>
 
 
 <br>
 
 </div>
 
-<p><strong>Domain:</strong> <a href="../Association/">Association</a><br>
-<strong>Range:</strong>   <a href="../AffinityMeasurement/">AffinityMeasurement</a> <br></p>
+<p><strong>Domain:</strong> <a href="../NamedThing/">NamedThing</a><br>
+<strong>Range:</strong>   <a href="../QuantityValue/">QuantityValue</a> <br></p>
 <h2 id="inheritance">Inheritance</h2>
 <ul>
-<li><a href="../association_slot/">association_slot</a><ul>
-<li><strong>has_affinity</strong></li>
+<li><a href="../node_property/">node_property</a><ul>
+<li><strong>pEC50</strong></li>
 </ul>
 </li>
 </ul>
@@ -773,8 +773,8 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../ChemicalGeneInteractionAssociation/">ChemicalGeneInteractionAssociation</a></td>
-<td>describes an interaction between a chemical entity and a gene or gene product. Any biological or chemical effect resulting from such an interaction are out of scope, and covered by the ChemicalAffectsGeneAssociation type (e.g. impact of a chemical on the abundance, activity, structure, etc, of either participant in the interaction)</td>
+<td><a href="../ProteinLigandAssayResult/">ProteinLigandAssayResult</a></td>
+<td>The type of study result describing the strength of interaction affinity - or enzymatic interaction - between a ligand and a target protein. Measured binding or enzymatic assay values are generally stated as the negative base 10 logarithm of the raw measurements. For instance (i.e., in a molecular interaction database like BindingDb) if a ligand inhibits a target protein with a pIC50 of 8.6, then the affinity parameter is pIC50 and the affinity value is 8.6.</td>
 <td>no</td>
 </tr>
 </tbody>
@@ -782,19 +782,15 @@
 <h2 id="linkml-source">LinkML Source</h2>
 <details open>
 
-<pre><code class="language-yaml">name: has affinity
-description: Set of measurements documenting the strength of chemical entity to gene
-  or gene product interactions.
+<pre><code class="language-yaml">name: pEC50
+description: Negative base 10 logarithm of the molar concentration of a chemical that
+  produces a 50% excitation of a function
 from_schema: https://w3id.org/biolink/vocab/
-is_a: association slot
-domain: association
-alias: has_affinity
+is_a: node property
+domain: named thing
 domain_of:
-- chemical gene interaction association
-range: affinity measurement
-multivalued: true
-inlined: true
-inlined_as_list: true
+- protein ligand assay result
+range: quantity value
 
 </code></pre>
 
@@ -855,7 +851,7 @@ inlined_as_list: true
       <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.tabs.link"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
       
     
   </body>

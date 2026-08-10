@@ -7,9 +7,9 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="https://biolink.github.io/biolink-model/NamedThing/" rel="canonical"/>
 <link href="../assets/images/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.6.1, mkdocs-material-9.7.6" name="generator"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.7.7" name="generator"/>
 <title>Class: NamedThing - Biolink Model Documentation</title>
-<link href="../assets/stylesheets/main.484c7ddc.min.css" rel="stylesheet"/>
+<link href="../assets/stylesheets/main.ec1eaa64.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
@@ -396,7 +396,6 @@
       NamedThing &lt;|-- PlanetaryEntity
       NamedThing &lt;|-- BiologicalEntity
       NamedThing &lt;|-- ChemicalEntity
-      NamedThing &lt;|-- AffinityMeasurement
       NamedThing &lt;|-- ClinicalEntity
       NamedThing &lt;|-- ExposureEvent
 
@@ -463,7 +462,6 @@
 <li><a href="../PlanetaryEntity/">PlanetaryEntity</a></li>
 <li><a href="../BiologicalEntity/">BiologicalEntity</a> [ <a href="../ThingWithTaxon/">ThingWithTaxon</a>]</li>
 <li><a href="../ChemicalEntity/">ChemicalEntity</a> [ <a href="../PhysicalEssence/">PhysicalEssence</a> <a href="../ChemicalOrDrugOrTreatment/">ChemicalOrDrugOrTreatment</a> <a href="../ChemicalEntityOrGeneOrGeneProduct/">ChemicalEntityOrGeneOrGeneProduct</a> <a href="../ChemicalEntityOrProteinOrPolypeptide/">ChemicalEntityOrProteinOrPolypeptide</a>]</li>
-<li><a href="../AffinityMeasurement/">AffinityMeasurement</a></li>
 <li><a href="../ClinicalEntity/">ClinicalEntity</a></li>
 <li><a href="../ExposureEvent/">ExposureEvent</a> [ <a href="../OntologyClass/">OntologyClass</a>]</li>
 </ul>
@@ -1631,6 +1629,48 @@
 </tr>
 <tr>
 <td><a href="../TextMiningStudyResult/">TextMiningStudyResult</a></td>
+<td><a href="../supporting_text/">supporting_text</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../TextMiningStudyResult/">TextMiningStudyResult</a></td>
+<td><a href="../subject_location_in_text/">subject_location_in_text</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../TextMiningStudyResult/">TextMiningStudyResult</a></td>
+<td><a href="../object_location_in_text/">object_location_in_text</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../TextMiningStudyResult/">TextMiningStudyResult</a></td>
+<td><a href="../extraction_confidence_score/">extraction_confidence_score</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../TextMiningStudyResult/">TextMiningStudyResult</a></td>
+<td><a href="../supporting_document_type/">supporting_document_type</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../TextMiningStudyResult/">TextMiningStudyResult</a></td>
+<td><a href="../supporting_document_year/">supporting_document_year</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../TextMiningStudyResult/">TextMiningStudyResult</a></td>
+<td><a href="../supporting_text_section_type/">supporting_text_section_type</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../TextMiningStudyResult/">TextMiningStudyResult</a></td>
 <td><a href="../provided_by/">provided_by</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
@@ -1685,6 +1725,48 @@
 </tr>
 <tr>
 <td><a href="../IceesStudyResult/">IceesStudyResult</a></td>
+<td><a href="../chi_squared_statistic/">chi_squared_statistic</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../IceesStudyResult/">IceesStudyResult</a></td>
+<td><a href="../chi_squared_dof/">chi_squared_dof</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../IceesStudyResult/">IceesStudyResult</a></td>
+<td><a href="../chi_squared_p/">chi_squared_p</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../IceesStudyResult/">IceesStudyResult</a></td>
+<td><a href="../fisher_exact_odds_ratio/">fisher_exact_odds_ratio</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../IceesStudyResult/">IceesStudyResult</a></td>
+<td><a href="../fisher_exact_p/">fisher_exact_p</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../IceesStudyResult/">IceesStudyResult</a></td>
+<td><a href="../log_odds_ratio/">log_odds_ratio</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../IceesStudyResult/">IceesStudyResult</a></td>
+<td><a href="../log_odds_ratio_95_ci/">log_odds_ratio_95_ci</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../IceesStudyResult/">IceesStudyResult</a></td>
 <td><a href="../provided_by/">provided_by</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
@@ -1734,6 +1816,144 @@
 <tr>
 <td><a href="../IceesStudyResult/">IceesStudyResult</a></td>
 <td><a href="../taxon/">taxon</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../ProteinLigandAssayResult/">ProteinLigandAssayResult</a></td>
+<td><a href="../pKd/">pKd</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../ProteinLigandAssayResult/">ProteinLigandAssayResult</a></td>
+<td><a href="../pKi/">pKi</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../ProteinLigandAssayResult/">ProteinLigandAssayResult</a></td>
+<td><a href="../pIC50/">pIC50</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../ProteinLigandAssayResult/">ProteinLigandAssayResult</a></td>
+<td><a href="../pEC50/">pEC50</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../ProteinLigandAssayResult/">ProteinLigandAssayResult</a></td>
+<td><a href="../pAC50/">pAC50</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../ProteinLigandAssayResult/">ProteinLigandAssayResult</a></td>
+<td><a href="../pXC50/">pXC50</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../ProteinLigandAssayResult/">ProteinLigandAssayResult</a></td>
+<td><a href="../pKon/">pKon</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../ProteinLigandAssayResult/">ProteinLigandAssayResult</a></td>
+<td><a href="../pKoff/">pKoff</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../ProteinLigandAssayResult/">ProteinLigandAssayResult</a></td>
+<td><a href="../provided_by/">provided_by</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../ProteinLigandAssayResult/">ProteinLigandAssayResult</a></td>
+<td><a href="../xref/">xref</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../ProteinLigandAssayResult/">ProteinLigandAssayResult</a></td>
+<td><a href="../full_name/">full_name</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../ProteinLigandAssayResult/">ProteinLigandAssayResult</a></td>
+<td><a href="../synonym/">synonym</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../ProteinLigandAssayResult/">ProteinLigandAssayResult</a></td>
+<td><a href="../exact_synonym/">exact_synonym</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../ProteinLigandAssayResult/">ProteinLigandAssayResult</a></td>
+<td><a href="../broad_synonym/">broad_synonym</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../ProteinLigandAssayResult/">ProteinLigandAssayResult</a></td>
+<td><a href="../narrow_synonym/">narrow_synonym</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../ProteinLigandAssayResult/">ProteinLigandAssayResult</a></td>
+<td><a href="../related_synonym/">related_synonym</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../ProteinLigandAssayResult/">ProteinLigandAssayResult</a></td>
+<td><a href="../taxon/">taxon</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../Study/">Study</a></td>
+<td><a href="../study_method_types/">study_method_types</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../Study/">Study</a></td>
+<td><a href="../study_method_description/">study_method_description</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../Study/">Study</a></td>
+<td><a href="../study_size/">study_size</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../Study/">Study</a></td>
+<td><a href="../study_cohort/">study_cohort</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../Study/">Study</a></td>
+<td><a href="../study_date_range/">study_date_range</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../Study/">Study</a></td>
+<td><a href="../study_context/">study_context</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
 </tr>
@@ -2459,6 +2679,12 @@
 </tr>
 <tr>
 <td><a href="../Publication/">Publication</a></td>
+<td><a href="../has_studies/">has_studies</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../Publication/">Publication</a></td>
 <td><a href="../creation_date/">creation_date</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
@@ -2514,6 +2740,12 @@
 <tr>
 <td><a href="../Book/">Book</a></td>
 <td><a href="../xref/">xref</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../Book/">Book</a></td>
+<td><a href="../has_studies/">has_studies</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
 </tr>
@@ -2574,6 +2806,12 @@
 <tr>
 <td><a href="../BookChapter/">BookChapter</a></td>
 <td><a href="../xref/">xref</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../BookChapter/">BookChapter</a></td>
+<td><a href="../has_studies/">has_studies</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
 </tr>
@@ -2634,6 +2872,12 @@
 <tr>
 <td><a href="../Serial/">Serial</a></td>
 <td><a href="../xref/">xref</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../Serial/">Serial</a></td>
+<td><a href="../has_studies/">has_studies</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
 </tr>
@@ -2694,6 +2938,12 @@
 <tr>
 <td><a href="../Article/">Article</a></td>
 <td><a href="../xref/">xref</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../Article/">Article</a></td>
+<td><a href="../has_studies/">has_studies</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
 </tr>
@@ -2754,6 +3004,12 @@
 <tr>
 <td><a href="../JournalArticle/">JournalArticle</a></td>
 <td><a href="../xref/">xref</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../JournalArticle/">JournalArticle</a></td>
+<td><a href="../has_studies/">has_studies</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
 </tr>
@@ -2814,6 +3070,12 @@
 <tr>
 <td><a href="../Patent/">Patent</a></td>
 <td><a href="../xref/">xref</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../Patent/">Patent</a></td>
+<td><a href="../has_studies/">has_studies</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
 </tr>
@@ -2874,6 +3136,12 @@
 <tr>
 <td><a href="../WebPage/">WebPage</a></td>
 <td><a href="../xref/">xref</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../WebPage/">WebPage</a></td>
+<td><a href="../has_studies/">has_studies</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
 </tr>
@@ -2934,6 +3202,12 @@
 <tr>
 <td><a href="../PreprintPublication/">PreprintPublication</a></td>
 <td><a href="../xref/">xref</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../PreprintPublication/">PreprintPublication</a></td>
+<td><a href="../has_studies/">has_studies</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
 </tr>
@@ -2994,6 +3268,12 @@
 <tr>
 <td><a href="../DrugLabel/">DrugLabel</a></td>
 <td><a href="../xref/">xref</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../DrugLabel/">DrugLabel</a></td>
+<td><a href="../has_studies/">has_studies</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
 </tr>
@@ -4049,72 +4329,6 @@
 </tr>
 <tr>
 <td><a href="../ChemicalEntity/">ChemicalEntity</a></td>
-<td><a href="../taxon/">taxon</a></td>
-<td>domain</td>
-<td><a href="./">NamedThing</a></td>
-</tr>
-<tr>
-<td><a href="../AffinityMeasurement/">AffinityMeasurement</a></td>
-<td><a href="../affinity_parameter/">affinity_parameter</a></td>
-<td>domain</td>
-<td><a href="./">NamedThing</a></td>
-</tr>
-<tr>
-<td><a href="../AffinityMeasurement/">AffinityMeasurement</a></td>
-<td><a href="../affinity/">affinity</a></td>
-<td>domain</td>
-<td><a href="./">NamedThing</a></td>
-</tr>
-<tr>
-<td><a href="../AffinityMeasurement/">AffinityMeasurement</a></td>
-<td><a href="../provided_by/">provided_by</a></td>
-<td>domain</td>
-<td><a href="./">NamedThing</a></td>
-</tr>
-<tr>
-<td><a href="../AffinityMeasurement/">AffinityMeasurement</a></td>
-<td><a href="../xref/">xref</a></td>
-<td>domain</td>
-<td><a href="./">NamedThing</a></td>
-</tr>
-<tr>
-<td><a href="../AffinityMeasurement/">AffinityMeasurement</a></td>
-<td><a href="../full_name/">full_name</a></td>
-<td>domain</td>
-<td><a href="./">NamedThing</a></td>
-</tr>
-<tr>
-<td><a href="../AffinityMeasurement/">AffinityMeasurement</a></td>
-<td><a href="../synonym/">synonym</a></td>
-<td>domain</td>
-<td><a href="./">NamedThing</a></td>
-</tr>
-<tr>
-<td><a href="../AffinityMeasurement/">AffinityMeasurement</a></td>
-<td><a href="../exact_synonym/">exact_synonym</a></td>
-<td>domain</td>
-<td><a href="./">NamedThing</a></td>
-</tr>
-<tr>
-<td><a href="../AffinityMeasurement/">AffinityMeasurement</a></td>
-<td><a href="../broad_synonym/">broad_synonym</a></td>
-<td>domain</td>
-<td><a href="./">NamedThing</a></td>
-</tr>
-<tr>
-<td><a href="../AffinityMeasurement/">AffinityMeasurement</a></td>
-<td><a href="../narrow_synonym/">narrow_synonym</a></td>
-<td>domain</td>
-<td><a href="./">NamedThing</a></td>
-</tr>
-<tr>
-<td><a href="../AffinityMeasurement/">AffinityMeasurement</a></td>
-<td><a href="../related_synonym/">related_synonym</a></td>
-<td>domain</td>
-<td><a href="./">NamedThing</a></td>
-</tr>
-<tr>
-<td><a href="../AffinityMeasurement/">AffinityMeasurement</a></td>
 <td><a href="../taxon/">taxon</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
@@ -8915,6 +9129,42 @@
 </tr>
 <tr>
 <td><a href="../ClinicalTrial/">ClinicalTrial</a></td>
+<td><a href="../study_method_types/">study_method_types</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../ClinicalTrial/">ClinicalTrial</a></td>
+<td><a href="../study_method_description/">study_method_description</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../ClinicalTrial/">ClinicalTrial</a></td>
+<td><a href="../study_size/">study_size</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../ClinicalTrial/">ClinicalTrial</a></td>
+<td><a href="../study_cohort/">study_cohort</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../ClinicalTrial/">ClinicalTrial</a></td>
+<td><a href="../study_date_range/">study_date_range</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../ClinicalTrial/">ClinicalTrial</a></td>
+<td><a href="../study_context/">study_context</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../ClinicalTrial/">ClinicalTrial</a></td>
 <td><a href="../provided_by/">provided_by</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
@@ -10391,6 +10641,12 @@
 </tr>
 <tr>
 <td><a href="../Association/">Association</a></td>
+<td><a href="../supporting_text/">supporting_text</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../Association/">Association</a></td>
 <td><a href="../update_date/">update_date</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
@@ -10398,6 +10654,12 @@
 <tr>
 <td><a href="../Association/">Association</a></td>
 <td><a href="../elevate_to_prediction/">elevate_to_prediction</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../DiseaseAssociatedWithResponseToChemicalEntityAssociation/">DiseaseAssociatedWithResponseToChemicalEntityAssociation</a></td>
+<td><a href="../supporting_text/">supporting_text</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
 </tr>
@@ -10421,6 +10683,12 @@
 </tr>
 <tr>
 <td><a href="../ChemicalEntityAssessesNamedThingAssociation/">ChemicalEntityAssessesNamedThingAssociation</a></td>
+<td><a href="../supporting_text/">supporting_text</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalEntityAssessesNamedThingAssociation/">ChemicalEntityAssessesNamedThingAssociation</a></td>
 <td><a href="../update_date/">update_date</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
@@ -10433,6 +10701,12 @@
 </tr>
 <tr>
 <td><a href="../ContributorAssociation/">ContributorAssociation</a></td>
+<td><a href="../supporting_text/">supporting_text</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../ContributorAssociation/">ContributorAssociation</a></td>
 <td><a href="../update_date/">update_date</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
@@ -10445,6 +10719,12 @@
 </tr>
 <tr>
 <td><a href="../GenotypeToGenotypePartAssociation/">GenotypeToGenotypePartAssociation</a></td>
+<td><a href="../supporting_text/">supporting_text</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../GenotypeToGenotypePartAssociation/">GenotypeToGenotypePartAssociation</a></td>
 <td><a href="../update_date/">update_date</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
@@ -10457,6 +10737,12 @@
 </tr>
 <tr>
 <td><a href="../GenotypeToGeneAssociation/">GenotypeToGeneAssociation</a></td>
+<td><a href="../supporting_text/">supporting_text</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../GenotypeToGeneAssociation/">GenotypeToGeneAssociation</a></td>
 <td><a href="../update_date/">update_date</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
@@ -10469,6 +10755,12 @@
 </tr>
 <tr>
 <td><a href="../GenotypeToVariantAssociation/">GenotypeToVariantAssociation</a></td>
+<td><a href="../supporting_text/">supporting_text</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../GenotypeToVariantAssociation/">GenotypeToVariantAssociation</a></td>
 <td><a href="../update_date/">update_date</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
@@ -10481,6 +10773,12 @@
 </tr>
 <tr>
 <td><a href="../GeneToGeneAssociation/">GeneToGeneAssociation</a></td>
+<td><a href="../supporting_text/">supporting_text</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../GeneToGeneAssociation/">GeneToGeneAssociation</a></td>
 <td><a href="../update_date/">update_date</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
@@ -10493,6 +10791,12 @@
 </tr>
 <tr>
 <td><a href="../GeneToGeneHomologyAssociation/">GeneToGeneHomologyAssociation</a></td>
+<td><a href="../supporting_text/">supporting_text</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../GeneToGeneHomologyAssociation/">GeneToGeneHomologyAssociation</a></td>
 <td><a href="../update_date/">update_date</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
@@ -10505,6 +10809,12 @@
 </tr>
 <tr>
 <td><a href="../GeneToGeneFamilyAssociation/">GeneToGeneFamilyAssociation</a></td>
+<td><a href="../supporting_text/">supporting_text</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../GeneToGeneFamilyAssociation/">GeneToGeneFamilyAssociation</a></td>
 <td><a href="../update_date/">update_date</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
@@ -10517,6 +10827,12 @@
 </tr>
 <tr>
 <td><a href="../GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation/">GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation</a></td>
+<td><a href="../supporting_text/">supporting_text</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation/">GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation</a></td>
 <td><a href="../update_date/">update_date</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
@@ -10529,6 +10845,12 @@
 </tr>
 <tr>
 <td><a href="../GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation/">GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation</a></td>
+<td><a href="../supporting_text/">supporting_text</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation/">GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation</a></td>
 <td><a href="../update_date/">update_date</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
@@ -10541,6 +10863,12 @@
 </tr>
 <tr>
 <td><a href="../BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation/">BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation</a></td>
+<td><a href="../supporting_text/">supporting_text</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation/">BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation</a></td>
 <td><a href="../update_date/">update_date</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
@@ -10553,6 +10881,12 @@
 </tr>
 <tr>
 <td><a href="../BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation/">BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation</a></td>
+<td><a href="../supporting_text/">supporting_text</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation/">BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation</a></td>
 <td><a href="../update_date/">update_date</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
@@ -10565,6 +10899,12 @@
 </tr>
 <tr>
 <td><a href="../GeneToGeneCoexpressionAssociation/">GeneToGeneCoexpressionAssociation</a></td>
+<td><a href="../supporting_text/">supporting_text</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../GeneToGeneCoexpressionAssociation/">GeneToGeneCoexpressionAssociation</a></td>
 <td><a href="../update_date/">update_date</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
@@ -10577,6 +10917,12 @@
 </tr>
 <tr>
 <td><a href="../PairwiseGeneToGeneInteraction/">PairwiseGeneToGeneInteraction</a></td>
+<td><a href="../supporting_text/">supporting_text</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../PairwiseGeneToGeneInteraction/">PairwiseGeneToGeneInteraction</a></td>
 <td><a href="../update_date/">update_date</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
@@ -10584,6 +10930,12 @@
 <tr>
 <td><a href="../PairwiseGeneToGeneInteraction/">PairwiseGeneToGeneInteraction</a></td>
 <td><a href="../elevate_to_prediction/">elevate_to_prediction</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../PairwiseMolecularInteraction/">PairwiseMolecularInteraction</a></td>
+<td><a href="../supporting_text/">supporting_text</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
 </tr>
@@ -10603,6 +10955,12 @@
 <td><a href="../CellLineToEntityAssociationMixin/">CellLineToEntityAssociationMixin</a></td>
 <td><a href="../object/">object</a></td>
 <td>range</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../CellLineToDiseaseOrPhenotypicFeatureAssociation/">CellLineToDiseaseOrPhenotypicFeatureAssociation</a></td>
+<td><a href="../supporting_text/">supporting_text</a></td>
+<td>domain</td>
 <td><a href="./">NamedThing</a></td>
 </tr>
 <tr>
@@ -10649,6 +11007,12 @@
 </tr>
 <tr>
 <td><a href="../ChemicalEntityToChemicalEntityAssociation/">ChemicalEntityToChemicalEntityAssociation</a></td>
+<td><a href="../supporting_text/">supporting_text</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalEntityToChemicalEntityAssociation/">ChemicalEntityToChemicalEntityAssociation</a></td>
 <td><a href="../update_date/">update_date</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
@@ -10661,6 +11025,12 @@
 </tr>
 <tr>
 <td><a href="../ReactionToParticipantAssociation/">ReactionToParticipantAssociation</a></td>
+<td><a href="../supporting_text/">supporting_text</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../ReactionToParticipantAssociation/">ReactionToParticipantAssociation</a></td>
 <td><a href="../update_date/">update_date</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
@@ -10673,6 +11043,12 @@
 </tr>
 <tr>
 <td><a href="../ReactionToCatalystAssociation/">ReactionToCatalystAssociation</a></td>
+<td><a href="../supporting_text/">supporting_text</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../ReactionToCatalystAssociation/">ReactionToCatalystAssociation</a></td>
 <td><a href="../update_date/">update_date</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
@@ -10685,6 +11061,12 @@
 </tr>
 <tr>
 <td><a href="../ChemicalEntityToChemicalDerivationAssociation/">ChemicalEntityToChemicalDerivationAssociation</a></td>
+<td><a href="../supporting_text/">supporting_text</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalEntityToChemicalDerivationAssociation/">ChemicalEntityToChemicalDerivationAssociation</a></td>
 <td><a href="../update_date/">update_date</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
@@ -10703,6 +11085,12 @@
 </tr>
 <tr>
 <td><a href="../ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation/">ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation</a></td>
+<td><a href="../supporting_text/">supporting_text</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation/">ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation</a></td>
 <td><a href="../update_date/">update_date</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
@@ -10721,6 +11109,12 @@
 </tr>
 <tr>
 <td><a href="../ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation/">ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation</a></td>
+<td><a href="../supporting_text/">supporting_text</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation/">ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation</a></td>
 <td><a href="../update_date/">update_date</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
@@ -10739,6 +11133,12 @@
 </tr>
 <tr>
 <td><a href="../ChemicalOrDrugOrTreatmentAdverseEventAssociation/">ChemicalOrDrugOrTreatmentAdverseEventAssociation</a></td>
+<td><a href="../supporting_text/">supporting_text</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalOrDrugOrTreatmentAdverseEventAssociation/">ChemicalOrDrugOrTreatmentAdverseEventAssociation</a></td>
 <td><a href="../update_date/">update_date</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
@@ -10757,6 +11157,12 @@
 </tr>
 <tr>
 <td><a href="../ChemicalOrDrugOrTreatmentSideEffectAssociation/">ChemicalOrDrugOrTreatmentSideEffectAssociation</a></td>
+<td><a href="../supporting_text/">supporting_text</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalOrDrugOrTreatmentSideEffectAssociation/">ChemicalOrDrugOrTreatmentSideEffectAssociation</a></td>
 <td><a href="../update_date/">update_date</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
@@ -10769,6 +11175,12 @@
 </tr>
 <tr>
 <td><a href="../GeneToPathwayAssociation/">GeneToPathwayAssociation</a></td>
+<td><a href="../supporting_text/">supporting_text</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../GeneToPathwayAssociation/">GeneToPathwayAssociation</a></td>
 <td><a href="../update_date/">update_date</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
@@ -10781,6 +11193,12 @@
 </tr>
 <tr>
 <td><a href="../MolecularActivityToPathwayAssociation/">MolecularActivityToPathwayAssociation</a></td>
+<td><a href="../supporting_text/">supporting_text</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../MolecularActivityToPathwayAssociation/">MolecularActivityToPathwayAssociation</a></td>
 <td><a href="../update_date/">update_date</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
@@ -10793,6 +11211,12 @@
 </tr>
 <tr>
 <td><a href="../ChemicalEntityToPathwayAssociation/">ChemicalEntityToPathwayAssociation</a></td>
+<td><a href="../supporting_text/">supporting_text</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalEntityToPathwayAssociation/">ChemicalEntityToPathwayAssociation</a></td>
 <td><a href="../update_date/">update_date</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
@@ -10800,6 +11224,12 @@
 <tr>
 <td><a href="../ChemicalEntityToPathwayAssociation/">ChemicalEntityToPathwayAssociation</a></td>
 <td><a href="../elevate_to_prediction/">elevate_to_prediction</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalEntityToBiologicalProcessAssociation/">ChemicalEntityToBiologicalProcessAssociation</a></td>
+<td><a href="../supporting_text/">supporting_text</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
 </tr>
@@ -10829,6 +11259,12 @@
 </tr>
 <tr>
 <td><a href="../NamedThingAssociatedWithLikelihoodOfNamedThingAssociation/">NamedThingAssociatedWithLikelihoodOfNamedThingAssociation</a></td>
+<td><a href="../supporting_text/">supporting_text</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../NamedThingAssociatedWithLikelihoodOfNamedThingAssociation/">NamedThingAssociatedWithLikelihoodOfNamedThingAssociation</a></td>
 <td><a href="../update_date/">update_date</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
@@ -10841,6 +11277,12 @@
 </tr>
 <tr>
 <td><a href="../ChemicalGeneInteractionAssociation/">ChemicalGeneInteractionAssociation</a></td>
+<td><a href="../supporting_text/">supporting_text</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalGeneInteractionAssociation/">ChemicalGeneInteractionAssociation</a></td>
 <td><a href="../update_date/">update_date</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
@@ -10853,6 +11295,12 @@
 </tr>
 <tr>
 <td><a href="../MacromolecularMachineHasSubstrateAssociation/">MacromolecularMachineHasSubstrateAssociation</a></td>
+<td><a href="../supporting_text/">supporting_text</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../MacromolecularMachineHasSubstrateAssociation/">MacromolecularMachineHasSubstrateAssociation</a></td>
 <td><a href="../update_date/">update_date</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
@@ -10865,6 +11313,12 @@
 </tr>
 <tr>
 <td><a href="../GeneRegulatesGeneAssociation/">GeneRegulatesGeneAssociation</a></td>
+<td><a href="../supporting_text/">supporting_text</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../GeneRegulatesGeneAssociation/">GeneRegulatesGeneAssociation</a></td>
 <td><a href="../update_date/">update_date</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
@@ -10877,6 +11331,12 @@
 </tr>
 <tr>
 <td><a href="../ProcessRegulatesProcessAssociation/">ProcessRegulatesProcessAssociation</a></td>
+<td><a href="../supporting_text/">supporting_text</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../ProcessRegulatesProcessAssociation/">ProcessRegulatesProcessAssociation</a></td>
 <td><a href="../update_date/">update_date</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
@@ -10889,6 +11349,12 @@
 </tr>
 <tr>
 <td><a href="../ChemicalAffectsBiologicalEntityAssociation/">ChemicalAffectsBiologicalEntityAssociation</a></td>
+<td><a href="../supporting_text/">supporting_text</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalAffectsBiologicalEntityAssociation/">ChemicalAffectsBiologicalEntityAssociation</a></td>
 <td><a href="../update_date/">update_date</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
@@ -10901,6 +11367,12 @@
 </tr>
 <tr>
 <td><a href="../ChemicalAffectsGeneAssociation/">ChemicalAffectsGeneAssociation</a></td>
+<td><a href="../supporting_text/">supporting_text</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalAffectsGeneAssociation/">ChemicalAffectsGeneAssociation</a></td>
 <td><a href="../update_date/">update_date</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
@@ -10913,6 +11385,12 @@
 </tr>
 <tr>
 <td><a href="../ChemicalGeneSensitivityAssociation/">ChemicalGeneSensitivityAssociation</a></td>
+<td><a href="../supporting_text/">supporting_text</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalGeneSensitivityAssociation/">ChemicalGeneSensitivityAssociation</a></td>
 <td><a href="../update_date/">update_date</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
@@ -10925,6 +11403,12 @@
 </tr>
 <tr>
 <td><a href="../GeneAffectsChemicalAssociation/">GeneAffectsChemicalAssociation</a></td>
+<td><a href="../supporting_text/">supporting_text</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../GeneAffectsChemicalAssociation/">GeneAffectsChemicalAssociation</a></td>
 <td><a href="../update_date/">update_date</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
@@ -10932,6 +11416,12 @@
 <tr>
 <td><a href="../GeneAffectsChemicalAssociation/">GeneAffectsChemicalAssociation</a></td>
 <td><a href="../elevate_to_prediction/">elevate_to_prediction</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../DrugToGeneAssociation/">DrugToGeneAssociation</a></td>
+<td><a href="../supporting_text/">supporting_text</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
 </tr>
@@ -10961,6 +11451,12 @@
 </tr>
 <tr>
 <td><a href="../MaterialSampleDerivationAssociation/">MaterialSampleDerivationAssociation</a></td>
+<td><a href="../supporting_text/">supporting_text</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../MaterialSampleDerivationAssociation/">MaterialSampleDerivationAssociation</a></td>
 <td><a href="../update_date/">update_date</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
@@ -10968,6 +11464,12 @@
 <tr>
 <td><a href="../MaterialSampleDerivationAssociation/">MaterialSampleDerivationAssociation</a></td>
 <td><a href="../elevate_to_prediction/">elevate_to_prediction</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../MaterialSampleToDiseaseOrPhenotypicFeatureAssociation/">MaterialSampleToDiseaseOrPhenotypicFeatureAssociation</a></td>
+<td><a href="../supporting_text/">supporting_text</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
 </tr>
@@ -10997,6 +11499,12 @@
 </tr>
 <tr>
 <td><a href="../DiseaseToExposureEventAssociation/">DiseaseToExposureEventAssociation</a></td>
+<td><a href="../supporting_text/">supporting_text</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../DiseaseToExposureEventAssociation/">DiseaseToExposureEventAssociation</a></td>
 <td><a href="../update_date/">update_date</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
@@ -11021,6 +11529,12 @@
 </tr>
 <tr>
 <td><a href="../ExposureEventToOutcomeAssociation/">ExposureEventToOutcomeAssociation</a></td>
+<td><a href="../supporting_text/">supporting_text</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../ExposureEventToOutcomeAssociation/">ExposureEventToOutcomeAssociation</a></td>
 <td><a href="../update_date/">update_date</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
@@ -11153,6 +11667,12 @@
 </tr>
 <tr>
 <td><a href="../PhenotypicFeatureToPhenotypicFeatureAssociation/">PhenotypicFeatureToPhenotypicFeatureAssociation</a></td>
+<td><a href="../supporting_text/">supporting_text</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../PhenotypicFeatureToPhenotypicFeatureAssociation/">PhenotypicFeatureToPhenotypicFeatureAssociation</a></td>
 <td><a href="../update_date/">update_date</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
@@ -11197,6 +11717,12 @@
 <td><a href="../InformationContentEntityToNamedThingAssociation/">InformationContentEntityToNamedThingAssociation</a></td>
 <td><a href="../object/">object</a></td>
 <td>range</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../InformationContentEntityToNamedThingAssociation/">InformationContentEntityToNamedThingAssociation</a></td>
+<td><a href="../supporting_text/">supporting_text</a></td>
+<td>domain</td>
 <td><a href="./">NamedThing</a></td>
 </tr>
 <tr>
@@ -11225,6 +11751,12 @@
 </tr>
 <tr>
 <td><a href="../DiseaseOrPhenotypicFeatureToLocationAssociation/">DiseaseOrPhenotypicFeatureToLocationAssociation</a></td>
+<td><a href="../supporting_text/">supporting_text</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../DiseaseOrPhenotypicFeatureToLocationAssociation/">DiseaseOrPhenotypicFeatureToLocationAssociation</a></td>
 <td><a href="../update_date/">update_date</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
@@ -11232,6 +11764,12 @@
 <tr>
 <td><a href="../DiseaseOrPhenotypicFeatureToLocationAssociation/">DiseaseOrPhenotypicFeatureToLocationAssociation</a></td>
 <td><a href="../elevate_to_prediction/">elevate_to_prediction</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation/">DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation</a></td>
+<td><a href="../supporting_text/">supporting_text</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
 </tr>
@@ -11261,6 +11799,12 @@
 </tr>
 <tr>
 <td><a href="../GenotypeToPhenotypicFeatureAssociation/">GenotypeToPhenotypicFeatureAssociation</a></td>
+<td><a href="../supporting_text/">supporting_text</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../GenotypeToPhenotypicFeatureAssociation/">GenotypeToPhenotypicFeatureAssociation</a></td>
 <td><a href="../update_date/">update_date</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
@@ -11297,6 +11841,12 @@
 </tr>
 <tr>
 <td><a href="../ExposureEventToPhenotypicFeatureAssociation/">ExposureEventToPhenotypicFeatureAssociation</a></td>
+<td><a href="../supporting_text/">supporting_text</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../ExposureEventToPhenotypicFeatureAssociation/">ExposureEventToPhenotypicFeatureAssociation</a></td>
 <td><a href="../update_date/">update_date</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
@@ -11352,6 +11902,12 @@
 <tr>
 <td><a href="../DiseaseToPhenotypicFeatureAssociation/">DiseaseToPhenotypicFeatureAssociation</a></td>
 <td><a href="../has_percentage/">has_percentage</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../DiseaseToPhenotypicFeatureAssociation/">DiseaseToPhenotypicFeatureAssociation</a></td>
+<td><a href="../supporting_text/">supporting_text</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
 </tr>
@@ -11369,6 +11925,12 @@
 </tr>
 <tr>
 <td><a href="../DiseaseToDiseaseAssociation/">DiseaseToDiseaseAssociation</a></td>
+<td><a href="../supporting_text/">supporting_text</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../DiseaseToDiseaseAssociation/">DiseaseToDiseaseAssociation</a></td>
 <td><a href="../update_date/">update_date</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
@@ -11376,6 +11938,12 @@
 <tr>
 <td><a href="../DiseaseToDiseaseAssociation/">DiseaseToDiseaseAssociation</a></td>
 <td><a href="../elevate_to_prediction/">elevate_to_prediction</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../CaseToPhenotypicFeatureAssociation/">CaseToPhenotypicFeatureAssociation</a></td>
+<td><a href="../supporting_text/">supporting_text</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
 </tr>
@@ -11417,6 +11985,12 @@
 </tr>
 <tr>
 <td><a href="../CaseToDiseaseAssociation/">CaseToDiseaseAssociation</a></td>
+<td><a href="../supporting_text/">supporting_text</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../CaseToDiseaseAssociation/">CaseToDiseaseAssociation</a></td>
 <td><a href="../update_date/">update_date</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
@@ -11429,6 +12003,12 @@
 </tr>
 <tr>
 <td><a href="../CaseToVariantAssociation/">CaseToVariantAssociation</a></td>
+<td><a href="../supporting_text/">supporting_text</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../CaseToVariantAssociation/">CaseToVariantAssociation</a></td>
 <td><a href="../update_date/">update_date</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
@@ -11441,6 +12021,12 @@
 </tr>
 <tr>
 <td><a href="../CaseToGeneAssociation/">CaseToGeneAssociation</a></td>
+<td><a href="../supporting_text/">supporting_text</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../CaseToGeneAssociation/">CaseToGeneAssociation</a></td>
 <td><a href="../update_date/">update_date</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
@@ -11448,6 +12034,12 @@
 <tr>
 <td><a href="../CaseToGeneAssociation/">CaseToGeneAssociation</a></td>
 <td><a href="../elevate_to_prediction/">elevate_to_prediction</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../BehaviorToBehavioralFeatureAssociation/">BehaviorToBehavioralFeatureAssociation</a></td>
+<td><a href="../supporting_text/">supporting_text</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
 </tr>
@@ -11501,6 +12093,12 @@
 </tr>
 <tr>
 <td><a href="../GeneToPhenotypicFeatureAssociation/">GeneToPhenotypicFeatureAssociation</a></td>
+<td><a href="../supporting_text/">supporting_text</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../GeneToPhenotypicFeatureAssociation/">GeneToPhenotypicFeatureAssociation</a></td>
 <td><a href="../update_date/">update_date</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
@@ -11537,6 +12135,12 @@
 </tr>
 <tr>
 <td><a href="../GeneToDiseaseAssociation/">GeneToDiseaseAssociation</a></td>
+<td><a href="../supporting_text/">supporting_text</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../GeneToDiseaseAssociation/">GeneToDiseaseAssociation</a></td>
 <td><a href="../update_date/">update_date</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
@@ -11549,6 +12153,12 @@
 </tr>
 <tr>
 <td><a href="../CausalGeneToDiseaseAssociation/">CausalGeneToDiseaseAssociation</a></td>
+<td><a href="../supporting_text/">supporting_text</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../CausalGeneToDiseaseAssociation/">CausalGeneToDiseaseAssociation</a></td>
 <td><a href="../update_date/">update_date</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
@@ -11561,6 +12171,12 @@
 </tr>
 <tr>
 <td><a href="../CorrelatedGeneToDiseaseAssociation/">CorrelatedGeneToDiseaseAssociation</a></td>
+<td><a href="../supporting_text/">supporting_text</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../CorrelatedGeneToDiseaseAssociation/">CorrelatedGeneToDiseaseAssociation</a></td>
 <td><a href="../update_date/">update_date</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
@@ -11573,6 +12189,12 @@
 </tr>
 <tr>
 <td><a href="../DruggableGeneToDiseaseAssociation/">DruggableGeneToDiseaseAssociation</a></td>
+<td><a href="../supporting_text/">supporting_text</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../DruggableGeneToDiseaseAssociation/">DruggableGeneToDiseaseAssociation</a></td>
 <td><a href="../update_date/">update_date</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
@@ -11580,6 +12202,12 @@
 <tr>
 <td><a href="../DruggableGeneToDiseaseAssociation/">DruggableGeneToDiseaseAssociation</a></td>
 <td><a href="../elevate_to_prediction/">elevate_to_prediction</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../PhenotypicFeatureToDiseaseAssociation/">PhenotypicFeatureToDiseaseAssociation</a></td>
+<td><a href="../supporting_text/">supporting_text</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
 </tr>
@@ -11621,6 +12249,12 @@
 </tr>
 <tr>
 <td><a href="../VariantToGeneAssociation/">VariantToGeneAssociation</a></td>
+<td><a href="../supporting_text/">supporting_text</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../VariantToGeneAssociation/">VariantToGeneAssociation</a></td>
 <td><a href="../update_date/">update_date</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
@@ -11633,6 +12267,12 @@
 </tr>
 <tr>
 <td><a href="../VariantToGeneExpressionAssociation/">VariantToGeneExpressionAssociation</a></td>
+<td><a href="../supporting_text/">supporting_text</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../VariantToGeneExpressionAssociation/">VariantToGeneExpressionAssociation</a></td>
 <td><a href="../update_date/">update_date</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
@@ -11669,6 +12309,12 @@
 </tr>
 <tr>
 <td><a href="../VariantToPopulationAssociation/">VariantToPopulationAssociation</a></td>
+<td><a href="../supporting_text/">supporting_text</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../VariantToPopulationAssociation/">VariantToPopulationAssociation</a></td>
 <td><a href="../update_date/">update_date</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
@@ -11681,6 +12327,12 @@
 </tr>
 <tr>
 <td><a href="../PopulationToPopulationAssociation/">PopulationToPopulationAssociation</a></td>
+<td><a href="../supporting_text/">supporting_text</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../PopulationToPopulationAssociation/">PopulationToPopulationAssociation</a></td>
 <td><a href="../update_date/">update_date</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
@@ -11688,6 +12340,12 @@
 <tr>
 <td><a href="../PopulationToPopulationAssociation/">PopulationToPopulationAssociation</a></td>
 <td><a href="../elevate_to_prediction/">elevate_to_prediction</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../VariantToPhenotypicFeatureAssociation/">VariantToPhenotypicFeatureAssociation</a></td>
+<td><a href="../supporting_text/">supporting_text</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
 </tr>
@@ -11729,6 +12387,12 @@
 </tr>
 <tr>
 <td><a href="../VariantToDiseaseAssociation/">VariantToDiseaseAssociation</a></td>
+<td><a href="../supporting_text/">supporting_text</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../VariantToDiseaseAssociation/">VariantToDiseaseAssociation</a></td>
 <td><a href="../update_date/">update_date</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
@@ -11741,6 +12405,12 @@
 </tr>
 <tr>
 <td><a href="../GenotypeToDiseaseAssociation/">GenotypeToDiseaseAssociation</a></td>
+<td><a href="../supporting_text/">supporting_text</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../GenotypeToDiseaseAssociation/">GenotypeToDiseaseAssociation</a></td>
 <td><a href="../update_date/">update_date</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
@@ -11765,6 +12435,12 @@
 </tr>
 <tr>
 <td><a href="../GeneAsAModelOfDiseaseAssociation/">GeneAsAModelOfDiseaseAssociation</a></td>
+<td><a href="../supporting_text/">supporting_text</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../GeneAsAModelOfDiseaseAssociation/">GeneAsAModelOfDiseaseAssociation</a></td>
 <td><a href="../update_date/">update_date</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
@@ -11777,6 +12453,12 @@
 </tr>
 <tr>
 <td><a href="../VariantAsAModelOfDiseaseAssociation/">VariantAsAModelOfDiseaseAssociation</a></td>
+<td><a href="../supporting_text/">supporting_text</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../VariantAsAModelOfDiseaseAssociation/">VariantAsAModelOfDiseaseAssociation</a></td>
 <td><a href="../update_date/">update_date</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
@@ -11789,6 +12471,12 @@
 </tr>
 <tr>
 <td><a href="../GenotypeAsAModelOfDiseaseAssociation/">GenotypeAsAModelOfDiseaseAssociation</a></td>
+<td><a href="../supporting_text/">supporting_text</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../GenotypeAsAModelOfDiseaseAssociation/">GenotypeAsAModelOfDiseaseAssociation</a></td>
 <td><a href="../update_date/">update_date</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
@@ -11801,6 +12489,12 @@
 </tr>
 <tr>
 <td><a href="../CellLineAsAModelOfDiseaseAssociation/">CellLineAsAModelOfDiseaseAssociation</a></td>
+<td><a href="../supporting_text/">supporting_text</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../CellLineAsAModelOfDiseaseAssociation/">CellLineAsAModelOfDiseaseAssociation</a></td>
 <td><a href="../update_date/">update_date</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
@@ -11813,6 +12507,12 @@
 </tr>
 <tr>
 <td><a href="../OrganismalEntityAsAModelOfDiseaseAssociation/">OrganismalEntityAsAModelOfDiseaseAssociation</a></td>
+<td><a href="../supporting_text/">supporting_text</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../OrganismalEntityAsAModelOfDiseaseAssociation/">OrganismalEntityAsAModelOfDiseaseAssociation</a></td>
 <td><a href="../update_date/">update_date</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
@@ -11825,6 +12525,12 @@
 </tr>
 <tr>
 <td><a href="../OrganismToOrganismAssociation/">OrganismToOrganismAssociation</a></td>
+<td><a href="../supporting_text/">supporting_text</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../OrganismToOrganismAssociation/">OrganismToOrganismAssociation</a></td>
 <td><a href="../update_date/">update_date</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
@@ -11837,6 +12543,12 @@
 </tr>
 <tr>
 <td><a href="../TaxonToTaxonAssociation/">TaxonToTaxonAssociation</a></td>
+<td><a href="../supporting_text/">supporting_text</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../TaxonToTaxonAssociation/">TaxonToTaxonAssociation</a></td>
 <td><a href="../update_date/">update_date</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
@@ -11849,6 +12561,12 @@
 </tr>
 <tr>
 <td><a href="../GeneHasVariantThatContributesToDiseaseAssociation/">GeneHasVariantThatContributesToDiseaseAssociation</a></td>
+<td><a href="../supporting_text/">supporting_text</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../GeneHasVariantThatContributesToDiseaseAssociation/">GeneHasVariantThatContributesToDiseaseAssociation</a></td>
 <td><a href="../update_date/">update_date</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
@@ -11861,6 +12579,12 @@
 </tr>
 <tr>
 <td><a href="../GeneToExpressionSiteAssociation/">GeneToExpressionSiteAssociation</a></td>
+<td><a href="../supporting_text/">supporting_text</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../GeneToExpressionSiteAssociation/">GeneToExpressionSiteAssociation</a></td>
 <td><a href="../update_date/">update_date</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
@@ -11873,6 +12597,12 @@
 </tr>
 <tr>
 <td><a href="../SequenceVariantModulatesTreatmentAssociation/">SequenceVariantModulatesTreatmentAssociation</a></td>
+<td><a href="../supporting_text/">supporting_text</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../SequenceVariantModulatesTreatmentAssociation/">SequenceVariantModulatesTreatmentAssociation</a></td>
 <td><a href="../update_date/">update_date</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
@@ -11885,6 +12615,12 @@
 </tr>
 <tr>
 <td><a href="../FunctionalAssociation/">FunctionalAssociation</a></td>
+<td><a href="../supporting_text/">supporting_text</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../FunctionalAssociation/">FunctionalAssociation</a></td>
 <td><a href="../update_date/">update_date</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
@@ -11909,6 +12645,12 @@
 </tr>
 <tr>
 <td><a href="../MacromolecularMachineToMolecularActivityAssociation/">MacromolecularMachineToMolecularActivityAssociation</a></td>
+<td><a href="../supporting_text/">supporting_text</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../MacromolecularMachineToMolecularActivityAssociation/">MacromolecularMachineToMolecularActivityAssociation</a></td>
 <td><a href="../update_date/">update_date</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
@@ -11921,6 +12663,12 @@
 </tr>
 <tr>
 <td><a href="../MacromolecularMachineToBiologicalProcessAssociation/">MacromolecularMachineToBiologicalProcessAssociation</a></td>
+<td><a href="../supporting_text/">supporting_text</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../MacromolecularMachineToBiologicalProcessAssociation/">MacromolecularMachineToBiologicalProcessAssociation</a></td>
 <td><a href="../update_date/">update_date</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
@@ -11933,6 +12681,12 @@
 </tr>
 <tr>
 <td><a href="../MacromolecularMachineToCellularComponentAssociation/">MacromolecularMachineToCellularComponentAssociation</a></td>
+<td><a href="../supporting_text/">supporting_text</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../MacromolecularMachineToCellularComponentAssociation/">MacromolecularMachineToCellularComponentAssociation</a></td>
 <td><a href="../update_date/">update_date</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
@@ -11945,6 +12699,12 @@
 </tr>
 <tr>
 <td><a href="../MolecularActivityToChemicalEntityAssociation/">MolecularActivityToChemicalEntityAssociation</a></td>
+<td><a href="../supporting_text/">supporting_text</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../MolecularActivityToChemicalEntityAssociation/">MolecularActivityToChemicalEntityAssociation</a></td>
 <td><a href="../update_date/">update_date</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
@@ -11957,6 +12717,12 @@
 </tr>
 <tr>
 <td><a href="../MolecularActivityToMolecularActivityAssociation/">MolecularActivityToMolecularActivityAssociation</a></td>
+<td><a href="../supporting_text/">supporting_text</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../MolecularActivityToMolecularActivityAssociation/">MolecularActivityToMolecularActivityAssociation</a></td>
 <td><a href="../update_date/">update_date</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
@@ -11969,6 +12735,12 @@
 </tr>
 <tr>
 <td><a href="../GeneToGoTermAssociation/">GeneToGoTermAssociation</a></td>
+<td><a href="../supporting_text/">supporting_text</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../GeneToGoTermAssociation/">GeneToGoTermAssociation</a></td>
 <td><a href="../update_date/">update_date</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
@@ -11999,6 +12771,12 @@
 </tr>
 <tr>
 <td><a href="../EntityToDiseaseAssociation/">EntityToDiseaseAssociation</a></td>
+<td><a href="../supporting_text/">supporting_text</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../EntityToDiseaseAssociation/">EntityToDiseaseAssociation</a></td>
 <td><a href="../update_date/">update_date</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
@@ -12029,6 +12807,12 @@
 </tr>
 <tr>
 <td><a href="../EntityToPhenotypicFeatureAssociation/">EntityToPhenotypicFeatureAssociation</a></td>
+<td><a href="../supporting_text/">supporting_text</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../EntityToPhenotypicFeatureAssociation/">EntityToPhenotypicFeatureAssociation</a></td>
 <td><a href="../update_date/">update_date</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
@@ -12053,6 +12837,12 @@
 </tr>
 <tr>
 <td><a href="../SequenceAssociation/">SequenceAssociation</a></td>
+<td><a href="../supporting_text/">supporting_text</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../SequenceAssociation/">SequenceAssociation</a></td>
 <td><a href="../update_date/">update_date</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
@@ -12065,6 +12855,12 @@
 </tr>
 <tr>
 <td><a href="../GenomicSequenceLocalization/">GenomicSequenceLocalization</a></td>
+<td><a href="../supporting_text/">supporting_text</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../GenomicSequenceLocalization/">GenomicSequenceLocalization</a></td>
 <td><a href="../update_date/">update_date</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
@@ -12077,6 +12873,12 @@
 </tr>
 <tr>
 <td><a href="../SequenceFeatureRelationship/">SequenceFeatureRelationship</a></td>
+<td><a href="../supporting_text/">supporting_text</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../SequenceFeatureRelationship/">SequenceFeatureRelationship</a></td>
 <td><a href="../update_date/">update_date</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
@@ -12089,6 +12891,12 @@
 </tr>
 <tr>
 <td><a href="../TranscriptToGeneRelationship/">TranscriptToGeneRelationship</a></td>
+<td><a href="../supporting_text/">supporting_text</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../TranscriptToGeneRelationship/">TranscriptToGeneRelationship</a></td>
 <td><a href="../update_date/">update_date</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
@@ -12101,6 +12909,12 @@
 </tr>
 <tr>
 <td><a href="../GeneToGeneProductRelationship/">GeneToGeneProductRelationship</a></td>
+<td><a href="../supporting_text/">supporting_text</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../GeneToGeneProductRelationship/">GeneToGeneProductRelationship</a></td>
 <td><a href="../update_date/">update_date</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
@@ -12113,6 +12927,12 @@
 </tr>
 <tr>
 <td><a href="../ExonToTranscriptRelationship/">ExonToTranscriptRelationship</a></td>
+<td><a href="../supporting_text/">supporting_text</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../ExonToTranscriptRelationship/">ExonToTranscriptRelationship</a></td>
 <td><a href="../update_date/">update_date</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
@@ -12125,6 +12945,12 @@
 </tr>
 <tr>
 <td><a href="../ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation/">ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation</a></td>
+<td><a href="../supporting_text/">supporting_text</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation/">ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation</a></td>
 <td><a href="../update_date/">update_date</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
@@ -12137,6 +12963,12 @@
 </tr>
 <tr>
 <td><a href="../AnatomicalEntityToAnatomicalEntityAssociation/">AnatomicalEntityToAnatomicalEntityAssociation</a></td>
+<td><a href="../supporting_text/">supporting_text</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../AnatomicalEntityToAnatomicalEntityAssociation/">AnatomicalEntityToAnatomicalEntityAssociation</a></td>
 <td><a href="../update_date/">update_date</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
@@ -12149,6 +12981,12 @@
 </tr>
 <tr>
 <td><a href="../AnatomicalEntityHasPartAnatomicalEntityAssociation/">AnatomicalEntityHasPartAnatomicalEntityAssociation</a></td>
+<td><a href="../supporting_text/">supporting_text</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../AnatomicalEntityHasPartAnatomicalEntityAssociation/">AnatomicalEntityHasPartAnatomicalEntityAssociation</a></td>
 <td><a href="../update_date/">update_date</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
@@ -12161,6 +12999,12 @@
 </tr>
 <tr>
 <td><a href="../AnatomicalEntityPartOfAnatomicalEntityAssociation/">AnatomicalEntityPartOfAnatomicalEntityAssociation</a></td>
+<td><a href="../supporting_text/">supporting_text</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../AnatomicalEntityPartOfAnatomicalEntityAssociation/">AnatomicalEntityPartOfAnatomicalEntityAssociation</a></td>
 <td><a href="../update_date/">update_date</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
@@ -12173,6 +13017,12 @@
 </tr>
 <tr>
 <td><a href="../AnatomicalEntityToAnatomicalEntityOntogenicAssociation/">AnatomicalEntityToAnatomicalEntityOntogenicAssociation</a></td>
+<td><a href="../supporting_text/">supporting_text</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../AnatomicalEntityToAnatomicalEntityOntogenicAssociation/">AnatomicalEntityToAnatomicalEntityOntogenicAssociation</a></td>
 <td><a href="../update_date/">update_date</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
@@ -12185,6 +13035,12 @@
 </tr>
 <tr>
 <td><a href="../GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation/">GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation</a></td>
+<td><a href="../supporting_text/">supporting_text</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation/">GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation</a></td>
 <td><a href="../update_date/">update_date</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
@@ -12192,6 +13048,12 @@
 <tr>
 <td><a href="../GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation/">GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation</a></td>
 <td><a href="../elevate_to_prediction/">elevate_to_prediction</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../BiologicalProcessOrActivityToAnatomicalEntityAssociation/">BiologicalProcessOrActivityToAnatomicalEntityAssociation</a></td>
+<td><a href="../supporting_text/">supporting_text</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
 </tr>
@@ -12215,6 +13077,12 @@
 </tr>
 <tr>
 <td><a href="../OrganismTaxonToOrganismTaxonAssociation/">OrganismTaxonToOrganismTaxonAssociation</a></td>
+<td><a href="../supporting_text/">supporting_text</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../OrganismTaxonToOrganismTaxonAssociation/">OrganismTaxonToOrganismTaxonAssociation</a></td>
 <td><a href="../update_date/">update_date</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
@@ -12227,6 +13095,12 @@
 </tr>
 <tr>
 <td><a href="../OrganismTaxonToOrganismTaxonSpecialization/">OrganismTaxonToOrganismTaxonSpecialization</a></td>
+<td><a href="../supporting_text/">supporting_text</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../OrganismTaxonToOrganismTaxonSpecialization/">OrganismTaxonToOrganismTaxonSpecialization</a></td>
 <td><a href="../update_date/">update_date</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
@@ -12234,6 +13108,12 @@
 <tr>
 <td><a href="../OrganismTaxonToOrganismTaxonSpecialization/">OrganismTaxonToOrganismTaxonSpecialization</a></td>
 <td><a href="../elevate_to_prediction/">elevate_to_prediction</a></td>
+<td>domain</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../OrganismTaxonToOrganismTaxonInteraction/">OrganismTaxonToOrganismTaxonInteraction</a></td>
+<td><a href="../supporting_text/">supporting_text</a></td>
 <td>domain</td>
 <td><a href="./">NamedThing</a></td>
 </tr>
@@ -12253,6 +13133,12 @@
 <td><a href="../OrganismTaxonToEnvironmentAssociation/">OrganismTaxonToEnvironmentAssociation</a></td>
 <td><a href="../object/">object</a></td>
 <td>range</td>
+<td><a href="./">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../OrganismTaxonToEnvironmentAssociation/">OrganismTaxonToEnvironmentAssociation</a></td>
+<td><a href="../supporting_text/">supporting_text</a></td>
+<td>domain</td>
 <td><a href="./">NamedThing</a></td>
 </tr>
 <tr>
@@ -12325,7 +13211,7 @@ slot_usage:
 <div class="md-dialog__inner md-typeset"></div>
 </div>
 <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.tabs.link"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
-<script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+<script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
 <script type="module">import mermaid from "https://unpkg.com/mermaid@10.4.0/dist/mermaid.esm.min.mjs";
 mermaid.initialize({});</script></body>
 </html>

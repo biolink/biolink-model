@@ -17,7 +17,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -25,7 +25,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -746,11 +746,11 @@
 
 
 <h1 id="slot-interacts_with-multivalued"><strong> Slot: interacts_with </strong>  (multivalued)</h1>
-<div class="highlight-box"><strong>Description:</strong><i> holds between any two entities that directly or indirectly interact with each other</i><br>
+<div class="highlight-box"><strong>Description:</strong><i> holds between any two entities that directly or indirectly interact with each other in a physical or functional way.</i><br>
 
 
 <br>
- <strong> Notes:</strong> Please use a more specific child predicate of interacts with, either physically interacts with or genetically interacts with or pharmacologically interacts with. 
+ <strong> Notes:</strong> A note on 'interacts with' vs 'affects': These are related but separate relationships. An interaction may or may not involve one interactor exerting an effect on the other. It simply indicates that two entities participate in a physical or functional relationship (e.g. molecular binding, genetic interactions such as epistasis, or pharmacological interactions in which the combined behavior of two drugs differs from that of either drug alone). An 'effect' may be mediated by an interaction or may arise without any direct interaction, through a chain of intermediary events. Any effect or causal influence must be asserted using a predicate in the affects or causes hierarchy. Please use a more specific child predicate of interacts with, either physically interacts with or genetically interacts with or pharmacologically interacts with. 
 </div>
 
 <p><strong>Domain:</strong> <a href="../NamedThing/">NamedThing</a><br>
@@ -800,8 +800,16 @@
 
 <pre><code class="language-yaml">name: interacts with
 description: holds between any two entities that directly or indirectly interact with
-  each other
+  each other in a physical or functional way.
 notes:
+- 'A note on ''interacts with'' vs ''affects'': These are related but separate relationships.
+  An interaction may or may not involve one interactor exerting an effect on the other.
+  It simply indicates that two entities participate in a physical or functional relationship
+  (e.g. molecular binding, genetic interactions such as epistasis, or pharmacological
+  interactions in which the combined behavior of two drugs differs from that of either
+  drug alone). An ''effect'' may be mediated by an interaction or may arise without
+  any direct interaction, through a chain of intermediary events. Any effect or causal
+  influence must be asserted using a predicate in the affects or causes hierarchy.'
 - Please use a more specific child predicate of interacts with, either physically
   interacts with or genetically interacts with or pharmacologically interacts with.
 in_subset:
@@ -877,7 +885,7 @@ multivalued: true
       <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.tabs.link"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
       
     
   </body>

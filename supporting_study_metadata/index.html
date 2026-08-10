@@ -17,15 +17,15 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
-        <title>Slot: supporting_study_metadata (Abstract) - Biolink Model Documentation</title>
+        <title>Slot: supporting_study_metadata (DEPRECATED) (Abstract) - Biolink Model Documentation</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -82,7 +82,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slot-supporting_study_metadata-abstract" class="md-skip">
+        <a href="#slot-supporting_study_metadata-deprecated-abstract" class="md-skip">
           Skip to content
         </a>
       
@@ -117,7 +117,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Slot: supporting_study_metadata (Abstract)
+              Slot: supporting_study_metadata (DEPRECATED) (Abstract)
             
           </span>
         </div>
@@ -734,7 +734,7 @@
   
 
 
-<h1 id="slot-supporting_study_metadata-abstract"><strong> Slot: supporting_study_metadata </strong> <span style="color: purple;"><strong><small> (Abstract) </small></strong></span></h1>
+<h1 id="slot-supporting_study_metadata-deprecated-abstract"><strong> Slot: supporting_study_metadata </strong>  <span style="color: red;"><strong> (DEPRECATED) </strong></span> <span style="color: purple;"><strong><small> (Abstract) </small></strong></span></h1>
 <div class="highlight-box"><strong>Description:</strong><i> Information about a study used to generate information used as evidence to support the knowledge expressed in an Association. In practice, data creators should use one of the more specific subtypes of this property.</i><br>
 
 
@@ -766,15 +766,9 @@
 description: Information about a study used to generate information used as evidence
   to support the knowledge expressed in an Association. In practice, data creators
   should use one of the more specific subtypes of this property.
-comments:
-- This is an abstract slot that groups a set of concrete slots used to directly attach
-  to an association information about a study that produced evidence used to generate
-  the knowledge expressed in the edge.
-- Note that these concrete 'supporting study metadata' slots are used only when a
-  more normalized model that leverages the 'supporting studdies' slot and 'Study'
-  class to link to and describe the Study itself are not possible or preferred, such
-  that this study metadata must be captured directly on the edge.
+deprecated: 'true'
 from_schema: https://w3id.org/biolink/vocab/
+deprecated_element_has_exact_replacement: biolink:study_metadata
 is_a: association slot
 abstract: true
 domain: association
@@ -840,7 +834,7 @@ range: string
       <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.tabs.link"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
       
     
   </body>

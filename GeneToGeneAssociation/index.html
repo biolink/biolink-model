@@ -7,9 +7,9 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="https://biolink.github.io/biolink-model/GeneToGeneAssociation/" rel="canonical"/>
 <link href="../assets/images/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.6.1, mkdocs-material-9.7.6" name="generator"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.7.7" name="generator"/>
 <title>Class: GeneToGeneAssociation - Biolink Model Documentation</title>
-<link href="../assets/stylesheets/main.484c7ddc.min.css" rel="stylesheet"/>
+<link href="../assets/stylesheets/main.ec1eaa64.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
@@ -385,6 +385,10 @@
 
       GeneToGeneAssociation : aggregator_knowledge_source
 
+      GeneToGeneAssociation : association_basis_qualifier
+
+          GeneToGeneAssociation --|&gt; AssociationBasisEnum : association_basis_qualifier
+
       GeneToGeneAssociation : category
 
       GeneToGeneAssociation : causal_mechanism_qualifier
@@ -394,6 +398,12 @@
       GeneToGeneAssociation : deprecated
 
       GeneToGeneAssociation : description
+
+      GeneToGeneAssociation : effect_size
+
+      GeneToGeneAssociation : effect_type
+
+          GeneToGeneAssociation --|&gt; EffectTypeEnum : effect_type
 
       GeneToGeneAssociation : elevate_to_prediction
 
@@ -508,6 +518,16 @@
       GeneToGeneAssociation : species_context_qualifier
 
           GeneToGeneAssociation --|&gt; OrganismTaxon : species_context_qualifier
+
+      GeneToGeneAssociation : statistical_significance_qualifier
+
+          GeneToGeneAssociation --|&gt; StatisticalSignificanceQualifierEnum : statistical_significance_qualifier
+
+      GeneToGeneAssociation : stringdb_coexpression_score
+
+      GeneToGeneAssociation : stringdb_combined_score
+
+      GeneToGeneAssociation : stringdb_experimental_score
 
       GeneToGeneAssociation : subject
 
@@ -874,6 +894,24 @@
 <td></td>
 </tr>
 <tr>
+<td><a href="../statistical_significance_qualifier/">statistical_significance_qualifier</a>: <br/> <i> A statement qualifier that categorizes an association's evidence by statistical significance into coarse bands, as a categorical companion to the numeric 'p value' and 'adjusted p value' slots. It applies only to assessments derived from a quantitative significance statistic (raw p-value, multiple-testing-adjusted p-value, or q-value/FDR), and MUST NOT encode ordinal study-stage, evidence-tier, or confidence-level labels (e.g. clinical trial phases) that are not statistical-significance statements. </i></td>
+<td>0..1 <br/> <a href="../StatisticalSignificanceQualifierEnum/">StatisticalSignificanceQualifierEnum</a></td>
+<td><a href="../Association/">Association</a></td>
+<td>very_strongly_significant, strongly_significant, significant, suggestive, not_significant</td>
+</tr>
+<tr>
+<td><a href="../effect_size/">effect_size</a>: <br/> <i> A quantitative measure of the magnitude and direction of an effect or association between the subject and object of an edge, as estimated by a statistical method. The specific metric used (e.g. Cohen's d, odds ratio, Pearson's r) is indicated by the companion 'effect type' slot. </i></td>
+<td>0..1 <br/> <a href="../Float/">Float</a></td>
+<td><a href="../Association/">Association</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../effect_type/">effect_type</a>: <br/> <i> Specifies the statistical metric or method used to compute the numeric value in the companion 'effect size' slot. This disambiguates the effect size value, which is otherwise uninterpretable without knowing the metric (e.g. Cohen's d vs. odds ratio vs. Pearson's r). </i></td>
+<td>0..1 <br/> <a href="../EffectTypeEnum/">EffectTypeEnum</a></td>
+<td><a href="../Association/">Association</a></td>
+<td>cohens_d, odds_ratio, pearsons_r</td>
+</tr>
+<tr>
 <td><a href="../supporting_text/">supporting_text</a>: <br/> <i> The segment of text from a document that supports the mined assertion. </i></td>
 <td>* <br/> <a href="../String/">String</a></td>
 <td><a href="../Association/">Association</a></td>
@@ -898,6 +936,24 @@
 <td></td>
 </tr>
 <tr>
+<td><a href="../stringdb_combined_score/">stringdb_combined_score</a>: <br/> <i> A confidence score assigned by STRING representing the estimated likelihood that two proteins are functionally associated, based on the probabilistic integration of all available evidence channels (e.g., curated databases, experiments, co-expression, evolutionary evidence, and text mining). Higher scores indicate greater confidence in the existence of a biologically meaningful functional association. </i></td>
+<td>0..1 <br/> <a href="../Float/">Float</a></td>
+<td><a href="../Association/">Association</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../stringdb_experimental_score/">stringdb_experimental_score</a>: <br/> <i> A confidence score assigned by STRING representing the estimated likelihood that two proteins are functionally associated based solely on experimental evidence, including laboratory measurements of physical interactions or protein associations. Higher scores indicate stronger experimental support for a biological association between the proteins. </i></td>
+<td>0..1 <br/> <a href="../Float/">Float</a></td>
+<td><a href="../Association/">Association</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../stringdb_coexpression_score/">stringdb_coexpression_score</a>: <br/> <i> A confidence score assigned by STRING representing the estimated likelihood that two proteins are functionally associated based solely on evidence that their encoding genes exhibit correlated expression patterns across one or more transcriptomic datasets. Higher scores indicate stronger support for a biological association inferred from gene co-expression. </i></td>
+<td>0..1 <br/> <a href="../Float/">Float</a></td>
+<td><a href="../Association/">Association</a></td>
+<td></td>
+</tr>
+<tr>
 <td><a href="../elevate_to_prediction/">elevate_to_prediction</a>: <br/> <i> A boolean flag indicating whether a clinical trial finding should be elevated to a prediction. </i></td>
 <td>0..1 <br/> <a href="../Boolean/">Boolean</a></td>
 <td><a href="../Association/">Association</a></td>
@@ -912,6 +968,12 @@
 <tr>
 <td><a href="../semmed_agreement_count/">semmed_agreement_count</a>: <br/> <i> The number of times this concept has been asserted in the SemMedDB literature database. </i></td>
 <td>0..1 <br/> <a href="../Integer/">Integer</a></td>
+<td><a href="../Association/">Association</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../association_basis_qualifier/">association_basis_qualifier</a>: <br/> <i> A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates) to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier when no more specific predicate exists to capture the intended meaning of the association. </i></td>
+<td>0..1 <br/> <a href="../AssociationBasisEnum/">AssociationBasisEnum</a></td>
 <td><a href="../Association/">Association</a></td>
 <td></td>
 </tr>
@@ -1054,7 +1116,7 @@ defining_slots:
 <div class="md-dialog__inner md-typeset"></div>
 </div>
 <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.tabs.link"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
-<script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+<script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
 <script type="module">import mermaid from "https://unpkg.com/mermaid@10.4.0/dist/mermaid.esm.min.mjs";
 mermaid.initialize({});</script></body>
 </html>

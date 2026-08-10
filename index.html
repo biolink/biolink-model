@@ -19,7 +19,7 @@
       
       
       <link rel="icon" href="assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -27,7 +27,7 @@
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
@@ -1002,10 +1002,6 @@ databases and formats.  For more information, see: <a href="understanding-the-mo
 <td>An entity that is the byproduct of an administrative process.</td>
 </tr>
 <tr>
-<td><a href="AffinityMeasurement/">AffinityMeasurement</a></td>
-<td>The type of measurement describing the strength of an affinity between two entities. For instance, if a chemical inhibits a protein with a pIC50 of 8.6, the affinity parameter is pIC50 and the affinity value is 8.6. The binary relation, if given, qualifies the affinity as greater than, less than, or equal.</td>
-</tr>
-<tr>
 <td><a href="Agent/">Agent</a></td>
 <td>person, group, organization or project that provides a piece of information (i.e. a knowledge association)</td>
 </tr>
@@ -1574,12 +1570,16 @@ databases and formats.  For more information, see: <a href="understanding-the-mo
 <td>Represents a protein that is a specific isoform of the canonical or reference protein.</td>
 </tr>
 <tr>
+<td><a href="ProteinLigandAssayResult/">ProteinLigandAssayResult</a></td>
+<td>The type of study result describing the strength of interaction affinity - or enzymatic interaction - between a ligand and a target protein. Measured binding or enzymatic assay values are generally stated as the negative base 10 logarithm of the raw measurements. For instance (i.e., in a molecular interaction database like BindingDb) if a ligand inhibits a target protein with a pIC50 of 8.6, then the affinity parameter is pIC50 and the affinity value is 8.6.</td>
+</tr>
+<tr>
 <td><a href="Publication/">Publication</a></td>
 <td>Any ‘published’ piece of information. Publications are considered broadly to include any document or document part made available in print or on the web - which may include scientific journal issues, individual articles, and books - as well as things like pre-prints, white papers, patents, drug labels, web pages, protocol documents,  and even a part of a publication if of significant knowledge scope.</td>
 </tr>
 <tr>
 <td><a href="QuantityValue/">QuantityValue</a></td>
-<td>A value of an attribute that is quantitative and measurable, expressed as a combination of a unit and a numeric value</td>
+<td>A value of an attribute that is quantitative and measurable, expressed as a combination of a unit, (optional) unit prefix and a numeric value. An optional binary relation qualifier may also be given, to allow capture of relative values, e.g., &lt;1000.0 nM meaning "less than 1000 nanometers"</td>
 </tr>
 <tr>
 <td><a href="ReagentTargetedGene/">ReagentTargetedGene</a></td>
@@ -1717,14 +1717,6 @@ databases and formats.  For more information, see: <a href="understanding-the-mo
 <td>a professional relationship between one provider (often a person) within another provider (often an organization). Target provider identity should be specified by a CURIE. Providers may have multiple affiliations.</td>
 </tr>
 <tr>
-<td><a href="affinity/">affinity</a></td>
-<td>The numerical value describing the strength of an affinity between two entities.  For instance, if a chemical inhibits a protein with a pIC50 of 8.6, the affinity is 8.6. Used in conjunction with the affinity parameter slot.</td>
-</tr>
-<tr>
-<td><a href="affinity_parameter/">affinity_parameter</a></td>
-<td>The type of parameter describing the strength of an affinity between two entities.  For instance, if a chemical inhibits a protein with a pIC50 of 8.6, the 'affinity parameter' is pIC50. Used in conjunction with the 'affinity' slot, within an 'affinity measurement'.</td>
-</tr>
-<tr>
 <td><a href="aggregate_statistic/">aggregate_statistic</a></td>
 <td>An abstract grouping for summary numerical measures (e.g. count, total, quotient, percentage, rate) computed over a set of observations or a reference population, used to describe a property of an aggregated entity rather than an individual instance.</td>
 </tr>
@@ -1747,6 +1739,18 @@ databases and formats.  For more information, see: <a href="understanding-the-mo
 <tr>
 <td><a href="chapter/">chapter</a></td>
 <td>chapter of a book</td>
+</tr>
+<tr>
+<td><a href="chi_squared_dof/">chi_squared_dof</a></td>
+<td>Degrees of freedom (dof) in a chi-squared test referring to the number of values in the final calculation of a statistic that are free to vary</td>
+</tr>
+<tr>
+<td><a href="chi_squared_p/">chi_squared_p</a></td>
+<td>The chi-square p-value tells you the probability that the observed differences (or associations) in your data occurred by random chance, assuming the null hypothesis is true.</td>
+</tr>
+<tr>
+<td><a href="chi_squared_statistic/">chi_squared_statistic</a></td>
+<td>The chi-squared statistic measures how much observed data deviate from expected values under the null hypothesis.</td>
 </tr>
 <tr>
 <td><a href="clinical_trial_age_range/">clinical_trial_age_range</a></td>
@@ -1869,6 +1873,30 @@ databases and formats.  For more information, see: <a href="understanding-the-mo
 <td>Type of an exposure event.</td>
 </tr>
 <tr>
+<td><a href="extraction_confidence_score/">extraction_confidence_score</a></td>
+<td>A quantitative confidence value that represents the probability of obtaining a result at least as extreme as that actually obtained, assuming that the actual value was the result of chance alone.</td>
+</tr>
+<tr>
+<td><a href="fisher_exact_odds_ratio/">fisher_exact_odds_ratio</a></td>
+<td>The Fisher Exact Test is used to determine whether there is a non-random association between two categorical variables in a 2×2 contingency table, especially when sample sizes are small. The odds ratio (OR) quantifies the strength of that association.</td>
+</tr>
+<tr>
+<td>OR = 1 implies No association</td>
+<td></td>
+</tr>
+<tr>
+<td>OR &gt; 1 implies Positive association (Group A more likely to have Outcome 1)</td>
+<td></td>
+</tr>
+<tr>
+<td>OR &lt; 1 implies Negative association (Group A less likely to have Outcome 1)</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="fisher_exact_p/">fisher_exact_p</a></td>
+<td>The Fisher exact p-value tells you the probability of observing a table as extreme as (or more extreme than) your actual data, assuming that the null hypothesis of independence is true. It's most commonly used for 2×2 contingency tables, especially when sample sizes are small or expected counts are low.</td>
+</tr>
+<tr>
 <td><a href="format/">format</a></td>
 <td>The file format, physical medium, or representational form of the information content entity; for digital resources typically a MIME type or format identifier. Corresponds to dct:format.</td>
 </tr>
@@ -1941,6 +1969,10 @@ databases and formats.  For more information, see: <a href="understanding-the-mo
 <td>An agent, stimulus, activity, or event that causes stress or tension on an organism and interacts with an exposure_receptor during an exposure event.</td>
 </tr>
 <tr>
+<td><a href="has_studies/">has_studies</a></td>
+<td>Studies which are components of a given node entity (e.g. a publication)</td>
+</tr>
+<tr>
 <td><a href="has_taxonomic_rank/">has_taxonomic_rank</a></td>
 <td>The taxonomic rank (e.g. species, genus, family, order, kingdom) assigned to an organism taxon.</td>
 </tr>
@@ -2005,6 +2037,14 @@ databases and formats.  For more information, see: <a href="understanding-the-mo
 <td>A legal instrument under which the information content entity is made available, typically identified by a URL or CURIE pointing to a license document.</td>
 </tr>
 <tr>
+<td><a href="log_odds_ratio/">log_odds_ratio</a></td>
+<td>The natural logarithm of the odds ratio (OR), or the ratio of the odds of an event Y occurring in an exposed group versus the odds of an event Y occurring in a non-exposed group.</td>
+</tr>
+<tr>
+<td><a href="log_odds_ratio_95_ci/">log_odds_ratio_95_ci</a></td>
+<td>The ninety-five percent confidence range in which the true log odds ratio for the sample population falls. To calculate the 95% confidence interval (CI) for a log odds ratio (a pair of numbers), you need the standard error (SE) of the log odds ratio.  This interval helps you understand the precision of your estimate and whether the association is statistically significant.</td>
+</tr>
+<tr>
 <td><a href="longitude/">longitude</a></td>
 <td>longitude</td>
 </tr>
@@ -2029,8 +2069,40 @@ databases and formats.  For more information, see: <a href="understanding-the-mo
 <td>The number of cases in a study or clinical trial, primarily used in conversion of drug approval data.</td>
 </tr>
 <tr>
+<td><a href="object_location_in_text/">object_location_in_text</a></td>
+<td>Character offsets for the text span(s) in the supporting text corresponding to the object concept of the extracted assertion</td>
+</tr>
+<tr>
+<td><a href="pAC50/">pAC50</a></td>
+<td>pAC50 is a base 10 negative logarithmic measure of potency for an activating (agonist) interaction between a molecule (such as a drug or ligand) and a biological target (such as a receptor or enzyme), where AC50 is the concentration (in molar units) of a compound that produces 50% of its maximal activation in a functional assay.</td>
+</tr>
+<tr>
 <td><a href="pages/">pages</a></td>
 <td>page number of source referenced for statement or publication</td>
+</tr>
+<tr>
+<td><a href="pEC50/">pEC50</a></td>
+<td>Negative base 10 logarithm of the molar concentration of a chemical that produces a 50% excitation of a function</td>
+</tr>
+<tr>
+<td><a href="pIC50/">pIC50</a></td>
+<td>Negative base 10 logarithm of the the inhibitory concentration 50% (IC50) measures the concentration needed to block or inhibit a biological response.</td>
+</tr>
+<tr>
+<td><a href="pKd/">pKd</a></td>
+<td>Negative base 10 logarithm of the equilibrium dissociation constant (KD) which is a measure of the binding affinity and is defined as the ratio of koff to kon.</td>
+</tr>
+<tr>
+<td><a href="pKi/">pKi</a></td>
+<td>Negative base 10 logarithm of the equilibrium binding affinity for a ligand that reduces the activity of its binding partner. Ki represents the concentration at which the inhibitor ligand occupies 50% of the receptor sites when no competing ligand is present</td>
+</tr>
+<tr>
+<td><a href="pKoff/">pKoff</a></td>
+<td>Negative base 10 logarithm of the dissociation rate constant (koff) describes the rate at which they dissociate.</td>
+</tr>
+<tr>
+<td><a href="pKon/">pKon</a></td>
+<td>Negative base 10 logarithm of the association rate constant (Kon) describes the rate at which molecules bind to each other.</td>
 </tr>
 <tr>
 <td><a href="provided_by/">provided_by</a></td>
@@ -2039,6 +2111,10 @@ databases and formats.  For more information, see: <a href="understanding-the-mo
 <tr>
 <td><a href="published_in/">published_in</a></td>
 <td>CURIE identifier of a broader publication context within which the publication may be placed.</td>
+</tr>
+<tr>
+<td><a href="pXC50/">pXC50</a></td>
+<td>In the context of molecular interactions and drug discovery, pXC50 is a generic, base 10 negative logarithmic measure of compound potency that unifies different types of half‑maximal concentration values into a single notation, where XC50 means “the concentration at which 50% of the maximal effect is observed”, and X is a placeholder for the type of effect being measured (e.g., inhibition or activation). The X in pXC50 is intentionally generic and can represent different assay endpoints.</td>
 </tr>
 <tr>
 <td><a href="related_synonym/">related_synonym</a></td>
@@ -2073,12 +2149,60 @@ databases and formats.  For more information, see: <a href="understanding-the-mo
 <td>A URL of a web page that documents or serves as the landing page for a data source.</td>
 </tr>
 <tr>
+<td><a href="study_cohort/">study_cohort</a></td>
+<td>A description of the study population/cohort that was interrogated by a study.</td>
+</tr>
+<tr>
+<td><a href="study_context/">study_context</a></td>
+<td>A term or terms describing the experimental setting/context in which a study was carried out ('context' may be defined by many factors, including taxon, model system, tissue type, disease, etc.).</td>
+</tr>
+<tr>
+<td><a href="study_date_range/">study_date_range</a></td>
+<td>The date range over which data was collected in a study.</td>
+</tr>
+<tr>
+<td><a href="study_metadata/">study_metadata</a></td>
+<td>Information describing how a study was designed and carried out. In practice, data creators should use one of the more specific subtypes of this property.</td>
+</tr>
+<tr>
+<td><a href="study_method_description/">study_method_description</a></td>
+<td>A uri or curie pointing to information about the methodology used to generate the data produced by a study.</td>
+</tr>
+<tr>
+<td><a href="study_method_types/">study_method_types</a></td>
+<td>Type(s) of methods that were applied in a study (e.g. a type of experimental assay, or statistical calculation, or computational analysis).</td>
+</tr>
+<tr>
+<td><a href="study_size/">study_size</a></td>
+<td>The sample size used in a study (e.g. 'n' of a cohort for a clinical study).</td>
+</tr>
+<tr>
+<td><a href="subject_location_in_text/">subject_location_in_text</a></td>
+<td>Character offsets for the text span(s) in the supporting text corresponding to the subject concept of the extracted assertion.</td>
+</tr>
+<tr>
 <td><a href="subsets/">subsets</a></td>
 <td>The set of ontology subsets a term belongs to (e.g. GO slim subsets, MONDO rare disease subset). Carries the values of <code>oboInOwl:inSubset</code> annotations from source ontologies through to downstream knowledge graphs.</td>
 </tr>
 <tr>
 <td><a href="summary/">summary</a></td>
 <td>executive  summary of a publication</td>
+</tr>
+<tr>
+<td><a href="supporting_document_type/">supporting_document_type</a></td>
+<td>The document type (e.g., Journal Article, Case Study, Preprint) for the supporting document used in a Text Mining Result.</td>
+</tr>
+<tr>
+<td><a href="supporting_document_year/">supporting_document_year</a></td>
+<td>The document year (typically the publication year) for the supporting document used in a Text Mining Result.</td>
+</tr>
+<tr>
+<td><a href="supporting_text/">supporting_text</a></td>
+<td>The segment of text from a document that supports the mined assertion.</td>
+</tr>
+<tr>
+<td><a href="supporting_text_section_type/">supporting_text_section_type</a></td>
+<td>The section of the supporting text of a Text Mining Result within the supporting document. This is in the form of the name of the document section (e.g., Abstract, Introduction) that contains the supporting text.</td>
 </tr>
 <tr>
 <td><a href="symbol/">symbol</a></td>
@@ -2209,7 +2333,7 @@ databases and formats.  For more information, see: <a href="understanding-the-mo
 </tr>
 <tr>
 <td><a href="associated_with/">associated_with</a></td>
-<td>Expresses a relationship between two named things where the relationship is typically generated statistically (though not in all cases), and is weaker than its child, 'correlated with', but stronger than its parent, 'related to'. This relationship holds between two concepts represented by variables for which a statistical dependence is demonstrated.  E.g. the statement “Atrial Fibrillation (Afib) is associated with Myocardial Infraction (MI)” asserts that having Afib is not statistically independent from whether a patient will also have MI. Note that in Translator associations, the subject and object concepts may map exactly to the statistical variables, or represent related entities for which the variables serve as proxies in an Association (e.g. diseases, chemical entities or processes).</td>
+<td>Indicates a non-causal association between two entities. Such associations are most commonly established through statistical analysis demonstrating that observations of the entities are not statistically independent, but may also be supported by other forms of evidence that establish a meaningful association. When representing a statistical association, the subject and object may correspond directly to the variables analyzed, or to the biological or clinical entities represented/described by those variables (e.g., diseases, genes, chemical entities, biological processes, or phenotypes).  The 'association basis qualifier' may be used to constrain the scope of this predicate within a statement if no more specific child predicate provides a more precise semantic context for the association.</td>
 </tr>
 <tr>
 <td><a href="associated_with_decreased_likelihood_of/">associated_with_decreased_likelihood_of</a></td>
@@ -2737,7 +2861,7 @@ databases and formats.  For more information, see: <a href="understanding-the-mo
 </tr>
 <tr>
 <td><a href="interacts_with/">interacts_with</a></td>
-<td>holds between any two entities that directly or indirectly interact with each other</td>
+<td>holds between any two entities that directly or indirectly interact with each other in a physical or functional way.</td>
 </tr>
 <tr>
 <td><a href="is_active_ingredient_of/">is_active_ingredient_of</a></td>
@@ -3151,6 +3275,10 @@ databases and formats.  For more information, see: <a href="understanding-the-mo
 <td>Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.</td>
 </tr>
 <tr>
+<td><a href="association_basis_qualifier/">association_basis_qualifier</a></td>
+<td>A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates) to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier when no more specific predicate exists to capture the intended meaning of the association.</td>
+</tr>
+<tr>
 <td><a href="causal_mechanism_qualifier/">causal_mechanism_qualifier</a></td>
 <td>A statement qualifier representing a type of molecular control mechanism through which an effect of a chemical on a gene or gene product is mediated</td>
 </tr>
@@ -3269,6 +3397,10 @@ databases and formats.  For more information, see: <a href="understanding-the-mo
 <tr>
 <td><a href="statement_qualifier/">statement_qualifier</a></td>
 <td>A property that qualifies the entirety of the statement made in an association.  It applies to both a fully qualified subject and a fully qualified object as well as the predicate and qualified predicate in an association.</td>
+</tr>
+<tr>
+<td><a href="statistical_significance_qualifier/">statistical_significance_qualifier</a></td>
+<td>A statement qualifier that categorizes an association's evidence by statistical significance into coarse bands, as a categorical companion to the numeric 'p value' and 'adjusted p value' slots. It applies only to assessments derived from a quantitative significance statistic (raw p-value, multiple-testing-adjusted p-value, or q-value/FDR), and MUST NOT encode ordinal study-stage, evidence-tier, or confidence-level labels (e.g. clinical trial phases) that are not statistical-significance statements.</td>
 </tr>
 <tr>
 <td><a href="subject_activity_qualifier/">subject_activity_qualifier</a></td>
@@ -3793,6 +3925,10 @@ databases and formats.  For more information, see: <a href="understanding-the-mo
 <td></td>
 </tr>
 <tr>
+<td><a href="association_basis_qualifier/">association_basis_qualifier</a></td>
+<td>A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates) to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier when no more specific predicate exists to capture the intended meaning of the association.</td>
+</tr>
+<tr>
 <td><a href="association_slot/">association_slot</a></td>
 <td>any slot that relates an association to another entity</td>
 </tr>
@@ -3811,18 +3947,6 @@ databases and formats.  For more information, see: <a href="understanding-the-mo
 <tr>
 <td><a href="causal_mechanism_qualifier/">causal_mechanism_qualifier</a></td>
 <td>A statement qualifier representing a type of molecular control mechanism through which an effect of a chemical on a gene or gene product is mediated</td>
-</tr>
-<tr>
-<td><a href="chi_squared_dof/">chi_squared_dof</a></td>
-<td>Degrees of freedom (dof) in a chi-squared test referring to the number of values in the final calculation of a statistic that are free to vary</td>
-</tr>
-<tr>
-<td><a href="chi_squared_p/">chi_squared_p</a></td>
-<td>The chi-square p-value tells you the probability that the observed differences (or associations) in your data occurred by random chance, assuming the null hypothesis is true.</td>
-</tr>
-<tr>
-<td><a href="chi_squared_statistic/">chi_squared_statistic</a></td>
-<td>The chi-squared statistic measures how much observed data deviate from expected values under the null hypothesis.</td>
 </tr>
 <tr>
 <td><a href="clinical_approval_status/">clinical_approval_status</a></td>
@@ -3865,6 +3989,14 @@ databases and formats.  For more information, see: <a href="understanding-the-mo
 <td>A context qualifier representing a disease or condition in which a relationship expressed in an association took place.</td>
 </tr>
 <tr>
+<td><a href="effect_size/">effect_size</a></td>
+<td>A quantitative measure of the magnitude and direction of an effect or association between the subject and object of an edge, as estimated by a statistical method. The specific metric used (e.g. Cohen's d, odds ratio, Pearson's r) is indicated by the companion 'effect type' slot.</td>
+</tr>
+<tr>
+<td><a href="effect_type/">effect_type</a></td>
+<td>Specifies the statistical metric or method used to compute the numeric value in the companion 'effect size' slot. This disambiguates the effect size value, which is otherwise uninterpretable without knowing the metric (e.g. Cohen's d vs. odds ratio vs. Pearson's r).</td>
+</tr>
+<tr>
 <td><a href="end_coordinate/">end_coordinate</a></td>
 <td>The position at which the subject genomic entity ends on the chromosome or other entity to which it is located on.</td>
 </tr>
@@ -3885,32 +4017,8 @@ databases and formats.  For more information, see: <a href="understanding-the-mo
 <td>location in which gene or protein expression takes place. May be cell, tissue, or organ.</td>
 </tr>
 <tr>
-<td><a href="extraction_confidence_score/">extraction_confidence_score</a></td>
-<td>A quantitative confidence value that represents the probability of obtaining a result at least as extreme as that actually obtained, assuming that the actual value was the result of chance alone.</td>
-</tr>
-<tr>
 <td><a href="FDA_adverse_event_level/">FDA_adverse_event_level</a></td>
 <td>The level or severity grade of an adverse event as classified by FDA adverse-event terminology, drawn from FDAIDAAdverseEventEnum; used on adverse-event associations.</td>
-</tr>
-<tr>
-<td><a href="fisher_exact_odds_ratio/">fisher_exact_odds_ratio</a></td>
-<td>The Fisher Exact Test is used to determine whether there is a non-random association between two categorical variables in a 2×2 contingency table, especially when sample sizes are small. The odds ratio (OR) quantifies the strength of that association.</td>
-</tr>
-<tr>
-<td>OR = 1 implies No association</td>
-<td></td>
-</tr>
-<tr>
-<td>OR &gt; 1 implies Positive association (Group A more likely to have Outcome 1)</td>
-<td></td>
-</tr>
-<tr>
-<td>OR &lt; 1 implies Negative association (Group A less likely to have Outcome 1)</td>
-<td></td>
-</tr>
-<tr>
-<td><a href="fisher_exact_p/">fisher_exact_p</a></td>
-<td>The Fisher exact p-value tells you the probability of observing a table as extreme as (or more extreme than) your actual data, assuming that the null hypothesis of independence is true. It's most commonly used for 2×2 contingency tables, especially when sample sizes are small or expected counts are low.</td>
 </tr>
 <tr>
 <td><a href="form_or_variant_qualifier/">form_or_variant_qualifier</a></td>
@@ -3923,10 +4031,6 @@ databases and formats.  For more information, see: <a href="understanding-the-mo
 <tr>
 <td><a href="genome_build/">genome_build</a></td>
 <td>The version of the genome on which a feature is located. For example, GRCh38 for Homo sapiens.</td>
-</tr>
-<tr>
-<td><a href="has_affinity/">has_affinity</a></td>
-<td>Set of measurements documenting the strength of chemical entity to gene or gene product interactions.</td>
 </tr>
 <tr>
 <td><a href="has_confidence_level/">has_confidence_level</a></td>
@@ -3975,14 +4079,6 @@ databases and formats.  For more information, see: <a href="understanding-the-mo
 <tr>
 <td><a href="ln_ratio_confidence_interval/">ln_ratio_confidence_interval</a></td>
 <td>The 99% confidence interval for the ln_ratio calculation (i.e. the range of values within which the true value has a 99% chance of falling)</td>
-</tr>
-<tr>
-<td><a href="log_odds_ratio/">log_odds_ratio</a></td>
-<td>The natural logarithm of the odds ratio (OR), or the ratio of the odds of an event Y occurring in an exposed group versus the odds of an event Y occurring in a non-exposed group.</td>
-</tr>
-<tr>
-<td><a href="log_odds_ratio_95_ci/">log_odds_ratio_95_ci</a></td>
-<td>The ninety-five percent confidence range in which the true log odds ratio for the sample population falls. To calculate the 95% confidence interval (CI) for a log odds ratio (a pair of numbers), you need the standard error (SE) of the log odds ratio.  This interval helps you understand the precision of your estimate and whether the association is statistically significant.</td>
 </tr>
 <tr>
 <td><a href="logical_interpretation/">logical_interpretation</a></td>
@@ -4047,10 +4143,6 @@ databases and formats.  For more information, see: <a href="understanding-the-mo
 <tr>
 <td><a href="object_label_closure/">object_label_closure</a></td>
 <td>Used to hold the object label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.</td>
-</tr>
-<tr>
-<td><a href="object_location_in_text/">object_location_in_text</a></td>
-<td>Character offsets for the text span(s) in the supporting text corresponding to the object concept of the extracted assertion</td>
 </tr>
 <tr>
 <td><a href="object_namespace/">object_namespace</a></td>
@@ -4221,6 +4313,10 @@ databases and formats.  For more information, see: <a href="understanding-the-mo
 <td>A property that qualifies the entirety of the statement made in an association.  It applies to both a fully qualified subject and a fully qualified object as well as the predicate and qualified predicate in an association.</td>
 </tr>
 <tr>
+<td><a href="statistical_significance_qualifier/">statistical_significance_qualifier</a></td>
+<td>A statement qualifier that categorizes an association's evidence by statistical significance into coarse bands, as a categorical companion to the numeric 'p value' and 'adjusted p value' slots. It applies only to assessments derived from a quantitative significance statistic (raw p-value, multiple-testing-adjusted p-value, or q-value/FDR), and MUST NOT encode ordinal study-stage, evidence-tier, or confidence-level labels (e.g. clinical trial phases) that are not statistical-significance statements.</td>
+</tr>
+<tr>
 <td><a href="stoichiometry/">stoichiometry</a></td>
 <td>the relationship between the relative quantities of substances taking part in a reaction or forming a compound, typically a ratio of whole integers.</td>
 </tr>
@@ -4277,10 +4373,6 @@ databases and formats.  For more information, see: <a href="understanding-the-mo
 <td>Used to hold the subject label closure of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.</td>
 </tr>
 <tr>
-<td><a href="subject_location_in_text/">subject_location_in_text</a></td>
-<td>Character offsets for the text span(s) in the supporting text corresponding to the subject concept of the extracted assertion.</td>
-</tr>
-<tr>
 <td><a href="subject_namespace/">subject_namespace</a></td>
 <td>Used to hold the subject namespace of an association. This is a denormalized field used primarily in the SQL serialization of a knowledge graph via KGX.</td>
 </tr>
@@ -4307,14 +4399,6 @@ databases and formats.  For more information, see: <a href="understanding-the-mo
 <tr>
 <td><a href="supporting_data_source/">supporting_data_source</a></td>
 <td>An Information Resource from which data was retrieved and subsequently used as evidence to generate the knowledge expressed in an Association (e.g. through computation on, reasoning or inference over the retrieved data).</td>
-</tr>
-<tr>
-<td><a href="supporting_document_type/">supporting_document_type</a></td>
-<td>The document type (e.g., Journal Article, Case Study, Preprint) for the supporting document used in a Text Mining Result.</td>
-</tr>
-<tr>
-<td><a href="supporting_document_year/">supporting_document_year</a></td>
-<td>The document year (typically the publication year) for the supporting document used in a Text Mining Result.</td>
 </tr>
 <tr>
 <td><a href="supporting_documents/">supporting_documents</a></td>
@@ -4349,14 +4433,6 @@ databases and formats.  For more information, see: <a href="understanding-the-mo
 <td>The sample size used in a study that provided evidence for the association (e.g. 'n' of a cohort for a clinical study).</td>
 </tr>
 <tr>
-<td><a href="supporting_text/">supporting_text</a></td>
-<td>The segment of text from a document that supports the mined assertion.</td>
-</tr>
-<tr>
-<td><a href="supporting_text_section_type/">supporting_text_section_type</a></td>
-<td>The section of the supporting text of a Text Mining Result within the supporting document. This is in the form of the name of the document section (e.g., Abstract, Introduction) that contains the supporting text.</td>
-</tr>
-<tr>
 <td><a href="temporal_context_qualifier/">temporal_context_qualifier</a></td>
 <td>a constraint of time placed upon the truth value of an association. for time intervales, use temporal interval qualifier.</td>
 </tr>
@@ -4384,16 +4460,16 @@ databases and formats.  For more information, see: <a href="understanding-the-mo
 </thead>
 <tbody>
 <tr>
-<td><a href="AffinityParameterEnum/">AffinityParameterEnum</a></td>
-<td>The types of parameters that can be used to describe the affinity between two entities, characteristically chemicals and proteins. The values are generally stated as the negative base 10 logarithm of the raw measurements.</td>
-</tr>
-<tr>
 <td><a href="AgentTypeEnum/">AgentTypeEnum</a></td>
 <td>An enumeration of agent types responsible for generating a statement of knowledge, as defined by the Translator Knowledge Level / Agent Type (KL/AT) standard. Values distinguish human (manual) agents from automated agents (including data analysis pipelines, computational models, text-mining agents, image-processing agents) and mixed cases such as manual validation of automated output.</td>
 </tr>
 <tr>
 <td><a href="ApprovalStatusEnum/">ApprovalStatusEnum</a></td>
 <td>An enumeration of regulatory and development milestones for a drug or therapeutic, spanning discovery, preclinical research, FDA clinical trial phases (1-4), special review designations (e.g., fast track, breakthrough therapy, priority review), regular FDA approval, and post-approval withdrawal.</td>
+</tr>
+<tr>
+<td><a href="AssociationBasisEnum/">AssociationBasisEnum</a></td>
+<td>Permissible values for the 'association basis qualifier', indicating the nature or basis of an association asserted using the 'associated with' predicate or one of its subpredicates.</td>
 </tr>
 <tr>
 <td><a href="BinaryRelationEnum/">BinaryRelationEnum</a></td>
@@ -4442,6 +4518,10 @@ databases and formats.  For more information, see: <a href="understanding-the-mo
 <tr>
 <td><a href="DruggableGeneCategoryEnum/">DruggableGeneCategoryEnum</a></td>
 <td>An enumeration of druggability categories for gene targets as defined by the IDG (Illuminating the Druggable Genome) / Pharos target development level classification: Tclin (targets of approved drugs), Tchem (targets with potent bioactives), Tbio (targets with biological knowledge), and Tdark (poorly characterized targets).</td>
+</tr>
+<tr>
+<td><a href="EffectTypeEnum/">EffectTypeEnum</a></td>
+<td>An enumeration of statistical metrics and estimators used to quantify the magnitude and direction of an effect or association between the subject and object of an edge. The numeric result is stored in the companion 'effect size' slot.</td>
 </tr>
 <tr>
 <td><a href="FDAIDAAdverseEventEnum/">FDAIDAAdverseEventEnum</a></td>
@@ -4502,6 +4582,10 @@ databases and formats.  For more information, see: <a href="understanding-the-mo
 <tr>
 <td><a href="SequenceEnum/">SequenceEnum</a></td>
 <td>type of sequence</td>
+</tr>
+<tr>
+<td><a href="StatisticalSignificanceQualifierEnum/">StatisticalSignificanceQualifierEnum</a></td>
+<td>An enumeration used as a qualifier to categorize the statistical significance of an association's supporting evidence into coarse bands (e.g., very strongly significant, strongly significant, significant, suggestive, not significant), conventionally anchored to alpha = 0.05. The underlying numeric value lives in the 'p value' and 'adjusted p value' slots, which remain authoritative.</td>
 </tr>
 <tr>
 <td><a href="StrandEnum/">StrandEnum</a></td>
@@ -4598,7 +4682,7 @@ Biolink Model: A universal schema for knowledge graphs in clinical, biomedical, 
       <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["content.tabs.link"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="assets/javascripts/bundle.d7400e89.min.js"></script>
       
     
   </body>

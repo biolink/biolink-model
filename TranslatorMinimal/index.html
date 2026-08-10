@@ -17,7 +17,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -25,7 +25,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -825,6 +825,10 @@
 <td>Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.</td>
 </tr>
 <tr>
+<td><a href="../association_basis_qualifier/">association_basis_qualifier</a></td>
+<td>A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates) to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier when no more specific predicate exists to capture the intended meaning of the association.</td>
+</tr>
+<tr>
 <td><a href="../beneficial_in_models_for/">beneficial_in_models_for</a></td>
 <td>Holds between an  substance, procedure, or activity and a medical condition, and reports that the substance, procedure, or activity has been shown to be effective in alleviating, preventing, or delaying symptoms/ phenotypes associated with a disease, in a model system for that disease (e.g. a mouse, fly, cell line, etc).</td>
 </tr>
@@ -1094,7 +1098,7 @@
 </tr>
 <tr>
 <td><a href="../interacts_with/">interacts_with</a></td>
-<td>holds between any two entities that directly or indirectly interact with each other</td>
+<td>holds between any two entities that directly or indirectly interact with each other in a physical or functional way.</td>
 </tr>
 <tr>
 <td><a href="../iri/">iri</a></td>
@@ -1329,6 +1333,10 @@
 <td>A property that qualifies the entirety of the statement made in an association.  It applies to both a fully qualified subject and a fully qualified object as well as the predicate and qualified predicate in an association.</td>
 </tr>
 <tr>
+<td><a href="../statistical_significance_qualifier/">statistical_significance_qualifier</a></td>
+<td>A statement qualifier that categorizes an association's evidence by statistical significance into coarse bands, as a categorical companion to the numeric 'p value' and 'adjusted p value' slots. It applies only to assessments derived from a quantitative significance statistic (raw p-value, multiple-testing-adjusted p-value, or q-value/FDR), and MUST NOT encode ordinal study-stage, evidence-tier, or confidence-level labels (e.g. clinical trial phases) that are not statistical-significance statements.</td>
+</tr>
+<tr>
 <td><a href="../subclass_of/">subclass_of</a></td>
 <td>holds between two classes where the domain class is a specialization of the range class</td>
 </tr>
@@ -1422,6 +1430,7 @@
 </tbody>
 </table>
 <p>| <a href="../AgentTypeEnum/">AgentTypeEnum</a> | An enumeration of agent types responsible for generating a statement of knowledge, as defined by the Translator Knowledge Level / Agent Type (KL/AT) standard. Values distinguish human (manual) agents from automated agents (including data analysis pipelines, computational models, text-mining agents, image-processing agents) and mixed cases such as manual validation of automated output. |</p>
+<p>| <a href="../AssociationBasisEnum/">AssociationBasisEnum</a> | Permissible values for the 'association basis qualifier', indicating the nature or basis of an association asserted using the 'associated with' predicate or one of its subpredicates. |</p>
 <p>| <a href="../FDAIDAAdverseEventEnum/">FDAIDAAdverseEventEnum</a> | please consult with the FDA guidelines as proposed in this document: https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfcfr/cfrsearch.cfm?fr=312.32 |</p>
 <p>| <a href="../KnowledgeLevelEnum/">KnowledgeLevelEnum</a> | An enumeration characterizing the type of knowledge expressed in a statement and the kind of evidence and reasoning that supports it, as defined by the Translator Knowledge Level / Agent Type (KL/AT) standard. Values include knowledge assertion, logical entailment, prediction, statistical association, text co-occurrence, direct observation, and not-provided. |</p>
 <p>| <a href="../ResourceRoleEnum/">ResourceRoleEnum</a> | The role played by the information reource in serving as a source for an edge in a TRAPI message. Note that a given Edge should have one and only one 'primary' source, and may have any number of 'aggregator' or 'supporting data' sources.  This enumeration is found in Biolink Model, but is repeated here for convenience. |</p>
@@ -1481,7 +1490,7 @@
       <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.tabs.link"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
       
     
   </body>
