@@ -1,0 +1,14 @@
+# Negative example: 'effect type' is set but the companion 'effect size' it
+# describes is absent.
+#
+# This MUST fail validation. The class rule on `association` states that the
+# metric label may only be asserted when the numeric value it disambiguates is
+# also present -- an effect type on its own names a measurement that was never
+# recorded, and carries no interpretable magnitude or direction.
+id: "test:association-effect-type-without-effect-size"
+subject: NCBIGene:1401          # CRP
+predicate: biolink:associated_with
+object: MONDO:0005148           # type 2 diabetes mellitus
+knowledge_level: statistical_association
+agent_type: computational_model
+effect_type: odds_ratio

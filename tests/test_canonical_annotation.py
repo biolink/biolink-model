@@ -32,3 +32,11 @@ def test_predicates_have_canonical_or_inverse(load_biolink_model):
             elif not slot_details.inverse:
                 raise AssertionError(f"Slot '{slot_details}' has neither 'canonical_predicate: true' "
                                     f"nor 'inverse' annotations")
+
+
+def test_protein_accepts_ncit_prefix(load_biolink_model):
+    """Ensure NCIT is a valid identifier prefix for Protein."""
+    model = SchemaView(load_biolink_model)
+    protein = model.get_class("protein")
+    assert protein is not None
+    assert "NCIT" in protein.id_prefixes

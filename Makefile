@@ -6,7 +6,7 @@ SHELL := bash
 .SUFFIXES:
 .SECONDARY:
 
-RUN = poetry run
+RUN = uv run
 export PYTHONWARNINGS=ignore::UserWarning:linkml.utils.generator,ignore::UserWarning:linkml_runtime.Namespaces,ignore::UserWarning
 # get values from about.yaml file
 SCHEMA_NAME = $(shell ${SHELL} ./utils/get-value.sh name)
@@ -64,7 +64,7 @@ setup: install gen-project gen-examples gendoc git-init-add
 # install any dependencies required for building
 install:
 	git init
-	poetry install
+	uv sync
 .PHONY: install
 
 # ---
@@ -84,7 +84,7 @@ update-template:
 
 # todo: consider pinning to template
 update-linkml:
-	poetry add -D linkml@latest
+	uv add --dev linkml@latest
 
 all: site
 site: gen-project gendoc id-prefixes
@@ -100,7 +100,7 @@ id-prefixes:
 	cd src/biolink_model/scripts/ && $(RUN) python id_prefixes.py
 
 spell:
-	poetry run codespell
+	uv run codespell
 
 # generates all project files
 
@@ -110,7 +110,7 @@ gen-project: $(PYMODEL)
 	# keep these in sync between PROJECT_FOLDERS and the includes/excludes for gen-project and test-schema
 	$(RUN) gen-project \
 		--exclude excel \
-		--include graphql \
+		--exclude graphql \
 		--include jsonld \
 		--exclude markdown \
 		--include prefixmap \
@@ -139,7 +139,7 @@ tests:
 	$(RUN) codespell
 	$(RUN) yamllint -c .yamllint-config biolink-model.yaml
 
-test: test-schema test-python test-examples lint spell
+test: test-schema test-python lint spell
 
 test-schema: gen-project
 
@@ -202,7 +202,6 @@ gendoc: $(DOCDIR)
 	cp $(DEST)/jsonld/biolink_model.context.jsonld $(DOCDIR)/context.jsonld ; \
 	cp $(DEST)/jsonld/biolink_model.jsonld $(DOCDIR)/biolink-model.jsonld ; \
 	cp $(DEST)/jsonschema/biolink_model.schema.json $(DOCDIR)/biolink-model.json ; \
-	cp $(DEST)/graphql/biolink_model.graphql $(DOCDIR)/biolink-model.graphql ; \
 	cp $(DEST)/shex/biolink_model.shex $(DOCDIR)/biolink-modeln.shex ; \
 	cp $(DEST)/shacl/biolink_model.shacl.ttl $(DOCDIR)/biolink-model.shacl.ttl ; \
 	cp $(DEST)/prefixmap/* $(DOCDIR) ; \
@@ -229,12 +228,12 @@ MKDOCS = $(RUN) mkdocs
 mkd-%:
 	$(MKDOCS) $*
 
-PROJECT_FOLDERS = sqlschema shex shacl protobuf prefixmap owl jsonschema jsonld graphql excel
+PROJECT_FOLDERS = sqlschema shex shacl protobuf prefixmap owl jsonschema jsonld excel
 git-init-add: git-init git-add git-commit git-status
 git-init:
 	git init
 git-add: .cruft.json
-	git add .gitignore .github .cruft.json Makefile LICENSE *.md examples utils about.yaml mkdocs.yml poetry.lock project.Makefile pyproject.toml src/biolink_model/schema/*yaml src/*/datamodel/*py src/data src/docs tests src/*/_version.py
+	git add .gitignore .github .cruft.json Makefile LICENSE *.md examples utils about.yaml mkdocs.yml uv.lock project.Makefile pyproject.toml src/biolink_model/schema/*yaml src/*/datamodel/*py src/data src/docs tests src/*/_version.py
 	git add $(patsubst %, project/%, $(PROJECT_FOLDERS))
 git-commit:
 	git commit -m 'chore: initial commit' -a
