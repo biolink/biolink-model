@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-08-07T03:06:44
+# Generation date: 2026-08-10T21:48:43
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/vocab/
@@ -3185,6 +3185,7 @@ class Publication(InformationContentEntity):
     keywords: Optional[Union[str, list[str]]] = empty_list()
     mesh_terms: Optional[Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]]] = empty_list()
     xref: Optional[Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]]] = empty_list()
+    has_studies: Optional[Union[Union[str, StudyId], list[Union[str, StudyId]]]] = empty_list()
     name: Optional[Union[str, LabelType]] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
@@ -3221,6 +3222,10 @@ class Publication(InformationContentEntity):
         if not isinstance(self.xref, list):
             self.xref = [self.xref] if self.xref is not None else []
         self.xref = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.xref]
+
+        if not isinstance(self.has_studies, list):
+            self.has_studies = [self.has_studies] if self.has_studies is not None else []
+        self.has_studies = [v if isinstance(v, StudyId) else StudyId(v) for v in self.has_studies]
 
         if self.name is not None and not isinstance(self.name, LabelType):
             self.name = LabelType(self.name)
@@ -18169,6 +18174,9 @@ slots.max_research_phase = Slot(uri=BIOLINK.max_research_phase, name="max resear
 
 slots.number_of_cases = Slot(uri=BIOLINK.number_of_cases, name="number of cases", curie=BIOLINK.curie('number_of_cases'),
                    model_uri=BIOLINK.number_of_cases, domain=NamedThing, range=Optional[int])
+
+slots.has_studies = Slot(uri=BIOLINK.has_studies, name="has studies", curie=BIOLINK.curie('has_studies'),
+                   model_uri=BIOLINK.has_studies, domain=NamedThing, range=Optional[Union[Union[str, StudyId], list[Union[str, StudyId]]]])
 
 slots.has_supporting_studies = Slot(uri=BIOLINK.has_supporting_studies, name="has supporting studies", curie=BIOLINK.curie('has_supporting_studies'),
                    model_uri=BIOLINK.has_supporting_studies, domain=Association, range=Optional[Union[Union[str, StudyId], list[Union[str, StudyId]]]])

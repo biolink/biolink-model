@@ -8318,6 +8318,7 @@ linkml:Sparqlpath xsd:string
              <keywords> @<String> * ;
              <mesh_terms> @<Uriorcurie> * ;
              dcterms:type @<String> + ;
+             <has_studies> @<Study> * ;
              rdfs:label @<LabelType> ?
           ) ;
           rdf:type [ <Publication> ]

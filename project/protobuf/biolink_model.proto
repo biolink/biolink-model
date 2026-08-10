@@ -313,6 +313,7 @@ message Article
  repeated  uriorcurie meshTerms = 0
  repeated  uriorcurie xref = 0
  repeated  string publicationType = 0
+ repeated  study hasStudies = 0
   string id = 0
   labelType name = 0
   uriorcurie publishedIn = 0
@@ -920,6 +921,7 @@ message Book
  repeated  uriorcurie meshTerms = 0
  repeated  uriorcurie xref = 0
  repeated  string publicationType = 0
+ repeated  study hasStudies = 0
   labelType name = 0
   string id = 0
  repeated  string type = 0
@@ -954,6 +956,7 @@ message BookChapter
  repeated  uriorcurie meshTerms = 0
  repeated  uriorcurie xref = 0
  repeated  string publicationType = 0
+ repeated  study hasStudies = 0
   string id = 0
   labelType name = 0
   uriorcurie publishedIn = 0
@@ -3928,6 +3931,7 @@ message DrugLabel
  repeated  uriorcurie meshTerms = 0
  repeated  uriorcurie xref = 0
  repeated  string publicationType = 0
+ repeated  study hasStudies = 0
   string id = 0
   labelType name = 0
  }
@@ -6953,6 +6957,7 @@ message JournalArticle
  repeated  uriorcurie meshTerms = 0
  repeated  uriorcurie xref = 0
  repeated  string publicationType = 0
+ repeated  study hasStudies = 0
   string id = 0
   labelType name = 0
   uriorcurie publishedIn = 0
@@ -8509,6 +8514,7 @@ message Patent
  repeated  uriorcurie meshTerms = 0
  repeated  uriorcurie xref = 0
  repeated  string publicationType = 0
+ repeated  study hasStudies = 0
   string id = 0
   labelType name = 0
  }
@@ -9199,6 +9205,7 @@ message PreprintPublication
  repeated  uriorcurie meshTerms = 0
  repeated  uriorcurie xref = 0
  repeated  string publicationType = 0
+ repeated  study hasStudies = 0
   string id = 0
   labelType name = 0
  }
@@ -9487,6 +9494,7 @@ message Publication
  repeated  uriorcurie meshTerms = 0
  repeated  uriorcurie xref = 0
  repeated  string publicationType = 0
+ repeated  study hasStudies = 0
   string id = 0
   labelType name = 0
  }
@@ -9968,6 +9976,7 @@ message Serial
  repeated  uriorcurie meshTerms = 0
  repeated  uriorcurie xref = 0
  repeated  string publicationType = 0
+ repeated  study hasStudies = 0
   labelType name = 0
   string isoAbbreviation = 0
   string volume = 0
@@ -10947,6 +10956,7 @@ message WebPage
  repeated  uriorcurie meshTerms = 0
  repeated  uriorcurie xref = 0
  repeated  string publicationType = 0
+ repeated  study hasStudies = 0
   string id = 0
   labelType name = 0
  }

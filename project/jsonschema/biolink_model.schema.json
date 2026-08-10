@@ -3155,6 +3155,16 @@
                         "null"
                     ]
                 },
+                "has_studies": {
+                    "description": "Studies which are components of a given node entity (e.g. a publication)",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "id": {
                     "description": "Different kinds of publication subtypes will have different preferred identifiers (curies when feasible). Precedence of identifiers for scientific articles is as follows: PMID if available; DOI if not; actual alternate CURIE otherwise. Enclosing publications (i.e. referenced by 'published in' node property) such as books and journals, should have industry-standard identifier such as from ISBN and ISSN.",
                     "type": "string"
@@ -8294,6 +8304,16 @@
                         "null"
                     ]
                 },
+                "has_studies": {
+                    "description": "Studies which are components of a given node entity (e.g. a publication)",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "id": {
                     "description": "Books should have industry-standard identifier such as from ISBN.",
                     "type": "string"
@@ -8552,6 +8572,16 @@
                 },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "has_studies": {
+                    "description": "Studies which are components of a given node entity (e.g. a publication)",
                     "items": {
                         "type": "string"
                     },
@@ -33463,6 +33493,16 @@
                 },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "has_studies": {
+                    "description": "Studies which are components of a given node entity (e.g. a publication)",
                     "items": {
                         "type": "string"
                     },
@@ -59279,6 +59319,16 @@
                         "null"
                     ]
                 },
+                "has_studies": {
+                    "description": "Studies which are components of a given node entity (e.g. a publication)",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "id": {
                     "description": "Different kinds of publication subtypes will have different preferred identifiers (curies when feasible). Precedence of identifiers for scientific articles is as follows: PMID if available; DOI if not; actual alternate CURIE otherwise. Enclosing publications (i.e. referenced by 'published in' node property) such as books and journals, should have industry-standard identifier such as from ISBN and ISSN.",
                     "type": "string"
@@ -74445,6 +74495,16 @@
                         "null"
                     ]
                 },
+                "has_studies": {
+                    "description": "Studies which are components of a given node entity (e.g. a publication)",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "id": {
                     "description": "Different kinds of publication subtypes will have different preferred identifiers (curies when feasible). Precedence of identifiers for scientific articles is as follows: PMID if available; DOI if not; actual alternate CURIE otherwise. Enclosing publications (i.e. referenced by 'published in' node property) such as books and journals, should have industry-standard identifier such as from ISBN and ISSN.",
                     "type": "string"
@@ -79997,6 +80057,16 @@
                         "null"
                     ]
                 },
+                "has_studies": {
+                    "description": "Studies which are components of a given node entity (e.g. a publication)",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "id": {
                     "description": "Different kinds of publication subtypes will have different preferred identifiers (curies when feasible). Precedence of identifiers for scientific articles is as follows: PMID if available; DOI if not; actual alternate CURIE otherwise. Enclosing publications (i.e. referenced by 'published in' node property) such as books and journals, should have industry-standard identifier such as from ISBN and ISSN.",
                     "type": "string"
@@ -82278,6 +82348,16 @@
                 },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "has_studies": {
+                    "description": "Studies which are components of a given node entity (e.g. a publication)",
                     "items": {
                         "type": "string"
                     },
@@ -86706,6 +86786,16 @@
                 },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "has_studies": {
+                    "description": "Studies which are components of a given node entity (e.g. a publication)",
                     "items": {
                         "type": "string"
                     },
@@ -95050,6 +95140,16 @@
                 },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "has_studies": {
+                    "description": "Studies which are components of a given node entity (e.g. a publication)",
                     "items": {
                         "type": "string"
                     },

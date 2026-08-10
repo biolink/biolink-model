@@ -15367,6 +15367,25 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "has_studies",
+      "definition_uri": "https://w3id.org/biolink/vocab/has_studies",
+      "description": "Studies which are components of a given node entity (e.g. a publication)",
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "close_mappings": [
+        "http://purl.org/oban/has_study_id"
+      ],
+      "is_a": "node_property",
+      "domain": "NamedThing",
+      "slot_uri": "https://w3id.org/biolink/vocab/has_studies",
+      "owner": "Publication",
+      "domain_of": [
+        "Publication"
+      ],
+      "range": "Study",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "has_supporting_studies",
       "definition_uri": "https://w3id.org/biolink/vocab/has_supporting_studies",
       "description": "Studies that produced information used as evidence to generate the knowledge expressed in an Association.",
@@ -30035,6 +30054,7 @@
         "mesh_terms",
         "xref",
         "publication_publication_type",
+        "has_studies",
         "publication_id",
         "publication_name"
       ],
@@ -30082,6 +30102,7 @@
         "mesh_terms",
         "xref",
         "publication_publication_type",
+        "has_studies",
         "publication_name",
         "book_id",
         "book_type"
@@ -30127,6 +30148,7 @@
         "mesh_terms",
         "xref",
         "publication_publication_type",
+        "has_studies",
         "publication_id",
         "publication_name",
         "book_chapter_published_in",
@@ -30180,6 +30202,7 @@
         "mesh_terms",
         "xref",
         "publication_publication_type",
+        "has_studies",
         "publication_name",
         "iso_abbreviation",
         "volume",
@@ -30235,6 +30258,7 @@
         "mesh_terms",
         "xref",
         "publication_publication_type",
+        "has_studies",
         "publication_id",
         "publication_name",
         "article_published_in",
@@ -30289,6 +30313,7 @@
         "mesh_terms",
         "xref",
         "publication_publication_type",
+        "has_studies",
         "publication_id",
         "publication_name",
         "article_published_in",
@@ -30339,6 +30364,7 @@
         "mesh_terms",
         "xref",
         "publication_publication_type",
+        "has_studies",
         "publication_id",
         "publication_name"
       ],
@@ -30385,6 +30411,7 @@
         "mesh_terms",
         "xref",
         "publication_publication_type",
+        "has_studies",
         "publication_id",
         "publication_name"
       ],
@@ -30430,6 +30457,7 @@
         "mesh_terms",
         "xref",
         "publication_publication_type",
+        "has_studies",
         "publication_id",
         "publication_name"
       ],
@@ -30474,6 +30502,7 @@
         "mesh_terms",
         "xref",
         "publication_publication_type",
+        "has_studies",
         "publication_id",
         "publication_name"
       ],
@@ -46406,9 +46435,9 @@
   ],
   "metamodel_version": "1.11.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2026-08-07T03:06:22",
-  "source_file_size": 535751,
-  "generation_date": "2026-08-07T03:06:27",
+  "source_file_date": "2026-08-10T21:48:20",
+  "source_file_size": 535995,
+  "generation_date": "2026-08-10T21:48:25",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",
