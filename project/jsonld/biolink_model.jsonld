@@ -7924,8 +7924,9 @@
     {
       "name": "interacts_with",
       "definition_uri": "https://w3id.org/biolink/vocab/interacts_with",
-      "description": "holds between any two entities that directly or indirectly interact with each other",
+      "description": "holds between any two entities that directly or indirectly interact with each other in a physical or functional way.",
       "notes": [
+        "A note on 'interacts with' vs 'affects': These are related but separate relationships. An interaction may or may not involve one interactor exerting an effect on the other. It simply indicates that two entities participate in a physical or functional relationship (e.g. molecular binding, genetic interactions such as epistasis, or pharmacological interactions in which the combined behavior of two drugs differs from that of either drug alone). An 'effect' may be mediated by an interaction or may arise without any direct interaction, through a chain of intermediary events. Any effect or causal influence must be asserted using a predicate in the affects or causes hierarchy.",
         "Please use a more specific child predicate of interacts with, either physically interacts with or genetically interacts with or pharmacologically interacts with."
       ],
       "in_subset": [
@@ -8184,6 +8185,7 @@
       ],
       "description": "Describes an entity that has an effect on the state or quality of another existing entity.",
       "notes": [
+        "A note on 'affects' vs 'interacts with': These are related but separate relationships. An interaction may or may not involve one interactor exerting an effect on the other. Effects may be mediated by an interaction or may arise without any direct interaction, through a chain of intermediary events. An affects relationship asserts that one entity directly or indirectly exerts a meaningful influence on the activity, state, abundance, function, or properties of another entity. Unlike an interaction, an effect is directional: the subject changes, modulates, perturbs, regulates, or otherwise influences the object, even if no direct physical interaction occurs. Use interacts_with only when the relationship describes an interaction or association without asserting that one entity exerts an effect on the other.",
         "Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects likelihood of' and 'prevents' where the effect concerns whether or when something may or may not come into existence."
       ],
       "in_subset": [
@@ -8322,7 +8324,7 @@
       "name": "sensitivity_associated_with",
       "definition_uri": "https://w3id.org/biolink/vocab/sensitivity_associated_with",
       "from_schema": "https://w3id.org/biolink/vocab/",
-      "is_a": "associated_with",
+      "is_a": "response_associated_with",
       "domain": "ChemicalEntity",
       "slot_uri": "https://w3id.org/biolink/vocab/sensitivity_associated_with",
       "inherited": true,
@@ -8358,7 +8360,7 @@
       "name": "resistance_associated_with",
       "definition_uri": "https://w3id.org/biolink/vocab/resistance_associated_with",
       "from_schema": "https://w3id.org/biolink/vocab/",
-      "is_a": "associated_with",
+      "is_a": "response_associated_with",
       "domain": "ChemicalEntity",
       "slot_uri": "https://w3id.org/biolink/vocab/resistance_associated_with",
       "inherited": true,
@@ -46564,9 +46566,9 @@
   ],
   "metamodel_version": "1.11.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2026-08-10T22:40:22",
-  "source_file_size": 538604,
-  "generation_date": "2026-08-10T22:40:27",
+  "source_file_date": "2026-08-10T22:47:12",
+  "source_file_size": 540305,
+  "generation_date": "2026-08-10T22:47:16",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",
