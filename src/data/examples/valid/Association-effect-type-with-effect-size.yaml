@@ -1,0 +1,15 @@
+# Positive example: 'effect type' is populated alongside the numeric 'effect size'
+# it disambiguates, satisfying the class rule on `association`.
+#
+# NOTE: `category` is deliberately omitted. It is `designates_type: true` and
+# multivalued, which the JSON-Schema generator cannot express (it emits the type
+# designator's enum at the array level rather than inside items, producing a
+# constraint no array value can satisfy). It is not required here.
+id: "test:association-effect-type-with-effect-size"
+subject: NCBIGene:1401          # CRP
+predicate: biolink:associated_with
+object: MONDO:0005148           # type 2 diabetes mellitus
+knowledge_level: statistical_association
+agent_type: computational_model
+effect_type: odds_ratio
+effect_size: 1.42

@@ -1,3 +1,6 @@
+import logging
+logging.getLogger("linkml_runtime.Namespaces").setLevel(logging.CRITICAL)
+
 from linkml.generators.docgen import DocGenerator
 from pathlib import Path
 
