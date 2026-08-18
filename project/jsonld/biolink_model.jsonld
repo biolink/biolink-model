@@ -27956,6 +27956,78 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "chemical_entity_to_anatomical_entity_association_subject",
+      "definition_uri": "https://w3id.org/biolink/vocab/subject",
+      "local_names": {
+        "ga4gh": {
+          "local_name_source": "ga4gh",
+          "local_name_value": "annotation subject"
+        },
+        "neo4j": {
+          "local_name_source": "neo4j",
+          "local_name_value": "node with outgoing relationship"
+        }
+      },
+      "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "mappings": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject"
+      ],
+      "exact_mappings": [
+        "http://www.w3.org/2002/07/owl#annotatedSource",
+        "http://purl.org/oban/association_has_subject"
+      ],
+      "is_a": "subject",
+      "domain": "ChemicalEntityToAnatomicalEntityAssociation",
+      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
+      "alias": "subject",
+      "owner": "ChemicalEntityToAnatomicalEntityAssociation",
+      "domain_of": [
+        "ChemicalEntityToAnatomicalEntityAssociation"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "subject",
+      "range": "ChemicalEntity",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "chemical_entity_to_anatomical_entity_association_object",
+      "definition_uri": "https://w3id.org/biolink/vocab/object",
+      "local_names": {
+        "ga4gh": {
+          "local_name_source": "ga4gh",
+          "local_name_value": "descriptor"
+        },
+        "neo4j": {
+          "local_name_source": "neo4j",
+          "local_name_value": "node with incoming relationship"
+        }
+      },
+      "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "mappings": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#object"
+      ],
+      "exact_mappings": [
+        "http://www.w3.org/2002/07/owl#annotatedTarget",
+        "http://purl.org/oban/association_has_object"
+      ],
+      "is_a": "object",
+      "domain": "ChemicalEntityToAnatomicalEntityAssociation",
+      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
+      "alias": "object",
+      "owner": "ChemicalEntityToAnatomicalEntityAssociation",
+      "domain_of": [
+        "ChemicalEntityToAnatomicalEntityAssociation"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "object",
+      "range": "AnatomicalEntity",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "gene_or_gene_product_or_gene_family_to_anatomical_entity_association_subject",
       "definition_uri": "https://w3id.org/biolink/vocab/subject",
       "local_names": {
@@ -46111,6 +46183,78 @@
       "@type": "ClassDefinition"
     },
     {
+      "name": "ChemicalEntityToAnatomicalEntityAssociation",
+      "definition_uri": "https://w3id.org/biolink/vocab/ChemicalEntityToAnatomicalEntityAssociation",
+      "description": "An association between a chemical entity (other than 'gene or gene product or gene family', for example, a metabolite) and an anatomical entity, such as a tissue or subcellular location.",
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "is_a": "Association",
+      "slots": [
+        "id",
+        "iri",
+        "name",
+        "description",
+        "has_attribute",
+        "deprecated",
+        "predicate",
+        "negated",
+        "qualifier",
+        "qualifiers",
+        "publications",
+        "association_sources",
+        "has_evidence_of_type",
+        "has_evidence",
+        "knowledge_source",
+        "primary_knowledge_source",
+        "aggregator_knowledge_source",
+        "knowledge_level",
+        "agent_type",
+        "timepoint",
+        "original_subject",
+        "original_predicate",
+        "original_object",
+        "subject_feature_name",
+        "object_feature_name",
+        "subject_category",
+        "object_category",
+        "subject_closure",
+        "object_closure",
+        "subject_category_closure",
+        "object_category_closure",
+        "subject_namespace",
+        "object_namespace",
+        "subject_label_closure",
+        "object_label_closure",
+        "retrieval_source_ids",
+        "p_value",
+        "adjusted_p_value",
+        "statistical_significance_qualifier",
+        "effect_size",
+        "effect_type",
+        "supporting_text",
+        "association_has_supporting_studies",
+        "update_date",
+        "has_confidence_score",
+        "stringdb_combined_score",
+        "stringdb_experimental_score",
+        "stringdb_coexpression_score",
+        "elevate_to_prediction",
+        "evidence_count",
+        "semmed_agreement_count",
+        "association_basis_qualifier",
+        "association_type",
+        "association_category",
+        "chemical_entity_to_anatomical_entity_association_subject",
+        "chemical_entity_to_anatomical_entity_association_object"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/biolink/vocab/ChemicalEntityToAnatomicalEntityAssociation",
+      "defining_slots": [
+        "subject",
+        "object"
+      ],
+      "@type": "ClassDefinition"
+    },
+    {
       "name": "GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation",
       "definition_uri": "https://w3id.org/biolink/vocab/GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation",
       "description": "An association between a gene or gene product or gene family and an anatomical entity.",
@@ -46566,9 +46710,9 @@
   ],
   "metamodel_version": "1.11.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2026-08-10T23:31:14",
-  "source_file_size": 540280,
-  "generation_date": "2026-08-10T23:31:18",
+  "source_file_date": "2026-08-18T23:13:38",
+  "source_file_size": 540734,
+  "generation_date": "2026-08-18T23:13:42",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",

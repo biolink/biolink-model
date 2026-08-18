@@ -323,9 +323,10 @@ linkml:Sparqlpath xsd:string
     @<CaseToGeneAssociation> OR @<CaseToPhenotypicFeatureAssociation> OR @<CaseToVariantAssociation> OR
     @<CausalGeneToDiseaseAssociation> OR @<CellLineToDiseaseOrPhenotypicFeatureAssociation> OR
     @<ChemicalAffectsBiologicalEntityAssociation> OR @<ChemicalEntityAssessesNamedThingAssociation> OR
-    @<ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation> OR @<ChemicalEntityToBiologicalProcessAssociation> OR
-    @<ChemicalEntityToChemicalEntityAssociation> OR @<ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation> OR
-    @<ChemicalEntityToPathwayAssociation> OR @<ChemicalGeneInteractionAssociation> OR @<ChemicalGeneSensitivityAssociation> OR
+    @<ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation> OR @<ChemicalEntityToAnatomicalEntityAssociation> OR
+    @<ChemicalEntityToBiologicalProcessAssociation> OR @<ChemicalEntityToChemicalEntityAssociation> OR
+    @<ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation> OR @<ChemicalEntityToPathwayAssociation> OR
+    @<ChemicalGeneInteractionAssociation> OR @<ChemicalGeneSensitivityAssociation> OR
     @<ChemicalOrDrugOrTreatmentAdverseEventAssociation> OR @<ChemicalOrDrugOrTreatmentSideEffectAssociation> OR
     @<ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation> OR @<ContributorAssociation> OR
     @<CorrelatedGeneToDiseaseAssociation> OR @<DiseaseAssociatedWithResponseToChemicalEntityAssociation> OR
@@ -1525,6 +1526,16 @@ linkml:Sparqlpath xsd:string
 <ChemicalEntityOrProteinOrPolypeptide> {
     (  $<ChemicalEntityOrProteinOrPolypeptide_tes> rdf:type . * ;
        rdf:type [ <ChemicalEntityOrProteinOrPolypeptide> ] ?
+    )
+}
+
+<ChemicalEntityToAnatomicalEntityAssociation> CLOSED {
+    (  $<ChemicalEntityToAnatomicalEntityAssociation_tes> (  &<Association_tes> ;
+          rdf:type [ <Association> ] ? ;
+          rdf:subject @<ChemicalEntity> ;
+          rdf:object @<AnatomicalEntity>
+       ) ;
+       rdf:type [ <ChemicalEntityToAnatomicalEntityAssociation> ]
     )
 }
 

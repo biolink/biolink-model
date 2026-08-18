@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-08-10T23:31:35
+# Generation date: 2026-08-18T23:14:01
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/vocab/
@@ -1476,6 +1476,10 @@ class AnatomicalEntityPartOfAnatomicalEntityAssociationId(AnatomicalEntityToAnat
 
 
 class AnatomicalEntityToAnatomicalEntityOntogenicAssociationId(AnatomicalEntityToAnatomicalEntityAssociationId):
+    pass
+
+
+class ChemicalEntityToAnatomicalEntityAssociationId(AssociationId):
     pass
 
 
@@ -15207,6 +15211,48 @@ class AnatomicalEntityToAnatomicalEntityOntogenicAssociation(AnatomicalEntityToA
 
 
 @dataclass(repr=False)
+class ChemicalEntityToAnatomicalEntityAssociation(Association):
+    """
+    An association between a chemical entity (other than 'gene or gene product or gene family', for example, a
+    metabolite) and an anatomical entity, such as a tissue or subcellular location.
+    """
+    _inherited_slots: ClassVar[list[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK["ChemicalEntityToAnatomicalEntityAssociation"]
+    class_class_curie: ClassVar[str] = "biolink:ChemicalEntityToAnatomicalEntityAssociation"
+    class_name: ClassVar[str] = "chemical entity to anatomical entity association"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.ChemicalEntityToAnatomicalEntityAssociation
+
+    id: Union[str, ChemicalEntityToAnatomicalEntityAssociationId] = None
+    predicate: Union[str, URIorCURIE] = None
+    knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
+    agent_type: Union[str, "AgentTypeEnum"] = None
+    subject: Union[str, ChemicalEntityId] = None
+    object: Union[str, AnatomicalEntityId] = None
+
+    def __post_init__(self, *_: str, **kwargs: Any):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, ChemicalEntityToAnatomicalEntityAssociationId):
+            self.id = ChemicalEntityToAnatomicalEntityAssociationId(self.id)
+
+        if self._is_empty(self.subject):
+            self.MissingRequiredField("subject")
+        if not isinstance(self.subject, ChemicalEntityId):
+            self.subject = ChemicalEntityId(self.subject)
+
+        if self._is_empty(self.object):
+            self.MissingRequiredField("object")
+        if not isinstance(self.object, AnatomicalEntityId):
+            self.object = AnatomicalEntityId(self.object)
+
+        super().__post_init__(**kwargs)
+        if not isinstance(self.category, list):
+            self.category = [self.category] if self.category is not None else []
+        self.category = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.category]
+
+
+@dataclass(repr=False)
 class GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation(Association):
     """
     An association between a gene or gene product or gene family and an anatomical entity.
@@ -19342,6 +19388,12 @@ slots.anatomical_entity_to_anatomical_entity_ontogenic_association_object = Slot
 
 slots.anatomical_entity_to_anatomical_entity_ontogenic_association_predicate = Slot(uri=RDF.predicate, name="anatomical entity to anatomical entity ontogenic association_predicate", curie=RDF.curie('predicate'),
                    model_uri=BIOLINK.anatomical_entity_to_anatomical_entity_ontogenic_association_predicate, domain=AnatomicalEntityToAnatomicalEntityOntogenicAssociation, range=Union[str, URIorCURIE])
+
+slots.chemical_entity_to_anatomical_entity_association_subject = Slot(uri=RDF.subject, name="chemical entity to anatomical entity association_subject", curie=RDF.curie('subject'),
+                   model_uri=BIOLINK.chemical_entity_to_anatomical_entity_association_subject, domain=ChemicalEntityToAnatomicalEntityAssociation, range=Union[str, ChemicalEntityId])
+
+slots.chemical_entity_to_anatomical_entity_association_object = Slot(uri=RDF.object, name="chemical entity to anatomical entity association_object", curie=RDF.curie('object'),
+                   model_uri=BIOLINK.chemical_entity_to_anatomical_entity_association_object, domain=ChemicalEntityToAnatomicalEntityAssociation, range=Union[str, AnatomicalEntityId])
 
 slots.gene_or_gene_product_or_gene_family_to_anatomical_entity_association_subject = Slot(uri=RDF.subject, name="gene or gene product or gene family to anatomical entity association_subject", curie=RDF.curie('subject'),
                    model_uri=BIOLINK.gene_or_gene_product_or_gene_family_to_anatomical_entity_association_subject, domain=GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation, range=Union[dict, GeneOrGeneProductOrGeneFamily])
