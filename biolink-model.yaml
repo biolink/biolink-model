@@ -72,6 +72,7 @@ prefixes:
   GSID: 'https://scholar.google.com/citations?user='
   GTEx: 'https://www.gtexportal.org/home/gene/'
   GTOPDB: 'https://www.guidetopharmacology.org/GRAC/LigandDisplayForward?ligandId='
+  IUPHARobj: 'https://www.guidetopharmacology.org/GRAC/ObjectDisplayForward?objectId='
   gtpo: 'https://rdf.guidetopharmacology.org/ns/gtpo#'
   HANCESTRO: 'http://www.ebi.ac.uk/ancestro/ancestro_'
   HCPCS: 'http://purl.bioontology.org/ontology/HCPCS/'
@@ -9824,6 +9825,7 @@ classes:
       - REACT
       - CHEMBL.TARGET
       - ComplexPortal
+      - IUPHARobj
     in_subset:
       - model_organism_database
 
