@@ -10789,6 +10789,7 @@ classes:
       - evidence count
       - semmed agreement count
       - association basis qualifier
+      - species context qualifier
     slot_usage:
       type:
         description: rdf:type of biolink:Association should be fixed at rdf:Statement
@@ -10835,6 +10836,26 @@ classes:
           knowledge_level: knowledge_assertion
           agent_type: manual_agent
           publications: ["PMID:15289437"]
+      - description: >-
+          GtoPdb target 378 (5-HT3AB) is a source-defined macromolecular
+          complex. The same IUPHARobj identifier has species-specific protein
+          compositions, so each has_part assertion requires taxon context.
+        object:
+          subject: IUPHARobj:378
+          predicate: biolink:has_part
+          object: UniProtKB:P46098  # human HTR3A
+          category: biolink:Association
+          knowledge_level: knowledge_assertion
+          agent_type: manual_agent
+          species_context_qualifier: NCBITaxon:9606
+      - object:
+          subject: IUPHARobj:378
+          predicate: biolink:has_part
+          object: UniProtKB:P23979  # mouse Htr3a
+          category: biolink:Association
+          knowledge_level: knowledge_assertion
+          agent_type: manual_agent
+          species_context_qualifier: NCBITaxon:10090
       - object:
           subject: NCBIGene:4357  # MPST
           predicate: biolink:enables
