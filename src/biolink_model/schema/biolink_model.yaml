@@ -1627,10 +1627,10 @@ slots:
   animal model available from:
     description: >-
       A resource (such as a model organism database) from which an animal model representing the given
-      disease or phenotypic feature may be obtained.
+      disease or phenotypic feature may be obtained. 
     is_a: node property
     multivalued: true
-    range: disease or phenotypic feature
+    range: string
 
   FDA adverse event level:
     description: >-

@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-08-20T16:57:21
+# Generation date: 2026-08-27T00:03:07
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/vocab/
@@ -17043,7 +17043,7 @@ slots.max_tolerated_dose = Slot(uri=BIOLINK.max_tolerated_dose, name="max tolera
                    model_uri=BIOLINK.max_tolerated_dose, domain=NamedThing, range=Optional[str])
 
 slots.animal_model_available_from = Slot(uri=BIOLINK.animal_model_available_from, name="animal model available from", curie=BIOLINK.curie('animal_model_available_from'),
-                   model_uri=BIOLINK.animal_model_available_from, domain=NamedThing, range=Optional[Union[Union[str, DiseaseOrPhenotypicFeatureId], list[Union[str, DiseaseOrPhenotypicFeatureId]]]])
+                   model_uri=BIOLINK.animal_model_available_from, domain=NamedThing, range=Optional[Union[str, list[str]]])
 
 slots.FDA_adverse_event_level = Slot(uri=BIOLINK.FDA_adverse_event_level, name="FDA adverse event level", curie=BIOLINK.curie('FDA_adverse_event_level'),
                    model_uri=BIOLINK.FDA_adverse_event_level, domain=Association, range=Optional[Union[str, "FDAIDAAdverseEventEnum"]])
