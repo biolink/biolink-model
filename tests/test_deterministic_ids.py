@@ -1,8 +1,47 @@
+"""
+Tests for deterministic Association ID generation.
+
+``pydanticmodel_v2.py`` is a derived artifact that is regenerated and committed
+on master by the ``push-main-regenerate-artifacts`` workflow, so it is not part
+of this branch. These tests therefore build the datamodel from the schema with
+``BiolinkPydanticGenerator`` and import it from a temporary module, which also
+exercises the generator itself.
+"""
+import importlib.util
+import sys
+from pathlib import Path
+from tempfile import TemporaryDirectory
+
 import pytest
-from biolink_model.datamodel.pydanticmodel_v2 import (
-    Association, GeneToDiseaseAssociation,
-    AssociationIdConfig, IdStrategy,
-)
+
+REPO_ROOT = Path(__file__).resolve().parents[1]
+SCHEMA_PATH = REPO_ROOT / "src" / "biolink_model" / "schema" / "biolink_model.yaml"
+sys.path.insert(0, str(REPO_ROOT / "scripts"))
+
+
+def _generate_datamodel():
+    """Run BiolinkPydanticGenerator over the schema and import the result."""
+    from biolink_pydantic_generator import BiolinkPydanticGenerator
+
+    source = BiolinkPydanticGenerator(str(SCHEMA_PATH), metadata_mode=None).serialize()
+    with TemporaryDirectory() as tmpdir:
+        module_path = Path(tmpdir) / "pydanticmodel_v2.py"
+        module_path.write_text(source)
+        spec = importlib.util.spec_from_file_location(
+            "biolink_model_generated_v2", module_path
+        )
+        module = importlib.util.module_from_spec(spec)
+        sys.modules[spec.name] = module
+        spec.loader.exec_module(module)
+    return module
+
+
+_model = _generate_datamodel()
+
+Association = _model.Association
+GeneToDiseaseAssociation = _model.GeneToDiseaseAssociation
+AssociationIdConfig = _model.AssociationIdConfig
+IdStrategy = _model.IdStrategy
 
 
 @pytest.fixture(autouse=True)
