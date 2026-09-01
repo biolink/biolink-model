@@ -228,6 +228,18 @@ MKDOCS = $(RUN) mkdocs
 mkd-%:
 	$(MKDOCS) $*
 
+# Deploy the docs to gh-pages, mirroring the whole site under /docs/ as well.
+# The w3id vocab redirect (https://w3id.org/biolink/vocab/<Term>) targets
+# https://biolink.github.io/biolink-model/docs/<Term>, but mkdocs publishes term
+# pages at the site root. Copying the built site into a docs/ subfolder makes those
+# IRIs dereference to real pages (301 -> 200) without changing the w3id .htaccess.
+# Root URLs and the root-level artifact files (owl/jsonld/etc.) are left untouched.
+mkd-gh-deploy-docs:
+	$(MKDOCS) build -d site
+	mkdir -p site/docs
+	rsync -a --exclude 'docs/' site/ site/docs/
+	$(RUN) ghp-import -np -m "deploy docs" site
+
 PROJECT_FOLDERS = sqlschema shex shacl protobuf prefixmap owl jsonschema jsonld excel
 git-init-add: git-init git-add git-commit git-status
 git-init:
