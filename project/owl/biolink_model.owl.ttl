@@ -59,7 +59,7 @@
 @prefix gff3: <https://github.com/The-Sequence-Ontology/Specifications/blob/master/gff3.md#> .
 @prefix gpi: <https://github.com/geneontology/go-annotation/blob/master/specs/gpad-gpi-2-0.md#> .
 @prefix linkml: <https://w3id.org/linkml/> .
-@prefix orphanet: <http://www.orpha.net/ORDO/Orphanet_> .
+@prefix ORDO: <http://www.orpha.net/ORDO/> .
 @prefix os: <https://github.com/cmungall/owlstar/blob/master/owlstar.ttl> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix pav: <http://purl.org/pav/> .
@@ -1788,7 +1788,7 @@ biolink:biomarker_for a owl:ObjectProperty ;
     skos:narrowMatch <http://purl.obolibrary.org/obo/NCIT_R47>,
         <http://purl.obolibrary.org/obo/NCIT_genetic_biomarker_related_to>,
         <http://purl.obolibrary.org/obo/NCIT_is_molecular_abnormality_of_disease>,
-        orphanet:465410 ;
+        ORDO:Orphanet_465410 ;
     biolink:canonical_predicate true .
 
 biolink:capable_of a owl:ObjectProperty ;
@@ -1841,11 +1841,11 @@ biolink:causes a owl:DatatypeProperty ;
         <http://purl.obolibrary.org/obo/SNOMED_causative_agent_of>,
         <http://purl.obolibrary.org/obo/SNOMED_has_realization>,
         NBO-PROPERTY:in_response_to,
-        orphanet:317343,
-        orphanet:317344,
-        orphanet:317346,
-        orphanet:410295,
-        orphanet:410296 ;
+        ORDO:Orphanet_317343,
+        ORDO:Orphanet_317344,
+        ORDO:Orphanet_317346,
+        ORDO:Orphanet_410295,
+        ORDO:Orphanet_410296 ;
     biolink:canonical_predicate true .
 
 biolink:close_match a owl:DatatypeProperty,
@@ -8586,9 +8586,9 @@ biolink:actively_involved_in a owl:ObjectProperty ;
     skos:inScheme biolink: ;
     skos:narrowMatch RO:0002503,
         NBO-PROPERTY:by_means,
-        orphanet:317348,
-        orphanet:317349,
-        orphanet:327767 ;
+        ORDO:Orphanet_317348,
+        ORDO:Orphanet_317349,
+        ORDO:Orphanet_327767 ;
     biolink:canonical_predicate true .
 
 biolink:affiliation a owl:DatatypeProperty ;
@@ -14194,8 +14194,8 @@ biolink:has_attribute a owl:ObjectProperty ;
         HANCESTRO:0301,
         HANCESTRO:0308,
         EFO:is_executed_in,
-        orphanet:C016,
-        orphanet:C017,
+        ORDO:Orphanet_C016,
+        ORDO:Orphanet_C017,
         CPT:has_possibly_included_panel_element .
 
 biolink:has_input a owl:ObjectProperty ;
