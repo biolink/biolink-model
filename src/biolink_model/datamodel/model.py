@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-08-07T03:06:44
+# Generation date: 2026-09-02T17:32:09
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/vocab/
@@ -16554,6 +16554,9 @@ class AssociationBasisEnum(EnumDefinitionImpl):
     statistical = PermissibleValue(
         text="statistical",
         description="""An association based on statistical dependence (i.e., non-independence), derived from analysis of observational or experimental data using an appropriate statistical method.""")
+    clinical = PermissibleValue(
+        text="clinical",
+        description="""An association based on the relationship of two clinical variables, such as medical treatment, genetic predispositions or environmental conditions and a biomedical outcome. There is a slight semantic overlap between 'genetic predispositions' and the scope of the 'genetic' basis (below)  but the latter usually applies to experimentally-determined inferences of underlying biology, versus a more epidemiological nature of the former.""")
     functional = PermissibleValue(
         text="functional",
         description="""An association based on the participation of two biological entities in a common biological function, process, pathway, reaction, molecular complex, interaction, gene expression program, or other functional system. Functionally associated entities need not interact directly or contribute in the same direction to the shared function; they are related by their involvement in the same biological phenomenon.""")

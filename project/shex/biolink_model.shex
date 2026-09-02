@@ -309,6 +309,7 @@ linkml:Sparqlpath xsd:string
              <evidence_count> @<Integer> ? ;
              <semmed_agreement_count> @<Integer> ? ;
              <association_basis_qualifier> [ <https://w3id.org/biolink/vocab/AssociationBasisEnum#statistical>
+                <https://w3id.org/biolink/vocab/AssociationBasisEnum#clinical>
                 <https://w3id.org/biolink/vocab/AssociationBasisEnum#functional>
                 <https://w3id.org/biolink/vocab/AssociationBasisEnum#genetic> ] ? ;
              rdf:type @<String> * ;

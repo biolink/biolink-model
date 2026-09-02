@@ -15437,6 +15437,14 @@ enums:
           An association based on statistical dependence (i.e., non-independence),
           derived from analysis of observational or experimental data using an
           appropriate statistical method.
+      clinical:
+        description: >-
+          An association based on the relationship of two clinical variables, such
+          as medical treatment, genetic predispositions or environmental conditions
+          and a biomedical outcome. There is a slight semantic overlap between
+          'genetic predispositions' and the scope of the 'genetic' basis (below) 
+          but the latter usually applies to experimentally-determined inferences of
+          underlying biology, versus a more epidemiological nature of the former.
       functional:
         description: >-
           An association based on the participation of two biological entities in
