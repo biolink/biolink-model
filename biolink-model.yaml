@@ -6998,7 +6998,7 @@ slots:
     is_a: association slot
     description: >-
       The outcome of treating a disease or phenotypic feature with a chemical entity.
-    range: string
+    range: TreatmentOutcomeEnum
     multivalued: true
 
   max research phase:
@@ -14055,6 +14055,17 @@ enums:
       negative:
         description: >-
           A negative response to a treatment or intervention
+
+  TreatmentOutcomeEnum:
+    description: >-
+      The outcome of treating a disease or phenotypic feature with a chemical entity.
+    permissible_values:
+      fully_recovered:
+      improved:
+      unchanged:
+      deteriorated:
+      died:
+      unknown:
 
   ResponseTargetEnum:
     description: >-
