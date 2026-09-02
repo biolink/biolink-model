@@ -386,6 +386,18 @@ class ResponseEnum(str, Enum):
     """
 
 
+class TreatmentOutcomeEnum(str, Enum):
+    """
+    The outcome of treating a disease or phenotypic feature with a chemical entity.
+    """
+    fully_recovered = "fully_recovered"
+    improved = "improved"
+    unchanged = "unchanged"
+    deteriorated = "deteriorated"
+    died = "died"
+    unknown = "unknown"
+
+
 class ResponseTargetEnum(str, Enum):
     """
     The target of a treatment or intervention
@@ -9511,7 +9523,7 @@ class CellLineToDiseaseOrPhenotypicFeatureAssociation(EntityToDiseaseOrPhenotypi
     frequency_qualifier: Optional[str] = Field(default=None, description="""a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject""")
 
 
-class ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation(EntityToDiseaseOrPhenotypicFeatureAssociationMixin, ClinicalTrialAndRegulatoryApprovalContextMixin, Association):
+class ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation(EntityToDiseaseOrPhenotypicFeatureAssociationMixin, Association):
     """
     An interaction between a chemical entity and a phenotype or disease, where the presence of the chemical gives rise to or exacerbates the phenotype.
     """
@@ -9524,10 +9536,6 @@ class ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation(EntityToDiseaseOrPhe
     subject_specialization_qualifier: Optional[str] = Field(default=None, description="""A qualifier that composes with a core subject/object concept to define a more specific version of the subject concept, specifically using an ontology term that is not a subclass or descendant of the core concept and in the vast majority of cases, is of a different ontological namespace than the category or namespace of the subject identifier.""")
     object_specialization_qualifier: Optional[str] = Field(default=None, description="""A qualifier that composes with a core subject/object concept to define a more specific version of the subject concept, specifically using an ontology term that is not a subclass or descendant of the core concept and in the vast majority of cases, is of a different ontological namespace than the category or namespace of the subject identifier.""")
     anatomical_context_qualifier: Optional[list[str]] = Field(default=None, description="""A statement qualifier representing an anatomical location where an relationship expressed in an association took place (can be a tissue, cell type, or sub-cellular location).""")
-    clinical_approval_status: Optional[ClinicalApprovalStatusEnum] = Field(default=None, description="""The clinical approval status of a chemical entity for treating a specific disease or condition, as captured in the context of the association between the chemical and the disease.""")
-    max_research_phase: Optional[ResearchPhaseEnum] = Field(default=None, description="""The maximum research phase reached for a specific chemical-disease pair, indicating the highest clinical trial phase achieved for the chemical entity's investigation as a treatment for the associated disease or condition.""")
-    FDA_regulatory_approvals: Optional[list[str]] = Field(default=None, description="""Numbers that identify specific drug applications. Each drug can have multiple approval numbers (for example, as seen with ranitidine having both ANADA200536 and ANDA200536).""")
-    number_of_cases: Optional[int] = Field(default=None, description="""The number of cases in a study or clinical trial, primarily used in conversion of drug approval data.""")
     subject: str = Field(default=..., description="""connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     predicate: str = Field(default=..., description="""Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats""")
     object: str = Field(default=..., description="""the disease or phenotype that is affected by the chemical""")
@@ -9592,6 +9600,7 @@ class ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation(EntityToD
     """
     This association defines a relationship between a chemical or treatment (or procedure) and a disease or phenotypic feature where the chemical or treatment is used to treat, or is being studied to treat, the disease or phenotypic feature.
     """
+    treatment_outcome: Optional[list[TreatmentOutcomeEnum]] = Field(default=None, description="""The outcome of treating a disease or phenotypic feature with a chemical entity.""")
     subject_aspect_qualifier: Optional[GeneOrGeneProductOrChemicalEntityAspectEnum] = Field(default=None, description="""Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the subject of an association (aka: statement).""")
     subject_direction_qualifier: Optional[DirectionQualifierEnum] = Field(default=None, description="""Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement).""")
     object_aspect_qualifier: Optional[GeneOrGeneProductOrChemicalEntityAspectEnum] = Field(default=None, description="""Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the object of an association (aka: statement).""")

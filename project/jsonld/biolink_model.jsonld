@@ -1078,6 +1078,32 @@
       ]
     },
     {
+      "name": "TreatmentOutcomeEnum",
+      "definition_uri": "https://w3id.org/biolink/vocab/TreatmentOutcomeEnum",
+      "description": "The outcome of treating a disease or phenotypic feature with a chemical entity.",
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "permissible_values": [
+        {
+          "text": "fully_recovered"
+        },
+        {
+          "text": "improved"
+        },
+        {
+          "text": "unchanged"
+        },
+        {
+          "text": "deteriorated"
+        },
+        {
+          "text": "died"
+        },
+        {
+          "text": "unknown"
+        }
+      ]
+    },
+    {
       "name": "ResponseTargetEnum",
       "definition_uri": "https://w3id.org/biolink/vocab/ResponseTargetEnum",
       "description": "The target of a treatment or intervention",
@@ -15328,6 +15354,22 @@
         "ClinicalTrialAndRegulatoryApprovalContextMixin"
       ],
       "range": "ClinicalApprovalStatusEnum",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "treatment_outcome",
+      "definition_uri": "https://w3id.org/biolink/vocab/treatment_outcome",
+      "description": "The outcome of treating a disease or phenotypic feature with a chemical entity.",
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "is_a": "association_slot",
+      "domain": "Association",
+      "slot_uri": "https://w3id.org/biolink/vocab/treatment_outcome",
+      "owner": "ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation",
+      "domain_of": [
+        "ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation"
+      ],
+      "range": "TreatmentOutcomeEnum",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -39133,50 +39175,6 @@
             "agent_type": "manual_validation_of_automated_agent"
           },
           "@type": "Example"
-        },
-        {
-          "object": {
-            "subject": "PUBCHEM.COMPOUND:134612761",
-            "predicate": "biolink:diagnoses",
-            "object": "UMLS:C1720505",
-            "category": "biolink:ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation",
-            "knowledge_level": "knowledge_assertion",
-            "agent_type": "manual_validation_of_automated_agent"
-          },
-          "@type": "Example"
-        },
-        {
-          "object": {
-            "subject": "CHEBI:82720",
-            "predicate": "biolink:preventative_for_condition",
-            "object": "UMLS:C1320716",
-            "category": "biolink:ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation",
-            "knowledge_level": "knowledge_assertion",
-            "agent_type": "manual_validation_of_automated_agent"
-          },
-          "@type": "Example"
-        },
-        {
-          "object": {
-            "subject": "CHEBI:6919",
-            "predicate": "biolink:treats",
-            "object": "EFO:1001421",
-            "category": "biolink:ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation",
-            "knowledge_level": "knowledge_assertion",
-            "agent_type": "manual_validation_of_automated_agent"
-          },
-          "@type": "Example"
-        },
-        {
-          "object": {
-            "subject": "CHEBI:135361",
-            "predicate": "biolink:treats",
-            "object": "MONDO:0005324",
-            "category": "biolink:ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation",
-            "knowledge_level": "knowledge_assertion",
-            "agent_type": "manual_validation_of_automated_agent"
-          },
-          "@type": "Example"
         }
       ],
       "from_schema": "https://w3id.org/biolink/vocab/",
@@ -39185,8 +39183,7 @@
       ],
       "is_a": "Association",
       "mixins": [
-        "EntityToDiseaseOrPhenotypicFeatureAssociationMixin",
-        "ClinicalTrialAndRegulatoryApprovalContextMixin"
+        "EntityToDiseaseOrPhenotypicFeatureAssociationMixin"
       ],
       "slots": [
         "id",
@@ -39255,11 +39252,7 @@
         "disease_context_qualifier",
         "subject_specialization_qualifier",
         "object_specialization_qualifier",
-        "anatomical_context_qualifier",
-        "clinical_approval_status",
-        "max_research_phase",
-        "FDA_regulatory_approvals",
-        "number_of_cases"
+        "anatomical_context_qualifier"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation",
@@ -39273,6 +39266,41 @@
       "name": "ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation",
       "definition_uri": "https://w3id.org/biolink/vocab/ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation",
       "description": "This association defines a relationship between a chemical or treatment (or procedure) and a disease or phenotypic feature where the chemical or treatment is used to treat, or is being studied to treat, the disease or phenotypic feature.",
+      "examples": [
+        {
+          "object": {
+            "subject": "CHEBI:6919",
+            "predicate": "biolink:treats",
+            "object": "EFO:1001421",
+            "category": "biolink:ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation",
+            "knowledge_level": "knowledge_assertion",
+            "agent_type": "manual_validation_of_automated_agent"
+          },
+          "@type": "Example"
+        },
+        {
+          "object": {
+            "subject": "CHEBI:135361",
+            "predicate": "biolink:treats",
+            "object": "MONDO:0005324",
+            "category": "biolink:ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation",
+            "knowledge_level": "knowledge_assertion",
+            "agent_type": "manual_validation_of_automated_agent"
+          },
+          "@type": "Example"
+        },
+        {
+          "object": {
+            "subject": "CHEBI:82720",
+            "predicate": "biolink:preventative_for_condition",
+            "object": "UMLS:C1320716",
+            "category": "biolink:ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation",
+            "knowledge_level": "knowledge_assertion",
+            "agent_type": "manual_validation_of_automated_agent"
+          },
+          "@type": "Example"
+        }
+      ],
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "Association",
       "mixins": [
@@ -39336,6 +39364,7 @@
         "species_context_qualifier",
         "association_type",
         "association_category",
+        "treatment_outcome",
         "chemical_or_drug_or_treatment_to_disease_or_phenotypic_feature_association_predicate",
         "frequency_qualifier",
         "subject_aspect_qualifier",
@@ -46957,9 +46986,9 @@
   ],
   "metamodel_version": "1.11.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2026-09-02T19:53:21",
-  "source_file_size": 542934,
-  "generation_date": "2026-09-02T19:53:25",
+  "source_file_date": "2026-09-02T16:46:09",
+  "source_file_size": 543053,
+  "generation_date": "2026-09-02T16:46:20",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",

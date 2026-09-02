@@ -1637,8 +1637,6 @@ linkml:Sparqlpath xsd:string
           rdf:type [ <Association> ] ? ;
           &<EntityToDiseaseOrPhenotypicFeatureAssociationMixin_tes> ;
           rdf:type [ <EntityToDiseaseOrPhenotypicFeatureAssociationMixin> ] ? ;
-          &<ClinicalTrialAndRegulatoryApprovalContextMixin_tes> ;
-          rdf:type [ <ClinicalTrialAndRegulatoryApprovalContextMixin> ] ? ;
           rdf:object @<DiseaseOrPhenotypicFeature> ;
           <frequency_qualifier> @<FrequencyValue> ? ;
           <subject_aspect_qualifier> [
@@ -1769,24 +1767,7 @@ linkml:Sparqlpath xsd:string
           <disease_context_qualifier> @<Disease> ? ;
           <subject_specialization_qualifier> @<Uriorcurie> ? ;
           <object_specialization_qualifier> @<Uriorcurie> ? ;
-          <anatomical_context_qualifier> @<String> * ;
-          <clinical_approval_status> [ <https://w3id.org/biolink/vocab/ClinicalApprovalStatusEnum#approved_for_condition>
-             <https://w3id.org/biolink/vocab/ClinicalApprovalStatusEnum#fda_approved_for_condition>
-             <https://w3id.org/biolink/vocab/ClinicalApprovalStatusEnum#not_approved_for_condition>
-             <https://w3id.org/biolink/vocab/ClinicalApprovalStatusEnum#post_approval_withdrawal>
-             <https://w3id.org/biolink/vocab/ClinicalApprovalStatusEnum#off_label_use>
-             <https://w3id.org/biolink/vocab/ClinicalApprovalStatusEnum#not_provided> ] ? ;
-          <max_research_phase> [ <https://w3id.org/biolink/vocab/ResearchPhaseEnum#pre_clinical_research_phase>
-             <https://w3id.org/biolink/vocab/ResearchPhaseEnum#clinical_trial_phase>
-             <https://w3id.org/biolink/vocab/ResearchPhaseEnum#clinical_trial_phase_1>
-             <https://w3id.org/biolink/vocab/ResearchPhaseEnum#clinical_trial_phase_1_to_2>
-             <https://w3id.org/biolink/vocab/ResearchPhaseEnum#clinical_trial_phase_2>
-             <https://w3id.org/biolink/vocab/ResearchPhaseEnum#clinical_trial_phase_2_to_3>
-             <https://w3id.org/biolink/vocab/ResearchPhaseEnum#clinical_trial_phase_3>
-             <https://w3id.org/biolink/vocab/ResearchPhaseEnum#clinical_trial_phase_4>
-             <https://w3id.org/biolink/vocab/ResearchPhaseEnum#not_provided> ] ? ;
-          <FDA_regulatory_approvals> @<String> * ;
-          <number_of_cases> @<Integer> ?
+          <anatomical_context_qualifier> @<String> *
        ) ;
        rdf:type [ <ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation> ]
     )
@@ -2565,6 +2546,12 @@ linkml:Sparqlpath xsd:string
           rdf:type [ <EntityToDiseaseOrPhenotypicFeatureAssociationMixin> ] ? ;
           &<ClinicalTrialAndRegulatoryApprovalContextMixin_tes> ;
           rdf:type [ <ClinicalTrialAndRegulatoryApprovalContextMixin> ] ? ;
+          <treatment_outcome> [ <https://w3id.org/biolink/vocab/TreatmentOutcomeEnum#fully_recovered>
+             <https://w3id.org/biolink/vocab/TreatmentOutcomeEnum#improved>
+             <https://w3id.org/biolink/vocab/TreatmentOutcomeEnum#unchanged>
+             <https://w3id.org/biolink/vocab/TreatmentOutcomeEnum#deteriorated>
+             <https://w3id.org/biolink/vocab/TreatmentOutcomeEnum#died>
+             <https://w3id.org/biolink/vocab/TreatmentOutcomeEnum#unknown> ] * ;
           rdf:predicate [ <ameliorates_condition> <applied_to_treat> <beneficial_in_models_for> <in_clinical_trials_for>
              <in_preclinical_trials_for> <preventative_for_condition> <studied_to_treat> <treats>
              <treats_or_applied_or_studied_to_treat> ] ;
