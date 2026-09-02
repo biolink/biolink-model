@@ -242,6 +242,10 @@
       },
       "INTACT": "http://identifiers.org/intact/",
       "IUPHAR.FAMILY": "http://identifiers.org/iuphar.family/",
+      "IUPHARobj": {
+         "@id": "https://www.guidetopharmacology.org/GRAC/ObjectDisplayForward?objectId=",
+         "@prefix": true
+      },
       "KEGG": "http://www.kegg.jp/entry/",
       "KEGG.BRITE": "https://bioregistry.io/kegg.brite:",
       "KEGG.COMPOUND": "http://identifiers.org/kegg.compound/",
@@ -335,6 +339,7 @@
          "@prefix": true
       },
       "ORCID": "https://orcid.org/",
+      "ORDO": "http://www.orpha.net/ORDO/",
       "PANTHER.FAMILY": {
          "@id": "http://www.pantherdb.org/panther/family.do?clsAccession=",
          "@prefix": true
@@ -563,10 +568,6 @@
       },
       "ncats.drug": "https://drugs.ncats.io/drug/",
       "oboInOwl": "http://www.geneontology.org/formats/oboInOwl#",
-      "orphanet": {
-         "@id": "http://www.orpha.net/ORDO/Orphanet_",
-         "@prefix": true
-      },
       "os": {
          "@id": "https://github.com/cmungall/owlstar/blob/master/owlstar.ttl",
          "@prefix": true
@@ -686,7 +687,6 @@
          "@id": "anatomical_context_qualifier"
       },
       "animal_model_available_from": {
-         "@type": "@id",
          "@id": "animal_model_available_from"
       },
       "applied_to_treat": {
@@ -1670,6 +1670,10 @@
       "has_stressor": {
          "@id": "has_stressor"
       },
+      "has_studies": {
+         "@type": "@id",
+         "@id": "has_studies"
+      },
       "has_study_results": {
          "@type": "@id",
          "@id": "has_study_results"
@@ -2599,6 +2603,30 @@
          "@type": "@id",
          "@id": "studied_to_treat"
       },
+      "study_cohort": {
+         "@id": "study_cohort"
+      },
+      "study_context": {
+         "@id": "study_context"
+      },
+      "study_date_range": {
+         "@id": "study_date_range"
+      },
+      "study_metadata": {
+         "@id": "study_metadata"
+      },
+      "study_method_description": {
+         "@type": "xsd:anyURI",
+         "@id": "study_method_description"
+      },
+      "study_method_types": {
+         "@type": "xsd:anyURI",
+         "@id": "study_method_types"
+      },
+      "study_size": {
+         "@type": "xsd:integer",
+         "@id": "study_size"
+      },
       "subclass_of": {
          "@type": "@id",
          "@id": "subclass_of"
@@ -3033,6 +3061,9 @@
       "ChemicalEntityOrProteinOrPolypeptide": {
          "@id": "ChemicalEntityOrProteinOrPolypeptide"
       },
+      "ChemicalEntityToAnatomicalEntityAssociation": {
+         "@id": "ChemicalEntityToAnatomicalEntityAssociation"
+      },
       "ChemicalEntityToBiologicalProcessAssociation": {
          "@id": "ChemicalEntityToBiologicalProcessAssociation"
       },
@@ -3127,6 +3158,9 @@
       },
       "ClinicalTrial": {
          "@id": "ClinicalTrial"
+      },
+      "ClinicalTrialAndRegulatoryApprovalContextMixin": {
+         "@id": "ClinicalTrialAndRegulatoryApprovalContextMixin"
       },
       "CodingSequence": {
          "@id": "CodingSequence"

@@ -6,7 +6,7 @@ license: https://creativecommons.org/publicdomain/zero/1.0/
 
 # Version should be kept in sync with primary Git repository release tag
 
-version: 4.4.3
+version: 4.4.4
 
 ## ------------
 ##
@@ -72,6 +72,7 @@ prefixes:
   GSID: 'https://scholar.google.com/citations?user='
   GTEx: 'https://www.gtexportal.org/home/gene/'
   GTOPDB: 'https://www.guidetopharmacology.org/GRAC/LigandDisplayForward?ligandId='
+  IUPHARobj: 'https://www.guidetopharmacology.org/GRAC/ObjectDisplayForward?objectId='
   gtpo: 'https://rdf.guidetopharmacology.org/ns/gtpo#'
   HANCESTRO: 'http://www.ebi.ac.uk/ancestro/ancestro_'
   HCPCS: 'http://purl.bioontology.org/ontology/HCPCS/'
@@ -112,7 +113,7 @@ prefixes:
   OBAN: 'http://purl.org/oban/'
   OMIM.PS: 'https://www.omim.org/phenotypicSeries/'
   ORCID: 'https://orcid.org/'
-  orphanet: 'http://www.orpha.net/ORDO/Orphanet_'
+  ORDO: 'http://www.orpha.net/ORDO/'
   os: 'https://github.com/cmungall/owlstar/blob/master/owlstar.ttl'
   PANTHER.FAMILY: 'http://www.pantherdb.org/panther/family.do?clsAccession='
   PathWhiz: 'http://smpdb.ca/pathways/#'   #  See also https://smpdb.ca/pathwhiz/
@@ -384,8 +385,8 @@ slots:
       - NCIT:role_has_range
       - INO:0000154
       - HANCESTRO:0308
-      - orphanet:C016
-      - orphanet:C017
+      - ORDO:Orphanet_C016
+      - ORDO:Orphanet_C017
       - RO:0000053
        # RTX tagged a few RO terms as 'biolink:related_to' but semantics suggest a better mapping here
       - RO:0000086
@@ -1627,10 +1628,10 @@ slots:
   animal model available from:
     description: >-
       A resource (such as a model organism database) from which an animal model representing the given
-      disease or phenotypic feature may be obtained.
+      disease or phenotypic feature may be obtained. 
     is_a: node property
     multivalued: true
-    range: disease or phenotypic feature
+    range: string
 
   FDA adverse event level:
     description: >-
@@ -2157,10 +2158,10 @@ slots:
       A statement-level qualifier used with the 'associated with' predicate (or one of its subpredicates)
       to indicate the biological, clinical, or statistical basis of the asserted association. Use this qualifier
       when no more specific predicate exists to capture the intended meaning of the association.
-    range: AssociationBasisEnum      
+    range: AssociationBasisEnum
     in_subset:
       - translator_minimal
-      
+
   statistical significance qualifier:
     is_a: statement qualifier
     description: >-
@@ -2441,7 +2442,7 @@ slots:
 
   associated with:
     is_a: related to at instance level
-    description: >- 
+    description: >-
       Indicates a non-causal association between two entities. Such associations are most commonly established
       through statistical analysis demonstrating that observations of the entities are not statistically independent,
       but may also be supported by other forms of evidence that establish a meaningful association. When representing
@@ -2760,7 +2761,7 @@ slots:
       Holds between a gene or gene product and a biological process such that the molecular function
       of the gene product, by way of a chain of causally linked events, is upstream of and
       contributes to the execution of the process.
-    is_a: related to at instance level
+    is_a: acts upstream of or within
     domain: gene or gene product
     range: biological process
     annotations:
@@ -2769,7 +2770,7 @@ slots:
       - RO:0002263
 
   has upstream actor:
-    is_a: related to at instance level
+    is_a: has upstream or within actor
     inverse: acts upstream of
     domain: biological process
     range: gene or gene product
@@ -2817,7 +2818,7 @@ slots:
       Holds between a gene or gene product and a biological process when the gene product either
       acts upstream of the process or participates in it; used when the more specific causal
       relationship is not known. Corresponds to RO:0002264.
-    is_a: acts upstream of
+    is_a: related to at instance level
     domain: gene or gene product
     range: biological process
     annotations:
@@ -2826,7 +2827,7 @@ slots:
       - RO:0002264
 
   has upstream or within actor:
-    is_a: has upstream actor
+    is_a: related to at instance level
     inverse: acts upstream of or within
     domain: biological process
     range: gene or gene product
@@ -3004,7 +3005,8 @@ slots:
     domain: named thing
     range: named thing
     description: >-
-      holds between any two entities that directly or indirectly interact with each other
+      holds between any two entities that directly or indirectly interact with each other in a physical or
+      functional way.
     is_a: related to at instance level
     in_subset:
       - translator_minimal
@@ -3013,6 +3015,14 @@ slots:
     exact_mappings:
       - SEMMEDDB:INTERACTS_WITH
     notes:
+      - >-
+        A note on 'interacts with' vs 'affects': These are related but separate relationships. An interaction
+        may or may not involve one interactor exerting an effect on the other. It simply indicates that two
+        entities participate in a physical or functional relationship (e.g. molecular binding, genetic interactions
+        such as epistasis, or pharmacological interactions in which the combined behavior of two drugs differs from
+        that of either drug alone). An 'effect' may be mediated by an interaction or may arise without any direct
+        interaction, through a chain of intermediary events. Any effect or causal influence must be asserted using a
+        predicate in the affects or causes hierarchy.
       - >-
         Please use a more specific child predicate of interacts with, either physically interacts with
         or genetically interacts with or pharmacologically interacts with.
@@ -3146,6 +3156,16 @@ slots:
       Describes an entity that has an effect on the state or quality of another existing entity.
     notes:
       - >-
+        A note on 'affects' vs 'interacts with': These are related but separate relationships.
+        An interaction may or may not involve one interactor exerting an effect on the other.
+        Effects may be mediated by an interaction or may arise without any direct interaction,
+        through a chain of intermediary events. An affects relationship asserts that one entity
+        directly or indirectly exerts a meaningful influence on the activity, state, abundance,
+        function, or properties of another entity. Unlike an interaction, an effect is directional:
+        the subject changes, modulates, perturbs, regulates, or otherwise influences the object, even
+        if no direct physical interaction occurs. Use interacts_with only when the relationship describes
+        an interaction or association without asserting that one entity exerts an effect on the other.
+      - >-
         Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as
         'affects likelihood of' and 'prevents' where the effect concerns whether or when something may or
         may not come into existence.
@@ -3229,7 +3249,7 @@ slots:
       - SNOMEDCT:418038007  # propensity to adverse reaction
 
   sensitivity associated with:
-    is_a: associated with
+    is_a: response associated with
     inverse: associated with sensitivity to
     range: named thing
     domain: chemical entity
@@ -3246,7 +3266,7 @@ slots:
       canonical_predicate: true
 
   resistance associated with:
-    is_a: associated with
+    is_a: response associated with
     inverse: associated with resistance to
     range: named thing
     domain: chemical entity
@@ -3954,11 +3974,11 @@ slots:
       - NCIT:chromosome_mapped_to_disease
       - NCIT:disease_has_normal_tissue_origin
       - NBO-PROPERTY:in_response_to
-      - orphanet:317343
-      - orphanet:317344
-      - orphanet:317346
-      - orphanet:410295
-      - orphanet:410296
+      - ORDO:Orphanet_317343
+      - ORDO:Orphanet_317344
+      - ORDO:Orphanet_317346
+      - ORDO:Orphanet_410295
+      - ORDO:Orphanet_410296
        # RTX mapped this term to 'biolink:related_to' but this term seems a more precise mapping
       - RO:0002256
       - RO:0002315
@@ -4486,7 +4506,7 @@ slots:
        # RTX term was tagged as 'biolink:actively_involved_in' but maps better here?
       - NCIT:genetic_biomarker_related_to
       - NCIT:is_molecular_abnormality_of_disease
-      - orphanet:465410
+      - ORDO:Orphanet_465410
 
    # It may be helpful to introduce an intermediate predicate in between 'related_to' and 'expressed in'
    # which would have a domain of 'biological entity' and range of 'anatomical entity', to map predicates
@@ -5114,9 +5134,9 @@ slots:
       - RO:0002331
     narrow_mappings:
       - NBO-PROPERTY:by_means
-      - orphanet:317348
-      - orphanet:317349
-      - orphanet:327767
+      - ORDO:Orphanet_317348
+      - ORDO:Orphanet_317349
+      - ORDO:Orphanet_327767
       - RO:0002503
 
   actively involves:
@@ -6795,9 +6815,9 @@ slots:
 
   pXC50:
     description: >-
-      In the context of molecular interactions and drug discovery, pXC50 is a generic, 
+      In the context of molecular interactions and drug discovery, pXC50 is a generic,
       base 10 negative logarithmic measure of compound potency that unifies different types of
-      half‑maximal concentration values into a single notation, where XC50 means 
+      half‑maximal concentration values into a single notation, where XC50 means
       “the concentration at which 50% of the maximal effect is observed”, and X is a placeholder
       for the type of effect being measured (e.g., inhibition or activation). The X in pXC50 is
       intentionally generic and can represent different assay endpoints.
@@ -6987,6 +7007,15 @@ slots:
     description: >-
       The number of cases in a study or clinical trial, primarily used in conversion of drug approval data.
 
+  has studies:
+    is_a: node property
+    range: study
+    description: >-
+      Studies which are components of a given node entity (e.g. a publication)
+    multivalued: true
+    close_mappings:
+      - OBAN:has_study_id
+
   has supporting studies:
     is_a: association slot
     range: study
@@ -6997,20 +7026,73 @@ slots:
     close_mappings:
       - OBAN:has_study_id
 
+  study metadata:
+    is_a: node property
+    description: >-
+      Information describing how a study was designed and carried out. In practice, data creators should use one of
+      the more specific subtypes of this property.
+    comments:
+      - This is an abstract slot that groups a set of concrete slots that describe a Study itself. Because each of
+        these properties describes a single study, they are node properties of the Study class rather than
+        association slots. An Association links to the studies that supported it via 'has supporting studies', and
+        the metadata for each of those studies is read off the Study node.
+    abstract: true
+
+  study method types:
+    is_a: study metadata
+    description: >-
+      Type(s) of methods that were applied in a study (e.g. a type of experimental assay, or statistical calculation,
+      or computational analysis).
+    range: uriorcurie
+    multivalued: true
+
+  study method description:
+    is_a: study metadata
+    description: >-
+      A uri or curie pointing to information about the methodology used to generate the data produced by a study.
+    range: uriorcurie
+
+  study size:
+    is_a: study metadata
+    description: >-
+      The sample size used in a study (e.g. 'n' of a cohort for a clinical study).
+    range: integer
+
+  study cohort:
+    is_a: study metadata
+    description: >-
+      A description of the study population/cohort that was interrogated by a study.
+    range: string
+
+  study date range:
+    is_a: study metadata
+    description: >-
+      The date range over which data was collected in a study.
+    range: string
+
+  study context:
+    is_a: study metadata
+    description: >-
+      A term or terms describing the experimental setting/context in which a study was carried out ('context' may be
+      defined by many factors, including taxon, model system, tissue type, disease, etc.).
+    range: string
+
+   ## Deprecated 'supporting study *' association slots. Each of these describes a single study, but an Association
+   ## may cite several studies via the multivalued 'has supporting studies' slot, leaving no way to say which value
+   ## belongs to which study. They have been replaced by the 'study metadata' node properties above, which hang off
+   ## the Study node itself. None of these slots were ever listed under a class, so none were usable as attributes.
   supporting study metadata:
+    deprecated: "true"
+    deprecated_element_has_exact_replacement: biolink:study_metadata
     is_a: association slot
     description: >-
       Information about a study used to generate information used as evidence to support the knowledge expressed in an
       Association. In practice, data creators should use one of the more specific subtypes of this property.
-    comments:
-      - This is an abstract slot that groups a set of concrete slots used to directly attach to an association information
-        about a study that produced evidence used to generate the knowledge expressed in the edge.
-      - Note that these concrete 'supporting study metadata' slots are used only when a more normalized model that leverages
-        the 'supporting studdies' slot and 'Study' class to link to and describe the Study itself are not possible or preferred,
-        such that this study metadata must be captured directly on the edge.
     abstract: true
 
   supporting study method types:
+    deprecated: "true"
+    deprecated_element_has_exact_replacement: biolink:study_method_types
     is_a: supporting study metadata
     description: >-
       Type(s) of methods that were applied in a study used to generate the information used as evidence (e.g. a type of
@@ -7019,12 +7101,16 @@ slots:
     multivalued: true
 
   supporting study method description:
+    deprecated: "true"
+    deprecated_element_has_exact_replacement: biolink:study_method_description
     is_a: supporting study metadata
     description: >-
       A uri or curie pointing to information about the methodology used to generate data supporting an Association.
     range: uriorcurie
 
   supporting study size:
+    deprecated: "true"
+    deprecated_element_has_exact_replacement: biolink:study_size
     is_a: supporting study metadata
     description: >-
       The sample size used in a study that provided evidence for the association (e.g. 'n' of a cohort for a
@@ -7032,18 +7118,24 @@ slots:
     range: integer
 
   supporting study cohort:
+    deprecated: "true"
+    deprecated_element_has_exact_replacement: biolink:study_cohort
     is_a: supporting study metadata
     description: >-
       A description of a study population/cohort that was interrogated to provide evidence for the association.
     range: string
 
   supporting study date range:
+    deprecated: "true"
+    deprecated_element_has_exact_replacement: biolink:study_date_range
     is_a: supporting study metadata
     description: >-
       The date range over which data was collected in a study that provided evidence for an Association.
     range: string
 
   supporting study context:
+    deprecated: "true"
+    deprecated_element_has_exact_replacement: biolink:study_context
     is_a: supporting study metadata
     description: >-
       A term or terms describing the experimental setting/context in which evidence supporting the Association was
@@ -7211,7 +7303,7 @@ classes:
       a biolink compatible KG can be considered both instances of biolink classes, and
       OWL classes in their own right. In general you should not need to use this class directly.
       Instead, use the appropriate biolink class. For example, for the GO concept of endocytosis (GO:0006897),
-      use bl:BiologicalProcess as the type.
+      use biolink:BiologicalProcess as the type.
     exact_mappings:
       - owl:Class
       - schema:Class
@@ -7615,6 +7707,12 @@ classes:
     description: a detailed investigation and/or analysis
     slots:
       - has study results
+      - study method types
+      - study method description
+      - study size
+      - study cohort
+      - study date range
+      - study context
     exact_mappings:
       - NCIT:C63536
     close_mappings:
@@ -7831,6 +7929,7 @@ classes:
       - mesh terms
       - xref
       - publication type
+      - has studies
      # In addition to embedded slots, instances of 'contributor association'
      # may be used to more extensively document publisher, editor and author details
     slot_usage:
@@ -9320,7 +9419,7 @@ classes:
       - DOID
       - OMIM
       - OMIM.PS
-      - orphanet
+      - ORDO
       - EFO
       - UMLS
       - MESH
@@ -9726,6 +9825,7 @@ classes:
       - REACT
       - CHEMBL.TARGET
       - ComplexPortal
+      - IUPHARobj
     in_subset:
       - model_organism_database
 
@@ -10689,6 +10789,7 @@ classes:
       - evidence count
       - semmed agreement count
       - association basis qualifier
+      - species context qualifier
     slot_usage:
       type:
         description: rdf:type of biolink:Association should be fixed at rdf:Statement
@@ -10735,6 +10836,26 @@ classes:
           knowledge_level: knowledge_assertion
           agent_type: manual_agent
           publications: ["PMID:15289437"]
+      - description: >-
+          GtoPdb target 378 (5-HT3AB) is a source-defined macromolecular
+          complex. The same IUPHARobj identifier has species-specific protein
+          compositions, so each has_part assertion requires taxon context.
+        object:
+          subject: IUPHARobj:378
+          predicate: biolink:has_part
+          object: UniProtKB:P46098  # human HTR3A
+          category: biolink:Association
+          knowledge_level: knowledge_assertion
+          agent_type: manual_agent
+          species_context_qualifier: NCBITaxon:9606
+      - object:
+          subject: IUPHARobj:378
+          predicate: biolink:has_part
+          object: UniProtKB:P23979  # mouse Htr3a
+          category: biolink:Association
+          knowledge_level: knowledge_assertion
+          agent_type: manual_agent
+          species_context_qualifier: NCBITaxon:10090
       - object:
           subject: NCBIGene:4357  # MPST
           predicate: biolink:enables
@@ -11341,9 +11462,7 @@ classes:
       - object
     mixins:
       - entity to disease or phenotypic feature association mixin
-    slots:
-      - clinical approval status
-      - max research phase
+      - clinical trial and regulatory approval context mixin
     slot_usage:
       object:
         range: disease or phenotypic feature
@@ -11403,7 +11522,7 @@ classes:
       - object
     mixins:
       - entity to disease or phenotypic feature association mixin
-      - entity to feature or disease qualifiers mixin
+      - clinical trial and regulatory approval context mixin
     slot_usage:
       predicate:
         subproperty_of: treats or applied or studied to treat
@@ -11420,7 +11539,6 @@ classes:
       - object
     mixins:
       - entity to disease or phenotypic feature association mixin
-      - entity to feature or disease qualifiers mixin
     slots:
       - FDA adverse event level
     slot_usage:
@@ -11438,7 +11556,6 @@ classes:
       - object
     mixins:
       - entity to disease or phenotypic feature association mixin
-      - entity to feature or disease qualifiers mixin
     slot_usage:
       predicate:
         subproperty_of: has side effect
@@ -12098,7 +12215,7 @@ classes:
       subject:
         range: disease
         description: "disease class"
-        values_from: ['mondo', 'omim', 'orphanet', 'ncit', 'doid']
+        values_from: ['mondo', 'omim', 'ORDO', 'ncit', 'doid']
         examples:
           - value: MONDO:0017314
             description: "Ehlers-Danlos syndrome, vascular type"
@@ -12168,16 +12285,28 @@ classes:
 
   entity to feature or disease qualifiers mixin:
     description: >-
-      Qualifiers for entity to disease or phenotype associations.
+      DEPRECATED. An accidental duplicate of 'entity to disease or phenotypic
+      feature association mixin' - "feature" here was shorthand for "phenotypic
+      feature", so the two classes named the same scope while carrying disjoint
+      slots. Use 'entity to disease or phenotypic feature association mixin'
+      instead; this class now inherits from it and adds nothing.
+    deprecated: "true"
+
+  clinical trial and regulatory approval context mixin:
+    description: >-
+      A mixin providing the clinical trial and regulatory approval context of an
+      association between an entity (typically a chemical, drug, or treatment) and
+      the disease or phenotypic feature it is used, or is being studied, to treat.
+      These slots are association-scoped: they describe the entity's status with
+      respect to this particular indication. For the entity's overall regulatory
+      status independent of any one indication, see the node properties
+      'highest FDA approval status' and 'drug regulatory status world wide'.
     mixin: true
-    is_a: frequency qualifier mixin
     slots:
-      - subject aspect qualifier
-      - subject direction qualifier
-      - object aspect qualifier
-      - object direction qualifier
-      - qualified predicate
-      - disease context qualifier
+      - clinical approval status
+      - max research phase
+      - FDA regulatory approvals
+      - number of cases
 
   entity to feature or variant qualifiers mixin:
     description: >-
@@ -12220,13 +12349,10 @@ classes:
       A mixin applied to any association whose object (target node)
       is a phenotypic feature.
     mixin: true
-    is_a: entity to feature or disease qualifiers mixin
+    is_a: entity to disease or phenotypic feature association mixin
     mixins:
       - frequency quantifier
     slots:
-      - subject
-      - predicate
-      - object
       - sex qualifier
     defining_slots:
       - subject
@@ -12309,7 +12435,7 @@ classes:
     description: >-
       mixin class for any association whose object (target node) is a disease
     mixin: true
-    is_a: entity to feature or disease qualifiers mixin
+    is_a: entity to disease or phenotypic feature association mixin
     defining_slots:
       - object
     slot_usage:
@@ -12373,11 +12499,19 @@ classes:
             description: "X-linked inheritance"
 
   entity to disease or phenotypic feature association mixin:
+    description: >-
+      A mixin applied to any association whose object (target node) is a disease
+      or a phenotypic feature. Provides the shared qualifier vocabulary for such
+      statements; subtypes narrow the object range to a disease or to a
+      phenotypic feature specifically.
     mixin: true
+    is_a: frequency qualifier mixin
     slots:
-      - subject
-      - predicate
-      - object
+      - subject aspect qualifier
+      - subject direction qualifier
+      - object aspect qualifier
+      - object direction qualifier
+      - qualified predicate
       - disease context qualifier
       - subject specialization qualifier
       - object specialization qualifier
@@ -12687,6 +12821,7 @@ classes:
       - object
     mixins:
       - gene to entity association mixin
+      - entity to disease association mixin
     slots:
       - subject form or variant qualifier
       - subject aspect qualifier
@@ -13461,11 +13596,9 @@ classes:
       FDA regulatory approvals, and number of cases.
     is_a: association
     exact_mappings:
-    slots:
-      - clinical approval status
-      - max research phase
-      - FDA regulatory approvals
-      - number of cases
+    mixins:
+      - entity to disease association mixin
+      - clinical trial and regulatory approval context mixin
     defining_slots:
       - subject
       - object
@@ -13492,6 +13625,13 @@ classes:
           knowledge_level: observation
           agent_type: manual_validation_of_automated_agent
       - object:
+          subject: CHEBI:78538  # tafamidis
+          predicate: biolink:applied_to_treat
+          object: MONDO:0005294  # peripheral vascular disease
+          category: biolink:EntityToDiseaseAssociation
+          knowledge_level: observation
+          agent_type: manual_validation_of_automated_agent
+      - object:
           subject: RXCUI:1367436  # 21 DAY ethinyl estradiol 0.000625 MG/HR / etonogestrel 0.005 MG/HR Vaginal System
           predicate: biolink:contraindicated_in
           object: MONDO:0004981  # atrial fibrillation
@@ -13507,11 +13647,9 @@ classes:
       FDA regulatory approvals, and number of cases.
     is_a: association
     exact_mappings:
-    slots:
-      - clinical approval status
-      - max research phase
-      - FDA regulatory approvals
-      - number of cases
+    mixins:
+      - entity to phenotypic feature association mixin
+      - clinical trial and regulatory approval context mixin
     defining_slots:
       - subject
       - object
@@ -13530,13 +13668,6 @@ classes:
           category: biolink:EntityToPhenotypicFeatureAssociation
           knowledge_level: knowledge_assertion
           agent_type: manual_agent
-      - object:
-          subject: CHEBI:78538  # tafamidis
-          predicate: biolink:applied_to_treat
-          object: MONDO:0005294  # peripheral vascular disease
-          category: biolink:EntityToPhenotypicFeatureAssociation
-          knowledge_level: observation
-          agent_type: manual_validation_of_automated_agent
       - object:
           subject: RXCUI:617430  # amoxicillin 80 MG/ML / clavulanate 11.4 MG/ML Oral Suspension
           predicate: biolink:contraindicated_in
@@ -13748,6 +13879,20 @@ classes:
           the structure at an earlier time
       predicate:
         subproperty_of: develops from
+
+  chemical entity to anatomical entity association:
+    is_a: association
+    description: >-
+      An association between a chemical entity (other than 'gene or gene product or gene family',
+      for example, a metabolite) and an anatomical entity, such as a tissue or subcellular location.
+    defining_slots:
+      - subject
+      - object
+    slot_usage:
+      subject:
+        range: chemical entity
+      object:
+        range: anatomical entity
 
   gene or gene product or gene family to anatomical entity association:
     is_a: association
@@ -15465,4 +15610,4 @@ enums:
           phenome-wide association studies (PheWAS), and quantitative trait locus
           (QTL) mapping (e.g., eQTL and pQTL analyses).
     in_subset:
-      - translator_minimal          
+      - translator_minimal
