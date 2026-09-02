@@ -47,3 +47,4 @@ def test_active_in_is_a_located_in(load_biolink_model):
     model = SchemaView(load_biolink_model)
 
     assert model.get_slot("active in").is_a == "located in"
+    assert model.get_slot("has active component").is_a == "location of"
