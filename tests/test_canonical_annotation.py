@@ -40,3 +40,10 @@ def test_protein_accepts_ncit_prefix(load_biolink_model):
     protein = model.get_class("protein")
     assert protein is not None
     assert "NCIT" in protein.id_prefixes
+
+
+def test_active_in_is_a_located_in(load_biolink_model):
+    """Ensure active in is modeled as a specialization of located in."""
+    model = SchemaView(load_biolink_model)
+
+    assert model.get_slot("active in").is_a == "located in"
