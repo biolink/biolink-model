@@ -2739,10 +2739,10 @@ slots:
     range: gene
 
   active in:
+    is_a: located in
     description: >-
       Holds between a gene or gene product and a cellular component in which it carries out its
       molecular function.
-    is_a: related to at instance level
     domain: gene or gene product
     range: cellular component
     annotations:
@@ -2751,7 +2751,7 @@ slots:
       - RO:0002432
 
   has active component:
-    is_a: related to at instance level
+    is_a: location of
     inverse: active in
     domain: cellular component
     range: gene or gene product
