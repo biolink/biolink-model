@@ -2761,7 +2761,7 @@ slots:
       Holds between a gene or gene product and a biological process such that the molecular function
       of the gene product, by way of a chain of causally linked events, is upstream of and
       contributes to the execution of the process.
-    is_a: related to at instance level
+    is_a: acts upstream of or within
     domain: gene or gene product
     range: biological process
     annotations:
@@ -2770,7 +2770,7 @@ slots:
       - RO:0002263
 
   has upstream actor:
-    is_a: related to at instance level
+    is_a: has upstream or within actor
     inverse: acts upstream of
     domain: biological process
     range: gene or gene product
@@ -2818,7 +2818,7 @@ slots:
       Holds between a gene or gene product and a biological process when the gene product either
       acts upstream of the process or participates in it; used when the more specific causal
       relationship is not known. Corresponds to RO:0002264.
-    is_a: acts upstream of
+    is_a: related to at instance level
     domain: gene or gene product
     range: biological process
     annotations:
@@ -2827,7 +2827,7 @@ slots:
       - RO:0002264
 
   has upstream or within actor:
-    is_a: has upstream actor
+    is_a: related to at instance level
     inverse: acts upstream of or within
     domain: biological process
     range: gene or gene product
