@@ -7415,7 +7415,7 @@
       "exact_mappings": [
         "http://purl.obolibrary.org/obo/RO_0002432"
       ],
-      "is_a": "related_to_at_instance_level",
+      "is_a": "located_in",
       "domain": "GeneOrGeneProduct",
       "slot_uri": "https://w3id.org/biolink/vocab/active_in",
       "inherited": true,
@@ -7429,7 +7429,7 @@
       "name": "has_active_component",
       "definition_uri": "https://w3id.org/biolink/vocab/has_active_component",
       "from_schema": "https://w3id.org/biolink/vocab/",
-      "is_a": "related_to_at_instance_level",
+      "is_a": "location_of",
       "domain": "CellularComponent",
       "slot_uri": "https://w3id.org/biolink/vocab/has_active_component",
       "inherited": true,
@@ -46961,9 +46961,9 @@
   ],
   "metamodel_version": "1.11.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2026-09-02T19:46:39",
-  "source_file_size": 543503,
-  "generation_date": "2026-09-02T19:46:47",
+  "source_file_date": "2026-09-02T19:55:30",
+  "source_file_size": 543468,
+  "generation_date": "2026-09-02T19:55:39",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",
