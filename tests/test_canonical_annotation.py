@@ -40,3 +40,16 @@ def test_protein_accepts_ncit_prefix(load_biolink_model):
     protein = model.get_class("protein")
     assert protein is not None
     assert "NCIT" in protein.id_prefixes
+
+
+def test_macromolecular_complex_accepts_iuphar_target_prefix(load_biolink_model):
+    """Ensure GtoPdb target identifiers are valid for macromolecular complexes."""
+    model = SchemaView(load_biolink_model)
+    complex_class = model.get_class("macromolecular complex")
+
+    assert complex_class is not None
+    assert "IUPHARobj" in complex_class.id_prefixes
+    assert (
+        model.schema.prefixes["IUPHARobj"].prefix_reference
+        == "https://www.guidetopharmacology.org/GRAC/ObjectDisplayForward?objectId="
+    )
