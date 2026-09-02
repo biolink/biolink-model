@@ -6993,6 +6993,13 @@ slots:
       as captured in the context of the association between the chemical and the disease.
     range: ClinicalApprovalStatusEnum
 
+  treatment outcome:
+    is_a: association slot
+    description: >-
+      The outcome of treating a disease or phenotypic feature with a chemical entity.
+    range: string
+    multivalued: true
+
   max research phase:
     is_a: association slot
     description: >-
@@ -11441,6 +11448,7 @@ classes:
       - entity to disease or phenotypic feature association mixin
     slots:
       - clinical approval status
+      - treatment outcome
       - max research phase
     slot_usage:
       object:
