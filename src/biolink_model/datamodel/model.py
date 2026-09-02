@@ -317,7 +317,7 @@ MMMP_BIOMAPS = CurieNamespace('mmmp_biomaps', 'https://bioregistry.io/mmmp.bioma
 NCATS_BIOPLANET = CurieNamespace('ncats_bioplanet', 'https://tripod.nih.gov/bioplanet/detail.jsp?pid=')
 NCATS_DRUG = CurieNamespace('ncats_drug', 'https://drugs.ncats.io/drug/')
 OBOINOWL = CurieNamespace('oboInOwl', 'http://www.geneontology.org/formats/oboInOwl#')
-ORPHANET = CurieNamespace('orphanet', 'http://www.orpha.net/ORDO/Orphanet_')
+ORDO = CurieNamespace('ORDO', 'http://www.orpha.net/ORDO/')
 OS = CurieNamespace('os', 'https://github.com/cmungall/owlstar/blob/master/owlstar.ttl')
 OWL = CurieNamespace('owl', 'http://www.w3.org/2002/07/owl#')
 PAV = CurieNamespace('pav', 'http://purl.org/pav/')
