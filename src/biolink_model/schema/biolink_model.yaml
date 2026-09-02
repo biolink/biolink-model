@@ -72,6 +72,7 @@ prefixes:
   GSID: 'https://scholar.google.com/citations?user='
   GTEx: 'https://www.gtexportal.org/home/gene/'
   GTOPDB: 'https://www.guidetopharmacology.org/GRAC/LigandDisplayForward?ligandId='
+  IUPHARobj: 'https://www.guidetopharmacology.org/GRAC/ObjectDisplayForward?objectId='
   gtpo: 'https://rdf.guidetopharmacology.org/ns/gtpo#'
   HANCESTRO: 'http://www.ebi.ac.uk/ancestro/ancestro_'
   HCPCS: 'http://purl.bioontology.org/ontology/HCPCS/'
@@ -7302,7 +7303,7 @@ classes:
       a biolink compatible KG can be considered both instances of biolink classes, and
       OWL classes in their own right. In general you should not need to use this class directly.
       Instead, use the appropriate biolink class. For example, for the GO concept of endocytosis (GO:0006897),
-      use bl:BiologicalProcess as the type.
+      use biolink:BiologicalProcess as the type.
     exact_mappings:
       - owl:Class
       - schema:Class
@@ -9824,6 +9825,7 @@ classes:
       - REACT
       - CHEMBL.TARGET
       - ComplexPortal
+      - IUPHARobj
     in_subset:
       - model_organism_database
 
@@ -10787,6 +10789,7 @@ classes:
       - evidence count
       - semmed agreement count
       - association basis qualifier
+      - species context qualifier
     slot_usage:
       type:
         description: rdf:type of biolink:Association should be fixed at rdf:Statement
@@ -10833,6 +10836,26 @@ classes:
           knowledge_level: knowledge_assertion
           agent_type: manual_agent
           publications: ["PMID:15289437"]
+      - description: >-
+          GtoPdb target 378 (5-HT3AB) is a source-defined macromolecular
+          complex. The same IUPHARobj identifier has species-specific protein
+          compositions, so each has_part assertion requires taxon context.
+        object:
+          subject: IUPHARobj:378
+          predicate: biolink:has_part
+          object: UniProtKB:P46098  # human HTR3A
+          category: biolink:Association
+          knowledge_level: knowledge_assertion
+          agent_type: manual_agent
+          species_context_qualifier: NCBITaxon:9606
+      - object:
+          subject: IUPHARobj:378
+          predicate: biolink:has_part
+          object: UniProtKB:P23979  # mouse Htr3a
+          category: biolink:Association
+          knowledge_level: knowledge_assertion
+          agent_type: manual_agent
+          species_context_qualifier: NCBITaxon:10090
       - object:
           subject: NCBIGene:4357  # MPST
           predicate: biolink:enables
@@ -11439,9 +11462,7 @@ classes:
       - object
     mixins:
       - entity to disease or phenotypic feature association mixin
-    slots:
-      - clinical approval status
-      - max research phase
+      - clinical trial and regulatory approval context mixin
     slot_usage:
       object:
         range: disease or phenotypic feature
@@ -11501,7 +11522,7 @@ classes:
       - object
     mixins:
       - entity to disease or phenotypic feature association mixin
-      - entity to feature or disease qualifiers mixin
+      - clinical trial and regulatory approval context mixin
     slot_usage:
       predicate:
         subproperty_of: treats or applied or studied to treat
@@ -11518,7 +11539,6 @@ classes:
       - object
     mixins:
       - entity to disease or phenotypic feature association mixin
-      - entity to feature or disease qualifiers mixin
     slots:
       - FDA adverse event level
     slot_usage:
@@ -11536,7 +11556,6 @@ classes:
       - object
     mixins:
       - entity to disease or phenotypic feature association mixin
-      - entity to feature or disease qualifiers mixin
     slot_usage:
       predicate:
         subproperty_of: has side effect
@@ -12266,16 +12285,28 @@ classes:
 
   entity to feature or disease qualifiers mixin:
     description: >-
-      Qualifiers for entity to disease or phenotype associations.
+      DEPRECATED. An accidental duplicate of 'entity to disease or phenotypic
+      feature association mixin' - "feature" here was shorthand for "phenotypic
+      feature", so the two classes named the same scope while carrying disjoint
+      slots. Use 'entity to disease or phenotypic feature association mixin'
+      instead; this class now inherits from it and adds nothing.
+    deprecated: "true"
+
+  clinical trial and regulatory approval context mixin:
+    description: >-
+      A mixin providing the clinical trial and regulatory approval context of an
+      association between an entity (typically a chemical, drug, or treatment) and
+      the disease or phenotypic feature it is used, or is being studied, to treat.
+      These slots are association-scoped: they describe the entity's status with
+      respect to this particular indication. For the entity's overall regulatory
+      status independent of any one indication, see the node properties
+      'highest FDA approval status' and 'drug regulatory status world wide'.
     mixin: true
-    is_a: frequency qualifier mixin
     slots:
-      - subject aspect qualifier
-      - subject direction qualifier
-      - object aspect qualifier
-      - object direction qualifier
-      - qualified predicate
-      - disease context qualifier
+      - clinical approval status
+      - max research phase
+      - FDA regulatory approvals
+      - number of cases
 
   entity to feature or variant qualifiers mixin:
     description: >-
@@ -12318,13 +12349,10 @@ classes:
       A mixin applied to any association whose object (target node)
       is a phenotypic feature.
     mixin: true
-    is_a: entity to feature or disease qualifiers mixin
+    is_a: entity to disease or phenotypic feature association mixin
     mixins:
       - frequency quantifier
     slots:
-      - subject
-      - predicate
-      - object
       - sex qualifier
     defining_slots:
       - subject
@@ -12407,7 +12435,7 @@ classes:
     description: >-
       mixin class for any association whose object (target node) is a disease
     mixin: true
-    is_a: entity to feature or disease qualifiers mixin
+    is_a: entity to disease or phenotypic feature association mixin
     defining_slots:
       - object
     slot_usage:
@@ -12471,11 +12499,19 @@ classes:
             description: "X-linked inheritance"
 
   entity to disease or phenotypic feature association mixin:
+    description: >-
+      A mixin applied to any association whose object (target node) is a disease
+      or a phenotypic feature. Provides the shared qualifier vocabulary for such
+      statements; subtypes narrow the object range to a disease or to a
+      phenotypic feature specifically.
     mixin: true
+    is_a: frequency qualifier mixin
     slots:
-      - subject
-      - predicate
-      - object
+      - subject aspect qualifier
+      - subject direction qualifier
+      - object aspect qualifier
+      - object direction qualifier
+      - qualified predicate
       - disease context qualifier
       - subject specialization qualifier
       - object specialization qualifier
@@ -12785,6 +12821,7 @@ classes:
       - object
     mixins:
       - gene to entity association mixin
+      - entity to disease association mixin
     slots:
       - subject form or variant qualifier
       - subject aspect qualifier
@@ -13559,11 +13596,9 @@ classes:
       FDA regulatory approvals, and number of cases.
     is_a: association
     exact_mappings:
-    slots:
-      - clinical approval status
-      - max research phase
-      - FDA regulatory approvals
-      - number of cases
+    mixins:
+      - entity to disease association mixin
+      - clinical trial and regulatory approval context mixin
     defining_slots:
       - subject
       - object
@@ -13590,6 +13625,13 @@ classes:
           knowledge_level: observation
           agent_type: manual_validation_of_automated_agent
       - object:
+          subject: CHEBI:78538  # tafamidis
+          predicate: biolink:applied_to_treat
+          object: MONDO:0005294  # peripheral vascular disease
+          category: biolink:EntityToDiseaseAssociation
+          knowledge_level: observation
+          agent_type: manual_validation_of_automated_agent
+      - object:
           subject: RXCUI:1367436  # 21 DAY ethinyl estradiol 0.000625 MG/HR / etonogestrel 0.005 MG/HR Vaginal System
           predicate: biolink:contraindicated_in
           object: MONDO:0004981  # atrial fibrillation
@@ -13605,11 +13647,9 @@ classes:
       FDA regulatory approvals, and number of cases.
     is_a: association
     exact_mappings:
-    slots:
-      - clinical approval status
-      - max research phase
-      - FDA regulatory approvals
-      - number of cases
+    mixins:
+      - entity to phenotypic feature association mixin
+      - clinical trial and regulatory approval context mixin
     defining_slots:
       - subject
       - object
@@ -13628,13 +13668,6 @@ classes:
           category: biolink:EntityToPhenotypicFeatureAssociation
           knowledge_level: knowledge_assertion
           agent_type: manual_agent
-      - object:
-          subject: CHEBI:78538  # tafamidis
-          predicate: biolink:applied_to_treat
-          object: MONDO:0005294  # peripheral vascular disease
-          category: biolink:EntityToPhenotypicFeatureAssociation
-          knowledge_level: observation
-          agent_type: manual_validation_of_automated_agent
       - object:
           subject: RXCUI:617430  # amoxicillin 80 MG/ML / clavulanate 11.4 MG/ML Oral Suspension
           predicate: biolink:contraindicated_in

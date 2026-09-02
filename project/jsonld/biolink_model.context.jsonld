@@ -242,6 +242,10 @@
       },
       "INTACT": "http://identifiers.org/intact/",
       "IUPHAR.FAMILY": "http://identifiers.org/iuphar.family/",
+      "IUPHARobj": {
+         "@id": "https://www.guidetopharmacology.org/GRAC/ObjectDisplayForward?objectId=",
+         "@prefix": true
+      },
       "KEGG": "http://www.kegg.jp/entry/",
       "KEGG.BRITE": "https://bioregistry.io/kegg.brite:",
       "KEGG.COMPOUND": "http://identifiers.org/kegg.compound/",
@@ -335,6 +339,7 @@
          "@prefix": true
       },
       "ORCID": "https://orcid.org/",
+      "ORDO": "http://www.orpha.net/ORDO/",
       "PANTHER.FAMILY": {
          "@id": "http://www.pantherdb.org/panther/family.do?clsAccession=",
          "@prefix": true
@@ -563,10 +568,6 @@
       },
       "ncats.drug": "https://drugs.ncats.io/drug/",
       "oboInOwl": "http://www.geneontology.org/formats/oboInOwl#",
-      "ORDO": {
-         "@id": "http://www.orpha.net/ORDO/",
-         "@prefix": true
-      },
       "os": {
          "@id": "https://github.com/cmungall/owlstar/blob/master/owlstar.ttl",
          "@prefix": true
@@ -3157,6 +3158,9 @@
       },
       "ClinicalTrial": {
          "@id": "ClinicalTrial"
+      },
+      "ClinicalTrialAndRegulatoryApprovalContextMixin": {
+         "@id": "ClinicalTrialAndRegulatoryApprovalContextMixin"
       },
       "CodingSequence": {
          "@id": "CodingSequence"
