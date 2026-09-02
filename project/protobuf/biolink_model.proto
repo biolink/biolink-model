@@ -157,6 +157,7 @@ message AnatomicalEntityHasPartAnatomicalEntityAssociation
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
   associationBasisEnum associationBasisQualifier = 0
+  organismTaxon speciesContextQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   anatomicalEntity subject = 0
@@ -217,6 +218,7 @@ message AnatomicalEntityPartOfAnatomicalEntityAssociation
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
   associationBasisEnum associationBasisQualifier = 0
+  organismTaxon speciesContextQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   anatomicalEntity subject = 0
@@ -277,6 +279,7 @@ message AnatomicalEntityToAnatomicalEntityOntogenicAssociation
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
   associationBasisEnum associationBasisQualifier = 0
+  organismTaxon speciesContextQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   anatomicalEntity subject = 0
@@ -378,6 +381,7 @@ message Association
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
   associationBasisEnum associationBasisQualifier = 0
+  organismTaxon speciesContextQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
  }
@@ -517,6 +521,7 @@ message BehaviorToBehavioralFeatureAssociation
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
   associationBasisEnum associationBasisQualifier = 0
+  organismTaxon speciesContextQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   behavior subject = 0
@@ -528,6 +533,9 @@ message BehaviorToBehavioralFeatureAssociation
   directionQualifierEnum objectDirectionQualifier = 0
   uriorcurie qualifiedPredicate = 0
   disease diseaseContextQualifier = 0
+  uriorcurie subjectSpecializationQualifier = 0
+  uriorcurie objectSpecializationQualifier = 0
+ repeated  string anatomicalContextQualifier = 0
   biologicalSex sexQualifier = 0
   integer hasCount = 0
   integer hasTotal = 0
@@ -707,6 +715,7 @@ message BiologicalProcessOrActivityToAnatomicalEntityAssociation
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
   associationBasisEnum associationBasisQualifier = 0
+  organismTaxon speciesContextQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   biologicalProcessOrActivity subject = 0
@@ -766,6 +775,7 @@ message BiologicalProcessOrActivityToBiologicalProcessOrActivityAssociation
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
   associationBasisEnum associationBasisQualifier = 0
+  organismTaxon speciesContextQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   biologicalProcessOrActivity subject = 0
@@ -826,6 +836,7 @@ message BiologicalProcessOrActivityToGeneOrGeneProductOrGeneFamilyAssociation
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
   associationBasisEnum associationBasisQualifier = 0
+  organismTaxon speciesContextQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   biologicalProcessOrActivity subject = 0
@@ -1043,6 +1054,7 @@ message CaseToDiseaseAssociation
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
   associationBasisEnum associationBasisQualifier = 0
+  organismTaxon speciesContextQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   namedThing subject = 0
@@ -1104,6 +1116,7 @@ message CaseToGeneAssociation
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
   associationBasisEnum associationBasisQualifier = 0
+  organismTaxon speciesContextQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   namedThing subject = 0
@@ -1166,6 +1179,7 @@ message CaseToPhenotypicFeatureAssociation
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
   associationBasisEnum associationBasisQualifier = 0
+  organismTaxon speciesContextQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   boolean negated = 0
@@ -1177,6 +1191,9 @@ message CaseToPhenotypicFeatureAssociation
   directionQualifierEnum objectDirectionQualifier = 0
   uriorcurie qualifiedPredicate = 0
   disease diseaseContextQualifier = 0
+  uriorcurie subjectSpecializationQualifier = 0
+  uriorcurie objectSpecializationQualifier = 0
+ repeated  string anatomicalContextQualifier = 0
   biologicalSex sexQualifier = 0
   integer hasCount = 0
   integer hasTotal = 0
@@ -1237,6 +1254,7 @@ message CaseToVariantAssociation
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
   associationBasisEnum associationBasisQualifier = 0
+  organismTaxon speciesContextQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   namedThing subject = 0
@@ -1299,6 +1317,7 @@ message CausalGeneToDiseaseAssociation
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
   associationBasisEnum associationBasisQualifier = 0
+  organismTaxon speciesContextQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   string subjectFormOrVariantQualifier = 0
@@ -1416,19 +1435,20 @@ message CellLineAsAModelOfDiseaseAssociation
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
   associationBasisEnum associationBasisQualifier = 0
+  organismTaxon speciesContextQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
-  disease diseaseContextQualifier = 0
-  uriorcurie subjectSpecializationQualifier = 0
-  uriorcurie objectSpecializationQualifier = 0
- repeated  string anatomicalContextQualifier = 0
-  cellLine subject = 0
   frequencyValue frequencyQualifier = 0
   geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
   directionQualifierEnum subjectDirectionQualifier = 0
   geneOrGeneProductOrChemicalEntityAspectEnum objectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
   uriorcurie qualifiedPredicate = 0
+  disease diseaseContextQualifier = 0
+  uriorcurie subjectSpecializationQualifier = 0
+  uriorcurie objectSpecializationQualifier = 0
+ repeated  string anatomicalContextQualifier = 0
+  cellLine subject = 0
  }
 // An relationship between a cell line and a disease or a phenotype, where the cell line is derived from an individual with that disease or phenotype.
 message CellLineToDiseaseOrPhenotypicFeatureAssociation
@@ -1486,9 +1506,16 @@ message CellLineToDiseaseOrPhenotypicFeatureAssociation
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
   associationBasisEnum associationBasisQualifier = 0
+  organismTaxon speciesContextQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   diseaseOrPhenotypicFeature subject = 0
+  frequencyValue frequencyQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
+  directionQualifierEnum subjectDirectionQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum objectAspectQualifier = 0
+  directionQualifierEnum objectDirectionQualifier = 0
+  uriorcurie qualifiedPredicate = 0
   disease diseaseContextQualifier = 0
   uriorcurie subjectSpecializationQualifier = 0
   uriorcurie objectSpecializationQualifier = 0
@@ -1786,6 +1813,7 @@ message ChemicalEntityAssessesNamedThingAssociation
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
   associationBasisEnum associationBasisQualifier = 0
+  organismTaxon speciesContextQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   chemicalEntity subject = 0
@@ -1846,6 +1874,7 @@ message ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
   associationBasisEnum associationBasisQualifier = 0
+  organismTaxon speciesContextQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   directionQualifierEnum objectDirectionQualifier = 0
@@ -1908,6 +1937,7 @@ message ChemicalEntityToAnatomicalEntityAssociation
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
   associationBasisEnum associationBasisQualifier = 0
+  organismTaxon speciesContextQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   chemicalEntity subject = 0
@@ -2156,15 +2186,24 @@ message ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
   associationBasisEnum associationBasisQualifier = 0
+  organismTaxon speciesContextQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
-  clinicalApprovalStatusEnum clinicalApprovalStatus = 0
-  researchPhaseEnum maxResearchPhase = 0
   diseaseOrPhenotypicFeature object = 0
+  frequencyValue frequencyQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
+  directionQualifierEnum subjectDirectionQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum objectAspectQualifier = 0
+  directionQualifierEnum objectDirectionQualifier = 0
+  uriorcurie qualifiedPredicate = 0
   disease diseaseContextQualifier = 0
   uriorcurie subjectSpecializationQualifier = 0
   uriorcurie objectSpecializationQualifier = 0
  repeated  string anatomicalContextQualifier = 0
+  clinicalApprovalStatusEnum clinicalApprovalStatus = 0
+  researchPhaseEnum maxResearchPhase = 0
+ repeated  string fDARegulatoryApprovals = 0
+  integer numberOfCases = 0
  }
 // An interaction between a chemical entity and a biological process or pathway.
 message ChemicalEntityToPathwayAssociation
@@ -2221,6 +2260,7 @@ message ChemicalEntityToPathwayAssociation
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
   associationBasisEnum associationBasisQualifier = 0
+  organismTaxon speciesContextQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   chemicalEntity subject = 0
@@ -2504,20 +2544,21 @@ message ChemicalOrDrugOrTreatmentAdverseEventAssociation
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
   associationBasisEnum associationBasisQualifier = 0
+  organismTaxon speciesContextQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   fDAIDAAdverseEventEnum fDAAdverseEventLevel = 0
   uriorcurie predicate = 0
-  disease diseaseContextQualifier = 0
-  uriorcurie subjectSpecializationQualifier = 0
-  uriorcurie objectSpecializationQualifier = 0
- repeated  string anatomicalContextQualifier = 0
   frequencyValue frequencyQualifier = 0
   geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
   directionQualifierEnum subjectDirectionQualifier = 0
   geneOrGeneProductOrChemicalEntityAspectEnum objectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
   uriorcurie qualifiedPredicate = 0
+  disease diseaseContextQualifier = 0
+  uriorcurie subjectSpecializationQualifier = 0
+  uriorcurie objectSpecializationQualifier = 0
+ repeated  string anatomicalContextQualifier = 0
  }
 // This association defines a relationship between a chemical or treatment (or procedure) and a disease or phenotypic feature where the disease or phenotypic feature is an unintended, but predictable, secondary effect of the treatment.
 message ChemicalOrDrugOrTreatmentSideEffectAssociation
@@ -2575,19 +2616,20 @@ message ChemicalOrDrugOrTreatmentSideEffectAssociation
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
   associationBasisEnum associationBasisQualifier = 0
+  organismTaxon speciesContextQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   uriorcurie predicate = 0
-  disease diseaseContextQualifier = 0
-  uriorcurie subjectSpecializationQualifier = 0
-  uriorcurie objectSpecializationQualifier = 0
- repeated  string anatomicalContextQualifier = 0
   frequencyValue frequencyQualifier = 0
   geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
   directionQualifierEnum subjectDirectionQualifier = 0
   geneOrGeneProductOrChemicalEntityAspectEnum objectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
   uriorcurie qualifiedPredicate = 0
+  disease diseaseContextQualifier = 0
+  uriorcurie subjectSpecializationQualifier = 0
+  uriorcurie objectSpecializationQualifier = 0
+ repeated  string anatomicalContextQualifier = 0
  }
 // This association defines a relationship between a chemical or treatment (or procedure) and a disease or phenotypic feature where the chemical or treatment is used to treat, or is being studied to treat, the disease or phenotypic feature.
 message ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation
@@ -2645,19 +2687,24 @@ message ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
   associationBasisEnum associationBasisQualifier = 0
+  organismTaxon speciesContextQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   uriorcurie predicate = 0
-  disease diseaseContextQualifier = 0
-  uriorcurie subjectSpecializationQualifier = 0
-  uriorcurie objectSpecializationQualifier = 0
- repeated  string anatomicalContextQualifier = 0
   frequencyValue frequencyQualifier = 0
   geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
   directionQualifierEnum subjectDirectionQualifier = 0
   geneOrGeneProductOrChemicalEntityAspectEnum objectAspectQualifier = 0
   directionQualifierEnum objectDirectionQualifier = 0
   uriorcurie qualifiedPredicate = 0
+  disease diseaseContextQualifier = 0
+  uriorcurie subjectSpecializationQualifier = 0
+  uriorcurie objectSpecializationQualifier = 0
+ repeated  string anatomicalContextQualifier = 0
+  clinicalApprovalStatusEnum clinicalApprovalStatus = 0
+  researchPhaseEnum maxResearchPhase = 0
+ repeated  string fDARegulatoryApprovals = 0
+  integer numberOfCases = 0
  }
 // A role played by the molecular entity or part thereof within a chemical context.
 message ChemicalRole
@@ -3187,6 +3234,7 @@ message ContributorAssociation
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
   associationBasisEnum associationBasisQualifier = 0
+  organismTaxon speciesContextQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   informationContentEntity subject = 0
@@ -3248,6 +3296,7 @@ message CorrelatedGeneToDiseaseAssociation
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
   associationBasisEnum associationBasisQualifier = 0
+  organismTaxon speciesContextQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   float zScore = 0
@@ -3264,6 +3313,9 @@ message CorrelatedGeneToDiseaseAssociation
   directionQualifierEnum subjectDirectionQualifier = 0
   geneOrGeneProductOrChemicalEntityAspectEnum objectAspectQualifier = 0
   disease diseaseContextQualifier = 0
+  uriorcurie subjectSpecializationQualifier = 0
+  uriorcurie objectSpecializationQualifier = 0
+ repeated  string anatomicalContextQualifier = 0
  }
 // an item that refers to a collection of data from a data source.
 message Dataset
@@ -3506,6 +3558,7 @@ message DiseaseAssociatedWithResponseToChemicalEntityAssociation
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
   associationBasisEnum associationBasisQualifier = 0
+  organismTaxon speciesContextQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   responseEnum responseContextQualifier = 0
@@ -3629,6 +3682,7 @@ message DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
   associationBasisEnum associationBasisQualifier = 0
+  organismTaxon speciesContextQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   uriorcurie predicate = 0
@@ -3690,6 +3744,7 @@ message DiseaseOrPhenotypicFeatureToLocationAssociation
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
   associationBasisEnum associationBasisQualifier = 0
+  organismTaxon speciesContextQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   anatomicalEntity object = 0
@@ -3748,6 +3803,7 @@ message DiseaseToDiseaseAssociation
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
   associationBasisEnum associationBasisQualifier = 0
+  organismTaxon speciesContextQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   disease subject = 0
@@ -3760,6 +3816,9 @@ message DiseaseToDiseaseAssociation
   directionQualifierEnum objectDirectionQualifier = 0
   uriorcurie qualifiedPredicate = 0
   disease diseaseContextQualifier = 0
+  uriorcurie subjectSpecializationQualifier = 0
+  uriorcurie objectSpecializationQualifier = 0
+ repeated  string anatomicalContextQualifier = 0
  }
 // An association between an exposure event and a disease.
 message DiseaseToExposureEventAssociation
@@ -3818,6 +3877,7 @@ message DiseaseToExposureEventAssociation
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
   associationBasisEnum associationBasisQualifier = 0
+  organismTaxon speciesContextQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
  }
@@ -3876,6 +3936,7 @@ message DiseaseToPhenotypicFeatureAssociation
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
   associationBasisEnum associationBasisQualifier = 0
+  organismTaxon speciesContextQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   onset onsetQualifier = 0
@@ -3892,6 +3953,9 @@ message DiseaseToPhenotypicFeatureAssociation
   directionQualifierEnum objectDirectionQualifier = 0
   uriorcurie qualifiedPredicate = 0
   disease diseaseContextQualifier = 0
+  uriorcurie subjectSpecializationQualifier = 0
+  uriorcurie objectSpecializationQualifier = 0
+ repeated  string anatomicalContextQualifier = 0
   biologicalSex sexQualifier = 0
  }
 // A substance intended for use in the diagnosis, cure, mitigation, treatment, or prevention of disease
@@ -4057,6 +4121,7 @@ message DrugToGeneAssociation
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
   associationBasisEnum associationBasisQualifier = 0
+  organismTaxon speciesContextQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   geneOrGeneProduct object = 0
@@ -4150,6 +4215,7 @@ message DruggableGeneToDiseaseAssociation
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
   associationBasisEnum associationBasisQualifier = 0
+  organismTaxon speciesContextQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   chemicalOrGeneOrGeneProductFormOrVariantEnum subjectFormOrVariantQualifier = 0
@@ -4160,13 +4226,16 @@ message DruggableGeneToDiseaseAssociation
   float diseasesConfidenceScore = 0
   string gene2phenotypeConfidenceCategory = 0
   disease object = 0
-  druggableGeneCategoryEnum druggableGeneCategory = 0
-  geneOrGeneProduct subject = 0
-  geneToDiseasePredicateEnum predicate = 0
   frequencyValue frequencyQualifier = 0
   directionQualifierEnum subjectDirectionQualifier = 0
   geneOrGeneProductOrChemicalEntityAspectEnum objectAspectQualifier = 0
   disease diseaseContextQualifier = 0
+  uriorcurie subjectSpecializationQualifier = 0
+  uriorcurie objectSpecializationQualifier = 0
+ repeated  string anatomicalContextQualifier = 0
+  druggableGeneCategoryEnum druggableGeneCategory = 0
+  geneOrGeneProduct subject = 0
+  geneToDiseasePredicateEnum predicate = 0
  }
 // An association between any entity and a disease, capturing clinical context such as approval status, research phase, FDA regulatory approvals, and number of cases.
 message EntityToDiseaseAssociation
@@ -4225,8 +4294,19 @@ message EntityToDiseaseAssociation
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
   associationBasisEnum associationBasisQualifier = 0
+  organismTaxon speciesContextQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
+  frequencyValue frequencyQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
+  directionQualifierEnum subjectDirectionQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum objectAspectQualifier = 0
+  directionQualifierEnum objectDirectionQualifier = 0
+  uriorcurie qualifiedPredicate = 0
+  disease diseaseContextQualifier = 0
+  uriorcurie subjectSpecializationQualifier = 0
+  uriorcurie objectSpecializationQualifier = 0
+ repeated  string anatomicalContextQualifier = 0
   clinicalApprovalStatusEnum clinicalApprovalStatus = 0
   researchPhaseEnum maxResearchPhase = 0
  repeated  string fDARegulatoryApprovals = 0
@@ -4289,8 +4369,24 @@ message EntityToPhenotypicFeatureAssociation
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
   associationBasisEnum associationBasisQualifier = 0
+  organismTaxon speciesContextQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
+  frequencyValue frequencyQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
+  directionQualifierEnum subjectDirectionQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum objectAspectQualifier = 0
+  directionQualifierEnum objectDirectionQualifier = 0
+  uriorcurie qualifiedPredicate = 0
+  disease diseaseContextQualifier = 0
+  uriorcurie subjectSpecializationQualifier = 0
+  uriorcurie objectSpecializationQualifier = 0
+ repeated  string anatomicalContextQualifier = 0
+  biologicalSex sexQualifier = 0
+  integer hasCount = 0
+  integer hasTotal = 0
+  double hasQuotient = 0
+  double hasPercentage = 0
   clinicalApprovalStatusEnum clinicalApprovalStatus = 0
   researchPhaseEnum maxResearchPhase = 0
  repeated  string fDARegulatoryApprovals = 0
@@ -4564,6 +4660,7 @@ message ExonToTranscriptRelationship
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
   associationBasisEnum associationBasisQualifier = 0
+  organismTaxon speciesContextQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   exon subject = 0
@@ -4659,6 +4756,7 @@ message ExposureEventToOutcomeAssociation
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
   associationBasisEnum associationBasisQualifier = 0
+  organismTaxon speciesContextQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   populationOfIndividualOrganisms populationContextQualifier = 0
@@ -4720,6 +4818,7 @@ message ExposureEventToPhenotypicFeatureAssociation
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
   associationBasisEnum associationBasisQualifier = 0
+  organismTaxon speciesContextQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   exposureEvent subject = 0
@@ -4730,6 +4829,9 @@ message ExposureEventToPhenotypicFeatureAssociation
   directionQualifierEnum objectDirectionQualifier = 0
   uriorcurie qualifiedPredicate = 0
   disease diseaseContextQualifier = 0
+  uriorcurie subjectSpecializationQualifier = 0
+  uriorcurie objectSpecializationQualifier = 0
+ repeated  string anatomicalContextQualifier = 0
   biologicalSex sexQualifier = 0
   integer hasCount = 0
   integer hasTotal = 0
@@ -4865,6 +4967,7 @@ message FunctionalAssociation
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
   associationBasisEnum associationBasisQualifier = 0
+  organismTaxon speciesContextQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   macromolecularMachineMixin subject = 0
@@ -5052,6 +5155,7 @@ message GeneAsAModelOfDiseaseAssociation
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
   associationBasisEnum associationBasisQualifier = 0
+  organismTaxon speciesContextQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   chemicalOrGeneOrGeneProductFormOrVariantEnum subjectFormOrVariantQualifier = 0
@@ -5063,11 +5167,14 @@ message GeneAsAModelOfDiseaseAssociation
   string gene2phenotypeConfidenceCategory = 0
   disease object = 0
   geneToDiseasePredicateEnum predicate = 0
-  geneOrGeneProduct subject = 0
   frequencyValue frequencyQualifier = 0
   directionQualifierEnum subjectDirectionQualifier = 0
   geneOrGeneProductOrChemicalEntityAspectEnum objectAspectQualifier = 0
   disease diseaseContextQualifier = 0
+  uriorcurie subjectSpecializationQualifier = 0
+  uriorcurie objectSpecializationQualifier = 0
+ repeated  string anatomicalContextQualifier = 0
+  geneOrGeneProduct subject = 0
  }
 // any grouping of multiple genes or gene products related by common descent
 message GeneFamily
@@ -5149,6 +5256,7 @@ message GeneFamilyToGeneOrGeneProductOrGeneFamilyAssociation
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
   associationBasisEnum associationBasisQualifier = 0
+  organismTaxon speciesContextQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   geneFamily subject = 0
@@ -5209,6 +5317,7 @@ message GeneHasVariantThatContributesToDiseaseAssociation
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
   associationBasisEnum associationBasisQualifier = 0
+  organismTaxon speciesContextQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
@@ -5217,6 +5326,13 @@ message GeneHasVariantThatContributesToDiseaseAssociation
   uriorcurie qualifiedPredicate = 0
   float diseasesConfidenceScore = 0
   string gene2phenotypeConfidenceCategory = 0
+  frequencyValue frequencyQualifier = 0
+  directionQualifierEnum subjectDirectionQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum objectAspectQualifier = 0
+  disease diseaseContextQualifier = 0
+  uriorcurie subjectSpecializationQualifier = 0
+  uriorcurie objectSpecializationQualifier = 0
+ repeated  string anatomicalContextQualifier = 0
   string subjectFormOrVariantQualifier = 0
   geneOrGeneProduct subject = 0
   disease object = 0
@@ -5277,6 +5393,7 @@ message GeneOrGeneProductOrGeneFamilyToAnatomicalEntityAssociation
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
   associationBasisEnum associationBasisQualifier = 0
+  organismTaxon speciesContextQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   geneOrGeneProductOrGeneFamily subject = 0
@@ -5336,6 +5453,7 @@ message GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
   associationBasisEnum associationBasisQualifier = 0
+  organismTaxon speciesContextQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   geneOrGeneProductOrGeneFamily subject = 0
@@ -5461,6 +5579,7 @@ message GeneToDiseaseAssociation
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
   associationBasisEnum associationBasisQualifier = 0
+  organismTaxon speciesContextQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   chemicalOrGeneOrGeneProductFormOrVariantEnum subjectFormOrVariantQualifier = 0
@@ -5473,6 +5592,13 @@ message GeneToDiseaseAssociation
   geneOrGeneProduct subject = 0
   disease object = 0
   geneToDiseasePredicateEnum predicate = 0
+  frequencyValue frequencyQualifier = 0
+  directionQualifierEnum subjectDirectionQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum objectAspectQualifier = 0
+  disease diseaseContextQualifier = 0
+  uriorcurie subjectSpecializationQualifier = 0
+  uriorcurie objectSpecializationQualifier = 0
+ repeated  string anatomicalContextQualifier = 0
  }
 // An association between a gene and a gene expression site, possibly qualified by stage/timing info.
 message GeneToExpressionSiteAssociation
@@ -5528,6 +5654,7 @@ message GeneToExpressionSiteAssociation
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
   associationBasisEnum associationBasisQualifier = 0
+  organismTaxon speciesContextQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   lifeStage stageQualifier = 0
@@ -5741,6 +5868,7 @@ message GeneToGeneFamilyAssociation
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
   associationBasisEnum associationBasisQualifier = 0
+  organismTaxon speciesContextQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   gene subject = 0
@@ -5874,6 +6002,7 @@ message GeneToGeneProductRelationship
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
   associationBasisEnum associationBasisQualifier = 0
+  organismTaxon speciesContextQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   gene subject = 0
@@ -5935,6 +6064,7 @@ message GeneToGoTermAssociation
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
   associationBasisEnum associationBasisQualifier = 0
+  organismTaxon speciesContextQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   gene subject = 0
@@ -5995,6 +6125,7 @@ message GeneToPathwayAssociation
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
   associationBasisEnum associationBasisQualifier = 0
+  organismTaxon speciesContextQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   geneOrGeneProduct subject = 0
@@ -6054,6 +6185,7 @@ message GeneToPhenotypicFeatureAssociation
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
   associationBasisEnum associationBasisQualifier = 0
+  organismTaxon speciesContextQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   chemicalOrGeneOrGeneProductFormOrVariantEnum subjectFormOrVariantQualifier = 0
@@ -6068,6 +6200,9 @@ message GeneToPhenotypicFeatureAssociation
   geneOrGeneProductOrChemicalEntityAspectEnum objectAspectQualifier = 0
   uriorcurie qualifiedPredicate = 0
   disease diseaseContextQualifier = 0
+  uriorcurie subjectSpecializationQualifier = 0
+  uriorcurie objectSpecializationQualifier = 0
+ repeated  string anatomicalContextQualifier = 0
   biologicalSex sexQualifier = 0
   integer hasCount = 0
   integer hasTotal = 0
@@ -6217,6 +6352,7 @@ message GenomicSequenceLocalization
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
   associationBasisEnum associationBasisQualifier = 0
+  organismTaxon speciesContextQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   integer startInterbaseCoordinate = 0
@@ -6310,6 +6446,7 @@ message GenotypeAsAModelOfDiseaseAssociation
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
   associationBasisEnum associationBasisQualifier = 0
+  organismTaxon speciesContextQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   uriorcurie predicate = 0
@@ -6321,6 +6458,9 @@ message GenotypeAsAModelOfDiseaseAssociation
   directionQualifierEnum objectDirectionQualifier = 0
   uriorcurie qualifiedPredicate = 0
   disease diseaseContextQualifier = 0
+  uriorcurie subjectSpecializationQualifier = 0
+  uriorcurie objectSpecializationQualifier = 0
+ repeated  string anatomicalContextQualifier = 0
   genotype subject = 0
  }
 // An association between a genotype and a disease, in which the genotype (typically a combination of alleles at one or more loci) is linked to the disease state.
@@ -6377,6 +6517,7 @@ message GenotypeToDiseaseAssociation
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
   associationBasisEnum associationBasisQualifier = 0
+  organismTaxon speciesContextQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   namedThing subject = 0
@@ -6389,6 +6530,9 @@ message GenotypeToDiseaseAssociation
   directionQualifierEnum objectDirectionQualifier = 0
   uriorcurie qualifiedPredicate = 0
   disease diseaseContextQualifier = 0
+  uriorcurie subjectSpecializationQualifier = 0
+  uriorcurie objectSpecializationQualifier = 0
+ repeated  string anatomicalContextQualifier = 0
  }
 // Any association between a genotype and a gene. The genotype have have multiple variants in that gene or a single one. There is no assumption of cardinality
 message GenotypeToGeneAssociation
@@ -6444,6 +6588,7 @@ message GenotypeToGeneAssociation
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
   associationBasisEnum associationBasisQualifier = 0
+  organismTaxon speciesContextQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   uriorcurie predicate = 0
@@ -6504,6 +6649,7 @@ message GenotypeToGenotypePartAssociation
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
   associationBasisEnum associationBasisQualifier = 0
+  organismTaxon speciesContextQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   uriorcurie predicate = 0
@@ -6565,6 +6711,7 @@ message GenotypeToPhenotypicFeatureAssociation
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
   associationBasisEnum associationBasisQualifier = 0
+  organismTaxon speciesContextQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   uriorcurie predicate = 0
@@ -6576,6 +6723,9 @@ message GenotypeToPhenotypicFeatureAssociation
   directionQualifierEnum objectDirectionQualifier = 0
   uriorcurie qualifiedPredicate = 0
   disease diseaseContextQualifier = 0
+  uriorcurie subjectSpecializationQualifier = 0
+  uriorcurie objectSpecializationQualifier = 0
+ repeated  string anatomicalContextQualifier = 0
   biologicalSex sexQualifier = 0
   integer hasCount = 0
   integer hasTotal = 0
@@ -6636,6 +6786,7 @@ message GenotypeToVariantAssociation
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
   associationBasisEnum associationBasisQualifier = 0
+  organismTaxon speciesContextQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   uriorcurie predicate = 0
@@ -6963,6 +7114,7 @@ message InformationContentEntityToNamedThingAssociation
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
   associationBasisEnum associationBasisQualifier = 0
+  organismTaxon speciesContextQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   namedThing subject = 0
@@ -7241,11 +7393,11 @@ message MacromolecularMachineToBiologicalProcessAssociation
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
   associationBasisEnum associationBasisQualifier = 0
+  organismTaxon speciesContextQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   macromolecularMachineMixin subject = 0
   biologicalProcess object = 0
-  organismTaxon speciesContextQualifier = 0
  }
 // A functional association between a macromolecular machine (gene, gene product or complex) and a cellular component (as represented in the GO cellular component branch), where the entity carries out its function in the cellular component.
 message MacromolecularMachineToCellularComponentAssociation
@@ -7302,11 +7454,11 @@ message MacromolecularMachineToCellularComponentAssociation
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
   associationBasisEnum associationBasisQualifier = 0
+  organismTaxon speciesContextQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   macromolecularMachineMixin subject = 0
   cellularComponent object = 0
-  organismTaxon speciesContextQualifier = 0
  }
 // A functional association between a macromolecular machine (gene, gene product or complex) and a molecular activity (as represented in the GO molecular function branch), where the entity carries out the activity, or contributes to its execution.
 message MacromolecularMachineToMolecularActivityAssociation
@@ -7363,11 +7515,11 @@ message MacromolecularMachineToMolecularActivityAssociation
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
   associationBasisEnum associationBasisQualifier = 0
+  organismTaxon speciesContextQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   macromolecularMachineMixin subject = 0
   molecularActivity object = 0
-  organismTaxon speciesContextQualifier = 0
  }
 message Mammal
  {
@@ -7470,6 +7622,7 @@ message MaterialSampleDerivationAssociation
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
   associationBasisEnum associationBasisQualifier = 0
+  organismTaxon speciesContextQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   materialSample subject = 0
@@ -7533,8 +7686,15 @@ message MaterialSampleToDiseaseOrPhenotypicFeatureAssociation
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
   associationBasisEnum associationBasisQualifier = 0
+  organismTaxon speciesContextQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
+  frequencyValue frequencyQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
+  directionQualifierEnum subjectDirectionQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum objectAspectQualifier = 0
+  directionQualifierEnum objectDirectionQualifier = 0
+  uriorcurie qualifiedPredicate = 0
   disease diseaseContextQualifier = 0
   uriorcurie subjectSpecializationQualifier = 0
   uriorcurie objectSpecializationQualifier = 0
@@ -7649,6 +7809,7 @@ message MolecularActivityToChemicalEntityAssociation
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
   associationBasisEnum associationBasisQualifier = 0
+  organismTaxon speciesContextQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   molecularActivity subject = 0
@@ -7709,6 +7870,7 @@ message MolecularActivityToMolecularActivityAssociation
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
   associationBasisEnum associationBasisQualifier = 0
+  organismTaxon speciesContextQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   molecularActivity subject = 0
@@ -7768,6 +7930,7 @@ message MolecularActivityToPathwayAssociation
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
   associationBasisEnum associationBasisQualifier = 0
+  organismTaxon speciesContextQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   molecularActivity subject = 0
@@ -7927,6 +8090,7 @@ message NamedThingAssociatedWithLikelihoodOfNamedThingAssociation
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
   associationBasisEnum associationBasisQualifier = 0
+  organismTaxon speciesContextQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   namedThing subject = 0
@@ -8209,6 +8373,7 @@ message OrganismTaxonToOrganismTaxonInteraction
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
   associationBasisEnum associationBasisQualifier = 0
+  organismTaxon speciesContextQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   string associatedEnvironmentalContext = 0
@@ -8270,6 +8435,7 @@ message OrganismTaxonToOrganismTaxonSpecialization
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
   associationBasisEnum associationBasisQualifier = 0
+  organismTaxon speciesContextQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   organismTaxon subject = 0
@@ -8331,6 +8497,7 @@ message OrganismToOrganismAssociation
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
   associationBasisEnum associationBasisQualifier = 0
+  organismTaxon speciesContextQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   individualOrganism subject = 0
@@ -8392,6 +8559,7 @@ message OrganismalEntityAsAModelOfDiseaseAssociation
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
   associationBasisEnum associationBasisQualifier = 0
+  organismTaxon speciesContextQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   organismalEntity subject = 0
@@ -8402,6 +8570,9 @@ message OrganismalEntityAsAModelOfDiseaseAssociation
   directionQualifierEnum objectDirectionQualifier = 0
   uriorcurie qualifiedPredicate = 0
   disease diseaseContextQualifier = 0
+  uriorcurie subjectSpecializationQualifier = 0
+  uriorcurie objectSpecializationQualifier = 0
+ repeated  string anatomicalContextQualifier = 0
  }
 // An interaction between two genes or two gene products. May be physical (e.g. protein binding) or genetic (between genes). May be symmetric (e.g. protein interaction) or directed (e.g. phosphorylation)
 message PairwiseGeneToGeneInteraction
@@ -8840,6 +9011,7 @@ message PhenotypicFeatureToDiseaseAssociation
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
   associationBasisEnum associationBasisQualifier = 0
+  organismTaxon speciesContextQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   uriorcurie predicate = 0
@@ -8850,6 +9022,9 @@ message PhenotypicFeatureToDiseaseAssociation
   directionQualifierEnum objectDirectionQualifier = 0
   uriorcurie qualifiedPredicate = 0
   disease diseaseContextQualifier = 0
+  uriorcurie subjectSpecializationQualifier = 0
+  uriorcurie objectSpecializationQualifier = 0
+ repeated  string anatomicalContextQualifier = 0
   biologicalSex sexQualifier = 0
   integer hasCount = 0
   integer hasTotal = 0
@@ -8913,6 +9088,7 @@ message PhenotypicFeatureToPhenotypicFeatureAssociation
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
   associationBasisEnum associationBasisQualifier = 0
+  organismTaxon speciesContextQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   frequencyValue frequencyQualifier = 0
@@ -8927,6 +9103,9 @@ message PhenotypicFeatureToPhenotypicFeatureAssociation
   double hasQuotient = 0
   double hasPercentage = 0
   disease diseaseContextQualifier = 0
+  uriorcurie subjectSpecializationQualifier = 0
+  uriorcurie objectSpecializationQualifier = 0
+ repeated  string anatomicalContextQualifier = 0
  }
 // A characteristic of a phenotype (e.g., weight, size, shape, color) that can be observed, measured, or compared across organisms or conditions.
 message PhenotypicQuality
@@ -9185,6 +9364,7 @@ message PopulationToPopulationAssociation
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
   associationBasisEnum associationBasisQualifier = 0
+  organismTaxon speciesContextQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   populationOfIndividualOrganisms subject = 0
@@ -9352,6 +9532,7 @@ message ProcessRegulatesProcessAssociation
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
   associationBasisEnum associationBasisQualifier = 0
+  organismTaxon speciesContextQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   biologicalProcess subject = 0
@@ -9921,6 +10102,7 @@ message SequenceAssociation
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
   associationBasisEnum associationBasisQualifier = 0
+  organismTaxon speciesContextQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
  }
@@ -9979,6 +10161,7 @@ message SequenceFeatureRelationship
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
   associationBasisEnum associationBasisQualifier = 0
+  organismTaxon speciesContextQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   nucleicAcidEntity subject = 0
@@ -10365,6 +10548,7 @@ message TaxonToTaxonAssociation
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
   associationBasisEnum associationBasisQualifier = 0
+  organismTaxon speciesContextQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   organismTaxon subject = 0
@@ -10486,6 +10670,7 @@ message TranscriptToGeneRelationship
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
   associationBasisEnum associationBasisQualifier = 0
+  organismTaxon speciesContextQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   transcript subject = 0
@@ -10608,6 +10793,7 @@ message VariantAsAModelOfDiseaseAssociation
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
   associationBasisEnum associationBasisQualifier = 0
+  organismTaxon speciesContextQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   uriorcurie predicate = 0
@@ -10619,6 +10805,9 @@ message VariantAsAModelOfDiseaseAssociation
   directionQualifierEnum objectDirectionQualifier = 0
   uriorcurie qualifiedPredicate = 0
   disease diseaseContextQualifier = 0
+  uriorcurie subjectSpecializationQualifier = 0
+  uriorcurie objectSpecializationQualifier = 0
+ repeated  string anatomicalContextQualifier = 0
   sequenceVariant subject = 0
  }
 // An association between a sequence variant and a disease, in which the allele state of the variant is linked to the disease state.
@@ -10675,6 +10864,7 @@ message VariantToDiseaseAssociation
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
   associationBasisEnum associationBasisQualifier = 0
+  organismTaxon speciesContextQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   namedThing subject = 0
@@ -10687,6 +10877,9 @@ message VariantToDiseaseAssociation
   directionQualifierEnum objectDirectionQualifier = 0
   uriorcurie qualifiedPredicate = 0
   disease diseaseContextQualifier = 0
+  uriorcurie subjectSpecializationQualifier = 0
+  uriorcurie objectSpecializationQualifier = 0
+ repeated  string anatomicalContextQualifier = 0
  }
 // An association between a variant and a gene, where the variant has a genetic association with the gene (i.e. is in linkage disequilibrium)
 message VariantToGeneAssociation
@@ -10743,6 +10936,7 @@ message VariantToGeneAssociation
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
   associationBasisEnum associationBasisQualifier = 0
+  organismTaxon speciesContextQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   gene object = 0
@@ -10803,6 +10997,7 @@ message VariantToGeneExpressionAssociation
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
   associationBasisEnum associationBasisQualifier = 0
+  organismTaxon speciesContextQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   gene object = 0
@@ -10868,6 +11063,7 @@ message VariantToPhenotypicFeatureAssociation
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
   associationBasisEnum associationBasisQualifier = 0
+  organismTaxon speciesContextQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   sequenceVariant subject = 0
@@ -10878,6 +11074,9 @@ message VariantToPhenotypicFeatureAssociation
   directionQualifierEnum objectDirectionQualifier = 0
   uriorcurie qualifiedPredicate = 0
   disease diseaseContextQualifier = 0
+  uriorcurie subjectSpecializationQualifier = 0
+  uriorcurie objectSpecializationQualifier = 0
+ repeated  string anatomicalContextQualifier = 0
   biologicalSex sexQualifier = 0
   integer hasCount = 0
   integer hasTotal = 0
@@ -10939,6 +11138,7 @@ message VariantToPopulationAssociation
   integer evidenceCount = 0
   integer semmedAgreementCount = 0
   associationBasisEnum associationBasisQualifier = 0
+  organismTaxon speciesContextQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
   sequenceVariant subject = 0
