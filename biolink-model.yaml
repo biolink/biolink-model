@@ -11469,11 +11469,6 @@ classes:
       - object
     mixins:
       - entity to disease or phenotypic feature association mixin
-      - clinical trial and regulatory approval context mixin
-    slots:
-      - clinical approval status
-      - treatment outcome
-      - max research phase
     slot_usage:
       object:
         range: disease or phenotypic feature
@@ -11493,34 +11488,6 @@ classes:
           category: biolink:ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation
           knowledge_level: knowledge_assertion
           agent_type: manual_validation_of_automated_agent
-      - object:
-          subject: PUBCHEM.COMPOUND:134612761  # macimorelin
-          predicate: biolink:diagnoses
-          object: UMLS:C1720505  # Adult growth hormone deficiency
-          category: biolink:ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation
-          knowledge_level: knowledge_assertion
-          agent_type: manual_validation_of_automated_agent
-      - object:
-          subject: CHEBI:82720  # empagliflozin
-          predicate: biolink:preventative_for_condition
-          object: UMLS:C1320716  # Cardiovascular event
-          category: biolink:ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation
-          knowledge_level: knowledge_assertion
-          agent_type: manual_validation_of_automated_agent
-      - object:
-          subject: CHEBI:6919  # mezlocillin
-          predicate: biolink:treats
-          object: EFO:1001421  # Serratia Infections
-          category: biolink:ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation
-          knowledge_level: knowledge_assertion
-          agent_type: manual_validation_of_automated_agent
-      - object:
-          subject: CHEBI:135361  # methscopolamine
-          predicate: biolink:treats
-          object: MONDO:0005324  # seasonal allergic rhinitis
-          category: biolink:ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation
-          knowledge_level: knowledge_assertion
-          agent_type: manual_validation_of_automated_agent
 
   chemical or drug or treatment to disease or phenotypic feature association:
     description: >-
@@ -11534,9 +11501,33 @@ classes:
     mixins:
       - entity to disease or phenotypic feature association mixin
       - clinical trial and regulatory approval context mixin
+    slots:
+      - treatment outcome
     slot_usage:
       predicate:
         subproperty_of: treats or applied or studied to treat
+    examples:
+      - object:
+          subject: CHEBI:6919  # mezlocillin
+          predicate: biolink:treats
+          object: EFO:1001421  # Serratia Infections
+          category: biolink:ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation
+          knowledge_level: knowledge_assertion
+          agent_type: manual_validation_of_automated_agent
+      - object:
+          subject: CHEBI:135361  # methscopolamine
+          predicate: biolink:treats
+          object: MONDO:0005324  # seasonal allergic rhinitis
+          category: biolink:ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation
+          knowledge_level: knowledge_assertion
+          agent_type: manual_validation_of_automated_agent
+      - object:
+          subject: CHEBI:82720  # empagliflozin
+          predicate: biolink:preventative_for_condition
+          object: UMLS:C1320716  # Cardiovascular event
+          category: biolink:ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation
+          knowledge_level: knowledge_assertion
+          agent_type: manual_validation_of_automated_agent
 
   chemical or drug or treatment adverse event association:
     description: >-

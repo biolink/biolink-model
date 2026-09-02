@@ -2200,10 +2200,6 @@ message ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation
   uriorcurie subjectSpecializationQualifier = 0
   uriorcurie objectSpecializationQualifier = 0
  repeated  string anatomicalContextQualifier = 0
-  clinicalApprovalStatusEnum clinicalApprovalStatus = 0
-  researchPhaseEnum maxResearchPhase = 0
- repeated  string fDARegulatoryApprovals = 0
-  integer numberOfCases = 0
  }
 // An interaction between a chemical entity and a biological process or pathway.
 message ChemicalEntityToPathwayAssociation
@@ -2690,6 +2686,7 @@ message ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation
   organismTaxon speciesContextQualifier = 0
  repeated  string type = 0
  repeated  uriorcurie category = 0
+ repeated  treatmentOutcomeEnum treatmentOutcome = 0
   uriorcurie predicate = 0
   frequencyValue frequencyQualifier = 0
   geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0

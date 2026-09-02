@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-09-02T19:47:07
+# Generation date: 2026-09-02T16:32:00
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/vocab/
@@ -9715,10 +9715,6 @@ class ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation(Association):
     subject_specialization_qualifier: Optional[Union[str, URIorCURIE]] = None
     object_specialization_qualifier: Optional[Union[str, URIorCURIE]] = None
     anatomical_context_qualifier: Optional[Union[str, list[str]]] = empty_list()
-    clinical_approval_status: Optional[Union[str, "ClinicalApprovalStatusEnum"]] = None
-    max_research_phase: Optional[Union[str, "ResearchPhaseEnum"]] = None
-    FDA_regulatory_approvals: Optional[Union[str, list[str]]] = empty_list()
-    number_of_cases: Optional[int] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
@@ -9772,19 +9768,6 @@ class ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation(Association):
             self.anatomical_context_qualifier = [self.anatomical_context_qualifier] if self.anatomical_context_qualifier is not None else []
         self.anatomical_context_qualifier = [v if isinstance(v, str) else str(v) for v in self.anatomical_context_qualifier]
 
-        if self.clinical_approval_status is not None and not isinstance(self.clinical_approval_status, ClinicalApprovalStatusEnum):
-            self.clinical_approval_status = ClinicalApprovalStatusEnum(self.clinical_approval_status)
-
-        if self.max_research_phase is not None and not isinstance(self.max_research_phase, ResearchPhaseEnum):
-            self.max_research_phase = ResearchPhaseEnum(self.max_research_phase)
-
-        if not isinstance(self.FDA_regulatory_approvals, list):
-            self.FDA_regulatory_approvals = [self.FDA_regulatory_approvals] if self.FDA_regulatory_approvals is not None else []
-        self.FDA_regulatory_approvals = [v if isinstance(v, str) else str(v) for v in self.FDA_regulatory_approvals]
-
-        if self.number_of_cases is not None and not isinstance(self.number_of_cases, int):
-            self.number_of_cases = int(self.number_of_cases)
-
         super().__post_init__(**kwargs)
         if not isinstance(self.category, list):
             self.category = [self.category] if self.category is not None else []
@@ -9811,6 +9794,7 @@ class ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation(Associati
     knowledge_level: Union[str, "KnowledgeLevelEnum"] = None
     agent_type: Union[str, "AgentTypeEnum"] = None
     predicate: Union[str, URIorCURIE] = None
+    treatment_outcome: Optional[Union[Union[str, "TreatmentOutcomeEnum"], list[Union[str, "TreatmentOutcomeEnum"]]]] = empty_list()
     frequency_qualifier: Optional[Union[str, FrequencyValue]] = None
     subject_aspect_qualifier: Optional[Union[str, "GeneOrGeneProductOrChemicalEntityAspectEnum"]] = None
     subject_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
@@ -9846,6 +9830,10 @@ class ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation(Associati
             self.MissingRequiredField("predicate")
         if not isinstance(self.predicate, URIorCURIE):
             self.predicate = URIorCURIE(self.predicate)
+
+        if not isinstance(self.treatment_outcome, list):
+            self.treatment_outcome = [self.treatment_outcome] if self.treatment_outcome is not None else []
+        self.treatment_outcome = [v if isinstance(v, TreatmentOutcomeEnum) else TreatmentOutcomeEnum(v) for v in self.treatment_outcome]
 
         if self.frequency_qualifier is not None and not isinstance(self.frequency_qualifier, FrequencyValue):
             self.frequency_qualifier = FrequencyValue(self.frequency_qualifier)
@@ -16089,6 +16077,22 @@ class ResponseEnum(EnumDefinitionImpl):
         description="A response to a treatment or intervention",
     )
 
+class TreatmentOutcomeEnum(EnumDefinitionImpl):
+    """
+    The outcome of treating a disease or phenotypic feature with a chemical entity.
+    """
+    fully_recovered = PermissibleValue(text="fully_recovered")
+    improved = PermissibleValue(text="improved")
+    unchanged = PermissibleValue(text="unchanged")
+    deteriorated = PermissibleValue(text="deteriorated")
+    died = PermissibleValue(text="died")
+    unknown = PermissibleValue(text="unknown")
+
+    _defn = EnumDefinition(
+        name="TreatmentOutcomeEnum",
+        description="The outcome of treating a disease or phenotypic feature with a chemical entity.",
+    )
+
 class ResponseTargetEnum(EnumDefinitionImpl):
     """
     The target of a treatment or intervention
@@ -18748,6 +18752,9 @@ slots.phase = Slot(uri=BIOLINK.phase, name="phase", curie=BIOLINK.curie('phase')
 
 slots.clinical_approval_status = Slot(uri=BIOLINK.clinical_approval_status, name="clinical approval status", curie=BIOLINK.curie('clinical_approval_status'),
                    model_uri=BIOLINK.clinical_approval_status, domain=Association, range=Optional[Union[str, "ClinicalApprovalStatusEnum"]])
+
+slots.treatment_outcome = Slot(uri=BIOLINK.treatment_outcome, name="treatment outcome", curie=BIOLINK.curie('treatment_outcome'),
+                   model_uri=BIOLINK.treatment_outcome, domain=Association, range=Optional[Union[Union[str, "TreatmentOutcomeEnum"], list[Union[str, "TreatmentOutcomeEnum"]]]])
 
 slots.max_research_phase = Slot(uri=BIOLINK.max_research_phase, name="max research phase", curie=BIOLINK.curie('max_research_phase'),
                    model_uri=BIOLINK.max_research_phase, domain=Association, range=Optional[Union[str, "ResearchPhaseEnum"]])

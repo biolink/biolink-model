@@ -18797,16 +18797,6 @@
             ],
             "description": "An interaction between a chemical entity and a phenotype or disease, where the presence of the chemical gives rise to or exacerbates the phenotype.",
             "properties": {
-                "FDA_regulatory_approvals": {
-                    "description": "Numbers that identify specific drug applications. Each drug can have multiple approval numbers (for example, as seen with ranitidine having both ANADA200536 and ANDA200536).",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": [
-                        "array",
-                        "null"
-                    ]
-                },
                 "adjusted_p_value": {
                     "description": "The adjusted p-value is the probability of obtaining test results at least as extreme as the results actually observed, under the assumption that the null hypothesis is correct, adjusted for multiple comparisons. P is always italicized and capitalized. The actual P value* should be expressed (P=. 04) rather than expressing a statement of inequality (P<. 05), unless P<.",
                     "type": [
@@ -18854,10 +18844,6 @@
                         "array",
                         "null"
                     ]
-                },
-                "clinical_approval_status": {
-                    "$ref": "#/$defs/ClinicalApprovalStatusEnum",
-                    "description": "The clinical approval status of a chemical entity for treating a specific disease or condition, as captured in the context of the association between the chemical and the disease."
                 },
                 "deprecated": {
                     "description": "A boolean flag indicating that an entity is no longer considered current or valid.",
@@ -18999,10 +18985,6 @@
                         "null"
                     ]
                 },
-                "max_research_phase": {
-                    "$ref": "#/$defs/ResearchPhaseEnum",
-                    "description": "The maximum research phase reached for a specific chemical-disease pair, indicating the highest clinical trial phase achieved for the chemical entity's investigation as a treatment for the associated disease or condition."
-                },
                 "name": {
                     "description": "A human-readable name for an attribute or entity.",
                     "type": [
@@ -19014,13 +18996,6 @@
                     "description": "if set to true, then the association is negated i.e. is not true",
                     "type": [
                         "boolean",
-                        "null"
-                    ]
-                },
-                "number_of_cases": {
-                    "description": "The number of cases in a study or clinical trial, primarily used in conversion of drug approval data.",
-                    "type": [
-                        "integer",
                         "null"
                     ]
                 },
@@ -23378,6 +23353,16 @@
                     "format": "time",
                     "type": [
                         "string",
+                        "null"
+                    ]
+                },
+                "treatment_outcome": {
+                    "description": "The outcome of treating a disease or phenotypic feature with a chemical entity.",
+                    "items": {
+                        "$ref": "#/$defs/TreatmentOutcomeEnum"
+                    },
+                    "type": [
+                        "array",
                         "null"
                     ]
                 },
@@ -93418,6 +93403,19 @@
             ],
             "title": "Treatment",
             "type": "object"
+        },
+        "TreatmentOutcomeEnum": {
+            "description": "The outcome of treating a disease or phenotypic feature with a chemical entity.",
+            "enum": [
+                "fully_recovered",
+                "improved",
+                "unchanged",
+                "deteriorated",
+                "died",
+                "unknown"
+            ],
+            "title": "TreatmentOutcomeEnum",
+            "type": "string"
         },
         "VariantAsAModelOfDiseaseAssociation": {
             "additionalProperties": false,

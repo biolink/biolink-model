@@ -2739,10 +2739,10 @@ slots:
     range: gene
 
   active in:
+    is_a: located in
     description: >-
       Holds between a gene or gene product and a cellular component in which it carries out its
       molecular function.
-    is_a: related to at instance level
     domain: gene or gene product
     range: cellular component
     annotations:
@@ -2751,7 +2751,7 @@ slots:
       - RO:0002432
 
   has active component:
-    is_a: related to at instance level
+    is_a: location of
     inverse: active in
     domain: cellular component
     range: gene or gene product
@@ -6993,6 +6993,13 @@ slots:
       The clinical approval status of a chemical entity for treating a specific disease or condition,
       as captured in the context of the association between the chemical and the disease.
     range: ClinicalApprovalStatusEnum
+
+  treatment outcome:
+    is_a: association slot
+    description: >-
+      The outcome of treating a disease or phenotypic feature with a chemical entity.
+    range: TreatmentOutcomeEnum
+    multivalued: true
 
   max research phase:
     is_a: association slot
@@ -11462,7 +11469,6 @@ classes:
       - object
     mixins:
       - entity to disease or phenotypic feature association mixin
-      - clinical trial and regulatory approval context mixin
     slot_usage:
       object:
         range: disease or phenotypic feature
@@ -11482,34 +11488,6 @@ classes:
           category: biolink:ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation
           knowledge_level: knowledge_assertion
           agent_type: manual_validation_of_automated_agent
-      - object:
-          subject: PUBCHEM.COMPOUND:134612761  # macimorelin
-          predicate: biolink:diagnoses
-          object: UMLS:C1720505  # Adult growth hormone deficiency
-          category: biolink:ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation
-          knowledge_level: knowledge_assertion
-          agent_type: manual_validation_of_automated_agent
-      - object:
-          subject: CHEBI:82720  # empagliflozin
-          predicate: biolink:preventative_for_condition
-          object: UMLS:C1320716  # Cardiovascular event
-          category: biolink:ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation
-          knowledge_level: knowledge_assertion
-          agent_type: manual_validation_of_automated_agent
-      - object:
-          subject: CHEBI:6919  # mezlocillin
-          predicate: biolink:treats
-          object: EFO:1001421  # Serratia Infections
-          category: biolink:ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation
-          knowledge_level: knowledge_assertion
-          agent_type: manual_validation_of_automated_agent
-      - object:
-          subject: CHEBI:135361  # methscopolamine
-          predicate: biolink:treats
-          object: MONDO:0005324  # seasonal allergic rhinitis
-          category: biolink:ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation
-          knowledge_level: knowledge_assertion
-          agent_type: manual_validation_of_automated_agent
 
   chemical or drug or treatment to disease or phenotypic feature association:
     description: >-
@@ -11523,9 +11501,33 @@ classes:
     mixins:
       - entity to disease or phenotypic feature association mixin
       - clinical trial and regulatory approval context mixin
+    slots:
+      - treatment outcome
     slot_usage:
       predicate:
         subproperty_of: treats or applied or studied to treat
+    examples:
+      - object:
+          subject: CHEBI:6919  # mezlocillin
+          predicate: biolink:treats
+          object: EFO:1001421  # Serratia Infections
+          category: biolink:ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation
+          knowledge_level: knowledge_assertion
+          agent_type: manual_validation_of_automated_agent
+      - object:
+          subject: CHEBI:135361  # methscopolamine
+          predicate: biolink:treats
+          object: MONDO:0005324  # seasonal allergic rhinitis
+          category: biolink:ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation
+          knowledge_level: knowledge_assertion
+          agent_type: manual_validation_of_automated_agent
+      - object:
+          subject: CHEBI:82720  # empagliflozin
+          predicate: biolink:preventative_for_condition
+          object: UMLS:C1320716  # Cardiovascular event
+          category: biolink:ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation
+          knowledge_level: knowledge_assertion
+          agent_type: manual_validation_of_automated_agent
 
   chemical or drug or treatment adverse event association:
     description: >-
@@ -14044,6 +14046,17 @@ enums:
       negative:
         description: >-
           A negative response to a treatment or intervention
+
+  TreatmentOutcomeEnum:
+    description: >-
+      The outcome of treating a disease or phenotypic feature with a chemical entity.
+    permissible_values:
+      fully_recovered:
+      improved:
+      unchanged:
+      deteriorated:
+      died:
+      unknown:
 
   ResponseTargetEnum:
     description: >-
