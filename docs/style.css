@@ -1,0 +1,81 @@
+h1,h2,h3,h4,h5,h6,footer,p {
+  font-family: Helvetica,sans-serif;
+}
+p a, footer a {
+  color: rgba(0, 128, 128, 1.0);
+}
+footer {
+  font-size: 10px;
+}
+.active {
+  border-bottom: 3px solid #9a9a9a;
+}
+button:hover.active {
+  background: white;
+}
+button {
+  cursor: pointer;
+  letter-spacing: 1.2px;
+  font-family: Arial,sans-serif;
+  background: none;
+  border-bottom: 3px solid white;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  padding: 9px 18px;
+  margin: 0px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+button:hover {
+  background: #fafafa;
+}
+button a {
+  text-decoration: none;
+  color: black;
+}
+.small {
+  font-size: 11px;
+}
+.node {
+  cursor: pointer;
+}
+.node text {
+  font: 12px sans-serif;
+  text-shadow:-2px -2px 0 #fff, 2px -2px 0 #fff, -2px 2px 0 #fff, 2px 2px 0 #fff;
+}
+.link {
+  fill: none; !important;
+  stroke: rgba(100, 100, 100, 0.4); !important;
+  stroke-width: 1.5px; !important;
+}
+.small-text {
+    font-size: 0.8em;
+}
+.highlight-box {
+    background-color: #f5f5f5; /* Very light grey background */
+    padding: 10px; /* Adds space around the content */
+    border: 1px solid #ddd; /* Light grey border */
+    border-radius: 5px; /* Rounded corners for the border */
+    margin: 10px 0; /* Adds some space above and below the box */
+}
+
+.highlight-box a {
+    color: #007bff; /* Link color (blue) */
+    text-decoration: underline; /* Underline links */
+}
+
+.md-link {
+  fill: blue;  /* Sets the text color to blue */
+}
+
+.md-link:visited {
+  fill: purple;  /* Changes the color to purple once visited */
+}
+
+.md-link:hover {
+  fill: darkblue;  /* Changes the color on hover for visual feedback */
+}
