@@ -72,6 +72,7 @@ prefixes:
   GSID: 'https://scholar.google.com/citations?user='
   GTEx: 'https://www.gtexportal.org/home/gene/'
   GTOPDB: 'https://www.guidetopharmacology.org/GRAC/LigandDisplayForward?ligandId='
+  IUPHARobj: 'https://www.guidetopharmacology.org/GRAC/ObjectDisplayForward?objectId='
   gtpo: 'https://rdf.guidetopharmacology.org/ns/gtpo#'
   HANCESTRO: 'http://www.ebi.ac.uk/ancestro/ancestro_'
   HCPCS: 'http://purl.bioontology.org/ontology/HCPCS/'
@@ -2760,7 +2761,7 @@ slots:
       Holds between a gene or gene product and a biological process such that the molecular function
       of the gene product, by way of a chain of causally linked events, is upstream of and
       contributes to the execution of the process.
-    is_a: related to at instance level
+    is_a: acts upstream of or within
     domain: gene or gene product
     range: biological process
     annotations:
@@ -2769,7 +2770,7 @@ slots:
       - RO:0002263
 
   has upstream actor:
-    is_a: related to at instance level
+    is_a: has upstream or within actor
     inverse: acts upstream of
     domain: biological process
     range: gene or gene product
@@ -2817,7 +2818,7 @@ slots:
       Holds between a gene or gene product and a biological process when the gene product either
       acts upstream of the process or participates in it; used when the more specific causal
       relationship is not known. Corresponds to RO:0002264.
-    is_a: acts upstream of
+    is_a: related to at instance level
     domain: gene or gene product
     range: biological process
     annotations:
@@ -2826,7 +2827,7 @@ slots:
       - RO:0002264
 
   has upstream or within actor:
-    is_a: has upstream actor
+    is_a: related to at instance level
     inverse: acts upstream of or within
     domain: biological process
     range: gene or gene product
@@ -9824,6 +9825,7 @@ classes:
       - REACT
       - CHEMBL.TARGET
       - ComplexPortal
+      - IUPHARobj
     in_subset:
       - model_organism_database
 
@@ -10787,6 +10789,7 @@ classes:
       - evidence count
       - semmed agreement count
       - association basis qualifier
+      - species context qualifier
     slot_usage:
       type:
         description: rdf:type of biolink:Association should be fixed at rdf:Statement
@@ -10833,6 +10836,26 @@ classes:
           knowledge_level: knowledge_assertion
           agent_type: manual_agent
           publications: ["PMID:15289437"]
+      - description: >-
+          GtoPdb target 378 (5-HT3AB) is a source-defined macromolecular
+          complex. The same IUPHARobj identifier has species-specific protein
+          compositions, so each has_part assertion requires taxon context.
+        object:
+          subject: IUPHARobj:378
+          predicate: biolink:has_part
+          object: UniProtKB:P46098  # human HTR3A
+          category: biolink:Association
+          knowledge_level: knowledge_assertion
+          agent_type: manual_agent
+          species_context_qualifier: NCBITaxon:9606
+      - object:
+          subject: IUPHARobj:378
+          predicate: biolink:has_part
+          object: UniProtKB:P23979  # mouse Htr3a
+          category: biolink:Association
+          knowledge_level: knowledge_assertion
+          agent_type: manual_agent
+          species_context_qualifier: NCBITaxon:10090
       - object:
           subject: NCBIGene:4357  # MPST
           predicate: biolink:enables
