@@ -1647,10 +1647,14 @@ slots:
       approval for a specific condition, disease, phenotype, etc., see the association slot, 'clinical approval status.'
     range: ApprovalStatusEnum
 
-  FDA regulatory approvals:
+  regulatory approvals:
     description: >-
-      Numbers that identify specific drug applications. Each drug can have multiple approval numbers
-      (for example, as seen with ranitidine having both ANADA200536 and ANDA200536).
+      Numbers or identifiers issued by regulatory agencies that identify specific drug
+      applications or marketing authorizations. Values are application-number provenance
+      and are not guaranteed to be verified identifiers from any particular agency; they
+      may include FDA application numbers (for example, as seen with ranitidine having both
+      ANADA200536 and ANDA200536) as well as identifiers from other regulatory agencies such
+      as EMA marketing authorizations. Each drug can have multiple approval numbers.
     range: string
     multivalued: true
 
@@ -12305,7 +12309,7 @@ classes:
     slots:
       - clinical approval status
       - max research phase
-      - FDA regulatory approvals
+      - regulatory approvals
       - number of cases
 
   entity to feature or variant qualifiers mixin:
@@ -13593,7 +13597,7 @@ classes:
     description: >-
       An association between any entity and a disease, capturing
       clinical context such as approval status, research phase,
-      FDA regulatory approvals, and number of cases.
+      regulatory approvals, and number of cases.
     is_a: association
     exact_mappings:
     mixins:
@@ -13644,7 +13648,7 @@ classes:
     description: >-
       An association between any entity and a phenotypic feature,
       capturing clinical context such as approval status, research phase,
-      FDA regulatory approvals, and number of cases.
+      regulatory approvals, and number of cases.
     is_a: association
     exact_mappings:
     mixins:
