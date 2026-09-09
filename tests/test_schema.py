@@ -18,6 +18,21 @@ def test_ontology_class_description_uses_biolink_prefix():
     assert "use bl:BiologicalProcess as the type." not in description
 
 
+def _iter_mapping_terms(node):
+    if isinstance(node, dict):
+        for key, value in node.items():
+            if key.endswith("_mappings"):
+                terms = value if isinstance(value, list) else [value]
+                for term in terms:
+                    if isinstance(term, str) and ":" in term and " " not in term:
+                        yield term
+            else:
+                yield from _iter_mapping_terms(value)
+    elif isinstance(node, list):
+        for item in node:
+            yield from _iter_mapping_terms(item)
+
+
 def _is_obsolete_in_ols(curie: str):
     query = urlencode(
         {"q": curie, "queryFields": "obo_id", "exact": "true", "rows": "1"}
@@ -41,22 +56,14 @@ def _is_obsolete_in_ols(curie: str):
     return bool(is_obsolete)
 
 
-def test_processed_material_mappings_are_not_obsolete_in_ols():
+def test_mappings_are_not_obsolete_in_ols():
     schema_path = os.path.join(os.path.dirname(__file__), "..", "biolink-model.yaml")
     with open(schema_path) as schema_file:
         schema = yaml.safe_load(schema_file)
 
-    processed_material = schema["classes"]["processed material"]
-    mapping_terms = []
-    for key, value in processed_material.items():
-        if key.endswith("_mappings"):
-            mapping_terms.extend(value if isinstance(value, list) else [value])
-
     checked = 0
     obsolete_terms = []
-    for term in mapping_terms:
-        if ":" not in term:
-            continue
+    for term in sorted(set(_iter_mapping_terms(schema))):
         obsolescence = _is_obsolete_in_ols(term)
         if obsolescence is None:
             continue
@@ -65,5 +72,5 @@ def test_processed_material_mappings_are_not_obsolete_in_ols():
             obsolete_terms.append(term)
 
     if checked == 0:
-        pytest.skip("No processed material mapping terms were resolvable in OLS API.")
+        pytest.skip("No mapping terms were resolvable in OLS API.")
     assert not obsolete_terms, f"Obsolete mapping terms found: {sorted(obsolete_terms)}"
