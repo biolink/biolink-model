@@ -4040,11 +4040,46 @@ slots:
     domain: disease or phenotypic feature
     range: chemical or drug or treatment
 
+  prevents:
+    is_a: affects likelihood of
+    mixin: true
+    description: >-
+      Holds between an intervention (substance, procedure, or activity) and a medical condition
+      (disease or phenotypic feature), and states that the intervention is, in some population(s),
+      able to prevent the condition from manifesting in the first place, or to delay or reduce
+      the risk of it manifesting. ‘Prevents’ edges should be asserted (knowledge_level: assertion)
+      only in cases where there is strong supporting evidence - i.e. in some population(s) the
+      intervention is approved for prevention of the condition, passed phase 3 or is in phase 4
+      trials for prevention of the condition, or is an otherwise established prophylactic
+      intervention in the medical community. In the absence of such evidence, ‘prevents’ edges
+      based on weaker or indirect forms of evidence can instead be created as predictions
+      (knowledge_level: prediction).
+    domain: chemical or drug or treatment
+    range: disease or phenotypic feature
+    annotations:
+      canonical_predicate: true
+    in_subset:
+      - translator_minimal
+    exact_mappings:
+      - SEMMEDDB:PREVENTS
+    narrow_mappings:
+      # more restricted case of a material entity mitigating a pathological process
+      - RO:0002599
+
+  prevented by:
+    is_a: likelihood affected by
+    mixin: true
+    inverse: prevents
+    domain: disease or phenotypic feature
+    range: chemical or drug or treatment
+    in_subset:
+      - translator_minimal
+
   preventative for condition:
-    aliases: ['prophylactic for', 'prevents']
+    aliases: ['prophylactic for']
     is_a: affects likelihood of
     mixins:
-      - treats
+      - prevents
     description: >-
       Holds between a substance, procedure, or activity and a medical condition (disease or phenotypic feature),
       and states that the  substance, procedure, or activity is able to prevent it manifesting in the first place.
