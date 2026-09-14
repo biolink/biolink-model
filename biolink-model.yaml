@@ -12358,8 +12358,6 @@ classes:
     is_a: entity to disease or phenotypic feature association mixin
     mixins:
       - frequency quantifier
-    slots:
-      - sex qualifier
     defining_slots:
       - subject
       - predicate
@@ -12523,6 +12521,8 @@ classes:
       - object specialization qualifier
       - anatomical context qualifier
       - population context qualifier
+      - sex qualifier
+      - temporal context qualifier
     defining_slots:
       - subject
       - predicate
