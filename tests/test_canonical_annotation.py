@@ -59,3 +59,34 @@ def test_macromolecular_complex_accepts_iuphar_target_prefix(load_biolink_model)
         model.schema.prefixes["IUPHARobj"].prefix_reference
         == "https://www.guidetopharmacology.org/GRAC/ObjectDisplayForward?objectId="
     )
+
+def test_entity_disease_phenotype_association_qualifier_vocabulary(load_biolink_model):
+    """Ensure disease and phenotype associations expose the approved qualifier vocabulary."""
+    model = SchemaView(load_biolink_model)
+    expected = {
+        "anatomical context qualifier",
+        "disease context qualifier",
+        "frequency qualifier",
+        "population context qualifier",
+        "sex qualifier",
+        "temporal context qualifier",
+    }
+    excluded = {
+        "severity qualifier",
+        "temporal interval qualifier",
+    }
+
+    for class_name in [
+        "entity to disease association",
+        "entity to phenotypic feature association",
+    ]:
+        induced = {slot.name for slot in model.class_induced_slots(class_name)}
+        assert expected <= induced, f"{class_name} is missing {sorted(expected - induced)}"
+        assert not (excluded & induced), f"{class_name} unexpectedly has {sorted(excluded & induced)}"
+
+    # The shared mixin must not redeclare slots the concrete associations already
+    # inherit from `association`; species context qualifier arrives that way.
+    mixin_slots = set(
+        model.get_class("entity to disease or phenotypic feature association mixin").slots or []
+    )
+    assert "species context qualifier" not in mixin_slots
