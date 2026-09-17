@@ -1,5 +1,30 @@
 CHANGES
 =======
+4.4.5
+-----
+## What's Changed
+* feat: allow population context qualifier on entity to disease and phenotypic feature associations by @SkyeAv in https://github.com/biolink/biolink-model/pull/1817
+* Add treatment outcomes to chemical-disease associations by @Copilot in https://github.com/biolink/biolink-model/pull/1806
+* Rename FDA regulatory approvals slot to regulatory approvals by @SkyeAv in https://github.com/biolink/biolink-model/pull/1814
+* Make `active in` a child of `located in` by @Copilot in https://github.com/biolink/biolink-model/pull/1808
+* consolidate and deduplicate mixins for disease/phenotype associations with clinical and context qualifiers by @sierra-moxon in https://github.com/biolink/biolink-model/pull/1803
+* Use canonical biolink prefix in ontology class definition by @Copilot in https://github.com/biolink/biolink-model/pull/1810
+* Replace `orphanet:` CURIE prefix with `ORDO:` by @Copilot in https://github.com/biolink/biolink-model/pull/1809
+* Fix acts_upstream_of predicate hierarchy to align with RO by @Copilot in https://github.com/biolink/biolink-model/pull/1807
+* Add IUPHAR target prefix for macromolecular complexes by @kennethbruskiewicz in https://github.com/biolink/biolink-model/pull/1797
+* Drop invalid types: key from workflow_dispatch trigger by @sierra-moxon in https://github.com/biolink/biolink-model/pull/1805
+* Mirror docs under /docs/ so w3id vocab IRIs resolve by @sierra-moxon in https://github.com/biolink/biolink-model/pull/1804
+* Add deterministic hash-based IDs for Association classes by @kevinschaper in https://github.com/biolink/biolink-model/pull/1708
+* fix: correct range of `animal model available from` slot to `uriorcurie` by @Copilot in https://github.com/biolink/biolink-model/pull/1802
+* chemical entity to anatomical entity association by @RichardBruskiewich in https://github.com/biolink/biolink-model/pull/1794
+* Bump pydantic from 2.13.4 to 2.13.5 in the patch-updates group across 1 directory by @dependabot[bot] in https://github.com/biolink/biolink-model/pull/1815
+* Bump curies from 0.14.4 to 0.14.6 in the patch-updates group across 1 directory by @dependabot[bot] in https://github.com/biolink/biolink-model/pull/1792
+
+## New Contributors
+* @kennethbruskiewicz made their first contribution in https://github.com/biolink/biolink-model/pull/1797
+
+**Full Changelog**: https://github.com/biolink/biolink-model/compare/v4.4.4...v4.4.5
+
 4.4.4
 -----
 ## What's Changed
