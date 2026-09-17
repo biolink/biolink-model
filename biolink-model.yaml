@@ -4393,6 +4393,35 @@ slots:
     domain: disease or phenotypic feature
     range: chemical or drug or treatment
 
+  applied to prevent:
+    aliases: ['administered to prevent', 'used to prevent', 'given to prevent']
+    is_a: related to at instance level
+    description: >-
+      Holds between an intervention (substance, procedure, or activity) and a medical condition, and reports
+      that the intervention was actually taken or administered by one or more patients with the intent
+      of preventing the condition.
+    notes:
+      - >-
+        This predicate is used simply to report observations of use in the real world, and is agnostic to
+        whether the intervention is approved for or might be effective in preventing the condition. In
+        practice, it would be used to represent records/statements from patient self-reporting or prescription
+        databases where the stated intent of use is prevention of a condition rather than treatment of an
+        existing condition (e.g. a FAERS record where a drug was taken to prevent migraine).
+    mixins:
+      - prevents
+    domain: chemical or drug or treatment
+    range: disease or phenotypic feature
+    annotations:
+      canonical_predicate: true
+    in_subset:
+      - translator_minimal
+
+  prevention applications from:
+    is_a: related to at instance level
+    inverse: applied to prevent
+    domain: disease or phenotypic feature
+    range: chemical or drug or treatment
+
   treats or applied or studied to treat:
     is_a: related to at instance level
     mixin: true
