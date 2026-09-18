@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://biolink.github.io/biolink-model/FDA_regulatory_approvals/">
+        <link rel="canonical" href="https://biolink.github.io/biolink-model/TreatmentOutcomeEnum/">
       
       
       
@@ -21,7 +21,7 @@
     
     
       
-        <title>Slot: FDA_regulatory_approvals (multivalued) - Biolink Model Documentation</title>
+        <title>Enum: TreatmentOutcomeEnum - Biolink Model Documentation</title>
       
     
     
@@ -82,7 +82,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slot-fda_regulatory_approvals-multivalued" class="md-skip">
+        <a href="#enum-treatmentoutcomeenum" class="md-skip">
           Skip to content
         </a>
       
@@ -117,7 +117,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Slot: FDA_regulatory_approvals (multivalued)
+              Enum: TreatmentOutcomeEnum
             
           </span>
         </div>
@@ -693,10 +693,21 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#applicable-classes" class="md-nav__link">
+  <a href="#permissible-values" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Applicable Classes
+        Permissible Values
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#slots-constrained-by-this-enum" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Slots constrained by this enum
       
     </span>
   </a>
@@ -734,53 +745,110 @@
   
 
 
-<h1 id="slot-fda_regulatory_approvals-multivalued"><strong> Slot: FDA_regulatory_approvals </strong>  (multivalued)</h1>
-<div class="highlight-box"><strong>Description:</strong><i> Numbers that identify specific drug applications. Each drug can have multiple approval numbers (for example, as seen with ranitidine having both ANADA200536 and ANDA200536).</i><br>
-
-
-<br>
-
-</div>
-
-<p><strong>Range:</strong>   <a href="../String/">String</a> <br></p>
-<!-- no inheritance hierarchy -->
-
-<h2 id="applicable-classes">Applicable Classes</h2>
+<h1 id="enum-treatmentoutcomeenum"><strong> Enum: </strong> TreatmentOutcomeEnum</h1>
+<p><em>The outcome of treating a disease or phenotypic feature with a chemical entity.</em></p>
+<h2 id="permissible-values">Permissible Values</h2>
 <table>
 <thead>
 <tr>
-<th>Name</th>
+<th>Value</th>
+<th>Meaning</th>
 <th>Description</th>
-<th>Modifies Slot</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><a href="../EntityToDiseaseAssociation/">EntityToDiseaseAssociation</a></td>
-<td>An association between any entity and a disease, capturing clinical context such as approval status, research phase, FDA regulatory approvals, and number of cases.</td>
-<td>no</td>
+<td>fully_recovered</td>
+<td>None</td>
+<td>Complete recovery following treatment; free of symptoms with no lasting health problems.</td>
 </tr>
 <tr>
-<td><a href="../EntityToPhenotypicFeatureAssociation/">EntityToPhenotypicFeatureAssociation</a></td>
-<td>An association between any entity and a phenotypic feature, capturing clinical context such as approval status, research phase, FDA regulatory approvals, and number of cases.</td>
-<td>no</td>
+<td>improved</td>
+<td>None</td>
+<td>Partial improvement following treatment.</td>
+</tr>
+<tr>
+<td>unchanged</td>
+<td>None</td>
+<td>No change in the condition following treatment.</td>
+</tr>
+<tr>
+<td>deteriorated</td>
+<td>None</td>
+<td>Worsening of the condition following treatment.</td>
+</tr>
+<tr>
+<td>died</td>
+<td>None</td>
+<td>Death following treatment.</td>
+</tr>
+<tr>
+<td>unknown</td>
+<td>None</td>
+<td>Treatment outcome is unknown.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="slots-constrained-by-this-enum">Slots constrained by this enum</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../treatment_outcome/">treatment_outcome</a></td>
 </tr>
 </tbody>
 </table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details open>
 
-<pre><code class="language-yaml">name: FDA regulatory approvals
-description: Numbers that identify specific drug applications. Each drug can have
-  multiple approval numbers (for example, as seen with ranitidine having both ANADA200536
-  and ANDA200536).
+<pre><code class="language-yaml">name: TreatmentOutcomeEnum
+description: The outcome of treating a disease or phenotypic feature with a chemical
+  entity.
 from_schema: https://w3id.org/biolink/vocab/
-alias: FDA_regulatory_approvals
-domain_of:
-- entity to disease association
-- entity to phenotypic feature association
-range: string
-multivalued: true
+permissible_values:
+  fully_recovered:
+    text: fully_recovered
+    description: Complete recovery following treatment; free of symptoms with no lasting
+      health problems.
+    exact_mappings:
+    - NCIT:C82467
+    narrow_mappings:
+    - NCIT:C4870
+  improved:
+    text: improved
+    description: Partial improvement following treatment.
+    exact_mappings:
+    - NCIT:C125459
+    narrow_mappings:
+    - NCIT:C18058
+  unchanged:
+    text: unchanged
+    description: No change in the condition following treatment.
+    exact_mappings:
+    - NCIT:C71687
+    narrow_mappings:
+    - NCIT:C18213
+  deteriorated:
+    text: deteriorated
+    description: Worsening of the condition following treatment.
+    exact_mappings:
+    - NCIT:C25751
+    narrow_mappings:
+    - NCIT:C35571
+  died:
+    text: died
+    description: Death following treatment.
+    exact_mappings:
+    - NCIT:C28554
+  unknown:
+    text: unknown
+    description: Treatment outcome is unknown.
+    exact_mappings:
+    - NCIT:C17998
 
 </code></pre>
 

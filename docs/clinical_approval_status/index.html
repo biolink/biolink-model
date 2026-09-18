@@ -773,18 +773,8 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation/">ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation</a></td>
-<td>An interaction between a chemical entity and a phenotype or disease, where the presence of the chemical gives rise to or exacerbates the phenotype.</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../EntityToDiseaseAssociation/">EntityToDiseaseAssociation</a></td>
-<td>An association between any entity and a disease, capturing clinical context such as approval status, research phase, FDA regulatory approvals, and number of cases.</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../EntityToPhenotypicFeatureAssociation/">EntityToPhenotypicFeatureAssociation</a></td>
-<td>An association between any entity and a phenotypic feature, capturing clinical context such as approval status, research phase, FDA regulatory approvals, and number of cases.</td>
+<td><a href="../ClinicalTrialAndRegulatoryApprovalContextMixin/">ClinicalTrialAndRegulatoryApprovalContextMixin</a></td>
+<td>A mixin providing the clinical trial and regulatory approval context of an association between an entity (typically a chemical, drug, or treatment) and the disease or phenotypic feature it is used, or is being studied, to treat. These slots are association-scoped: they describe the entity's status with respect to this particular indication. For the entity's overall regulatory status independent of any one indication, see the node properties 'highest FDA approval status' and 'drug regulatory status world wide'.</td>
 <td>no</td>
 </tr>
 </tbody>
@@ -801,9 +791,7 @@ is_a: association slot
 domain: association
 alias: clinical_approval_status
 domain_of:
-- chemical entity to disease or phenotypic feature association
-- entity to disease association
-- entity to phenotypic feature association
+- clinical trial and regulatory approval context mixin
 range: ClinicalApprovalStatusEnum
 
 </code></pre>

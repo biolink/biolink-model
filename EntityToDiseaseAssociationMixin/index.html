@@ -377,10 +377,11 @@
 </div>
 <div class="mermaid"> classDiagram
     class EntityToDiseaseAssociationMixin
-      EntityToFeatureOrDiseaseQualifiersMixin &lt;|-- EntityToDiseaseAssociationMixin
+      EntityToDiseaseOrPhenotypicFeatureAssociationMixin &lt;|-- EntityToDiseaseAssociationMixin
 
 
       EntityToDiseaseAssociationMixin &lt;|-- DiseaseToDiseaseAssociation
+      EntityToDiseaseAssociationMixin &lt;|-- GeneToDiseaseAssociation
       EntityToDiseaseAssociationMixin &lt;|-- CorrelatedGeneToDiseaseAssociation
       EntityToDiseaseAssociationMixin &lt;|-- DruggableGeneToDiseaseAssociation
       EntityToDiseaseAssociationMixin &lt;|-- PhenotypicFeatureToDiseaseAssociation
@@ -391,7 +392,10 @@
       EntityToDiseaseAssociationMixin &lt;|-- GenotypeAsAModelOfDiseaseAssociation
       EntityToDiseaseAssociationMixin &lt;|-- CellLineAsAModelOfDiseaseAssociation
       EntityToDiseaseAssociationMixin &lt;|-- OrganismalEntityAsAModelOfDiseaseAssociation
+      EntityToDiseaseAssociationMixin &lt;|-- EntityToDiseaseAssociation
 
+
+      EntityToDiseaseAssociationMixin : anatomical_context_qualifier
 
       EntityToDiseaseAssociationMixin : disease_context_qualifier
 
@@ -411,6 +415,12 @@
 
           EntityToDiseaseAssociationMixin --|&gt; DirectionQualifierEnum : object_direction_qualifier
 
+      EntityToDiseaseAssociationMixin : object_specialization_qualifier
+
+      EntityToDiseaseAssociationMixin : population_context_qualifier
+
+          EntityToDiseaseAssociationMixin --|&gt; PopulationOfIndividualOrganisms : population_context_qualifier
+
       EntityToDiseaseAssociationMixin : predicate
 
       EntityToDiseaseAssociationMixin : qualified_predicate
@@ -427,12 +437,14 @@
 
           EntityToDiseaseAssociationMixin --|&gt; DirectionQualifierEnum : subject_direction_qualifier
 
+      EntityToDiseaseAssociationMixin : subject_specialization_qualifier
+
 
 </div>
 <h2 id="inheritance">Inheritance</h2>
 <ul>
 <li><a href="../FrequencyQualifierMixin/">FrequencyQualifierMixin</a><ul>
-<li><a href="../EntityToFeatureOrDiseaseQualifiersMixin/">EntityToFeatureOrDiseaseQualifiersMixin</a><ul>
+<li><a href="../EntityToDiseaseOrPhenotypicFeatureAssociationMixin/">EntityToDiseaseOrPhenotypicFeatureAssociationMixin</a><ul>
 <li><strong>EntityToDiseaseAssociationMixin</strong></li>
 </ul>
 </li>
@@ -453,38 +465,62 @@
 <tr>
 <td><a href="../subject_aspect_qualifier/">subject_aspect_qualifier</a>: <br/> <i> Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the subject of an association (aka: statement). </i></td>
 <td>0..1 <br/> <a href="../GeneOrGeneProductOrChemicalEntityAspectEnum/">GeneOrGeneProductOrChemicalEntityAspectEnum</a></td>
-<td><a href="../EntityToFeatureOrDiseaseQualifiersMixin/">EntityToFeatureOrDiseaseQualifiersMixin</a></td>
+<td><a href="../EntityToDiseaseOrPhenotypicFeatureAssociationMixin/">EntityToDiseaseOrPhenotypicFeatureAssociationMixin</a></td>
 <td>stability, abundance, expression, exposure</td>
 </tr>
 <tr>
 <td><a href="../subject_direction_qualifier/">subject_direction_qualifier</a>: <br/> <i> Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement). </i></td>
 <td>0..1 <br/> <a href="../DirectionQualifierEnum/">DirectionQualifierEnum</a></td>
-<td><a href="../EntityToFeatureOrDiseaseQualifiersMixin/">EntityToFeatureOrDiseaseQualifiersMixin</a></td>
+<td><a href="../EntityToDiseaseOrPhenotypicFeatureAssociationMixin/">EntityToDiseaseOrPhenotypicFeatureAssociationMixin</a></td>
 <td>increased, downregulated</td>
 </tr>
 <tr>
 <td><a href="../object_aspect_qualifier/">object_aspect_qualifier</a>: <br/> <i> Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the object of an association (aka: statement). </i></td>
 <td>0..1 <br/> <a href="../GeneOrGeneProductOrChemicalEntityAspectEnum/">GeneOrGeneProductOrChemicalEntityAspectEnum</a></td>
-<td><a href="../EntityToFeatureOrDiseaseQualifiersMixin/">EntityToFeatureOrDiseaseQualifiersMixin</a></td>
+<td><a href="../EntityToDiseaseOrPhenotypicFeatureAssociationMixin/">EntityToDiseaseOrPhenotypicFeatureAssociationMixin</a></td>
 <td>stability, abundance, expression, exposure</td>
 </tr>
 <tr>
 <td><a href="../object_direction_qualifier/">object_direction_qualifier</a>: <br/> <i> Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement). </i></td>
 <td>0..1 <br/> <a href="../DirectionQualifierEnum/">DirectionQualifierEnum</a></td>
-<td><a href="../EntityToFeatureOrDiseaseQualifiersMixin/">EntityToFeatureOrDiseaseQualifiersMixin</a></td>
+<td><a href="../EntityToDiseaseOrPhenotypicFeatureAssociationMixin/">EntityToDiseaseOrPhenotypicFeatureAssociationMixin</a></td>
 <td>increased, downregulated</td>
 </tr>
 <tr>
 <td><a href="../qualified_predicate/">qualified_predicate</a>: <br/> <i> Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  Has a value from the Biolink 'related_to' hierarchy, for example, biolink:related_to, biolink:causes, biolink:treats This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a ‘full statement’ reading of the association, where qualifier-based semantics are included. This is necessary only in cases where the primary predicate does not work in a full statement reading. </i></td>
 <td>0..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
-<td><a href="../EntityToFeatureOrDiseaseQualifiersMixin/">EntityToFeatureOrDiseaseQualifiersMixin</a></td>
+<td><a href="../EntityToDiseaseOrPhenotypicFeatureAssociationMixin/">EntityToDiseaseOrPhenotypicFeatureAssociationMixin</a></td>
 <td>biolink:causes</td>
 </tr>
 <tr>
 <td><a href="../disease_context_qualifier/">disease_context_qualifier</a>: <br/> <i> A context qualifier representing a disease or condition in which a relationship expressed in an association took place. </i></td>
 <td>0..1 <br/> <a href="../Disease/">Disease</a></td>
-<td><a href="../EntityToFeatureOrDiseaseQualifiersMixin/">EntityToFeatureOrDiseaseQualifiersMixin</a></td>
+<td><a href="../EntityToDiseaseOrPhenotypicFeatureAssociationMixin/">EntityToDiseaseOrPhenotypicFeatureAssociationMixin</a></td>
 <td>MONDO:0004979, MONDO:0005148</td>
+</tr>
+<tr>
+<td><a href="../subject_specialization_qualifier/">subject_specialization_qualifier</a>: <br/> <i> A qualifier that composes with a core subject/object concept to define a more specific version of the subject concept, specifically using an ontology term that is not a subclass or descendant of the core concept and in the vast majority of cases, is of a different ontological namespace than the category or namespace of the subject identifier. </i></td>
+<td>0..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
+<td><a href="../EntityToDiseaseOrPhenotypicFeatureAssociationMixin/">EntityToDiseaseOrPhenotypicFeatureAssociationMixin</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../object_specialization_qualifier/">object_specialization_qualifier</a>: <br/> <i> A qualifier that composes with a core subject/object concept to define a more specific version of the subject concept, specifically using an ontology term that is not a subclass or descendant of the core concept and in the vast majority of cases, is of a different ontological namespace than the category or namespace of the subject identifier. </i></td>
+<td>0..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
+<td><a href="../EntityToDiseaseOrPhenotypicFeatureAssociationMixin/">EntityToDiseaseOrPhenotypicFeatureAssociationMixin</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../anatomical_context_qualifier/">anatomical_context_qualifier</a>: <br/> <i> A statement qualifier representing an anatomical location where an relationship expressed in an association took place (can be a tissue, cell type, or sub-cellular location). </i></td>
+<td>* <br/> <a href="../String/">String</a></td>
+<td><a href="../EntityToDiseaseOrPhenotypicFeatureAssociationMixin/">EntityToDiseaseOrPhenotypicFeatureAssociationMixin</a></td>
+<td>UBERON:0000178, UBERON:0000956, GO:0005794</td>
+</tr>
+<tr>
+<td><a href="../population_context_qualifier/">population_context_qualifier</a>: <br/> <i> a biological population (general, study, cohort, etc.) with a specific set of characteristics to constrain an association. </i></td>
+<td>0..1 <br/> <a href="../PopulationOfIndividualOrganisms/">PopulationOfIndividualOrganisms</a></td>
+<td><a href="../EntityToDiseaseOrPhenotypicFeatureAssociationMixin/">EntityToDiseaseOrPhenotypicFeatureAssociationMixin</a></td>
+<td></td>
 </tr>
 <tr>
 <td><a href="../frequency_qualifier/">frequency_qualifier</a>: <br/> <i> a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject </i></td>
@@ -526,6 +562,10 @@
 <td>An association between two diseases. Captures clinical or biological relationships such as comorbidity, sequela, post-infectious complication, shared susceptibility, or differential diagnosis. The precise relationship is carried by the predicate (e.g. <code>associated with</code>, <code>contributes to</code>, <code>risk affected by</code>, <code>temporally related to</code>); use this class whenever both ends of the association are diseases, rather than the more specific <code>disease to phenotypic feature association</code> (which forces the object to be a phenotypic feature) or a generic <code>association</code>.</td>
 </tr>
 <tr>
+<td><a href="../GeneToDiseaseAssociation/">GeneToDiseaseAssociation</a></td>
+<td>An association between a gene or gene product and a disease, where variation in the gene is correlated with the disease.</td>
+</tr>
+<tr>
 <td><a href="../CorrelatedGeneToDiseaseAssociation/">CorrelatedGeneToDiseaseAssociation</a></td>
 <td>An association between a gene (or gene product) and a disease for which the gene is statistically correlated with the disease rather than asserted as causal. Such associations typically derive from GWAS, co-occurrence analyses, or other statistical methods, and are annotated with scores such as a z-score or a diseases confidence score.</td>
 </tr>
@@ -565,6 +605,10 @@
 <td><a href="../OrganismalEntityAsAModelOfDiseaseAssociation/">OrganismalEntityAsAModelOfDiseaseAssociation</a></td>
 <td>An association in which an organismal entity (e.g., a strain or breed) serves as a model of a disease, either because it has a natural predisposition to the disease or was bred or engineered specifically to recapitulate it.</td>
 </tr>
+<tr>
+<td><a href="../EntityToDiseaseAssociation/">EntityToDiseaseAssociation</a></td>
+<td>An association between any entity and a disease, capturing clinical context such as approval status, research phase, regulatory approvals, and number of cases.</td>
+</tr>
 </tbody>
 </table>
 <h2 id="linkml-source">LinkML Source</h2>
@@ -572,7 +616,7 @@
 <pre><code class="language-yaml">name: entity to disease association mixin
 description: mixin class for any association whose object (target node) is a disease
 from_schema: https://w3id.org/biolink/vocab/
-is_a: entity to feature or disease qualifiers mixin
+is_a: entity to disease or phenotypic feature association mixin
 mixin: true
 slot_usage:
   object:

@@ -77,34 +77,30 @@
                 "parent": "related_to",
                 "children": [
                     {
-                        "name": "active_in",
-                        "parent": "related_to_at_instance_level"
-                    },
-                    {
-                        "name": "acts_upstream_of",
+                        "name": "acts_upstream_of_or_within",
                         "parent": "related_to_at_instance_level",
                         "children": [
                             {
-                                "name": "acts_upstream_of_negative_effect",
-                                "parent": "acts_upstream_of"
-                            },
-                            {
-                                "name": "acts_upstream_of_or_within",
-                                "parent": "acts_upstream_of",
+                                "name": "acts_upstream_of",
+                                "parent": "acts_upstream_of_or_within",
                                 "children": [
                                     {
-                                        "name": "acts_upstream_of_or_within_negative_effect",
-                                        "parent": "acts_upstream_of_or_within"
+                                        "name": "acts_upstream_of_negative_effect",
+                                        "parent": "acts_upstream_of"
                                     },
                                     {
-                                        "name": "acts_upstream_of_or_within_positive_effect",
-                                        "parent": "acts_upstream_of_or_within"
+                                        "name": "acts_upstream_of_positive_effect",
+                                        "parent": "acts_upstream_of"
                                     }
                                 ]
                             },
                             {
-                                "name": "acts_upstream_of_positive_effect",
-                                "parent": "acts_upstream_of"
+                                "name": "acts_upstream_of_or_within_negative_effect",
+                                "parent": "acts_upstream_of_or_within"
+                            },
+                            {
+                                "name": "acts_upstream_of_or_within_positive_effect",
+                                "parent": "acts_upstream_of_or_within"
                             }
                         ]
                     },
@@ -427,10 +423,6 @@
                         "parent": "related_to_at_instance_level"
                     },
                     {
-                        "name": "has_active_component",
-                        "parent": "related_to_at_instance_level"
-                    },
-                    {
                         "name": "has_completed",
                         "parent": "related_to_at_instance_level"
                     },
@@ -579,28 +571,28 @@
                         "parent": "related_to_at_instance_level"
                     },
                     {
-                        "name": "has_upstream_actor",
+                        "name": "has_upstream_or_within_actor",
                         "parent": "related_to_at_instance_level",
                         "children": [
                             {
-                                "name": "has_negative_upstream_actor",
-                                "parent": "has_upstream_actor"
+                                "name": "has_negative_upstream_or_within_actor",
+                                "parent": "has_upstream_or_within_actor"
                             },
                             {
-                                "name": "has_positive_upstream_actor",
-                                "parent": "has_upstream_actor"
+                                "name": "has_positive_upstream_or_within_actor",
+                                "parent": "has_upstream_or_within_actor"
                             },
                             {
-                                "name": "has_upstream_or_within_actor",
-                                "parent": "has_upstream_actor",
+                                "name": "has_upstream_actor",
+                                "parent": "has_upstream_or_within_actor",
                                 "children": [
                                     {
-                                        "name": "has_negative_upstream_or_within_actor",
-                                        "parent": "has_upstream_or_within_actor"
+                                        "name": "has_negative_upstream_actor",
+                                        "parent": "has_upstream_actor"
                                     },
                                     {
-                                        "name": "has_positive_upstream_or_within_actor",
-                                        "parent": "has_upstream_or_within_actor"
+                                        "name": "has_positive_upstream_actor",
+                                        "parent": "has_upstream_actor"
                                     }
                                 ]
                             }
@@ -729,6 +721,10 @@
                         "parent": "related_to_at_instance_level",
                         "children": [
                             {
+                                "name": "active_in",
+                                "parent": "located_in"
+                            },
+                            {
                                 "name": "expressed_in",
                                 "parent": "located_in"
                             }
@@ -740,6 +736,10 @@
                         "children": [
                             {
                                 "name": "expresses",
+                                "parent": "location_of"
+                            },
+                            {
+                                "name": "has_active_component",
                                 "parent": "location_of"
                             }
                         ]

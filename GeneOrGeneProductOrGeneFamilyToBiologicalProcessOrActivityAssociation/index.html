@@ -482,6 +482,10 @@
 
           GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation --|&gt; RetrievalSource : sources
 
+      GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation : species_context_qualifier
+
+          GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation --|&gt; OrganismTaxon : species_context_qualifier
+
       GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation : statistical_significance_qualifier
 
           GeneOrGeneProductOrGeneFamilyToBiologicalProcessOrActivityAssociation --|&gt; StatisticalSignificanceQualifierEnum : statistical_significance_qualifier
@@ -830,6 +834,12 @@
 <td>0..1 <br/> <a href="../AssociationBasisEnum/">AssociationBasisEnum</a></td>
 <td><a href="../Association/">Association</a></td>
 <td></td>
+</tr>
+<tr>
+<td><a href="../species_context_qualifier/">species_context_qualifier</a>: <br/> <i> A statement qualifier representing a taxonomic category of species in which a relationship expressed in an association took place. </i></td>
+<td>0..1 <br/> <a href="../OrganismTaxon/">OrganismTaxon</a></td>
+<td><a href="../Association/">Association</a></td>
+<td>NCBITaxon:7955, NCBITaxon:9606</td>
 </tr>
 <tr>
 <td><a href="../id/">id</a>: <br/> <i> A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI </i></td>

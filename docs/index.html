@@ -1234,6 +1234,10 @@ databases and formats.  For more information, see: <a href="understanding-the-mo
 <td>Root Biolink Model class for all things and informational relationships, real or imagined.</td>
 </tr>
 <tr>
+<td><a href="EntityToFeatureOrDiseaseQualifiersMixin/">EntityToFeatureOrDiseaseQualifiersMixin</a></td>
+<td>DEPRECATED. An accidental duplicate of 'entity to disease or phenotypic feature association mixin' - "feature" here was shorthand for "phenotypic feature", so the two classes named the same scope while carrying disjoint slots. Use 'entity to disease or phenotypic feature association mixin' instead; this class now inherits from it and adds nothing.</td>
+</tr>
+<tr>
 <td><a href="EnvironmentalExposure/">EnvironmentalExposure</a></td>
 <td>A environmental exposure is a factor relating to abiotic processes in the environment including sunlight (UV-B), atmospheric (heat, cold, general pollution) and water-born contaminants.</td>
 </tr>
@@ -3623,11 +3627,11 @@ databases and formats.  For more information, see: <a href="understanding-the-mo
 </tr>
 <tr>
 <td><a href="EntityToDiseaseAssociation/">EntityToDiseaseAssociation</a></td>
-<td>An association between any entity and a disease, capturing clinical context such as approval status, research phase, FDA regulatory approvals, and number of cases.</td>
+<td>An association between any entity and a disease, capturing clinical context such as approval status, research phase, regulatory approvals, and number of cases.</td>
 </tr>
 <tr>
 <td><a href="EntityToPhenotypicFeatureAssociation/">EntityToPhenotypicFeatureAssociation</a></td>
-<td>An association between any entity and a phenotypic feature, capturing clinical context such as approval status, research phase, FDA regulatory approvals, and number of cases.</td>
+<td>An association between any entity and a phenotypic feature, capturing clinical context such as approval status, research phase, regulatory approvals, and number of cases.</td>
 </tr>
 <tr>
 <td><a href="ExonToTranscriptRelationship/">ExonToTranscriptRelationship</a></td>
@@ -4449,6 +4453,10 @@ databases and formats.  For more information, see: <a href="understanding-the-mo
 <td>The total number of patients or participants within a sample population.</td>
 </tr>
 <tr>
+<td><a href="treatment_outcome/">treatment_outcome</a></td>
+<td>The outcome of treating a disease or phenotypic feature with a chemical entity.</td>
+</tr>
+<tr>
 <td><a href="z_score/">z_score</a></td>
 <td>A measure of the divergence of an individual experimental result from the most probable result, the mean. Z is expressed in terms of the number of standard deviations from the mean value.</td>
 </tr>
@@ -4594,6 +4602,10 @@ databases and formats.  For more information, see: <a href="understanding-the-mo
 <tr>
 <td><a href="StrandEnum/">StrandEnum</a></td>
 <td>strand</td>
+</tr>
+<tr>
+<td><a href="TreatmentOutcomeEnum/">TreatmentOutcomeEnum</a></td>
+<td>The outcome of treating a disease or phenotypic feature with a chemical entity.</td>
 </tr>
 </tbody>
 </table>

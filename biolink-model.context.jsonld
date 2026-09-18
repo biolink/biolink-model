@@ -242,6 +242,10 @@
       },
       "INTACT": "http://identifiers.org/intact/",
       "IUPHAR.FAMILY": "http://identifiers.org/iuphar.family/",
+      "IUPHARobj": {
+         "@id": "https://www.guidetopharmacology.org/GRAC/ObjectDisplayForward?objectId=",
+         "@prefix": true
+      },
       "KEGG": "http://www.kegg.jp/entry/",
       "KEGG.BRITE": "https://bioregistry.io/kegg.brite:",
       "KEGG.COMPOUND": "http://identifiers.org/kegg.compound/",
@@ -335,6 +339,7 @@
          "@prefix": true
       },
       "ORCID": "https://orcid.org/",
+      "ORDO": "http://www.orpha.net/ORDO/",
       "PANTHER.FAMILY": {
          "@id": "http://www.pantherdb.org/panther/family.do?clsAccession=",
          "@prefix": true
@@ -563,10 +568,6 @@
       },
       "ncats.drug": "https://drugs.ncats.io/drug/",
       "oboInOwl": "http://www.geneontology.org/formats/oboInOwl#",
-      "orphanet": {
-         "@id": "http://www.orpha.net/ORDO/Orphanet_",
-         "@prefix": true
-      },
       "os": {
          "@id": "https://github.com/cmungall/owlstar/blob/master/owlstar.ttl",
          "@prefix": true
@@ -1314,9 +1315,6 @@
             "meaning": "@id"
          },
          "@id": "FDA_adverse_event_level"
-      },
-      "FDA_regulatory_approvals": {
-         "@id": "FDA_regulatory_approvals"
       },
       "fisher_exact_odds_ratio": {
          "@type": "xsd:float",
@@ -2389,6 +2387,9 @@
          "@type": "@id",
          "@id": "regulates"
       },
+      "regulatory_approvals": {
+         "@id": "regulatory_approvals"
+      },
       "related_condition": {
          "@type": "@id",
          "@id": "related_condition"
@@ -2837,6 +2838,14 @@
          "@type": "@id",
          "@id": "treatment_applications_from"
       },
+      "treatment_outcome": {
+         "@context": {
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "treatment_outcome"
+      },
       "treats": {
          "@type": "@id",
          "@id": "treats"
@@ -3157,6 +3166,9 @@
       },
       "ClinicalTrial": {
          "@id": "ClinicalTrial"
+      },
+      "ClinicalTrialAndRegulatoryApprovalContextMixin": {
+         "@id": "ClinicalTrialAndRegulatoryApprovalContextMixin"
       },
       "CodingSequence": {
          "@id": "CodingSequence"

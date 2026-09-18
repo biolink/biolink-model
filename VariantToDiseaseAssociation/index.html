@@ -384,6 +384,8 @@
 
       VariantToDiseaseAssociation : aggregator_knowledge_source
 
+      VariantToDiseaseAssociation : anatomical_context_qualifier
+
       VariantToDiseaseAssociation : association_basis_qualifier
 
           VariantToDiseaseAssociation --|&gt; AssociationBasisEnum : association_basis_qualifier
@@ -470,6 +472,8 @@
 
       VariantToDiseaseAssociation : object_namespace
 
+      VariantToDiseaseAssociation : object_specialization_qualifier
+
       VariantToDiseaseAssociation : original_object
 
       VariantToDiseaseAssociation : original_predicate
@@ -477,6 +481,10 @@
       VariantToDiseaseAssociation : original_subject
 
       VariantToDiseaseAssociation : p_value
+
+      VariantToDiseaseAssociation : population_context_qualifier
+
+          VariantToDiseaseAssociation --|&gt; PopulationOfIndividualOrganisms : population_context_qualifier
 
       VariantToDiseaseAssociation : predicate
 
@@ -503,6 +511,10 @@
       VariantToDiseaseAssociation : sources
 
           VariantToDiseaseAssociation --|&gt; RetrievalSource : sources
+
+      VariantToDiseaseAssociation : species_context_qualifier
+
+          VariantToDiseaseAssociation --|&gt; OrganismTaxon : species_context_qualifier
 
       VariantToDiseaseAssociation : statistical_significance_qualifier
 
@@ -542,6 +554,8 @@
 
       VariantToDiseaseAssociation : subject_namespace
 
+      VariantToDiseaseAssociation : subject_specialization_qualifier
+
       VariantToDiseaseAssociation : supporting_text
 
       VariantToDiseaseAssociation : timepoint
@@ -579,19 +593,19 @@
 <tr>
 <td><a href="../subject/">subject</a>: <br/> <i> a sequence variant in which the allele state is associated in some way with the disease state </i></td>
 <td>1 <br/> <a href="../SequenceVariant/">SequenceVariant</a></td>
-<td><a href="../Association/">Association</a>, <a href="../FrequencyQualifierMixin/">FrequencyQualifierMixin</a>, <a href="../VariantToEntityAssociationMixin/">VariantToEntityAssociationMixin</a></td>
+<td><a href="../VariantToEntityAssociationMixin/">VariantToEntityAssociationMixin</a>, <a href="../FrequencyQualifierMixin/">FrequencyQualifierMixin</a>, <a href="../Association/">Association</a></td>
 <td>CLINVAR:52241</td>
 </tr>
 <tr>
 <td><a href="../predicate/">predicate</a>: <br/> <i> E.g. is pathogenic for </i></td>
 <td>1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
-<td><a href="../Association/">Association</a>, <a href="../FrequencyQualifierMixin/">FrequencyQualifierMixin</a>, <a href="../VariantToEntityAssociationMixin/">VariantToEntityAssociationMixin</a></td>
+<td><a href="../VariantToEntityAssociationMixin/">VariantToEntityAssociationMixin</a>, <a href="../FrequencyQualifierMixin/">FrequencyQualifierMixin</a>, <a href="../Association/">Association</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="../object/">object</a>: <br/> <i> a disease that is associated with that variant </i></td>
 <td>1 <br/> <a href="../Disease/">Disease</a></td>
-<td><a href="../Association/">Association</a>, <a href="../FrequencyQualifierMixin/">FrequencyQualifierMixin</a>, <a href="../VariantToEntityAssociationMixin/">VariantToEntityAssociationMixin</a></td>
+<td><a href="../VariantToEntityAssociationMixin/">VariantToEntityAssociationMixin</a>, <a href="../FrequencyQualifierMixin/">FrequencyQualifierMixin</a>, <a href="../Association/">Association</a></td>
 <td>MONDO:0016419</td>
 </tr>
 <tr>
@@ -865,6 +879,12 @@
 <td></td>
 </tr>
 <tr>
+<td><a href="../species_context_qualifier/">species_context_qualifier</a>: <br/> <i> A statement qualifier representing a taxonomic category of species in which a relationship expressed in an association took place. </i></td>
+<td>0..1 <br/> <a href="../OrganismTaxon/">OrganismTaxon</a></td>
+<td><a href="../Association/">Association</a></td>
+<td>NCBITaxon:7955, NCBITaxon:9606</td>
+</tr>
+<tr>
 <td><a href="../id/">id</a>: <br/> <i> A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI </i></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td><a href="../Entity/">Entity</a></td>
@@ -915,38 +935,62 @@
 <tr>
 <td><a href="../subject_aspect_qualifier/">subject_aspect_qualifier</a>: <br/> <i> Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the subject of an association (aka: statement). </i></td>
 <td>0..1 <br/> <a href="../GeneOrGeneProductOrChemicalEntityAspectEnum/">GeneOrGeneProductOrChemicalEntityAspectEnum</a></td>
-<td><a href="../EntityToFeatureOrDiseaseQualifiersMixin/">EntityToFeatureOrDiseaseQualifiersMixin</a></td>
+<td><a href="../EntityToDiseaseOrPhenotypicFeatureAssociationMixin/">EntityToDiseaseOrPhenotypicFeatureAssociationMixin</a></td>
 <td>stability, abundance, expression, exposure</td>
 </tr>
 <tr>
 <td><a href="../subject_direction_qualifier/">subject_direction_qualifier</a>: <br/> <i> Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the subject of an association (aka: statement). </i></td>
 <td>0..1 <br/> <a href="../DirectionQualifierEnum/">DirectionQualifierEnum</a></td>
-<td><a href="../EntityToFeatureOrDiseaseQualifiersMixin/">EntityToFeatureOrDiseaseQualifiersMixin</a></td>
+<td><a href="../EntityToDiseaseOrPhenotypicFeatureAssociationMixin/">EntityToDiseaseOrPhenotypicFeatureAssociationMixin</a></td>
 <td>increased, downregulated</td>
 </tr>
 <tr>
 <td><a href="../object_aspect_qualifier/">object_aspect_qualifier</a>: <br/> <i> Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 'affects' association.  This qualifier specifies a change in the object of an association (aka: statement). </i></td>
 <td>0..1 <br/> <a href="../GeneOrGeneProductOrChemicalEntityAspectEnum/">GeneOrGeneProductOrChemicalEntityAspectEnum</a></td>
-<td><a href="../EntityToFeatureOrDiseaseQualifiersMixin/">EntityToFeatureOrDiseaseQualifiersMixin</a></td>
+<td><a href="../EntityToDiseaseOrPhenotypicFeatureAssociationMixin/">EntityToDiseaseOrPhenotypicFeatureAssociationMixin</a></td>
 <td>stability, abundance, expression, exposure</td>
 </tr>
 <tr>
 <td><a href="../object_direction_qualifier/">object_direction_qualifier</a>: <br/> <i> Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree. This qualifier qualifies the object of an association (aka: statement). </i></td>
 <td>0..1 <br/> <a href="../DirectionQualifierEnum/">DirectionQualifierEnum</a></td>
-<td><a href="../EntityToFeatureOrDiseaseQualifiersMixin/">EntityToFeatureOrDiseaseQualifiersMixin</a></td>
+<td><a href="../EntityToDiseaseOrPhenotypicFeatureAssociationMixin/">EntityToDiseaseOrPhenotypicFeatureAssociationMixin</a></td>
 <td>increased, downregulated</td>
 </tr>
 <tr>
 <td><a href="../qualified_predicate/">qualified_predicate</a>: <br/> <i> Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or increase the specificity of the full statement reading.  Has a value from the Biolink 'related_to' hierarchy, for example, biolink:related_to, biolink:causes, biolink:treats This qualifier holds a relationship to be used instead of that expressed by the primary predicate, in a ‘full statement’ reading of the association, where qualifier-based semantics are included. This is necessary only in cases where the primary predicate does not work in a full statement reading. </i></td>
 <td>0..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
-<td><a href="../EntityToFeatureOrDiseaseQualifiersMixin/">EntityToFeatureOrDiseaseQualifiersMixin</a></td>
+<td><a href="../EntityToDiseaseOrPhenotypicFeatureAssociationMixin/">EntityToDiseaseOrPhenotypicFeatureAssociationMixin</a></td>
 <td>biolink:causes</td>
 </tr>
 <tr>
 <td><a href="../disease_context_qualifier/">disease_context_qualifier</a>: <br/> <i> A context qualifier representing a disease or condition in which a relationship expressed in an association took place. </i></td>
 <td>0..1 <br/> <a href="../Disease/">Disease</a></td>
-<td><a href="../EntityToFeatureOrDiseaseQualifiersMixin/">EntityToFeatureOrDiseaseQualifiersMixin</a></td>
+<td><a href="../EntityToDiseaseOrPhenotypicFeatureAssociationMixin/">EntityToDiseaseOrPhenotypicFeatureAssociationMixin</a></td>
 <td>MONDO:0004979, MONDO:0005148</td>
+</tr>
+<tr>
+<td><a href="../subject_specialization_qualifier/">subject_specialization_qualifier</a>: <br/> <i> A qualifier that composes with a core subject/object concept to define a more specific version of the subject concept, specifically using an ontology term that is not a subclass or descendant of the core concept and in the vast majority of cases, is of a different ontological namespace than the category or namespace of the subject identifier. </i></td>
+<td>0..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
+<td><a href="../EntityToDiseaseOrPhenotypicFeatureAssociationMixin/">EntityToDiseaseOrPhenotypicFeatureAssociationMixin</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../object_specialization_qualifier/">object_specialization_qualifier</a>: <br/> <i> A qualifier that composes with a core subject/object concept to define a more specific version of the subject concept, specifically using an ontology term that is not a subclass or descendant of the core concept and in the vast majority of cases, is of a different ontological namespace than the category or namespace of the subject identifier. </i></td>
+<td>0..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
+<td><a href="../EntityToDiseaseOrPhenotypicFeatureAssociationMixin/">EntityToDiseaseOrPhenotypicFeatureAssociationMixin</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../anatomical_context_qualifier/">anatomical_context_qualifier</a>: <br/> <i> A statement qualifier representing an anatomical location where an relationship expressed in an association took place (can be a tissue, cell type, or sub-cellular location). </i></td>
+<td>* <br/> <a href="../String/">String</a></td>
+<td><a href="../EntityToDiseaseOrPhenotypicFeatureAssociationMixin/">EntityToDiseaseOrPhenotypicFeatureAssociationMixin</a></td>
+<td>UBERON:0000178, UBERON:0000956, GO:0005794</td>
+</tr>
+<tr>
+<td><a href="../population_context_qualifier/">population_context_qualifier</a>: <br/> <i> a biological population (general, study, cohort, etc.) with a specific set of characteristics to constrain an association. </i></td>
+<td>0..1 <br/> <a href="../PopulationOfIndividualOrganisms/">PopulationOfIndividualOrganisms</a></td>
+<td><a href="../EntityToDiseaseOrPhenotypicFeatureAssociationMixin/">EntityToDiseaseOrPhenotypicFeatureAssociationMixin</a></td>
+<td></td>
 </tr>
 <tr>
 <td><a href="../frequency_qualifier/">frequency_qualifier</a>: <br/> <i> a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject </i></td>
