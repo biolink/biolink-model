@@ -19,7 +19,14 @@ classifiers = [
 ]
 dependencies = [
     "pydantic>=2,<3",
-    "linkml-runtime==1.11.1",
+    # DO NOT MERGE branch: relaxed from ==1.11.1 so downstream projects testing
+    # these artifacts resolve whatever linkml-runtime they already use. Only
+    # datamodel/model.py and the dev scripts import it; datamodel/pydanticmodel_v2.py
+    # -- the module downstream actually imports -- needs nothing but pydantic.
+    # Floor matches linkml's own declaration (>=1.10,<2) and is verified: both
+    # datamodel modules import cleanly against 1.10.0, which is what
+    # translator-ingests resolves today. A >=1.11 floor fought that lock.
+    "linkml-runtime>=1.10,<2",
 ]
 
 [project.scripts]
@@ -27,7 +34,7 @@ generate_viz_json = "biolink_model.scripts.generate_json:generate_viz_json"
 
 [project.optional-dependencies]
 scripts = [
-    "linkml==1.11.1",
+    "linkml==1.12.0rc1",
     "rdflib",
     "curies",
 ]
@@ -45,7 +52,12 @@ all = [
 
 [dependency-groups]
 dev = [
-    "linkml==1.11.1",
+    # DO NOT MERGE branch: both pinned to the RC so `make gen-project` reproduces
+    # the committed artifacts exactly. linkml 1.12.0rc1 only requires
+    # linkml-runtime>=1.10,<2, so without the runtime pin here generation would
+    # run against the 1.11.1 runtime and produce a mismatched pair.
+    "linkml==1.12.0rc1",
+    "linkml-runtime==1.12.0rc1",
     "mkdocs>=1.4.2,<2",
     "mkdocs-material>=9.5.17,<10",
     "mkdocs-mermaid2-plugin>=1.1.1,<2",
@@ -76,6 +88,10 @@ packages = ["src/biolink_model"]
 # `exclude-newer` timestamp for backwards compatibility), avoiding per-relock absolute timestamps and
 # reducing cross-branch merge conflicts (see astral-sh/uv#18708). Requires uv >= 0.9.17.
 exclude-newer = "7 days"
+# DO NOT MERGE branch: linkml 1.12.0rc1 was published 2026-10-02 and is still inside
+# the cooldown window, which makes `uv lock` unsatisfiable. Overridden for these two
+# packages only, so the cooldown still protects every other dependency.
+exclude-newer-package = { linkml = "2026-10-03T00:00:00Z", linkml-runtime = "2026-10-03T00:00:00Z" }
 
 [tool.codespell]
 skip = '.idea,.git,SEMMEDDB*,semmed*,*.svg,docs,./src/docs/registry.md,./.venv'

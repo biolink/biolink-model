@@ -6,7 +6,7 @@ license: https://creativecommons.org/publicdomain/zero/1.0/
 
 # Version should be kept in sync with primary Git repository release tag
 
-version: 4.4.4
+version: 4.4.5
 
 ## ------------
 ##
@@ -8961,7 +8961,7 @@ classes:
       for consumption for nutritional, medical or technical use.
       Is a material entity that is created or changed during material processing.
     exact_mappings:
-      - OBI:0000047
+      - COB:0000026
     id_prefixes:
       - CHEBI
       - UNII
@@ -12522,6 +12522,7 @@ classes:
       - subject specialization qualifier
       - object specialization qualifier
       - anatomical context qualifier
+      - population context qualifier
     defining_slots:
       - subject
       - predicate

@@ -1,5 +1,4 @@
 # Auto generated from class_prefixes.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-09-09T22:45:11
 # Schema: BiolinkClassPrefixes
 #
 # id: biolink-model-class-prefixes
@@ -59,7 +58,7 @@ from rdflib import (
 from linkml_runtime.linkml_model.types import Integer, String, Uri, Uriorcurie
 from linkml_runtime.utils.metamodelcore import URI, URIorCURIE
 
-metamodel_version = "1.11.0"
+metamodel_version = "1.12.0"
 version = "4.4.5"
 
 # Namespaces
