@@ -33,13 +33,14 @@ Create a release branch from the latest `master` (e.g. `v4.4.6`) and on it:
 
 4. Commit everything (including `project/*` and `src/*`) and open a PR to `master`.
 
-`master` is a protected branch, so the `push-main-regenerate-artifacts` workflow
-cannot commit regenerated artifacts directly — it opens a PR instead. **Make sure any
-pending regenerate-artifacts PR is merged before tagging**, otherwise the tag (and the
-PyPI wheel built from it) will package a stale schema and datamodel. This is what
-happened for v4.4.5, which shipped a wheel containing the 4.4.4 schema. The
-`release-pypi-publish` workflow now also regenerates artifacts from the tag before
-building, and fails if the packaged schema version does not match the release tag.
+The `push-main-regenerate-artifacts` workflow also regenerates and commits artifacts
+on every push to `master`. **Make sure that workflow has succeeded (and its commit is
+included) before tagging**, otherwise the tag (and the PyPI wheel built from it) will
+package a stale schema and datamodel. This is what happened for v4.4.5, which shipped
+a wheel containing the 4.4.4 schema — branch protection on `master` was silently
+rejecting the workflow's pushes. The `release-pypi-publish` workflow now also
+regenerates artifacts from the tag before building, and fails if the packaged schema
+version does not match the release tag.
 
 
 ## Draft a new release
