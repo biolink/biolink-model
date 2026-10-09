@@ -19,7 +19,7 @@ classifiers = [
 ]
 dependencies = [
     "pydantic>=2,<3",
-    "linkml-runtime==1.11.1",
+    "linkml-runtime>=1.11.1,<2",
 ]
 
 [project.scripts]
