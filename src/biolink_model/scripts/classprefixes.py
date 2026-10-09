@@ -1,5 +1,5 @@
 # Auto generated from class_prefixes.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-09-09T22:45:11
+# Generation date: 2026-10-09T15:42:18
 # Schema: BiolinkClassPrefixes
 #
 # id: biolink-model-class-prefixes
@@ -60,7 +60,7 @@ from linkml_runtime.linkml_model.types import Integer, String, Uri, Uriorcurie
 from linkml_runtime.utils.metamodelcore import URI, URIorCURIE
 
 metamodel_version = "1.11.0"
-version = "4.4.5"
+version = "4.4.6"
 
 # Namespaces
 BIOGRID = CurieNamespace('BIOGRID', 'http://identifiers.org/biogrid/')

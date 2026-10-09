@@ -13,27 +13,34 @@ This can be determined by investigating what changed between the previous releas
 and the latest commit on the `master` branch.
 
 
-## Update version in biolink-model.yaml
+## Prepare a release branch
 
-Update the `version` in [biolink-model.yaml]() to reflect the new release (if not already up-to-date).
+Create a release branch from the latest `master` (e.g. `v4.4.6`) and on it:
 
-Commit the changes to `master` branch.
+1. Bump `version:` to the new release in `biolink-model.yaml`, `class_prefixes.yaml`,
+   and `semmed-exclude-list-model.yaml`.
+2. Update [ChangeLog](ChangeLog) with the changes that are part of this release.
+3. Regenerate all derived artifacts so the tag itself carries them
+   (the package version comes from the git tag via `uv-dynamic-versioning`,
+   so there is no `setup.py`/`pyproject.toml` version to bump):
 
-Wait for all the artifacts to be regenerated.
+   ```sh
+   uv sync --extra scripts
+   make gen-project
+   make id-prefixes
+   make test
+   ```
 
+4. Commit everything (including `project/*` and `src/*`) and open a PR to `master`.
 
-## Update changelog
-
-Update [ChangeLog]() and add the changes that are part of this release.
-
-Commit the changes to `master` branch.
-
-
-## Update setup.py with new version
-
-Update setup.py to capture the new version.
-
-Commit the changes to `master` branch.
+The `push-main-regenerate-artifacts` workflow also regenerates and commits artifacts
+on every push to `master`. **Make sure that workflow has succeeded (and its commit is
+included) before tagging**, otherwise the tag (and the PyPI wheel built from it) will
+package a stale schema and datamodel. This is what happened for v4.4.5, which shipped
+a wheel containing the 4.4.4 schema — branch protection on `master` was silently
+rejecting the workflow's pushes. The `release-pypi-publish` workflow now also
+regenerates artifacts from the tag before building, and fails if the packaged schema
+version does not match the release tag.
 
 
 ## Draft a new release
@@ -52,14 +59,18 @@ Push latest branch
 
 ### Releasing on PyPI
 
-To ensure this is successful, make sure you have relevant permissions to biolink-model package on [PyPI](https://pypi.org/project/biolink-model/).
+Creating the GitHub release triggers the `release-pypi-publish` workflow, which
+regenerates the artifacts from the tag, verifies the packaged schema version matches
+the tag, builds with `uv build`, and publishes to
+[PyPI](https://pypi.org/project/biolink-model/) using the `PYPI_API_TOKEN` secret.
+No manual twine upload is needed.
 
-Also, be sure to install [twine](https://pypi.org/project/twine/) and [wheel](https://pypi.org/project/wheel/)
-
-Now, run the following commands:
+After publishing, sanity-check the wheel:
 
 ```sh
-rm -rf dist/
-python setup.py sdist bdist_wheel
-twine upload --repository-url https://upload.pypi.org/legacy/ --username __token__ dist/*
+uv run --isolated --with biolink-model==<new version> python -c \
+  "import importlib.resources, yaml; \
+   print(yaml.safe_load(importlib.resources.files('biolink_model').joinpath('schema/biolink_model.yaml').read_text())['version'])"
 ```
+
+The printed version must match the release tag.

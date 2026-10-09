@@ -1,5 +1,15 @@
 CHANGES
 =======
+4.4.6
+-----
+## What's Changed
+* Add FMA to id_prefixes of gross anatomical structure by @cbizon in https://github.com/biolink/biolink-model/pull/1828
+* Relax linkml-runtime pin to >=1.11.1,<2 so downstream projects can upgrade by @kevinschaper in https://github.com/biolink/biolink-model/pull/1829
+* Bump urllib3 and oauthlib in uv.lock to clear audit CVEs; run codespell via uv by @kevinschaper in https://github.com/biolink/biolink-model/pull/1830
+* Fix release packaging: commit regenerated artifacts with the release and regenerate at build time, so the PyPI wheel ships the tagged schema and datamodel (the 4.4.5 wheel shipped a stale 4.4.4 schema because the artifact-regeneration workflow could no longer push to the protected master branch)
+
+**Full Changelog**: https://github.com/biolink/biolink-model/compare/v4.4.5...v4.4.6
+
 4.4.5
 -----
 ## What's Changed

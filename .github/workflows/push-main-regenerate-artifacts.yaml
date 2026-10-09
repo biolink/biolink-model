@@ -44,13 +44,15 @@ jobs:
           make gen-project
           make id-prefixes
           make test
-          if [ $? -eq 0 ]; then
-            git config --local user.email "action@github.com"
-            git config --local user.name "GitHub Action"
-            git add project/*
-            git add src/*
-            git commit -m "Regenerate artifacts from biolink-model.yaml"
-            git push
-          else
-            echo "'make' gen-project failed to finish successfully"
+
+      - name: Commit and push the regenerated artifacts
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add project/* src/*
+          if git diff --cached --quiet; then
+            echo "Artifacts are already up to date; nothing to commit."
+            exit 0
           fi
+          git commit -m "Regenerate artifacts from biolink-model.yaml"
+          git push
