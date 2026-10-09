@@ -44,13 +44,27 @@ jobs:
           make gen-project
           make id-prefixes
           make test
-          if [ $? -eq 0 ]; then
-            git config --local user.email "action@github.com"
-            git config --local user.name "GitHub Action"
-            git add project/*
-            git add src/*
-            git commit -m "Regenerate artifacts from biolink-model.yaml"
-            git push
-          else
-            echo "'make' gen-project failed to finish successfully"
+
+      # master is a protected branch (direct pushes are rejected), so commit the
+      # regenerated artifacts to a branch and open a PR instead of pushing to master.
+      - name: Open a pull request with the regenerated artifacts
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add project/* src/*
+          if git diff --cached --quiet; then
+            echo "Artifacts are already up to date; nothing to commit."
+            exit 0
           fi
+          branch="regenerate-artifacts/${GITHUB_SHA::8}"
+          git checkout -b "$branch"
+          git commit -m "Regenerate artifacts from biolink-model.yaml"
+          git push --force origin "$branch"
+          gh pr create \
+            --base master \
+            --head "$branch" \
+            --title "Regenerate artifacts from biolink-model.yaml" \
+            --body "Automated regeneration of \`project/\` and \`src/\` artifacts after ${GITHUB_SHA} was pushed to master. Merge this before tagging a release so the packaged schema and datamodel match \`biolink-model.yaml\`." \
+            || echo "PR may already exist for $branch"

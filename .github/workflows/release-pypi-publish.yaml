@@ -23,6 +23,29 @@ jobs:
       - name: Install uv
         uses: astral-sh/setup-uv@v7
 
+      - name: Install dependencies
+        run: uv sync --extra scripts
+
+      # Regenerate everything from the tagged biolink-model.yaml so the wheel
+      # always ships artifacts (schema copy, model.py, pydantic classes) that
+      # match the tag, even if the regenerate-artifacts workflow on master
+      # failed to commit them (e.g. v4.4.5 shipped a stale 4.4.4 schema).
+      - name: Regenerate artifacts from the tagged schema
+        run: |
+          make gen-project
+          make id-prefixes
+
+      - name: Verify packaged schema version matches the release tag
+        if: github.event_name == 'release'
+        run: |
+          tag="${{ github.event.release.tag_name }}"
+          schema_version=$(uv run python -c "import yaml; print(yaml.safe_load(open('src/biolink_model/schema/biolink_model.yaml'))['version'])")
+          echo "release tag: $tag / packaged schema version: $schema_version"
+          if [ "v${schema_version}" != "$tag" ] && [ "$schema_version" != "$tag" ]; then
+            echo "::error::Packaged schema version ($schema_version) does not match release tag ($tag)"
+            exit 1
+          fi
+
       - name: Build source and wheel archives
         run: uv build
 
