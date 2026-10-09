@@ -1,5 +1,5 @@
 # metamodel_version: 1.11.0
-# version: 4.4.4
+# version: 4.4.6
 BASE <https://w3id.org/biolink/vocab/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -529,6 +529,7 @@ linkml:Sparqlpath xsd:string
           <subject_specialization_qualifier> @<Uriorcurie> ? ;
           <object_specialization_qualifier> @<Uriorcurie> ? ;
           <anatomical_context_qualifier> @<String> * ;
+          <population_context_qualifier> @<PopulationOfIndividualOrganisms> ? ;
           <sex_qualifier> @<BiologicalSex> ? ;
           <has_count> @<Integer> ? ;
           <has_total> @<Integer> ? ;
@@ -866,6 +867,7 @@ linkml:Sparqlpath xsd:string
           <subject_specialization_qualifier> @<Uriorcurie> ? ;
           <object_specialization_qualifier> @<Uriorcurie> ? ;
           <anatomical_context_qualifier> @<String> * ;
+          <population_context_qualifier> @<PopulationOfIndividualOrganisms> ? ;
           <sex_qualifier> @<BiologicalSex> ? ;
           <has_count> @<Integer> ? ;
           <has_total> @<Integer> ? ;
@@ -1134,7 +1136,8 @@ linkml:Sparqlpath xsd:string
              <disease_context_qualifier> @<Disease> ? ;
              <subject_specialization_qualifier> @<Uriorcurie> ? ;
              <object_specialization_qualifier> @<Uriorcurie> ? ;
-             <anatomical_context_qualifier> @<String> *
+             <anatomical_context_qualifier> @<String> * ;
+             <population_context_qualifier> @<PopulationOfIndividualOrganisms> ?
           ) ;
           rdf:type [ <CellLineToDiseaseOrPhenotypicFeatureAssociation> ]
        )
@@ -1767,7 +1770,8 @@ linkml:Sparqlpath xsd:string
           <disease_context_qualifier> @<Disease> ? ;
           <subject_specialization_qualifier> @<Uriorcurie> ? ;
           <object_specialization_qualifier> @<Uriorcurie> ? ;
-          <anatomical_context_qualifier> @<String> *
+          <anatomical_context_qualifier> @<String> * ;
+          <population_context_qualifier> @<PopulationOfIndividualOrganisms> ?
        ) ;
        rdf:type [ <ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation> ]
     )
@@ -2392,7 +2396,8 @@ linkml:Sparqlpath xsd:string
           <disease_context_qualifier> @<Disease> ? ;
           <subject_specialization_qualifier> @<Uriorcurie> ? ;
           <object_specialization_qualifier> @<Uriorcurie> ? ;
-          <anatomical_context_qualifier> @<String> *
+          <anatomical_context_qualifier> @<String> * ;
+          <population_context_qualifier> @<PopulationOfIndividualOrganisms> ?
        ) ;
        rdf:type [ <ChemicalOrDrugOrTreatmentAdverseEventAssociation> ]
     )
@@ -2533,7 +2538,8 @@ linkml:Sparqlpath xsd:string
           <disease_context_qualifier> @<Disease> ? ;
           <subject_specialization_qualifier> @<Uriorcurie> ? ;
           <object_specialization_qualifier> @<Uriorcurie> ? ;
-          <anatomical_context_qualifier> @<String> *
+          <anatomical_context_qualifier> @<String> * ;
+          <population_context_qualifier> @<PopulationOfIndividualOrganisms> ?
        ) ;
        rdf:type [ <ChemicalOrDrugOrTreatmentSideEffectAssociation> ]
     )
@@ -2685,6 +2691,7 @@ linkml:Sparqlpath xsd:string
           <subject_specialization_qualifier> @<Uriorcurie> ? ;
           <object_specialization_qualifier> @<Uriorcurie> ? ;
           <anatomical_context_qualifier> @<String> * ;
+          <population_context_qualifier> @<PopulationOfIndividualOrganisms> ? ;
           <clinical_approval_status> [ <https://w3id.org/biolink/vocab/ClinicalApprovalStatusEnum#approved_for_condition>
              <https://w3id.org/biolink/vocab/ClinicalApprovalStatusEnum#fda_approved_for_condition>
              <https://w3id.org/biolink/vocab/ClinicalApprovalStatusEnum#not_approved_for_condition>
@@ -3083,7 +3090,8 @@ linkml:Sparqlpath xsd:string
           <disease_context_qualifier> @<Disease> ? ;
           <subject_specialization_qualifier> @<Uriorcurie> ? ;
           <object_specialization_qualifier> @<Uriorcurie> ? ;
-          <anatomical_context_qualifier> @<String> *
+          <anatomical_context_qualifier> @<String> * ;
+          <population_context_qualifier> @<PopulationOfIndividualOrganisms> ?
        ) ;
        rdf:type [ <CorrelatedGeneToDiseaseAssociation> ]
     )
@@ -3377,7 +3385,8 @@ linkml:Sparqlpath xsd:string
           <disease_context_qualifier> @<Disease> ? ;
           <subject_specialization_qualifier> @<Uriorcurie> ? ;
           <object_specialization_qualifier> @<Uriorcurie> ? ;
-          <anatomical_context_qualifier> @<String> *
+          <anatomical_context_qualifier> @<String> * ;
+          <population_context_qualifier> @<PopulationOfIndividualOrganisms> ?
        ) ;
        rdf:type [ <DiseaseToDiseaseAssociation> ]
     )
@@ -3550,6 +3559,7 @@ linkml:Sparqlpath xsd:string
           <subject_specialization_qualifier> @<Uriorcurie> ? ;
           <object_specialization_qualifier> @<Uriorcurie> ? ;
           <anatomical_context_qualifier> @<String> * ;
+          <population_context_qualifier> @<PopulationOfIndividualOrganisms> ? ;
           <sex_qualifier> @<BiologicalSex> ?
        ) ;
        rdf:type [ <DiseaseToPhenotypicFeatureAssociation> ]
@@ -3797,6 +3807,7 @@ linkml:Sparqlpath xsd:string
           <subject_specialization_qualifier> @<Uriorcurie> ? ;
           <object_specialization_qualifier> @<Uriorcurie> ? ;
           <anatomical_context_qualifier> @<String> * ;
+          <population_context_qualifier> @<PopulationOfIndividualOrganisms> ? ;
           <clinical_approval_status> [ <https://w3id.org/biolink/vocab/ClinicalApprovalStatusEnum#approved_for_condition>
              <https://w3id.org/biolink/vocab/ClinicalApprovalStatusEnum#fda_approved_for_condition>
              <https://w3id.org/biolink/vocab/ClinicalApprovalStatusEnum#not_approved_for_condition>
@@ -3964,6 +3975,7 @@ linkml:Sparqlpath xsd:string
           <subject_specialization_qualifier> @<Uriorcurie> ? ;
           <object_specialization_qualifier> @<Uriorcurie> ? ;
           <anatomical_context_qualifier> @<String> * ;
+          <population_context_qualifier> @<PopulationOfIndividualOrganisms> ? ;
           rdf:object @<DiseaseOrPhenotypicFeature>
        ) ;
        rdf:type [ <EntityToDiseaseOrPhenotypicFeatureAssociationMixin> ] ?
@@ -4397,6 +4409,7 @@ linkml:Sparqlpath xsd:string
           <subject_specialization_qualifier> @<Uriorcurie> ? ;
           <object_specialization_qualifier> @<Uriorcurie> ? ;
           <anatomical_context_qualifier> @<String> * ;
+          <population_context_qualifier> @<PopulationOfIndividualOrganisms> ? ;
           <sex_qualifier> @<BiologicalSex> ? ;
           <has_count> @<Integer> ? ;
           <has_total> @<Integer> ? ;
@@ -4707,6 +4720,7 @@ linkml:Sparqlpath xsd:string
           <subject_specialization_qualifier> @<Uriorcurie> ? ;
           <object_specialization_qualifier> @<Uriorcurie> ? ;
           <anatomical_context_qualifier> @<String> * ;
+          <population_context_qualifier> @<PopulationOfIndividualOrganisms> ? ;
           <sex_qualifier> @<BiologicalSex> ? ;
           <has_count> @<Integer> ? ;
           <has_total> @<Integer> ? ;
@@ -5678,7 +5692,8 @@ linkml:Sparqlpath xsd:string
              <disease_context_qualifier> @<Disease> ? ;
              <subject_specialization_qualifier> @<Uriorcurie> ? ;
              <object_specialization_qualifier> @<Uriorcurie> ? ;
-             <anatomical_context_qualifier> @<String> *
+             <anatomical_context_qualifier> @<String> * ;
+             <population_context_qualifier> @<PopulationOfIndividualOrganisms> ?
           ) ;
           rdf:type [ <GeneToDiseaseAssociation> ]
        )
@@ -6177,6 +6192,7 @@ linkml:Sparqlpath xsd:string
           <subject_specialization_qualifier> @<Uriorcurie> ? ;
           <object_specialization_qualifier> @<Uriorcurie> ? ;
           <anatomical_context_qualifier> @<String> * ;
+          <population_context_qualifier> @<PopulationOfIndividualOrganisms> ? ;
           <sex_qualifier> @<BiologicalSex> ? ;
           <has_count> @<Integer> ? ;
           <has_total> @<Integer> ? ;
@@ -6428,7 +6444,8 @@ linkml:Sparqlpath xsd:string
              <disease_context_qualifier> @<Disease> ? ;
              <subject_specialization_qualifier> @<Uriorcurie> ? ;
              <object_specialization_qualifier> @<Uriorcurie> ? ;
-             <anatomical_context_qualifier> @<String> *
+             <anatomical_context_qualifier> @<String> * ;
+             <population_context_qualifier> @<PopulationOfIndividualOrganisms> ?
           ) ;
           rdf:type [ <GenotypeToDiseaseAssociation> ]
        )
@@ -6605,6 +6622,7 @@ linkml:Sparqlpath xsd:string
           <subject_specialization_qualifier> @<Uriorcurie> ? ;
           <object_specialization_qualifier> @<Uriorcurie> ? ;
           <anatomical_context_qualifier> @<String> * ;
+          <population_context_qualifier> @<PopulationOfIndividualOrganisms> ? ;
           <sex_qualifier> @<BiologicalSex> ? ;
           <has_count> @<Integer> ? ;
           <has_total> @<Integer> ? ;
@@ -7302,7 +7320,8 @@ linkml:Sparqlpath xsd:string
           <disease_context_qualifier> @<Disease> ? ;
           <subject_specialization_qualifier> @<Uriorcurie> ? ;
           <object_specialization_qualifier> @<Uriorcurie> ? ;
-          <anatomical_context_qualifier> @<String> *
+          <anatomical_context_qualifier> @<String> * ;
+          <population_context_qualifier> @<PopulationOfIndividualOrganisms> ?
        ) ;
        rdf:type [ <MaterialSampleToDiseaseOrPhenotypicFeatureAssociation> ]
     )
@@ -7910,7 +7929,8 @@ linkml:Sparqlpath xsd:string
           <disease_context_qualifier> @<Disease> ? ;
           <subject_specialization_qualifier> @<Uriorcurie> ? ;
           <object_specialization_qualifier> @<Uriorcurie> ? ;
-          <anatomical_context_qualifier> @<String> *
+          <anatomical_context_qualifier> @<String> * ;
+          <population_context_qualifier> @<PopulationOfIndividualOrganisms> ?
        ) ;
        rdf:type [ <OrganismalEntityAsAModelOfDiseaseAssociation> ]
     )
@@ -8197,6 +8217,7 @@ linkml:Sparqlpath xsd:string
           <subject_specialization_qualifier> @<Uriorcurie> ? ;
           <object_specialization_qualifier> @<Uriorcurie> ? ;
           <anatomical_context_qualifier> @<String> * ;
+          <population_context_qualifier> @<PopulationOfIndividualOrganisms> ? ;
           <sex_qualifier> @<BiologicalSex> ? ;
           <has_count> @<Integer> ? ;
           <has_total> @<Integer> ? ;
@@ -8364,7 +8385,8 @@ linkml:Sparqlpath xsd:string
           <disease_context_qualifier> @<Disease> ? ;
           <subject_specialization_qualifier> @<Uriorcurie> ? ;
           <object_specialization_qualifier> @<Uriorcurie> ? ;
-          <anatomical_context_qualifier> @<String> *
+          <anatomical_context_qualifier> @<String> * ;
+          <population_context_qualifier> @<PopulationOfIndividualOrganisms> ?
        ) ;
        rdf:type [ <PhenotypicFeatureToPhenotypicFeatureAssociation> ]
     )
@@ -9432,7 +9454,8 @@ linkml:Sparqlpath xsd:string
              <disease_context_qualifier> @<Disease> ? ;
              <subject_specialization_qualifier> @<Uriorcurie> ? ;
              <object_specialization_qualifier> @<Uriorcurie> ? ;
-             <anatomical_context_qualifier> @<String> *
+             <anatomical_context_qualifier> @<String> * ;
+             <population_context_qualifier> @<PopulationOfIndividualOrganisms> ?
           ) ;
           rdf:type [ <VariantToDiseaseAssociation> ]
        )
@@ -9616,6 +9639,7 @@ linkml:Sparqlpath xsd:string
           <subject_specialization_qualifier> @<Uriorcurie> ? ;
           <object_specialization_qualifier> @<Uriorcurie> ? ;
           <anatomical_context_qualifier> @<String> * ;
+          <population_context_qualifier> @<PopulationOfIndividualOrganisms> ? ;
           <sex_qualifier> @<BiologicalSex> ? ;
           <has_count> @<Integer> ? ;
           <has_total> @<Integer> ? ;

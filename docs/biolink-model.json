@@ -4915,6 +4915,13 @@
                         "null"
                     ]
                 },
+                "population_context_qualifier": {
+                    "description": "a biological population (general, study, cohort, etc.) with a specific set of characteristics to constrain an association.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "predicate": {
                     "description": "Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats",
                     "type": "string"
@@ -10497,6 +10504,13 @@
                         "null"
                     ]
                 },
+                "population_context_qualifier": {
+                    "description": "a biological population (general, study, cohort, etc.) with a specific set of characteristics to constrain an association.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "predicate": {
                     "description": "Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats",
                     "type": "string"
@@ -12648,6 +12662,13 @@
                         "null"
                     ]
                 },
+                "population_context_qualifier": {
+                    "description": "a biological population (general, study, cohort, etc.) with a specific set of characteristics to constrain an association.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "predicate": {
                     "description": "The relationship to the disease",
                     "enum": [
@@ -13224,6 +13245,13 @@
                     "description": "A quantitative confidence value that represents the probability of obtaining a result at least as extreme as that actually obtained, assuming that the actual value was the result of chance alone.",
                     "type": [
                         "number",
+                        "null"
+                    ]
+                },
+                "population_context_qualifier": {
+                    "description": "a biological population (general, study, cohort, etc.) with a specific set of characteristics to constrain an association.",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },
@@ -19097,6 +19125,13 @@
                         "null"
                     ]
                 },
+                "population_context_qualifier": {
+                    "description": "a biological population (general, study, cohort, etc.) with a specific set of characteristics to constrain an association.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "predicate": {
                     "description": "Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats",
                     "type": "string"
@@ -21970,6 +22005,13 @@
                         "null"
                     ]
                 },
+                "population_context_qualifier": {
+                    "description": "a biological population (general, study, cohort, etc.) with a specific set of characteristics to constrain an association.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "predicate": {
                     "description": "Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats",
                     "enum": [
@@ -22546,6 +22588,13 @@
                     "description": "A quantitative confidence value that represents the probability of obtaining a result at least as extreme as that actually obtained, assuming that the actual value was the result of chance alone.",
                     "type": [
                         "number",
+                        "null"
+                    ]
+                },
+                "population_context_qualifier": {
+                    "description": "a biological population (general, study, cohort, etc.) with a specific set of characteristics to constrain an association.",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },
@@ -23140,6 +23189,13 @@
                     "description": "A quantitative confidence value that represents the probability of obtaining a result at least as extreme as that actually obtained, assuming that the actual value was the result of chance alone.",
                     "type": [
                         "number",
+                        "null"
+                    ]
+                },
+                "population_context_qualifier": {
+                    "description": "a biological population (general, study, cohort, etc.) with a specific set of characteristics to constrain an association.",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },
@@ -28404,6 +28460,13 @@
                         "null"
                     ]
                 },
+                "population_context_qualifier": {
+                    "description": "a biological population (general, study, cohort, etc.) with a specific set of characteristics to constrain an association.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "predicate": {
                     "description": "Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats",
                     "enum": [
@@ -32482,6 +32545,13 @@
                         "null"
                     ]
                 },
+                "population_context_qualifier": {
+                    "description": "a biological population (general, study, cohort, etc.) with a specific set of characteristics to constrain an association.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "predicate": {
                     "description": "Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats",
                     "enum": [
@@ -33655,6 +33725,13 @@
                     "description": "A quantitative confidence value that represents the probability of obtaining a result at least as extreme as that actually obtained, assuming that the actual value was the result of chance alone.",
                     "type": [
                         "number",
+                        "null"
+                    ]
+                },
+                "population_context_qualifier": {
+                    "description": "a biological population (general, study, cohort, etc.) with a specific set of characteristics to constrain an association.",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },
@@ -35933,6 +36010,13 @@
                         "null"
                     ]
                 },
+                "population_context_qualifier": {
+                    "description": "a biological population (general, study, cohort, etc.) with a specific set of characteristics to constrain an association.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "predicate": {
                     "$ref": "#/$defs/GeneToDiseasePredicateEnum",
                     "description": "Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats",
@@ -36645,6 +36729,13 @@
                         "null"
                     ]
                 },
+                "population_context_qualifier": {
+                    "description": "a biological population (general, study, cohort, etc.) with a specific set of characteristics to constrain an association.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "predicate": {
                     "description": "Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats",
                     "type": "string"
@@ -36924,6 +37015,13 @@
                         "null"
                     ]
                 },
+                "population_context_qualifier": {
+                    "description": "a biological population (general, study, cohort, etc.) with a specific set of characteristics to constrain an association.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "predicate": {
                     "description": "Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats",
                     "type": "string"
@@ -37005,6 +37103,13 @@
                 },
                 "object_specialization_qualifier": {
                     "description": "A qualifier that composes with a core subject/object concept to define a more specific version of the subject concept, specifically using an ontology term that is not a subclass or descendant of the core concept and in the vast majority of cases, is of a different ontological namespace than the category or namespace of the subject identifier.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "population_context_qualifier": {
+                    "description": "a biological population (general, study, cohort, etc.) with a specific set of characteristics to constrain an association.",
                     "type": [
                         "string",
                         "null"
@@ -37611,6 +37716,13 @@
                         "null"
                     ]
                 },
+                "population_context_qualifier": {
+                    "description": "a biological population (general, study, cohort, etc.) with a specific set of characteristics to constrain an association.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "predicate": {
                     "description": "Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats",
                     "type": "string"
@@ -37919,6 +38031,13 @@
                 },
                 "object_specialization_qualifier": {
                     "description": "A qualifier that composes with a core subject/object concept to define a more specific version of the subject concept, specifically using an ontology term that is not a subclass or descendant of the core concept and in the vast majority of cases, is of a different ontological namespace than the category or namespace of the subject identifier.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "population_context_qualifier": {
+                    "description": "a biological population (general, study, cohort, etc.) with a specific set of characteristics to constrain an association.",
                     "type": [
                         "string",
                         "null"
@@ -41291,6 +41410,13 @@
                         "null"
                     ]
                 },
+                "population_context_qualifier": {
+                    "description": "a biological population (general, study, cohort, etc.) with a specific set of characteristics to constrain an association.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "predicate": {
                     "description": "Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats",
                     "type": "string"
@@ -44118,6 +44244,13 @@
                         "null"
                     ]
                 },
+                "population_context_qualifier": {
+                    "description": "a biological population (general, study, cohort, etc.) with a specific set of characteristics to constrain an association.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "predicate": {
                     "$ref": "#/$defs/GeneToDiseasePredicateEnum",
                     "description": "The relationship to the disease",
@@ -45500,6 +45633,13 @@
                     "description": "A quantitative confidence value that represents the probability of obtaining a result at least as extreme as that actually obtained, assuming that the actual value was the result of chance alone.",
                     "type": [
                         "number",
+                        "null"
+                    ]
+                },
+                "population_context_qualifier": {
+                    "description": "a biological population (general, study, cohort, etc.) with a specific set of characteristics to constrain an association.",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },
@@ -47865,6 +48005,13 @@
                     "description": "A quantitative confidence value that represents the probability of obtaining a result at least as extreme as that actually obtained, assuming that the actual value was the result of chance alone.",
                     "type": [
                         "number",
+                        "null"
+                    ]
+                },
+                "population_context_qualifier": {
+                    "description": "a biological population (general, study, cohort, etc.) with a specific set of characteristics to constrain an association.",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },
@@ -52900,6 +53047,13 @@
                         "null"
                     ]
                 },
+                "population_context_qualifier": {
+                    "description": "a biological population (general, study, cohort, etc.) with a specific set of characteristics to constrain an association.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "predicate": {
                     "$ref": "#/$defs/GeneToPhenotypicFeaturePredicateEnum",
                     "description": "Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats"
@@ -54958,6 +55112,13 @@
                         "null"
                     ]
                 },
+                "population_context_qualifier": {
+                    "description": "a biological population (general, study, cohort, etc.) with a specific set of characteristics to constrain an association.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "predicate": {
                     "description": "The relationship to the disease",
                     "enum": [
@@ -55534,6 +55695,13 @@
                     "description": "A quantitative confidence value that represents the probability of obtaining a result at least as extreme as that actually obtained, assuming that the actual value was the result of chance alone.",
                     "type": [
                         "number",
+                        "null"
+                    ]
+                },
+                "population_context_qualifier": {
+                    "description": "a biological population (general, study, cohort, etc.) with a specific set of characteristics to constrain an association.",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },
@@ -57198,6 +57366,13 @@
                     "description": "A quantitative confidence value that represents the probability of obtaining a result at least as extreme as that actually obtained, assuming that the actual value was the result of chance alone.",
                     "type": [
                         "number",
+                        "null"
+                    ]
+                },
+                "population_context_qualifier": {
+                    "description": "a biological population (general, study, cohort, etc.) with a specific set of characteristics to constrain an association.",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },
@@ -66364,6 +66539,13 @@
                         "null"
                     ]
                 },
+                "population_context_qualifier": {
+                    "description": "a biological population (general, study, cohort, etc.) with a specific set of characteristics to constrain an association.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "predicate": {
                     "description": "Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats",
                     "type": "string"
@@ -74814,6 +74996,13 @@
                         "null"
                     ]
                 },
+                "population_context_qualifier": {
+                    "description": "a biological population (general, study, cohort, etc.) with a specific set of characteristics to constrain an association.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "predicate": {
                     "description": "The relationship to the disease",
                     "enum": [
@@ -78469,6 +78658,13 @@
                         "null"
                     ]
                 },
+                "population_context_qualifier": {
+                    "description": "a biological population (general, study, cohort, etc.) with a specific set of characteristics to constrain an association.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "predicate": {
                     "description": "Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats",
                     "enum": [
@@ -79191,6 +79387,13 @@
                     "description": "A quantitative confidence value that represents the probability of obtaining a result at least as extreme as that actually obtained, assuming that the actual value was the result of chance alone.",
                     "type": [
                         "number",
+                        "null"
+                    ]
+                },
+                "population_context_qualifier": {
+                    "description": "a biological population (general, study, cohort, etc.) with a specific set of characteristics to constrain an association.",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },
@@ -93771,6 +93974,13 @@
                         "null"
                     ]
                 },
+                "population_context_qualifier": {
+                    "description": "a biological population (general, study, cohort, etc.) with a specific set of characteristics to constrain an association.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "predicate": {
                     "description": "The relationship to the disease",
                     "enum": [
@@ -94347,6 +94557,13 @@
                     "description": "A quantitative confidence value that represents the probability of obtaining a result at least as extreme as that actually obtained, assuming that the actual value was the result of chance alone.",
                     "type": [
                         "number",
+                        "null"
+                    ]
+                },
+                "population_context_qualifier": {
+                    "description": "a biological population (general, study, cohort, etc.) with a specific set of characteristics to constrain an association.",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },
@@ -96050,6 +96267,13 @@
                     "description": "A quantitative confidence value that represents the probability of obtaining a result at least as extreme as that actually obtained, assuming that the actual value was the result of chance alone.",
                     "type": [
                         "number",
+                        "null"
+                    ]
+                },
+                "population_context_qualifier": {
+                    "description": "a biological population (general, study, cohort, etc.) with a specific set of characteristics to constrain an association.",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },
@@ -98801,5 +99025,5 @@
     },
     "title": "Biolink-Model",
     "type": "object",
-    "version": "4.4.4"
+    "version": "4.4.6"
 }
