@@ -144,6 +144,9 @@ prefixes:
   UBERON_NONAMESPACE: 'http://purl.obolibrary.org/obo/core#'
   STY: 'http://purl.bioontology.org/ontology/STY/'
   UMLSSG: 'https://lhncbc.nlm.nih.gov/semanticnetwork/download/sg_archive/SemGroups-v04.txt'
+  # National Toxicology Program Technical Reports (carcinogenesis/toxicity bioassays), as served by
+  # NIEHS CEBS; local ids keep their 'TR-' form, e.g. TR:TR-128
+  TR: 'https://cebs.niehs.nih.gov/cebs/publication/'
   UniProtKB: 'http://purl.uniprot.org/uniprot/'
   UNIPROT.ISOFORM: 'http://purl.uniprot.org/isoforms/'
   uspto-patent: "http://www.uspto.gov/patent/grant/v1/"
@@ -7976,6 +7979,7 @@ classes:
       - PMC
       - doi
       - NLMID
+      - TR
     in_subset:
       - model_organism_database
 
