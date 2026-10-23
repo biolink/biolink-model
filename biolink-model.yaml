@@ -15285,14 +15285,14 @@ enums:
           These targets have activities in DrugCentral (ie. approved drugs) with known mechanism of action.
       "tbio":
         description: >-
-          These targets have activities in ChEMBL, Guide to Pharmacology or DrugCentral that satisfy
-          the activity thresholds detailed below.
-      "tchem":
-        description: >-
           These targets do not have known drug or small molecule activities that satisfy the activity
           thresholds detailed below AND satisfy one or more of the following criteria:
           target is above the cutoff criteria for the target is annotated with a
           Gene Ontology Molecular Function or Biological Process leaf term(s) with an Experimental Evidence code
+      "tchem":
+        description: >-
+          These targets have activities in ChEMBL, Guide to Pharmacology or DrugCentral that satisfy
+          the activity thresholds detailed below.
       "tdark":
         description: >-
           These are targets about which virtually nothing is known. They do not have known drug or small
