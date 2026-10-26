@@ -4518,8 +4518,9 @@ slots:
   expressed in:
     is_a: located in
     description: >-
-      holds between a gene or gene product and an anatomical entity in which it is expressed
-    domain: gene or gene product
+      holds between a chemical entity (e.g., metabolite) or gene (i.e., RNA transcript)
+      or gene product (i.e., protein) and an anatomical entity in which it is expressed
+    domain: chemical entity or gene or gene product
     range: anatomical entity
     multivalued: true
     annotations:
@@ -4536,15 +4537,43 @@ slots:
     is_a: location of
     aliases: ['anatomy expresses gene']
     description: >-
-      holds between an anatomical entity and gene or gene product that is expressed there
+      holds between an anatomical entity and chemical entity (e.g., metabolite)
+      or gene (i.e., RNA transcript) or gene product (i.e.,protein) that is expressed there.
     domain: anatomical entity
-    range: gene or gene product
+    range: chemical entity or gene or gene product
     multivalued: true
     in_subset:
       - translator_minimal
     inverse: expressed in
     exact_mappings:
       - RO:0002292
+
+  detected in:
+    is_a: located in
+    description: >-
+      Holds between a chemical entity (e.g., metabolite) or gene (i.e., RNA transcript)
+      or gene product (i.e.,protein) and a material sample (i.e., biospecimen) within
+      which it has a possible presence, as detected by an appropriate experimental assay.
+    domain: chemical entity or gene or gene product
+    range: material sample
+    multivalued: true
+    annotations:
+      canonical_predicate: true
+    in_subset:
+      - translator_minimal
+
+  has detected:
+    is_a: location of
+    description: >-
+      Holds between a material sample (i.e., biospecimen) and a chemical entity (e.g., metabolite)
+      or gene (i.e., RNA transcript) or gene product (i.e., protein), possibly present therein,
+      as detected by an appropriate experimental assay.
+    domain: material sample
+    range: chemical entity or gene or gene product
+    multivalued: true
+    in_subset:
+      - translator_minimal
+    inverse: detected in
 
   has phenotype:
     is_a: related to at instance level
@@ -12169,6 +12198,22 @@ classes:
         description: >-
           the material sample being described
 
+  entity to material sample association mixin:
+    description: >-
+      An association between something and a material sample.
+    mixin: true
+    slots:
+      - subject
+      - predicate
+      - object
+    defining_slots:
+      - object
+    slot_usage:
+      object:
+        range: material sample
+        description: >-
+          the material sample associated with some entity
+
   material sample derivation association:
     description: >-
       An association between a material sample and
@@ -12206,6 +12251,44 @@ classes:
     defining_slots:
       - subject
       - object
+
+  material sample to chemical entity or gene or gene product association:
+    description: >-
+      An association between a material sample and a
+      chemical entity or gene or gene product contained within.
+    is_a: association
+    mixins:
+      - material sample to entity association mixin
+    defining_slots:
+      - subject
+      - object
+    slot_usage:
+      object:
+        range: chemical entity or gene or gene product
+        description: >-
+          The chemical entity or gene or gene product
+          substance contained in the material sample.
+      predicate:
+        subproperty_of: has detected
+
+  chemical entity or gene or gene product to material sample association:
+    description: >-
+      An association between a chemical entity (e.g., metabolite) 
+      or gene (i.e., RNA transcript) or gene product (i.e.,protein)
+      and a material sample (e.g., biospecimen)
+    is_a: association
+    mixins:
+      - entity to material sample association mixin
+    defining_slots:
+      - subject
+      - object
+    slot_usage:
+      subject:
+        range: chemical entity or gene or gene product
+        description: >-
+          the material sample being described
+      predicate:
+        subproperty_of: detected in
 
   disease to entity association mixin:
     description: >-
