@@ -12271,7 +12271,7 @@ classes:
       predicate:
         subproperty_of: has detected
 
-    chemical entity or gene or gene product to material sample association:
+  chemical entity or gene or gene product to material sample association:
     description: >-
       An association between a chemical entity (e.g., metabolite) 
       or gene (i.e., RNA transcript) or gene product (i.e.,protein)
@@ -12282,13 +12282,13 @@ classes:
     defining_slots:
       - subject
       - object
-  slot_usage:
-    subject:
-      range: chemical entity or gene or gene product
-      description: >-
-        the material sample being described
-    predicate:
-      subproperty_of: detected in
+    slot_usage:
+      subject:
+        range: chemical entity or gene or gene product
+        description: >-
+          the material sample being described
+      predicate:
+        subproperty_of: detected in
 
   disease to entity association mixin:
     description: >-
