@@ -1,5 +1,5 @@
 # Auto generated from biolink_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-10-09T23:04:52
+# Generation date: 2026-11-12T22:24:33
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/vocab/
@@ -257,6 +257,7 @@ TAXRANK = CurieNamespace('TAXRANK', 'http://purl.obolibrary.org/obo/TAXRANK_')
 TCDB = CurieNamespace('TCDB', 'http://identifiers.org/tcdb/')
 TIGRFAM = CurieNamespace('TIGRFAM', 'http://identifiers.org/tigrfam/')
 TO = CurieNamespace('TO', 'http://purl.obolibrary.org/obo/TO_')
+TR = CurieNamespace('TR', 'https://cebs.niehs.nih.gov/cebs/publication/')
 UBERGRAPH = CurieNamespace('UBERGRAPH', 'http://translator.renci.org/ubergraph-axioms.ofn#')
 UBERON = CurieNamespace('UBERON', 'http://purl.obolibrary.org/obo/UBERON_')
 UBERON_CORE = CurieNamespace('UBERON_CORE', 'http://purl.obolibrary.org/obo/uberon/core#')
