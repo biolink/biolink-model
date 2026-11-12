@@ -59,3 +59,24 @@ def test_macromolecular_complex_accepts_iuphar_target_prefix(load_biolink_model)
         model.schema.prefixes["IUPHARobj"].prefix_reference
         == "https://www.guidetopharmacology.org/GRAC/ObjectDisplayForward?objectId="
     )
+
+def test_chemical_classes_accept_comptox_after_chemical_prefixes(load_biolink_model):
+    """Ensure EPA DSSTox substance IDs (COMPTOX:DTXSID...) are valid for every chemical class, ranked below the
+    curated and structure-based chemical vocabularies so they are never preferred over them."""
+    model = SchemaView(load_biolink_model)
+    outranking = ["CHEBI", "UNII", "PUBCHEM.COMPOUND", "CHEMBL.COMPOUND", "DRUGBANK", "INCHIKEY"]
+
+    checked = []
+    for class_name in model.class_descendants("chemical entity"):
+        id_prefixes = model.get_class(class_name).id_prefixes
+        if not id_prefixes:
+            continue
+        checked.append(class_name)
+        assert "COMPTOX" in id_prefixes, class_name
+        comptox_rank = id_prefixes.index("COMPTOX")
+        for prefix in outranking:
+            if prefix in id_prefixes:
+                assert id_prefixes.index(prefix) < comptox_rank, (class_name, prefix)
+
+    assert "chemical entity" in checked
+    assert "drug" in checked
