@@ -2,7 +2,7 @@
   "name": "Biolink-Model",
   "description": "Entity and association taxonomy and datamodel for life-sciences data",
   "id": "https://w3id.org/biolink/vocab/",
-  "version": "4.4.4",
+  "version": "4.4.6",
   "imports": [
     "linkml:types",
     "attributes"
@@ -488,6 +488,10 @@
     {
       "prefix_prefix": "UMLSSG",
       "prefix_reference": "https://lhncbc.nlm.nih.gov/semanticnetwork/download/sg_archive/SemGroups-v04.txt"
+    },
+    {
+      "prefix_prefix": "TR",
+      "prefix_reference": "https://cebs.niehs.nih.gov/cebs/publication/"
     },
     {
       "prefix_prefix": "UniProtKB",
@@ -1074,6 +1078,68 @@
         {
           "text": "negative",
           "description": "A negative response to a treatment or intervention"
+        }
+      ]
+    },
+    {
+      "name": "TreatmentOutcomeEnum",
+      "definition_uri": "https://w3id.org/biolink/vocab/TreatmentOutcomeEnum",
+      "description": "The outcome of treating a disease or phenotypic feature with a chemical entity.",
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "permissible_values": [
+        {
+          "text": "fully_recovered",
+          "description": "Complete recovery following treatment; free of symptoms with no lasting health problems.",
+          "exact_mappings": [
+            "NCIT:C82467"
+          ],
+          "narrow_mappings": [
+            "NCIT:C4870"
+          ]
+        },
+        {
+          "text": "improved",
+          "description": "Partial improvement following treatment.",
+          "exact_mappings": [
+            "NCIT:C125459"
+          ],
+          "narrow_mappings": [
+            "NCIT:C18058"
+          ]
+        },
+        {
+          "text": "unchanged",
+          "description": "No change in the condition following treatment.",
+          "exact_mappings": [
+            "NCIT:C71687"
+          ],
+          "narrow_mappings": [
+            "NCIT:C18213"
+          ]
+        },
+        {
+          "text": "deteriorated",
+          "description": "Worsening of the condition following treatment.",
+          "exact_mappings": [
+            "NCIT:C25751"
+          ],
+          "narrow_mappings": [
+            "NCIT:C35571"
+          ]
+        },
+        {
+          "text": "died",
+          "description": "Death following treatment.",
+          "exact_mappings": [
+            "NCIT:C28554"
+          ]
+        },
+        {
+          "text": "unknown",
+          "description": "Treatment outcome is unknown.",
+          "exact_mappings": [
+            "NCIT:C17998"
+          ]
         }
       ]
     },
@@ -2851,10 +2917,6 @@
         {
           "text": "statistical",
           "description": "An association based on statistical dependence (i.e., non-independence), derived from analysis of observational or experimental data using an appropriate statistical method."
-        },
-        {
-          "text": "clinical",
-          "description": "An association based on the relationship of two clinical variables, such as medical treatment, genetic predispositions or environmental conditions and a biomedical outcome. There is a slight semantic overlap between 'genetic predispositions' and the scope of the 'genetic' basis (below)  but the latter usually applies to experimentally-determined inferences of underlying biology, versus a more epidemiological nature of the former."
         },
         {
           "text": "functional",
@@ -5108,10 +5170,11 @@
       "is_a": "qualifier",
       "domain": "Association",
       "slot_uri": "https://w3id.org/biolink/vocab/population_context_qualifier",
-      "owner": "ExposureEventToOutcomeAssociation",
+      "owner": "EntityToDiseaseOrPhenotypicFeatureAssociationMixin",
       "domain_of": [
         "NamedThingAssociatedWithLikelihoodOfNamedThingAssociation",
-        "ExposureEventToOutcomeAssociation"
+        "ExposureEventToOutcomeAssociation",
+        "EntityToDiseaseOrPhenotypicFeatureAssociationMixin"
       ],
       "range": "PopulationOfIndividualOrganisms",
       "@type": "SlotDefinition"
@@ -5306,11 +5369,11 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "FDA_regulatory_approvals",
-      "definition_uri": "https://w3id.org/biolink/vocab/FDA_regulatory_approvals",
-      "description": "Numbers that identify specific drug applications. Each drug can have multiple approval numbers (for example, as seen with ranitidine having both ANADA200536 and ANDA200536).",
+      "name": "regulatory_approvals",
+      "definition_uri": "https://w3id.org/biolink/vocab/regulatory_approvals",
+      "description": "Numbers or identifiers issued by regulatory agencies that identify specific drug applications or marketing authorizations. Values are application-number provenance and are not guaranteed to be verified identifiers from any particular agency; they may include FDA application numbers (for example, as seen with ranitidine having both ANADA200536 and ANDA200536) as well as identifiers from other regulatory agencies such as EMA marketing authorizations. Each drug can have multiple approval numbers.",
       "from_schema": "https://w3id.org/biolink/vocab/",
-      "slot_uri": "https://w3id.org/biolink/vocab/FDA_regulatory_approvals",
+      "slot_uri": "https://w3id.org/biolink/vocab/regulatory_approvals",
       "owner": "ClinicalTrialAndRegulatoryApprovalContextMixin",
       "domain_of": [
         "ClinicalTrialAndRegulatoryApprovalContextMixin"
@@ -15332,6 +15395,22 @@
         "ClinicalTrialAndRegulatoryApprovalContextMixin"
       ],
       "range": "ClinicalApprovalStatusEnum",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "treatment_outcome",
+      "definition_uri": "https://w3id.org/biolink/vocab/treatment_outcome",
+      "description": "The outcome of treating a disease or phenotypic feature with a chemical entity.",
+      "from_schema": "https://w3id.org/biolink/vocab/",
+      "is_a": "association_slot",
+      "domain": "Association",
+      "slot_uri": "https://w3id.org/biolink/vocab/treatment_outcome",
+      "owner": "ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation",
+      "domain_of": [
+        "ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation"
+      ],
+      "range": "TreatmentOutcomeEnum",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -30203,7 +30282,8 @@
         "PMID",
         "PMC",
         "doi",
-        "NLMID"
+        "NLMID",
+        "TR"
       ],
       "definition_uri": "https://w3id.org/biolink/vocab/Publication",
       "description": "Any \u2018published\u2019 piece of information. Publications are considered broadly to include any document or document part made available in print or on the web - which may include scientific journal issues, individual articles, and books - as well as things like pre-prints, white papers, patents, drug labels, web pages, protocol documents,  and even a part of a publication if of significant knowledge scope.",
@@ -32535,7 +32615,7 @@
       "description": "A chemical entity (often a mixture) processed for consumption for nutritional, medical or technical use. Is a material entity that is created or changed during material processing.",
       "from_schema": "https://w3id.org/biolink/vocab/",
       "exact_mappings": [
-        "OBI:0000047"
+        "COB:0000026"
       ],
       "is_a": "ChemicalMixture",
       "slots": [
@@ -34177,7 +34257,8 @@
         "ZFA",
         "FBbt",
         "WBbt",
-        "XAO"
+        "XAO",
+        "FMA"
       ],
       "definition_uri": "https://w3id.org/biolink/vocab/GrossAnatomicalStructure",
       "description": "An anatomical structure that has more than one cell as a part.",
@@ -38699,7 +38780,8 @@
         "disease_context_qualifier",
         "subject_specialization_qualifier",
         "object_specialization_qualifier",
-        "anatomical_context_qualifier"
+        "anatomical_context_qualifier",
+        "population_context_qualifier"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/CellLineToDiseaseOrPhenotypicFeatureAssociation",
@@ -39137,50 +39219,6 @@
             "agent_type": "manual_validation_of_automated_agent"
           },
           "@type": "Example"
-        },
-        {
-          "object": {
-            "subject": "PUBCHEM.COMPOUND:134612761",
-            "predicate": "biolink:diagnoses",
-            "object": "UMLS:C1720505",
-            "category": "biolink:ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation",
-            "knowledge_level": "knowledge_assertion",
-            "agent_type": "manual_validation_of_automated_agent"
-          },
-          "@type": "Example"
-        },
-        {
-          "object": {
-            "subject": "CHEBI:82720",
-            "predicate": "biolink:preventative_for_condition",
-            "object": "UMLS:C1320716",
-            "category": "biolink:ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation",
-            "knowledge_level": "knowledge_assertion",
-            "agent_type": "manual_validation_of_automated_agent"
-          },
-          "@type": "Example"
-        },
-        {
-          "object": {
-            "subject": "CHEBI:6919",
-            "predicate": "biolink:treats",
-            "object": "EFO:1001421",
-            "category": "biolink:ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation",
-            "knowledge_level": "knowledge_assertion",
-            "agent_type": "manual_validation_of_automated_agent"
-          },
-          "@type": "Example"
-        },
-        {
-          "object": {
-            "subject": "CHEBI:135361",
-            "predicate": "biolink:treats",
-            "object": "MONDO:0005324",
-            "category": "biolink:ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation",
-            "knowledge_level": "knowledge_assertion",
-            "agent_type": "manual_validation_of_automated_agent"
-          },
-          "@type": "Example"
         }
       ],
       "from_schema": "https://w3id.org/biolink/vocab/",
@@ -39189,8 +39227,7 @@
       ],
       "is_a": "Association",
       "mixins": [
-        "EntityToDiseaseOrPhenotypicFeatureAssociationMixin",
-        "ClinicalTrialAndRegulatoryApprovalContextMixin"
+        "EntityToDiseaseOrPhenotypicFeatureAssociationMixin"
       ],
       "slots": [
         "id",
@@ -39260,10 +39297,7 @@
         "subject_specialization_qualifier",
         "object_specialization_qualifier",
         "anatomical_context_qualifier",
-        "clinical_approval_status",
-        "max_research_phase",
-        "FDA_regulatory_approvals",
-        "number_of_cases"
+        "population_context_qualifier"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation",
@@ -39277,6 +39311,41 @@
       "name": "ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation",
       "definition_uri": "https://w3id.org/biolink/vocab/ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation",
       "description": "This association defines a relationship between a chemical or treatment (or procedure) and a disease or phenotypic feature where the chemical or treatment is used to treat, or is being studied to treat, the disease or phenotypic feature.",
+      "examples": [
+        {
+          "object": {
+            "subject": "CHEBI:6919",
+            "predicate": "biolink:treats",
+            "object": "EFO:1001421",
+            "category": "biolink:ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation",
+            "knowledge_level": "knowledge_assertion",
+            "agent_type": "manual_validation_of_automated_agent"
+          },
+          "@type": "Example"
+        },
+        {
+          "object": {
+            "subject": "CHEBI:135361",
+            "predicate": "biolink:treats",
+            "object": "MONDO:0005324",
+            "category": "biolink:ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation",
+            "knowledge_level": "knowledge_assertion",
+            "agent_type": "manual_validation_of_automated_agent"
+          },
+          "@type": "Example"
+        },
+        {
+          "object": {
+            "subject": "CHEBI:82720",
+            "predicate": "biolink:preventative_for_condition",
+            "object": "UMLS:C1320716",
+            "category": "biolink:ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation",
+            "knowledge_level": "knowledge_assertion",
+            "agent_type": "manual_validation_of_automated_agent"
+          },
+          "@type": "Example"
+        }
+      ],
       "from_schema": "https://w3id.org/biolink/vocab/",
       "is_a": "Association",
       "mixins": [
@@ -39340,6 +39409,7 @@
         "species_context_qualifier",
         "association_type",
         "association_category",
+        "treatment_outcome",
         "chemical_or_drug_or_treatment_to_disease_or_phenotypic_feature_association_predicate",
         "frequency_qualifier",
         "subject_aspect_qualifier",
@@ -39351,9 +39421,10 @@
         "subject_specialization_qualifier",
         "object_specialization_qualifier",
         "anatomical_context_qualifier",
+        "population_context_qualifier",
         "clinical_approval_status",
         "max_research_phase",
-        "FDA_regulatory_approvals",
+        "regulatory_approvals",
         "number_of_cases"
       ],
       "slot_usage": {},
@@ -39442,7 +39513,8 @@
         "disease_context_qualifier",
         "subject_specialization_qualifier",
         "object_specialization_qualifier",
-        "anatomical_context_qualifier"
+        "anatomical_context_qualifier",
+        "population_context_qualifier"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/ChemicalOrDrugOrTreatmentAdverseEventAssociation",
@@ -39529,7 +39601,8 @@
         "disease_context_qualifier",
         "subject_specialization_qualifier",
         "object_specialization_qualifier",
-        "anatomical_context_qualifier"
+        "anatomical_context_qualifier",
+        "population_context_qualifier"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/ChemicalOrDrugOrTreatmentSideEffectAssociation",
@@ -41035,7 +41108,8 @@
         "disease_context_qualifier",
         "subject_specialization_qualifier",
         "object_specialization_qualifier",
-        "anatomical_context_qualifier"
+        "anatomical_context_qualifier",
+        "population_context_qualifier"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/MaterialSampleToDiseaseOrPhenotypicFeatureAssociation",
@@ -41289,7 +41363,7 @@
       "slots": [
         "clinical_approval_status",
         "max_research_phase",
-        "FDA_regulatory_approvals",
+        "regulatory_approvals",
         "number_of_cases"
       ],
       "slot_usage": {},
@@ -41385,6 +41459,7 @@
         "subject_specialization_qualifier",
         "object_specialization_qualifier",
         "anatomical_context_qualifier",
+        "population_context_qualifier",
         "sex_qualifier",
         "entity_to_phenotypic_feature_association_mixin_object",
         "has_count",
@@ -41516,7 +41591,8 @@
         "disease_context_qualifier",
         "subject_specialization_qualifier",
         "object_specialization_qualifier",
-        "anatomical_context_qualifier"
+        "anatomical_context_qualifier",
+        "population_context_qualifier"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/PhenotypicFeatureToPhenotypicFeatureAssociation",
@@ -41623,6 +41699,7 @@
         "subject_specialization_qualifier",
         "object_specialization_qualifier",
         "anatomical_context_qualifier",
+        "population_context_qualifier",
         "entity_to_disease_association_mixin_object"
       ],
       "slot_usage": {},
@@ -41813,6 +41890,7 @@
         "subject_specialization_qualifier",
         "object_specialization_qualifier",
         "anatomical_context_qualifier",
+        "population_context_qualifier",
         "entity_to_disease_or_phenotypic_feature_association_mixin_object"
       ],
       "slot_usage": {},
@@ -41919,6 +41997,7 @@
         "subject_specialization_qualifier",
         "object_specialization_qualifier",
         "anatomical_context_qualifier",
+        "population_context_qualifier",
         "sex_qualifier",
         "has_count",
         "has_total",
@@ -42010,6 +42089,7 @@
         "subject_specialization_qualifier",
         "object_specialization_qualifier",
         "anatomical_context_qualifier",
+        "population_context_qualifier",
         "sex_qualifier",
         "has_count",
         "has_total",
@@ -42111,6 +42191,7 @@
         "subject_specialization_qualifier",
         "object_specialization_qualifier",
         "anatomical_context_qualifier",
+        "population_context_qualifier",
         "sex_qualifier"
       ],
       "slot_usage": {},
@@ -42198,7 +42279,8 @@
         "disease_context_qualifier",
         "subject_specialization_qualifier",
         "object_specialization_qualifier",
-        "anatomical_context_qualifier"
+        "anatomical_context_qualifier",
+        "population_context_qualifier"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/DiseaseToDiseaseAssociation",
@@ -42287,6 +42369,7 @@
         "subject_specialization_qualifier",
         "object_specialization_qualifier",
         "anatomical_context_qualifier",
+        "population_context_qualifier",
         "sex_qualifier",
         "has_count",
         "has_total",
@@ -42597,6 +42680,7 @@
         "subject_specialization_qualifier",
         "object_specialization_qualifier",
         "anatomical_context_qualifier",
+        "population_context_qualifier",
         "sex_qualifier",
         "has_count",
         "has_total",
@@ -42744,6 +42828,7 @@
         "subject_specialization_qualifier",
         "object_specialization_qualifier",
         "anatomical_context_qualifier",
+        "population_context_qualifier",
         "sex_qualifier",
         "has_count",
         "has_total",
@@ -42874,7 +42959,8 @@
         "disease_context_qualifier",
         "subject_specialization_qualifier",
         "object_specialization_qualifier",
-        "anatomical_context_qualifier"
+        "anatomical_context_qualifier",
+        "population_context_qualifier"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/GeneToDiseaseAssociation",
@@ -43070,7 +43156,8 @@
         "disease_context_qualifier",
         "subject_specialization_qualifier",
         "object_specialization_qualifier",
-        "anatomical_context_qualifier"
+        "anatomical_context_qualifier",
+        "population_context_qualifier"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/CorrelatedGeneToDiseaseAssociation",
@@ -43161,6 +43248,7 @@
         "subject_specialization_qualifier",
         "object_specialization_qualifier",
         "anatomical_context_qualifier",
+        "population_context_qualifier",
         "druggable_gene_category",
         "druggable_gene_to_disease_association_subject",
         "druggable_gene_to_disease_association_predicate"
@@ -43252,6 +43340,7 @@
         "subject_specialization_qualifier",
         "object_specialization_qualifier",
         "anatomical_context_qualifier",
+        "population_context_qualifier",
         "sex_qualifier",
         "has_count",
         "has_total",
@@ -43659,6 +43748,7 @@
         "subject_specialization_qualifier",
         "object_specialization_qualifier",
         "anatomical_context_qualifier",
+        "population_context_qualifier",
         "sex_qualifier",
         "has_count",
         "has_total",
@@ -43753,7 +43843,8 @@
         "disease_context_qualifier",
         "subject_specialization_qualifier",
         "object_specialization_qualifier",
-        "anatomical_context_qualifier"
+        "anatomical_context_qualifier",
+        "population_context_qualifier"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/VariantToDiseaseAssociation",
@@ -43843,7 +43934,8 @@
         "disease_context_qualifier",
         "subject_specialization_qualifier",
         "object_specialization_qualifier",
-        "anatomical_context_qualifier"
+        "anatomical_context_qualifier",
+        "population_context_qualifier"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/GenotypeToDiseaseAssociation",
@@ -43949,6 +44041,7 @@
         "subject_specialization_qualifier",
         "object_specialization_qualifier",
         "anatomical_context_qualifier",
+        "population_context_qualifier",
         "gene_as_a_model_of_disease_association_subject"
       ],
       "slot_usage": {},
@@ -44037,6 +44130,7 @@
         "subject_specialization_qualifier",
         "object_specialization_qualifier",
         "anatomical_context_qualifier",
+        "population_context_qualifier",
         "variant_as_a_model_of_disease_association_subject"
       ],
       "slot_usage": {},
@@ -44125,6 +44219,7 @@
         "subject_specialization_qualifier",
         "object_specialization_qualifier",
         "anatomical_context_qualifier",
+        "population_context_qualifier",
         "genotype_as_a_model_of_disease_association_subject"
       ],
       "slot_usage": {},
@@ -44213,6 +44308,7 @@
         "subject_specialization_qualifier",
         "object_specialization_qualifier",
         "anatomical_context_qualifier",
+        "population_context_qualifier",
         "cell_line_as_a_model_of_disease_association_subject"
       ],
       "slot_usage": {},
@@ -44301,7 +44397,8 @@
         "disease_context_qualifier",
         "subject_specialization_qualifier",
         "object_specialization_qualifier",
-        "anatomical_context_qualifier"
+        "anatomical_context_qualifier",
+        "population_context_qualifier"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/biolink/vocab/OrganismalEntityAsAModelOfDiseaseAssociation",
@@ -44534,6 +44631,7 @@
         "subject_specialization_qualifier",
         "object_specialization_qualifier",
         "anatomical_context_qualifier",
+        "population_context_qualifier",
         "subject_form_or_variant_qualifier",
         "gene_has_variant_that_contributes_to_disease_association_subject",
         "gene_has_variant_that_contributes_to_disease_association_object",
@@ -45336,7 +45434,7 @@
     {
       "name": "EntityToDiseaseAssociation",
       "definition_uri": "https://w3id.org/biolink/vocab/EntityToDiseaseAssociation",
-      "description": "An association between any entity and a disease, capturing clinical context such as approval status, research phase, FDA regulatory approvals, and number of cases.",
+      "description": "An association between any entity and a disease, capturing clinical context such as approval status, research phase, regulatory approvals, and number of cases.",
       "examples": [
         {
           "object": {
@@ -45471,9 +45569,10 @@
         "subject_specialization_qualifier",
         "object_specialization_qualifier",
         "anatomical_context_qualifier",
+        "population_context_qualifier",
         "clinical_approval_status",
         "max_research_phase",
-        "FDA_regulatory_approvals",
+        "regulatory_approvals",
         "number_of_cases"
       ],
       "slot_usage": {},
@@ -45487,7 +45586,7 @@
     {
       "name": "EntityToPhenotypicFeatureAssociation",
       "definition_uri": "https://w3id.org/biolink/vocab/EntityToPhenotypicFeatureAssociation",
-      "description": "An association between any entity and a phenotypic feature, capturing clinical context such as approval status, research phase, FDA regulatory approvals, and number of cases.",
+      "description": "An association between any entity and a phenotypic feature, capturing clinical context such as approval status, research phase, regulatory approvals, and number of cases.",
       "examples": [
         {
           "object": {
@@ -45604,6 +45703,7 @@
         "subject_specialization_qualifier",
         "object_specialization_qualifier",
         "anatomical_context_qualifier",
+        "population_context_qualifier",
         "sex_qualifier",
         "has_count",
         "has_total",
@@ -45611,7 +45711,7 @@
         "has_percentage",
         "clinical_approval_status",
         "max_research_phase",
-        "FDA_regulatory_approvals",
+        "regulatory_approvals",
         "number_of_cases"
       ],
       "slot_usage": {},
@@ -46961,9 +47061,9 @@
   ],
   "metamodel_version": "1.11.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2026-09-02T19:55:30",
-  "source_file_size": 543468,
-  "generation_date": "2026-09-02T19:55:39",
+  "source_file_date": "2026-11-13T21:49:59",
+  "source_file_size": 544905,
+  "generation_date": "2026-11-13T21:50:04",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",

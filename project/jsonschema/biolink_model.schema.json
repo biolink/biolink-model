@@ -4916,6 +4916,13 @@
                         "null"
                     ]
                 },
+                "population_context_qualifier": {
+                    "description": "a biological population (general, study, cohort, etc.) with a specific set of characteristics to constrain an association.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "predicate": {
                     "description": "Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats",
                     "type": "string"
@@ -10498,6 +10505,13 @@
                         "null"
                     ]
                 },
+                "population_context_qualifier": {
+                    "description": "a biological population (general, study, cohort, etc.) with a specific set of characteristics to constrain an association.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "predicate": {
                     "description": "Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats",
                     "type": "string"
@@ -12649,6 +12663,13 @@
                         "null"
                     ]
                 },
+                "population_context_qualifier": {
+                    "description": "a biological population (general, study, cohort, etc.) with a specific set of characteristics to constrain an association.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "predicate": {
                     "description": "The relationship to the disease",
                     "enum": [
@@ -13225,6 +13246,13 @@
                     "description": "A quantitative confidence value that represents the probability of obtaining a result at least as extreme as that actually obtained, assuming that the actual value was the result of chance alone.",
                     "type": [
                         "number",
+                        "null"
+                    ]
+                },
+                "population_context_qualifier": {
+                    "description": "a biological population (general, study, cohort, etc.) with a specific set of characteristics to constrain an association.",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },
@@ -18798,16 +18826,6 @@
             ],
             "description": "An interaction between a chemical entity and a phenotype or disease, where the presence of the chemical gives rise to or exacerbates the phenotype.",
             "properties": {
-                "FDA_regulatory_approvals": {
-                    "description": "Numbers that identify specific drug applications. Each drug can have multiple approval numbers (for example, as seen with ranitidine having both ANADA200536 and ANDA200536).",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": [
-                        "array",
-                        "null"
-                    ]
-                },
                 "adjusted_p_value": {
                     "description": "The adjusted p-value is the probability of obtaining test results at least as extreme as the results actually observed, under the assumption that the null hypothesis is correct, adjusted for multiple comparisons. P is always italicized and capitalized. The actual P value* should be expressed (P=. 04) rather than expressing a statement of inequality (P<. 05), unless P<.",
                     "type": [
@@ -18855,10 +18873,6 @@
                         "array",
                         "null"
                     ]
-                },
-                "clinical_approval_status": {
-                    "$ref": "#/$defs/ClinicalApprovalStatusEnum",
-                    "description": "The clinical approval status of a chemical entity for treating a specific disease or condition, as captured in the context of the association between the chemical and the disease."
                 },
                 "deprecated": {
                     "description": "A boolean flag indicating that an entity is no longer considered current or valid.",
@@ -19000,10 +19014,6 @@
                         "null"
                     ]
                 },
-                "max_research_phase": {
-                    "$ref": "#/$defs/ResearchPhaseEnum",
-                    "description": "The maximum research phase reached for a specific chemical-disease pair, indicating the highest clinical trial phase achieved for the chemical entity's investigation as a treatment for the associated disease or condition."
-                },
                 "name": {
                     "description": "A human-readable name for an attribute or entity.",
                     "type": [
@@ -19015,13 +19025,6 @@
                     "description": "if set to true, then the association is negated i.e. is not true",
                     "type": [
                         "boolean",
-                        "null"
-                    ]
-                },
-                "number_of_cases": {
-                    "description": "The number of cases in a study or clinical trial, primarily used in conversion of drug approval data.",
-                    "type": [
-                        "integer",
                         "null"
                     ]
                 },
@@ -19120,6 +19123,13 @@
                     "description": "A quantitative confidence value that represents the probability of obtaining a result at least as extreme as that actually obtained, assuming that the actual value was the result of chance alone.",
                     "type": [
                         "number",
+                        "null"
+                    ]
+                },
+                "population_context_qualifier": {
+                    "description": "a biological population (general, study, cohort, etc.) with a specific set of characteristics to constrain an association.",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },
@@ -21996,6 +22006,13 @@
                         "null"
                     ]
                 },
+                "population_context_qualifier": {
+                    "description": "a biological population (general, study, cohort, etc.) with a specific set of characteristics to constrain an association.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "predicate": {
                     "description": "Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats",
                     "enum": [
@@ -22575,6 +22592,13 @@
                         "null"
                     ]
                 },
+                "population_context_qualifier": {
+                    "description": "a biological population (general, study, cohort, etc.) with a specific set of characteristics to constrain an association.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "predicate": {
                     "description": "Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats",
                     "enum": [
@@ -22854,16 +22878,6 @@
             ],
             "description": "This association defines a relationship between a chemical or treatment (or procedure) and a disease or phenotypic feature where the chemical or treatment is used to treat, or is being studied to treat, the disease or phenotypic feature.",
             "properties": {
-                "FDA_regulatory_approvals": {
-                    "description": "Numbers that identify specific drug applications. Each drug can have multiple approval numbers (for example, as seen with ranitidine having both ANADA200536 and ANDA200536).",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": [
-                        "array",
-                        "null"
-                    ]
-                },
                 "adjusted_p_value": {
                     "description": "The adjusted p-value is the probability of obtaining test results at least as extreme as the results actually observed, under the assumption that the null hypothesis is correct, adjusted for multiple comparisons. P is always italicized and capitalized. The actual P value* should be expressed (P=. 04) rather than expressing a statement of inequality (P<. 05), unless P<.",
                     "type": [
@@ -23179,6 +23193,13 @@
                         "null"
                     ]
                 },
+                "population_context_qualifier": {
+                    "description": "a biological population (general, study, cohort, etc.) with a specific set of characteristics to constrain an association.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "predicate": {
                     "description": "Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats",
                     "enum": [
@@ -23227,6 +23248,16 @@
                 },
                 "qualifiers": {
                     "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "regulatory_approvals": {
+                    "description": "Numbers or identifiers issued by regulatory agencies that identify specific drug applications or marketing authorizations. Values are application-number provenance and are not guaranteed to be verified identifiers from any particular agency; they may include FDA application numbers (for example, as seen with ranitidine having both ANADA200536 and ANDA200536) as well as identifiers from other regulatory agencies such as EMA marketing authorizations. Each drug can have multiple approval numbers.",
                     "items": {
                         "type": "string"
                     },
@@ -23379,6 +23410,16 @@
                     "format": "time",
                     "type": [
                         "string",
+                        "null"
+                    ]
+                },
+                "treatment_outcome": {
+                    "description": "The outcome of treating a disease or phenotypic feature with a chemical entity.",
+                    "items": {
+                        "$ref": "#/$defs/TreatmentOutcomeEnum"
+                    },
+                    "type": [
+                        "array",
                         "null"
                     ]
                 },
@@ -25607,16 +25648,6 @@
             "additionalProperties": false,
             "description": "A mixin providing the clinical trial and regulatory approval context of an association between an entity (typically a chemical, drug, or treatment) and the disease or phenotypic feature it is used, or is being studied, to treat. These slots are association-scoped: they describe the entity's status with respect to this particular indication. For the entity's overall regulatory status independent of any one indication, see the node properties 'highest FDA approval status' and 'drug regulatory status world wide'.",
             "properties": {
-                "FDA_regulatory_approvals": {
-                    "description": "Numbers that identify specific drug applications. Each drug can have multiple approval numbers (for example, as seen with ranitidine having both ANADA200536 and ANDA200536).",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": [
-                        "array",
-                        "null"
-                    ]
-                },
                 "clinical_approval_status": {
                     "$ref": "#/$defs/ClinicalApprovalStatusEnum",
                     "description": "The clinical approval status of a chemical entity for treating a specific disease or condition, as captured in the context of the association between the chemical and the disease."
@@ -25629,6 +25660,16 @@
                     "description": "The number of cases in a study or clinical trial, primarily used in conversion of drug approval data.",
                     "type": [
                         "integer",
+                        "null"
+                    ]
+                },
+                "regulatory_approvals": {
+                    "description": "Numbers or identifiers issued by regulatory agencies that identify specific drug applications or marketing authorizations. Values are application-number provenance and are not guaranteed to be verified identifiers from any particular agency; they may include FDA application numbers (for example, as seen with ranitidine having both ANADA200536 and ANDA200536) as well as identifiers from other regulatory agencies such as EMA marketing authorizations. Each drug can have multiple approval numbers.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
                         "null"
                     ]
                 }
@@ -28417,6 +28458,13 @@
                     "description": "A quantitative confidence value that represents the probability of obtaining a result at least as extreme as that actually obtained, assuming that the actual value was the result of chance alone.",
                     "type": [
                         "number",
+                        "null"
+                    ]
+                },
+                "population_context_qualifier": {
+                    "description": "a biological population (general, study, cohort, etc.) with a specific set of characteristics to constrain an association.",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },
@@ -32498,6 +32546,13 @@
                         "null"
                     ]
                 },
+                "population_context_qualifier": {
+                    "description": "a biological population (general, study, cohort, etc.) with a specific set of characteristics to constrain an association.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "predicate": {
                     "description": "Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats",
                     "enum": [
@@ -33671,6 +33726,13 @@
                     "description": "A quantitative confidence value that represents the probability of obtaining a result at least as extreme as that actually obtained, assuming that the actual value was the result of chance alone.",
                     "type": [
                         "number",
+                        "null"
+                    ]
+                },
+                "population_context_qualifier": {
+                    "description": "a biological population (general, study, cohort, etc.) with a specific set of characteristics to constrain an association.",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },
@@ -35949,6 +36011,13 @@
                         "null"
                     ]
                 },
+                "population_context_qualifier": {
+                    "description": "a biological population (general, study, cohort, etc.) with a specific set of characteristics to constrain an association.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "predicate": {
                     "$ref": "#/$defs/GeneToDiseasePredicateEnum",
                     "description": "Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats",
@@ -36344,18 +36413,8 @@
                     }
                 }
             ],
-            "description": "An association between any entity and a disease, capturing clinical context such as approval status, research phase, FDA regulatory approvals, and number of cases.",
+            "description": "An association between any entity and a disease, capturing clinical context such as approval status, research phase, regulatory approvals, and number of cases.",
             "properties": {
-                "FDA_regulatory_approvals": {
-                    "description": "Numbers that identify specific drug applications. Each drug can have multiple approval numbers (for example, as seen with ranitidine having both ANADA200536 and ANDA200536).",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": [
-                        "array",
-                        "null"
-                    ]
-                },
                 "adjusted_p_value": {
                     "description": "The adjusted p-value is the probability of obtaining test results at least as extreme as the results actually observed, under the assumption that the null hypothesis is correct, adjusted for multiple comparisons. P is always italicized and capitalized. The actual P value* should be expressed (P=. 04) rather than expressing a statement of inequality (P<. 05), unless P<.",
                     "type": [
@@ -36671,6 +36730,13 @@
                         "null"
                     ]
                 },
+                "population_context_qualifier": {
+                    "description": "a biological population (general, study, cohort, etc.) with a specific set of characteristics to constrain an association.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "predicate": {
                     "description": "Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats",
                     "type": "string"
@@ -36708,6 +36774,16 @@
                 },
                 "qualifiers": {
                     "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "regulatory_approvals": {
+                    "description": "Numbers or identifiers issued by regulatory agencies that identify specific drug applications or marketing authorizations. Values are application-number provenance and are not guaranteed to be verified identifiers from any particular agency; they may include FDA application numbers (for example, as seen with ranitidine having both ANADA200536 and ANDA200536) as well as identifiers from other regulatory agencies such as EMA marketing authorizations. Each drug can have multiple approval numbers.",
                     "items": {
                         "type": "string"
                     },
@@ -36940,6 +37016,13 @@
                         "null"
                     ]
                 },
+                "population_context_qualifier": {
+                    "description": "a biological population (general, study, cohort, etc.) with a specific set of characteristics to constrain an association.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "predicate": {
                     "description": "Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats",
                     "type": "string"
@@ -37021,6 +37104,13 @@
                 },
                 "object_specialization_qualifier": {
                     "description": "A qualifier that composes with a core subject/object concept to define a more specific version of the subject concept, specifically using an ontology term that is not a subclass or descendant of the core concept and in the vast majority of cases, is of a different ontological namespace than the category or namespace of the subject identifier.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "population_context_qualifier": {
+                    "description": "a biological population (general, study, cohort, etc.) with a specific set of characteristics to constrain an association.",
                     "type": [
                         "string",
                         "null"
@@ -37283,18 +37373,8 @@
                     }
                 }
             ],
-            "description": "An association between any entity and a phenotypic feature, capturing clinical context such as approval status, research phase, FDA regulatory approvals, and number of cases.",
+            "description": "An association between any entity and a phenotypic feature, capturing clinical context such as approval status, research phase, regulatory approvals, and number of cases.",
             "properties": {
-                "FDA_regulatory_approvals": {
-                    "description": "Numbers that identify specific drug applications. Each drug can have multiple approval numbers (for example, as seen with ranitidine having both ANADA200536 and ANDA200536).",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": [
-                        "array",
-                        "null"
-                    ]
-                },
                 "adjusted_p_value": {
                     "description": "The adjusted p-value is the probability of obtaining test results at least as extreme as the results actually observed, under the assumption that the null hypothesis is correct, adjusted for multiple comparisons. P is always italicized and capitalized. The actual P value* should be expressed (P=. 04) rather than expressing a statement of inequality (P<. 05), unless P<.",
                     "type": [
@@ -37637,6 +37717,13 @@
                         "null"
                     ]
                 },
+                "population_context_qualifier": {
+                    "description": "a biological population (general, study, cohort, etc.) with a specific set of characteristics to constrain an association.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "predicate": {
                     "description": "Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats",
                     "type": "string"
@@ -37674,6 +37761,16 @@
                 },
                 "qualifiers": {
                     "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "regulatory_approvals": {
+                    "description": "Numbers or identifiers issued by regulatory agencies that identify specific drug applications or marketing authorizations. Values are application-number provenance and are not guaranteed to be verified identifiers from any particular agency; they may include FDA application numbers (for example, as seen with ranitidine having both ANADA200536 and ANDA200536) as well as identifiers from other regulatory agencies such as EMA marketing authorizations. Each drug can have multiple approval numbers.",
                     "items": {
                         "type": "string"
                     },
@@ -37935,6 +38032,13 @@
                 },
                 "object_specialization_qualifier": {
                     "description": "A qualifier that composes with a core subject/object concept to define a more specific version of the subject concept, specifically using an ontology term that is not a subclass or descendant of the core concept and in the vast majority of cases, is of a different ontological namespace than the category or namespace of the subject identifier.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "population_context_qualifier": {
+                    "description": "a biological population (general, study, cohort, etc.) with a specific set of characteristics to constrain an association.",
                     "type": [
                         "string",
                         "null"
@@ -41307,6 +41411,13 @@
                         "null"
                     ]
                 },
+                "population_context_qualifier": {
+                    "description": "a biological population (general, study, cohort, etc.) with a specific set of characteristics to constrain an association.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "predicate": {
                     "description": "Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats",
                     "type": "string"
@@ -44134,6 +44245,13 @@
                         "null"
                     ]
                 },
+                "population_context_qualifier": {
+                    "description": "a biological population (general, study, cohort, etc.) with a specific set of characteristics to constrain an association.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "predicate": {
                     "$ref": "#/$defs/GeneToDiseasePredicateEnum",
                     "description": "The relationship to the disease",
@@ -45516,6 +45634,13 @@
                     "description": "A quantitative confidence value that represents the probability of obtaining a result at least as extreme as that actually obtained, assuming that the actual value was the result of chance alone.",
                     "type": [
                         "number",
+                        "null"
+                    ]
+                },
+                "population_context_qualifier": {
+                    "description": "a biological population (general, study, cohort, etc.) with a specific set of characteristics to constrain an association.",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },
@@ -47881,6 +48006,13 @@
                     "description": "A quantitative confidence value that represents the probability of obtaining a result at least as extreme as that actually obtained, assuming that the actual value was the result of chance alone.",
                     "type": [
                         "number",
+                        "null"
+                    ]
+                },
+                "population_context_qualifier": {
+                    "description": "a biological population (general, study, cohort, etc.) with a specific set of characteristics to constrain an association.",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },
@@ -52916,6 +53048,13 @@
                         "null"
                     ]
                 },
+                "population_context_qualifier": {
+                    "description": "a biological population (general, study, cohort, etc.) with a specific set of characteristics to constrain an association.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "predicate": {
                     "$ref": "#/$defs/GeneToPhenotypicFeaturePredicateEnum",
                     "description": "Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats"
@@ -54974,6 +55113,13 @@
                         "null"
                     ]
                 },
+                "population_context_qualifier": {
+                    "description": "a biological population (general, study, cohort, etc.) with a specific set of characteristics to constrain an association.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "predicate": {
                     "description": "The relationship to the disease",
                     "enum": [
@@ -55550,6 +55696,13 @@
                     "description": "A quantitative confidence value that represents the probability of obtaining a result at least as extreme as that actually obtained, assuming that the actual value was the result of chance alone.",
                     "type": [
                         "number",
+                        "null"
+                    ]
+                },
+                "population_context_qualifier": {
+                    "description": "a biological population (general, study, cohort, etc.) with a specific set of characteristics to constrain an association.",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },
@@ -57214,6 +57367,13 @@
                     "description": "A quantitative confidence value that represents the probability of obtaining a result at least as extreme as that actually obtained, assuming that the actual value was the result of chance alone.",
                     "type": [
                         "number",
+                        "null"
+                    ]
+                },
+                "population_context_qualifier": {
+                    "description": "a biological population (general, study, cohort, etc.) with a specific set of characteristics to constrain an association.",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },
@@ -66380,6 +66540,13 @@
                         "null"
                     ]
                 },
+                "population_context_qualifier": {
+                    "description": "a biological population (general, study, cohort, etc.) with a specific set of characteristics to constrain an association.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "predicate": {
                     "description": "Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats",
                     "type": "string"
@@ -74830,6 +74997,13 @@
                         "null"
                     ]
                 },
+                "population_context_qualifier": {
+                    "description": "a biological population (general, study, cohort, etc.) with a specific set of characteristics to constrain an association.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "predicate": {
                     "description": "The relationship to the disease",
                     "enum": [
@@ -78485,6 +78659,13 @@
                         "null"
                     ]
                 },
+                "population_context_qualifier": {
+                    "description": "a biological population (general, study, cohort, etc.) with a specific set of characteristics to constrain an association.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "predicate": {
                     "description": "Has a value from the Biolink 'related_to' hierarchy. In RDF,  this corresponds to rdf:predicate and in Neo4j this corresponds to the relationship type. The convention is for an edge label in snake_case form. For example, biolink:related_to, biolink:causes, biolink:treats",
                     "enum": [
@@ -79207,6 +79388,13 @@
                     "description": "A quantitative confidence value that represents the probability of obtaining a result at least as extreme as that actually obtained, assuming that the actual value was the result of chance alone.",
                     "type": [
                         "number",
+                        "null"
+                    ]
+                },
+                "population_context_qualifier": {
+                    "description": "a biological population (general, study, cohort, etc.) with a specific set of characteristics to constrain an association.",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },
@@ -93420,6 +93608,19 @@
             "title": "Treatment",
             "type": "object"
         },
+        "TreatmentOutcomeEnum": {
+            "description": "The outcome of treating a disease or phenotypic feature with a chemical entity.",
+            "enum": [
+                "fully_recovered",
+                "improved",
+                "unchanged",
+                "deteriorated",
+                "died",
+                "unknown"
+            ],
+            "title": "TreatmentOutcomeEnum",
+            "type": "string"
+        },
         "VariantAsAModelOfDiseaseAssociation": {
             "additionalProperties": false,
             "allOf": [
@@ -93771,6 +93972,13 @@
                     "description": "A quantitative confidence value that represents the probability of obtaining a result at least as extreme as that actually obtained, assuming that the actual value was the result of chance alone.",
                     "type": [
                         "number",
+                        "null"
+                    ]
+                },
+                "population_context_qualifier": {
+                    "description": "a biological population (general, study, cohort, etc.) with a specific set of characteristics to constrain an association.",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },
@@ -94350,6 +94558,13 @@
                     "description": "A quantitative confidence value that represents the probability of obtaining a result at least as extreme as that actually obtained, assuming that the actual value was the result of chance alone.",
                     "type": [
                         "number",
+                        "null"
+                    ]
+                },
+                "population_context_qualifier": {
+                    "description": "a biological population (general, study, cohort, etc.) with a specific set of characteristics to constrain an association.",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },
@@ -96053,6 +96268,13 @@
                     "description": "A quantitative confidence value that represents the probability of obtaining a result at least as extreme as that actually obtained, assuming that the actual value was the result of chance alone.",
                     "type": [
                         "number",
+                        "null"
+                    ]
+                },
+                "population_context_qualifier": {
+                    "description": "a biological population (general, study, cohort, etc.) with a specific set of characteristics to constrain an association.",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },
@@ -98804,5 +99026,5 @@
     },
     "title": "Biolink-Model",
     "type": "object",
-    "version": "4.4.4"
+    "version": "4.4.6"
 }

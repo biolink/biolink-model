@@ -65,6 +65,7 @@
          "@prefix": true
       },
       "COAR_RESOURCE": "http://purl.org/coar/resource_type/",
+      "COB": "http://example.org/UNKNOWN/COB/",
       "COG": "https://www.ncbi.nlm.nih.gov/research/cog-project/",
       "CPT": "https://www.ama-assn.org/practice-management/cpt/",
       "CTD": "http://ctdbase.org/",
@@ -452,6 +453,7 @@
          "@id": "http://purl.obolibrary.org/obo/TO_",
          "@prefix": true
       },
+      "TR": "https://cebs.niehs.nih.gov/cebs/publication/",
       "UBERGRAPH": "http://translator.renci.org/ubergraph-axioms.ofn#",
       "UBERON": {
          "@id": "http://purl.obolibrary.org/obo/UBERON_",
@@ -1315,9 +1317,6 @@
             "meaning": "@id"
          },
          "@id": "FDA_adverse_event_level"
-      },
-      "FDA_regulatory_approvals": {
-         "@id": "FDA_regulatory_approvals"
       },
       "fisher_exact_odds_ratio": {
          "@type": "xsd:float",
@@ -2390,6 +2389,9 @@
          "@type": "@id",
          "@id": "regulates"
       },
+      "regulatory_approvals": {
+         "@id": "regulatory_approvals"
+      },
       "related_condition": {
          "@type": "@id",
          "@id": "related_condition"
@@ -2837,6 +2839,14 @@
       "treatment_applications_from": {
          "@type": "@id",
          "@id": "treatment_applications_from"
+      },
+      "treatment_outcome": {
+         "@context": {
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "treatment_outcome"
       },
       "treats": {
          "@type": "@id",
