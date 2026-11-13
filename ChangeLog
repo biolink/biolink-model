@@ -1,5 +1,119 @@
 CHANGES
 =======
+4.4.6
+-----
+## What's Changed
+* Add FMA to id_prefixes of gross anatomical structure by @cbizon in https://github.com/biolink/biolink-model/pull/1828
+* Relax linkml-runtime pin to >=1.11.1,<2 so downstream projects can upgrade by @kevinschaper in https://github.com/biolink/biolink-model/pull/1829
+* Bump urllib3 and oauthlib in uv.lock to clear audit CVEs; run codespell via uv by @kevinschaper in https://github.com/biolink/biolink-model/pull/1830
+* Fix release packaging: commit regenerated artifacts with the release and regenerate at build time, so the PyPI wheel ships the tagged schema and datamodel (the 4.4.5 wheel shipped a stale 4.4.4 schema because the artifact-regeneration workflow could no longer push to the protected master branch)
+
+**Full Changelog**: https://github.com/biolink/biolink-model/compare/v4.4.5...v4.4.6
+
+4.4.5
+-----
+## What's Changed
+* Replace obsolete `processed material` exact mapping with `COB:0000026` by @Copilot in https://github.com/biolink/biolink-model/pull/1816
+* feat: allow population context qualifier on entity to disease and phenotypic feature associations by @SkyeAv in https://github.com/biolink/biolink-model/pull/1817
+* Add treatment outcomes to chemical-disease associations by @Copilot in https://github.com/biolink/biolink-model/pull/1806
+* Rename FDA regulatory approvals slot to regulatory approvals by @SkyeAv in https://github.com/biolink/biolink-model/pull/1814
+* Make `active in` a child of `located in` by @Copilot in https://github.com/biolink/biolink-model/pull/1808
+* consolidate and deduplicate mixins for disease/phenotype associations with clinical and context qualifiers by @sierra-moxon in https://github.com/biolink/biolink-model/pull/1803
+* Use canonical biolink prefix in ontology class definition by @Copilot in https://github.com/biolink/biolink-model/pull/1810
+* Replace `orphanet:` CURIE prefix with `ORDO:` by @Copilot in https://github.com/biolink/biolink-model/pull/1809
+* Fix acts_upstream_of predicate hierarchy to align with RO by @Copilot in https://github.com/biolink/biolink-model/pull/1807
+* Add IUPHAR target prefix for macromolecular complexes by @kennethbruskiewicz in https://github.com/biolink/biolink-model/pull/1797
+* Drop invalid types: key from workflow_dispatch trigger by @sierra-moxon in https://github.com/biolink/biolink-model/pull/1805
+* Mirror docs under /docs/ so w3id vocab IRIs resolve by @sierra-moxon in https://github.com/biolink/biolink-model/pull/1804
+* Add deterministic hash-based IDs for Association classes by @kevinschaper in https://github.com/biolink/biolink-model/pull/1708
+* fix: correct range of `animal model available from` slot to `uriorcurie` by @Copilot in https://github.com/biolink/biolink-model/pull/1802
+* chemical entity to anatomical entity association by @RichardBruskiewich in https://github.com/biolink/biolink-model/pull/1794
+* Bump pydantic from 2.13.4 to 2.13.5 in the patch-updates group across 1 directory by @dependabot[bot] in https://github.com/biolink/biolink-model/pull/1815
+* Bump curies from 0.14.4 to 0.14.6 in the patch-updates group across 1 directory by @dependabot[bot] in https://github.com/biolink/biolink-model/pull/1792
+
+## New Contributors
+* @kennethbruskiewicz made their first contribution in https://github.com/biolink/biolink-model/pull/1797
+
+**Full Changelog**: https://github.com/biolink/biolink-model/compare/v4.4.4...v4.4.5
+
+4.4.4
+-----
+## What's Changed
+* Converted several slots used in a StudyResult context, from association_slot into node_property by @RichardBruskiewich in https://github.com/biolink/biolink-model/pull/1782
+* Add STRING confidence scores for protein associations by @mbrush in https://github.com/biolink/biolink-model/pull/1772
+* feat: statistical significance qualifier on associations by @SkyeAv in https://github.com/biolink/biolink-model/pull/1766
+* feat: trim core dependencies to pydantic and add structured extras by @SkyeAv in https://github.com/biolink/biolink-model/pull/1779
+* feat: add effect size and effect type edge attributes by @SkyeAv in https://github.com/biolink/biolink-model/pull/1774
+* convert-affinity-measurement-to-study-result-model by @RichardBruskiewich in https://github.com/biolink/biolink-model/pull/1718
+* Updates to association representation to support StringDB ingest by @mbrush in https://github.com/biolink/biolink-model/pull/1771
+* Created a node property analogous to the association slot 'has supporting studies' to tie studies into a publication (there may be other node categories which could use it but this one is the initial one where it sort of makes sense) by @RichardBruskiewich in https://github.com/biolink/biolink-model/pull/1715
+* Bump curies from 0.13.13 to 0.14.1 by @dependabot[bot] in https://github.com/biolink/biolink-model/pull/1768
+* feat: wire supporting study metadata slots into root association by @SkyeAv in https://github.com/biolink/biolink-model/pull/1770
+* Update descriptions for interacts with and affects by @mbrush in https://github.com/biolink/biolink-model/pull/1776
+* sensitivity_associated_with and resistance_associated_with children of  response_associated_with by @mbrush in https://github.com/biolink/biolink-model/pull/1786
+* Bump the github-actions group across 1 directory with 4 updates by @dependabot[bot] in https://github.com/biolink/biolink-model/pull/1783
+* Bump the patch-updates group across 1 directory with 4 updates by @dependabot[bot] in https://github.com/biolink/biolink-model/pull/1790
+* Fix dangling whitespace on descriptions and notes by @vladistan in https://github.com/biolink/biolink-model/pull/1584
+
+## New Contributors
+* @SkyeAv made their first contribution in https://github.com/biolink/biolink-model/pull/1766
+* @vladistan made their first contribution in https://github.com/biolink/biolink-model/pull/1584
+
+**Full Changelog**: https://github.com/biolink/biolink-model/compare/v4.4.3...v4.4.4
+
+4.4.3
+-----
+## What's Changed
+* Add model-organism anatomy prefixes to GrossAnatomicalStructure by @kevinschaper in https://github.com/biolink/biolink-model/pull/1747
+* Add DiseaseToDiseaseAssociation class by @mellybelly in https://github.com/biolink/biolink-model/pull/1745
+* Allow NCIT identifiers for `biolink:Protein` by @sierra-moxon with @Copilot in https://github.com/biolink/biolink-model/pull/1749
+* add sensitivity and response associations by @sierra-moxon in https://github.com/biolink/biolink-model/pull/1754
+* Fix 'sensitivity increased by' parent by @mbrush in https://github.com/biolink/biolink-model/pull/1751
+* updated condition prevented by predicate name and parent by @mbrush in https://github.com/biolink/biolink-model/pull/1752
+* add cooldown and malware check on imports by @sierra-moxon in https://github.com/biolink/biolink-model/pull/1755
+* Bump the github-actions group with 9 updates by @dependabot[bot] in https://github.com/biolink/biolink-model/pull/1756
+* Bump curies from 0.13.3 to 0.13.13 in the patch-updates group across 1 directory by @dependabot[bot] in https://github.com/biolink/biolink-model/pull/1757
+* Bump pytest from 9.0.3 to 9.1.1 by @dependabot[bot] in https://github.com/biolink/biolink-model/pull/1759
+* Bump schemasheets from 0.2.1 to 0.4.0 by @dependabot[bot] in https://github.com/biolink/biolink-model/pull/1760
+* Bump beautifulsoup4 from 4.14.3 to 4.15.0 by @dependabot[bot] in https://github.com/biolink/biolink-model/pull/1761
+* Bump requests from 2.33.1 to 2.34.2 by @dependabot[bot] in https://github.com/biolink/biolink-model/pull/1762
+
+**Full Changelog**: https://github.com/biolink/biolink-model/compare/v4.4.2...v4.4.3
+
+4.4.1
+----
+
+
+4.4.0
+-----
+## What's Changed
+* Add is_chemical_role_of as inverse of has_chemical_role by @cbizon in https://github.com/biolink/biolink-model/pull/1728
+* add descriptions and example data to associations and classes in prep for feeding schema context into text mining pipeline by @sierra-moxon in https://github.com/biolink/biolink-model/pull/1727
+* GO-CAM gene-to-gene-association edge qualifiers by @RichardBruskiewich in https://github.com/biolink/biolink-model/pull/1729
+* Aspect range included, removed resource id, unabstract GeneToGeneAssociation (add qualfiiers)  by @sierra-moxon in https://github.com/biolink/biolink-model/pull/1732
+* Add `subsets` node property for ontology subset membership by @kevinschaper in https://github.com/biolink/biolink-model/pull/1734
+
+**Full Changelog**: https://github.com/biolink/biolink-model/compare/v4.3.9...v4.4.0
+
+4.3.9
+---
+## What's Changed
+* migrate to uv
+* dependebot updates
+
+4.3.8
+----
+## What's Changed
+* Add signor confidence score details to attributes.yaml by @mbrush in https://github.com/biolink/biolink-model/pull/1711
+* Simplification: moved inlined_as_list: true directly into StudyResult, as moved from Study..slot_usage by @RichardBruskiewich in https://github.com/biolink/biolink-model/pull/1717
+* Add pharmacologically interacts with predicate by @mbrush in https://github.com/biolink/biolink-model/pull/1721
+* Bump protobuf from 6.33.4 to 6.33.5 by @dependabot[bot] in https://github.com/biolink/biolink-model/pull/1696
+* Bump pyasn1 from 0.6.2 to 0.6.3 by @dependabot[bot] in https://github.com/biolink/biolink-model/pull/1712
+* Bump pygments from 2.19.2 to 2.20.0 by @dependabot[bot] in https://github.com/biolink/biolink-model/pull/1720
+* Bump urllib3 from 2.5.0 to 2.6.3 by @dependabot[bot] in https://github.com/biolink/biolink-model/pull/1722
+
+**Full Changelog**: https://github.com/biolink/biolink-model/compare/v4.3.7...v4.3.8
+
 4.3.7
 ----
 ## What's Changed
