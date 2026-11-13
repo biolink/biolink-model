@@ -35,8 +35,24 @@ jobs:
           python-version: 3.13
 
       # Check the lockfile for known CVEs.
+      #
+      # The --ignore flags below suppress advisories that cannot be fixed while
+      # the project supports Python < 3.11.5 (requires-python >= 3.10): the fixed
+      # releases of soupsieve (>= 3.0.2 / 4.0.0) and dnspython (>= 2.9.0) require
+      # Python >= 3.11.5 / >= 3.11, so uv.lock must keep an older, vulnerable
+      # fork of each package for the old-Python resolution. Environments on
+      # Python >= 3.11.5 (including this job and the regular CI builds) resolve
+      # to the fixed versions. All four advisories are CPU-exhaustion/DoS issues
+      # in dev-only tooling (docs build via mkdocs-mermaid2-plugin/beautifulsoup4,
+      # schemasheets via bioregistry), not runtime dependencies of the published
+      # package. Remove these ignores when requires-python moves to >= 3.11.5.
       - name: Audit lockfile for CVEs
-        run: uv audit
+        run: |
+          uv audit \
+            --ignore GHSA-mmhr-3c5m-f64f \
+            --ignore GHSA-7g44-g9rc-x53w \
+            --ignore GHSA-6655-6qjp-jx7x \
+            --ignore GHSA-45c3-73f7-pv4m
 
       # Anti-malware gate: a sync against a package with a known OSV malware
       # advisory exits non-zero. The advisory-publication gap is covered by the
