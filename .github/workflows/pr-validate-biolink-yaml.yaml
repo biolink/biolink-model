@@ -10,6 +10,6 @@ jobs:
   validate-yaml:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v7
       - name: Validate YAML file
         run: yamllint -c .yamllint-config biolink-model.yaml

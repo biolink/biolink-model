@@ -132,6 +132,11 @@
           "prefix": "NLMID",
           "base_uri": "https://www.ncbi.nlm.nih.gov/nlmcatalog/?term=",
           "order": 4
+        },
+        {
+          "prefix": "TR",
+          "base_uri": "https://cebs.niehs.nih.gov/cebs/publication/",
+          "order": 5
         }
       ]
     },
@@ -202,6 +207,11 @@
           "prefix": "CPT",
           "base_uri": "https://www.ama-assn.org/practice-management/cpt/",
           "order": 1
+        },
+        {
+          "prefix": "MAXO",
+          "base_uri": "http://purl.obolibrary.org/obo/MAXO_",
+          "order": 2
         }
       ]
     },
@@ -2024,8 +2034,8 @@
           "order": 4
         },
         {
-          "prefix": "orphanet",
-          "base_uri": "http://www.orpha.net/ORDO/Orphanet_",
+          "prefix": "ORDO",
+          "base_uri": "http://www.orpha.net/ORDO/",
           "order": 5
         },
         {
@@ -2377,6 +2387,41 @@
           "prefix": "FAO",
           "base_uri": "http://purl.obolibrary.org/obo/FAO_",
           "order": 6
+        },
+        {
+          "prefix": "EMAPA",
+          "base_uri": "http://purl.obolibrary.org/obo/EMAPA_",
+          "order": 7
+        },
+        {
+          "prefix": "MA",
+          "base_uri": "http://purl.obolibrary.org/obo/MA_",
+          "order": 8
+        },
+        {
+          "prefix": "ZFA",
+          "base_uri": "http://purl.obolibrary.org/obo/ZFA_",
+          "order": 9
+        },
+        {
+          "prefix": "FBbt",
+          "base_uri": "http://purl.obolibrary.org/obo/FBbt_",
+          "order": 10
+        },
+        {
+          "prefix": "WBbt",
+          "base_uri": "http://purl.obolibrary.org/obo/WBbt_",
+          "order": 11
+        },
+        {
+          "prefix": "XAO",
+          "base_uri": "http://purl.obolibrary.org/obo/XAO_",
+          "order": 12
+        },
+        {
+          "prefix": "FMA",
+          "base_uri": "http://purl.obolibrary.org/obo/FMA_",
+          "order": 13
         }
       ]
     },
@@ -2507,6 +2552,11 @@
           "prefix": "ComplexPortal",
           "base_uri": "https://www.ebi.ac.uk/complexportal/complex/",
           "order": 6
+        },
+        {
+          "prefix": "IUPHARobj",
+          "base_uri": "https://www.guidetopharmacology.org/GRAC/ObjectDisplayForward?objectId=",
+          "order": 7
         }
       ]
     },
@@ -2584,14 +2634,19 @@
           "order": 5
         },
         {
+          "prefix": "NCIT",
+          "base_uri": "http://purl.obolibrary.org/obo/NCIT_",
+          "order": 6
+        },
+        {
           "prefix": "MESH",
           "base_uri": "http://id.nlm.nih.gov/mesh/",
-          "order": 6
+          "order": 7
         },
         {
           "prefix": "ncats.drug",
           "base_uri": "https://drugs.ncats.io/drug/",
-          "order": 7
+          "order": 8
         }
       ]
     },
@@ -2621,12 +2676,32 @@
       ]
     },
     {
+      "class_name": "biolink:PosttranslationalModification",
+      "prefix_map": [
+        {
+          "prefix": "MOD",
+          "base_uri": "http://purl.obolibrary.org/obo/MOD_",
+          "order": 1
+        },
+        {
+          "prefix": "UNIMOD",
+          "base_uri": "http://identifiers.org/unimod/",
+          "order": 2
+        }
+      ]
+    },
+    {
       "class_name": "biolink:RNAProduct",
       "prefix_map": [
         {
           "prefix": "RNACENTRAL",
           "base_uri": "http://identifiers.org/rnacentral/",
           "order": 1
+        },
+        {
+          "prefix": "mirbase",
+          "base_uri": "http://identifiers.org/mirbase",
+          "order": 2
         }
       ]
     },
@@ -2677,6 +2752,11 @@
           "prefix": "WormBase",
           "base_uri": "https://www.wormbase.org/get?name=",
           "order": 3
+        },
+        {
+          "prefix": "mirbase",
+          "base_uri": "http://identifiers.org/mirbase",
+          "order": 4
         }
       ]
     },

@@ -1,5 +1,5 @@
 # metamodel_version: 1.7.0
-# version: 4.3.6
+# version: 4.3.9
 enum AffinityParameterEnum
   {
     pIC50
@@ -7,6 +7,8 @@ enum AffinityParameterEnum
     pAC50
     pXC50
     pKi
+    pKon
+    pKoff
     pKd
   }
 
@@ -39,6 +41,13 @@ enum ApprovalStatusEnum
     fda_priority_review
     regular_fda_approval
     post_approval_withdrawal
+  }
+
+enum BinaryRelationEnum
+  {
+    less_than
+    equal_to
+    greater_than
   }
 
 enum CausalMechanismQualifierEnum
@@ -217,7 +226,10 @@ enum DrugDeliveryEnum
     inhalation
     oral
     absorption_through_the_skin
+    injection
     intravenous_injection
+    subcutaneous_injection
+    intramuscular_injection
   }
 
 enum DruggableGeneCategoryEnum
@@ -471,6 +483,28 @@ interface AdministrativeEntity
     informationContent: Float
     taxon: Uriorcurie
     category: [Uriorcurie]!
+  }
+
+type AffinityMeasurement
+  {
+    id: String!
+    iri: IriType
+    type: [String]
+    name: LabelType
+    description: NarrativeText
+    hasAttribute: [Attribute]
+    deprecated: Boolean
+    providedBy: [String]
+    xref: [Uriorcurie]
+    fullName: LabelType
+    synonym: [LabelType]
+    equivalentIdentifiers: [Uriorcurie]
+    informationContent: Float
+    taxon: Uriorcurie
+    category: [Uriorcurie]!
+    affinityParameter: AffinityParameterEnum
+    affinity: Float
+    hasBinaryRelation: BinaryRelationEnum
   }
 
 type Agent
@@ -2028,6 +2062,7 @@ type ChemicalEntity implements PhysicalEssence, ChemicalOrDrugOrTreatment, Chemi
     maxToleratedDose: String
     isToxic: Boolean
     hasChemicalRole: [ChemicalRole]
+    routesOfDelivery: [DrugDeliveryEnum]
     chemblProdrug: Boolean
     chemblBlackBoxWarning: String
     chemblNaturalProduct: Boolean
@@ -2513,6 +2548,7 @@ type ChemicalGeneInteractionAssociation
     semmedAgreementCount: Integer
     type: [String]
     category: [Uriorcurie]
+    hasAffinity: [AffinityMeasurement]
     subjectFormOrVariantQualifier: ChemicalOrGeneOrGeneProductFormOrVariantEnum
     subjectPartQualifier: GeneOrGeneProductOrChemicalPartQualifierEnum
     subjectDerivativeQualifier: ChemicalEntityDerivativeEnum
@@ -2554,6 +2590,7 @@ type ChemicalMixture implements OntologyClass
     maxToleratedDose: String
     isToxic: Boolean
     hasChemicalRole: [ChemicalRole]
+    routesOfDelivery: [DrugDeliveryEnum]
     chemblProdrug: Boolean
     chemblBlackBoxWarning: String
     chemblNaturalProduct: Boolean
@@ -2563,7 +2600,6 @@ type ChemicalMixture implements OntologyClass
     isSupplement: String
     highestFDAApprovalStatus: ApprovalStatusEnum
     drugRegulatoryStatusWorldWide: ApprovalStatusEnum
-    routesOfDelivery: [DrugDeliveryEnum]
   }
 
 interface ChemicalOrDrugOrTreatment
@@ -2806,10 +2842,6 @@ type ChiSquaredAnalysisResult
     informationContent: Float
     taxon: Uriorcurie
     category: [Uriorcurie]!
-    license: String
-    rights: String
-    format: String
-    creationDate: Date
   }
 
 type ClinicalAttribute
@@ -3110,6 +3142,7 @@ type ComplexMolecularMixture
     maxToleratedDose: String
     isToxic: Boolean
     hasChemicalRole: [ChemicalRole]
+    routesOfDelivery: [DrugDeliveryEnum]
     chemblProdrug: Boolean
     chemblBlackBoxWarning: String
     chemblNaturalProduct: Boolean
@@ -3119,7 +3152,6 @@ type ComplexMolecularMixture
     isSupplement: String
     highestFDAApprovalStatus: ApprovalStatusEnum
     drugRegulatoryStatusWorldWide: ApprovalStatusEnum
-    routesOfDelivery: [DrugDeliveryEnum]
   }
 
 type ConceptCountAnalysisResult
@@ -3139,10 +3171,6 @@ type ConceptCountAnalysisResult
     informationContent: Float
     taxon: Uriorcurie
     category: [Uriorcurie]!
-    license: String
-    rights: String
-    format: String
-    creationDate: Date
   }
 
 type ConfidenceLevel
@@ -3813,6 +3841,7 @@ type Drug implements ChemicalOrDrugOrTreatment, OntologyClass
     maxToleratedDose: String
     isToxic: Boolean
     hasChemicalRole: [ChemicalRole]
+    routesOfDelivery: [DrugDeliveryEnum]
     chemblProdrug: Boolean
     chemblBlackBoxWarning: String
     chemblNaturalProduct: Boolean
@@ -3822,7 +3851,6 @@ type Drug implements ChemicalOrDrugOrTreatment, OntologyClass
     isSupplement: String
     highestFDAApprovalStatus: ApprovalStatusEnum
     drugRegulatoryStatusWorldWide: ApprovalStatusEnum
-    routesOfDelivery: [DrugDeliveryEnum]
   }
 
 type DrugExposure
@@ -4335,6 +4363,7 @@ type EnvironmentalFoodContaminant
     maxToleratedDose: String
     isToxic: Boolean
     hasChemicalRole: [ChemicalRole]
+    routesOfDelivery: [DrugDeliveryEnum]
     chemblProdrug: Boolean
     chemblBlackBoxWarning: String
     chemblNaturalProduct: Boolean
@@ -4689,6 +4718,7 @@ type Food
     maxToleratedDose: String
     isToxic: Boolean
     hasChemicalRole: [ChemicalRole]
+    routesOfDelivery: [DrugDeliveryEnum]
     chemblProdrug: Boolean
     chemblBlackBoxWarning: String
     chemblNaturalProduct: Boolean
@@ -4698,7 +4728,6 @@ type Food
     isSupplement: String
     highestFDAApprovalStatus: ApprovalStatusEnum
     drugRegulatoryStatusWorldWide: ApprovalStatusEnum
-    routesOfDelivery: [DrugDeliveryEnum]
   }
 
 type FoodAdditive
@@ -4723,6 +4752,7 @@ type FoodAdditive
     maxToleratedDose: String
     isToxic: Boolean
     hasChemicalRole: [ChemicalRole]
+    routesOfDelivery: [DrugDeliveryEnum]
     chemblProdrug: Boolean
     chemblBlackBoxWarning: String
     chemblNaturalProduct: Boolean
@@ -5442,7 +5472,6 @@ interface GeneToGeneAssociation
     description: NarrativeText
     hasAttribute: [Attribute]
     deprecated: Boolean
-    predicate: Uriorcurie!
     negated: Boolean
     qualifier: String
     qualifiers: [OntologyClass]
@@ -5484,7 +5513,15 @@ interface GeneToGeneAssociation
     type: [String]
     category: [Uriorcurie]
     subject: GeneOrGeneProduct!
+    subjectActivityQualifier: MolecularActivity
+    subjectProcessQualifier: BiologicalProcess
+    subjectContextQualifier: AnatomicalEntity
+    predicate: Uriorcurie!
+    qualifiedPredicate: Uriorcurie
     object: GeneOrGeneProduct!
+    objectActivityQualifier: MolecularActivity
+    objectProcessQualifier: BiologicalProcess
+    objectContextQualifier: AnatomicalEntity
   }
 
 type GeneToGeneCoexpressionAssociation implements GeneExpressionMixin
@@ -5536,7 +5573,14 @@ type GeneToGeneCoexpressionAssociation implements GeneExpressionMixin
     type: [String]
     category: [Uriorcurie]
     subject: GeneOrGeneProduct!
+    subjectActivityQualifier: MolecularActivity
+    subjectProcessQualifier: BiologicalProcess
+    subjectContextQualifier: AnatomicalEntity
+    qualifiedPredicate: Uriorcurie
     object: GeneOrGeneProduct!
+    objectActivityQualifier: MolecularActivity
+    objectProcessQualifier: BiologicalProcess
+    objectContextQualifier: AnatomicalEntity
     predicate: Uriorcurie!
     quantifierQualifier: OntologyClass
     expressionSite: AnatomicalEntity
@@ -5645,6 +5689,13 @@ type GeneToGeneHomologyAssociation
     semmedAgreementCount: Integer
     type: [String]
     category: [Uriorcurie]
+    subjectActivityQualifier: MolecularActivity
+    subjectProcessQualifier: BiologicalProcess
+    subjectContextQualifier: AnatomicalEntity
+    qualifiedPredicate: Uriorcurie
+    objectActivityQualifier: MolecularActivity
+    objectProcessQualifier: BiologicalProcess
+    objectContextQualifier: AnatomicalEntity
     subject: GeneOrGeneProduct!
     predicate: Uriorcurie!
     object: GeneOrGeneProduct!
@@ -6585,10 +6636,6 @@ type IceesStudyResult
     informationContent: Float
     taxon: Uriorcurie
     category: [Uriorcurie]!
-    license: String
-    rights: String
-    format: String
-    creationDate: Date
     chiSquaredStatistic: Float
     chiSquaredDof: Integer
     chiSquaredP: Float
@@ -6800,10 +6847,6 @@ type LogOddsAnalysisResult
     informationContent: Float
     taxon: Uriorcurie
     category: [Uriorcurie]!
-    license: String
-    rights: String
-    format: String
-    creationDate: Date
   }
 
 type MacromolecularComplex implements MacromolecularMachineMixin
@@ -7450,6 +7493,7 @@ type MolecularEntity implements OntologyClass
     maxToleratedDose: String
     isToxic: Boolean
     hasChemicalRole: [ChemicalRole]
+    routesOfDelivery: [DrugDeliveryEnum]
     chemblProdrug: Boolean
     chemblBlackBoxWarning: String
     chemblNaturalProduct: Boolean
@@ -7481,6 +7525,7 @@ type MolecularMixture
     maxToleratedDose: String
     isToxic: Boolean
     hasChemicalRole: [ChemicalRole]
+    routesOfDelivery: [DrugDeliveryEnum]
     chemblProdrug: Boolean
     chemblBlackBoxWarning: String
     chemblNaturalProduct: Boolean
@@ -7490,7 +7535,6 @@ type MolecularMixture
     isSupplement: String
     highestFDAApprovalStatus: ApprovalStatusEnum
     drugRegulatoryStatusWorldWide: ApprovalStatusEnum
-    routesOfDelivery: [DrugDeliveryEnum]
   }
 
 type MortalityOutcome implements Outcome
@@ -7621,6 +7665,7 @@ type NucleicAcidEntity implements GenomicEntity, ThingWithTaxon, PhysicalEssence
     maxToleratedDose: String
     isToxic: Boolean
     hasChemicalRole: [ChemicalRole]
+    routesOfDelivery: [DrugDeliveryEnum]
     chemblProdrug: Boolean
     chemblBlackBoxWarning: String
     chemblNaturalProduct: Boolean
@@ -7693,10 +7738,6 @@ type ObservedExpectedFrequencyAnalysisResult
     informationContent: Float
     taxon: Uriorcurie
     category: [Uriorcurie]!
-    license: String
-    rights: String
-    format: String
-    creationDate: Date
   }
 
 interface Occurrent
@@ -8179,7 +8220,14 @@ type PairwiseGeneToGeneInteraction
     type: [String]
     category: [Uriorcurie]
     subject: GeneOrGeneProduct!
+    subjectActivityQualifier: MolecularActivity
+    subjectProcessQualifier: BiologicalProcess
+    subjectContextQualifier: AnatomicalEntity
+    qualifiedPredicate: Uriorcurie
     object: GeneOrGeneProduct!
+    objectActivityQualifier: MolecularActivity
+    objectProcessQualifier: BiologicalProcess
+    objectContextQualifier: AnatomicalEntity
     predicate: Uriorcurie!
   }
 
@@ -8230,6 +8278,13 @@ type PairwiseMolecularInteraction
     semmedAgreementCount: Integer
     type: [String]
     category: [Uriorcurie]
+    subjectActivityQualifier: MolecularActivity
+    subjectProcessQualifier: BiologicalProcess
+    subjectContextQualifier: AnatomicalEntity
+    qualifiedPredicate: Uriorcurie
+    objectActivityQualifier: MolecularActivity
+    objectProcessQualifier: BiologicalProcess
+    objectContextQualifier: AnatomicalEntity
     interactingMoleculesCategory: OntologyClass
     subject: MolecularEntity!
     id: String!
@@ -8995,6 +9050,7 @@ type ProcessedMaterial
     maxToleratedDose: String
     isToxic: Boolean
     hasChemicalRole: [ChemicalRole]
+    routesOfDelivery: [DrugDeliveryEnum]
     chemblProdrug: Boolean
     chemblBlackBoxWarning: String
     chemblNaturalProduct: Boolean
@@ -9004,7 +9060,6 @@ type ProcessedMaterial
     isSupplement: String
     highestFDAApprovalStatus: ApprovalStatusEnum
     drugRegulatoryStatusWorldWide: ApprovalStatusEnum
-    routesOfDelivery: [DrugDeliveryEnum]
   }
 
 type Protein implements GeneProductMixin
@@ -9312,10 +9367,6 @@ type RelativeFrequencyAnalysisResult
     informationContent: Float
     taxon: Uriorcurie
     category: [Uriorcurie]!
-    license: String
-    rights: String
-    format: String
-    creationDate: Date
   }
 
 type RetrievalSource
@@ -9671,6 +9722,7 @@ type SmallMolecule
     maxToleratedDose: String
     isToxic: Boolean
     hasChemicalRole: [ChemicalRole]
+    routesOfDelivery: [DrugDeliveryEnum]
     chemblProdrug: Boolean
     chemblBlackBoxWarning: String
     chemblNaturalProduct: Boolean
@@ -9820,10 +9872,6 @@ interface StudyResult
     informationContent: Float
     taxon: Uriorcurie
     category: [Uriorcurie]!
-    license: String
-    rights: String
-    format: String
-    creationDate: Date
   }
 
 type StudyVariable
@@ -9928,10 +9976,6 @@ type TextMiningStudyResult
     informationContent: Float
     taxon: Uriorcurie
     category: [Uriorcurie]!
-    license: String
-    rights: String
-    format: String
-    creationDate: Date
     supportingText: [String]
     subjectLocationInText: [Integer]
     objectLocationInText: [Integer]

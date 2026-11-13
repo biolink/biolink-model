@@ -11,8 +11,6 @@ generator_args:
     # metadata_profile: rdfs
   markdown:
     mergeimports: true
-  graphql:
-    mergeimports: true
   java:
     mergeimports: true
     metadata: true
@@ -20,6 +18,7 @@ generator_args:
     mergeimports: true
   jsonschema:
     mergeimports: true
+    include_range_class_descendants: true
   jsonldcontext:
     mergeimports: true
   python:
