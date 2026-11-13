@@ -5,8 +5,9 @@ A LinkML schema repository: the Biolink data model (entities, associations, pred
 ## Toolchain
 
 - Uses `uv` (never `pip`). `uv sync` installs; `uv run <cmd>` runs things. `Makefile` targets wrap `uv run` for you.
-- `linkml` and `linkml-runtime` are pinned to **`==1.11.1`** in `pyproject.toml`. Do not bump casually, and **never downgrade** — generation output depends on the exact version, and `push-main-regenerate-artifacts` auto-commits whatever the pinned version produces. A mismatch silently rewrites every artifact under `project/` and `src/biolink_model/datamodel/` (including semantic changes such as `predicate` enums collapsing to `Literal[...]`) while `make test` still passes.
-- The pin lives in **three** places that must move together: `dependencies` (`linkml-runtime`), the `scripts` extra (`linkml`), and the `dev` dependency-group (`linkml`). The dev-group pin is not redundant — `linkml` is not a core dependency, so without it `uv sync` resolves `linkml` by backtracking off `linkml-runtime`, which is nondeterministic.
+- `linkml` is pinned to **`==1.11.1`** in `pyproject.toml` (the `scripts` extra and the `dev` dependency-group); `uv.lock` fixes the `linkml-runtime` used for generation. Do not bump casually, and **never downgrade** — generation output depends on the exact version, and `push-main-regenerate-artifacts` auto-commits whatever the locked versions produce. A mismatch silently rewrites every artifact under `project/` and `src/biolink_model/datamodel/` (including semantic changes such as `predicate` enums collapsing to `Literal[...]`) while `make test` still passes.
+- `linkml-runtime` in `dependencies` is deliberately a **range** (`>=1.11.1,<2`), not a pin — it is published metadata, and an exact pin there blocks downstream projects from upgrading. The floor is the version that generated the shipped `model.py`; raise it when artifacts are regenerated with a newer linkml.
+- The two `linkml` pins (`scripts` extra and `dev` group) must move together. The dev-group pin is not redundant — `linkml` is not a core dependency, so without it `uv sync` resolves `linkml` by backtracking, which is nondeterministic.
 - Python `>=3.10` (CI matrix: 3.10–3.13). Default branch is `master`.
 
 ## Source of truth vs. derived files (critical)
