@@ -1,3 +1,6 @@
+import logging
+logging.getLogger("linkml_runtime.Namespaces").setLevel(logging.CRITICAL)
+
 from collections import defaultdict
 import json
 from typing import Any, List, Union
