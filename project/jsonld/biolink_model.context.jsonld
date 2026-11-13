@@ -65,6 +65,7 @@
          "@prefix": true
       },
       "COAR_RESOURCE": "http://purl.org/coar/resource_type/",
+      "COB": "http://example.org/UNKNOWN/COB/",
       "COG": "https://www.ncbi.nlm.nih.gov/research/cog-project/",
       "CPT": "https://www.ama-assn.org/practice-management/cpt/",
       "CTD": "http://ctdbase.org/",
@@ -242,6 +243,10 @@
       },
       "INTACT": "http://identifiers.org/intact/",
       "IUPHAR.FAMILY": "http://identifiers.org/iuphar.family/",
+      "IUPHARobj": {
+         "@id": "https://www.guidetopharmacology.org/GRAC/ObjectDisplayForward?objectId=",
+         "@prefix": true
+      },
       "KEGG": "http://www.kegg.jp/entry/",
       "KEGG.BRITE": "https://bioregistry.io/kegg.brite:",
       "KEGG.COMPOUND": "http://identifiers.org/kegg.compound/",
@@ -335,6 +340,7 @@
          "@prefix": true
       },
       "ORCID": "https://orcid.org/",
+      "ORDO": "http://www.orpha.net/ORDO/",
       "PANTHER.FAMILY": {
          "@id": "http://www.pantherdb.org/panther/family.do?clsAccession=",
          "@prefix": true
@@ -447,6 +453,7 @@
          "@id": "http://purl.obolibrary.org/obo/TO_",
          "@prefix": true
       },
+      "TR": "https://cebs.niehs.nih.gov/cebs/publication/",
       "UBERGRAPH": "http://translator.renci.org/ubergraph-axioms.ofn#",
       "UBERON": {
          "@id": "http://purl.obolibrary.org/obo/UBERON_",
@@ -563,10 +570,6 @@
       },
       "ncats.drug": "https://drugs.ncats.io/drug/",
       "oboInOwl": "http://www.geneontology.org/formats/oboInOwl#",
-      "orphanet": {
-         "@id": "http://www.orpha.net/ORDO/Orphanet_",
-         "@prefix": true
-      },
       "os": {
          "@id": "https://github.com/cmungall/owlstar/blob/master/owlstar.ttl",
          "@prefix": true
@@ -652,18 +655,6 @@
          "@type": "xsd:anyURI",
          "@id": "affiliation"
       },
-      "affinity": {
-         "@type": "xsd:float",
-         "@id": "affinity"
-      },
-      "affinity_parameter": {
-         "@context": {
-            "text": "skos:notation",
-            "description": "skos:prefLabel",
-            "meaning": "@id"
-         },
-         "@id": "affinity_parameter"
-      },
       "agent_type": {
          "@context": {
             "text": "skos:notation",
@@ -698,7 +689,6 @@
          "@id": "anatomical_context_qualifier"
       },
       "animal_model_available_from": {
-         "@type": "@id",
          "@id": "animal_model_available_from"
       },
       "applied_to_treat": {
@@ -743,6 +733,14 @@
       "associated_with_sensitivity_to": {
          "@type": "@id",
          "@id": "associated_with_sensitivity_to"
+      },
+      "association_basis_qualifier": {
+         "@context": {
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "association_basis_qualifier"
       },
       "association_slot": {
          "@id": "association_slot"
@@ -1033,10 +1031,6 @@
          "@type": "@id",
          "@id": "condition_predisposed_by"
       },
-      "condition_prevented_by": {
-         "@type": "@id",
-         "@id": "condition_prevented_by"
-      },
       "condition_promoted_by": {
          "@type": "@id",
          "@id": "condition_promoted_by"
@@ -1216,6 +1210,18 @@
          "@type": "@id",
          "@id": "editor"
       },
+      "effect_size": {
+         "@type": "xsd:float",
+         "@id": "effect_size"
+      },
+      "effect_type": {
+         "@context": {
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "effect_type"
+      },
       "elevate_to_prediction": {
          "@type": "xsd:boolean",
          "@id": "elevate_to_prediction"
@@ -1312,9 +1318,6 @@
          },
          "@id": "FDA_adverse_event_level"
       },
-      "FDA_regulatory_approvals": {
-         "@id": "FDA_regulatory_approvals"
-      },
       "fisher_exact_odds_ratio": {
          "@type": "xsd:float",
          "@id": "fisher_exact_odds_ratio"
@@ -1390,10 +1393,6 @@
       "has_adverse_event": {
          "@type": "@id",
          "@id": "has_adverse_event"
-      },
-      "has_affinity": {
-         "@type": "@id",
-         "@id": "has_affinity"
       },
       "has_attribute": {
          "@type": "@id",
@@ -1616,6 +1615,10 @@
          "@type": "@id",
          "@id": "has_positive_upstream_or_within_actor"
       },
+      "has_preventative_intervention": {
+         "@type": "@id",
+         "@id": "has_preventative_intervention"
+      },
       "has_procedure": {
          "@type": "@id",
          "@id": "has_procedure"
@@ -1666,6 +1669,10 @@
       "has_stressor": {
          "@id": "has_stressor"
       },
+      "has_studies": {
+         "@type": "@id",
+         "@id": "has_studies"
+      },
       "has_study_results": {
          "@type": "@id",
          "@id": "has_study_results"
@@ -1701,6 +1708,10 @@
       "has_unit": {
          "@type": "UO:0000000",
          "@id": "has_unit"
+      },
+      "has_unit_prefix": {
+         "@type": "UO:0000046",
+         "@id": "has_unit_prefix"
       },
       "has_upstream_actor": {
          "@type": "@id",
@@ -2181,6 +2192,10 @@
          "@type": "xsd:float",
          "@id": "p_value"
       },
+      "pAC50": {
+         "@type": "@id",
+         "@id": "pAC50"
+      },
       "pages": {
          "@id": "pages"
       },
@@ -2198,6 +2213,10 @@
       "participates_in": {
          "@type": "@id",
          "@id": "participates_in"
+      },
+      "pEC50": {
+         "@type": "@id",
+         "@id": "pEC50"
       },
       "pharmacologically_interacts_with": {
          "@type": "@id",
@@ -2222,6 +2241,26 @@
       "physically_interacts_with": {
          "@type": "@id",
          "@id": "physically_interacts_with"
+      },
+      "pIC50": {
+         "@type": "@id",
+         "@id": "pIC50"
+      },
+      "pKd": {
+         "@type": "@id",
+         "@id": "pKd"
+      },
+      "pKi": {
+         "@type": "@id",
+         "@id": "pKi"
+      },
+      "pKoff": {
+         "@type": "@id",
+         "@id": "pKoff"
+      },
+      "pKon": {
+         "@type": "@id",
+         "@id": "pKon"
       },
       "plasma_membrane_part_of": {
          "@type": "@id",
@@ -2303,6 +2342,10 @@
          "@type": "@id",
          "@id": "publisher"
       },
+      "pXC50": {
+         "@type": "@id",
+         "@id": "pXC50"
+      },
       "qualified_predicate": {
          "@type": "xsd:anyURI",
          "@id": "qualified_predicate"
@@ -2345,6 +2388,9 @@
       "regulates": {
          "@type": "@id",
          "@id": "regulates"
+      },
+      "regulatory_approvals": {
+         "@id": "regulatory_approvals"
       },
       "related_condition": {
          "@type": "@id",
@@ -2523,6 +2569,14 @@
       "statement_qualifier": {
          "@id": "statement_qualifier"
       },
+      "statistical_significance_qualifier": {
+         "@context": {
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "statistical_significance_qualifier"
+      },
       "stoichiometry": {
          "@type": "xsd:integer",
          "@id": "stoichiometry"
@@ -2535,9 +2589,45 @@
          },
          "@id": "strand"
       },
+      "stringdb_coexpression_score": {
+         "@type": "xsd:float",
+         "@id": "stringdb_coexpression_score"
+      },
+      "stringdb_combined_score": {
+         "@type": "xsd:float",
+         "@id": "stringdb_combined_score"
+      },
+      "stringdb_experimental_score": {
+         "@type": "xsd:float",
+         "@id": "stringdb_experimental_score"
+      },
       "studied_to_treat": {
          "@type": "@id",
          "@id": "studied_to_treat"
+      },
+      "study_cohort": {
+         "@id": "study_cohort"
+      },
+      "study_context": {
+         "@id": "study_context"
+      },
+      "study_date_range": {
+         "@id": "study_date_range"
+      },
+      "study_metadata": {
+         "@id": "study_metadata"
+      },
+      "study_method_description": {
+         "@type": "xsd:anyURI",
+         "@id": "study_method_description"
+      },
+      "study_method_types": {
+         "@type": "xsd:anyURI",
+         "@id": "study_method_types"
+      },
+      "study_size": {
+         "@type": "xsd:integer",
+         "@id": "study_size"
       },
       "subclass_of": {
          "@type": "@id",
@@ -2612,6 +2702,9 @@
       "subject_specialization_qualifier": {
          "@type": "xsd:anyURI",
          "@id": "subject_specialization_qualifier"
+      },
+      "subsets": {
+         "@id": "subsets"
       },
       "summary": {
          "@id": "summary"
@@ -2747,6 +2840,14 @@
          "@type": "@id",
          "@id": "treatment_applications_from"
       },
+      "treatment_outcome": {
+         "@context": {
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "treatment_outcome"
+      },
       "treats": {
          "@type": "@id",
          "@id": "treats"
@@ -2814,9 +2915,6 @@
       },
       "AdministrativeEntity": {
          "@id": "AdministrativeEntity"
-      },
-      "AffinityMeasurement": {
-         "@id": "AffinityMeasurement"
       },
       "Agent": {
          "@id": "Agent"
@@ -2939,7 +3037,21 @@
          "@id": "CellularOrganism"
       },
       "ChemicalAffectsBiologicalEntityAssociation": {
-         "@id": "ChemicalAffectsBiologicalEntityAssociation"
+         "@id": "ChemicalAffectsBiologicalEntityAssociation",
+         "@context": {
+            "subject_context_qualifier": {
+               "@id": "subject_context_qualifier",
+               "@type": "@id"
+            },
+            "object_context_qualifier": {
+               "@id": "object_context_qualifier",
+               "@type": "@id"
+            },
+            "anatomical_context_qualifier": {
+               "@id": "anatomical_context_qualifier",
+               "@type": "@id"
+            }
+         }
       },
       "ChemicalAffectsGeneAssociation": {
          "@id": "ChemicalAffectsGeneAssociation"
@@ -2958,6 +3070,9 @@
       },
       "ChemicalEntityOrProteinOrPolypeptide": {
          "@id": "ChemicalEntityOrProteinOrPolypeptide"
+      },
+      "ChemicalEntityToAnatomicalEntityAssociation": {
+         "@id": "ChemicalEntityToAnatomicalEntityAssociation"
       },
       "ChemicalEntityToBiologicalProcessAssociation": {
          "@id": "ChemicalEntityToBiologicalProcessAssociation"
@@ -2981,7 +3096,30 @@
          "@id": "ChemicalExposure"
       },
       "ChemicalGeneInteractionAssociation": {
-         "@id": "ChemicalGeneInteractionAssociation"
+         "@id": "ChemicalGeneInteractionAssociation",
+         "@context": {
+            "subject_context_qualifier": {
+               "@id": "subject_context_qualifier",
+               "@type": "@id"
+            },
+            "object_context_qualifier": {
+               "@id": "object_context_qualifier",
+               "@type": "@id"
+            },
+            "anatomical_context_qualifier": {
+               "@id": "anatomical_context_qualifier",
+               "@type": "@id"
+            }
+         }
+      },
+      "ChemicalGeneSensitivityAssociation": {
+         "@id": "ChemicalGeneSensitivityAssociation",
+         "@context": {
+            "anatomical_context_qualifier": {
+               "@id": "anatomical_context_qualifier",
+               "@type": "@id"
+            }
+         }
       },
       "ChemicalMixture": {
          "@id": "ChemicalMixture"
@@ -3030,6 +3168,9 @@
       },
       "ClinicalTrial": {
          "@id": "ClinicalTrial"
+      },
+      "ClinicalTrialAndRegulatoryApprovalContextMixin": {
+         "@id": "ClinicalTrialAndRegulatoryApprovalContextMixin"
       },
       "CodingSequence": {
          "@id": "CodingSequence"
@@ -3099,6 +3240,9 @@
       },
       "DiseaseOrPhenotypicFeatureToLocationAssociation": {
          "@id": "DiseaseOrPhenotypicFeatureToLocationAssociation"
+      },
+      "DiseaseToDiseaseAssociation": {
+         "@id": "DiseaseToDiseaseAssociation"
       },
       "DiseaseToEntityAssociationMixin": {
          "@id": "DiseaseToEntityAssociationMixin"
@@ -3233,7 +3377,21 @@
          "@id": "Gene"
       },
       "GeneAffectsChemicalAssociation": {
-         "@id": "GeneAffectsChemicalAssociation"
+         "@id": "GeneAffectsChemicalAssociation",
+         "@context": {
+            "subject_context_qualifier": {
+               "@id": "subject_context_qualifier",
+               "@type": "@id"
+            },
+            "object_context_qualifier": {
+               "@id": "object_context_qualifier",
+               "@type": "@id"
+            },
+            "anatomical_context_qualifier": {
+               "@id": "anatomical_context_qualifier",
+               "@type": "@id"
+            }
+         }
       },
       "GeneAsAModelOfDiseaseAssociation": {
          "@id": "GeneAsAModelOfDiseaseAssociation"
@@ -3275,7 +3433,12 @@
          "@id": "GeneRegulatesGeneAssociation"
       },
       "GeneToDiseaseAssociation": {
-         "@id": "GeneToDiseaseAssociation"
+         "@id": "GeneToDiseaseAssociation",
+         "@context": {
+            "predicate": {
+               "@id": "rdf:predicate"
+            }
+         }
       },
       "GeneToEntityAssociationMixin": {
          "@id": "GeneToEntityAssociationMixin"
@@ -3284,7 +3447,33 @@
          "@id": "GeneToExpressionSiteAssociation"
       },
       "GeneToGeneAssociation": {
-         "@id": "GeneToGeneAssociation"
+         "@id": "GeneToGeneAssociation",
+         "@context": {
+            "subject_activity_qualifier": {
+               "@id": "subject_activity_qualifier",
+               "@type": "@id"
+            },
+            "subject_process_qualifier": {
+               "@id": "subject_process_qualifier",
+               "@type": "@id"
+            },
+            "subject_context_qualifier": {
+               "@id": "subject_context_qualifier",
+               "@type": "@id"
+            },
+            "object_activity_qualifier": {
+               "@id": "object_activity_qualifier",
+               "@type": "@id"
+            },
+            "object_process_qualifier": {
+               "@id": "object_process_qualifier",
+               "@type": "@id"
+            },
+            "object_context_qualifier": {
+               "@id": "object_context_qualifier",
+               "@type": "@id"
+            }
+         }
       },
       "GeneToGeneCoexpressionAssociation": {
          "@id": "GeneToGeneCoexpressionAssociation"
@@ -3305,7 +3494,12 @@
          "@id": "GeneToPathwayAssociation"
       },
       "GeneToPhenotypicFeatureAssociation": {
-         "@id": "GeneToPhenotypicFeatureAssociation"
+         "@id": "GeneToPhenotypicFeatureAssociation",
+         "@context": {
+            "predicate": {
+               "@id": "rdf:predicate"
+            }
+         }
       },
       "GeneticInheritance": {
          "@id": "GeneticInheritance"
@@ -3470,7 +3664,17 @@
          "@id": "NamedThing"
       },
       "NamedThingAssociatedWithLikelihoodOfNamedThingAssociation": {
-         "@id": "NamedThingAssociatedWithLikelihoodOfNamedThingAssociation"
+         "@id": "NamedThingAssociatedWithLikelihoodOfNamedThingAssociation",
+         "@context": {
+            "subject_context_qualifier": {
+               "@id": "subject_context_qualifier",
+               "@type": "@id"
+            },
+            "object_context_qualifier": {
+               "@id": "object_context_qualifier",
+               "@type": "@id"
+            }
+         }
       },
       "Node": {
          "@id": "Node"
@@ -3645,6 +3849,9 @@
       },
       "ProteinIsoform": {
          "@id": "ProteinIsoform"
+      },
+      "ProteinLigandAssayResult": {
+         "@id": "ProteinLigandAssayResult"
       },
       "Publication": {
          "@id": "Publication"

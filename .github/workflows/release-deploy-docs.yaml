@@ -5,27 +5,27 @@ on:
   release:
     types: [created]
   workflow_dispatch:
-    types: trigger-deploy-docs
 
 jobs:
   build-docs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           fetch-depth: 0  # otherwise, you will fail to push refs to dest repo
 
       - name: Set up Python 3.10
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v7.0.0
         with:
           python-version: "3.10"
 
       - name: Install uv
-        uses: astral-sh/setup-uv@v3
+        uses: astral-sh/setup-uv@v7
 
       - name: Install dependencies
-        run: uv sync --extra docs
+        # `make gendoc` runs gen-doc + generate_viz_json, which need the `scripts` extra.
+        run: uv sync --extra docs --extra scripts
 
       - name: Build documentation.
         run: |
@@ -33,4 +33,4 @@ jobs:
           touch docs/.nojekyll
           make gendoc
           ([ ! -f docs/about.md ] && cp src/docs/about.md docs/) || true
-          make mkd-gh-deploy
+          make mkd-gh-deploy-docs

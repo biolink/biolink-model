@@ -126,7 +126,7 @@ gen-project: $(PYMODEL)
 		-d $(DEST) $(SOURCE_SCHEMA_PATH) && mv $(DEST)/*.py $(PYMODEL)
 	mv $(DEST)/prefixmap/biolink_model.yaml $(DEST)/prefixmap/biolink-model-prefix-map.json
 	mv $(PYMODEL)/biolink*.py $(PYMODEL)/model.py
-	$(RUN) gen-pydantic --meta None src/biolink_model/schema/biolink_model.yaml > $(PYMODEL)/pydanticmodel_v2.py
+	$(RUN) python scripts/biolink_pydantic_generator.py src/biolink_model/schema/biolink_model.yaml > $(PYMODEL)/pydanticmodel_v2.py
 	$(RUN) gen-owl --mergeimports --no-metaclasses --no-type-objects --add-root-classes --mixins-as-expressions src/biolink_model/schema/biolink_model.yaml > $(DEST)/owl/biolink_model.owl.ttl
 	cp biolink-model.yaml src/biolink_model/schema/biolink_model.yaml
 	cp attributes.yaml src/biolink_model/schema/attributes.yaml
@@ -227,6 +227,18 @@ testdoc: gendoc serve
 MKDOCS = $(RUN) mkdocs
 mkd-%:
 	$(MKDOCS) $*
+
+# Deploy the docs to gh-pages, mirroring the whole site under /docs/ as well.
+# The w3id vocab redirect (https://w3id.org/biolink/vocab/<Term>) targets
+# https://biolink.github.io/biolink-model/docs/<Term>, but mkdocs publishes term
+# pages at the site root. Copying the built site into a docs/ subfolder makes those
+# IRIs dereference to real pages (301 -> 200) without changing the w3id .htaccess.
+# Root URLs and the root-level artifact files (owl/jsonld/etc.) are left untouched.
+mkd-gh-deploy-docs:
+	$(MKDOCS) build -d site
+	mkdir -p site/docs
+	rsync -a --exclude 'docs/' site/ site/docs/
+	$(RUN) ghp-import -np -m "deploy docs" site
 
 PROJECT_FOLDERS = sqlschema shex shacl protobuf prefixmap owl jsonschema jsonld excel
 git-init-add: git-init git-add git-commit git-status

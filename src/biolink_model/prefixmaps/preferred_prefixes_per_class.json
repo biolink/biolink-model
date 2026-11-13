@@ -132,6 +132,11 @@
           "prefix": "NLMID",
           "base_uri": "https://www.ncbi.nlm.nih.gov/nlmcatalog/?term=",
           "order": 4
+        },
+        {
+          "prefix": "TR",
+          "base_uri": "https://cebs.niehs.nih.gov/cebs/publication/",
+          "order": 5
         }
       ]
     },
@@ -2029,8 +2034,8 @@
           "order": 4
         },
         {
-          "prefix": "orphanet",
-          "base_uri": "http://www.orpha.net/ORDO/Orphanet_",
+          "prefix": "ORDO",
+          "base_uri": "http://www.orpha.net/ORDO/",
           "order": 5
         },
         {
@@ -2382,6 +2387,41 @@
           "prefix": "FAO",
           "base_uri": "http://purl.obolibrary.org/obo/FAO_",
           "order": 6
+        },
+        {
+          "prefix": "EMAPA",
+          "base_uri": "http://purl.obolibrary.org/obo/EMAPA_",
+          "order": 7
+        },
+        {
+          "prefix": "MA",
+          "base_uri": "http://purl.obolibrary.org/obo/MA_",
+          "order": 8
+        },
+        {
+          "prefix": "ZFA",
+          "base_uri": "http://purl.obolibrary.org/obo/ZFA_",
+          "order": 9
+        },
+        {
+          "prefix": "FBbt",
+          "base_uri": "http://purl.obolibrary.org/obo/FBbt_",
+          "order": 10
+        },
+        {
+          "prefix": "WBbt",
+          "base_uri": "http://purl.obolibrary.org/obo/WBbt_",
+          "order": 11
+        },
+        {
+          "prefix": "XAO",
+          "base_uri": "http://purl.obolibrary.org/obo/XAO_",
+          "order": 12
+        },
+        {
+          "prefix": "FMA",
+          "base_uri": "http://purl.obolibrary.org/obo/FMA_",
+          "order": 13
         }
       ]
     },
@@ -2512,6 +2552,11 @@
           "prefix": "ComplexPortal",
           "base_uri": "https://www.ebi.ac.uk/complexportal/complex/",
           "order": 6
+        },
+        {
+          "prefix": "IUPHARobj",
+          "base_uri": "https://www.guidetopharmacology.org/GRAC/ObjectDisplayForward?objectId=",
+          "order": 7
         }
       ]
     },
@@ -2589,14 +2634,19 @@
           "order": 5
         },
         {
+          "prefix": "NCIT",
+          "base_uri": "http://purl.obolibrary.org/obo/NCIT_",
+          "order": 6
+        },
+        {
           "prefix": "MESH",
           "base_uri": "http://id.nlm.nih.gov/mesh/",
-          "order": 6
+          "order": 7
         },
         {
           "prefix": "ncats.drug",
           "base_uri": "https://drugs.ncats.io/drug/",
-          "order": 7
+          "order": 8
         }
       ]
     },
