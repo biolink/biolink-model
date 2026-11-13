@@ -45,7 +45,7 @@ As per the model, protein nodes should have identifiers from `UniProtKB` and gen
 
 One can further type the protein and gene entities using the Biolink slot `type` (which corresponds to `rdf:type`).
 
-In [KGX serialization format](https://github.com/biolink/kgx/blob/master/data-preparation.md) the nodes can be represented as follows:
+In [KGX serialization format](https://biolink.github.io/kgx/kgx_format.html#kgx-format-as-tsv) the nodes can be represented as follows:
 ```tsv
 id	name	category	provided_by	xref	type	in_taxon
 UniProtKB:P84085	ARF5	biolink:Protein	STRING	ENSEMBL:ENSP00000000233		NCBITaxon:9606
