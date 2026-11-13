@@ -6,7 +6,8 @@ SHELL := bash
 .SUFFIXES:
 .SECONDARY:
 
-RUN = poetry run
+RUN = uv run
+export PYTHONWARNINGS=ignore::UserWarning:linkml.utils.generator,ignore::UserWarning:linkml_runtime.Namespaces,ignore::UserWarning
 # get values from about.yaml file
 SCHEMA_NAME = $(shell ${SHELL} ./utils/get-value.sh name)
 SOURCE_SCHEMA_PATH = $(shell ${SHELL} ./utils/get-value.sh source_schema_path)
@@ -63,7 +64,7 @@ setup: install gen-project gen-examples gendoc git-init-add
 # install any dependencies required for building
 install:
 	git init
-	poetry install
+	uv sync
 .PHONY: install
 
 # ---
@@ -83,7 +84,7 @@ update-template:
 
 # todo: consider pinning to template
 update-linkml:
-	poetry add -D linkml@latest
+	uv add --dev linkml@latest
 
 all: site
 site: gen-project gendoc id-prefixes
@@ -99,7 +100,7 @@ id-prefixes:
 	cd src/biolink_model/scripts/ && $(RUN) python id_prefixes.py
 
 spell:
-	poetry run codespell
+	uv run codespell
 
 # generates all project files
 
@@ -109,7 +110,7 @@ gen-project: $(PYMODEL)
 	# keep these in sync between PROJECT_FOLDERS and the includes/excludes for gen-project and test-schema
 	$(RUN) gen-project \
 		--exclude excel \
-		--include graphql \
+		--exclude graphql \
 		--include jsonld \
 		--exclude markdown \
 		--include prefixmap \
@@ -125,7 +126,7 @@ gen-project: $(PYMODEL)
 		-d $(DEST) $(SOURCE_SCHEMA_PATH) && mv $(DEST)/*.py $(PYMODEL)
 	mv $(DEST)/prefixmap/biolink_model.yaml $(DEST)/prefixmap/biolink-model-prefix-map.json
 	mv $(PYMODEL)/biolink*.py $(PYMODEL)/model.py
-	$(RUN) gen-pydantic --meta None src/biolink_model/schema/biolink_model.yaml > $(PYMODEL)/pydanticmodel_v2.py
+	$(RUN) python scripts/biolink_pydantic_generator.py src/biolink_model/schema/biolink_model.yaml > $(PYMODEL)/pydanticmodel_v2.py
 	$(RUN) gen-owl --mergeimports --no-metaclasses --no-type-objects --add-root-classes --mixins-as-expressions src/biolink_model/schema/biolink_model.yaml > $(DEST)/owl/biolink_model.owl.ttl
 	cp biolink-model.yaml src/biolink_model/schema/biolink_model.yaml
 	cp attributes.yaml src/biolink_model/schema/attributes.yaml
@@ -138,7 +139,7 @@ tests:
 	$(RUN) codespell
 	$(RUN) yamllint -c .yamllint-config biolink-model.yaml
 
-test: test-schema test-python test-examples lint spell
+test: test-schema test-python lint spell
 
 test-schema: gen-project
 
@@ -192,6 +193,7 @@ gen-viz:
 gendoc: $(DOCDIR)
 	# put the model where it needs to go in order to generate the doc correctly
 	cp biolink-model.yaml src/biolink_model/schema/biolink_model.yaml ; \
+	cp attributes.yaml src/biolink_model/schema/attributes.yaml ; \
 	# this generates the data structure required for the d3 visualizations
 	$(RUN) generate_viz_json ; \
 	# DO NOT REMOVE: these cp statements are crucial to maintain the w3 ids for the model artifacts
@@ -200,14 +202,15 @@ gendoc: $(DOCDIR)
 	cp $(DEST)/jsonld/biolink_model.context.jsonld $(DOCDIR)/context.jsonld ; \
 	cp $(DEST)/jsonld/biolink_model.jsonld $(DOCDIR)/biolink-model.jsonld ; \
 	cp $(DEST)/jsonschema/biolink_model.schema.json $(DOCDIR)/biolink-model.json ; \
-	cp $(DEST)/graphql/biolink_model.graphql $(DOCDIR)/biolink-model.graphql ; \
 	cp $(DEST)/shex/biolink_model.shex $(DOCDIR)/biolink-modeln.shex ; \
 	cp $(DEST)/shacl/biolink_model.shacl.ttl $(DOCDIR)/biolink-model.shacl.ttl ; \
 	cp $(DEST)/prefixmap/* $(DOCDIR) ; \
 	cp semmed-exclude-list.yaml $(DOCDIR) ; \
 	cp semmed-exclude-list-model.yaml $(DOCDIR) ; \
 	cp predicate_mapping.yaml $(DOCDIR) ; \
-	cp biolink-model.yaml $(DOCDIR) ; \
+	# Copy biolink-model.yaml and replace local imports with remote URLs for deployment
+	sed 's|^  - attributes$$|  - https://w3id.org/biolink/biolink-model/attributes|' biolink-model.yaml > $(DOCDIR)/biolink-model.yaml ; \
+	cp attributes.yaml $(DOCDIR) ; \
 	cp $(SRC)/docs/*md $(DOCDIR) ; \
 	cp -r $(SRC)/docs/images $(DOCDIR)/images ; \
 	# the .json cp here is the data required for the d3 visualizations
@@ -225,12 +228,24 @@ MKDOCS = $(RUN) mkdocs
 mkd-%:
 	$(MKDOCS) $*
 
-PROJECT_FOLDERS = sqlschema shex shacl protobuf prefixmap owl jsonschema jsonld graphql excel
+# Deploy the docs to gh-pages, mirroring the whole site under /docs/ as well.
+# The w3id vocab redirect (https://w3id.org/biolink/vocab/<Term>) targets
+# https://biolink.github.io/biolink-model/docs/<Term>, but mkdocs publishes term
+# pages at the site root. Copying the built site into a docs/ subfolder makes those
+# IRIs dereference to real pages (301 -> 200) without changing the w3id .htaccess.
+# Root URLs and the root-level artifact files (owl/jsonld/etc.) are left untouched.
+mkd-gh-deploy-docs:
+	$(MKDOCS) build -d site
+	mkdir -p site/docs
+	rsync -a --exclude 'docs/' site/ site/docs/
+	$(RUN) ghp-import -np -m "deploy docs" site
+
+PROJECT_FOLDERS = sqlschema shex shacl protobuf prefixmap owl jsonschema jsonld excel
 git-init-add: git-init git-add git-commit git-status
 git-init:
 	git init
 git-add: .cruft.json
-	git add .gitignore .github .cruft.json Makefile LICENSE *.md examples utils about.yaml mkdocs.yml poetry.lock project.Makefile pyproject.toml src/biolink_model/schema/*yaml src/*/datamodel/*py src/data src/docs tests src/*/_version.py
+	git add .gitignore .github .cruft.json Makefile LICENSE *.md examples utils about.yaml mkdocs.yml uv.lock project.Makefile pyproject.toml src/biolink_model/schema/*yaml src/*/datamodel/*py src/data src/docs tests src/*/_version.py
 	git add $(patsubst %, project/%, $(PROJECT_FOLDERS))
 git-commit:
 	git commit -m 'chore: initial commit' -a

@@ -1,3 +1,6 @@
+import logging
+logging.getLogger("linkml_runtime.Namespaces").setLevel(logging.CRITICAL)
+
 from linkml_runtime.utils.schemaview import SchemaView
 from linkml.generators.prefixmapgen import PrefixGenerator
 from linkml_runtime.utils.formatutils import camelcase

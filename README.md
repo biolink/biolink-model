@@ -28,6 +28,32 @@ Refer to the following resources for a quick introduction to the Biolink Model:
 See also the Biolink Model Documentation for help in [understanding](https://biolink.github.io/biolink-model/), [curating](https://biolink.github.io/biolink-model/curating-the-model/), and [working](https://biolink.github.io/biolink-model/working-with-the-model/) with the model.
 
 
+## Installation
+
+The default install pulls in `pydantic` and `linkml-runtime`. It is enough to use both generated
+Python datamodels (`biolink_model.datamodel.pydanticmodel_v2` and
+`biolink_model.datamodel.model`), build a `SchemaView`, run the `generate_viz_json` script, and
+access the bundled schema and prefix-map data files (`biolink_model/schema/*.yaml`,
+`biolink_model/prefixmaps/*.json`) as package data (for example, with `importlib.resources`):
+
+```bash
+pip install biolink-model
+```
+
+Additional functionality is available through extras:
+
+| Extra | Adds | Use it for |
+|---|---|---|
+| `scripts` | `linkml`, `rdflib`, `curies` | The model generation/maintenance scripts under `src/biolink_model/scripts/` (invoked via the Makefile) |
+| `docs` | `mkdocs`, `mkdocs-material`, `mkdocs-mermaid2-plugin` | Building the documentation site |
+| `all` | all of the above | Everything |
+
+```bash
+pip install "biolink-model[scripts]"    # generation/maintenance scripts
+pip install "biolink-model[all]"        # everything
+```
+
+
 ## Introduction
 
 The purpose of the Biolink Model is to provide a high-level datamodel of

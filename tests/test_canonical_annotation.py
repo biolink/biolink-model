@@ -32,3 +32,30 @@ def test_predicates_have_canonical_or_inverse(load_biolink_model):
             elif not slot_details.inverse:
                 raise AssertionError(f"Slot '{slot_details}' has neither 'canonical_predicate: true' "
                                     f"nor 'inverse' annotations")
+
+
+def test_protein_accepts_ncit_prefix(load_biolink_model):
+    """Ensure NCIT is a valid identifier prefix for Protein."""
+    model = SchemaView(load_biolink_model)
+    protein = model.get_class("protein")
+    assert protein is not None
+    assert "NCIT" in protein.id_prefixes
+
+def test_active_in_is_a_located_in(load_biolink_model):
+    """Ensure active in is modeled as a specialization of located in."""
+    model = SchemaView(load_biolink_model)
+
+    assert model.get_slot("active in").is_a == "located in"
+    assert model.get_slot("has active component").is_a == "location of"
+
+def test_macromolecular_complex_accepts_iuphar_target_prefix(load_biolink_model):
+    """Ensure GtoPdb target identifiers are valid for macromolecular complexes."""
+    model = SchemaView(load_biolink_model)
+    complex_class = model.get_class("macromolecular complex")
+
+    assert complex_class is not None
+    assert "IUPHARobj" in complex_class.id_prefixes
+    assert (
+        model.schema.prefixes["IUPHARobj"].prefix_reference
+        == "https://www.guidetopharmacology.org/GRAC/ObjectDisplayForward?objectId="
+    )
