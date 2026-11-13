@@ -19,7 +19,7 @@ classifiers = [
 ]
 dependencies = [
     "pydantic>=2,<3",
-    "linkml-runtime>=1.11.1,<2",
+    "linkml==1.12.1",
 ]
 
 [project.scripts]
@@ -27,7 +27,7 @@ generate_viz_json = "biolink_model.scripts.generate_json:generate_viz_json"
 
 [project.optional-dependencies]
 scripts = [
-    "linkml==1.11.1",
+    "linkml==1.12.1",
     "rdflib",
     "curies",
 ]
@@ -45,7 +45,7 @@ all = [
 
 [dependency-groups]
 dev = [
-    "linkml==1.11.1",
+    "linkml==1.12.1",
     "mkdocs>=1.4.2,<2",
     "mkdocs-material>=9.5.17,<10",
     "mkdocs-mermaid2-plugin>=1.1.1,<2",
