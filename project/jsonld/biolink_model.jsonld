@@ -490,6 +490,10 @@
       "prefix_reference": "https://lhncbc.nlm.nih.gov/semanticnetwork/download/sg_archive/SemGroups-v04.txt"
     },
     {
+      "prefix_prefix": "TR",
+      "prefix_reference": "https://cebs.niehs.nih.gov/cebs/publication/"
+    },
+    {
       "prefix_prefix": "UniProtKB",
       "prefix_reference": "http://purl.uniprot.org/uniprot/"
     },
@@ -30278,7 +30282,8 @@
         "PMID",
         "PMC",
         "doi",
-        "NLMID"
+        "NLMID",
+        "TR"
       ],
       "definition_uri": "https://w3id.org/biolink/vocab/Publication",
       "description": "Any \u2018published\u2019 piece of information. Publications are considered broadly to include any document or document part made available in print or on the web - which may include scientific journal issues, individual articles, and books - as well as things like pre-prints, white papers, patents, drug labels, web pages, protocol documents,  and even a part of a publication if of significant knowledge scope.",
@@ -47056,9 +47061,9 @@
   ],
   "metamodel_version": "1.11.0",
   "source_file": "biolink_model.yaml",
-  "source_file_date": "2026-10-09T23:04:34",
-  "source_file_size": 544677,
-  "generation_date": "2026-10-09T23:04:38",
+  "source_file_date": "2026-11-13T21:49:59",
+  "source_file_size": 544905,
+  "generation_date": "2026-11-13T21:50:04",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/biolink_model.context.jsonld",
