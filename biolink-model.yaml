@@ -2467,6 +2467,52 @@ slots:
       - RO:0004029
       - SNOMEDCT:47429007
 
+  functionally associated with:
+    is_a: associated with
+    description: >-
+      Holds between two biological entities whose activities, roles, or contributions are coordinated or complementary
+      within a common biological process, pathway, molecular system, or outcome, without requiring that a particular
+      mechanism connecting them be known. The entities need not jointly participate in the same event or process, and
+      the relationship does not by itself imply physical or genetic interaction, directional influence, regulation, or
+      causation.
+    notes: 
+      - >-
+      Use functionally_associated_with when the asserted relationship is specifically one of functional coupling or
+      coordinated biological roles between two entities, but the available knowledge does not justify a more specific
+      mechanistic predicate such as interacts_with, affects, or causes.  
+      - >-
+      A functional association should reflect how the biological roles or contributions of two entities relate to one another,
+      rather than merely that both entities are independently associated with the same broad context. Mere co-annotation to the
+      same biological process, pathway, phenotype, disease, tissue, or cellular location is therefore not sufficient. The source
+      or analysis should support a more specific claim that the entities make coordinated or complementary contributions within
+      that context.
+      - >-
+      Unlike interacts_with, functionally_associated_with does not require that the two entities jointly participate in the same
+      event or process. For example, two enzymes acting at different steps of a tightly coupled pathway may be functionally
+      associated because their contributions are coordinated within the pathway, even if they never directly participate together
+      in a single interaction event.
+      - >-
+      Functionally associated entities may also physically or genetically interact or influence one another, but those relationships
+      should be represented with the corresponding predicates when they are actually asserted. Conversely, an interaction, influence,
+      correlation, or other relationship may provide evidence for functional association, but does not by itself entail a
+      functionally_associated_with relationship.
+      - >-
+      Functional associations may be supported by diverse forms of evidence, including coordinated pathway participation, evolutionary
+      relationships, coordinated expression, genomic context, experimental observations, literature evidence, or integrated
+      computational predictions. 
+      - >-
+      Examples and Non-Examples: 
+      Yes - two proteins are predicted to participate in the same functional module in coordinated or complementary roles. 
+      Yes - two enzymes perform coordinated steps in a tightly coupled pathway.
+      No - both genes are independently annotated to a broad process such as “immune response.”
+      No - the genes are merely coexpressed, unless source additionally asserts that their biological roles or contributions are coordinated.
+      No - the proteins physically interact, unless the source also supports a relationship between their biological roles or contributions.
+    annotations:
+      canonical_predicate: true
+    symmetric: true
+    domain: biological entity
+    range: biological entity
+
   superclass of:
     is_a: related to at concept level
     inverse: subclass of
