@@ -22,3 +22,14 @@ def test_processed_material_mapping_not_obsolete():
     exact_mappings = schema["classes"]["processed material"]["exact_mappings"]
     assert "COB:0000026" in exact_mappings
     assert "OBI:0000047" not in exact_mappings
+
+
+def test_genome_build_range_and_mappings():
+    # genome build had StrandEnum range and gff3:strand mapping copied from strand (see #1837)
+    schema_path = os.path.join(os.path.dirname(__file__), "..", "biolink-model.yaml")
+    with open(schema_path) as schema_file:
+        schema = yaml.safe_load(schema_file)
+
+    genome_build = schema["slots"]["genome build"]
+    assert genome_build["range"] == "string"
+    assert "gff3:strand" not in genome_build.get("exact_mappings", [])

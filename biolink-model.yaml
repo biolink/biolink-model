@@ -6971,9 +6971,7 @@ slots:
     description: >-
       The version of the genome on which a feature is located.
       For example, GRCh38 for Homo sapiens.
-    range: StrandEnum
-    exact_mappings:
-      - gff3:strand
+    range: string
 
   strand:
     is_a: sequence localization attribute
